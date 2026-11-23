@@ -44,7 +44,7 @@ export default function MedicalTechnologyShowcase() {
       title: 'Cobalt-Chromium Drug-Eluting Stents (DES)',
       category: 'ENDOVASCULAR BIO-IMPLANTS',
       description: 'Ultra-thin strut metallic micro-lattices coated with bioabsorbable polymer that release antiproliferative drugs over 90 days to prevent restenosis.',
-      image: '/images/heart-anatomy.jpg',
+      image: '/images/pacemaker-tech.jpg',
       specs: [
         { label: 'Strut Thickness', value: '60–81 Microns' },
         { label: 'Polymer Matrix', value: 'Bio-Absorbable Carrier' },

@@ -72,21 +72,21 @@ export default function AppointmentExperienceSection() {
   };
 
   return (
-    <section id="appointment-experience" className="relative py-20 lg:py-28 overflow-hidden select-none">
+    <section id="appointment-experience" className="relative py-24 lg:py-32 overflow-hidden select-none bg-gradient-to-b from-[#0D1E30] via-[#122B45] to-[#0A1827] text-white border-t border-sky-900/60">
 
       {/* =========================================================================
-          ANIMATED SECTION BACKGROUND: ROYAL PURPLE & EMERALD VERIFICATION
+          DISTINCT SECTION 9 BACKGROUND: DEEP EXECUTIVE NAVY & EMERALD VERIFICATION
          ========================================================================= */}
       <div className="absolute inset-0 pointer-events-none -z-10 overflow-hidden">
-        {/* Royal Midnight Purple Glow */}
-        <div className="absolute top-10 right-10 w-[600px] h-[600px] bg-gradient-to-tr from-purple-700/20 via-violet-600/15 to-indigo-600/15 rounded-full blur-[150px] animate-morph animate-float-1" />
+        {/* Deep Medical Sapphire Glow */}
+        <div className="absolute top-10 right-10 w-[600px] h-[600px] bg-[#2788B8]/15 rounded-full blur-[150px]" />
 
-        {/* Emerald Healing Glow */}
-        <div className="absolute bottom-10 left-10 w-[550px] h-[550px] bg-gradient-to-bl from-emerald-500/15 via-teal-400/10 to-sky-500/10 rounded-full blur-[160px] animate-float-2" />
+        {/* Emerald Healing Verification Glow */}
+        <div className="absolute bottom-10 left-10 w-[550px] h-[550px] bg-[#10B981]/15 rounded-full blur-[160px]" />
 
         {/* Monumental Watermark Typography */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-sans font-black text-[18vw] text-purple-950/[0.03] whitespace-nowrap pointer-events-none">
-          CONCIERGE
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-sans font-black text-[18vw] text-white/[0.02] whitespace-nowrap pointer-events-none">
+          PRIORITY
         </div>
       </div>
 
@@ -94,18 +94,18 @@ export default function AppointmentExperienceSection() {
 
         {/* Section Header */}
         <div className="mb-14 text-center max-w-3xl mx-auto space-y-3">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200/90 text-xs font-mono font-bold text-slate-900 shadow-xs animate-float-bob">
-            <Calendar className="w-4 h-4 text-purple-600" />
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs font-mono font-bold text-sky-200 shadow-xs">
+            <Calendar className="w-4 h-4 text-[#A9D8E9]" />
             <span className="uppercase tracking-[0.2em]">Consultation Scheduling & Direct Triage</span>
           </div>
 
-          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-950 tracking-tight leading-[1.08]">
+          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-[-0.03em] leading-[1.08]">
             Schedule Your Cardiac <br />
-            <span className="font-serif italic font-normal text-purple-700">Evaluation Today</span>
+            <span className="font-serif italic font-normal text-[#A9D8E9]">Evaluation Today</span>
           </h2>
 
-          <p className="text-base sm:text-lg text-slate-700 font-medium max-w-2xl mx-auto leading-relaxed">
-            Reserve your consultation slot with Dr. Prakash Chand Shahi at Pulse Heart Centre, Betiahata. Emergency walk-ins prioritized.
+          <p className="text-base sm:text-lg text-slate-300 font-light max-w-2xl mx-auto leading-relaxed">
+            Reserve your priority consultation slot with Dr. Prakash Chand Shahi at Pulse Heart Centre, Betiahata. Emergency walk-ins prioritized.
           </p>
         </div>
 
@@ -119,8 +119,8 @@ export default function AppointmentExperienceSection() {
               {/* Step 1: Clinical Triage Reason */}
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-mono uppercase tracking-wider text-purple-900 font-bold flex items-center gap-2">
-                    <span className="w-5 h-5 rounded-full bg-purple-100 text-purple-700 flex items-center justify-center text-[10px]">1</span>
+                  <span className="text-xs font-mono uppercase tracking-wider text-[#173C59] font-bold flex items-center gap-2">
+                    <span className="w-5 h-5 rounded-full bg-sky-100 text-[#173C59] flex items-center justify-center text-[10px]">1</span>
                     Select Consultation Domain
                   </span>
                   <span className="text-[10px] font-mono text-slate-400 font-bold">Step 1 of 3</span>
@@ -134,15 +134,15 @@ export default function AppointmentExperienceSection() {
                         key={opt.id}
                         onClick={() => setTriageCategory(opt.id)}
                         className={`p-4 rounded-2xl border-2 cursor-pointer transition-all duration-300 ${isSelected
-                          ? 'bg-purple-50/90 border-purple-600 shadow-md ring-2 ring-purple-400/20 scale-102'
+                          ? 'bg-sky-50/90 border-[#2788B8] shadow-md ring-2 ring-sky-400/20 scale-102'
                           : 'bg-white hover:bg-slate-50 border-slate-200'
                           }`}
                       >
                         <div className="flex items-center justify-between mb-1">
-                          <span className="text-[9px] font-mono font-bold text-purple-800 uppercase bg-purple-100 px-2 py-0.5 rounded-full">
+                          <span className="text-[9px] font-mono font-bold text-[#173C59] uppercase bg-sky-100 px-2 py-0.5 rounded-full">
                             {opt.badge}
                           </span>
-                          <div className={`w-3.5 h-3.5 rounded-full border flex items-center justify-center ${isSelected ? 'border-purple-600 bg-purple-600' : 'border-slate-300'
+                          <div className={`w-3.5 h-3.5 rounded-full border flex items-center justify-center ${isSelected ? 'border-[#2788B8] bg-[#2788B8]' : 'border-slate-300'
                             }`}>
                             {isSelected && <span className="w-1.5 h-1.5 rounded-full bg-white" />}
                           </div>
@@ -162,11 +162,11 @@ export default function AppointmentExperienceSection() {
               {/* Step 2: Date & Slot Selection */}
               <div className="space-y-3 pt-4 border-t border-slate-100">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-mono uppercase tracking-wider text-purple-900 font-bold flex items-center gap-2">
-                    <span className="w-5 h-5 rounded-full bg-purple-100 text-purple-700 flex items-center justify-center text-[10px]">2</span>
+                  <span className="text-xs font-mono uppercase tracking-wider text-[#173C59] font-bold flex items-center gap-2">
+                    <span className="w-5 h-5 rounded-full bg-sky-100 text-[#173C59] flex items-center justify-center text-[10px]">2</span>
                     Select Consultation Slot
                   </span>
-                  <span className="text-[10px] font-mono text-purple-800 font-bold">
+                  <span className="text-[10px] font-mono text-[#2788B8] font-bold">
                     Mon – Sat (10 AM – 8 PM)
                   </span>
                 </div>
@@ -180,7 +180,7 @@ export default function AppointmentExperienceSection() {
                       type="date"
                       value={preferredDate}
                       onChange={(e) => setPreferredDate(e.target.value)}
-                      className="w-full px-4 py-2.5 rounded-xl bg-purple-50/50 border border-purple-200 text-xs font-mono font-bold text-slate-900 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                      className="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-xs font-mono font-bold text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#2788B8]"
                     />
                   </div>
 
@@ -195,8 +195,8 @@ export default function AppointmentExperienceSection() {
                           type="button"
                           onClick={() => setPreferredSlot(slot)}
                           className={`py-2 px-1 rounded-xl text-[11px] font-mono font-bold transition-all duration-200 ${preferredSlot === slot
-                            ? 'bg-gradient-to-r from-purple-700 via-indigo-600 to-purple-800 text-white shadow-md shadow-purple-500/25 scale-105'
-                            : 'bg-white hover:bg-purple-50 text-slate-700 border border-slate-200'
+                            ? 'bg-gradient-to-r from-[#173C59] via-[#1E4D74] to-[#2788B8] text-white shadow-md shadow-[#173C59]/20 scale-105'
+                            : 'bg-white hover:bg-sky-50 text-slate-700 border border-slate-200'
                             }`}
                         >
                           {slot}
@@ -209,8 +209,8 @@ export default function AppointmentExperienceSection() {
 
               {/* Step 3: Patient Information Form */}
               <form onSubmit={handleSubmit} className="space-y-4 pt-4 border-t border-slate-100">
-                <span className="text-xs font-mono uppercase tracking-wider text-purple-900 font-bold flex items-center gap-2">
-                  <span className="w-5 h-5 rounded-full bg-purple-100 text-purple-700 flex items-center justify-center text-[10px]">3</span>
+                <span className="text-xs font-mono uppercase tracking-wider text-[#173C59] font-bold flex items-center gap-2">
+                  <span className="w-5 h-5 rounded-full bg-sky-100 text-[#173C59] flex items-center justify-center text-[10px]">3</span>
                   Patient Identification
                 </span>
 
@@ -225,7 +225,7 @@ export default function AppointmentExperienceSection() {
                       placeholder="e.g. Ramesh Kumar"
                       value={patientName}
                       onChange={(e) => setPatientName(e.target.value)}
-                      className="w-full px-4 py-3 rounded-2xl bg-white border border-purple-200 text-xs text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-purple-500 font-medium"
+                      className="w-full px-4 py-3 rounded-2xl bg-white border border-slate-200 text-xs text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#2788B8] font-medium"
                     />
                   </div>
 
@@ -239,7 +239,7 @@ export default function AppointmentExperienceSection() {
                       placeholder="+91 98765 43210"
                       value={patientPhone}
                       onChange={(e) => setPatientPhone(e.target.value)}
-                      className="w-full px-4 py-3 rounded-2xl bg-white border border-purple-200 text-xs text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-purple-500 font-medium"
+                      className="w-full px-4 py-3 rounded-2xl bg-white border border-slate-200 text-xs text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#2788B8] font-medium"
                     />
                   </div>
                 </div>
@@ -247,11 +247,11 @@ export default function AppointmentExperienceSection() {
                 <div className="pt-2">
                   <button
                     type="submit"
-                    className="w-full py-4 rounded-full bg-gradient-to-r from-purple-700 via-indigo-600 to-purple-800 hover:from-purple-800 hover:to-indigo-800 text-white font-semibold text-xs tracking-wider uppercase shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center justify-center gap-2 hover:scale-102"
+                    className="w-full py-4 rounded-full bg-gradient-to-r from-[#173C59] via-[#1E4D74] to-[#2788B8] hover:from-[#0E2538] hover:via-[#173C59] hover:to-[#1E4D74] text-white font-semibold text-xs tracking-wider uppercase shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center justify-center gap-2 hover:scale-102"
                   >
-                    <Calendar className="w-4 h-4 text-purple-300" />
+                    <Calendar className="w-4 h-4 text-[#A9D8E9]" />
                     <span>Confirm Priority Consultation Request</span>
-                    <ArrowRight className="w-3.5 h-3.5 text-purple-300 ml-1" />
+                    <ArrowRight className="w-3.5 h-3.5 text-[#A9D8E9] ml-1" />
                   </button>
                 </div>
               </form>
@@ -262,22 +262,22 @@ export default function AppointmentExperienceSection() {
           {/* Right Column (5 cols): Live Digital Consultation Pass Preview (Boarding Pass Design) */}
           <div className="lg:col-span-5 space-y-6">
 
-            {/* Real-Time Boarding Pass Slip - Luminous Pearl & Royal Violet (No Black Box) */}
-            <div className="relative rounded-[2.5rem] bg-gradient-to-br from-white via-purple-50/50 to-white text-slate-900 shadow-layered border-2 border-purple-200 p-6 sm:p-8 text-left space-y-6 overflow-hidden transition-all duration-400 hover:shadow-2xl">
+            {/* Real-Time Boarding Pass Slip - Luminous Pearl & Deep Navy */}
+            <div className="relative rounded-[2.5rem] bg-gradient-to-br from-white via-slate-50 to-white text-slate-900 shadow-layered border-2 border-slate-200 p-6 sm:p-8 text-left space-y-6 overflow-hidden transition-all duration-400 hover:shadow-2xl">
 
               {/* Luminous Ambient Blobs */}
-              <div className="absolute top-0 right-0 w-60 h-60 bg-purple-200/30 rounded-full blur-3xl pointer-events-none" />
-              <div className="absolute bottom-0 left-0 w-60 h-60 bg-sky-200/25 rounded-full blur-3xl pointer-events-none" />
+              <div className="absolute top-0 right-0 w-60 h-60 bg-sky-100/50 rounded-full blur-3xl pointer-events-none" />
+              <div className="absolute bottom-0 left-0 w-60 h-60 bg-[#173C59]/10 rounded-full blur-3xl pointer-events-none" />
 
               {/* Pass Header */}
-              <div className="flex items-center justify-between pb-4 border-b border-purple-100 relative z-10">
+              <div className="flex items-center justify-between pb-4 border-b border-sky-100 relative z-10">
                 <div className="flex items-center gap-2.5">
-                  <img src="/images/p.webp" alt="Pulse Logo" className="w-6 h-6 object-contain rounded-md bg-white p-0.5 border border-purple-200" />
+                  <img src="/images/p.webp" alt="Pulse Logo" className="w-6 h-6 object-contain rounded-md bg-white p-0.5 border border-slate-200" />
                   <div>
                     <span className="font-semibold text-sm tracking-widest uppercase block leading-none text-slate-950">
                       PULSE
                     </span>
-                    <span className="text-[8px] font-mono text-purple-800 tracking-wider uppercase block mt-0.5 font-bold">
+                    <span className="text-[8px] font-mono text-[#2788B8] tracking-wider uppercase block mt-0.5 font-bold">
                       Consultation Pass
                     </span>
                   </div>
@@ -291,7 +291,7 @@ export default function AppointmentExperienceSection() {
 
               {/* Physician & Clinic Identity */}
               <div className="space-y-1 relative z-10">
-                <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-purple-800 block font-bold">
+                <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#2788B8] block font-bold">
                   Attending Specialist
                 </span>
                 <h4 className="text-xl font-semibold text-slate-950 tracking-tight">
@@ -300,13 +300,13 @@ export default function AppointmentExperienceSection() {
                 <p className="text-[11px] text-slate-600 font-medium">
                   Senior Consultant Cardiologist & Interventional Cardiologist
                 </p>
-                <p className="text-[10px] font-mono text-purple-800 font-bold">
+                <p className="text-[10px] font-mono text-[#173C59] font-bold">
                   DM Cardiology (PGIMER) • MD Medicine (KGMU)
                 </p>
               </div>
 
               {/* Patient Dynamic Ticket Card */}
-              <div className="p-4 rounded-2xl bg-purple-50/70 border border-purple-200 space-y-3 relative z-10">
+              <div className="p-4 rounded-2xl bg-sky-50/70 border border-sky-200 space-y-3 relative z-10">
                 <div className="flex justify-between items-center text-xs">
                   <span className="text-slate-600 font-medium">Patient:</span>
                   <span className="font-semibold text-slate-950 font-mono">
@@ -315,7 +315,7 @@ export default function AppointmentExperienceSection() {
                 </div>
                 <div className="flex justify-between items-center text-xs">
                   <span className="text-slate-600 font-medium">Date & Slot:</span>
-                  <span className="font-bold text-purple-900 font-mono">
+                  <span className="font-bold text-[#173C59] font-mono">
                     {preferredDate} • {preferredSlot}
                   </span>
                 </div>
@@ -334,7 +334,7 @@ export default function AppointmentExperienceSection() {
               </div>
 
               {/* Barcode & Verification */}
-              <div className="pt-2 border-t border-purple-100 flex items-center justify-between text-[11px] font-mono relative z-10">
+              <div className="pt-2 border-t border-slate-200 flex items-center justify-between text-[11px] font-mono relative z-10">
                 <span className="text-slate-500">PASS-ID: PHC-2026-9812</span>
                 <span className="text-emerald-700 font-bold flex items-center gap-1">
                   <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
@@ -356,7 +356,7 @@ export default function AppointmentExperienceSection() {
               </div>
               <a
                 href="tel:+919876543210"
-                className="px-4 py-2 rounded-xl bg-purple-50 text-purple-800 text-xs font-bold hover:bg-purple-100 transition-colors"
+                className="px-4 py-2 rounded-xl bg-sky-50 text-[#173C59] text-xs font-bold hover:bg-sky-100 transition-colors"
               >
                 Call OPD
               </a>

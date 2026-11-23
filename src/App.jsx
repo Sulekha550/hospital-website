@@ -18,16 +18,10 @@ export default function App() {
     <Router>
       <ScrollToTop />
       
-      {/* Rich Multi-Layered Atmosphere with Vibrant Colorful Gradient Design */}
-      <div className="min-h-screen flex flex-col selection:bg-purple-600 selection:text-white relative bg-[#FAF9FD]/30 text-[#130E26] overflow-x-hidden antialiased">
+      {/* Pure Architectural Canvas with High-Contrast Typography */}
+      <div className="min-h-screen flex flex-col selection:bg-[#059669] selection:text-white relative bg-[#FAFBF9] text-[#0F1E19] overflow-x-hidden antialiased">
         
-        {/* Vibrant Multi-Color Mesh Aurora & Architectural Vector Background */}
-        <VibrantBackgroundDesign />
-
-        {/* Ambient Floating 3D Micro-Nodes */}
-        <LuxuryAtmosphere3D />
-
-        {/* High-Fashion Translucent Floating Glass Navbar */}
+        {/* Floating Minimal Glass Navbar */}
         <Navbar />
 
         {/* Route Page Container */}

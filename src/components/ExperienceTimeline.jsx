@@ -12,7 +12,7 @@ export default function ExperienceTimeline({ onBookClick }) {
       title: "Extensive Cardiology & Catheterization Practice",
       institution: "Pulse Heart Centre & Tertiary Academic Hospitals",
       description: doctor.experienceText,
-      accent: "from-purple-700 via-indigo-600 to-sky-600",
+      accent: "from-[#173C59] via-[#2788B8] to-sky-400",
       highlight: true
     },
     {
@@ -21,7 +21,7 @@ export default function ExperienceTimeline({ onBookClick }) {
       title: "DM — Cardiology",
       institution: "Postgraduate Institute of Medical Education and Research (PGIMER), Chandigarh",
       description: "Rigorous clinical doctorate in hemodynamic catheterization, coronary angioplasty, and cardiac rhythm pacing management from India's apex institute.",
-      accent: "from-purple-600 to-sky-600",
+      accent: "from-[#173C59] to-[#2788B8]",
       highlight: false
     },
     {
@@ -30,7 +30,7 @@ export default function ExperienceTimeline({ onBookClick }) {
       title: "MD — General Medicine",
       institution: "King George's Medical University (KGMU), Lucknow",
       description: "Master of Medicine focusing on complex systemic disorders, cardiovascular pharmacotherapy, and intensive medical hemodynamics.",
-      accent: "from-sky-600 to-indigo-600",
+      accent: "from-[#2788B8] to-sky-500",
       highlight: false
     },
     {
@@ -39,7 +39,7 @@ export default function ExperienceTimeline({ onBookClick }) {
       title: "MBBS — Bachelor of Medicine & Surgery",
       institution: "Recognized Premier Medical Institution",
       description: "Rigorous medical graduation and surgical housemanship in foundational human physiology, cardiology, and clinical pathology.",
-      accent: "from-amber-500 to-purple-700",
+      accent: "from-amber-600 to-[#173C59]",
       highlight: false
     }
   ];
@@ -50,13 +50,13 @@ export default function ExperienceTimeline({ onBookClick }) {
         
         {/* Section Header */}
         <div className="mb-14 text-center max-w-3xl mx-auto space-y-3">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-purple-900 to-slate-900 text-white text-xs font-mono font-medium shadow-md">
-            <Award className="w-4 h-4 text-amber-300" />
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-[#173C59] via-[#1E4D74] to-[#2788B8] text-white text-xs font-mono font-medium shadow-md shadow-[#173C59]/20">
+            <Award className="w-4 h-4 text-[#A9D8E9]" />
             <span className="uppercase tracking-[0.2em]">Academic Pedigree & Milestones</span>
           </div>
 
           <h2 className="text-3xl sm:text-5xl font-semibold text-slate-950 tracking-tight leading-tight">
-            Qualifications & <span className="font-serif italic font-normal text-purple-700">Medical Milestones</span>
+            Qualifications & <span className="font-serif italic font-normal text-[#173C59]">Medical Milestones</span>
           </h2>
 
           <p className="text-base text-slate-700 font-medium max-w-2xl mx-auto leading-relaxed">
@@ -66,7 +66,7 @@ export default function ExperienceTimeline({ onBookClick }) {
 
         {/* Minimalist Chronological Timeline */}
         <div className="relative">
-          <div className="hidden md:block absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-1 bg-gradient-to-b from-purple-400 via-indigo-400 to-amber-400 rounded-full" />
+          <div className="hidden md:block absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-1 bg-gradient-to-b from-[#173C59] via-[#2788B8] to-sky-300 rounded-full" />
 
           <div className="space-y-12 md:space-y-16">
             {milestones.map((item, index) => {
@@ -96,10 +96,10 @@ export default function ExperienceTimeline({ onBookClick }) {
                         {item.title}
                       </h3>
 
-                      <div className={`flex items-center gap-1.5 text-xs text-purple-800 font-bold ${
+                      <div className={`flex items-center gap-1.5 text-xs text-[#173C59] font-bold ${
                         isEven ? 'md:justify-end' : 'md:justify-start'
                       }`}>
-                        <Building className="w-3.5 h-3.5 text-purple-600 shrink-0" />
+                        <Building className="w-3.5 h-3.5 text-[#2788B8] shrink-0" />
                         <span>{item.institution}</span>
                       </div>
 
@@ -111,9 +111,9 @@ export default function ExperienceTimeline({ onBookClick }) {
                   </div>
 
                   {/* Central Node */}
-                  <div className="my-4 md:my-0 relative z-20 flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-tr from-purple-700 via-sky-500 to-amber-300 p-0.5 shadow-lg">
+                  <div className="my-4 md:my-0 relative z-20 flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-tr from-[#173C59] via-[#2788B8] to-sky-300 p-0.5 shadow-lg">
                     <div className="w-full h-full rounded-full bg-white flex items-center justify-center">
-                      <span className="w-3.5 h-3.5 rounded-full bg-purple-600 animate-pulse" />
+                      <span className="w-3.5 h-3.5 rounded-full bg-[#173C59] animate-pulse" />
                     </div>
                   </div>
 

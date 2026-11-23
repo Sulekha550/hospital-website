@@ -122,8 +122,8 @@ export default function InteractiveCardiacExplorer({ onBookClick }) {
             
             {/* Real Photographic Medical Image */}
             <img
-              src={viewMode === 'anatomy' ? '/images/heart-anatomy.jpg' : '/images/angiogram-scan.jpg'}
-              alt={viewMode === 'anatomy' ? 'Photorealistic Anatomical Heart Model' : 'Real Diagnostic Coronary Angiogram'}
+              src={viewMode === 'anatomy' ? '/images/cath-lab.jpg' : '/images/angiogram-scan.jpg'}
+              alt={viewMode === 'anatomy' ? 'Siemens Flat-Panel Digital Cath Lab' : 'Real Diagnostic Coronary Angiogram'}
               className="w-full h-full object-cover object-center transition-all duration-700 filter brightness-95 group-hover:scale-102"
             />
 

@@ -1,54 +1,56 @@
 import React from 'react';
-import HeroSection from '../components/HeroSection';
+import CinematicHeroSection from '../components/CinematicHeroSection';
+import CardiologyShowcaseSection from '../components/CardiologyShowcaseSection';
 import DoctorMonographSection from '../components/DoctorMonographSection';
-import AnatomicalSpecialtyShowcase from '../components/AnatomicalSpecialtyShowcase';
-import MedicalTechnologyShowcase from '../components/MedicalTechnologyShowcase';
-import TreatmentStorytellingSection from '../components/TreatmentStorytellingSection';
-import CredentialsEditorialSection from '../components/CredentialsEditorialSection';
+import NeurologyShowcaseSection from '../components/NeurologyShowcaseSection';
+import OrthopaedicShowcaseSection from '../components/OrthopaedicShowcaseSection';
+import DiagnosticShowcaseSection from '../components/DiagnosticShowcaseSection';
+import ArchitecturalGallerySection from '../components/ArchitecturalGallerySection';
 import PatientTestimonialsSection from '../components/PatientTestimonialsSection';
 import AppointmentExperienceSection from '../components/AppointmentExperienceSection';
-import { PULSE_DATA } from '../data/pulseData';
 
 /**
  * HomePage: Flagship International Medical Brand Experience
- * Redesigned for ultra-smooth visual elegance, clinical prestige, and seamless flow:
- * 1. Hero – Asymmetric Hero (45% Doctor Portrait Space + 3D Anatomical Heart Sculpture)
- * 2. Section 01 – Immersive Doctor Introduction with Oversized Portrait Space (DoctorMonographSection)
- * 3. Section 02 – Specialty Showcase with Large Artistic Anatomical Illustrations (AnatomicalSpecialtyShowcase)
- * 4. Section 03 – Medical Technology Showcase with Cinematic Equipment Photography (MedicalTechnologyShowcase)
- * 5. Section 04 – Treatment Section using Custom-Designed Visual Storytelling (TreatmentStorytellingSection)
- * 6. Section 05 – Credentials Section using Premium Editorial Layouts (CredentialsEditorialSection)
- * 7. Section 06 – Patient Testimonials Section with Distinctive Typography & Composition (PatientTestimonialsSection)
- * 8. Section 07 – Dramatic Appointment Experience with Live Digital Pass (AppointmentExperienceSection)
+ * Built with bespoke, distinct 3D visual environments for every faculty:
+ * 1. HERO — Futuristic Medical Architecture & Translucent Cardiac Sculpture (CinematicHeroSection)
+ * 2. CARDIOLOGY — Full-Bleed 3D Anatomical Heart with Glowing Coronary Pathways (CardiologyShowcaseSection)
+ * 3. LEAD CLINICIAN — Executive Monograph of Dr. Prakash Chand Shahi, DM (PGIMER), MD (KGMU) (DoctorMonographSection)
+ * 4. NEUROLOGY — Immersive 3D Neural Network with Action Potentials in Blue-Violet Deep Space (NeurologyShowcaseSection)
+ * 5. ORTHOPAEDICS — 3D Biometric Joint & Skeletal Mechanics with Mint-Emerald Studio Lighting (OrthopaedicShowcaseSection)
+ * 6. DIAGNOSTICS — 3D Volumetric Tomography Scanner with Sweeping Laser Planes (DiagnosticShowcaseSection)
+ * 7. ARCHITECTURAL TOUR — High-Density Hospital Interior & Clinical Suites (ArchitecturalGallerySection)
+ * 8. PATIENT JOURNEY — Verified Clinical Recovery Narratives (PatientTestimonialsSection)
+ * 9. PRIORITY APPOINTMENT SUITE — Interactive Boarding Pass Consultation Scheduler (AppointmentExperienceSection)
  */
 export default function HomePage() {
-  const { doctor, clinic } = PULSE_DATA;
-
   return (
-    <div className="relative">
+    <div className="relative w-full overflow-hidden">
 
-      {/* 1. Dramatic Asymmetric Hero with 45% Dedicated Empty Portrait Niche & 3D Anatomical Sculpture */}
-      <HeroSection />
+      {/* 1. HERO — FUTURISTIC MEDICAL ARCHITECTURE (3D Sweeping Glass Ribs & Cardiac Sculpture) */}
+      <CinematicHeroSection />
 
-      {/* 2. Immersive Doctor Introduction with Oversized Portrait Space */}
+      {/* 2. CARDIOLOGY — ANIMATED 3D HEART ENVIRONMENT (Glowing Coronary Arteries & Ventricular Pulse) */}
+      <CardiologyShowcaseSection />
+
+      {/* 3. FOUNDING CLINICIAN MONOGRAPH (Dr. Prakash Chand Shahi • PGIMER & KGMU Pedigree) */}
       <DoctorMonographSection />
 
-      {/* 3. Specialty Showcase Using Large Artistic Anatomical Illustrations */}
-      <AnatomicalSpecialtyShowcase />
+      {/* 4. NEUROLOGY — 3D NEURAL NETWORK ENVIRONMENT (Deep Blue-Violet Atmosphere & Synaptic Nodes) */}
+      <NeurologyShowcaseSection />
 
-      {/* 4. Medical Technology Showcase with Cinematic Equipment Photography */}
-      <MedicalTechnologyShowcase />
+      {/* 5. ORTHOPAEDICS — 3D SKELETAL & BIOMETRIC JOINT ENVIRONMENT (Mint-Emerald Studio Light) */}
+      <OrthopaedicShowcaseSection />
 
-      {/* 5. Treatment Section Using Custom-Designed Visual Storytelling */}
-      <TreatmentStorytellingSection />
+      {/* 6. DIAGNOSTICS — 3D VOLUMETRIC SCANNING ENVIRONMENT (Laser Planes & Tomographic Slices) */}
+      <DiagnosticShowcaseSection />
 
-      {/* 6. Credentials Section Using Premium Editorial Layouts */}
-      <CredentialsEditorialSection />
+      {/* 7. ADVANCED FACILITIES — ARCHITECTURAL ENVIRONMENT (Hospital Interior & Operating Suites) */}
+      <ArchitecturalGallerySection />
 
-      {/* 7. Patient Testimonials Section with Distinctive Typography & Composition */}
+      {/* 8. PATIENT OUTCOMES & RECOVERY TESTIMONIALS */}
       <PatientTestimonialsSection />
 
-      {/* 8. Dramatic Appointment Experience with Live Digital Consultation Pass */}
+      {/* 9. PRIORITY OPD CONSULTATION BOARDING PASS SUITE */}
       <AppointmentExperienceSection />
 
     </div>

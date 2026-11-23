@@ -19,13 +19,18 @@ export default function TreatmentsSection({ onBookClick }) {
   const activeTreatment = treatments.find((t) => t.id === selectedId) || treatments[0];
 
   return (
-    <section id="treatments" className="relative py-16 lg:py-24 overflow-hidden">
+    <section id="treatments" className="relative py-16 lg:py-24 overflow-hidden bg-gradient-to-b from-[#FFF1F2]/70 via-[#FAF5FF]/80 to-[#F0FDF4]/50">
+
+      {/* Ambient Floating Atmospheric Glows */}
+      <div className="absolute top-1/4 -left-20 w-[600px] h-[600px] bg-gradient-to-tr from-rose-500/35 via-pink-400/30 to-purple-400/25 rounded-full blur-[85px] pointer-events-none -z-10 animate-float-1" />
+      <div className="absolute bottom-10 -right-20 w-[550px] h-[550px] bg-gradient-to-bl from-purple-500/35 via-sky-400/30 to-teal-400/25 rounded-full blur-[85px] pointer-events-none -z-10 animate-float-3" />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-8 relative z-10">
-        
+
         {/* Section Header */}
         <div className="mb-10">
           <div className="flex items-center gap-3 mb-3">
-            <span className="text-xs font-semibold text-white bg-slate-900 px-3.5 py-1 rounded-full shadow-sm">
+            <span className="text-xs font-semibold text-white bg-gradient-to-r from-purple-700 via-indigo-600 to-purple-800 px-3.5 py-1 rounded-full shadow-sm">
               Procedural Excellence
             </span>
             <div className="w-8 h-0.5 bg-gradient-to-r from-purple-500 to-sky-400" />
@@ -60,21 +65,18 @@ export default function TreatmentsSection({ onBookClick }) {
                   setSelectedId(item.id);
                   setAnimStep(1);
                 }}
-                className={`w-full md:w-[36%] text-left p-6 sm:p-7 rounded-[2rem] border-2 transition-all duration-400 ease-out relative overflow-hidden backdrop-blur-xl cursor-pointer ${
-                  isSelected
-                    ? 'bg-gradient-to-br from-slate-950 via-[#180E2E] to-slate-950 text-white border-purple-400 shadow-[0_20px_50px_-10px_rgba(124,58,237,0.3)] scale-[1.03] z-20 ring-2 ring-purple-400/40'
-                    : 'bg-white/85 text-slate-800 border-purple-100 hover:bg-white hover:border-purple-300 hover:scale-[1.02] hover:z-25 shadow-sm z-10'
-                }`}
+                className={`w-full md:w-[36%] text-left p-6 sm:p-7 rounded-[2rem] border-2 transition-all duration-400 ease-out relative overflow-hidden backdrop-blur-xl cursor-pointer ${isSelected
+                  ? 'bg-gradient-to-br from-slate-950 via-[#180E2E] to-slate-950 text-white border-purple-400 shadow-[0_20px_50px_-10px_rgba(124,58,237,0.3)] scale-[1.03] z-20 ring-2 ring-purple-400/40'
+                  : 'bg-white/85 text-slate-800 border-purple-100 hover:bg-white hover:border-purple-300 hover:scale-[1.02] hover:z-25 shadow-sm z-10'
+                  }`}
               >
                 <div className="flex items-center justify-between mb-3">
-                  <span className={`text-xs font-mono uppercase tracking-wider font-bold ${
-                    isSelected ? 'text-purple-300' : 'text-slate-400'
-                  }`}>
+                  <span className={`text-xs font-mono uppercase tracking-wider font-bold ${isSelected ? 'text-purple-300' : 'text-slate-400'
+                    }`}>
                     0{index + 1} / {item.category}
                   </span>
-                  <div className={`w-7 h-7 rounded-full flex items-center justify-center transition-colors ${
-                    isSelected ? 'bg-purple-600 text-white shadow-sm' : 'bg-purple-50 text-purple-700'
-                  }`}>
+                  <div className={`w-7 h-7 rounded-full flex items-center justify-center transition-colors ${isSelected ? 'bg-purple-600 text-white shadow-sm' : 'bg-purple-50 text-purple-700'
+                    }`}>
                     <ChevronRight className="w-3.5 h-3.5" />
                   </div>
                 </div>
@@ -83,9 +85,8 @@ export default function TreatmentsSection({ onBookClick }) {
                   {item.name}
                 </h3>
 
-                <p className={`text-xs mt-2 line-clamp-2 font-normal ${
-                  isSelected ? 'text-slate-300' : 'text-slate-600'
-                }`}>
+                <p className={`text-xs mt-2 line-clamp-2 font-normal ${isSelected ? 'text-slate-300' : 'text-slate-600'
+                  }`}>
                   {item.tagline}
                 </p>
 
@@ -99,7 +100,7 @@ export default function TreatmentsSection({ onBookClick }) {
 
         {/* Master Integrated Procedure Showcase */}
         <div className="rounded-[2.5rem] bg-gradient-to-br from-slate-950 via-[#130A24] to-slate-950 text-white p-6 sm:p-10 lg:p-12 shadow-2xl border-2 border-purple-500/30 relative overflow-hidden space-y-8">
-          
+
           <div className="absolute -top-24 -left-24 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl pointer-events-none" />
           <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-sky-500/20 rounded-full blur-3xl pointer-events-none" />
 
@@ -115,7 +116,7 @@ export default function TreatmentsSection({ onBookClick }) {
                 {activeTreatment.name}
               </h3>
             </div>
-            
+
             <p className="text-slate-300 text-sm font-light max-w-lg leading-relaxed">
               {activeTreatment.summary}
             </p>
@@ -123,7 +124,7 @@ export default function TreatmentsSection({ onBookClick }) {
 
           {/* 2. Full-Width Interactive Simulation Stage */}
           <div className="relative rounded-2xl overflow-hidden border-2 border-white/15 bg-white/5 backdrop-blur-xl p-5 z-10">
-            
+
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-2">
                 <span className="w-2.5 h-2.5 rounded-full bg-purple-400 animate-ping" />
@@ -151,14 +152,14 @@ export default function TreatmentsSection({ onBookClick }) {
 
             {/* Real Photographic Clinical Visualization Stage */}
             <div className="w-full h-64 sm:h-80 rounded-xl relative overflow-hidden border border-white/10 group">
-              
+
               <img
                 src={
                   activeTreatment.id === 'peripheral-angioplasty'
                     ? '/images/cath-lab.jpg'
                     : activeTreatment.id === 'coronary-angiogram'
                     ? '/images/angiogram-scan.jpg'
-                    : '/images/heart-anatomy.jpg'
+                    : '/images/hospital-facility.jpg'
                 }
                 alt={activeTreatment.name}
                 className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105 filter brightness-90"
@@ -185,21 +186,21 @@ export default function TreatmentsSection({ onBookClick }) {
                   <span className="text-xs font-semibold text-purple-200">
                     {activeTreatment.id === 'peripheral-angioplasty' && (
                       animStep === 1 ? 'Guidewire crossing coronary lesion' :
-                      animStep === 2 ? 'Balloon inflation & arterial plaque dilation' :
-                      animStep === 3 ? 'High-precision drug-eluting stent deployed' :
-                      '100% distal vessel hemodynamic flow restored'
+                        animStep === 2 ? 'Balloon inflation & arterial plaque dilation' :
+                          animStep === 3 ? 'High-precision drug-eluting stent deployed' :
+                            '100% distal vessel hemodynamic flow restored'
                     )}
                     {activeTreatment.id === 'coronary-angiogram' && (
                       animStep === 1 ? 'Radial catheter engaged in coronary ostium' :
-                      animStep === 2 ? 'Radiopaque contrast bolus injected under X-ray' :
-                      animStep === 3 ? 'Full arterial tree opacification mapped' :
-                      'Quantitative stenosis analysis verified'
+                        animStep === 2 ? 'Radiopaque contrast bolus injected under X-ray' :
+                          animStep === 3 ? 'Full arterial tree opacification mapped' :
+                            'Quantitative stenosis analysis verified'
                     )}
                     {activeTreatment.id === 'ct-angiography' && (
                       animStep === 1 ? 'ECG-gated volumetric cardiac acquisition' :
-                      animStep === 2 ? 'Sub-millimeter multi-slice 3D reconstruction' :
-                      animStep === 3 ? 'Agatston coronary calcium score calculated' :
-                      'Non-invasive soft plaque report compiled'
+                        animStep === 2 ? 'Sub-millimeter multi-slice 3D reconstruction' :
+                          animStep === 3 ? 'Agatston coronary calcium score calculated' :
+                            'Non-invasive soft plaque report compiled'
                     )}
                   </span>
                 </div>
@@ -214,7 +215,7 @@ export default function TreatmentsSection({ onBookClick }) {
 
           {/* 3. Bottom 3-Column Bento Details Row */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5 z-10 relative">
-            
+
             {/* Box 1: Diagnostic Indications */}
             <div className="p-6 rounded-2xl bg-white/5 border border-white/10 space-y-3">
               <span className="text-xs font-mono uppercase tracking-wider text-purple-300 font-bold block">
@@ -238,7 +239,7 @@ export default function TreatmentsSection({ onBookClick }) {
               <ul className="space-y-2">
                 {activeTreatment.highlights.map((h, i) => (
                   <li key={i} className="flex items-start gap-2 text-xs text-slate-200 font-medium">
-                    <span className="font-mono text-purple-300 font-bold">0{i+1}.</span>
+                    <span className="font-mono text-purple-300 font-bold">0{i + 1}.</span>
                     <span>{h}</span>
                   </li>
                 ))}

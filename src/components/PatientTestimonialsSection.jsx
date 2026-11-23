@@ -69,40 +69,37 @@ export default function PatientTestimonialsSection() {
   const current = testimonials[activeTestimonial];
 
   return (
-    <section className="relative py-28 lg:py-36 overflow-hidden select-none">
+    <section className="relative py-28 lg:py-36 overflow-hidden select-none bg-gradient-to-b from-[#FBFBFE] via-[#F6F4FB] to-[#FBFBFA] border-b border-indigo-100/60">
       
       {/* =========================================================================
-          ANIMATED SECTION BACKGROUND: WARM AMBER, SOFT CHAMPAGNE & CARDIAC WAVE
+          DISTINCT SECTION 8 BACKGROUND: WARM IVORY, LAVENDER & COMPASSIONATE AURA
          ========================================================================= */}
       <div className="absolute inset-0 pointer-events-none -z-10 overflow-hidden">
-        {/* Warm Golden Amber Glow */}
-        <div className="absolute top-1/4 -left-20 w-[700px] h-[700px] rounded-full bg-gradient-to-tr from-amber-400/20 via-orange-300/15 to-rose-200/20 blur-[150px] animate-morph animate-float-1" />
+        {/* Soft Lavender Accent Glow */}
+        <div className="absolute top-1/4 -left-20 w-[650px] h-[650px] rounded-full bg-[#AFA0E9]/18 blur-[150px]" />
         
-        {/* Soft Champagne & Rose Diffusion */}
-        <div className="absolute bottom-10 right-10 w-[650px] h-[650px] rounded-full bg-gradient-to-bl from-rose-300/20 via-pink-200/15 to-purple-100/15 blur-[150px] animate-float-3" />
+        {/* Soft Medical Sky Diffusion */}
+        <div className="absolute bottom-10 right-10 w-[600px] h-[600px] rounded-full bg-[#2788B8]/10 blur-[150px]" />
 
         {/* Monumental Watermark Typography */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-serif italic text-[17vw] text-amber-950/[0.03] whitespace-nowrap pointer-events-none">
-          HEALING • STORIES
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-serif italic text-[16vw] text-[#173C59]/[0.02] whitespace-nowrap pointer-events-none">
+          HEALING • VOICES
         </div>
-
-        {/* Ambient Heartline Polyline */}
-        <svg className="absolute inset-0 w-full h-full opacity-30" xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M -50,550 L 300,550 L 320,530 L 335,580 L 350,500 L 365,600 L 380,550 L 800,550 L 820,530 L 835,580 L 850,500 L 865,600 L 880,550 L 1400,550 L 1420,530 L 1435,580 L 1450,500 L 1465,600 L 1480,550 L 2200,550"
-            fill="none"
-            stroke="#D97706"
-            strokeWidth="1.8"
-            strokeLinecap="round"
-            className="animate-ecg-dash"
-          />
-        </svg>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="mb-16 text-center max-w-3xl mx-auto space-y-3">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#173C59] text-white text-xs font-mono font-bold shadow-md">
+            <Sparkles className="w-4 h-4 text-[#A9D8E9]" />
+            <span className="uppercase tracking-[0.2em]">Verified Patient Experiences</span>
+          </div>
+
+          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#173C59] tracking-[-0.03em] leading-[1.08]">
+            Restored Health. <br />
+            <span className="font-serif italic font-normal text-[#2788B8]">Renewed Hope.</span>
+          </h2>
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-amber-600 to-rose-600 text-white text-xs font-mono font-medium shadow-md animate-float-bob">
             <Heart className="w-4 h-4 text-white" />
             <span className="uppercase tracking-[0.2em]">Patient Recovery Chronicles</span>

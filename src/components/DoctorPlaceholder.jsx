@@ -16,7 +16,15 @@ export default function DoctorPlaceholder({
   showUploadTrigger = true,
   imageSrc = null // If passed, renders the real photo seamlessly
 }) {
-  const { doctor, clinic } = PULSE_DATA;
+  const doctor = PULSE_DATA?.doctor || PULSE_DATA?.doctors?.[0] || {
+    name: "Dr. Prakash Chand Shahi",
+    title: "Senior Consultant Cardiologist & Interventional Cardiologist",
+    qualifications: "DM Cardiology (PGIMER Chandigarh), MD Medicine (KGMU Lucknow)"
+  };
+  const clinic = PULSE_DATA?.clinic || {
+    name: "Pulse Heart Centre & Multispeciality Hospital",
+    address: "Betiahata, Gorakhpur, Uttar Pradesh, India"
+  };
   const [photo, setPhoto] = useState(imageSrc);
 
   const handleImageUpload = (e) => {

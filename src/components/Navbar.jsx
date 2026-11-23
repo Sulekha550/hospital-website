@@ -49,7 +49,7 @@ export default function Navbar() {
             className="group flex items-center gap-3"
             onClick={() => setMobileMenuOpen(false)}
           >
-            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl overflow-hidden bg-white/95 p-1 border border-purple-200/80 shadow-sm flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform duration-300">
+            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl overflow-hidden bg-white/95 p-1 border border-slate-200 shadow-sm flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform duration-300">
               <img
                 src="/images/p.webp"
                 alt="Pulse Heart Centre Logo"
@@ -57,25 +57,25 @@ export default function Navbar() {
               />
             </div>
             <div className="flex flex-col text-left">
-              <span className="font-extrabold text-xl tracking-[0.2em] text-slate-950 group-hover:text-purple-700 transition-colors uppercase leading-none">
+              <span className="font-extrabold text-xl tracking-[0.2em] text-[#064E3B] group-hover:text-[#059669] transition-colors uppercase leading-none">
                 PULSE
               </span>
-              <span className="text-[10px] tracking-[0.26em] uppercase font-extrabold text-purple-800 font-mono mt-0.5">
+              <span className="text-[10px] tracking-[0.26em] uppercase font-bold text-[#059669] font-mono mt-0.5">
                 Heart Centre
               </span>
             </div>
           </Link>
 
           {/* Desktop Navigation Links */}
-          <div className="hidden md:flex items-center gap-1 px-3 py-1.5 rounded-full bg-slate-100/80 border border-slate-200/80 backdrop-blur-md">
+          <div className="hidden md:flex items-center gap-1 px-3 py-1.5 rounded-full bg-slate-100/90 border border-slate-200/90 backdrop-blur-md">
             {navLinks.map((item) => (
               <NavLink
                 key={item.label}
                 to={item.path}
                 className={({ isActive }) => `px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider transition-all duration-300 ${
                   isActive
-                    ? 'bg-gradient-to-r from-purple-700 via-indigo-600 to-purple-800 text-white shadow-md shadow-purple-500/25 scale-102'
-                    : 'text-slate-700 hover:text-purple-700 hover:bg-white'
+                    ? 'bg-gradient-to-r from-[#064E3B] via-[#047857] to-[#059669] text-white shadow-md shadow-[#064E3B]/25 scale-102'
+                    : 'text-slate-700 hover:text-[#059669] hover:bg-white'
                 }`}
               >
                 {item.label}
@@ -90,18 +90,18 @@ export default function Navbar() {
               title={soundEnabled ? "Mute cardiac audio" : "Enable cardiac bio-rhythm audio"}
               className={`p-2.5 rounded-full border transition-all duration-300 hover:scale-105 active:scale-95 ${
                 soundEnabled 
-                  ? 'bg-purple-100 border-purple-300 text-purple-900 shadow-sm' 
-                  : 'bg-white border-slate-200 text-slate-700 hover:text-purple-700 hover:bg-slate-50'
+                  ? 'bg-emerald-50 border-emerald-300 text-[#064E3B] shadow-sm' 
+                  : 'bg-white border-slate-200 text-slate-700 hover:text-[#059669] hover:bg-slate-50'
               }`}
             >
-              {soundEnabled ? <Volume2 className="w-4 h-4 text-purple-700" /> : <VolumeX className="w-4 h-4" />}
+              {soundEnabled ? <Volume2 className="w-4 h-4 text-[#059669]" /> : <VolumeX className="w-4 h-4" />}
             </button>
 
             <Link
-              to="/contact"
-              className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-gradient-to-r from-purple-700 via-indigo-600 to-purple-800 hover:from-purple-800 hover:to-indigo-700 text-white font-semibold text-xs uppercase tracking-wider shadow-md shadow-purple-500/25 hover:shadow-xl transition-all duration-300 hover:scale-105 hover:-translate-y-0.5"
+              to="/book-appointment"
+              className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-gradient-to-r from-[#064E3B] via-[#047857] to-[#059669] hover:from-[#022C22] hover:via-[#064E3B] hover:to-[#047857] text-white font-semibold text-xs uppercase tracking-wider shadow-md shadow-[#064E3B]/25 hover:shadow-xl transition-all duration-300 hover:scale-105 hover:-translate-y-0.5"
             >
-              <Calendar className="w-3.5 h-3.5 text-purple-200" />
+              <Calendar className="w-3.5 h-3.5 text-amber-300" />
               <span>Book Appointment</span>
             </Link>
           </div>

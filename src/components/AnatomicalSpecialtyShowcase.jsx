@@ -47,7 +47,7 @@ export default function AnatomicalSpecialtyShowcase() {
       title: 'CT Coronary Angiography',
       category: 'NON-INVASIVE 3D IMAGING',
       desc: 'High-speed multislice 3D volumetric reconstruction and coronary calcium Agatston scoring with zero surgical invasiveness.',
-      image: '/images/heart-anatomy.jpg',
+      image: '/images/hospital-facility.jpg',
       stat: 'Zero Downtime',
       statSub: 'Outpatient 3D Volumetric Scan',
       aspect: 'aspect-square',
@@ -265,9 +265,9 @@ export default function AnatomicalSpecialtyShowcase() {
                 </div>
               </div>
 
-              <div className="pt-4 mt-2 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-purple-900 group-hover:text-purple-700">
+              <div className="pt-4 mt-2 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-[#173C59] group-hover:text-[#2788B8]">
                 <span>View Procedure Details</span>
-                <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1.5" />
+                <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1.5 text-[#2788B8]" />
               </div>
             </div>
           ))}
@@ -277,10 +277,10 @@ export default function AnatomicalSpecialtyShowcase() {
         <div className="mt-14 text-center">
           <Link
             to="/treatments"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-purple-700 via-indigo-600 to-purple-800 hover:from-purple-800 hover:to-indigo-700 text-white text-xs font-semibold uppercase tracking-wider shadow-lg shadow-purple-500/25 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 hover:scale-102"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-[#173C59] via-[#1E4D74] to-[#2788B8] hover:from-[#0E2538] hover:to-[#173C59] text-white text-xs font-semibold uppercase tracking-wider shadow-lg shadow-[#173C59]/20 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 hover:scale-102"
           >
             <span>Explore All Specialized Interventions</span>
-            <ArrowRight className="w-4 h-4 text-purple-200" />
+            <ArrowRight className="w-4 h-4 text-[#A9D8E9]" />
           </Link>
         </div>
 

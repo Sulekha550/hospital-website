@@ -34,14 +34,14 @@ export default function HospitalPage() {
       
       {/* 1. Master Editorial Header */}
       <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-purple-700 via-indigo-600 to-purple-800 text-white text-xs font-mono font-medium shadow-md">
-          <Building2 className="w-4 h-4 text-purple-200" />
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-[#173C59] via-[#1E4D74] to-[#2788B8] text-white text-xs font-mono font-medium shadow-md shadow-[#173C59]/20">
+          <Building2 className="w-4 h-4 text-[#A9D8E9]" />
           <span className="uppercase tracking-[0.2em]">Pulse Heart Centre • Betiahata</span>
         </div>
 
         <h1 className="text-4xl sm:text-6xl lg:text-7xl font-semibold text-slate-950 tracking-tight leading-[1.05]">
           Clinical Facilities & <br />
-          <span className="font-serif italic font-normal text-purple-700">Outpatient Architecture</span>
+          <span className="font-serif italic font-normal text-[#173C59]">Outpatient Architecture</span>
         </h1>
 
         <p className="text-base sm:text-lg text-slate-700 font-medium max-w-2xl mx-auto leading-relaxed">
@@ -55,7 +55,7 @@ export default function HospitalPage() {
       {/* 3. Full-Width Clinical Equipment & Facility Gallery */}
       <div className="my-20">
         <div className="mb-10 text-center max-w-2xl mx-auto space-y-2">
-          <span className="text-xs font-mono font-medium uppercase tracking-wider text-purple-800 bg-purple-100/70 px-3 py-1 rounded-full">
+          <span className="text-xs font-mono font-medium uppercase tracking-wider text-[#173C59] bg-sky-100/70 px-3 py-1 rounded-full">
             Clinical Environments
           </span>
           <h2 className="text-3xl sm:text-4xl font-semibold text-slate-950 tracking-tight">
@@ -79,7 +79,7 @@ export default function HospitalPage() {
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-108"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent" />
-                <span className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-white/95 text-[10px] font-mono font-bold text-purple-900 border border-purple-200 shadow-xs">
+                <span className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-white/95 text-[10px] font-mono font-bold text-[#173C59] border border-slate-200 shadow-xs">
                   {item.category}
                 </span>
               </div>
@@ -102,9 +102,9 @@ export default function HospitalPage() {
       </div>
 
       {/* 5. Direct OPD Directions & Priority Booking Callout */}
-      <div className="mt-20 p-8 sm:p-12 rounded-[2.5rem] bg-gradient-to-br from-white via-purple-50/70 to-indigo-50/60 text-slate-900 shadow-layered border-2 border-purple-200/90 text-center max-w-4xl mx-auto space-y-5">
+      <div className="mt-20 p-8 sm:p-12 rounded-[2.5rem] bg-gradient-to-br from-white via-sky-50/50 to-white text-slate-900 shadow-layered border-2 border-slate-200 text-center max-w-4xl mx-auto space-y-5">
         <h3 className="text-3xl sm:text-4xl font-semibold text-slate-950">
-          Visit Pulse Heart Centre in <span className="font-serif italic font-normal text-purple-700">Betiahata, Gorakhpur</span>
+          Visit Pulse Heart Centre in <span className="font-serif italic font-normal text-[#173C59]">Betiahata, Gorakhpur</span>
         </h3>
         <p className="text-sm text-slate-600 max-w-xl mx-auto font-medium leading-relaxed">
           Conveniently located at Betiahata, Gorakhpur. Outpatient consultations run Monday through Saturday from 10:00 AM to 8:00 PM.
@@ -112,16 +112,16 @@ export default function HospitalPage() {
         <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
           <Link
             to="/contact"
-            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-gradient-to-r from-purple-700 via-indigo-600 to-purple-800 hover:from-purple-800 hover:to-indigo-700 text-white text-xs font-semibold uppercase tracking-wider shadow-md shadow-purple-500/25 transition-all"
+            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-gradient-to-r from-[#173C59] via-[#1E4D74] to-[#2788B8] hover:from-[#0E2538] hover:to-[#173C59] text-white text-xs font-semibold uppercase tracking-wider shadow-md shadow-[#173C59]/20 transition-all"
           >
-            <Calendar className="w-4 h-4 text-purple-200" />
+            <Calendar className="w-4 h-4 text-[#A9D8E9]" />
             <span>Book Consultation Pass</span>
           </Link>
           <a
             href="tel:+919876543210"
-            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-white hover:bg-purple-50 text-purple-900 border-2 border-purple-200 text-xs font-semibold uppercase tracking-wider transition-all shadow-xs"
+            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-white hover:bg-sky-50 text-[#173C59] border-2 border-slate-200 text-xs font-semibold uppercase tracking-wider transition-all shadow-xs"
           >
-            <Phone className="w-4 h-4 text-purple-700" />
+            <Phone className="w-4 h-4 text-[#2788B8]" />
             <span>Emergency / OPD Helpline</span>
           </a>
         </div>

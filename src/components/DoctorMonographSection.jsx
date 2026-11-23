@@ -15,7 +15,15 @@ import { PULSE_DATA } from '../data/pulseData';
  * - Smooth interactive transition across 3 Pillars of Patient Care
  */
 export default function DoctorMonographSection() {
-  const { doctor, clinic } = PULSE_DATA;
+  const doctor = PULSE_DATA?.doctor || PULSE_DATA?.doctors?.[0] || {
+    name: "Dr. Prakash Chand Shahi",
+    experienceYears: "22+",
+    qualifications: [
+      { degree: "DM — Cardiology", institution: "PGIMER Chandigarh" },
+      { degree: "MD — Medicine", institution: "KGMU Lucknow" }
+    ]
+  };
+  const clinic = PULSE_DATA?.clinic || {};
   const [activePillar, setActivePillar] = useState(0);
 
   const pillars = [
@@ -43,29 +51,29 @@ export default function DoctorMonographSection() {
   ];
 
   return (
-    <section className="relative py-28 lg:py-36 overflow-hidden select-none">
+    <section className="relative py-28 lg:py-36 overflow-hidden select-none bg-gradient-to-b from-[#FAF9F6] via-[#F6F4ED] to-[#FBFBFA] border-b border-amber-200/40">
 
       {/* =========================================================================
-          ANIMATED SECTION BACKGROUND: DEEP PLUM, CHAMPAGNE GOLD & ROTATING CAD
+          SECTION 3 DISTINCT BACKGROUND: WARM IVORY, CHAMPAGNE GOLD & ARCHITECTURAL CAD
          ========================================================================= */}
       <div className="absolute inset-0 pointer-events-none -z-10 overflow-hidden">
-        {/* Deep Plum & Vintage Wine Morphing Orb */}
-        <div className="absolute top-1/4 -left-20 w-[700px] h-[700px] rounded-full bg-gradient-to-tr from-purple-900/20 via-[#2E1065]/15 to-amber-200/10 blur-[150px] animate-morph animate-float-1" />
+        {/* Warm Champagne Gold Ambient Light */}
+        <div className="absolute top-1/4 -left-20 w-[650px] h-[650px] rounded-full bg-gradient-to-tr from-[#EBCB91]/25 via-[#FDE68A]/15 to-transparent blur-[140px]" />
 
-        {/* Warm Champagne & Ivory Diffusion */}
-        <div className="absolute bottom-10 right-0 w-[700px] h-[700px] rounded-full bg-gradient-to-bl from-amber-200/25 via-rose-100/15 to-purple-100/20 blur-[150px] animate-float-2" />
+        {/* Soft Warm Ivory Diffusion */}
+        <div className="absolute bottom-10 right-0 w-[650px] h-[650px] rounded-full bg-gradient-to-bl from-[#EBCB91]/20 via-[#FEF3C7]/15 to-transparent blur-[140px]" />
 
         {/* Monumental Watermark Typography */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-serif italic text-[16vw] font-bold text-purple-900/[0.03] whitespace-nowrap pointer-events-none">
-          CLINICIAN • 1999
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-serif italic text-[15vw] font-bold text-[#92400E]/[0.025] whitespace-nowrap pointer-events-none">
+          CLINICIAN • 2002
         </div>
 
         {/* Slowly Rotating Architectural Vector Filigree */}
-        <svg className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] opacity-25 animate-rotate-slow" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="450" cy="450" r="320" fill="none" stroke="#D97706" strokeWidth="0.8" strokeDasharray="6 12" />
-          <circle cx="450" cy="450" r="420" fill="none" stroke="#7C3AED" strokeWidth="0.5" strokeDasharray="10 20" />
-          <line x1="450" y1="20" x2="450" y2="880" stroke="#D97706" strokeWidth="0.4" strokeOpacity="0.4" />
-          <line x1="20" y1="450" x2="880" y2="450" stroke="#7C3AED" strokeWidth="0.4" strokeOpacity="0.4" />
+        <svg className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[850px] opacity-20" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="425" cy="425" r="300" fill="none" stroke="#D97706" strokeWidth="0.8" strokeDasharray="6 12" />
+          <circle cx="425" cy="425" r="390" fill="none" stroke="#B45309" strokeWidth="0.5" strokeDasharray="10 20" />
+          <line x1="425" y1="20" x2="425" y2="830" stroke="#D97706" strokeWidth="0.4" strokeOpacity="0.3" />
+          <line x1="20" y1="425" x2="830" y2="425" stroke="#D97706" strokeWidth="0.4" strokeOpacity="0.3" />
         </svg>
       </div>
 
@@ -73,14 +81,14 @@ export default function DoctorMonographSection() {
 
         {/* Section Header */}
         <div className="mb-16 text-center max-w-3xl mx-auto space-y-3">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-purple-900 to-slate-900 text-white text-xs font-mono font-bold shadow-md animate-float-bob">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#064E3B] text-white text-xs font-mono font-bold shadow-md">
             <Sparkles className="w-4 h-4 text-amber-300" />
             <span className="uppercase tracking-[0.2em]">Physician Monograph • Dr. Prakash Chand Shahi</span>
           </div>
 
-          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-950 tracking-tight leading-[1.08]">
+          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#064E3B] tracking-[-0.03em] leading-[1.08]">
             Two Decades of Dedication to <br />
-            <span className="font-serif italic font-normal text-purple-800">Heart Health & Human Lives</span>
+            <span className="font-serif italic font-normal text-[#B45309]">Heart Health & Human Lives</span>
           </h2>
 
           <p className="text-base sm:text-lg text-slate-700 font-medium max-w-2xl mx-auto leading-relaxed">
@@ -124,7 +132,7 @@ export default function DoctorMonographSection() {
             </div>
 
             {/* Behind Ambient Glow Card */}
-            <div className="absolute -top-4 -left-4 w-full h-full rounded-[2.5rem] bg-gradient-to-br from-amber-200/30 via-purple-300/20 to-transparent -z-10 blur-xl animate-pulse-glow" />
+            <div className="absolute -top-4 -left-4 w-full h-full rounded-[2.5rem] bg-gradient-to-br from-[#173C59]/10 via-[#2788B8]/10 to-transparent -z-10 blur-xl animate-pulse-glow" />
 
           </div>
 
@@ -133,7 +141,7 @@ export default function DoctorMonographSection() {
 
             {/* Authoritative Profile Statement */}
             <div className="space-y-3">
-              <span className="inline-block text-xs font-mono font-bold uppercase tracking-wider text-purple-900 bg-purple-100/80 px-3.5 py-1.5 rounded-full border border-purple-200">
+              <span className="inline-block text-xs font-mono font-bold uppercase tracking-wider text-[#064E3B] bg-emerald-50 px-3.5 py-1.5 rounded-full border border-emerald-200">
                 Founding Director & Chief Cardiologist
               </span>
 
@@ -158,7 +166,7 @@ export default function DoctorMonographSection() {
                   <Heart className="w-4 h-4 text-rose-600 animate-pulse" />
                   <span>3 Pillars of Clinical Practice</span>
                 </span>
-                <span className="text-[11px] font-mono font-bold text-purple-700">
+                <span className="text-[11px] font-mono font-bold text-[#059669]">
                   Select Dimension
                 </span>
               </div>
@@ -171,7 +179,7 @@ export default function DoctorMonographSection() {
                     onClick={() => setActivePillar(idx)}
                     className={`py-2 px-3 rounded-xl text-xs font-semibold transition-all duration-300 text-center ${
                       activePillar === idx
-                        ? 'bg-gradient-to-r from-purple-700 to-indigo-700 text-white shadow-md scale-102'
+                        ? 'bg-gradient-to-r from-[#064E3B] via-[#047857] to-[#059669] text-white shadow-md scale-102'
                         : 'bg-slate-50 hover:bg-slate-100 text-slate-700 border border-slate-200'
                     }`}
                   >
@@ -182,7 +190,7 @@ export default function DoctorMonographSection() {
               </div>
 
               {/* Active Dimension Details with Fade-in Animation */}
-              <div className="p-4 rounded-xl bg-purple-50/60 border border-purple-100 space-y-2 transition-all duration-400">
+              <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2 transition-all duration-400">
                 <div className="flex items-center justify-between">
                   <h4 className="text-sm font-extrabold text-slate-950">
                     {pillars[activePillar].title}
@@ -202,7 +210,7 @@ export default function DoctorMonographSection() {
             <div className="pt-2 flex flex-wrap items-center gap-4">
               <Link
                 to="/about"
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-gradient-to-r from-purple-700 via-indigo-600 to-purple-800 hover:from-purple-800 hover:to-indigo-800 text-white text-xs font-semibold uppercase tracking-wider shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-gradient-to-r from-[#064E3B] via-[#047857] to-[#059669] hover:from-[#022C22] hover:to-[#064E3B] text-white text-xs font-semibold uppercase tracking-wider shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
               >
                 <span>Read Full Pedigree & Experience</span>
                 <ArrowRight className="w-4 h-4 text-amber-300" />
