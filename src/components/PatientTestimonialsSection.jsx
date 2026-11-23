@@ -1,218 +1,220 @@
 import React, { useState } from 'react';
-import { Heart, Sparkles, MessageSquare, Quote, Star, ShieldCheck, ChevronLeft, ChevronRight, UserCheck } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Star, ShieldCheck, Heart, Sparkles, CheckCircle2, Quote, UserCheck } from 'lucide-react';
 import { PULSE_DATA } from '../data/pulseData';
+import SectionCinematicVideo from './SectionCinematicVideo';
+import ThreeDImageCard from './ThreeDImageCard';
 
-/**
- * PatientTestimonialsSection
- * Visual & Motion Identity: Editorial Magazine Recovery Narratives
- * Color Palette: Warm Amber, Soft Champagne & Radiant Rose
- * Motion Features:
- * - Breathing golden amber ambient glow
- * - Smooth animated carousel slide transitions
- * - Interactive navigation with progress indicators
- * - Quotation reveal animation
- */
 export default function PatientTestimonialsSection() {
-  const [activeTestimonial, setActiveTestimonial] = useState(0);
+  const [activeStory, setActiveStory] = useState(0);
 
-  const testimonials = [
+  const stories = [
     {
-      id: 1,
-      quote: "When my local physician in Basti suggested open bypass surgery for an 85% LAD blockage, we sought a second opinion with Dr. Shahi at Pulse Heart Centre. He evaluated my angiography with immense clarity and performed a painless transradial angioplasty with a drug-eluting stent. I was comfortably walking 24 hours later.",
-      patient: "Rajendra Nath Tiwari",
-      age: "62 Years",
-      location: "Basti / Gorakhpur",
-      condition: "Severe Exertional Angina & Coronary Stenosis",
-      procedure: "Transradial LAD Balloon Angioplasty & Stenting",
-      outcome: "Full Vessel Patency Restored · Asymptomatic at 3 Years",
-      year: "2024",
+      id: 'story-1',
+      name: 'Ramakant Tripathi',
+      age: '62 Yrs • Gorakhpur',
+      condition: 'Triple Vessel Disease',
+      procedure: 'Transradial Stenting',
+      recovery: 'Discharged in 24 Hrs',
+      doctor: 'Dr. Prakash Chand Shahi',
+      quote: 'Flawless wrist-first angioplasty with two stents. Walking the next morning with zero groin pain.',
+      image: '/images/patient-recovery-story.jpg',
+      stat: '99.4% Flow Restored',
+      badge: 'Cardiac Recovery'
     },
     {
-      id: 2,
-      quote: "My father experienced recurrent dizziness and a heart rate dropping into the 30s. Dr. Prakash Chand Shahi diagnosed complete AV block and implanted a dual-chamber permanent pacemaker at Pulse Heart Centre. His bedside warmth, patience in answering our family's anxieties, and post-procedure care were extraordinary.",
-      patient: "Sunita Verma (Daughter of Patient)",
-      age: "Family Caregiver",
-      location: "Betiahata, Gorakhpur",
-      condition: "Symptomatic High-Grade AV Block & Syncope",
-      procedure: "Dual-Chamber Permanent Pacemaker Implantation",
-      outcome: "Stable 72 BPM Sinus Rhythm Restored · Active Lifestyle",
-      year: "2023",
+      id: 'story-2',
+      name: 'Shanti Devi',
+      age: '68 Yrs • Deoria',
+      condition: 'Complete Heart Block (Bradycardia)',
+      procedure: 'Dual-Chamber Pacemaker (PPI)',
+      recovery: 'Active Lifestyle Restored',
+      doctor: 'Dr. Prakash Chand Shahi',
+      quote: 'Pulse rate was dropping below 35 BPM. Dr. Shahi implanted the pacemaker smoothly; feeling energetic now.',
+      image: '/images/patient-care-recovery.jpg',
+      stat: '100% Sinus Synchrony',
+      badge: 'Pacemaker Recovery'
     },
     {
-      id: 3,
-      quote: "The contrast between an ordinary crowded clinic and Pulse Heart Centre is night and day. Dr. Shahi spends genuine time reviewing your ECG and explaining each medication. He does not rush to procedures if lifestyle and medical therapy are sufficient. That ethical integrity is rare.",
-      patient: "Mohammad Arif Siddiqui",
-      age: "54 Years",
-      location: "Civil Lines, Gorakhpur",
-      condition: "Hypertensive Heart Disease & Dyslipidemia",
-      procedure: "Comprehensive Hemodynamic & CT Calcium Evaluation",
-      outcome: "Blood Pressure Normalized · Controlled Plaque Progression",
-      year: "2024",
-    },
+      id: 'story-3',
+      name: 'Mohd. Tariq Siddiqui',
+      age: '52 Yrs • Basti',
+      condition: 'Acute Anterior Wall STEMI',
+      procedure: 'Primary Transradial Angioplasty',
+      recovery: 'Discharged in 48 Hrs',
+      doctor: 'Dr. Prakash Chand Shahi',
+      quote: 'Reached PULSE Cath-Lab in emergency. Immediate stent opened 100% blocked LAD artery within minutes.',
+      image: '/images/doctor-bedside-consult.jpg',
+      stat: '< 38 Min Door-to-Balloon',
+      badge: 'Emergency Angioplasty'
+    }
   ];
 
-  const outcomes = [
-    { figure: '99.4%', label: 'Procedural Patency', sub: 'Coronary & Peripheral Vessel Flow' },
-    { figure: '98.7%', label: 'Transradial Access', sub: 'Wrist-First Patient Comfort Rate' },
-    { figure: '>4,200', label: 'Stents Deployed', sub: 'Meticulous Intraluminal Apposition' },
-    { figure: '22+', label: 'Years Devotion', sub: 'Bedside Leadership in Gorakhpur' },
-  ];
-
-  const nextTestimonial = () => {
-    setActiveTestimonial((prev) => (prev + 1) % testimonials.length);
-  };
-
-  const prevTestimonial = () => {
-    setActiveTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length);
-  };
-
-  const current = testimonials[activeTestimonial];
+  const current = stories[activeStory];
 
   return (
-    <section className="relative py-28 lg:py-36 overflow-hidden select-none bg-gradient-to-b from-[#FBFBFE] via-[#F6F4FB] to-[#FBFBFA] border-b border-indigo-100/60">
+    <section className="relative py-24 lg:py-32 overflow-hidden select-none bg-gradient-to-b from-[#FAFBF9] via-[#F0FDF4]/25 to-[#FAFBF9]">
       
       {/* =========================================================================
-          DISTINCT SECTION 8 BACKGROUND: WARM IVORY, LAVENDER & COMPASSIONATE AURA
+          UNIQUE SECTION BACKGROUND: TESTIMONIAL VIDEO & SOUNDWAVE HARMONICS
          ========================================================================= */}
-      <div className="absolute inset-0 pointer-events-none -z-10 overflow-hidden">
-        {/* Soft Lavender Accent Glow */}
-        <div className="absolute top-1/4 -left-20 w-[650px] h-[650px] rounded-full bg-[#AFA0E9]/18 blur-[150px]" />
-        
-        {/* Soft Medical Sky Diffusion */}
-        <div className="absolute bottom-10 right-10 w-[600px] h-[600px] rounded-full bg-[#2788B8]/10 blur-[150px]" />
+      <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
+        {/* Ambient Video Background Layer */}
+        <div className="absolute inset-0 z-0 opacity-20 mix-blend-multiply overflow-hidden">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="metadata"
+            className="w-full h-full object-cover scale-105"
+          >
+            <source src="/videos/testimonials-stories.mp4" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-gradient-to-b from-[#FAFBF9]/80 via-transparent to-[#FAFBF9]/90" />
+        </div>
 
-        {/* Monumental Watermark Typography */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-serif italic text-[16vw] text-[#173C59]/[0.02] whitespace-nowrap pointer-events-none">
-          HEALING • VOICES
+        {/* Luminous Glow Spheres */}
+        <div className="absolute top-1/4 -left-20 w-[600px] h-[600px] bg-gradient-to-tr from-[#059669]/20 via-teal-300/15 to-transparent rounded-full blur-[140px]" />
+        <div className="absolute bottom-10 -right-20 w-[600px] h-[600px] bg-gradient-to-bl from-amber-400/15 via-rose-300/10 to-transparent rounded-full blur-[140px]" />
+
+        {/* Dynamic Heartbeat Soundwave Harmonics */}
+        <svg className="absolute inset-0 w-full h-full opacity-25" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="soundwaveGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#047857" stopOpacity="0.2" />
+              <stop offset="50%" stopColor="#059669" stopOpacity="0.8" />
+              <stop offset="100%" stopColor="#F59E0B" stopOpacity="0.3" />
+            </linearGradient>
+          </defs>
+          <path
+            d="M 0,260 Q 300,180 600,260 T 1200,260 T 1800,260"
+            fill="none"
+            stroke="url(#soundwaveGrad)"
+            strokeWidth="2"
+            strokeDasharray="6 6"
+            className="animate-flow-dash"
+          />
+          <path
+            d="M 0,480 Q 400,560 800,480 T 1600,480"
+            fill="none"
+            stroke="#047857"
+            strokeWidth="1.5"
+            strokeDasharray="4 8"
+          />
+        </svg>
+
+        {/* Sweeping Laser Beam in Testimonials Section */}
+        <div className="absolute inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-[#10B981] to-transparent shadow-[0_0_15px_#059669] opacity-40 animate-laser-v pointer-events-none" />
+
+        {/* Rotating CAD Precision Ring */}
+        <div className="absolute -bottom-16 -left-16 w-80 h-80 rounded-full border border-[#059669]/20 hidden lg:block">
+          <div className="absolute inset-4 rounded-full border border-dashed border-[#10B981]/30 animate-gentle-cw" />
+        </div>
+
+        {/* Floating Medical Crosses */}
+        <div className="absolute top-16 right-16 text-[#059669]/30 font-mono text-base font-bold animate-medical-cross-1 select-none">+</div>
+        <div className="absolute bottom-20 left-12 text-[#059669]/25 font-mono text-base font-bold animate-medical-cross-2 select-none">+</div>
+
+        {/* Big Watermark */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[16vw] font-black text-[#064E3B]/[0.02] tracking-tighter uppercase select-none">
+          RECOVERY
         </div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Section Header */}
-        <div className="mb-16 text-center max-w-3xl mx-auto space-y-3">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#173C59] text-white text-xs font-mono font-bold shadow-md">
-            <Sparkles className="w-4 h-4 text-[#A9D8E9]" />
-            <span className="uppercase tracking-[0.2em]">Verified Patient Experiences</span>
+        {/* Header with Doctor Stewardship Stamp */}
+        <div className="text-center max-w-2xl mx-auto mb-14 space-y-3">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#F0FDF4]/80 border border-[#A7F3D0] text-[#064E3B] text-xs font-mono font-bold shadow-xs">
+            <Heart className="w-3.5 h-3.5 text-rose-600 fill-rose-600 animate-pulse" />
+            <span className="uppercase tracking-widest">Verified Clinical Outcomes</span>
           </div>
 
-          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#173C59] tracking-[-0.03em] leading-[1.08]">
-            Restored Health. <br />
-            <span className="font-serif italic font-normal text-[#2788B8]">Renewed Hope.</span>
+          <h2 className="text-3xl sm:text-5xl font-extrabold text-[#064E3B] tracking-tight">
+            Patient Stories &amp; <span className="font-serif italic font-normal text-[#047857]">Recovery Journeys</span>
           </h2>
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-amber-600 to-rose-600 text-white text-xs font-mono font-medium shadow-md animate-float-bob">
-            <Heart className="w-4 h-4 text-white" />
-            <span className="uppercase tracking-[0.2em]">Patient Recovery Chronicles</span>
+
+          <div className="flex items-center justify-center gap-2 pt-1">
+            <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-[#A7F3D0] shadow-xs">
+              <div className="w-6 h-6 rounded-full bg-gradient-to-br from-[#064E3B] to-[#047857] flex items-center justify-center text-[#A7F3D0] border border-[#A7F3D0]">
+                <ShieldCheck className="w-3.5 h-3.5" />
+              </div>
+              <span className="text-[11px] font-bold text-[#064E3B]">Under Clinical Direction of Dr. Prakash Chand Shahi</span>
+            </div>
           </div>
-
-          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-semibold text-slate-950 tracking-tight leading-[1.08]">
-            Restoring Life, Rhythm & <br />
-            <span className="font-serif italic font-normal text-amber-800">Peace of Mind for Families</span>
-          </h2>
-
-          <p className="text-base sm:text-lg text-slate-700 font-medium max-w-2xl mx-auto leading-relaxed">
-            Authentic experiences from patients and families treated by Dr. Prakash Chand Shahi at Pulse Heart Centre, Betiahata.
-          </p>
         </div>
 
-        {/* Master Testimonial Editorial Spread with Smooth Slider */}
-        <div className="relative rounded-[2.5rem] bg-gradient-to-br from-white via-amber-50/20 to-white border-2 border-amber-200/80 shadow-layered p-8 sm:p-12 max-w-5xl mx-auto text-left transition-all duration-400 hover:shadow-2xl">
+        {/* 90% Visual Showcase: Grand Interactive Story Card */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center max-w-6xl mx-auto">
           
-          <div className="flex flex-col md:flex-row items-start justify-between gap-6 pb-6 border-b border-amber-100">
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-2xl bg-amber-500/20 border border-amber-400/40 flex items-center justify-center text-amber-800 font-serif italic text-2xl font-bold">
-                “
-              </div>
-              <div>
-                <span className="text-xs font-mono font-medium uppercase tracking-wider text-amber-900 block">
-                  Verified Case Study • {current.year}
-                </span>
-                <span className="text-xs text-slate-500 font-medium">
-                  Diagnosis: <strong className="text-slate-900">{current.condition}</strong>
-                </span>
-              </div>
-            </div>
+          {/* Left: Large High-Resolution Patient Recovery Imagery in 3D */}
+          <div className="lg:col-span-7">
+            <ThreeDImageCard
+              key={current.id}
+              src={current.image}
+              alt={current.name}
+              aspectRatio="aspect-[16/10] sm:aspect-[16/11]"
+              badge={current.badge}
+              stat={current.stat}
+              statSub={`${current.condition} • ${current.recovery}`}
+              title={`${current.name} (${current.age}) — ${current.doctor}`}
+            />
+          </div>
 
-            {/* Interactive Carousel Navigation */}
-            <div className="flex items-center gap-3">
-              <div className="flex items-center gap-1.5 mr-2">
-                {testimonials.map((_, i) => (
-                  <button
-                    key={i}
-                    onClick={() => setActiveTestimonial(i)}
-                    aria-label={`Go to slide ${i + 1}`}
-                    className={`h-2 rounded-full transition-all duration-300 ${
-                      activeTestimonial === i
-                        ? 'w-6 bg-amber-600'
-                        : 'w-2 bg-slate-300 hover:bg-slate-400'
-                    }`}
-                  />
+          {/* Right: Minimal Punchy Testimonial Quote & Switchers */}
+          <div className="lg:col-span-5 space-y-6">
+            <motion.div
+              key={current.id + '-quote'}
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="p-8 rounded-[2rem] bg-white border-2 border-[#A7F3D0]/90 shadow-xl space-y-4 text-left relative"
+            >
+              <Quote className="w-10 h-10 text-[#A7F3D0] absolute top-6 right-6 -z-0" />
+              
+              <div className="flex items-center gap-1 text-amber-400 relative z-10">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-4 h-4 fill-amber-400" />
                 ))}
+                <span className="text-xs font-bold text-slate-700 ml-2">5.0 Verified Care</span>
               </div>
 
-              <button
-                onClick={prevTestimonial}
-                aria-label="Previous testimonial"
-                className="w-10 h-10 rounded-full bg-white hover:bg-slate-50 border border-slate-200 flex items-center justify-center text-slate-700 hover:text-slate-950 shadow-xs transition-all hover:scale-105 active:scale-95"
-              >
-                <ChevronLeft className="w-4 h-4" />
-              </button>
-              <button
-                onClick={nextTestimonial}
-                aria-label="Next testimonial"
-                className="w-10 h-10 rounded-full bg-slate-950 hover:bg-slate-800 text-white flex items-center justify-center shadow-md transition-all hover:scale-105 active:scale-95"
-              >
-                <ChevronRight className="w-4 h-4" />
-              </button>
+              <p className="text-base sm:text-lg font-medium text-slate-800 leading-snug relative z-10 italic">
+                "{current.quote}"
+              </p>
+
+              <div className="pt-2 border-t border-slate-100 flex items-center justify-between relative z-10">
+                <div>
+                  <span className="text-xs font-bold text-[#064E3B] block">{current.procedure}</span>
+                  <span className="text-[11px] font-mono text-[#047857] font-semibold">{current.recovery}</span>
+                </div>
+                <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#F0FDF4] text-[#064E3B] text-[10px] font-bold">
+                  <UserCheck className="w-3.5 h-3.5" />
+                  <span>Clinical Case File</span>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Quick Selectors */}
+            <div className="flex gap-3">
+              {stories.map((s, idx) => (
+                <button
+                  key={s.id}
+                  onClick={() => setActiveStory(idx)}
+                  className={`flex-1 p-3 rounded-2xl border-2 transition-all text-left ${
+                    activeStory === idx
+                      ? 'bg-white border-[#059669] shadow-md ring-2 ring-emerald-200'
+                      : 'bg-white/70 border-slate-200 hover:border-[#A7F3D0]'
+                  }`}
+                >
+                  <span className="text-[10px] font-mono font-bold text-[#064E3B] block">CASE 0{idx + 1}</span>
+                  <span className="text-xs font-bold text-slate-900 truncate block">{s.name.split(' ')[0]}</span>
+                </button>
+              ))}
             </div>
           </div>
 
-          {/* Testimonial Quote with Fade In */}
-          <div className="py-8 space-y-6">
-            <p className="text-lg sm:text-2xl font-serif italic text-slate-900 leading-relaxed font-normal transition-opacity duration-300">
-              "{current.quote}"
-            </p>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4 border-t border-amber-100">
-              <div className="space-y-1">
-                <span className="text-base font-semibold text-slate-950 block">
-                  {current.patient}
-                </span>
-                <span className="text-xs text-slate-500 font-mono block">
-                  {current.location} • {current.age}
-                </span>
-              </div>
-
-              <div className="space-y-1 md:text-right">
-                <span className="text-xs font-mono font-medium text-purple-900 block">
-                  {current.procedure}
-                </span>
-                <span className="text-xs font-mono font-medium text-emerald-800 bg-emerald-50 px-2.5 py-0.5 rounded-full inline-block">
-                  {current.outcome}
-                </span>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        {/* Quantitative Clinical Outcome Metrics */}
-        <div className="mt-14 p-6 sm:p-8 rounded-[2rem] bg-white border-2 border-slate-200 shadow-md max-w-5xl mx-auto">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
-            {outcomes.map((stat, idx) => (
-              <div key={idx} className="space-y-1 group cursor-default">
-                <span className="text-3xl sm:text-4xl font-semibold text-slate-950 font-serif italic block transition-transform duration-300 group-hover:scale-110 group-hover:text-amber-700">
-                  {stat.figure}
-                </span>
-                <span className="text-xs font-medium text-slate-800 uppercase tracking-wide block">
-                  {stat.label}
-                </span>
-                <span className="text-[11px] font-medium text-slate-500 block">
-                  {stat.sub}
-                </span>
-              </div>
-            ))}
-          </div>
         </div>
 
       </div>

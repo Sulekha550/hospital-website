@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, Link, useNavigate } from 'react-router-dom';
-import { Activity, Menu, X, Calendar, Volume2, VolumeX, ArrowRight } from 'lucide-react';
+import { Activity, Menu, X, Calendar, Volume2, VolumeX, ArrowRight, Stethoscope } from 'lucide-react';
 import { pulseAudio } from '../utils/soundEffects';
 
 export default function Navbar() {
@@ -39,7 +39,7 @@ export default function Navbar() {
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-3.5 px-4 sm:px-8 select-none">
       <div className="max-w-7xl mx-auto">
         <nav className={`flex items-center justify-between px-5 sm:px-7 py-2.5 rounded-full transition-all duration-300 ${scrolled
-          ? 'bg-white/95 backdrop-blur-2xl border border-white/90 shadow-[0_15px_35px_rgba(109,40,217,0.08)]'
+          ? 'bg-white/95 backdrop-blur-2xl border border-white/90 shadow-[0_15px_35px_rgba(6,78,59,0.08)]'
           : 'bg-white/80 backdrop-blur-xl border border-white/90 shadow-sm'
           }`}>
 
@@ -66,16 +66,27 @@ export default function Navbar() {
             </div>
           </Link>
 
+          {/* Lead Doctor Identification Pill (With Stethoscope Crest) */}
+          <Link
+            to="/about"
+            className="hidden xl:flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-[11px] font-mono text-[#064E3B] font-bold hover:bg-emerald-100/80 transition-colors shadow-2xs"
+          >
+            <div className="w-5 h-5 rounded-full bg-gradient-to-br from-[#064E3B] to-[#047857] flex items-center justify-center text-white">
+              <Stethoscope className="w-3 h-3" />
+            </div>
+            <span>Dr. Prakash Chand Shahi • DM (PGIMER)</span>
+          </Link>
+
           {/* Desktop Navigation Links */}
           <div className="hidden md:flex items-center gap-1 px-3 py-1.5 rounded-full bg-slate-100/90 border border-slate-200/90 backdrop-blur-md">
             {navLinks.map((item) => (
               <NavLink
                 key={item.label}
                 to={item.path}
-                className={({ isActive }) => `px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider transition-all duration-300 ${
+                className={({ isActive }) => `px-4 py-1.5 rounded-full text-xs font-bold tracking-wider transition-all duration-300 ${
                   isActive
                     ? 'bg-gradient-to-r from-[#064E3B] via-[#047857] to-[#059669] text-white shadow-md shadow-[#064E3B]/25 scale-102'
-                    : 'text-slate-700 hover:text-[#059669] hover:bg-white'
+                    : 'text-slate-700 hover:text-[#059669] hover:bg-white/80'
                 }`}
               >
                 {item.label}
@@ -99,7 +110,7 @@ export default function Navbar() {
 
             <Link
               to="/book-appointment"
-              className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-gradient-to-r from-[#064E3B] via-[#047857] to-[#059669] hover:from-[#022C22] hover:via-[#064E3B] hover:to-[#047857] text-white font-semibold text-xs uppercase tracking-wider shadow-md shadow-[#064E3B]/25 hover:shadow-xl transition-all duration-300 hover:scale-105 hover:-translate-y-0.5"
+              className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-gradient-to-r from-[#064E3B] via-[#047857] to-[#059669] hover:from-[#022C22] hover:via-[#064E3B] hover:to-[#047857] text-white font-bold text-xs uppercase tracking-wider shadow-md shadow-[#064E3B]/25 hover:shadow-xl transition-all duration-300 hover:scale-105 hover:-translate-y-0.5 border border-emerald-400/30"
             >
               <Calendar className="w-3.5 h-3.5 text-amber-300" />
               <span>Book Appointment</span>
@@ -127,18 +138,18 @@ export default function Navbar() {
                 key={item.label}
                 to={item.path}
                 onClick={() => setMobileMenuOpen(false)}
-                className="block px-4 py-2.5 rounded-2xl text-xs font-bold uppercase tracking-wider text-slate-800 hover:bg-purple-50 hover:text-purple-700 transition-colors text-left"
+                className="block px-4 py-2.5 rounded-2xl text-xs font-bold uppercase tracking-wider text-slate-800 hover:bg-[#F0FDF4] hover:text-[#064E3B] transition-colors text-left"
               >
                 {item.label}
               </Link>
             ))}
             <div className="pt-2 border-t border-slate-100">
               <Link
-                to="/contact"
+                to="/book-appointment"
                 onClick={() => setMobileMenuOpen(false)}
-                className="w-full py-3 rounded-full bg-slate-950 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-md"
+                className="w-full py-3 rounded-full bg-gradient-to-r from-[#064E3B] via-[#047857] to-[#059669] text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-md shadow-[#064E3B]/20"
               >
-                <Calendar className="w-4 h-4 text-purple-300" />
+                <Calendar className="w-4 h-4 text-amber-300" />
                 <span>Book Priority Appointment</span>
               </Link>
             </div>

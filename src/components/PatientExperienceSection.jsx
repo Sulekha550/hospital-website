@@ -1,6 +1,7 @@
 import React from 'react';
 import { ClipboardList, CheckCircle2, Sparkles } from 'lucide-react';
 import { PULSE_DATA } from '../data/pulseData';
+import SectionCinematicVideo from './SectionCinematicVideo';
 
 export default function PatientExperienceSection({ onBookClick }) {
   const { patientJourney } = PULSE_DATA;
@@ -15,7 +16,19 @@ export default function PatientExperienceSection({ onBookClick }) {
   ];
 
   return (
-    <section id="patient-experience" className="relative py-16 lg:py-24 overflow-hidden">
+    <section id="patient-experience" className="relative py-16 lg:py-24 overflow-hidden bg-gradient-to-b from-[#FAFBF9] via-purple-50/25 to-[#FAFBF9]">
+      {/* Animated Acoustic Resonance Ripple Background */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
+        <svg className="absolute -top-20 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] opacity-25" viewBox="0 0 1000 600" fill="none">
+          <circle cx="500" cy="300" r="100" stroke="#9333EA" strokeWidth="1" strokeDasharray="4 6" className="animate-spin" style={{ animationDuration: '30s' }} />
+          <circle cx="500" cy="300" r="200" stroke="#A855F7" strokeWidth="1.2" strokeDasharray="6 8" />
+          <circle cx="500" cy="300" r="320" stroke="#C084FC" strokeWidth="0.8" />
+          <circle cx="500" cy="300" r="450" stroke="#E9D5FF" strokeWidth="0.8" strokeDasharray="3 3" />
+        </svg>
+        <div className="absolute top-1/3 left-10 w-96 h-96 bg-purple-400/15 rounded-full blur-[110px]" />
+        <div className="absolute bottom-10 right-10 w-96 h-96 bg-sky-400/15 rounded-full blur-[110px]" />
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-8 relative z-10">
         
         {/* Section Header */}
@@ -108,7 +121,7 @@ export default function PatientExperienceSection({ onBookClick }) {
               </div>
             </div>
 
-            <div className="lg:col-span-7">
+            <div className="lg:col-span-7 space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {preVisitDocuments.map((doc, idx) => (
                   <div 
@@ -121,6 +134,20 @@ export default function PatientExperienceSection({ onBookClick }) {
                     </span>
                   </div>
                 ))}
+              </div>
+
+              {/* Patient Care Video Telemetry */}
+              <div className="pt-2">
+                <SectionCinematicVideo
+                  type="patient-care"
+                  videoUrl="/videos/patient-care.mp4"
+                  styleVariant="video-card"
+                  posterImage="/images/patient-care-recovery.jpg"
+                  title="Bedside Consultation & Telemetry Stream"
+                  subtitle="Pulse Heart Centre • Inpatient Care"
+                  specs="Attending Physician: Dr. Prakash Chand Shahi"
+                  aspectRatio="aspect-[16/8]"
+                />
               </div>
             </div>
 

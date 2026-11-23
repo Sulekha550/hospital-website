@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import { Calendar, Clock, Phone, MapPin, ShieldCheck, Heart, Sparkles, CheckCircle2, AlertCircle, ArrowRight, UserCheck, Stethoscope } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { PULSE_DATA } from '../data/pulseData';
 import { pulseAudio } from '../utils/soundEffects';
+import SectionCinematicVideo from './SectionCinematicVideo';
 
 /**
  * AppointmentExperienceSection
@@ -62,51 +64,97 @@ export default function AppointmentExperienceSection() {
     setIsBooked(true);
     pulseAudio.playSuccess();
 
-    // Trigger celebratory confetti
+    // Trigger celebratory confetti in prestigious emerald, pine and gold
     confetti({
       particleCount: 90,
       spread: 75,
       origin: { y: 0.6 },
-      colors: ['#7C3AED', '#38BDF8', '#F59E0B', '#10B981']
+      colors: ['#064E3B', '#047857', '#F59E0B', '#059669', '#D97706']
     });
   };
 
   return (
-    <section id="appointment-experience" className="relative py-24 lg:py-32 overflow-hidden select-none bg-gradient-to-b from-[#0D1E30] via-[#122B45] to-[#0A1827] text-white border-t border-sky-900/60">
+    <section id="appointment-experience" className="relative py-24 lg:py-32 overflow-hidden select-none bg-gradient-to-b from-[#FAFBF9] via-[#F0FDF4]/20 to-[#FAFBF9] text-slate-900 border-t border-[#A7F3D0]/60">
 
       {/* =========================================================================
-          DISTINCT SECTION 9 BACKGROUND: DEEP EXECUTIVE NAVY & EMERALD VERIFICATION
+          UNIQUE SECTION 9 BACKGROUND: AMBIENT APPOINTMENT VIDEO + BOARDING PASS HUD
          ========================================================================= */}
-      <div className="absolute inset-0 pointer-events-none -z-10 overflow-hidden">
-        {/* Deep Medical Sapphire Glow */}
-        <div className="absolute top-10 right-10 w-[600px] h-[600px] bg-[#2788B8]/15 rounded-full blur-[150px]" />
+      <div className="absolute inset-0 pointer-events-none -z-10 overflow-hidden" aria-hidden="true">
+        {/* Ambient 4K Appointment Suite & Triage Video Layer */}
+        <div className="absolute inset-0 -z-10 overflow-hidden opacity-20 mix-blend-multiply">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="metadata"
+            className="w-full h-full object-cover scale-105"
+          >
+            <source src="/videos/appointment-suite.mp4" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-gradient-to-b from-[#FAFBF9]/85 via-transparent to-[#FAFBF9]/90" />
+        </div>
 
-        {/* Emerald Healing Verification Glow */}
-        <div className="absolute bottom-10 left-10 w-[550px] h-[550px] bg-[#10B981]/15 rounded-full blur-[160px]" />
+        {/* Emerald & Warm Gold Ambient Lights */}
+        <div className="absolute -top-24 left-1/4 w-[750px] h-[750px] bg-[#059669]/15 rounded-full blur-[140px]" />
+        <div className="absolute bottom-10 right-10 w-[700px] h-[700px] bg-amber-400/12 rounded-full blur-[130px]" />
 
-        {/* Monumental Watermark Typography */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-sans font-black text-[18vw] text-white/[0.02] whitespace-nowrap pointer-events-none">
-          PRIORITY
+        {/* Digital Boarding Gate Matrix Grid */}
+        <div className="absolute inset-0 bg-[radial-gradient(#04785715_2px,transparent_2px)] bg-[size:32px_32px] opacity-40" />
+
+        {/* Priority Pass Barcode with Active Holographic Scanning Laser */}
+        <div className="absolute -left-10 bottom-6 w-[450px] h-[180px] opacity-40 pointer-events-none">
+          {/* Active Horizontal Holographic Scanner Laser */}
+          <div className="absolute top-4 bottom-8 w-[2px] bg-gradient-to-b from-transparent via-[#047857] to-transparent shadow-[0_0_15px_#059669] animate-laser-h" />
+          
+          <svg className="w-full h-full" viewBox="0 0 450 180" fill="none">
+            <line x1="20" y1="20" x2="20" y2="150" stroke="#047857" strokeWidth="2.5" />
+            <line x1="30" y1="20" x2="30" y2="150" stroke="#047857" strokeWidth="1" />
+            <line x1="45" y1="20" x2="45" y2="150" stroke="#047857" strokeWidth="5" />
+            <line x1="60" y1="20" x2="60" y2="150" stroke="#047857" strokeWidth="1.5" />
+            <line x1="75" y1="20" x2="75" y2="150" stroke="#047857" strokeWidth="3" />
+            <line x1="95" y1="20" x2="95" y2="150" stroke="#047857" strokeWidth="1.5" />
+            <line x1="110" y1="20" x2="110" y2="150" stroke="#047857" strokeWidth="4" />
+            <line x1="130" y1="20" x2="130" y2="150" stroke="#047857" strokeWidth="1.5" />
+            <line x1="150" y1="20" x2="150" y2="150" stroke="#047857" strokeWidth="6" />
+            <line x1="175" y1="20" x2="175" y2="150" stroke="#047857" strokeWidth="2.5" />
+            <line x1="195" y1="20" x2="195" y2="150" stroke="#047857" strokeWidth="1.5" />
+            <line x1="215" y1="20" x2="215" y2="150" stroke="#047857" strokeWidth="4" />
+            <text x="20" y="170" fill="#064E3B" fontSize="11" fontFamily="monospace" fontWeight="bold">GATEWAY: PHC-2026-PRIORITY-OPD</text>
+          </svg>
+        </div>
+
+        {/* Security Watermark Stamp */}
+        <div className="absolute top-12 right-12 text-right font-mono text-[11px] text-[#064E3B]/20 tracking-widest hidden md:block">
+          <div>PULSE OPD PRIORITY CONCIERGE</div>
+          <div>ENCRYPTED TOKEN DISPATCH SYSTEM</div>
+          <div>BETIAHATA CLINIC HUB • GORAKHPUR</div>
         </div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Section Header */}
-        <div className="mb-14 text-center max-w-3xl mx-auto space-y-3">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs font-mono font-bold text-sky-200 shadow-xs">
-            <Calendar className="w-4 h-4 text-[#A9D8E9]" />
-            <span className="uppercase tracking-[0.2em]">Consultation Scheduling & Direct Triage</span>
+        <div className="mb-12 text-center max-w-3xl mx-auto space-y-3">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#F0FDF4]/90 backdrop-blur-md border border-[#A7F3D0] text-xs font-mono font-bold text-[#064E3B] shadow-xs">
+            <Calendar className="w-4 h-4 text-[#047857]" />
+            <span className="uppercase tracking-[0.2em]">Priority Consultation &amp; Direct Triage</span>
           </div>
 
-          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-[-0.03em] leading-[1.08]">
-            Schedule Your Cardiac <br />
-            <span className="font-serif italic font-normal text-[#A9D8E9]">Evaluation Today</span>
+          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#064E3B] tracking-[-0.03em] leading-[1.08]">
+            Direct Consultation with <br />
+            <span className="font-serif italic font-normal text-[#047857]">Dr. Prakash Chand Shahi</span>
           </h2>
 
-          <p className="text-base sm:text-lg text-slate-300 font-light max-w-2xl mx-auto leading-relaxed">
-            Reserve your priority consultation slot with Dr. Prakash Chand Shahi at Pulse Heart Centre, Betiahata. Emergency walk-ins prioritized.
-          </p>
+          <div className="inline-flex items-center gap-3 p-2.5 px-4 rounded-2xl bg-white border-2 border-[#A7F3D0] shadow-sm text-slate-900 text-xs font-medium">
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#064E3B] to-[#047857] border border-[#A7F3D0] flex items-center justify-center text-[#A7F3D0] shrink-0">
+              <Stethoscope className="w-4 h-4 stroke-[1.8]" />
+            </div>
+            <div className="text-left">
+              <span className="font-bold block text-[#064E3B]">Dr. Prakash Chand Shahi • OPD Room 101</span>
+              <span className="text-[10px] text-[#047857] font-mono font-bold">DM Cardiology (PGIMER) • Mon–Sat, 10 AM – 8 PM</span>
+            </div>
+          </div>
         </div>
 
         {/* Master Appointment Composition: Interactive Booking Engine (Left) + Live Digital Pass Slip (Right) */}
@@ -262,6 +310,18 @@ export default function AppointmentExperienceSection() {
           {/* Right Column (5 cols): Live Digital Consultation Pass Preview (Boarding Pass Design) */}
           <div className="lg:col-span-5 space-y-6">
 
+            {/* Live Triage & Priority Booking Video HUD */}
+            <SectionCinematicVideo
+              type="appointment-suite"
+              videoUrl="/videos/appointment-suite.mp4"
+              styleVariant="video-card"
+              posterImage="/images/hospital-facility.jpg"
+              title="Priority OPD Gateway"
+              subtitle="Real-Time Triage & Slot Availability"
+              specs="Gorakhpur Campus • Betiahata Wing"
+              aspectRatio="aspect-[16/8]"
+            />
+
             {/* Real-Time Boarding Pass Slip - Luminous Pearl & Deep Navy */}
             <div className="relative rounded-[2.5rem] bg-gradient-to-br from-white via-slate-50 to-white text-slate-900 shadow-layered border-2 border-slate-200 p-6 sm:p-8 text-left space-y-6 overflow-hidden transition-all duration-400 hover:shadow-2xl">
 
@@ -283,26 +343,31 @@ export default function AppointmentExperienceSection() {
                   </div>
                 </div>
 
-                <span className="px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-300 text-[9px] font-mono font-medium flex items-center gap-1 shadow-xs">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping" />
+                <span className="px-2.5 py-0.5 rounded-full bg-[#F0FDF4] text-[#064E3B] border border-[#A7F3D0] text-[9px] font-mono font-medium flex items-center gap-1 shadow-xs">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#10B981 animate-ping" />
                   <span>LIVE PREVIEW</span>
                 </span>
               </div>
 
-              {/* Physician & Clinic Identity */}
-              <div className="space-y-1 relative z-10">
-                <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#2788B8] block font-bold">
-                  Attending Specialist
-                </span>
-                <h4 className="text-xl font-semibold text-slate-950 tracking-tight">
-                  {doctor.name}
-                </h4>
-                <p className="text-[11px] text-slate-600 font-medium">
-                  Senior Consultant Cardiologist & Interventional Cardiologist
-                </p>
-                <p className="text-[10px] font-mono text-[#173C59] font-bold">
-                  DM Cardiology (PGIMER) • MD Medicine (KGMU)
-                </p>
+              {/* Physician & Clinic Identity with Stethoscope Emblem */}
+              <div className="flex items-center gap-3.5 relative z-10 p-2.5 rounded-2xl bg-slate-50 border border-[#A7F3D0]">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#064E3B] via-[#047857] to-[#047857] border-2 border-[#A7F3D0] flex items-center justify-center text-[#A7F3D0] shrink-0">
+                  <Stethoscope className="w-6 h-6 stroke-[1.8]" />
+                </div>
+                <div className="space-y-0.5 text-left">
+                  <div className="flex items-center gap-1.5">
+                    <span className="text-[10px] font-mono uppercase tracking-wider text-[#064E3B] font-bold">
+                      ATTENDING CARDIOLOGIST
+                    </span>
+                    <ShieldCheck className="w-3.5 h-3.5 text-[#064E3B]" />
+                  </div>
+                  <h4 className="text-sm font-extrabold text-slate-950 tracking-tight leading-tight">
+                    {doctor.name}
+                  </h4>
+                  <p className="text-[10px] font-mono text-[#047857] font-bold">
+                    DM Cardiology (PGIMER) • MD (KGMU Lucknow)
+                  </p>
+                </div>
               </div>
 
               {/* Patient Dynamic Ticket Card */}
@@ -336,8 +401,8 @@ export default function AppointmentExperienceSection() {
               {/* Barcode & Verification */}
               <div className="pt-2 border-t border-slate-200 flex items-center justify-between text-[11px] font-mono relative z-10">
                 <span className="text-slate-500">PASS-ID: PHC-2026-9812</span>
-                <span className="text-emerald-700 font-bold flex items-center gap-1">
-                  <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
+                <span className="text-[#047857] font-bold flex items-center gap-1">
+                  <ShieldCheck className="w-3.5 h-3.5 text-[#047857]" />
                   <span>OPD PRIORITY PASS</span>
                 </span>
               </div>

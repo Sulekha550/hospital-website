@@ -19,7 +19,7 @@ export const PULSE_DATA = {
     experienceYears: "22+",
     experienceText: "22+ Years of Dedicated Clinical Practice",
     location: "Betiahata, Gorakhpur, Uttar Pradesh, India",
-    portraitPlaceholder: "/doctor-portrait.jpg",
+    portraitPlaceholder: null,
     qualifications: [
       {
         degree: "MBBS",
@@ -146,7 +146,7 @@ export const PULSE_DATA = {
       pillColor: "border-[#AFA0E9] text-[#7C3AED]",
       tagline: "Microscopic neurosurgery, hyperacute stroke management, and spinal precision.",
       description: "From hyperacute ischemic stroke thrombolysis within the golden hour to microscopic cranial tumour resection and endoscopic spinal disc decompressive surgeries.",
-      image: "/images/doctor-consulting.jpg",
+      image: "/images/neurology-brain-synapse.jpg",
       icon: "Brain",
       keyProcedures: [
         "Endoscopic Spine Discectomy",
@@ -172,7 +172,7 @@ export const PULSE_DATA = {
       leadDoctor: "Dr. Vikramaditya Rathore",
       leadDegree: "MS Ortho, MCh Ortho (UK)",
       accentColor: "#65BCA6", // Mint
-      accentBg: "bg-emerald-50 text-[#0D9488] border-emerald-200",
+      accentBg: "bg-[#F0FDF4] text-[#0D9488] border-[#A7F3D0]",
       pillColor: "border-[#65BCA6] text-[#0D9488]",
       tagline: "Robotic sub-millimeter joint reconstruction and sports arthroscopy.",
       description: "Pioneering computer-navigated total knee and hip arthroplasty, complex trauma reconstruction, and minimally invasive sports ligament repair for rapid mobility.",
@@ -231,12 +231,12 @@ export const PULSE_DATA = {
       organ: "Stomach",
       leadDoctor: "Dr. Sunita Kulkarni",
       leadDegree: "DM Gastroenterology (KEM Mumbai)",
-      accentColor: "#EBCB91", // Champagne
+      accentColor: "#EBCB91", // Mint
       accentBg: "bg-amber-50 text-[#D97706] border-amber-200",
       pillColor: "border-[#EBCB91] text-[#D97706]",
       tagline: "Advanced therapeutic endoscopy, pancreatic care, and comprehensive liver health.",
       description: "High-definition endoscopic retrograde cholangiopancreatography (ERCP), endoscopic ultrasound (EUS), and clinical management of hepatitis, cirrhosis, and gastrointestinal bleeding.",
-      image: "/images/doctor-portrait.jpg",
+      image: "/images/advanced-mri-scanner.jpg",
       icon: "Apple",
       keyProcedures: [
         "Diagnostic & Therapeutic Upper GI Endoscopy",
@@ -326,7 +326,7 @@ export const PULSE_DATA = {
       pillColor: "border-[#F2A28D] text-[#E11D48]",
       tagline: "High-risk pregnancy management, painless childbirth, and laparoscopic gynaecology.",
       description: "Comprehensive women's healthcare providing advanced fetal medicine 3D/4D ultrasound, natural birth suites, laparoscopic uterine-sparing surgeries, and menopausal health.",
-      image: "/images/doctor-consulting.jpg",
+      image: "/images/hospital-ward-suites.jpg",
       icon: "Heart",
       keyProcedures: [
         "High-Risk Pregnancy & Maternal Critical Care",
@@ -352,7 +352,7 @@ export const PULSE_DATA = {
       leadDoctor: "Dr. Rohini Deshmukh",
       leadDegree: "MD Paediatrics, Fellowship Neonatology (CMC Vellore)",
       accentColor: "#65BCA6", // Mint
-      accentBg: "bg-emerald-50 text-[#0D9488] border-emerald-200",
+      accentBg: "bg-[#F0FDF4] text-[#0D9488] border-[#A7F3D0]",
       pillColor: "border-[#65BCA6] text-[#0D9488]",
       tagline: "Level-3 NICU care, child development, and comprehensive pediatric emergencies.",
       description: "Specialized pediatric and neonatal care for premature neonates, congenital anomalies, pediatric infectious illnesses, asthma, and developmental milestones monitoring.",
@@ -386,7 +386,7 @@ export const PULSE_DATA = {
       pillColor: "border-[#173C59] text-[#173C59]",
       tagline: "Comprehensive diagnostic medicine, multi-morbidity care, and lifestyle reversal.",
       description: "The clinical backbone of PULSE Hospital, addressing complex multi-system disorders, diabetes mellitus, refractory hypertension, infectious diseases, and executive wellness.",
-      image: "/images/doctor-portrait.jpg",
+      image: "/images/operation-theatre-laminar.jpg",
       icon: "Stethoscope",
       keyProcedures: [
         "Comprehensive Diabetes & Metabolic Profiling",
@@ -519,7 +519,7 @@ export const PULSE_DATA = {
       languages: "English, Hindi",
       consultationHours: "Mon – Sat: 10:30 AM – 03:00 PM",
       opdRoom: "Suite 104, Neuro-Spine Pavilion",
-      image: "/images/doctor-consulting.jpg",
+      image: "/images/cardiac-icu-telemetry.jpg",
       bio: "Dr. Ananya Sharma brings over 18 years of high-volume neurosurgical mastery, specializing in microvascular cranial surgeries, endoscopic spinal disc decompressions, and hyperacute stroke interventions. She completed her super-specialty MCh at the prestigious AIIMS New Delhi.",
       achievements: [
         "MCh Neurosurgery from AIIMS New Delhi",
@@ -575,7 +575,7 @@ export const PULSE_DATA = {
       languages: "English, Hindi, Malayalam",
       consultationHours: "Mon – Sat: 09:30 AM – 01:30 PM & 04:30 PM – 07:30 PM",
       opdRoom: "Suite 205, Mother & Child Centre",
-      image: "/images/doctor-portrait.jpg",
+      image: "/images/hospital-facility.jpg",
       bio: "With dual British and Indian board qualifications (MRCOG London & MD), Dr. Meera Nambiar leads the Mother & Child Centre at PULSE. She is widely respected for managing high-risk pregnancies, performing laparoscopic gynecological surgeries, and guiding parents through advanced 3D fetal echocardiography.",
       achievements: [
         "Member of the Royal College of Obstetricians and Gynaecologists (MRCOG UK)",
@@ -704,7 +704,7 @@ export const PULSE_DATA = {
         "Weekly Multidisciplinary Tumour Board Reviews",
         "Preventive Cancer Screening & Genetic Risk Assessment"
       ],
-      image: "/images/doctor-consulting.jpg",
+      image: "/images/ct-calcium-score.jpg",
       accent: "#F2A28D"
     },
     {
@@ -719,7 +719,7 @@ export const PULSE_DATA = {
         "Targeted Fetal Medicine Scans & Prenatal Counseling",
         "Comprehensive Pediatric Vaccination & Wellness Wing"
       ],
-      image: "/images/doctor-portrait.jpg",
+      image: "/images/hospital-ward-suites.jpg",
       accent: "#EBCB91"
     }
   ],
@@ -869,7 +869,7 @@ export const PULSE_DATA = {
       title: "Grand Architectural Atrium & Reception",
       category: "Patient Welcome & Triage",
       description: "Designed with generous natural light, acoustic dampening, and streamlined digital registration kiosks for zero-wait patient admission.",
-      image: "/images/hospital-facility.jpg",
+      image: "/images/hero-architecture-entrance.jpg",
       featured: true
     },
     {
@@ -885,7 +885,7 @@ export const PULSE_DATA = {
       title: "Executive Outpatient Consultation Suites",
       category: "Clinical Consultations",
       description: "Unhurried, private doctor consultation chambers engineered for confidentiality, digital diagnostics display, and patient comfort.",
-      image: "/images/doctor-consulting.jpg",
+      image: "/images/hospital-ward-suites.jpg",
       featured: false
     },
     {
@@ -893,7 +893,7 @@ export const PULSE_DATA = {
       title: "Class-100 Laminar Flow Modular OT Complex",
       category: "Surgical Care",
       description: "Ultra-clean surgical theatres for joint replacements, brain surgeries, and onco-resections with zero particulate contamination.",
-      image: "/images/pacemaker-tech.jpg",
+      image: "/images/operation-theatre-laminar.jpg",
       featured: false
     },
     {
@@ -901,7 +901,7 @@ export const PULSE_DATA = {
       title: "3.0 Tesla Silent MRI & Diagnostic Imaging Center",
       category: "Advanced Imaging",
       description: "High-density imaging wing featuring 3T MRI, 128-Slice Cardiac CT, and digital ultrasound suites for rapid clinical diagnosis.",
-      image: "/images/angiogram-scan.jpg",
+      image: "/images/advanced-mri-scanner.jpg",
       featured: false
     }
   ],
@@ -983,5 +983,37 @@ export const PULSE_DATA = {
       q: "What emergency facilities are available at PULSE Hospital?",
       a: "We maintain a 24/7 dedicated Emergency & Trauma Care Department with instant access to our Flat-Panel Digital Cath Lab, 3T MRI, 128-Slice CT, 24/7 blood bank linkages, and emergency Code-Blue cardiology response."
     }
+  ],
+  cardiacExplorerHotspots: [
+    {
+      id: 'coronary',
+      label: 'LAD Coronary Artery',
+      x: '52%',
+      y: '38%',
+      domain: 'Coronary Angioplasty & Stenting Target',
+      detail: 'Left Anterior Descending branch supplying the anterior left ventricular wall.',
+      chamber: 'Anterior Myocardium',
+      clinicalInsight: 'Primary target vessel for transradial balloon dilation and drug-eluting stenting.',
+    },
+    {
+      id: 'interventional',
+      label: 'Aortic Root & Catheter Access',
+      x: '46%',
+      y: '22%',
+      domain: 'Radial Catheterization Gateway',
+      detail: 'Ascending aorta conduit for balloon dilation and drug-eluting stent deployment.',
+      chamber: 'Ascending Aorta',
+      clinicalInsight: 'Coronary ostium engagement pathway for sub-millimeter stent delivery.',
+    },
+    {
+      id: 'pacemaker',
+      label: 'Sinoatrial (SA) Conduction Node',
+      x: '38%',
+      y: '48%',
+      domain: 'Pacemaker Rhythm Node',
+      detail: 'Primary physiological cardiac pacemaker governing sinus node depolarization.',
+      chamber: 'Right Atrial Junction',
+      clinicalInsight: 'Target conduction area for physiological dual-chamber pacemaker lead positioning.',
+    },
   ]
 };

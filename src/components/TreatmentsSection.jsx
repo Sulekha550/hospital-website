@@ -66,7 +66,7 @@ export default function TreatmentsSection({ onBookClick }) {
                   setAnimStep(1);
                 }}
                 className={`w-full md:w-[36%] text-left p-6 sm:p-7 rounded-[2rem] border-2 transition-all duration-400 ease-out relative overflow-hidden backdrop-blur-xl cursor-pointer ${isSelected
-                  ? 'bg-gradient-to-br from-slate-950 via-[#180E2E] to-slate-950 text-white border-purple-400 shadow-[0_20px_50px_-10px_rgba(124,58,237,0.3)] scale-[1.03] z-20 ring-2 ring-purple-400/40'
+                  ? 'bg-gradient-to-br from-slate-950 via-[#180E2E] to-slate-950 text-white border-purple-400 shadow-[0_20px_50px_-10px_rgba(5, 150, 105, 0.3)] scale-[1.03] z-20 ring-2 ring-purple-400/40'
                   : 'bg-white/85 text-slate-800 border-purple-100 hover:bg-white hover:border-purple-300 hover:scale-[1.02] hover:z-25 shadow-sm z-10'
                   }`}
               >

@@ -2,6 +2,7 @@ import React from 'react';
 import { Building2, MapPin, Clock, Calendar, CheckCircle, Navigation, ArrowRight, ShieldCheck, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { PULSE_DATA } from '../data/pulseData';
+import SectionCinematicVideo from './SectionCinematicVideo';
 
 export default function PulseCentreSection({ onBookClick }) {
   const { clinic, doctor } = PULSE_DATA;
@@ -9,9 +10,28 @@ export default function PulseCentreSection({ onBookClick }) {
   return (
     <section id="centre" className="relative py-16 lg:py-24 overflow-hidden select-none bg-gradient-to-b from-[#FAF5FF]/80 via-[#F3E8FF]/40 to-[#F8FAFC]/60">
 
-      {/* Ambient Floating Atmospheric Glows */}
-      <div className="absolute top-1/4 -left-20 w-[600px] h-[600px] bg-gradient-to-tr from-purple-500/35 via-violet-400/30 to-fuchsia-400/25 rounded-full blur-[85px] pointer-events-none -z-10 animate-float-1" />
-      <div className="absolute bottom-10 -right-20 w-[550px] h-[550px] bg-gradient-to-bl from-indigo-500/35 via-sky-400/30 to-cyan-400/25 rounded-full blur-[85px] pointer-events-none -z-10 animate-float-2" />
+      {/* Animated Architectural Blueprint Grid & Drafting Compass Background */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
+        <svg className="absolute inset-0 w-full h-full opacity-20" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="archBlueprintGrid" width="60" height="60" patternUnits="userSpaceOnUse">
+              <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#173C59" strokeWidth="0.8" strokeDasharray="3 3" />
+              <circle cx="60" cy="0" r="1.5" fill="#173C59" opacity="0.5" />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#archBlueprintGrid)" />
+          {/* Rotating Compass Arc */}
+          <g transform="translate(200, 300)" opacity="0.3">
+            <circle cx="0" cy="0" r="160" fill="none" stroke="#2788B8" strokeWidth="1" strokeDasharray="6 8" />
+            <circle cx="0" cy="0" r="240" fill="none" stroke="#173C59" strokeWidth="0.8" />
+          </g>
+        </svg>
+
+        {/* Ambient Floating Atmospheric Glows */}
+        <div className="absolute top-1/4 -left-20 w-[600px] h-[600px] bg-gradient-to-tr from-purple-500/25 via-violet-400/20 to-fuchsia-400/15 rounded-full blur-[85px] pointer-events-none -z-10 animate-float-1" />
+        <div className="absolute bottom-10 -right-20 w-[550px] h-[550px] bg-gradient-to-bl from-indigo-500/25 via-sky-400/20 to-cyan-400/15 rounded-full blur-[85px] pointer-events-none -z-10 animate-float-2" />
+        <div className="absolute left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-sky-400 to-transparent opacity-35 animate-laser-sweep" />
+      </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-8 relative z-10">
 
@@ -58,23 +78,28 @@ export default function PulseCentreSection({ onBookClick }) {
                 </div>
               </div>
 
-              {/* Real Architectural Hospital Photography */}
-              <div className="w-full lg:w-[420px] h-64 sm:h-72 rounded-2xl overflow-hidden border-2 border-slate-200 shadow-2xl shrink-0 group">
-                <img
-                  src="/images/hospital-facility.jpg"
-                  alt="Pulse Heart Centre Outpatient Facility Architecture"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-108"
+              {/* Real Architectural Hospital Video Presentation */}
+              <div className="w-full lg:w-[420px] rounded-2xl overflow-hidden shrink-0">
+                <SectionCinematicVideo
+                  type="about-hospital"
+                  videoUrl="/videos/about-hospital.mp4"
+                  styleVariant="video-card"
+                  posterImage="/images/hospital-facility.jpg"
+                  title="Pulse Heart Centre Campus"
+                  subtitle="Betiahata Medical Corridor"
+                  specs="Outpatient Cardiology • Ambulatory Wing"
+                  aspectRatio="aspect-[16/11]"
                 />
               </div>
 
             </div>
           </div>
 
-          {/* Overlapping Modular Cards */}
+          {/* Overlapping Modular Cards with Rich Visuals */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 
             {/* Box 1: Clinic Location & Landmark */}
-            <div className="p-7 rounded-[2rem] bg-white border-2 border-slate-200/90 shadow-layered hover:shadow-layered-hover transition-all duration-500 hover:-translate-y-1.5 flex flex-col justify-between text-left">
+            <div className="p-7 rounded-[2rem] bg-white border-2 border-slate-200/90 shadow-layered hover:shadow-layered-hover transition-all duration-500 hover:-translate-y-1.5 flex flex-col justify-between text-left group">
               <div>
                 <div className="flex items-center gap-2 mb-3">
                   <div className="p-2 rounded-xl bg-sky-50 text-[#173C59]">
@@ -84,9 +109,12 @@ export default function PulseCentreSection({ onBookClick }) {
                     Betiahata Medical Corridor
                   </span>
                 </div>
-                <h4 className="text-lg font-semibold text-slate-950 mb-1">
-                  Accessible Central Location
-                </h4>
+                <div className="h-28 rounded-2xl overflow-hidden mb-3 border border-slate-200 relative">
+                  <img src="/images/pulse-betiahata-campus.jpg" alt="Betiahata Campus" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end p-2">
+                    <span className="text-[11px] font-bold text-white">Central Betiahata Access</span>
+                  </div>
+                </div>
                 <p className="text-xs text-slate-600 font-medium leading-relaxed">
                   {clinic.name}, {clinic.address}
                 </p>
@@ -97,8 +125,8 @@ export default function PulseCentreSection({ onBookClick }) {
               </div>
             </div>
 
-            {/* Box 2: Consultation Schedule Table */}
-            <div className="p-7 rounded-[2rem] bg-gradient-to-b from-white via-sky-50/20 to-white border-2 border-slate-200 shadow-layered hover:shadow-layered-hover transition-all duration-500 hover:-translate-y-1.5 flex flex-col justify-between text-left">
+            {/* Box 2: Consultation Schedule Table & Lead Clinician */}
+            <div className="p-7 rounded-[2rem] bg-gradient-to-b from-white via-sky-50/20 to-white border-2 border-slate-200 shadow-layered hover:shadow-layered-hover transition-all duration-500 hover:-translate-y-1.5 flex flex-col justify-between text-left group">
               <div>
                 <div className="flex items-center gap-2 mb-3">
                   <div className="p-2 rounded-xl bg-sky-100 text-[#173C59]">
@@ -108,18 +136,23 @@ export default function PulseCentreSection({ onBookClick }) {
                     OPD Consultation Hours
                   </span>
                 </div>
-                <div className="space-y-2 text-xs">
-                  <div className="flex justify-between py-1.5 border-b border-purple-100">
-                    <span className="text-slate-600 font-medium">Monday — Friday</span>
-                    <span className="text-slate-950 font-bold font-mono">10:00 AM – 8:00 PM</span>
+                <div className="flex items-center gap-2.5 p-2 rounded-xl bg-white border border-[#A7F3D0] mb-3">
+                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#064E3B] to-[#047857] border border-[#A7F3D0] flex items-center justify-center text-[#A7F3D0] shrink-0">
+                    <Clock className="w-5 h-5" />
                   </div>
-                  <div className="flex justify-between py-1.5 border-b border-purple-100">
-                    <span className="text-slate-600 font-medium">Saturday</span>
+                  <div>
+                    <span className="text-xs font-bold text-[#064E3B] block">Dr. Prakash Chand Shahi</span>
+                    <span className="text-[10px] text-[#047857] font-semibold block">Mon–Sat • 10 AM – 8 PM</span>
+                  </div>
+                </div>
+                <div className="space-y-1.5 text-xs">
+                  <div className="flex justify-between py-1 border-b border-purple-100">
+                    <span className="text-slate-600 font-medium">Mon — Sat</span>
                     <span className="text-slate-950 font-bold font-mono">10:00 AM – 8:00 PM</span>
                   </div>
                   <div className="flex justify-between py-1 text-slate-400">
                     <span>Sunday</span>
-                    <span className="text-rose-600 font-bold font-mono">Closed (Emergencies Prioritized)</span>
+                    <span className="text-rose-600 font-bold font-mono">Emergencies Prioritized</span>
                   </div>
                 </div>
               </div>
@@ -129,35 +162,29 @@ export default function PulseCentreSection({ onBookClick }) {
             </div>
 
             {/* Box 3: Diagnostic Modalities Available */}
-            <div className="p-7 rounded-[2rem] bg-white border-2 border-slate-200/90 shadow-layered hover:shadow-layered-hover transition-all duration-500 hover:-translate-y-1.5 flex flex-col justify-between text-left">
+            <div className="p-7 rounded-[2rem] bg-white border-2 border-slate-200/90 shadow-layered hover:shadow-layered-hover transition-all duration-500 hover:-translate-y-1.5 flex flex-col justify-between text-left group">
               <div>
                 <div className="flex items-center gap-2 mb-3">
-                  <div className="p-2 rounded-xl bg-emerald-50 text-emerald-700">
+                  <div className="p-2 rounded-xl bg-[#F0FDF4] text-[#047857]">
                     <ShieldCheck className="w-5 h-5" />
                   </div>
-                  <span className="text-xs font-mono uppercase tracking-wider text-emerald-800 font-bold">
+                  <span className="text-xs font-mono uppercase tracking-wider text-[#064E3B] font-bold">
                     Outpatient Diagnostics
                   </span>
                 </div>
-                <h4 className="text-lg font-semibold text-slate-950 mb-1">
-                  Real-Time Evaluation Suites
-                </h4>
-                <ul className="text-xs text-slate-600 font-medium space-y-1 mt-2">
-                  <li className="flex items-center gap-1.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-                    <span>12-Lead Digital Electrocardiogram (ECG)</span>
-                  </li>
-                  <li className="flex items-center gap-1.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-                    <span>High-Resolution 2D Transthoracic Echo</span>
-                  </li>
-                  <li className="flex items-center gap-1.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-                    <span>Angiography CD Frame-by-Frame Review</span>
-                  </li>
-                </ul>
+                <div className="h-28 rounded-2xl overflow-hidden mb-3 border border-slate-200 relative">
+                  <img src="/images/echo-doppler-scan.jpg" alt="Echo Doppler Scan" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end p-2">
+                    <span className="text-[11px] font-bold text-white">2D Echo & Angio CD Review</span>
+                  </div>
+                </div>
+                <div className="flex flex-wrap gap-1">
+                  <span className="text-[10px] font-medium bg-slate-100 px-2 py-0.5 rounded">12-Lead ECG</span>
+                  <span className="text-[10px] font-medium bg-slate-100 px-2 py-0.5 rounded">2D Echo Doppler</span>
+                  <span className="text-[10px] font-medium bg-slate-100 px-2 py-0.5 rounded">Angiogram CD</span>
+                </div>
               </div>
-              <div className="mt-4 pt-3 border-t border-slate-100 text-xs text-emerald-800 font-bold">
+              <div className="mt-4 pt-3 border-t border-slate-100 text-xs text-[#064E3B] font-bold">
                 Accredited Diagnostic Standards
               </div>
             </div>

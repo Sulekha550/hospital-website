@@ -1,6 +1,7 @@
 import React from 'react';
 import { Award, GraduationCap, ShieldCheck, Heart, Sparkles, BookOpen, CheckCircle2, Building, Calendar, FileText } from 'lucide-react';
 import { PULSE_DATA } from '../data/pulseData';
+import SectionBackgroundMotion from './SectionBackgroundMotion';
 
 /**
  * CredentialsEditorialSection
@@ -73,26 +74,9 @@ export default function CredentialsEditorialSection() {
     <section className="relative py-28 lg:py-36 overflow-hidden select-none">
 
       {/* =========================================================================
-          ANIMATED SECTION BACKGROUND: DEEP INDIGO, OBSIDIAN & ROTATING CREST
+          ANIMATED SECTION BACKGROUND: EMERALD CAD RINGS, LASER & MEDICAL ECG
          ========================================================================= */}
-      <div className="absolute inset-0 pointer-events-none -z-10 overflow-hidden">
-        {/* Deep Indigo & Royal Violet Glow */}
-        <div className="absolute top-1/4 -right-20 w-[700px] h-[700px] rounded-full bg-gradient-to-bl from-indigo-900/20 via-purple-900/15 to-amber-200/10 blur-[150px] animate-morph animate-float-1" />
-
-        {/* Warm Gold & Silver Luster */}
-        <div className="absolute bottom-10 left-10 w-[650px] h-[650px] rounded-full bg-gradient-to-tr from-amber-200/20 via-slate-200/20 to-indigo-100/15 blur-[150px] animate-float-3" />
-
-        {/* Monumental Watermark Typography */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-serif italic text-[17vw] text-indigo-950/[0.03] whitespace-nowrap pointer-events-none">
-          ACADEMIA • PGIMER
-        </div>
-
-        {/* Rotating Heraldic Frame Vectors */}
-        <svg className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] opacity-25 animate-rotate-slow" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="450" cy="450" r="340" fill="none" stroke="#D97706" strokeWidth="0.8" strokeDasharray="8 12" />
-          <circle cx="450" cy="450" r="420" fill="none" stroke="#6366F1" strokeWidth="0.5" />
-        </svg>
-      </div>
+      <SectionBackgroundMotion watermark="PEDIGREE" position="center" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
@@ -113,14 +97,14 @@ export default function CredentialsEditorialSection() {
           </p>
         </div>
 
-        {/* Master Degree Plaques Grid with Hover Elevation */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch mb-16">
+        {/* Master Degree Plaques Grid with 3D Hover Elevation */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch mb-14">
           {degrees.map((deg, idx) => (
             <div
               key={idx}
-              className={`p-8 rounded-[2.5rem] border-2 shadow-layered transition-all duration-500 hover:-translate-y-3 hover:scale-102 hover:shadow-2xl flex flex-col justify-between text-left cursor-default ${deg.borderAccent}`}
+              className={`p-6 sm:p-7 rounded-[2rem] border-2 shadow-md transition-all duration-500 hover:-translate-y-2 hover:scale-102 hover:shadow-2xl flex flex-col justify-between text-left cursor-default ${deg.borderAccent}`}
             >
-              <div className="space-y-4">
+              <div className="space-y-3">
                 <span className={`inline-block px-3 py-1 rounded-full text-[10px] font-mono font-bold border ${deg.badgeColor}`}>
                   {deg.badge}
                 </span>
@@ -129,49 +113,42 @@ export default function CredentialsEditorialSection() {
                   {deg.degree}
                 </h3>
 
-                <div className="space-y-1">
+                <div className="space-y-0.5">
                   <p className="text-sm font-bold text-slate-900">
                     {deg.institution}
                   </p>
-                  <p className="text-xs font-mono text-slate-500">
-                    {deg.location} • <span className="text-indigo-700 font-bold">{deg.status}</span>
+                  <p className="text-xs font-mono text-emerald-800 font-semibold">
+                    {deg.location}
                   </p>
                 </div>
-
-                <p className="text-xs text-slate-600 font-medium leading-relaxed pt-2 border-t border-slate-100">
-                  {deg.details}
-                </p>
               </div>
 
-              <div className="pt-6 mt-4 border-t border-slate-100 flex items-center justify-between">
-                <span className="text-[11px] font-mono font-bold text-slate-500">
+              <div className="pt-4 mt-3 border-t border-slate-100 flex items-center justify-between">
+                <span className="text-[11px] font-mono font-bold text-slate-600">
                   {deg.year}
                 </span>
-                <ShieldCheck className="w-5 h-5 text-emerald-600" />
+                <ShieldCheck className="w-5 h-5 text-[#047857]" />
               </div>
             </div>
           ))}
         </div>
 
-        {/* Ethical Practice Charter & Patient Commitment Banner - Luminous Pearl & Indigo (No Black Box) */}
-        <div className="p-8 sm:p-10 rounded-[2.5rem] bg-gradient-to-r from-indigo-50/70 via-white to-purple-50/70 text-slate-900 shadow-layered border-2 border-indigo-200 text-left transition-all duration-400 hover:shadow-xl">
-          <div className="flex items-center gap-2 mb-6">
+        {/* Ethical Practice Charter & Patient Commitment Banner */}
+        <div className="p-6 sm:p-8 rounded-[2rem] bg-gradient-to-r from-emerald-50/70 via-white to-teal-50/70 text-slate-900 shadow-md border-2 border-emerald-200 text-left transition-all duration-400 hover:shadow-xl">
+          <div className="flex items-center gap-2 mb-4">
             <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
-            <span className="text-xs font-mono font-medium uppercase tracking-wider text-indigo-900">
-              Clinical Practice Standards • Pulse Heart Centre
+            <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#064E3B]">
+              Clinical Standards • Pulse Heart Centre
             </span>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {standards.map((std, i) => (
-              <div key={i} className="space-y-2 group">
-                <h4 className="text-sm font-semibold text-slate-950 flex items-center gap-2 group-hover:text-indigo-700 transition-colors">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+              <div key={i} className="p-3.5 rounded-xl bg-white/90 border border-emerald-100 shadow-xs group hover:border-emerald-300 transition-colors">
+                <h4 className="text-xs sm:text-sm font-bold text-slate-900 flex items-center gap-2 group-hover:text-[#064E3B] transition-colors">
+                  <CheckCircle2 className="w-4 h-4 text-[#047857] shrink-0" />
                   <span>{std.title}</span>
                 </h4>
-                <p className="text-xs text-slate-600 font-medium leading-relaxed">
-                  {std.text}
-                </p>
               </div>
             ))}
           </div>

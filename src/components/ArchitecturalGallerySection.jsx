@@ -1,19 +1,21 @@
 import React, { useState } from 'react';
-import { Eye, X, ArrowRight, Building2, Sparkles, ShieldCheck, ChevronRight, Maximize2, Compass } from 'lucide-react';
+import { Eye, X, ArrowRight, Building2, Sparkles, ShieldCheck, ChevronRight, Maximize2, Compass, Play, Film } from 'lucide-react';
 import { PULSE_DATA } from '../data/pulseData';
+import CinematicVideoPlayerModal from './CinematicVideoPlayerModal';
 
 /**
  * ArchitecturalGallerySection
  * Completely redesigned architectural facility theatre:
  * - Distinct background: Deep Architectural Slate & Blueprint Studio (zero white card grids)
- * - Full-width cinematic panoramic facility stage with live technical HUD overlays
+ * - Full-width cinematic panoramic facility stage with live technical HUD overlays & Ken Burns drone motion
  * - Sleek linear filmstrip facility navigator with seamless cross-fade
- * - High-resolution fullscreen lightbox modal
+ * - 4K High-Resolution Video Player Experience
  */
 export default function ArchitecturalGallerySection() {
   const { hospitalTour } = PULSE_DATA;
   const [activeIndex, setActiveIndex] = useState(0);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
 
   // Technical specifications for each facility
   const facilitySpecs = [
@@ -28,21 +30,59 @@ export default function ArchitecturalGallerySection() {
   const currentSpec = facilitySpecs[activeIndex] || facilitySpecs[0];
 
   return (
-    <section id="gallery" className="relative py-28 lg:py-36 overflow-hidden select-none bg-gradient-to-b from-[#031711] via-[#06241B] to-[#02130E] text-white border-y border-emerald-950/80">
+    <section id="gallery" className="relative py-28 lg:py-36 overflow-hidden select-none bg-gradient-to-b from-[#031711] via-[#06241B] to-[#02130E] text-white border-y border-[#022C22]/80">
       
       {/* =========================================================================
-          DISTINCT VISIBLE BACKGROUND: DEEP OBSIDIAN PINE & EMERALD BLUEPRINT ENVIRONMENT
+          DISTINCT VISIBLE BACKGROUND: AMBIENT FACILITIES VIDEO + BLUEPRINT LASER ENVIRONMENT
          ========================================================================= */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        {/* Ambient 4K Surgical Suite & Campus Walkthrough Video Layer */}
+        <div className="absolute inset-0 -z-10 overflow-hidden opacity-30 mix-blend-screen">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="metadata"
+            className="w-full h-full object-cover filter contrast-125 saturate-150"
+          >
+            <source src="/videos/facilities-walkthrough.mp4" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-gradient-to-b from-[#031711]/75 via-transparent to-[#02130E]/85" />
+        </div>
+
         {/* Luminous Emerald & Warm Amber Depth Glows */}
-        <div className="absolute top-1/4 right-1/4 w-[700px] h-[700px] bg-[#059669]/15 rounded-full blur-[150px]" />
-        <div className="absolute bottom-10 left-10 w-[600px] h-[600px] bg-[#10B981]/10 rounded-full blur-[140px]" />
+        <div className="absolute top-1/4 right-1/4 w-[750px] h-[750px] bg-[#047857]/25 rounded-full blur-[130px] animate-float-1" />
+        <div className="absolute bottom-10 left-10 w-[650px] h-[650px] bg-[#059669]/20 rounded-full blur-[120px] animate-float-2" />
 
         {/* Visible Architectural Blueprint Grid */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#10b98114_1px,transparent_1px),linear-gradient(to_bottom,#10b98114_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_75%_65%_at_50%_40%,#000_65%,transparent_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#05966925_1.5px,transparent_1.5px),linear-gradient(to_bottom,#05966925_1.5px,transparent_1.5px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_70%_at_50%_40%,#000_75%,transparent_100%)]" />
+
+        {/* 1. Active Sweeping Architectural Laser Scanner Beam */}
+        <div className="absolute inset-x-0 h-[3px] bg-gradient-to-r from-transparent via-[#059669] to-transparent shadow-[0_0_20px_#059669] animate-laser-v" />
+
+        {/* 2. Rotating Architectural CAD Masterplan Compass Rings */}
+        <div className="absolute -top-20 -right-20 w-[600px] h-[600px] pointer-events-none hidden md:block">
+          {/* Outer Compass Degree Ring (Clockwise) */}
+          <div className="absolute inset-0 rounded-full border-2 border-dashed border-[#059669]/40 animate-radar-sweep" />
+          {/* Middle Compass Ring (Counter-Clockwise) */}
+          <div className="absolute inset-16 rounded-full border-2 border-[#059669]/50 border-t-emerald-300 animate-rotate-reverse" />
+          {/* Inner Target Crosshairs */}
+          <div className="absolute inset-32 rounded-full border border-[#059669]/35 flex items-center justify-center">
+            <div className="w-full h-px bg-[#059669]/50" />
+            <div className="h-full w-px bg-[#059669]/50 absolute" />
+            <div className="w-5 h-5 rounded-full bg-[#059669]/50 animate-ping absolute" />
+          </div>
+        </div>
+
+        {/* 3. Pulsing Architectural GPS Telemetry Nodes */}
+        <div className="absolute top-24 left-16 flex items-center gap-2 font-mono text-[11px] text-[#059669]/40 hidden sm:flex">
+          <span className="w-2 h-2 rounded-full bg-[#059669] animate-ping" />
+          <span>NABH TERTIARY CLINICAL CAMPUS · 26.7606° N, 83.3732° E</span>
+        </div>
 
         {/* Technical Blueprint Watermark Stamp */}
-        <div className="absolute top-12 right-12 text-right font-mono text-[11px] text-emerald-400/25 tracking-widest hidden md:block">
+        <div className="absolute top-12 right-12 text-right font-mono text-[11px] text-[#059669]/25 tracking-widest hidden md:block">
           <div>PULSE CAMPUS MASTERPLAN</div>
           <div>NABH GRADE-A SPECIFICATION</div>
           <div>COORD: 26.7606° N, 83.3732° E</div>
@@ -54,31 +94,37 @@ export default function ArchitecturalGallerySection() {
         {/* Section Header: Grand Architectural Narrative */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div className="space-y-3">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-950/80 backdrop-blur-md border border-emerald-500/30 text-emerald-300 text-xs font-mono font-bold uppercase tracking-[0.22em] shadow-xs">
-              <Building2 className="w-4 h-4 text-emerald-400" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#022C22]/80 backdrop-blur-md border border-[#059669]/30 text-[#A7F3D0] text-xs font-mono font-bold uppercase tracking-[0.22em] shadow-xs">
+              <Building2 className="w-4 h-4 text-[#059669]" />
               <span>Campus Tour • Architectural Excellence</span>
             </div>
 
             <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-[-0.03em] leading-[1.06]">
               Architectural Mastery. <br />
-              <span className="font-serif italic font-normal text-[#10B981]">Sterile Clinical Precision.</span>
+              <span className="font-serif italic font-normal text-[#059669]">Sterile Clinical Precision.</span>
             </h2>
           </div>
 
-          <p className="text-sm sm:text-base text-slate-300 max-w-md leading-relaxed font-light">
-            Constructed to NABH tertiary hospital standards with HEPA-14 filtered laminar airflow, digital catheterization suites, and unhurried private consultation chambers.
-          </p>
+          <div className="space-y-2">
+            <p className="text-sm sm:text-base text-slate-300 max-w-md leading-relaxed font-semibold">
+              14,000 sq. ft. NABH-certified pavilion with HEPA-14 laminar suites directed by Dr. Prakash Chand Shahi.
+            </p>
+            <div className="flex items-center gap-2 text-xs font-mono text-[#059669]">
+              <span className="w-2 h-2 rounded-full bg-[#059669] animate-pulse" />
+              <span>Betiahata Medical Hub • Gorakhpur</span>
+            </div>
+          </div>
         </div>
 
         {/* Main Panoramic Facility Theatre Stage (Cinematic Widescreen - NO CARDS) */}
         <div className="relative rounded-[2.5rem] overflow-hidden border-2 border-white/20 shadow-2xl aspect-[16/9] sm:aspect-[21/10] bg-slate-950 group">
           
-          {/* Active Facility Photo with Slow Zoom on Hover */}
+          {/* Active Facility Photo with 4K Drone Video Motion */}
           <img
             key={current.id}
             src={current.image}
             alt={current.title}
-            className="w-full h-full object-cover transition-all duration-1000 group-hover:scale-105 filter brightness-[0.88] contrast-[1.05]"
+            className="w-full h-full object-cover animate-ken-burns filter brightness-[0.88] contrast-[1.05]"
           />
 
           {/* Vignette & Ambient Gradient Overlays */}
@@ -87,7 +133,7 @@ export default function ArchitecturalGallerySection() {
           {/* Top Architectural HUD Metadata */}
           <div className="absolute top-5 left-5 right-5 flex items-center justify-between z-20 text-white font-mono text-[11px]">
             <div className="flex items-center gap-3">
-              <span className="px-3.5 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-white/20 font-bold tracking-wider text-sky-300">
+              <span className="px-3.5 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-white/20 font-bold tracking-wider text-[#A7F3D0]">
                 0{activeIndex + 1} / 0{hospitalTour.length} • {current.category}
               </span>
               <span className="px-3 py-1.5 rounded-full bg-black/40 backdrop-blur-md border border-white/10 hidden sm:inline-block text-slate-300">
@@ -96,10 +142,19 @@ export default function ArchitecturalGallerySection() {
             </div>
 
             <div className="flex items-center gap-2">
-              <span className="px-3 py-1.5 rounded-full bg-emerald-950/80 backdrop-blur-md border border-emerald-500/30 text-emerald-400 font-bold hidden sm:flex items-center gap-1.5">
+              <span className="px-3 py-1.5 rounded-full bg-[#022C22]/80 backdrop-blur-md border border-[#059669]/30 text-[#059669] font-bold hidden sm:flex items-center gap-1.5">
                 <ShieldCheck className="w-3.5 h-3.5" />
                 <span>{currentSpec.standard}</span>
               </span>
+
+              <button
+                onClick={() => setIsVideoModalOpen(true)}
+                className="px-3.5 py-1.5 rounded-full bg-[#10B981]/90 hover:bg-[#059669] text-slate-950 font-sans text-xs font-bold flex items-center gap-1.5 shadow-md transition-all"
+                title="Play Video Tour"
+              >
+                <Play className="w-3.5 h-3.5 fill-current" />
+                <span>Video Reel</span>
+              </button>
 
               <button
                 onClick={() => setIsLightboxOpen(true)}
@@ -112,11 +167,22 @@ export default function ArchitecturalGallerySection() {
             </div>
           </div>
 
+          {/* Center Play Video Action Overlay */}
+          <div className="absolute inset-0 flex items-center justify-center z-15 pointer-events-none">
+            <button
+              onClick={() => setIsVideoModalOpen(true)}
+              className="pointer-events-auto p-4 sm:p-5 rounded-full bg-[#10B981]/90 hover:bg-[#059669] text-slate-950 shadow-2xl hover:scale-110 transition-all duration-300 ring-4 ring-emerald-400/40 backdrop-blur-md flex items-center gap-2.5"
+            >
+              <Play className="w-6 h-6 fill-current ml-0.5" />
+              <span className="font-bold text-xs uppercase tracking-wider pr-1 hidden sm:inline">Watch 4K Video Tour</span>
+            </button>
+          </div>
+
           {/* Center Blueprint Crosshair (Architectural Precision Touch) */}
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-10 opacity-25">
-            <div className="w-28 h-28 border border-emerald-400 rounded-full flex items-center justify-center">
-              <div className="w-full h-px bg-emerald-400" />
-              <div className="h-full w-px bg-emerald-400 absolute" />
+            <div className="w-28 h-28 border border-[#059669] rounded-full flex items-center justify-center">
+              <div className="w-full h-px bg-[#059669]" />
+              <div className="h-full w-px bg-[#059669] absolute" />
             </div>
           </div>
 
@@ -124,7 +190,7 @@ export default function ArchitecturalGallerySection() {
           <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-10 z-20 text-white space-y-2">
             <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4">
               <div className="space-y-1">
-                <span className="text-xs font-mono font-bold tracking-[0.25em] text-[#10B981] uppercase block">
+                <span className="text-xs font-mono font-bold tracking-[0.25em] text-[#059669] uppercase block">
                   {currentSpec.airQuality}
                 </span>
                 <h3 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
@@ -138,7 +204,7 @@ export default function ArchitecturalGallerySection() {
               <div className="shrink-0 flex items-center gap-2">
                 <button
                   onClick={() => setIsLightboxOpen(true)}
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs uppercase tracking-wider shadow-lg shadow-emerald-500/25 transition-all"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#10B981] hover:bg-[#059669] text-slate-950 font-bold text-xs uppercase tracking-wider shadow-lg shadow-emerald-500/25 transition-all"
                 >
                   <Eye className="w-4 h-4 text-slate-950" />
                   <span>Inspect High-Res Facility</span>
@@ -150,7 +216,7 @@ export default function ArchitecturalGallerySection() {
         </div>
 
         {/* Linear Filmstrip Facility Navigator (NO CARDS - Sleek Linear Strip) */}
-        <div className="mt-8 flex flex-wrap items-center justify-between gap-2 border-b border-emerald-950 pb-6">
+        <div className="mt-8 flex flex-wrap items-center justify-between gap-2 border-b border-[#022C22] pb-6">
           {hospitalTour.map((item, idx) => {
             const active = activeIndex === idx;
             return (
@@ -159,11 +225,11 @@ export default function ArchitecturalGallerySection() {
                 onClick={() => setActiveIndex(idx)}
                 className={`group flex items-center gap-3 py-3 px-4 rounded-2xl text-left transition-all duration-300 relative ${
                   active
-                    ? 'bg-emerald-950/90 text-white border border-emerald-500/40 shadow-lg'
+                    ? 'bg-[#022C22]/90 text-white border border-[#059669]/40 shadow-lg'
                     : 'bg-transparent text-slate-400 hover:text-white hover:bg-white/5 border border-transparent'
                 }`}
               >
-                <span className={`font-mono text-xs font-bold ${active ? 'text-emerald-400' : 'text-slate-500'}`}>
+                <span className={`font-mono text-xs font-bold ${active ? 'text-[#059669]' : 'text-slate-500'}`}>
                   0{idx + 1}
                 </span>
 
@@ -177,7 +243,7 @@ export default function ArchitecturalGallerySection() {
                 </div>
 
                 {active && (
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping ml-1" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#059669] animate-ping ml-1" />
                 )}
               </button>
             );
@@ -185,30 +251,30 @@ export default function ArchitecturalGallerySection() {
         </div>
 
         {/* Bottom Architectural Infrastructure Metrics (Divided Ribbon, Zero Cards) */}
-        <div className="mt-8 grid grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-sky-950 pt-2">
+        <div className="mt-8 grid grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-emerald-900/60 pt-2">
           
           <div className="px-4 py-2 text-left">
             <span className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight block">120,000+</span>
-            <span className="text-xs text-sky-300 font-semibold uppercase tracking-wider block font-mono">Sq. Ft. Medical Campus</span>
-            <span className="text-[11px] text-slate-400">Engineered to NABH tertiary clinical guidelines</span>
+            <span className="text-xs text-[#059669] font-semibold uppercase tracking-wider block font-mono">Sq. Ft. Medical Campus</span>
+            <span className="text-[11px] text-slate-300">Engineered to NABH tertiary clinical guidelines</span>
           </div>
 
           <div className="px-4 py-2 text-left">
-            <span className="text-2xl sm:text-4xl font-extrabold text-[#38BDF8] tracking-tight block">Class-100</span>
-            <span className="text-xs text-sky-300 font-semibold uppercase tracking-wider block font-mono">Laminar Airflow Suites</span>
-            <span className="text-[11px] text-slate-400">Zero particulate surgical theatre environments</span>
+            <span className="text-2xl sm:text-4xl font-extrabold text-[#A7F3D0] tracking-tight block">Class-100</span>
+            <span className="text-xs text-[#059669] font-semibold uppercase tracking-wider block font-mono">Laminar Airflow Suites</span>
+            <span className="text-[11px] text-slate-300">Zero particulate surgical theatre environments</span>
           </div>
 
           <div className="px-4 py-2 text-left">
-            <span className="text-2xl sm:text-4xl font-extrabold text-emerald-400 tracking-tight block">HEPA-14</span>
-            <span className="text-xs text-sky-300 font-semibold uppercase tracking-wider block font-mono">Medical AHU Filtration</span>
-            <span className="text-[11px] text-slate-400">35 sterile air exchanges per hour</span>
+            <span className="text-2xl sm:text-4xl font-extrabold text-[#059669] tracking-tight block">HEPA-14</span>
+            <span className="text-xs text-[#059669] font-semibold uppercase tracking-wider block font-mono">Medical AHU Filtration</span>
+            <span className="text-[11px] text-slate-300">35 sterile air exchanges per hour</span>
           </div>
 
           <div className="px-4 py-2 text-left">
-            <span className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight block">24/7/365</span>
-            <span className="text-xs text-sky-300 font-semibold uppercase tracking-wider block font-mono">Redundant Power & O2</span>
-            <span className="text-[11px] text-slate-400">Uninterrupted critical care & ICU life support</span>
+            <span className="text-2xl sm:text-4xl font-extrabold text-amber-400 tracking-tight block">24/7/365</span>
+            <span className="text-xs text-amber-300 font-semibold uppercase tracking-wider block font-mono">Redundant Power & O2</span>
+            <span className="text-[11px] text-slate-300">Uninterrupted critical care & ICU life support</span>
           </div>
 
         </div>
@@ -218,7 +284,7 @@ export default function ArchitecturalGallerySection() {
       {/* Fullscreen Photo Lightbox Modal */}
       {isLightboxOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-8 bg-black/90 backdrop-blur-xl animate-in fade-in duration-200">
-          <div className="relative w-full max-w-5xl bg-[#0B1524] rounded-3xl overflow-hidden border border-white/20 shadow-2xl">
+          <div className="relative w-full max-w-5xl bg-[#031711] rounded-3xl overflow-hidden border border-[#059669]/30 shadow-2xl">
             
             <div className="relative aspect-[16/10] sm:aspect-[16/9]">
               <img
@@ -234,9 +300,9 @@ export default function ArchitecturalGallerySection() {
               </button>
             </div>
 
-            <div className="p-6 bg-[#0B1524] text-white flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-t border-sky-950">
+            <div className="p-6 bg-[#031711] text-white flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-t border-[#022C22]">
               <div className="space-y-1">
-                <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-sky-400">
+                <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#059669]">
                   {current.category} • {currentSpec.area}
                 </span>
                 <h3 className="text-xl font-bold text-white">
@@ -249,7 +315,7 @@ export default function ArchitecturalGallerySection() {
 
               <button
                 onClick={() => setIsLightboxOpen(false)}
-                className="px-6 py-2.5 rounded-full bg-white text-[#0B1524] text-xs font-bold uppercase tracking-wider shrink-0"
+                className="px-6 py-2.5 rounded-full bg-[#10B981 hover:bg-[#059669] text-slate-950 text-xs font-bold uppercase tracking-wider shrink-0 transition-colors"
               >
                 Close Preview
               </button>
@@ -258,6 +324,12 @@ export default function ArchitecturalGallerySection() {
           </div>
         </div>
       )}
+
+      {/* Interactive 4K Cinematic Video Player Modal */}
+      <CinematicVideoPlayerModal
+        isOpen={isVideoModalOpen}
+        onClose={() => setIsVideoModalOpen(false)}
+      />
 
     </section>
   );

@@ -40,7 +40,7 @@ export default function CinematicHospital3D() {
     const ambientLight = new THREE.AmbientLight(0xF5F3FF, 1.8);
     scene.add(ambientLight);
 
-    // Warm Champagne Sunlight from glass atrium
+    // Warm Mint Sunlight from glass atrium
     const sunLight = new THREE.DirectionalLight(0xFFFBEB, 2.7);
     sunLight.position.set(8, 12, 6);
     sunLight.castShadow = true;

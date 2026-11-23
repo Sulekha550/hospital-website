@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Activity, ShieldCheck, Heart, Sparkles, ArrowRight, CheckCircle2, ChevronRight, Stethoscope, Clock, Zap, Target } from 'lucide-react';
 import { PULSE_DATA } from '../data/pulseData';
+import SectionCinematicVideo from './SectionCinematicVideo';
+import SectionBackgroundMotion from './SectionBackgroundMotion';
 
 /**
  * TreatmentStorytellingSection
@@ -20,106 +22,103 @@ export default function TreatmentStorytellingSection() {
     'peripheral-angioplasty': {
       title: 'Peripheral Angioplasty & Stenting',
       badge: 'Vascular Revascularization',
-      tagline: 'Restoring distal arterial blood flow to ischemic lower extremities and renal vasculature.',
-      recovery: 'Discharged within 24–48 hours · Rapid recovery compared to open bypass surgery',
-      stats: '99.4% Endovascular Patency Rate',
+      tagline: 'Restoring arterial perfusion to lower extremities & renal vessels.',
+      recovery: 'Discharged within 24–48 Hours',
+      stats: '99.4% Patency Rate',
       steps: [
         {
           num: '01',
-          phase: 'Transradial / Femoral Micro-Access',
-          detail: 'Under local anesthesia, a microscopic needle puncture establishes vascular entry via a fine 6-French sheath, minimizing tissue trauma and bleeding.',
+          phase: 'Radial Wrist Micro-Access',
+          detail: 'Microscopic 6-French wrist puncture with zero bleeding.',
         },
         {
           num: '02',
-          phase: 'Guidewire Crossing of Stenotic Lesion',
-          detail: 'A specialized 0.014" steerable hydrophilic micro-guidewire carefully navigates across the narrowed arterial segment under high-resolution fluoroscopy.',
+          phase: 'Guidewire Lesion Crossing',
+          detail: '0.014" steerable micro-wire navigates stenotic segment.',
         },
         {
           num: '03',
-          phase: 'High-Pressure Balloon Pre-Dilation',
-          detail: 'An appropriately sized angioplasty balloon is inflated across the stenosis to fracture calcified atherosclerotic plaque and restore vessel diameter.',
+          phase: 'Balloon Pre-Dilation',
+          detail: 'Controlled balloon inflation fractures calcified plaque.',
         },
         {
           num: '04',
-          phase: 'Drug-Eluting Stent Scaffold Deployment',
-          detail: 'A precision cobalt-chromium stent is permanently expanded against the vessel wall, continuously releasing antiproliferative medication to prevent re-narrowing.',
+          phase: 'Stent Scaffold Deployment',
+          detail: 'Cobalt-chromium drug-eluting stent permanently placed.',
         },
       ],
       indications: [
-        'Critical limb ischemia & resting leg pain',
-        'Severe intermittent claudication limiting mobility',
-        'Non-healing peripheral ischemic diabetic ulcers',
-        'Renal artery stenosis inducing refractory hypertension',
+        'Resting leg pain & claudication',
+        'Non-healing peripheral ulcers',
+        'Renal artery refractory stenosis',
       ],
     },
     'coronary-angiogram': {
       title: 'Coronary Angiogram (CAG)',
       badge: 'Diagnostic Catheterization',
-      tagline: 'The definitive gold-standard fluoroscopic examination for coronary artery stenosis mapping.',
-      recovery: 'Same-day outpatient procedure · Ambulatory within 2 hours with radial wrist access',
-      stats: '< 0.5 mm Spatial Stenosis Resolution',
+      tagline: 'Gold-standard cineangiography mapping exact luminal stenosis.',
+      recovery: 'Same-Day Outpatient (2 Hrs Post-Op)',
+      stats: '< 0.5 mm Accuracy',
       steps: [
         {
           num: '01',
-          phase: 'Painless Transradial Wrist Access',
-          detail: 'The right radial artery at the wrist is numbed with local anesthetic. Radial access eliminates bed rest and minimizes vascular puncture complications.',
+          phase: 'Painless Wrist Numbing',
+          detail: 'Local anesthetic numbs right radial artery entry.',
         },
         {
           num: '02',
-          phase: 'Selective Coronary Cannulation',
-          detail: 'A slender diagnostic catheter is advanced through the aorta to engage the Left Main and Right Coronary artery ostia with millimeter precision.',
+          phase: 'Catheter Engagement',
+          detail: 'Diagnostic catheter engages coronary ostia precisely.',
         },
         {
           num: '03',
-          phase: 'Iso-Osmolar Contrast Injection',
-          detail: 'A biocompatible radiopaque dye is gently injected into the coronary tree, instantly illuminating blood flow dynamics and identifying luminal narrowings.',
+          phase: 'Iso-Osmolar Contrast',
+          detail: 'Biocompatible contrast dye visualizes blood vessels.',
         },
         {
           num: '04',
-          phase: 'Cineangiographic Stenosis Mapping',
-          detail: 'Multi-angle digital cine projections evaluate lesion length, calcification, and myocardial perfusion to determine the optimal treatment strategy.',
+          phase: 'Digital Cine Mapping',
+          detail: 'Multi-angle cine records lesion length and calcification.',
         },
       ],
       indications: [
-        'Unexplained exertional chest pain or angina',
-        'Positive Treadmill Test (TMT) or Stress Echo',
-        'Recent acute coronary event or heart attack',
-        'Pre-operative cardiac clearance for major surgery',
+        'Exertional angina / chest discomfort',
+        'Positive TMT / Stress Echo test',
+        'Post-infarct vessel evaluation',
       ],
     },
     'pacemaker-implantation': {
-      title: 'Permanent Pacemaker Implantation',
+      title: 'Permanent Pacemaker',
       badge: 'Cardiac Electrophysiology',
-      tagline: 'Precision rate-responsive pacing generators restoring physiological heart rhythm.',
-      recovery: 'Overnight observation · Normal routine resumed in 3–5 days',
-      stats: '10–14 Year Titanium Battery Life',
+      tagline: 'Rate-responsive pacing generators restoring physiological rhythm.',
+      recovery: 'Overnight Observation • Rapid Discharge',
+      stats: '10–14 Year Battery Life',
       steps: [
         {
           num: '01',
-          phase: 'Subclavian Venous Cannulation',
-          detail: 'Under sterile cath lab conditions, transvenous access is established via the cephalic or axillary vein below the left collarbone.',
+          phase: 'Subclavian Access',
+          detail: 'Transvenous access established beneath collarbone.',
         },
         {
           num: '02',
-          phase: 'Lead Placement in Right Atrium / Ventricle',
-          detail: 'Specialized active-fixation bipolar pacing leads are guided into optimal anatomical endocardial contact under continuous fluoroscopy.',
+          phase: 'Lead Positioning',
+          detail: 'Active-fixation leads anchored under fluoroscopy.',
         },
         {
           num: '03',
-          phase: 'Electrical Pacing Threshold Testing',
-          detail: 'Impedance, sensing amplitudes, and pacing thresholds are calibrated to verify ideal lead fixation with minimal energy consumption.',
+          phase: 'Threshold Calibration',
+          detail: 'Sensing amplitudes calibrated for minimal energy drain.',
         },
         {
           num: '04',
-          phase: 'Subcutaneous Pocket Placement',
-          detail: 'The hermetically sealed titanium pulse generator is connected and placed into a small subcutaneous pocket beneath the skin.',
+          phase: 'Pocket Placement',
+          detail: 'Titanium pulse generator secured subcutaneously.',
         },
       ],
       indications: [
-        'Complete Atrioventricular (AV) heart block',
-        'Symptomatic Sinus Node Dysfunction (Sick Sinus)',
-        'Recurrent syncopal episodes with bradycardia',
-        'Chronotropic incompetence limiting daily activity',
+        'Complete AV heart block',
+        'Symptomatic Sinus Dysfunction',
+        'Recurrent syncopal bradycardia',
       ],
     },
   };
@@ -130,50 +129,29 @@ export default function TreatmentStorytellingSection() {
     <section className="relative py-28 lg:py-36 overflow-hidden select-none">
 
       {/* =========================================================================
-          ANIMATED SECTION BACKGROUND: SOFT PEACH, MAGENTA & FLOWING ROADMAP
+          ANIMATED SECTION BACKGROUND: FLOWING ECG, CAD RINGS & EMERALD LASER
          ========================================================================= */}
-      <div className="absolute inset-0 pointer-events-none -z-10 overflow-hidden">
-        {/* Soft Peach & Warm Amber Glow */}
-        <div className="absolute top-1/4 -left-20 w-[700px] h-[700px] rounded-full bg-gradient-to-tr from-orange-400/20 via-rose-300/15 to-amber-200/20 blur-[150px] animate-morph animate-float-1" />
-
-        {/* Vibrant Magenta & Violet Diffusion */}
-        <div className="absolute bottom-10 right-0 w-[650px] h-[650px] rounded-full bg-gradient-to-bl from-purple-500/20 via-pink-500/15 to-rose-400/15 blur-[150px] animate-float-2" />
-
-        {/* Monumental Watermark Typography */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-sans font-black text-[18vw] text-orange-950/[0.03] whitespace-nowrap pointer-events-none tracking-tight">
-          PROTOCOLS
-        </div>
-
-        {/* Flowing Roadmap Curves */}
-        <svg className="absolute inset-0 w-full h-full opacity-35" xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M -100,300 C 400,100 800,500 1300,300 C 1700,150 2000,450 2300,300"
-            fill="none"
-            stroke="#F97316"
-            strokeWidth="2"
-            strokeDasharray="8 8"
-            className="animate-ecg-dash"
-          />
-        </svg>
-      </div>
+      <SectionBackgroundMotion watermark="PROTOCOLS" position="left" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Section Header */}
-        <div className="mb-14 text-center max-w-3xl mx-auto space-y-3">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-orange-600 to-rose-600 text-white text-xs font-mono font-bold shadow-md animate-float-bob">
+        <div className="mb-10 text-center max-w-3xl mx-auto space-y-2">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-orange-600 to-rose-600 text-white text-xs font-mono font-bold shadow-md">
             <Target className="w-4 h-4 text-amber-200" />
             <span className="uppercase tracking-[0.2em]">Step-by-Step Clinical Journeys</span>
           </div>
 
-          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-950 tracking-tight leading-[1.08]">
-            Transparent Pathways to <br />
-            <span className="font-serif italic font-normal text-rose-700">Restored Cardiovascular Health</span>
+          <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-950 tracking-tight">
+            Clinical <span className="font-serif italic font-normal text-rose-700">Procedural Roadmap</span>
           </h2>
 
-          <p className="text-base sm:text-lg text-slate-700 font-medium max-w-2xl mx-auto leading-relaxed">
-            Every procedure at Pulse Heart Centre is mapped step-by-step so patients and families understand exactly what to expect from prep to discharge.
-          </p>
+          <div className="flex flex-wrap items-center justify-center gap-2 pt-1 font-mono text-[11px] font-bold">
+            <span className="bg-orange-100 text-orange-900 px-3 py-0.5 rounded-full border border-orange-200">Pre-Op Evaluation</span>
+            <span className="bg-rose-100 text-rose-900 px-3 py-0.5 rounded-full border border-rose-200">Radial Micro-Access</span>
+            <span className="bg-amber-100 text-amber-900 px-3 py-0.5 rounded-full border border-amber-200">Stent Deployment</span>
+            <span className="bg-[#F0FDF4] text-[#064E3B] px-3 py-0.5 rounded-full border border-[#A7F3D0]">24-Hr Discharge</span>
+          </div>
         </div>
 
         {/* Procedure Selector Tabs */}
@@ -218,46 +196,60 @@ export default function TreatmentStorytellingSection() {
                 <Clock className="w-3.5 h-3.5 inline mr-1 text-orange-600" />
                 {currentStory.recovery}
               </div>
-              <div className="px-4 py-2 rounded-xl bg-emerald-50 border border-emerald-200 text-xs font-mono font-bold text-emerald-900">
-                <CheckCircle2 className="w-3.5 h-3.5 inline mr-1 text-emerald-600" />
+              <div className="px-4 py-2 rounded-xl bg-[#F0FDF4] border border-[#A7F3D0] text-xs font-mono font-bold text-[#064E3B]">
+                <CheckCircle2 className="w-3.5 h-3.5 inline mr-1 text-[#047857]" />
                 {currentStory.stats}
               </div>
             </div>
           </div>
 
-          {/* Stepped Procedural Grid (4 Steps) with Hover Elevation */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {/* Active Procedural Cinematic Video Feed in 3D */}
+          <div className="py-2">
+            <SectionCinematicVideo
+              type={activeProcedure === 'ct-coronary-angiography' ? 'advanced-tech' : activeProcedure === 'pacemaker-implantation' ? 'cardiology-heart' : 'cardiac-catheterization'}
+              videoUrl={activeProcedure === 'ct-coronary-angiography' ? '/videos/advanced-tech.mp4' : activeProcedure === 'pacemaker-implantation' ? '/videos/cardiology-heart.mp4' : '/videos/cardiac-catheterization.mp4'}
+              styleVariant="floating-3d"
+              posterImage={activeProcedure === 'pacemaker-implantation' ? '/images/pacemaker-tech.jpg' : '/images/angiogram-scan.jpg'}
+              title={`${currentStory.title} • Live Procedural Cine`}
+              subtitle={currentStory.badge}
+              specs={currentStory.stats}
+              aspectRatio="aspect-[16/8] sm:aspect-[21/9]"
+            />
+          </div>
+
+          {/* Stepped Procedural Grid (4 Steps) - Minimal Text & High Visual Impact */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {currentStory.steps.map((step) => (
               <div
                 key={step.num}
-                className="group relative p-6 rounded-2xl bg-gradient-to-b from-orange-50/40 via-white to-white border border-orange-100 hover:border-orange-300 shadow-xs transition-all duration-400 hover:-translate-y-2 hover:shadow-lg space-y-3 cursor-default"
+                className="group relative p-5 rounded-2xl bg-white border-2 border-emerald-100 hover:border-emerald-300 shadow-xs transition-all duration-400 hover:-translate-y-2 hover:shadow-lg space-y-2 cursor-default text-left"
               >
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-orange-500 to-rose-500 text-white flex items-center justify-center font-mono text-sm font-semibold shadow-sm group-hover:scale-105 transition-transform">
+                <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-[#064E3B] to-[#059669] text-white flex items-center justify-center font-mono text-xs font-bold shadow-sm group-hover:scale-105 transition-transform">
                   {step.num}
                 </div>
-                <h4 className="text-sm font-extrabold text-slate-950 tracking-tight group-hover:text-rose-700 transition-colors">
+                <h4 className="text-xs sm:text-sm font-extrabold text-slate-900 tracking-tight group-hover:text-[#064E3B] transition-colors">
                   {step.phase}
                 </h4>
-                <p className="text-xs text-slate-600 font-medium leading-relaxed">
+                <p className="text-[11px] text-slate-600 font-medium leading-normal">
                   {step.detail}
                 </p>
               </div>
             ))}
           </div>
 
-          {/* Indications & Candidacy Banner - Luminous Pearl & Warm Amber (No Black Box) */}
-          <div className="p-6 sm:p-8 rounded-2xl bg-gradient-to-r from-orange-50 via-rose-50/40 to-amber-50 border-2 border-orange-200 text-slate-900 shadow-md flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-            <div className="space-y-1">
-              <span className="text-xs font-mono text-orange-900 font-semibold uppercase tracking-wider block">
+          {/* Indications & Candidacy Banner */}
+          <div className="p-6 sm:p-7 rounded-2xl bg-gradient-to-r from-emerald-50 via-white to-teal-50 border-2 border-emerald-200 text-slate-900 shadow-md flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+            <div className="space-y-1 text-left">
+              <span className="text-[10px] font-mono text-emerald-800 font-bold uppercase tracking-wider block">
                 Primary Clinical Indications
               </span>
               <div className="flex flex-wrap gap-2 pt-1">
                 {currentStory.indications.map((ind, i) => (
                   <span
                     key={i}
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white text-[11px] font-medium text-slate-800 border border-orange-200/80 shadow-xs"
+                    className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white text-[11px] font-bold text-slate-800 border border-emerald-200 shadow-xs"
                   >
-                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[#047857]" />
                     <span>{ind}</span>
                   </span>
                 ))}
@@ -266,7 +258,7 @@ export default function TreatmentStorytellingSection() {
 
             <Link
               to="/contact"
-              className="px-6 py-3 rounded-full bg-gradient-to-r from-orange-600 to-rose-600 hover:from-orange-700 hover:to-rose-700 text-white text-xs font-semibold uppercase tracking-wider shrink-0 transition-all duration-300 hover:scale-105 shadow-md"
+              className="px-7 py-3 rounded-full bg-gradient-to-r from-[#064E3B] via-[#047857] to-[#059669] hover:from-[#022C22] hover:to-[#064E3B] text-white text-xs font-bold uppercase tracking-wider shrink-0 transition-all duration-300 hover:scale-105 shadow-md border border-emerald-400/30"
             >
               Discuss with Dr. Shahi
             </Link>

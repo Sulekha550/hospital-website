@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Activity, ShieldCheck, Heart, Sparkles, ArrowRight, Eye, Layers, Gauge, Cpu, Stethoscope } from 'lucide-react';
 import { PULSE_DATA } from '../data/pulseData';
+import SectionBackgroundMotion from './SectionBackgroundMotion';
+import ThreeDImageCard from './ThreeDImageCard';
 
 /**
  * AnatomicalSpecialtyShowcase
@@ -19,11 +21,11 @@ export default function AnatomicalSpecialtyShowcase() {
     {
       id: 'angioplasty',
       title: 'Peripheral Angioplasty & Stenting',
-      category: 'ENDOVASCULAR REVASCULARIZATION',
-      desc: 'Minimally invasive catheterization restoring vital blood perfusion to ischemic lower extremities, renal arteries, and peripheral vasculature.',
-      image: '/images/cath-lab.jpg',
+      category: 'REVASCULARIZATION',
+      desc: 'Restoring distal blood perfusion with balloon dilation & stents.',
+      image: '/images/stent-catheter-fluoroscopy.jpg',
       stat: '99.4% Flow Restored',
-      statSub: 'Transradial / Femoral Sheath',
+      statSub: 'Transradial Access',
       aspect: 'aspect-[16/11]',
       rotation: 'lg:-rotate-2',
       link: '/treatments',
@@ -32,11 +34,11 @@ export default function AnatomicalSpecialtyShowcase() {
     {
       id: 'angiogram',
       title: 'Coronary Angiogram (CAG)',
-      category: 'DIAGNOSTIC FLUOROSCOPY',
-      desc: 'Gold-standard cineangiography mapping exact luminal stenosis dimensions and collateral flow dynamics with sub-millimeter precision.',
+      category: 'FLUOROSCOPY',
+      desc: 'Sub-millimeter stenosis mapping via painless radial wrist entry.',
       image: '/images/angiogram-scan.jpg',
       stat: '< 0.5 mm Accuracy',
-      statSub: 'Painless Radial Wrist Access',
+      statSub: 'Painless Wrist Access',
       aspect: 'aspect-[3/4]',
       rotation: 'lg:rotate-2',
       link: '/treatments',
@@ -45,11 +47,11 @@ export default function AnatomicalSpecialtyShowcase() {
     {
       id: 'ct-angio',
       title: 'CT Coronary Angiography',
-      category: 'NON-INVASIVE 3D IMAGING',
-      desc: 'High-speed multislice 3D volumetric reconstruction and coronary calcium Agatston scoring with zero surgical invasiveness.',
-      image: '/images/hospital-facility.jpg',
+      category: 'NON-INVASIVE 3D',
+      desc: 'Multislice 3D volumetric calcium Agatston scoring with zero downtime.',
+      image: '/images/ct-calcium-score.jpg',
       stat: 'Zero Downtime',
-      statSub: 'Outpatient 3D Volumetric Scan',
+      statSub: 'Outpatient 3D Scan',
       aspect: 'aspect-square',
       rotation: 'lg:-rotate-2',
       link: '/treatments',
@@ -57,12 +59,12 @@ export default function AnatomicalSpecialtyShowcase() {
     },
     {
       id: 'pacemakers',
-      title: 'Permanent Pacemaker Implantation',
-      category: 'CARDIAC ELECTROPHYSIOLOGY',
-      desc: 'Advanced transvenous single and dual-chamber pacing generators for symptomatic bradyarrhythmias, heart blocks, and syncope.',
+      title: 'Permanent Pacemaker',
+      category: 'ELECTROPHYSIOLOGY',
+      desc: 'Rate-responsive single & dual-chamber pacing for heart blocks.',
       image: '/images/pacemaker-tech.jpg',
       stat: '10–14 Year Lifespan',
-      statSub: 'Physiological Rhythm Pacing',
+      statSub: 'Physiological Rhythm',
       aspect: 'aspect-[16/10]',
       rotation: 'lg:rotate-2',
       link: '/treatments',
@@ -74,56 +76,29 @@ export default function AnatomicalSpecialtyShowcase() {
     <section className="relative py-28 lg:py-36 overflow-hidden select-none">
 
       {/* =========================================================================
-          ANIMATED SECTION BACKGROUND: CORAL RED, CRIMSON & VASCULAR FLOW
+          ANIMATED SECTION BACKGROUND: FLOWING ECG, ROTATING RINGS & EMERALD LASER
          ========================================================================= */}
-      <div className="absolute inset-0 pointer-events-none -z-10 overflow-hidden">
-        {/* Deep Coral & Crimson Arterial Glow */}
-        <div className="absolute top-1/3 -right-24 w-[750px] h-[750px] rounded-full bg-gradient-to-bl from-rose-500/25 via-red-500/20 to-amber-300/15 blur-[150px] animate-pulse-glow animate-float-1" />
-
-        {/* Soft Warm Peach & Magenta Diffusion */}
-        <div className="absolute bottom-10 -left-20 w-[650px] h-[650px] rounded-full bg-gradient-to-tr from-pink-400/20 via-orange-300/15 to-purple-400/15 blur-[150px] animate-float-3" />
-
-        {/* Monumental Watermark Typography */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-sans font-black text-[18vw] text-rose-950/[0.03] whitespace-nowrap pointer-events-none tracking-tighter">
-          HEMODYNAMICS
-        </div>
-
-        {/* Capillary & Vascular Flow Curves */}
-        <svg className="absolute inset-0 w-full h-full opacity-35" xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M 100,200 Q 300,350 600,280 T 1100,320 T 1600,200"
-            fill="none"
-            stroke="#F43F5E"
-            strokeWidth="1.8"
-            strokeDasharray="8 6"
-            className="animate-ecg-dash"
-          />
-          <path
-            d="M 200,600 Q 500,450 900,550 T 1400,480 T 1800,620"
-            fill="none"
-            stroke="#FB7185"
-            strokeWidth="2"
-          />
-        </svg>
-      </div>
+      <SectionBackgroundMotion watermark="HEMODYNAMICS" position="right" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Section Header */}
-        <div className="mb-16 text-center max-w-3xl mx-auto space-y-3">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-rose-700 to-pink-700 text-white text-xs font-mono font-bold shadow-md animate-float-bob">
+        <div className="mb-12 text-center max-w-3xl mx-auto space-y-2">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-rose-700 to-pink-700 text-white text-xs font-mono font-bold shadow-md">
             <Activity className="w-4 h-4 text-white animate-pulse" />
-            <span className="uppercase tracking-[0.2em]">Interventional Cardiology Specialties</span>
+            <span className="uppercase tracking-[0.2em]">Interventional Specialties</span>
           </div>
 
-          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-950 tracking-tight leading-[1.08]">
-            Restoring Vital Blood Flow with <br />
-            <span className="font-serif italic font-normal text-rose-700">Sub-Millimeter Precision</span>
+          <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-950 tracking-tight">
+            Sub-Millimeter <span className="font-serif italic font-normal text-rose-700">Hemodynamic Solutions</span>
           </h2>
 
-          <p className="text-base sm:text-lg text-slate-700 font-medium max-w-2xl mx-auto leading-relaxed">
-            From transradial coronary stenting to non-invasive multislice CT scans, explore Dr. Prakash Chand Shahi's core interventional specialties.
-          </p>
+          <div className="flex flex-wrap items-center justify-center gap-2 pt-1 font-mono text-[11px] font-bold">
+            <span className="bg-rose-100 text-rose-900 px-3 py-0.5 rounded-full border border-rose-300">Radial Stenting</span>
+            <span className="bg-sky-100 text-sky-900 px-3 py-0.5 rounded-full border border-sky-300">Cineangiography</span>
+            <span className="bg-amber-100 text-amber-900 px-3 py-0.5 rounded-full border border-amber-300">CT Angiogram</span>
+            <span className="bg-purple-100 text-purple-900 px-3 py-0.5 rounded-full border border-purple-300">Pacemakers</span>
+          </div>
         </div>
 
         {/* =========================================================================
@@ -154,7 +129,7 @@ export default function AnatomicalSpecialtyShowcase() {
               <button
                 onClick={() => setLumenState('stented')}
                 className={`px-5 py-2 rounded-full text-xs font-bold transition-all duration-300 ${lumenState === 'stented'
-                  ? 'bg-emerald-600 text-white shadow-md scale-105'
+                  ? 'bg-[#047857] text-white shadow-md scale-105'
                   : 'text-slate-600 hover:text-slate-900'
                   }`}
               >
@@ -213,74 +188,45 @@ export default function AnatomicalSpecialtyShowcase() {
                   {lumenState === 'stenosis' ? 'Requires Catheter Revascularization' : 'Post-Stent Dual Antiplatelet Therapy'}
                 </span>
               </div>
-              <p className="text-xs text-slate-600 font-medium pt-1 leading-relaxed">
-                {lumenState === 'stenosis'
-                  ? 'Severe luminal obstruction restricts oxygenated blood supply to myocardium, causing exertional angina and risk of acute myocardial infarction.'
-                  : 'Cobalt-chromium stent scaffold maintains long-term structural patency with continuous antiproliferative drug release to prevent restenosis.'}
-              </p>
+              <div className="flex items-center gap-2 pt-2 text-[11px] font-mono font-bold text-[#059669]">
+                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                <span>{lumenState === 'stenosis' ? 'Critical Ischemic Narrowing • Radial Intervention Indicated' : 'DES Cobalt-Chromium Patency • Optimal Perfusion Restored'}</span>
+              </div>
             </div>
           </div>
         </div>
 
         {/* =========================================================================
-            STAGGERED OVERLAPPING SPECIALTY CARDS (Smooth 600ms Hover Elevation)
+            3D INTERACTIVE SPECIALTY SHOWCASE (Minimal Text, Maximum 3D Visual Depth)
            ========================================================================= */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
           {specialties.map((spec) => (
-            <div
+            <Link
               key={spec.id}
-              className={`group relative rounded-[2.2rem] bg-white p-4 border border-slate-200/90 shadow-layered transition-all duration-500 hover:-translate-y-4 hover:rotate-0 hover:z-40 hover:shadow-2xl flex flex-col justify-between ${spec.rotation}`}
+              to="/treatments"
+              className="group block"
             >
-              <div>
-                {/* Real Medical Photography Canvas with Image Zoom */}
-                <div className={`relative ${spec.aspect} rounded-2xl overflow-hidden mb-4`}>
-                  <img
-                    src={spec.image}
-                    alt={spec.title}
-                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-115"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent" />
-
-                  <span className={`absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-mono font-bold border ${spec.badgeColor}`}>
-                    {spec.category}
-                  </span>
-
-                  <div className="absolute bottom-3 left-3 right-3 text-left">
-                    <span className="text-xs font-mono font-extrabold text-emerald-300 block">
-                      {spec.stat}
-                    </span>
-                    <span className="text-[10px] text-slate-300 font-mono block">
-                      {spec.statSub}
-                    </span>
-                  </div>
-                </div>
-
-                <div className="space-y-2 text-left px-1">
-                  <h3 className="text-lg font-extrabold text-slate-950 tracking-tight leading-snug group-hover:text-rose-700 transition-colors">
-                    {spec.title}
-                  </h3>
-                  <p className="text-xs text-slate-600 font-medium leading-relaxed line-clamp-3">
-                    {spec.desc}
-                  </p>
-                </div>
-              </div>
-
-              <div className="pt-4 mt-2 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-[#173C59] group-hover:text-[#2788B8]">
-                <span>View Procedure Details</span>
-                <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1.5 text-[#2788B8]" />
-              </div>
-            </div>
+              <ThreeDImageCard
+                src={spec.image}
+                alt={spec.title}
+                aspectRatio="aspect-[4/3]"
+                badge={spec.category}
+                title={spec.title}
+                stat={spec.stat}
+                statSub={spec.statSub}
+              />
+            </Link>
           ))}
         </div>
 
         {/* Action Link to Full Treatments Page */}
-        <div className="mt-14 text-center">
+        <div className="mt-12 text-center">
           <Link
             to="/treatments"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-[#173C59] via-[#1E4D74] to-[#2788B8] hover:from-[#0E2538] hover:to-[#173C59] text-white text-xs font-semibold uppercase tracking-wider shadow-lg shadow-[#173C59]/20 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 hover:scale-102"
+            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-gradient-to-r from-[#064E3B] via-[#047857] to-[#059669] hover:from-[#022C22] hover:to-[#064E3B] text-white text-xs font-bold uppercase tracking-wider shadow-lg shadow-[#064E3B]/25 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 hover:scale-102 border border-emerald-400/30"
           >
-            <span>Explore All Specialized Interventions</span>
-            <ArrowRight className="w-4 h-4 text-[#A9D8E9]" />
+            <span>Explore All Interventions</span>
+            <ArrowRight className="w-4 h-4 text-emerald-300" />
           </Link>
         </div>
 

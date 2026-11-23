@@ -52,7 +52,7 @@ export default function AboutSection({ onBookClick }) {
                   <span className="px-3 py-1 rounded-full bg-purple-100 border border-purple-300 text-purple-900 text-xs font-semibold uppercase tracking-wider">
                     Cardiologist & Interventional Specialist
                   </span>
-                  <span className="px-3 py-1 rounded-full bg-emerald-100 border border-emerald-300 text-emerald-800 text-xs font-bold">
+                  <span className="px-3 py-1 rounded-full bg-[#F0FDF4] border border-[#A7F3D0] text-[#064E3B] text-xs font-bold">
                     22+ Years Practice
                   </span>
                 </div>
@@ -162,18 +162,18 @@ export default function AboutSection({ onBookClick }) {
             </div>
 
             {/* Box 4: MBBS Degree */}
-            <div className="p-7 rounded-3xl bg-white/95 border-2 border-emerald-300 shadow-xl flex flex-col justify-between hover:border-emerald-500 transition-all">
+            <div className="p-7 rounded-3xl bg-white/95 border-2 border-[#A7F3D0] shadow-xl flex flex-col justify-between hover:border-[#059669] transition-all">
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <span className="text-xs font-semibold px-3 py-1 rounded-full bg-emerald-100 text-emerald-800">
+                  <span className="text-xs font-semibold px-3 py-1 rounded-full bg-[#F0FDF4] text-[#064E3B]">
                     FOUNDATION
                   </span>
-                  <ShieldCheck className="w-6 h-6 text-emerald-600" />
+                  <ShieldCheck className="w-6 h-6 text-[#047857]" />
                 </div>
                 <h4 className="text-xl font-semibold text-slate-950 leading-snug">
                   MBBS Degree
                 </h4>
-                <span className="text-xs font-semibold text-emerald-700 block mt-1">
+                <span className="text-xs font-semibold text-[#047857] block mt-1">
                   Medical Institution
                 </span>
               </div>
@@ -228,7 +228,7 @@ export default function AboutSection({ onBookClick }) {
           {/* Bento Action Strip */}
           <div className="p-6 rounded-2xl bg-white/90 border-2 border-violet-200 shadow-md flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <span className="w-3 h-3 rounded-full bg-emerald-500 animate-ping" />
+              <span className="w-3 h-3 rounded-full bg-[#10B981 animate-ping" />
               <span className="text-sm font-semibold text-slate-900">
                 Direct Consultation with Dr. Prakash Chand Shahi at Pulse Heart Centre
               </span>

@@ -298,6 +298,188 @@
   animation: waveOscillate 10s ease-in-out infinite;
 }
 
+/* --- High-Impact Medical Visual Background Animations --- */
+@keyframes laserVertical {
+  0% {
+    top: 5%;
+    opacity: 0.2;
+  }
+  50% {
+    top: 90%;
+    opacity: 0.85;
+  }
+  100% {
+    top: 5%;
+    opacity: 0.2;
+  }
+}
+
+.animate-laser-v {
+  animation: laserVertical 6s ease-in-out infinite;
+}
+
+.animate-laser-sweep {
+  animation: laserVertical 6s ease-in-out infinite;
+}
+
+@keyframes laserHorizontal {
+  0% {
+    left: -20%;
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.9;
+  }
+  100% {
+    left: 120%;
+    opacity: 0;
+  }
+}
+
+.animate-laser-h {
+  animation: laserHorizontal 5s ease-in-out infinite;
+}
+
+@keyframes flowDashInfinite {
+  0% {
+    stroke-dashoffset: 1000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-flow-dash {
+  animation: flowDashInfinite 12s linear infinite;
+}
+
+.animate-flow-dash-fast {
+  animation: flowDashInfinite 5s linear infinite;
+}
+
+@keyframes cardiacBeat {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  14% {
+    transform: scale(1.08);
+    opacity: 0.75;
+  }
+  28% {
+    transform: scale(1.03);
+    opacity: 0.45;
+  }
+  42% {
+    transform: scale(1.15);
+    opacity: 0.9;
+  }
+  70% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+}
+
+.animate-cardiac-beat {
+  animation: cardiacBeat 2.4s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes rippleExpandEffect {
+  0% {
+    transform: scale(0.6);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+.animate-ripple-1 {
+  animation: rippleExpandEffect 4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+.animate-ripple-2 {
+  animation: rippleExpandEffect 4s cubic-bezier(0, 0.2, 0.8, 1) infinite 1.3s;
+}
+
+.animate-ripple-3 {
+  animation: rippleExpandEffect 4s cubic-bezier(0, 0.2, 0.8, 1) infinite 2.6s;
+}
+
+@keyframes goniometerJointSweep {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(135deg);
+  }
+}
+
+.animate-goniometer-sweep {
+  animation: goniometerJointSweep 8s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+  transform-origin: center;
+}
+
+/* --- Cinematic Video-Type Motion: Smooth Drone Ken-Burns & Audio Equalizer --- */
+@keyframes kenBurnsZoom {
+  0% {
+    transform: scale(1.0) translate(0%, 0%);
+  }
+  50% {
+    transform: scale(1.09) translate(-1.5%, -1%);
+  }
+  100% {
+    transform: scale(1.0) translate(0%, 0%);
+  }
+}
+
+.animate-ken-burns {
+  animation: kenBurnsZoom 16s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+@keyframes scanlineSweep {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(1000%);
+  }
+}
+
+.animate-scanline {
+  animation: scanlineSweep 4s linear infinite;
+}
+
+@keyframes audioBarBounce {
+  0%, 100% {
+    height: 4px;
+    opacity: 0.6;
+  }
+  50% {
+    height: 18px;
+    opacity: 1;
+  }
+}
+
+.animate-audio-bar-1 {
+  animation: audioBarBounce 0.8s ease-in-out infinite 0.1s;
+}
+
+.animate-audio-bar-2 {
+  animation: audioBarBounce 0.65s ease-in-out infinite 0.3s;
+}
+
+.animate-audio-bar-3 {
+  animation: audioBarBounce 0.95s ease-in-out infinite 0.15s;
+}
+
+.animate-audio-bar-4 {
+  animation: audioBarBounce 0.75s ease-in-out infinite 0.4s;
+}
+
 /* Card Interactive 3D Lift */
 .card-motion-interactive {
   transition: transform 500ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 500ms cubic-bezier(0.16, 1, 0.3, 1), border-color 400ms ease;
@@ -318,5 +500,94 @@
 .btn-shimmer:hover {
   background-position: right center;
   transform: translateY(-2px);
-  box-shadow: 0 15px 30px -5px rgba(124, 58, 237, 0.35);
+  box-shadow: 0 15px 30px -5px rgba(5, 150, 105, 0.35);
 }
+
+
+/* ============================================================
+   SECTION TRANSITION & PREMIUM SCROLL EFFECTS (Phase 2)
+   ============================================================ */
+
+@keyframes pulseLocationRing {
+  0%   { transform: scale(0.6); opacity: 0.9; }
+  100% { transform: scale(2.8); opacity: 0; }
+}
+
+@keyframes medicalCrossFloat {
+  0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.12; }
+  50%       { transform: translateY(-18px) rotate(45deg); opacity: 0.28; }
+}
+
+@keyframes architecturalGridMove {
+  0%   { background-position: 0 0; }
+  100% { background-position: 60px 60px; }
+}
+
+@keyframes ambientOrb1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%       { transform: translate(28px, -18px) scale(1.08); }
+  66%       { transform: translate(-18px, 14px) scale(0.95); }
+}
+
+@keyframes ambientOrb2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  40%       { transform: translate(-22px, 18px) scale(1.1); }
+  70%       { transform: translate(14px, -10px) scale(0.92); }
+}
+
+@keyframes shimmerLight {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(5, 150, 105, 0.15); }
+  50%       { box-shadow: 0 0 44px rgba(5, 150, 105, 0.38); }
+}
+
+@keyframes contactMapPulse {
+  0%   { r: 8;  opacity: 0.9; }
+  100% { r: 40; opacity: 0; }
+}
+
+@keyframes floatingMedTag {
+  0%, 100% { transform: translateY(0px) rotate(-2deg); }
+  50%       { transform: translateY(-12px) rotate(2deg); }
+}
+
+@keyframes gentleRotateCW {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes gentleRotateCCW {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(-360deg); }
+}
+
+@keyframes waveExpandY {
+  0%   { transform: scaleY(0.6); opacity: 0.6; }
+  50%  { transform: scaleY(1.1); opacity: 1; }
+  100% { transform: scaleY(0.6); opacity: 0.6; }
+}
+
+@keyframes contactDotDash {
+  0%   { stroke-dashoffset: 400; }
+  100% { stroke-dashoffset: 0; }
+}
+
+.animate-pulse-location-ring-1 { animation: pulseLocationRing 3s ease-out infinite; }
+.animate-pulse-location-ring-2 { animation: pulseLocationRing 3s ease-out 1s infinite; }
+.animate-pulse-location-ring-3 { animation: pulseLocationRing 3s ease-out 2s infinite; }
+.animate-medical-cross-1 { animation: medicalCrossFloat 6s ease-in-out infinite; }
+.animate-medical-cross-2 { animation: medicalCrossFloat 8s ease-in-out 2s infinite; }
+.animate-arch-grid { animation: architecturalGridMove 10s linear infinite; }
+.animate-orb-1 { animation: ambientOrb1 14s ease-in-out infinite; }
+.animate-orb-2 { animation: ambientOrb2 18s ease-in-out infinite; }
+.animate-glow-pulse { animation: glowPulse 2.5s ease-in-out infinite; }
+.animate-float-med-tag-1 { animation: floatingMedTag 5s ease-in-out infinite; }
+.animate-float-med-tag-2 { animation: floatingMedTag 7s ease-in-out 1.5s infinite; }
+.animate-gentle-cw  { animation: gentleRotateCW  30s linear infinite; }
+.animate-gentle-ccw { animation: gentleRotateCCW 25s linear infinite; }
+.animate-wave-expand { animation: waveExpandY 3s ease-in-out infinite; }
+.animate-contact-dash { animation: contactDotDash 4s linear infinite; }

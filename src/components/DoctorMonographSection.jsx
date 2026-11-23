@@ -1,15 +1,18 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Award, GraduationCap, ShieldCheck, Heart, Sparkles, CheckCircle2, ArrowRight, Activity, Stethoscope, Quote } from 'lucide-react';
+import { Award, GraduationCap, ShieldCheck, Heart, Sparkles, CheckCircle2, ArrowRight, Activity, Stethoscope, Quote, Play } from 'lucide-react';
 import DoctorPlaceholder from './DoctorPlaceholder';
+import ThreeDImageCard from './ThreeDImageCard';
 import { PULSE_DATA } from '../data/pulseData';
+import SectionCinematicVideo from './SectionCinematicVideo';
 
 /**
  * DoctorMonographSection
  * Visual & Motion Identity: Luxury Editorial Monograph
- * Color Palette: Deep Plum, Warm Ivory, Champagne Gold & Royal Indigo
+ * Color Palette: Deep Plum, Warm Ivory, Emerald Green & Royal Indigo
  * Motion Features:
- * - Morphing plum/champagne ambient gradient background
+ * - Morphing plum/mint ambient gradient background
  * - Rotating CAD coordinate rings & gold filigree
  * - Hover elevation & 3D tilt on portrait canvas
  * - Smooth interactive transition across 3 Pillars of Patient Care
@@ -30,141 +33,275 @@ export default function DoctorMonographSection() {
     {
       num: '01',
       title: 'Transradial-First Interventions',
-      tag: 'PATIENT SAFETY & RAPID RECOVERY',
-      desc: 'Performing catheterizations and angioplasties through the wrist radial artery rather than the femoral groin. This advanced technique eliminates painful multi-hour immobilization, drastically reduces vascular bleeding complications, and enables safe same-day ambulation.',
-      stat: '98.7% Radial Success Rate',
+      tag: 'Wrist Radial Access • Same-Day Ambulation',
+      desc: 'Transradial wrist catheterization eliminating groin pain & bleeding.',
+      stat: '98.7% Radial Rate',
     },
     {
       num: '02',
-      title: 'Evidence-Based Clinical Ethics',
-      tag: 'UNBIASED SECOND OPINIONS',
-      desc: 'Strict adherence to international guidelines established by the European Society of Cardiology (ESC) and American College of Cardiology (ACC). Interventional stenting is recommended only when medically imperative, prioritizing optimal medical therapy and lifestyle management first.',
-      stat: '100% Guideline-Concordant Care',
+      title: 'Evidence-Based Ethics',
+      tag: 'ESC / ACC Guidelines • Zero Unnecessary Stents',
+      desc: 'Stenting recommended strictly when medically imperative.',
+      stat: '100% Guideline Care',
     },
     {
       num: '03',
       title: 'Unhurried Bedside Dialogue',
-      tag: 'COMPASSIONATE COMMUNICATION',
-      desc: 'Every patient and family at Pulse Heart Centre receives comprehensive, unhurried time. Dr. Shahi personally reviews fluoroscopic angiogram CDs and echocardiography loops on dedicated high-resolution displays, demystifying cardiac pathology with warmth and clarity.',
-      stat: '22+ Years Devotion in Gorakhpur',
+      tag: 'Direct Angio CD Review • 22+ Yrs Trust',
+      desc: 'Frame-by-frame fluoroscopy review directly with patients.',
+      stat: '22+ Yrs Experience',
     },
   ];
 
   return (
-    <section className="relative py-28 lg:py-36 overflow-hidden select-none bg-gradient-to-b from-[#FAF9F6] via-[#F6F4ED] to-[#FBFBFA] border-b border-amber-200/40">
+    <section className="relative py-28 lg:py-36 overflow-hidden select-none bg-gradient-to-b from-[#FAF9F6] via-[#F7F4EB] to-[#FAF9F6] border-b border-amber-200/50">
 
       {/* =========================================================================
-          SECTION 3 DISTINCT BACKGROUND: WARM IVORY, CHAMPAGNE GOLD & ARCHITECTURAL CAD
+          SECTION 3 DISTINCT BACKGROUND: AMBIENT CLINICIAN VIDEO, ECG HEARTBEAT & GOLD/EMERALD CAD HUD
          ========================================================================= */}
-      <div className="absolute inset-0 pointer-events-none -z-10 overflow-hidden">
-        {/* Warm Champagne Gold Ambient Light */}
-        <div className="absolute top-1/4 -left-20 w-[650px] h-[650px] rounded-full bg-gradient-to-tr from-[#EBCB91]/25 via-[#FDE68A]/15 to-transparent blur-[140px]" />
-
-        {/* Soft Warm Ivory Diffusion */}
-        <div className="absolute bottom-10 right-0 w-[650px] h-[650px] rounded-full bg-gradient-to-bl from-[#EBCB91]/20 via-[#FEF3C7]/15 to-transparent blur-[140px]" />
-
-        {/* Monumental Watermark Typography */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-serif italic text-[15vw] font-bold text-[#92400E]/[0.025] whitespace-nowrap pointer-events-none">
-          CLINICIAN • 2002
+      <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden" aria-hidden="true">
+        {/* 1. Ambient 4K Clinical Consultation Video Layer */}
+        <div className="absolute inset-0 overflow-hidden opacity-25 mix-blend-multiply">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="metadata"
+            className="w-full h-full object-cover filter contrast-125 saturate-125 scale-105"
+          >
+            <source src="/videos/doctors-procedure.mp4" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-gradient-to-b from-[#FAF9F6]/85 via-transparent to-[#FAF9F6]/90" />
         </div>
 
-        {/* Slowly Rotating Architectural Vector Filigree */}
-        <svg className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[850px] opacity-20" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="425" cy="425" r="300" fill="none" stroke="#D97706" strokeWidth="0.8" strokeDasharray="6 12" />
-          <circle cx="425" cy="425" r="390" fill="none" stroke="#B45309" strokeWidth="0.5" strokeDasharray="10 20" />
-          <line x1="425" y1="20" x2="425" y2="830" stroke="#D97706" strokeWidth="0.4" strokeOpacity="0.3" />
-          <line x1="20" y1="425" x2="830" y2="425" stroke="#D97706" strokeWidth="0.4" strokeOpacity="0.3" />
+        {/* 2. Warm Emerald Green & Teal Luminous Ambient Lights */}
+        <div className="absolute top-1/6 -left-20 w-[650px] h-[650px] rounded-full bg-gradient-to-tr from-[#A7F3D0]/45 via-[#F0FDF4]/35 to-transparent blur-[110px]" />
+        <div className="absolute top-1/2 -right-20 w-[700px] h-[700px] rounded-full bg-gradient-to-bl from-[#34D399]/30 via-[#A7F3D0]/35 to-transparent blur-[120px]" />
+        <div className="absolute bottom-10 left-1/4 w-[600px] h-[600px] rounded-full bg-gradient-to-tr from-[#F0FDF4]/50 to-transparent blur-[100px]" />
+
+        {/* 3. Medical Biometric Coordinate CAD Grid */}
+        <svg className="absolute inset-0 w-full h-full opacity-35" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="docCadGrid" width="60" height="60" patternUnits="userSpaceOnUse">
+              <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#059669" strokeWidth="0.6" strokeDasharray="3 3" opacity="0.3" />
+              <circle cx="60" cy="0" r="1.5" fill="#059669" opacity="0.4" />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#docCadGrid)" />
         </svg>
+
+        {/* 4. Giant Watermark Typography */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-serif italic text-[16vw] font-black text-[#064E3B]/[0.03] whitespace-nowrap pointer-events-none select-none">
+          CARDIOLOGIST • 2002
+        </div>
+
+        {/* 5. Precision Rotating Clinical Compass & CAD Circles */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] opacity-60 pointer-events-none">
+          <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+            {/* Outer Slow Rotating Degree Compass */}
+            <g className="animate-radar-sweep origin-center" style={{ transformOrigin: '450px 450px', animationDuration: '40s' }}>
+              <circle cx="450" cy="450" r="340" fill="none" stroke="#059669" strokeWidth="1.5" strokeDasharray="6 12" />
+              <circle cx="450" cy="450" r="300" fill="none" stroke="#064E3B" strokeWidth="1" strokeDasharray="3 9" />
+              <line x1="450" y1="20" x2="450" y2="880" stroke="#059669" strokeWidth="1" strokeOpacity="0.4" />
+              <line x1="20" y1="450" x2="880" y2="450" stroke="#059669" strokeWidth="1" strokeOpacity="0.4" />
+            </g>
+            {/* Inner Reverse Ring */}
+            <g className="animate-rotate-reverse origin-center" style={{ transformOrigin: '450px 450px', animationDuration: '50s' }}>
+              <circle cx="450" cy="450" r="410" fill="none" stroke="#047857" strokeWidth="1.2" strokeDasharray="10 20" />
+            </g>
+          </svg>
+        </div>
+
+        {/* 6. Continuous Flowing Mint & Emerald Cardiac ECG Streamline */}
+        <div className="absolute top-1/3 left-0 right-0 opacity-60 pointer-events-none">
+          <svg className="w-full h-28" viewBox="0 0 1440 100" fill="none" preserveAspectRatio="none">
+            <path
+              d="M0,50 L280,50 L295,20 L310,80 L325,10 L340,75 L355,50 L750,50 L765,20 L780,80 L795,10 L810,75 L825,50 L1200,50 L1215,20 L1230,80 L1245,10 L1260,75 L1275,50 L1440,50"
+              stroke="#059669"
+              strokeWidth="2.5"
+              strokeDasharray="350"
+              className="animate-flow-dash"
+            />
+            {/* Pulsing ECG Nodes */}
+            <circle cx="325" cy="10" r="5" fill="#10B981" className="animate-ping" />
+            <circle cx="795" cy="10" r="5" fill="#059669" className="animate-ping" />
+            <circle cx="1245" cy="10" r="5" fill="#10B981" className="animate-ping" />
+          </svg>
+        </div>
+
+        <div className="absolute bottom-16 left-0 right-0 opacity-50 pointer-events-none">
+          <svg className="w-full h-24" viewBox="0 0 1440 90" fill="none" preserveAspectRatio="none">
+            <path
+              d="M0,45 L420,45 L430,25 L440,65 L450,15 L460,60 L470,45 L900,45 L910,25 L920,65 L930,15 L940,60 L950,45 L1440,45"
+              stroke="#047857"
+              strokeWidth="2"
+              strokeDasharray="300"
+              className="animate-flow-dash-fast"
+            />
+          </svg>
+        </div>
+
+        {/* 7. Sweeping Laser Beam */}
+        <div className="absolute left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#059669] to-transparent shadow-[0_0_15px_#059669] opacity-40 animate-laser-sweep pointer-events-none" />
+
+        {/* 8. Floating Telemetry Tags in Background */}
+        <div className="absolute top-24 left-10 hidden xl:flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/90 border border-[#A7F3D0] shadow-sm text-[10px] font-mono font-bold text-[#064E3B]">
+          <span className="w-2 h-2 rounded-full bg-[#064E3B] animate-pulse" />
+          <span>TRANSRADIAL CATH LAB ACTIVE</span>
+        </div>
+
+        <div className="absolute top-36 right-10 hidden xl:flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/90 border border-[#34D399] shadow-sm text-[10px] font-mono font-bold text-[#047857]">
+          <span className="w-2 h-2 rounded-full bg-[#059669] animate-pulse" />
+          <span>LEAD II TELEMETRY: 72 BPM SINUS</span>
+        </div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
-        {/* Section Header */}
-        <div className="mb-16 text-center max-w-3xl mx-auto space-y-3">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#064E3B] text-white text-xs font-mono font-bold shadow-md">
-            <Sparkles className="w-4 h-4 text-amber-300" />
-            <span className="uppercase tracking-[0.2em]">Physician Monograph • Dr. Prakash Chand Shahi</span>
+        {/* Section Header (Minimal Text, Maximum Punch) */}
+        <motion.div
+          initial={{ opacity: 0, y: 32 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+          className="mb-12 text-center max-w-3xl mx-auto space-y-3"
+        >
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#064E3B] text-[#A7F3D0] text-xs font-mono font-bold shadow-md">
+            <Sparkles className="w-4 h-4 text-[#059669]" />
+            <span className="uppercase tracking-[0.2em]">Apex Interventional Cardiologist • Eastern UP</span>
           </div>
 
           <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#064E3B] tracking-[-0.03em] leading-[1.08]">
-            Two Decades of Dedication to <br />
-            <span className="font-serif italic font-normal text-[#B45309]">Heart Health & Human Lives</span>
+            Dr. Prakash Chand Shahi <br />
+            <span className="font-serif italic font-normal text-[#059669]">Senior Interventional Cardiologist</span>
           </h2>
 
-          <p className="text-base sm:text-lg text-slate-700 font-medium max-w-2xl mx-auto leading-relaxed">
-            Combining apex super-specialty training from <strong>PGIMER Chandigarh</strong> and <strong>KGMU Lucknow</strong> with 22+ years of compassionate bedside devotion at Pulse Heart Centre, Betiahata.
-          </p>
-        </div>
+          <div className="flex flex-wrap items-center justify-center gap-2 pt-1 font-mono text-xs font-bold">
+            <span className="bg-[#F0FDF4] text-[#064E3B] px-3 py-1 rounded-full border border-[#A7F3D0]">DM Cardiology (PGIMER)</span>
+            <span className="bg-[#F0FDF4] text-[#047857] px-3 py-1 rounded-full border border-[#34D399]">MD Medicine (KGMU)</span>
+            <span className="bg-white text-slate-900 px-3 py-1 rounded-full border border-[#A7F3D0]">22+ Years Experience</span>
+          </div>
+        </motion.div>
 
         {/* Master Overlapping Composition */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
 
-          {/* Left Column (5 cols): Large Doctor Image Placeholder with Gold Wax Seals */}
-          <div className="lg:col-span-5 relative">
+          {/* Left Column (5 cols): Rich Doctor Visual Portfolio (Multiple Real Photos) */}
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: '-60px' }}
+            transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-5 relative space-y-4"
+          >
 
-            {/* Primary Portrait Canvas with Interactive Lift */}
-            <div className="relative rounded-[2.5rem] bg-gradient-to-b from-white via-amber-50/20 to-white p-4 sm:p-5 border-2 border-amber-200/60 shadow-layered hover:shadow-layered-hover transition-all duration-500 hover:-translate-y-2 hover:rotate-1 group">
+            {/* Primary Portrait Canvas with Doctor Photo Upload Placeholder */}
+            <DoctorPlaceholder
+              aspectRatio="aspect-[4/5]"
+              showUploadTrigger={true}
+            />
 
-              <DoctorPlaceholder
-                className="w-full"
-                aspectRatio="aspect-[4/5]"
-                showUploadTrigger={true}
+            {/* Secondary 3D Image Grid: Clinical Facilities & Interventions */}
+            <div className="grid grid-cols-2 gap-3 pt-2">
+              <ThreeDImageCard
+                src="/images/operation-theatre-laminar.jpg"
+                alt="Laminar Flow Operating Theatre"
+                aspectRatio="aspect-[4/3]"
+                badge="CLASS-100 OT"
+                title="Laminar Complex"
               />
-
-              {/* Floating Verified Pedigree Seal (PGIMER & KGMU) - Luminous Pearl & Gold */}
-              <div className="absolute -bottom-6 left-4 right-4 p-4 rounded-2xl bg-white/95 backdrop-blur-xl text-slate-900 shadow-xl border-2 border-amber-300 flex items-center justify-between text-xs transition-transform duration-300 group-hover:scale-102">
-                <div className="space-y-0.5 text-left">
-                  <div className="flex items-center gap-2">
-                    <span className="font-semibold text-sm text-slate-950">Dr. Prakash Chand Shahi</span>
-                    <span className="px-2 py-0.5 rounded-full bg-amber-100 border border-amber-300 text-[9px] font-mono text-amber-900 font-semibold">
-                      VERIFIED
-                    </span>
-                  </div>
-                  <span className="text-[11px] text-purple-900 font-mono block">
-                    DM Cardiology (PGIMER) • MD Medicine (KGMU)
-                  </span>
-                </div>
-                <div className="w-10 h-10 rounded-xl bg-amber-100 border border-amber-300 flex items-center justify-center text-amber-700 shrink-0">
-                  <ShieldCheck className="w-5 h-5 text-amber-600" />
-                </div>
-              </div>
-
+              <ThreeDImageCard
+                src="/images/cath-lab.jpg"
+                alt="Cath Lab Stenting"
+                aspectRatio="aspect-[4/3]"
+                badge="SIEMENS ARTIS"
+                title="Radial Cath Suite"
+              />
+              <ThreeDImageCard
+                src="/images/echo-doppler-scan.jpg"
+                alt="Doppler Hemodynamics"
+                aspectRatio="aspect-[4/3]"
+                badge="3D ECHO DOPPLER"
+                title="Valve Evaluation"
+              />
+              <ThreeDImageCard
+                src="/images/patient-care-recovery.jpg"
+                alt="Patient Recovery"
+                aspectRatio="aspect-[4/3]"
+                badge="RECOVERY SUITE"
+                title="Dedicated Care"
+              />
             </div>
 
-            {/* Behind Ambient Glow Card */}
-            <div className="absolute -top-4 -left-4 w-full h-full rounded-[2.5rem] bg-gradient-to-br from-[#173C59]/10 via-[#2788B8]/10 to-transparent -z-10 blur-xl animate-pulse-glow" />
+          </motion.div>
 
-          </div>
+          {/* Right Column (7 cols): Graphic Metrics & Minimal Pillars (Mint + Emerald + Teal) */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: '-60px' }}
+            transition={{ duration: 0.9, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-7 space-y-6 text-left mt-8 lg:mt-0"
+          >
 
-          {/* Right Column (7 cols): Editorial Monograph & Interactive Philosophy Switcher */}
-          <div className="lg:col-span-7 space-y-6 text-left mt-8 lg:mt-0">
-
-            {/* Authoritative Profile Statement */}
-            <div className="space-y-3">
-              <span className="inline-block text-xs font-mono font-bold uppercase tracking-wider text-[#064E3B] bg-emerald-50 px-3.5 py-1.5 rounded-full border border-emerald-200">
-                Founding Director & Chief Cardiologist
+            {/* Authoritative Badge Header */}
+            <div className="space-y-2">
+              <span className="inline-block text-xs font-mono font-bold uppercase tracking-wider text-[#064E3B] bg-[#F0FDF4] px-3.5 py-1.5 rounded-full border border-[#34D399]">
+                Unbroken Clinical Commitment • Since 2002
               </span>
 
-              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-950 tracking-tight leading-snug">
-                Precision Interventions Guided by Uncompromising Ethics
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-[#064E3B] tracking-tight leading-snug">
+                Precision Hemodynamics Guided by Evidence &amp; Ethics
               </h3>
-
-              <p className="text-sm sm:text-base text-slate-700 font-medium leading-relaxed">
-                After completing rigorous post-graduate residency in Internal Medicine at <strong>King George's Medical University (KGMU Lucknow)</strong>, Dr. Prakash Chand Shahi achieved his super-specialty doctorate (DM) in Cardiology from India's apex institute, the <strong>Postgraduate Institute of Medical Education and Research (PGIMER Chandigarh)</strong>.
-              </p>
-
-              <p className="text-sm sm:text-base text-slate-700 font-medium leading-relaxed">
-                For over two decades, he has directed comprehensive coronary catheterizations, radial balloon angioplasties, complex bifurcation stenting, and permanent pacemaker implantations for patients across Eastern Uttar Pradesh, Bihar, and Nepal.
-              </p>
             </div>
 
-            {/* Interactive Clinical Philosophy Switcher with Smooth State Display */}
-            <div className="p-6 rounded-[2rem] bg-white border-2 border-slate-200 shadow-md space-y-4 transition-all duration-300 hover:shadow-xl">
+            {/* 6 Visual Achievement Cards */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+              <div className="p-3.5 rounded-2xl bg-white border border-[#A7F3D0] shadow-xs hover:border-[#064E3B] transition-colors">
+                <span className="text-2xl sm:text-3xl font-extrabold text-[#064E3B] block">22+</span>
+                <span className="text-xs font-bold text-slate-900 block">Years Experience</span>
+                <span className="text-[10px] text-slate-700">Dedicated leadership</span>
+              </div>
 
-              <div className="flex items-center justify-between pb-3 border-b border-slate-100">
-                <span className="text-xs font-mono font-bold uppercase tracking-wider text-slate-900 flex items-center gap-2">
-                  <Heart className="w-4 h-4 text-rose-600 animate-pulse" />
-                  <span>3 Pillars of Clinical Practice</span>
+              <div className="p-3.5 rounded-2xl bg-white border border-[#A7F3D0] shadow-xs hover:border-[#064E3B] transition-colors">
+                <span className="text-2xl sm:text-3xl font-extrabold text-[#059669] block">15,000+</span>
+                <span className="text-xs font-bold text-slate-900 block">Cath Procedures</span>
+                <span className="text-[10px] text-slate-700">Angiography &amp; Stents</span>
+              </div>
+
+              <div className="p-3.5 rounded-2xl bg-white border border-[#34D399] shadow-xs hover:border-[#064E3B] transition-colors">
+                <span className="text-2xl sm:text-3xl font-extrabold text-[#047857] block">99.4%</span>
+                <span className="text-xs font-bold text-slate-900 block">Radial Patency</span>
+                <span className="text-[10px] text-slate-700">Painless wrist access</span>
+              </div>
+
+              <div className="p-3.5 rounded-2xl bg-white border border-[#A7F3D0] shadow-xs hover:border-[#064E3B] transition-colors">
+                <span className="text-xl sm:text-2xl font-extrabold text-[#064E3B] block">PGIMER</span>
+                <span className="text-xs font-bold text-slate-900 block">DM Cardiology</span>
+                <span className="text-[10px] text-slate-700">Apex National Institute</span>
+              </div>
+
+              <div className="p-3.5 rounded-2xl bg-white border border-[#A7F3D0] shadow-xs hover:border-[#064E3B] transition-colors">
+                <span className="text-xl sm:text-2xl font-extrabold text-[#059669] block">KGMU</span>
+                <span className="text-xs font-bold text-slate-900 block">MD Medicine</span>
+                <span className="text-[10px] text-slate-700">Premier University</span>
+              </div>
+
+              <div className="p-3.5 rounded-2xl bg-white border border-[#34D399] shadow-xs hover:border-[#064E3B] transition-colors">
+                <span className="text-2xl sm:text-3xl font-extrabold text-[#047857] block">1,200+</span>
+                <span className="text-xs font-bold text-slate-900 block">Pacemakers</span>
+                <span className="text-[10px] text-slate-700">Physiological pacing</span>
+              </div>
+            </div>
+
+            {/* Interactive Clinical Philosophy Switcher with Minimal Punchy Content */}
+            <div className="p-5 rounded-[2rem] bg-white border-2 border-[#A7F3D0] shadow-md space-y-3 transition-all duration-300 hover:shadow-xl">
+
+              <div className="flex items-center justify-between pb-2 border-b border-slate-100">
+                <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#064E3B] flex items-center gap-2">
+                  <Heart className="w-4 h-4 text-[#047857] animate-pulse" />
+                  <span>3 Pillars of Clinical Excellence</span>
                 </span>
                 <span className="text-[11px] font-mono font-bold text-[#059669]">
                   Select Dimension
@@ -179,8 +316,8 @@ export default function DoctorMonographSection() {
                     onClick={() => setActivePillar(idx)}
                     className={`py-2 px-3 rounded-xl text-xs font-semibold transition-all duration-300 text-center ${
                       activePillar === idx
-                        ? 'bg-gradient-to-r from-[#064E3B] via-[#047857] to-[#059669] text-white shadow-md scale-102'
-                        : 'bg-slate-50 hover:bg-slate-100 text-slate-700 border border-slate-200'
+                        ? 'bg-gradient-to-r from-[#064E3B] via-[#047857] to-[#047857] text-[#A7F3D0] shadow-md scale-102 border border-[#A7F3D0]/40'
+                        : 'bg-slate-50 hover:bg-[#F0FDF4] text-slate-700 border border-slate-200'
                     }`}
                   >
                     <span className="font-mono text-[10px] block opacity-70">PILLAR {p.num}</span>
@@ -189,18 +326,18 @@ export default function DoctorMonographSection() {
                 ))}
               </div>
 
-              {/* Active Dimension Details with Fade-in Animation */}
-              <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2 transition-all duration-400">
+              {/* Active Dimension Details with Minimal Punchy Text */}
+              <div className="p-3.5 rounded-xl bg-[#F0FDF4] border border-[#A7F3D0] space-y-1.5 transition-all duration-400">
                 <div className="flex items-center justify-between">
-                  <h4 className="text-sm font-extrabold text-slate-950">
+                  <h4 className="text-sm font-extrabold text-[#064E3B]">
                     {pillars[activePillar].title}
                   </h4>
-                  <span className="text-[10px] font-mono font-bold text-emerald-800 bg-emerald-100/80 px-2 py-0.5 rounded-full">
+                  <span className="text-[10px] font-mono font-bold text-[#064E3B] bg-[#F0FDF4] border border-[#34D399] px-2 py-0.5 rounded-full">
                     {pillars[activePillar].stat}
                   </span>
                 </div>
-                <p className="text-xs text-slate-700 font-medium leading-relaxed">
-                  {pillars[activePillar].desc}
+                <p className="text-xs text-slate-700 font-semibold leading-relaxed">
+                  {pillars[activePillar].tag}
                 </p>
               </div>
 
@@ -209,22 +346,22 @@ export default function DoctorMonographSection() {
             {/* Direct Action CTAs */}
             <div className="pt-2 flex flex-wrap items-center gap-4">
               <Link
-                to="/about"
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-gradient-to-r from-[#064E3B] via-[#047857] to-[#059669] hover:from-[#022C22] hover:to-[#064E3B] text-white text-xs font-semibold uppercase tracking-wider shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                to="/book-appointment"
+                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-gradient-to-r from-[#064E3B] via-[#047857] to-[#047857] hover:from-[#022C22] hover:to-[#064E3B] text-[#A7F3D0] text-xs font-bold uppercase tracking-wider shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5 border border-[#A7F3D0]/40"
               >
-                <span>Read Full Pedigree & Experience</span>
-                <ArrowRight className="w-4 h-4 text-amber-300" />
+                <span>Consult Dr. Prakash Chand Shahi</span>
+                <ArrowRight className="w-4 h-4 text-[#34D399]" />
               </Link>
 
               <Link
-                to="/contact"
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-white hover:bg-slate-50 text-slate-900 text-xs font-bold uppercase tracking-wider border-2 border-slate-200 shadow-xs hover:shadow-md transition-all duration-300 hover:-translate-y-0.5"
+                to="/treatments"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-white hover:bg-[#F0FDF4] text-[#064E3B] text-xs font-bold uppercase tracking-wider border border-[#A7F3D0] shadow-sm transition-all"
               >
-                <span>Book OPD Consultation</span>
+                <span>Explore Stenting &amp; Cath Lab</span>
               </Link>
             </div>
 
-          </div>
+          </motion.div>
 
         </div>
 

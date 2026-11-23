@@ -70,11 +70,11 @@ export default function ExpertiseCollageSection() {
       title: 'Direct Clinical Evaluation with Dr. Shahi',
       subtitle: '22+ Years of Bedside Devotion',
       description: 'Unhurried diagnostic review, second opinions on stenting/bypass, and tailored long-term medical therapy for complete patient peace of mind.',
-      image: '/images/doctor-consulting.jpg',
+      image: '/images/operation-theatre-laminar.jpg',
       aspect: 'aspect-[4/3]',
       stats: 'Over 22 Years Devotion',
       subtext: 'Betiahata, Gorakhpur',
-      badgeColor: 'text-emerald-800 bg-emerald-50 border-emerald-200',
+      badgeColor: 'text-[#064E3B] bg-[#F0FDF4] border-[#A7F3D0]',
     },
   ];
 
@@ -119,7 +119,7 @@ export default function ExpertiseCollageSection() {
               {/* Primary Large Anchor Card: Cath Lab (Sm: 8 cols) */}
               <div 
                 onMouseEnter={() => setActiveCard(0)}
-                className={`sm:col-span-8 group relative rounded-[2rem] overflow-hidden p-3 bg-white/80 backdrop-blur-xl border border-white/90 shadow-[0_25px_50px_-12px_rgba(109,40,217,0.12)] transition-all duration-500 cursor-pointer ${
+                className={`sm:col-span-8 group relative rounded-[2rem] overflow-hidden p-3 bg-white/80 backdrop-blur-xl border border-white/90 shadow-[0_25px_50px_-12px_rgba(6, 78, 59, 0.12)] transition-all duration-500 cursor-pointer ${
                   activeCard === 0 ? 'scale-[1.02] ring-2 ring-purple-400 z-30' : 'hover:scale-[1.01] z-10'
                 }`}
               >
@@ -244,7 +244,7 @@ export default function ExpertiseCollageSection() {
           {/* Right Column (5 cols): Dynamic Editorial Detail Panel corresponding to hovered card */}
           <div className="lg:col-span-5 space-y-6 text-left">
             
-            <div className="p-8 rounded-[2.5rem] bg-white/85 backdrop-blur-2xl border border-white/90 shadow-[0_20px_50px_-10px_rgba(109,40,217,0.08)] space-y-5">
+            <div className="p-8 rounded-[2.5rem] bg-white/85 backdrop-blur-2xl border border-white/90 shadow-[0_20px_50px_-10px_rgba(6, 78, 59, 0.08)] space-y-5">
               
               <div className="flex items-center justify-between">
                 <span className={`px-3 py-1 rounded-full text-[10px] font-mono uppercase tracking-wider font-bold border ${collageItems[activeCard].badgeColor}`}>

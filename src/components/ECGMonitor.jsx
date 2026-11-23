@@ -54,7 +54,7 @@ export default function ECGMonitor({ bpm = 72, className = "" }) {
     };
 
     const drawGrid = () => {
-      ctx.strokeStyle = 'rgba(124, 58, 237, 0.07)';
+      ctx.strokeStyle = 'rgba(5, 150, 105, 0.07)';
       ctx.lineWidth = 1;
       const step = 16;
       for (let x = 0; x < width; x += step) {

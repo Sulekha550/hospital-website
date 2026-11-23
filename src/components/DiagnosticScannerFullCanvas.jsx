@@ -2,10 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 
 /**
- * DiagnosticScannerFullCanvas
- * Full-section background environment for Diagnostics:
- * 3D Volumetric Tomography Scanner with sweeping laser planes,
- * translucent layered imaging slices, and ice-blue holographic particles.
+
  */
 export default function DiagnosticScannerFullCanvas() {
   const mountRef = useRef(null);
@@ -30,12 +27,12 @@ export default function DiagnosticScannerFullCanvas() {
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     container.appendChild(renderer.domElement);
 
-    const amb = new THREE.AmbientLight(0xE0F2FE, 2.0);
+    const amb = new THREE.AmbientLight(0xF0FDF4, 2.0);
     scene.add(amb);
 
-    const cyanLight = new THREE.DirectionalLight(0x0284C7, 3.8);
-    cyanLight.position.set(5, 7, 7);
-    scene.add(cyanLight);
+    const emeraldLight = new THREE.DirectionalLight(0x059669, 3.8);
+    emeraldLight.position.set(5, 7, 7);
+    scene.add(emeraldLight);
 
     const scanRoot = new THREE.Group();
     // Offset right for visual balance
@@ -43,14 +40,14 @@ export default function DiagnosticScannerFullCanvas() {
     scanRoot.rotation.x = 0.35;
     scene.add(scanRoot);
 
-    // 10 Layered Translucent Tomographic Discs
+    // 10 Layered Translucent Tomographic Discs in Mint & Emerald
     const sliceCount = 10;
     const slices = [];
     const discGeo = new THREE.CylinderGeometry(2.0, 2.0, 0.05, 48);
 
     for (let i = 0; i < sliceCount; i++) {
       const discMat = new THREE.MeshPhysicalMaterial({
-        color: 0x0284C7,
+        color: i % 2 === 0 ? 0x059669 : 0x064E3B,
         transmission: 0.82,
         opacity: 0.65,
         transparent: true,
@@ -64,10 +61,10 @@ export default function DiagnosticScannerFullCanvas() {
       scanRoot.add(slice);
     }
 
-    // Moving Laser Diagnostic Scan Beam
+    // Moving Laser Diagnostic Scan Beam in Teal & Mint
     const beamGeo = new THREE.RingGeometry(2.1, 2.18, 64);
     const beamMat = new THREE.MeshBasicMaterial({
-      color: 0x38BDF8,
+      color: 0x34D399,
       side: THREE.DoubleSide,
       transparent: true,
       opacity: 0.95,
@@ -140,3 +137,5 @@ export default function DiagnosticScannerFullCanvas() {
 
   return <div ref={mountRef} className="absolute inset-0 w-full h-full pointer-events-none z-0 overflow-hidden" />;
 }
+
+

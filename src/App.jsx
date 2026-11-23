@@ -19,8 +19,11 @@ export default function App() {
       <ScrollToTop />
       
       {/* Pure Architectural Canvas with High-Contrast Typography */}
-      <div className="min-h-screen flex flex-col selection:bg-[#059669] selection:text-white relative bg-[#FAFBF9] text-[#0F1E19] overflow-x-hidden antialiased">
+      <div className="min-h-screen flex flex-col selection:bg-[#047857] selection:text-white relative bg-[#FAFBF9] text-[#0F1E19] overflow-x-hidden antialiased">
         
+        {/* Global Ambient Interactive Motion Background */}
+        <VibrantBackgroundDesign />
+
         {/* Floating Minimal Glass Navbar */}
         <Navbar />
 

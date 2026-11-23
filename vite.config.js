@@ -7,7 +7,10 @@ export default defineConfig({
   server: {
     port: 3000,
     host: true,
-    open: false
+    open: false,
+    headers: {
+      'Accept-Ranges': 'bytes'
+    }
   }
 })
 
