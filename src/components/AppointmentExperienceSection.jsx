@@ -77,36 +77,64 @@ export default function AppointmentExperienceSection() {
     <section id="appointment-experience" className="relative py-24 lg:py-32 overflow-hidden select-none bg-gradient-to-b from-[#FAFBF9] via-[#F0FDF4]/20 to-[#FAFBF9] text-slate-900 border-t border-[#A7F3D0]/60">
 
       {/* =========================================================================
-          UNIQUE SECTION 9 BACKGROUND: AMBIENT APPOINTMENT VIDEO + BOARDING PASS HUD
+          UNIQUE SECTION 9 BACKGROUND: AMBIENT APPOINTMENT VIDEO, LASER, ECG & CAD HUD
          ========================================================================= */}
       <div className="absolute inset-0 pointer-events-none -z-10 overflow-hidden" aria-hidden="true">
         {/* Ambient 4K Appointment Suite & Triage Video Layer */}
-        <div className="absolute inset-0 -z-10 overflow-hidden opacity-20 mix-blend-multiply">
+        <div className="absolute inset-0 -z-10 overflow-hidden opacity-25 mix-blend-multiply">
           <video
             autoPlay
             loop
             muted
             playsInline
             preload="metadata"
-            className="w-full h-full object-cover scale-105"
+            className="w-full h-full object-cover scale-105 filter contrast-125 saturate-125"
           >
             <source src="/videos/appointment-suite.mp4" type="video/mp4" />
           </video>
-          <div className="absolute inset-0 bg-gradient-to-b from-[#FAFBF9]/85 via-transparent to-[#FAFBF9]/90" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#FAFBF9]/85 via-[#F0FDF4]/50 to-[#FAFBF9]/90" />
         </div>
 
-        {/* Emerald & Warm Gold Ambient Lights */}
-        <div className="absolute -top-24 left-1/4 w-[750px] h-[750px] bg-[#059669]/15 rounded-full blur-[140px]" />
-        <div className="absolute bottom-10 right-10 w-[700px] h-[700px] bg-amber-400/12 rounded-full blur-[130px]" />
+        {/* Luminous Emerald, Mint & Amber Ambient Atmosphere Orbs */}
+        <div className="absolute -top-24 left-1/4 w-[750px] h-[750px] bg-gradient-to-tr from-[#059669]/20 via-[#10B981]/15 to-transparent rounded-full blur-[140px] animate-pulse-glow" />
+        <div className="absolute bottom-10 right-10 w-[700px] h-[700px] bg-gradient-to-bl from-[#047857]/18 via-[#34D399]/15 to-transparent rounded-full blur-[130px] animate-float-2" />
+        <div className="absolute top-1/2 -left-20 w-[500px] h-[500px] bg-[#10B981]/15 rounded-full blur-[120px]" />
+
+        {/* Dynamic Sweeping Fluoroscopy / Priority Laser Beam */}
+        <div className="absolute inset-x-0 h-[2.5px] bg-gradient-to-r from-transparent via-[#10B981] to-transparent shadow-[0_0_20px_#059669] opacity-55 animate-laser-sweep pointer-events-none" />
+
+        {/* Counter-Rotating CAD Technical Angle Gauges (Top-Left & Bottom-Right) */}
+        <div className="absolute top-16 -left-16 w-80 h-80 rounded-full border-2 border-[#047857]/30 hidden lg:block animate-gentle-cw" />
+        <div className="absolute top-24 -left-8 w-64 h-64 rounded-full border-2 border-dashed border-[#10B981]/40 hidden lg:block animate-gentle-ccw" />
+        <div className="absolute bottom-16 -right-16 w-96 h-96 rounded-full border-2 border-[#047857]/25 hidden lg:block animate-gentle-ccw" />
+        <div className="absolute bottom-24 -right-8 w-72 h-72 rounded-full border-2 border-dashed border-emerald-600/35 hidden lg:block animate-gentle-cw" />
+
+        {/* Continuous Flowing Cardiac Lifeline Waveform Across Viewport */}
+        <svg className="absolute left-0 right-0 top-1/3 -translate-y-1/2 w-full h-32 opacity-45 pointer-events-none" viewBox="0 0 1440 128" fill="none" preserveAspectRatio="none">
+          <path
+            d="M0,64 L300,64 L330,64 L350,15 L370,110 L390,5 L415,95 L435,64 L720,64 L750,64 L770,15 L790,110 L810,5 L835,95 L855,64 L1140,64 L1170,64 L1190,15 L1210,110 L1230,5 L1255,95 L1275,64 L1440,64"
+            stroke="#059669" strokeWidth="2.5" strokeDasharray="400" className="animate-flow-dash-fast"
+          />
+          <circle cx="370" cy="110" r="5" fill="#10B981" className="animate-ping" />
+          <circle cx="790" cy="110" r="5" fill="#047857" className="animate-ping" />
+          <circle cx="1210" cy="110" r="5" fill="#10B981" className="animate-ping" />
+        </svg>
+
+        {/* Precision Blueprint Architectural Grid */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#064E3B18_1px,transparent_1px),linear-gradient(to_bottom,#064E3B18_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_85%_70%_at_50%_35%,#000_75%,transparent_100%)] pointer-events-none" />
+
+        {/* Floating Precision Medical Crosshairs (+) at Quadrants */}
+        <div className="absolute top-16 left-12 text-[#059669]/40 font-mono text-base font-bold animate-medical-cross-1 select-none">+</div>
+        <div className="absolute top-36 right-16 text-[#059669]/40 font-mono text-base font-bold animate-medical-cross-2 select-none">+</div>
+        <div className="absolute bottom-20 left-20 text-[#059669]/35 font-mono text-base font-bold animate-medical-cross-2 select-none">+</div>
+        <div className="absolute bottom-32 right-32 text-[#059669]/35 font-mono text-base font-bold animate-medical-cross-1 select-none">+</div>
 
         {/* Digital Boarding Gate Matrix Grid */}
-        <div className="absolute inset-0 bg-[radial-gradient(#04785715_2px,transparent_2px)] bg-[size:32px_32px] opacity-40" />
+        <div className="absolute inset-0 bg-[radial-gradient(#04785720_2px,transparent_2px)] bg-[size:32px_32px] opacity-40" />
 
         {/* Priority Pass Barcode with Active Holographic Scanning Laser */}
         <div className="absolute -left-10 bottom-6 w-[450px] h-[180px] opacity-40 pointer-events-none">
-          {/* Active Horizontal Holographic Scanner Laser */}
           <div className="absolute top-4 bottom-8 w-[2px] bg-gradient-to-b from-transparent via-[#047857] to-transparent shadow-[0_0_15px_#059669] animate-laser-h" />
-          
           <svg className="w-full h-full" viewBox="0 0 450 180" fill="none">
             <line x1="20" y1="20" x2="20" y2="150" stroke="#047857" strokeWidth="2.5" />
             <line x1="30" y1="20" x2="30" y2="150" stroke="#047857" strokeWidth="1" />
@@ -125,7 +153,7 @@ export default function AppointmentExperienceSection() {
         </div>
 
         {/* Security Watermark Stamp */}
-        <div className="absolute top-12 right-12 text-right font-mono text-[11px] text-[#064E3B]/20 tracking-widest hidden md:block">
+        <div className="absolute top-12 right-12 text-right font-mono text-[11px] text-[#064E3B]/30 tracking-widest hidden md:block">
           <div>PULSE OPD PRIORITY CONCIERGE</div>
           <div>ENCRYPTED TOKEN DISPATCH SYSTEM</div>
           <div>BETIAHATA CLINIC HUB • GORAKHPUR</div>
@@ -182,15 +210,15 @@ export default function AppointmentExperienceSection() {
                         key={opt.id}
                         onClick={() => setTriageCategory(opt.id)}
                         className={`p-4 rounded-2xl border-2 cursor-pointer transition-all duration-300 ${isSelected
-                          ? 'bg-sky-50/90 border-[#2788B8] shadow-md ring-2 ring-sky-400/20 scale-102'
+                          ? 'bg-[#F0FDF4] border-[#059669] shadow-md ring-2 ring-[#10B981]/25 scale-102'
                           : 'bg-white hover:bg-slate-50 border-slate-200'
                           }`}
                       >
                         <div className="flex items-center justify-between mb-1">
-                          <span className="text-[9px] font-mono font-bold text-[#173C59] uppercase bg-sky-100 px-2 py-0.5 rounded-full">
+                          <span className="text-[9px] font-mono font-bold text-[#064E3B] uppercase bg-[#F0FDF4] border border-[#A7F3D0] px-2 py-0.5 rounded-full">
                             {opt.badge}
                           </span>
-                          <div className={`w-3.5 h-3.5 rounded-full border flex items-center justify-center ${isSelected ? 'border-[#2788B8] bg-[#2788B8]' : 'border-slate-300'
+                          <div className={`w-3.5 h-3.5 rounded-full border flex items-center justify-center ${isSelected ? 'border-[#059669] bg-[#059669]' : 'border-slate-300'
                             }`}>
                             {isSelected && <span className="w-1.5 h-1.5 rounded-full bg-white" />}
                           </div>
@@ -209,12 +237,12 @@ export default function AppointmentExperienceSection() {
 
               {/* Step 2: Date & Slot Selection */}
               <div className="space-y-3 pt-4 border-t border-slate-100">
-                <div className="flex items-center justify-between">
-                  <span className="text-xs font-mono uppercase tracking-wider text-[#173C59] font-bold flex items-center gap-2">
-                    <span className="w-5 h-5 rounded-full bg-sky-100 text-[#173C59] flex items-center justify-center text-[10px]">2</span>
+                <div className="flex flex-wrap items-center justify-between gap-1">
+                  <span className="text-xs font-mono uppercase tracking-wider text-[#064E3B] font-bold flex items-center gap-2">
+                    <span className="w-5 h-5 rounded-full bg-[#F0FDF4] border border-[#A7F3D0] text-[#064E3B] flex items-center justify-center text-[10px]">2</span>
                     Select Consultation Slot
                   </span>
-                  <span className="text-[10px] font-mono text-[#2788B8] font-bold">
+                  <span className="text-[10px] font-mono text-[#047857] font-bold">
                     Mon – Sat (10 AM – 8 PM)
                   </span>
                 </div>
@@ -228,7 +256,7 @@ export default function AppointmentExperienceSection() {
                       type="date"
                       value={preferredDate}
                       onChange={(e) => setPreferredDate(e.target.value)}
-                      className="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-xs font-mono font-bold text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#2788B8]"
+                      className="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-xs font-mono font-bold text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#059669]"
                     />
                   </div>
 
@@ -243,8 +271,8 @@ export default function AppointmentExperienceSection() {
                           type="button"
                           onClick={() => setPreferredSlot(slot)}
                           className={`py-2 px-1 rounded-xl text-[11px] font-mono font-bold transition-all duration-200 ${preferredSlot === slot
-                            ? 'bg-gradient-to-r from-[#173C59] via-[#1E4D74] to-[#2788B8] text-white shadow-md shadow-[#173C59]/20 scale-105'
-                            : 'bg-white hover:bg-sky-50 text-slate-700 border border-slate-200'
+                            ? 'bg-gradient-to-r from-[#064E3B] via-[#047857] to-[#059669] text-white shadow-md shadow-[#064E3B]/20 scale-105'
+                            : 'bg-white hover:bg-[#F0FDF4] text-slate-700 border border-slate-200'
                             }`}
                         >
                           {slot}
@@ -257,8 +285,8 @@ export default function AppointmentExperienceSection() {
 
               {/* Step 3: Patient Information Form */}
               <form onSubmit={handleSubmit} className="space-y-4 pt-4 border-t border-slate-100">
-                <span className="text-xs font-mono uppercase tracking-wider text-[#173C59] font-bold flex items-center gap-2">
-                  <span className="w-5 h-5 rounded-full bg-sky-100 text-[#173C59] flex items-center justify-center text-[10px]">3</span>
+                <span className="text-xs font-mono uppercase tracking-wider text-[#064E3B] font-bold flex items-center gap-2">
+                  <span className="w-5 h-5 rounded-full bg-[#F0FDF4] border border-[#A7F3D0] text-[#064E3B] flex items-center justify-center text-[10px]">3</span>
                   Patient Identification
                 </span>
 
@@ -273,7 +301,7 @@ export default function AppointmentExperienceSection() {
                       placeholder="e.g. Ramesh Kumar"
                       value={patientName}
                       onChange={(e) => setPatientName(e.target.value)}
-                      className="w-full px-4 py-3 rounded-2xl bg-white border border-slate-200 text-xs text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#2788B8] font-medium"
+                      className="w-full px-4 py-3 rounded-2xl bg-white border border-slate-200 text-xs text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#059669] font-medium"
                     />
                   </div>
 
@@ -287,7 +315,7 @@ export default function AppointmentExperienceSection() {
                       placeholder="+91 98765 43210"
                       value={patientPhone}
                       onChange={(e) => setPatientPhone(e.target.value)}
-                      className="w-full px-4 py-3 rounded-2xl bg-white border border-slate-200 text-xs text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#2788B8] font-medium"
+                      className="w-full px-4 py-3 rounded-2xl bg-white border border-slate-200 text-xs text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#059669] font-medium"
                     />
                   </div>
                 </div>
@@ -295,11 +323,11 @@ export default function AppointmentExperienceSection() {
                 <div className="pt-2">
                   <button
                     type="submit"
-                    className="w-full py-4 rounded-full bg-gradient-to-r from-[#173C59] via-[#1E4D74] to-[#2788B8] hover:from-[#0E2538] hover:via-[#173C59] hover:to-[#1E4D74] text-white font-semibold text-xs tracking-wider uppercase shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center justify-center gap-2 hover:scale-102"
+                    className="w-full py-4 rounded-full bg-gradient-to-r from-[#064E3B] via-[#047857] to-[#059669] hover:from-[#022C22] hover:to-[#064E3B] text-white font-bold text-xs tracking-wider uppercase shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center justify-center gap-2 hover:scale-102"
                   >
-                    <Calendar className="w-4 h-4 text-[#A9D8E9]" />
+                    <Calendar className="w-4 h-4 text-amber-300" />
                     <span>Confirm Priority Consultation Request</span>
-                    <ArrowRight className="w-3.5 h-3.5 text-[#A9D8E9] ml-1" />
+                    <ArrowRight className="w-3.5 h-3.5 text-white ml-1" />
                   </button>
                 </div>
               </form>
@@ -322,35 +350,35 @@ export default function AppointmentExperienceSection() {
               aspectRatio="aspect-[16/8]"
             />
 
-            {/* Real-Time Boarding Pass Slip - Luminous Pearl & Deep Navy */}
-            <div className="relative rounded-[2.5rem] bg-gradient-to-br from-white via-slate-50 to-white text-slate-900 shadow-layered border-2 border-slate-200 p-6 sm:p-8 text-left space-y-6 overflow-hidden transition-all duration-400 hover:shadow-2xl">
+            {/* Real-Time Boarding Pass Slip - Luminous Pearl & Medical Emerald */}
+            <div className="relative rounded-[2.5rem] bg-gradient-to-br from-white via-[#F0FDF4]/30 to-white text-slate-900 shadow-layered border-2 border-[#A7F3D0] p-6 sm:p-8 text-left space-y-6 overflow-hidden transition-all duration-400 hover:shadow-2xl">
 
               {/* Luminous Ambient Blobs */}
-              <div className="absolute top-0 right-0 w-60 h-60 bg-sky-100/50 rounded-full blur-3xl pointer-events-none" />
-              <div className="absolute bottom-0 left-0 w-60 h-60 bg-[#173C59]/10 rounded-full blur-3xl pointer-events-none" />
+              <div className="absolute top-0 right-0 w-60 h-60 bg-[#A7F3D0]/40 rounded-full blur-3xl pointer-events-none" />
+              <div className="absolute bottom-0 left-0 w-60 h-60 bg-[#064E3B]/10 rounded-full blur-3xl pointer-events-none" />
 
               {/* Pass Header */}
-              <div className="flex items-center justify-between pb-4 border-b border-sky-100 relative z-10">
+              <div className="flex items-center justify-between pb-4 border-b border-[#A7F3D0]/60 relative z-10">
                 <div className="flex items-center gap-2.5">
-                  <img src="/images/p.webp" alt="Pulse Logo" className="w-6 h-6 object-contain rounded-md bg-white p-0.5 border border-slate-200" />
+                  <img src="/images/p.webp" alt="Pulse Logo" className="w-6 h-6 object-contain rounded-md bg-white p-0.5 border border-[#A7F3D0]" />
                   <div>
-                    <span className="font-semibold text-sm tracking-widest uppercase block leading-none text-slate-950">
+                    <span className="font-semibold text-sm tracking-widest uppercase block leading-none text-[#064E3B]">
                       PULSE
                     </span>
-                    <span className="text-[8px] font-mono text-[#2788B8] tracking-wider uppercase block mt-0.5 font-bold">
+                    <span className="text-[8px] font-mono text-[#047857] tracking-wider uppercase block mt-0.5 font-bold">
                       Consultation Pass
                     </span>
                   </div>
                 </div>
 
                 <span className="px-2.5 py-0.5 rounded-full bg-[#F0FDF4] text-[#064E3B] border border-[#A7F3D0] text-[9px] font-mono font-medium flex items-center gap-1 shadow-xs">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#10B981 animate-ping" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#10B981] animate-ping" />
                   <span>LIVE PREVIEW</span>
                 </span>
               </div>
 
               {/* Physician & Clinic Identity with Stethoscope Emblem */}
-              <div className="flex items-center gap-3.5 relative z-10 p-2.5 rounded-2xl bg-slate-50 border border-[#A7F3D0]">
+              <div className="flex items-center gap-3.5 relative z-10 p-2.5 rounded-2xl bg-white border border-[#A7F3D0]">
                 <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#064E3B] via-[#047857] to-[#047857] border-2 border-[#A7F3D0] flex items-center justify-center text-[#A7F3D0] shrink-0">
                   <Stethoscope className="w-6 h-6 stroke-[1.8]" />
                 </div>
@@ -371,7 +399,7 @@ export default function AppointmentExperienceSection() {
               </div>
 
               {/* Patient Dynamic Ticket Card */}
-              <div className="p-4 rounded-2xl bg-sky-50/70 border border-sky-200 space-y-3 relative z-10">
+              <div className="p-4 rounded-2xl bg-[#F0FDF4]/80 border border-[#A7F3D0] space-y-3 relative z-10">
                 <div className="flex justify-between items-center text-xs">
                   <span className="text-slate-600 font-medium">Patient:</span>
                   <span className="font-semibold text-slate-950 font-mono">
@@ -379,14 +407,14 @@ export default function AppointmentExperienceSection() {
                   </span>
                 </div>
                 <div className="flex justify-between items-center text-xs">
-                  <span className="text-slate-600 font-medium">Date & Slot:</span>
-                  <span className="font-bold text-[#173C59] font-mono">
+                  <span className="text-slate-600 font-medium">Date &amp; Slot:</span>
+                  <span className="font-bold text-[#064E3B] font-mono">
                     {preferredDate} • {preferredSlot}
                   </span>
                 </div>
                 <div className="flex justify-between items-center text-xs">
                   <span className="text-slate-600 font-medium">Category:</span>
-                  <span className="font-bold text-sky-800 font-mono uppercase text-[10px]">
+                  <span className="font-bold text-[#047857] font-mono uppercase text-[10px]">
                     {triageCategory.replace('-', ' ')}
                   </span>
                 </div>
@@ -399,7 +427,7 @@ export default function AppointmentExperienceSection() {
               </div>
 
               {/* Barcode & Verification */}
-              <div className="pt-2 border-t border-slate-200 flex items-center justify-between text-[11px] font-mono relative z-10">
+              <div className="pt-2 border-t border-[#A7F3D0]/60 flex items-center justify-between text-[11px] font-mono relative z-10">
                 <span className="text-slate-500">PASS-ID: PHC-2026-9812</span>
                 <span className="text-[#047857] font-bold flex items-center gap-1">
                   <ShieldCheck className="w-3.5 h-3.5 text-[#047857]" />

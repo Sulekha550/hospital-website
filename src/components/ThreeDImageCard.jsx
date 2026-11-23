@@ -1,17 +1,13 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 
 /**
  * ThreeDImageCard
- * Implements: "images tgoda 3d m use kro text kam se kam rhe"
- * Features:
- * 1. Interactive 3D Perspective Tilt on Mouse Movement (rotateX, rotateY, scale)
- * 2. Multi-layer depth with translateZ on floating badges/crests
- * 3. Dynamic Specular Light Glare that follows the mouse across the glass surface
- * 4. Realistic 3D drop shadow that offsets dynamically with tilt
- * 5. Smooth spring reset on mouse leave
+ * Implements interactive 3D perspective tilt with specular holographic glare
+ * Guarantees images always render across all browsers and containers
  */
 export default function ThreeDImageCard({
   src,
+  image,
   alt = 'Pulse Heart Centre Medical 3D Visual',
   aspectRatio = 'aspect-[4/3]',
   className = '',
@@ -19,11 +15,20 @@ export default function ThreeDImageCard({
   stat = null,
   statSub = null,
   title = null,
+  laserBeam = false,
   children = null,
 }) {
+  const resolvedSrc = src || image;
   const cardRef = useRef(null);
   const [tilt, setTilt] = useState({ x: 0, y: 0, glareX: 50, glareY: 50 });
   const [isHovered, setIsHovered] = useState(false);
+  const [imgSrc, setImgSrc] = useState(resolvedSrc);
+
+  useEffect(() => {
+    if (resolvedSrc) {
+      setImgSrc(resolvedSrc);
+    }
+  }, [resolvedSrc]);
 
   const handleMouseMove = (e) => {
     if (!cardRef.current) return;
@@ -36,19 +41,16 @@ export default function ThreeDImageCard({
     const normY = (y / rect.height) - 0.5;
 
     // Maximum tilt angles (degrees)
-    const maxTilt = 14;
+    const maxTilt = 12;
     setTilt({
-      x: -normY * maxTilt, // pitch
-      y: normX * maxTilt,  // yaw
+      x: -normY * maxTilt,
+      y: normX * maxTilt,
       glareX: (x / rect.width) * 100,
       glareY: (y / rect.height) * 100,
     });
   };
 
-  const handleMouseEnter = () => {
-    setIsHovered(true);
-  };
-
+  const handleMouseEnter = () => setIsHovered(true);
   const handleMouseLeave = () => {
     setIsHovered(false);
     setTilt({ x: 0, y: 0, glareX: 50, glareY: 50 });
@@ -64,7 +66,7 @@ export default function ThreeDImageCard({
     >
       {/* 3D Dynamic Ambient Glow Underneath */}
       <div 
-        className="absolute -inset-3 bg-gradient-to-tr from-[#059669]/30 via-[#10B981]/25 to-teal-400/20 rounded-[2.5rem] blur-2xl opacity-60 group-hover:opacity-100 transition-all duration-500 -z-10"
+        className="absolute -inset-3 bg-gradient-to-tr from-[#059669]/25 via-[#10B981]/20 to-teal-400/15 rounded-[2.5rem] blur-2xl opacity-60 group-hover:opacity-100 transition-all duration-500 -z-10"
         style={{
           transform: isHovered 
             ? `translate3d(${tilt.y * 1.5}px, ${-tilt.x * 1.5}px, 0)` 
@@ -74,64 +76,68 @@ export default function ThreeDImageCard({
 
       {/* Main 3D Tilted Container */}
       <div
-        className={`relative ${aspectRatio} w-full rounded-[2rem] overflow-hidden border-2 border-emerald-300/80 bg-slate-950 transition-all duration-300 ease-out shadow-[0_25px_60px_-15px_rgba(5,150,105,0.3)]`}
+        className={`relative ${aspectRatio} w-full rounded-[2rem] overflow-hidden border-2 border-[#A7F3D0] bg-white transition-all duration-300 ease-out shadow-[0_20px_50px_-15px_rgba(5,150,105,0.2)]`}
         style={{
           transformStyle: 'preserve-3d',
           transform: isHovered
-            ? `rotateX(${tilt.x}deg) rotateY(${tilt.y}deg) scale3d(1.04, 1.04, 1.04)`
+            ? `rotateX(${tilt.x}deg) rotateY(${tilt.y}deg) scale3d(1.03, 1.03, 1.03)`
             : 'rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)',
         }}
       >
-        {/* The Base Photographic Image with Ken-Burns Depth Zoom on Hover */}
-        <img
-          src={src}
-          alt={alt}
-          className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110 filter contrast-110 saturate-110"
-          loading="lazy"
-        />
+        {/* The Base Photographic Image - Guaranteed to fill full card */}
+        {imgSrc && (
+          <img
+            src={imgSrc}
+            alt={alt}
+            onError={() => setImgSrc('/images/hospital-facility.jpg')}
+            className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+          />
+        )}
 
-        {/* Ambient Dark Gradient Layer for Visual Contrast */}
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent pointer-events-none" />
+        {/* Subtle Ambient Light Gradient (No pitch-black overlay) */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent pointer-events-none" />
 
         {/* Dynamic Specular Holographic Glare (Moves with Mouse) */}
         <div
-          className="absolute inset-0 pointer-events-none transition-opacity duration-300 mix-blend-overlay"
+          className="absolute inset-0 pointer-events-none transition-opacity duration-300 mix-blend-overlay z-15"
           style={{
-            opacity: isHovered ? 0.75 : 0,
-            background: `radial-gradient(circle 380px at ${tilt.glareX}% ${tilt.glareY}%, rgba(255, 255, 255, 0.45), rgba(5, 150, 105, 0.15) 50%, transparent 80%)`,
+            opacity: isHovered ? 0.6 : 0,
+            background: `radial-gradient(circle 380px at ${tilt.glareX}% ${tilt.glareY}%, rgba(255, 255, 255, 0.55), rgba(5, 150, 105, 0.15) 50%, transparent 80%)`,
           }}
         />
 
-        {/* 3D CAD Grid Overlay */}
-        <div className="absolute inset-0 bg-[radial-gradient(#10B98130_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none opacity-40" />
+        {/* Optional Sweeping Laser Beam */}
+        {laserBeam && (
+          <div className="absolute inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-[#10B981] to-transparent opacity-60 animate-laser-sweep pointer-events-none z-10" />
+        )}
 
-        {/* Top 3D Floating Telemetry Pill (translateZ for pop-out) */}
+        {/* Top 3D Floating Telemetry Pill */}
         {badge && (
           <div 
-            className="absolute top-4 left-4 z-20 transition-transform duration-300 pointer-events-none"
+            className="absolute top-3.5 left-3.5 z-20 transition-transform duration-300 pointer-events-none"
             style={{ transform: isHovered ? 'translateZ(35px)' : 'translateZ(0px)' }}
           >
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/95 backdrop-blur-md border border-emerald-300 text-[10px] font-mono font-bold text-[#064E3B] shadow-lg">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/95 backdrop-blur-md border border-[#A7F3D0] text-[10px] font-mono font-bold text-[#064E3B] shadow-md">
+              <span className="w-2 h-2 rounded-full bg-[#10B981] animate-pulse" />
               {badge}
             </span>
           </div>
         )}
 
-        {/* Bottom 3D Floating Stat Badge (translateZ for layered pop-out) */}
+        {/* Bottom 3D Floating Stat Badge */}
         {(stat || title) && (
           <div 
-            className="absolute bottom-4 left-4 right-4 z-20 p-3 sm:p-3.5 rounded-2xl bg-white/95 backdrop-blur-xl border border-emerald-200/90 shadow-2xl transition-transform duration-300 text-left"
-            style={{ transform: isHovered ? 'translateZ(45px)' : 'translateZ(0px)' }}
+            className="absolute bottom-3 left-3 right-3 z-20 p-3 rounded-2xl bg-white/95 backdrop-blur-xl border border-[#A7F3D0] shadow-xl transition-transform duration-300 text-left"
+            style={{ transform: isHovered ? 'translateZ(40px)' : 'translateZ(0px)' }}
           >
             {title && (
-              <h4 className="text-xs sm:text-sm font-extrabold text-slate-900 tracking-tight leading-snug truncate">
+              <h4 className="text-xs sm:text-sm font-extrabold text-[#064E3B] tracking-tight leading-snug truncate">
                 {title}
               </h4>
             )}
             {stat && (
-              <div className="flex items-center justify-between gap-2 mt-1">
-                <span className="text-xs sm:text-sm font-mono font-black text-[#059669]">
+              <div className="flex items-center justify-between gap-2 mt-0.5">
+                <span className="text-xs sm:text-sm font-mono font-black text-[#047857]">
                   {stat}
                 </span>
                 {statSub && (

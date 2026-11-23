@@ -82,14 +82,14 @@ export default function CredentialsEditorialSection() {
 
         {/* Section Header */}
         <div className="mb-16 text-center max-w-3xl mx-auto space-y-3">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-indigo-950 to-slate-950 text-white text-xs font-mono font-bold shadow-md animate-float-bob">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-[#064E3B] via-[#047857] to-[#047857] text-[#A7F3D0] text-xs font-mono font-bold shadow-md shadow-[#064E3B]/20 animate-float-bob border border-[#A7F3D0]/40">
             <Award className="w-4 h-4 text-amber-300" />
-            <span className="uppercase tracking-[0.2em]">Institutional Pedigree & Credentials</span>
+            <span className="uppercase tracking-[0.2em]">Institutional Pedigree &amp; Credentials</span>
           </div>
 
-          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-950 tracking-tight leading-[1.08]">
+          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#064E3B] tracking-tight leading-[1.08]">
             Super-Specialty Qualifications from <br />
-            <span className="font-serif italic font-normal text-indigo-800">India's Apex Medical Institutes</span>
+            <span className="font-serif italic font-normal text-[#059669]">India's Apex Medical Institutes</span>
           </h2>
 
           <p className="text-base sm:text-lg text-slate-700 font-medium max-w-2xl mx-auto leading-relaxed">

@@ -90,6 +90,7 @@ export default function AboutPage() {
             {/* In-Action Consultation Photo + Cath Lab Specs */}
             <div className="md:col-span-7 space-y-4">
               <ThreeDImageCard
+                src="/images/cath-lab.jpg"
                 image="/images/cath-lab.jpg"
                 alt="Siemens Artis Zee Cath Lab"
                 badge="INTERVENTIONAL CATH LAB"
@@ -156,8 +157,14 @@ export default function AboutPage() {
             </svg>
             <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-[#059669]/20 rounded-full blur-[100px] animate-pulse" />
             <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-teal-400/20 rounded-full blur-[100px] animate-pulse" style={{ animationDelay: '1.5s' }} />
+            {/* Rotating CAD Coordinate Rings */}
+            <div className="absolute top-10 left-10 w-72 h-72 rounded-full border-2 border-[#047857]/30 hidden md:block animate-gentle-cw" />
+            <div className="absolute bottom-10 right-10 w-80 h-80 rounded-full border-2 border-dashed border-[#10B981]/35 hidden md:block animate-gentle-ccw" />
             {/* Sweeping laser scanning beam */}
-            <div className="absolute left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#059669] to-transparent shadow-[0_0_15px_#059669] opacity-40 animate-laser-sweep" />
+            <div className="absolute left-0 right-0 h-[2.5px] bg-gradient-to-r from-transparent via-[#10B981] to-transparent shadow-[0_0_15px_#059669] opacity-50 animate-laser-sweep" />
+            {/* Floating medical crosses */}
+            <div className="absolute top-12 left-12 text-[#059669]/35 font-mono text-base font-bold animate-medical-cross-1 select-none">+</div>
+            <div className="absolute bottom-12 right-16 text-[#059669]/35 font-mono text-base font-bold animate-medical-cross-2 select-none">+</div>
           </div>
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -170,6 +177,7 @@ export default function AboutPage() {
 
               <div className="space-y-3">
                 <ThreeDImageCard
+                  src="/images/cath-lab.jpg"
                   image="/images/cath-lab.jpg"
                   alt="Cath Lab Mission"
                   badge="PILLAR 01"
@@ -187,6 +195,7 @@ export default function AboutPage() {
 
               <div className="space-y-3">
                 <ThreeDImageCard
+                  src="/images/doctor-bedside-consult.jpg"
                   image="/images/doctor-bedside-consult.jpg"
                   alt="Bedside Consult"
                   badge="PILLAR 02"
@@ -204,6 +213,7 @@ export default function AboutPage() {
 
               <div className="space-y-3">
                 <ThreeDImageCard
+                  src="/images/operation-theatre-laminar.jpg"
                   image="/images/operation-theatre-laminar.jpg"
                   alt="Sterility Protocols"
                   badge="PILLAR 03"

@@ -117,14 +117,26 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Button + Sound Toggle */}
           <div className="flex md:hidden items-center gap-2">
             <button
+              onClick={toggleSound}
+              title={soundEnabled ? "Mute cardiac audio" : "Enable cardiac bio-rhythm audio"}
+              className={`p-2 rounded-xl border transition-all ${
+                soundEnabled 
+                  ? 'bg-emerald-50 border-emerald-300 text-[#064E3B]' 
+                  : 'bg-white border-slate-200 text-slate-700'
+              }`}
+            >
+              {soundEnabled ? <Volume2 className="w-4 h-4 text-[#059669]" /> : <VolumeX className="w-4 h-4" />}
+            </button>
+
+            <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-xl bg-slate-100 text-slate-900"
+              className="p-2 rounded-xl bg-slate-100 text-slate-900 hover:bg-slate-200"
               aria-label="Toggle mobile menu"
             >
-              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              {mobileMenuOpen ? <X className="w-5 h-5 text-[#064E3B]" /> : <Menu className="w-5 h-5 text-[#064E3B]" />}
             </button>
           </div>
 
@@ -132,18 +144,34 @@ export default function Navbar() {
 
         {/* Mobile Dropdown Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden mt-3 p-4 rounded-3xl bg-white/95 backdrop-blur-2xl border border-slate-200 shadow-2xl space-y-2">
+          <div className="md:hidden mt-3 p-4 rounded-3xl bg-white/98 backdrop-blur-2xl border-2 border-[#A7F3D0] shadow-2xl space-y-2.5 animate-in fade-in slide-in-from-top-2 duration-200">
+            {/* Mobile Lead Doctor Banner */}
+            <div className="flex items-center gap-2.5 p-2 rounded-2xl bg-[#F0FDF4] border border-[#A7F3D0] mb-2">
+              <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-[#064E3B] to-[#047857] flex items-center justify-center text-white shrink-0">
+                <Stethoscope className="w-4 h-4" />
+              </div>
+              <div className="text-left">
+                <span className="text-xs font-bold text-[#064E3B] block leading-tight">Dr. Prakash Chand Shahi</span>
+                <span className="text-[10px] text-[#047857] font-mono font-semibold block">DM Cardiology (PGIMER)</span>
+              </div>
+            </div>
+
             {navLinks.map((item) => (
-              <Link
+              <NavLink
                 key={item.label}
                 to={item.path}
                 onClick={() => setMobileMenuOpen(false)}
-                className="block px-4 py-2.5 rounded-2xl text-xs font-bold uppercase tracking-wider text-slate-800 hover:bg-[#F0FDF4] hover:text-[#064E3B] transition-colors text-left"
+                className={({ isActive }) => `block px-4 py-2.5 rounded-2xl text-xs font-bold uppercase tracking-wider transition-all text-left ${
+                  isActive
+                    ? 'bg-[#064E3B] text-white shadow-md'
+                    : 'text-slate-800 hover:bg-[#F0FDF4] hover:text-[#064E3B]'
+                }`}
               >
                 {item.label}
-              </Link>
+              </NavLink>
             ))}
-            <div className="pt-2 border-t border-slate-100">
+
+            <div className="pt-2 border-t border-slate-100 space-y-2">
               <Link
                 to="/book-appointment"
                 onClick={() => setMobileMenuOpen(false)}
@@ -152,6 +180,15 @@ export default function Navbar() {
                 <Calendar className="w-4 h-4 text-amber-300" />
                 <span>Book Priority Appointment</span>
               </Link>
+
+              <a
+                href="tel:+919876543210"
+                onClick={() => setMobileMenuOpen(false)}
+                className="w-full py-2.5 rounded-full bg-[#F0FDF4] hover:bg-white text-[#064E3B] font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 border border-[#A7F3D0]"
+              >
+                <span className="w-2 h-2 rounded-full bg-[#059669] animate-ping" />
+                <span>24/7 Helpline: +91 98765 43210</span>
+              </a>
             </div>
           </div>
         )}

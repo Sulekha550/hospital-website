@@ -489,7 +489,7 @@ export const PULSE_DATA = {
       languages: "English, Hindi",
       consultationHours: "Mon – Sat: 10:00 AM – 02:00 PM & 05:00 PM – 08:00 PM",
       opdRoom: "Suite 101, Executive Cardiology Wing",
-      image: null, // Allow custom upload or fallback to medical avatar
+      image: "/images/i.png",
       bio: "Trained at India's foremost apex institutes—PGIMER Chandigarh and King George's Medical University Lucknow—Dr. Prakash Chand Shahi is a pioneer of transradial coronary angioplasty in eastern Uttar Pradesh. Having performed over 12,000 cardiac catheterizations with a 99.4% radial success rate, he is revered for his clinical precision, evidence-based ethics, and unhurried bedside care.",
       achievements: [
         "Pioneered transradial coronary catheterization in Gorakhpur",

@@ -16,17 +16,18 @@ export default function PatientExperienceSection({ onBookClick }) {
   ];
 
   return (
-    <section id="patient-experience" className="relative py-16 lg:py-24 overflow-hidden bg-gradient-to-b from-[#FAFBF9] via-purple-50/25 to-[#FAFBF9]">
-      {/* Animated Acoustic Resonance Ripple Background */}
+    <section id="patient-experience" className="relative py-16 lg:py-24 overflow-hidden bg-gradient-to-b from-[#FAFBF9] via-[#F0FDF4]/40 to-[#FAFBF9]">
+      {/* Animated Acoustic Resonance Ripple Background in Emerald & Mint */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
-        <svg className="absolute -top-20 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] opacity-25" viewBox="0 0 1000 600" fill="none">
-          <circle cx="500" cy="300" r="100" stroke="#9333EA" strokeWidth="1" strokeDasharray="4 6" className="animate-spin" style={{ animationDuration: '30s' }} />
-          <circle cx="500" cy="300" r="200" stroke="#A855F7" strokeWidth="1.2" strokeDasharray="6 8" />
-          <circle cx="500" cy="300" r="320" stroke="#C084FC" strokeWidth="0.8" />
-          <circle cx="500" cy="300" r="450" stroke="#E9D5FF" strokeWidth="0.8" strokeDasharray="3 3" />
+        <svg className="absolute -top-20 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] opacity-35" viewBox="0 0 1000 600" fill="none">
+          <circle cx="500" cy="300" r="100" stroke="#059669" strokeWidth="1" strokeDasharray="4 6" className="animate-spin" style={{ animationDuration: '30s' }} />
+          <circle cx="500" cy="300" r="200" stroke="#047857" strokeWidth="1.2" strokeDasharray="6 8" />
+          <circle cx="500" cy="300" r="320" stroke="#10B981" strokeWidth="0.8" />
+          <circle cx="500" cy="300" r="450" stroke="#A7F3D0" strokeWidth="0.8" strokeDasharray="3 3" />
         </svg>
-        <div className="absolute top-1/3 left-10 w-96 h-96 bg-purple-400/15 rounded-full blur-[110px]" />
-        <div className="absolute bottom-10 right-10 w-96 h-96 bg-sky-400/15 rounded-full blur-[110px]" />
+        <div className="absolute top-1/3 left-10 w-96 h-96 bg-[#10B981]/15 rounded-full blur-[110px]" />
+        <div className="absolute bottom-10 right-10 w-96 h-96 bg-[#047857]/15 rounded-full blur-[110px]" />
+        <div className="absolute inset-x-0 h-[2.5px] bg-gradient-to-r from-transparent via-[#10B981] to-transparent shadow-[0_0_20px_#059669] opacity-45 animate-laser-sweep pointer-events-none" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-8 relative z-10">
@@ -34,22 +35,22 @@ export default function PatientExperienceSection({ onBookClick }) {
         {/* Section Header */}
         <div className="mb-12">
           <div className="flex items-center gap-3 mb-3">
-            <span className="text-xs font-semibold text-white bg-slate-900 px-3.5 py-1 rounded-full shadow-sm">
+            <span className="text-xs font-semibold text-white bg-[#064E3B] px-3.5 py-1 rounded-full shadow-sm">
               Clinical Stewardship
             </span>
-            <div className="w-10 h-0.5 bg-gradient-to-r from-purple-500 to-sky-400" />
-            <span className="text-xs font-medium tracking-wider text-purple-900 uppercase">
+            <div className="w-10 h-0.5 bg-gradient-to-r from-[#047857] to-[#10B981]" />
+            <span className="text-xs font-medium tracking-wider text-[#064E3B] uppercase">
               The Consultation Pathway
             </span>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-end">
             <div className="lg:col-span-8">
-              <span className="text-purple-700 font-semibold text-xs uppercase tracking-widest block mb-1">
-                Transparent & Evidence-Based Stewardship
+              <span className="text-[#047857] font-semibold text-xs uppercase tracking-widest block mb-1">
+                Transparent &amp; Evidence-Based Stewardship
               </span>
               <h2 className="text-3xl sm:text-4xl font-light text-slate-900 tracking-tight leading-tight">
-                The Consultation <span className="font-serif italic font-normal text-purple-700">Pathway</span>
+                The Consultation <span className="font-serif italic font-normal text-[#059669]">Pathway</span>
               </h2>
             </div>
             <div className="lg:col-span-4 text-slate-600 text-xs sm:text-sm font-light leading-relaxed">
@@ -62,9 +63,9 @@ export default function PatientExperienceSection({ onBookClick }) {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-14">
           {patientJourney.map((step, index) => {
             const accents = [
-              { border: 'border-purple-200/90', text: 'text-purple-700', pill: 'bg-purple-50 text-purple-800' },
-              { border: 'border-sky-200/90', text: 'text-sky-700', pill: 'bg-sky-50 text-sky-800' },
-              { border: 'border-amber-200/90', text: 'text-amber-700', pill: 'bg-amber-50 text-amber-800' },
+              { border: 'border-[#A7F3D0]', text: 'text-[#064E3B]', pill: 'bg-[#F0FDF4] text-[#047857]' },
+              { border: 'border-emerald-300', text: 'text-[#047857]', pill: 'bg-emerald-50 text-emerald-800' },
+              { border: 'border-teal-300', text: 'text-teal-700', pill: 'bg-teal-50 text-teal-800' },
               { border: 'border-slate-300', text: 'text-slate-800', pill: 'bg-slate-100 text-slate-800' },
             ];
             const a = accents[index % accents.length];

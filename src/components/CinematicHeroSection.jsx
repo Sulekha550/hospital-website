@@ -125,43 +125,26 @@ export default function CinematicHeroSection() {
           <div className="absolute inset-x-0 top-1/2 h-1 bg-gradient-to-r from-transparent via-[#059669] to-transparent animate-laser-h opacity-75 blur-xs pointer-events-none" />
         </div>
 
-        {/* 7. Visible Technical Coordinate Stamps & Telemetry Badges */}
-        <div className="absolute top-32 left-8 font-mono text-[11px] text-[#064E3B]/60 tracking-widest hidden md:block uppercase space-y-1 bg-white/70 backdrop-blur-xs p-3 rounded-xl border border-[#A7F3D0]">
-          <div className="flex items-center gap-2 font-bold text-[#064E3B]">
-            <span className="w-2 h-2 rounded-full bg-[#064E3B] animate-pulse" />
-            <span>GEO: 26.7606° N • 83.3732° E [GORAKHPUR]</span>
-          </div>
-          <div>CATH-LAB SIEMENS ARTIS ZEE • HEPA-14</div>
-          <div className="text-[10px] text-[#047857] font-semibold">CARDIAC TELEMETRY • HR: 72 BPM • CODE BLUE 24/7</div>
-        </div>
-
-        {/* Subtle Watermark Headline */}
+        {/* 7. Subtle Watermark Headline */}
         <div className="absolute top-1/2 left-4 -translate-y-1/2 text-[12vw] font-black text-[#064E3B]/[0.03] tracking-tighter uppercase pointer-events-none select-none">
           PULSE
         </div>
 
       </div>
 
-      <div className="max-w-7xl mx-auto w-full flex-1 flex flex-col justify-center relative z-10 py-6 sm:py-10">
+      <div className="max-w-7xl mx-auto w-full flex-1 flex flex-col justify-center relative z-10 py-4 sm:py-8">
 
-        {/* Top Status & Accreditation Strip */}
-        <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
-          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white border border-[#A7F3D0] shadow-xs">
-            <span className="w-2.5 h-2.5 rounded-full bg-[#064E3B] animate-pulse" />
-            <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-[#064E3B]">
-              NABH Standards • Tertiary Multispeciality Hospital
-            </span>
-          </div>
-
-          <div className="flex items-center gap-4 text-xs font-semibold text-slate-700 bg-white/90 backdrop-blur-md px-4 py-1.5 rounded-full border border-[#A7F3D0] shadow-xs">
+        {/* Top Status Strip (Clean & Mobile-Responsive) */}
+        <div className="flex items-center justify-end mb-6 sm:mb-8">
+          <div className="flex flex-wrap items-center gap-2 sm:gap-4 text-xs font-semibold text-slate-700 bg-white/95 backdrop-blur-md px-3.5 sm:px-4 py-1.5 rounded-full border border-[#A7F3D0] shadow-xs">
             <span className="flex items-center gap-1.5">
               <Clock className="w-3.5 h-3.5 text-[#059669]" />
               <span>OPD: 08:30 AM – 08:30 PM</span>
             </span>
-            <span className="text-slate-300">•</span>
+            <span className="text-slate-300 hidden sm:inline">•</span>
             <a href="tel:+919876543210" className="flex items-center gap-1.5 text-[#047857] font-bold hover:underline">
               <span className="w-1.5 h-1.5 rounded-full bg-[#047857] animate-ping" />
-              <span>24/7 STEMI Code-Blue: +91 98765 43210</span>
+              <span>24/7 Helpline: +91 98765 43210</span>
             </a>
           </div>
         </div>
@@ -178,14 +161,24 @@ export default function CinematicHeroSection() {
             </div>
 
             <div className="space-y-3">
-              <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-[#064E3B] tracking-[-0.035em] leading-[1.04]">
+              <h1 className="text-3xl sm:text-5xl lg:text-7xl font-extrabold text-[#064E3B] tracking-[-0.035em] leading-[1.04]">
                 Restoring Rhythms. <br />
                 <span className="font-serif italic font-normal text-[#059669]">Preserving Every Heartbeat.</span>
               </h1>
+            </div>
 
-              {/* Doctor Spotlight Banner with Stethoscope Crest (No Stock Human Face) */}
-              <div className="pt-2 flex flex-wrap items-center gap-3">
-                <div className="flex items-center gap-3 px-4 py-2.5 rounded-2xl bg-white/95 backdrop-blur-md border-2 border-[#A7F3D0] shadow-md">
+            {/* Mobile-Only Doctor Portrait: Appears right below heading so image is seen FIRST on mobile */}
+            <div className="block lg:hidden my-4 max-w-sm mx-auto relative">
+              <DoctorPlaceholder
+                aspectRatio="aspect-[4/5]"
+              />
+            </div>
+
+            {/* All Details & Actions: Displayed BELOW the image on mobile */}
+            <div className="space-y-6">
+              {/* Doctor Spotlight Banner with Stethoscope Crest */}
+              <div className="pt-1 flex flex-wrap items-center gap-3">
+                <div className="flex items-center gap-3 px-4 py-2.5 rounded-2xl bg-white/95 backdrop-blur-md border-2 border-[#A7F3D0] shadow-md w-full sm:w-auto">
                   <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#064E3B] via-[#047857] to-[#059669] border-2 border-emerald-300 shadow-sm flex items-center justify-center text-white shrink-0">
                     <Stethoscope className="w-6 h-6 stroke-[1.8]" />
                   </div>
@@ -204,116 +197,80 @@ export default function CinematicHeroSection() {
                   22+ Yrs Senior Consultant
                 </span>
               </div>
-            </div>
 
-            {/* Minimal Punchy Summary Status Chips (Zero Wall of Text) */}
-            <div className="flex flex-wrap items-center gap-2 pt-1 font-mono text-xs font-bold">
-              <span className="bg-[#F0FDF4] text-[#064E3B] px-3.5 py-1.5 rounded-full border border-[#A7F3D0]">Wrist Radial Stenting</span>
-              <span className="bg-white text-slate-900 px-3.5 py-1.5 rounded-full border border-[#A7F3D0] shadow-xs">Siemens Flat-Panel Cine</span>
-              <span className="bg-[#F0FDF4] text-[#064E3B] px-3.5 py-1.5 rounded-full border border-[#34D399]">24/7 STEMI Emergency</span>
-            </div>
+              {/* Minimal Punchy Summary Status Chips */}
+              <div className="flex flex-wrap items-center gap-2 pt-1 font-mono text-xs font-bold">
+                <span className="bg-[#F0FDF4] text-[#064E3B] px-3.5 py-1.5 rounded-full border border-[#A7F3D0]">Wrist Radial Stenting</span>
+                <span className="bg-white text-slate-900 px-3.5 py-1.5 rounded-full border border-[#A7F3D0] shadow-xs">Siemens Flat-Panel Cine</span>
+                <span className="bg-[#F0FDF4] text-[#064E3B] px-3.5 py-1.5 rounded-full border border-[#34D399]">24/7 STEMI Emergency</span>
+              </div>
 
-            {/* 4 Interactive Visual Feature Chips */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-1">
-              <div className="p-2.5 rounded-xl bg-white border border-[#A7F3D0] shadow-xs text-left">
-                <span className="text-xs font-mono font-bold text-[#064E3B] block">15,000+</span>
-                <span className="text-[10px] font-bold text-slate-800 uppercase tracking-tight block">Procedures Done</span>
+              {/* 4 Interactive Visual Feature Chips */}
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-1">
+                <div className="p-2.5 rounded-xl bg-white border border-[#A7F3D0] shadow-xs text-left">
+                  <span className="text-xs font-mono font-bold text-[#064E3B] block">15,000+</span>
+                  <span className="text-[10px] font-bold text-slate-800 uppercase tracking-tight block">Procedures Done</span>
+                </div>
+                <div className="p-2.5 rounded-xl bg-white border border-[#A7F3D0] shadow-xs text-left">
+                  <span className="text-xs font-mono font-bold text-[#047857] block">Wrist-First</span>
+                  <span className="text-[10px] font-bold text-slate-800 uppercase tracking-tight block">Zero Groin Pain</span>
+                </div>
+                <div className="p-2.5 rounded-xl bg-white border border-[#A7F3D0] shadow-xs text-left">
+                  <span className="text-xs font-mono font-bold text-[#059669] block">PGIMER &amp; KGMU</span>
+                  <span className="text-[10px] font-bold text-slate-800 uppercase tracking-tight block">Apex Pedigree</span>
+                </div>
+                <div className="p-2.5 rounded-xl bg-white border border-[#34D399] shadow-xs text-left">
+                  <span className="text-xs font-mono font-bold text-[#064E3B] block">&lt; 45 Min</span>
+                  <span className="text-[10px] font-bold text-slate-800 uppercase tracking-tight block">Door-To-Balloon</span>
+                </div>
               </div>
-              <div className="p-2.5 rounded-xl bg-white border border-[#A7F3D0] shadow-xs text-left">
-                <span className="text-xs font-mono font-bold text-[#047857] block">Wrist-First</span>
-                <span className="text-[10px] font-bold text-slate-800 uppercase tracking-tight block">Zero Groin Pain</span>
-              </div>
-              <div className="p-2.5 rounded-xl bg-white border border-[#A7F3D0] shadow-xs text-left">
-                <span className="text-xs font-mono font-bold text-[#059669] block">PGIMER &amp; KGMU</span>
-                <span className="text-[10px] font-bold text-slate-800 uppercase tracking-tight block">Apex Pedigree</span>
-              </div>
-              <div className="p-2.5 rounded-xl bg-white border border-[#34D399] shadow-xs text-left">
-                <span className="text-xs font-mono font-bold text-[#064E3B] block">&lt; 45 Min</span>
-                <span className="text-[10px] font-bold text-slate-800 uppercase tracking-tight block">Door-To-Balloon</span>
-              </div>
-            </div>
 
-            {/* Direct Action Row */}
-            <div className="flex flex-wrap items-center gap-4 pt-2">
-              <Link
-                to="/book-appointment"
-                className="inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-gradient-to-r from-[#064E3B] via-[#047857] to-[#059669] hover:from-[#022C22] hover:to-[#064E3B] text-white font-bold text-xs uppercase tracking-wider shadow-xl shadow-[#064E3B]/25 hover:shadow-2xl transition-all duration-300 hover:-translate-y-0.5 group border border-emerald-400/30"
-              >
-                <Calendar className="w-4 h-4 text-amber-300 group-hover:scale-110 transition-transform" />
-                <span>Consult Dr. Prakash Chand Shahi</span>
-                <ArrowRight className="w-4 h-4 text-white group-hover:translate-x-1 transition-transform" />
-              </Link>
+              {/* Direct Action Row */}
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
+                <Link
+                  to="/book-appointment"
+                  className="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full bg-gradient-to-r from-[#064E3B] via-[#047857] to-[#059669] hover:from-[#022C22] hover:to-[#064E3B] text-white font-bold text-xs uppercase tracking-wider shadow-xl shadow-[#064E3B]/25 hover:shadow-2xl transition-all duration-300 hover:-translate-y-0.5 group border border-emerald-400/30 text-center"
+                >
+                  <Calendar className="w-4 h-4 text-amber-300 group-hover:scale-110 transition-transform" />
+                  <span>Consult Dr. Prakash Chand Shahi</span>
+                  <ArrowRight className="w-4 h-4 text-white group-hover:translate-x-1 transition-transform" />
+                </Link>
 
-              <a
-                href="tel:+919876543210"
-                className="inline-flex items-center gap-2 px-7 py-4 rounded-full bg-white hover:bg-[#F0FDF4] text-[#064E3B] font-bold text-xs uppercase tracking-wider border border-[#34D399] shadow-sm hover:shadow-md transition-all duration-300"
-              >
-                <Phone className="w-4 h-4 text-[#064E3B]" />
-                <span>Emergency 24/7 Helpline</span>
-              </a>
-            </div>
+                <a
+                  href="tel:+919876543210"
+                  className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-white hover:bg-[#F0FDF4] text-[#064E3B] font-bold text-xs uppercase tracking-wider border border-[#34D399] shadow-sm hover:shadow-md transition-all duration-300 text-center"
+                >
+                  <Phone className="w-4 h-4 text-[#064E3B]" />
+                  <span>Emergency 24/7 Helpline</span>
+                </a>
+              </div>
 
-            {/* Trust Highlights Strip (Zero Cards - Clean Flow) */}
-            <div className="pt-3 flex flex-wrap items-center gap-6 text-xs text-slate-700 font-medium border-t border-slate-200/80">
-              <div className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-[#064E3B]" />
-                <span>22+ Years in Gorakhpur</span>
-              </div>
-              <div className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-[#047857]" />
-                <span>Siemens Flat-Panel Cath Lab</span>
-              </div>
-              <div className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-[#059669]" />
-                <span>NABH Accredited Safety</span>
+              {/* Trust Highlights Strip (Zero Cards - Clean Flow) */}
+              <div className="pt-3 flex flex-wrap items-center gap-4 sm:gap-6 text-xs text-slate-700 font-medium border-t border-slate-200/80">
+                <div className="flex items-center gap-1.5">
+                  <CheckCircle2 className="w-4 h-4 text-[#064E3B]" />
+                  <span>22+ Years in Gorakhpur</span>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <CheckCircle2 className="w-4 h-4 text-[#047857]" />
+                  <span>Siemens Flat-Panel Cath Lab</span>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <CheckCircle2 className="w-4 h-4 text-[#059669]" />
+                  <span>NABH Accredited Safety</span>
+                </div>
               </div>
             </div>
 
           </div>
 
-          {/* Right Column (5 cols): Layered Doctor Spotlight & Clinical Video Stage */}
-          <div className="lg:col-span-5 relative">
+          {/* Right Column (5 cols): Layered Doctor Spotlight (Desktop Only) */}
+          <div className="hidden lg:block lg:col-span-5 relative">
 
-            {/* Primary Frame: Doctor Photo Upload Aperture (No Stock Human Face) */}
+            {/* Primary Frame: Official Doctor Portrait (i.png) with 3D Depth */}
             <DoctorPlaceholder
               aspectRatio="aspect-[4/5]"
-              showUploadTrigger={true}
             />
-
-            {/* Overlapping Secondary Video Frame: Hospital Facility / Cath-Lab Live Broadcast */}
-            <div
-              onClick={() => setIsVideoModalOpen(true)}
-              className="absolute -bottom-8 -left-8 sm:-left-10 w-52 sm:w-60 rounded-2xl overflow-hidden border-4 border-[#A7F3D0] shadow-2xl bg-slate-950 aspect-[16/10] hidden sm:block group/sub hover:scale-105 transition-all duration-300 z-30 cursor-pointer"
-            >
-              <video
-                autoPlay
-                loop
-                muted
-                playsInline
-                preload="metadata"
-                className="w-full h-full object-cover filter contrast-125"
-              >
-                <source src="/videos/facilities-walkthrough.mp4" type="video/mp4" />
-              </video>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
-              <div className="absolute top-2 left-2 z-10 flex items-center gap-1 px-2 py-0.5 rounded-full bg-black/60 backdrop-blur-md text-[8px] font-mono font-bold text-[#A7F3D0] border border-[#059669]/30">
-                <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-ping" />
-                <span>CATH-LAB LIVE</span>
-              </div>
-              <div className="absolute bottom-2 left-2 right-2 text-white z-10 flex items-center justify-between text-left">
-                <div>
-                  <span className="text-[8px] font-mono font-bold text-amber-300 block uppercase">
-                    SIEMENS ARTIS ZEE
-                  </span>
-                  <span className="text-[10px] font-bold block leading-tight">
-                    Fluoroscopy Suite
-                  </span>
-                </div>
-                <div className="w-6 h-6 rounded-full bg-[#10B981 flex items-center justify-center text-slate-950">
-                  <Play className="w-3 h-3 fill-current ml-0.5" />
-                </div>
-              </div>
-            </div>
 
             {/* Floating Top Right Pedigree Seal */}
             <div className="absolute -top-4 -right-4 px-4 py-2.5 rounded-2xl bg-white border-2 border-[#A7F3D0] shadow-xl text-left hidden sm:flex items-center gap-2.5 z-20">

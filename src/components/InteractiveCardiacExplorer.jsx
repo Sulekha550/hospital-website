@@ -67,7 +67,12 @@ export default function InteractiveCardiacExplorer({ onBookClick }) {
           <rect width="100%" height="100%" fill="url(#lightboxGrid)" />
         </svg>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-tr from-[#059669]/20 via-teal-300/15 to-transparent rounded-full blur-[120px] pointer-events-none" />
-        <div className="absolute left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#059669] to-transparent shadow-[0_0_15px_#059669] opacity-50 animate-laser-sweep pointer-events-none" />
+        {/* Rotating CAD Coordinate Rings */}
+        <div className="absolute top-6 left-6 w-64 h-64 rounded-full border-2 border-[#047857]/25 hidden md:block animate-gentle-cw" />
+        <div className="absolute bottom-6 right-6 w-80 h-80 rounded-full border-2 border-dashed border-[#10B981]/30 hidden md:block animate-gentle-ccw" />
+        <div className="absolute left-0 right-0 h-[2.5px] bg-gradient-to-r from-transparent via-[#10B981] to-transparent shadow-[0_0_15px_#059669] opacity-50 animate-laser-sweep pointer-events-none" />
+        <div className="absolute top-8 left-8 text-[#059669]/35 font-mono text-base font-bold select-none">+</div>
+        <div className="absolute bottom-8 right-8 text-[#059669]/35 font-mono text-base font-bold select-none">+</div>
       </div>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

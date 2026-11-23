@@ -31,92 +31,68 @@ export default function CardiologyFullCanvas() {
     renderer.toneMappingExposure = 1.35;
     container.appendChild(renderer.domElement);
 
-    // Warm Coral & Clinical Studio Lighting
-    const amb = new THREE.AmbientLight(0xFFF1F2, 2.2);
+    // Precision Medical Emerald Ambient Lighting
+    const amb = new THREE.AmbientLight(0xF0FDF4, 2.5);
     scene.add(amb);
 
-    const keyLight = new THREE.DirectionalLight(0xFFFFFF, 3.5);
+    const keyLight = new THREE.DirectionalLight(0xFFFFFF, 3.2);
     keyLight.position.set(7, 9, 8);
     scene.add(keyLight);
 
-    const coralRim = new THREE.DirectionalLight(0xF43F5E, 4.0);
-    coralRim.position.set(-8, -2, -4);
-    scene.add(coralRim);
+    const emeraldRim = new THREE.DirectionalLight(0x10B981, 4.0);
+    emeraldRim.position.set(-8, -2, -4);
+    scene.add(emeraldRim);
 
-    const cyanGlow = new THREE.PointLight(0x06B6D4, 3.5, 20);
-    cyanGlow.position.set(3, -2, 4);
-    scene.add(cyanGlow);
+    const mintGlow = new THREE.PointLight(0x34D399, 3.0, 20);
+    mintGlow.position.set(3, -2, 4);
+    scene.add(mintGlow);
 
     const heartRoot = new THREE.Group();
-    // Offset slightly right for visual balance with left-aligned editorial typography
-    heartRoot.position.set(2.2, -0.2, 0);
+    heartRoot.position.set(2.5, 0, 0);
     scene.add(heartRoot);
 
-    // Precision Endovascular Stent Scaffold (Metallic Precision Architecture - No Organ Flesh)
-    const stentMat = new THREE.MeshStandardMaterial({
-      color: 0x0284C7,
-      emissive: 0x0369A1,
-      emissiveIntensity: 0.6,
-      metalness: 0.9,
-      roughness: 0.2,
-      wireframe: true,
-    });
-
-    const stentGeo = new THREE.CylinderGeometry(0.85, 0.85, 3.4, 28, 24, true);
-    const stentMesh = new THREE.Mesh(stentGeo, stentMat);
-    stentMesh.rotation.z = Math.PI / 4;
-    heartRoot.add(stentMesh);
-
-    // Glowing Inner Catheter Guidewire
-    const coreMat = new THREE.MeshStandardMaterial({
-      color: 0x22D3EE,
-      emissive: 0x06B6D4,
-      emissiveIntensity: 2.5,
-    });
-    const coreGeo = new THREE.CylinderGeometry(0.12, 0.12, 4.2, 16);
-    const coreMesh = new THREE.Mesh(coreGeo, coreMat);
-    coreMesh.rotation.z = Math.PI / 4;
-    heartRoot.add(coreMesh);
-
-    // Concentric Hemodynamic Telemetry Rings
+    // Subtle Holographic Vascular Rings (Clean, non-intrusive)
     const ringMat1 = new THREE.MeshPhysicalMaterial({
-      color: 0xF43F5E,
-      emissive: 0xE11D48,
-      emissiveIntensity: 1.2,
-      transmission: 0.6,
-      roughness: 0.1,
+      color: 0x059669,
+      emissive: 0x047857,
+      emissiveIntensity: 0.8,
+      transparent: true,
+      opacity: 0.25,
+      roughness: 0.2,
     });
-    const ringGeo1 = new THREE.TorusGeometry(1.6, 0.04, 16, 64);
+    const ringGeo1 = new THREE.TorusGeometry(2.2, 0.02, 16, 64);
     const ring1 = new THREE.Mesh(ringGeo1, ringMat1);
-    ring1.rotation.x = Math.PI / 2.5;
+    ring1.rotation.x = Math.PI / 2.8;
     heartRoot.add(ring1);
 
     const ringMat2 = new THREE.MeshStandardMaterial({
-      color: 0x38BDF8,
-      emissive: 0x0284C7,
-      emissiveIntensity: 1.5,
+      color: 0x10B981,
+      emissive: 0x059669,
+      emissiveIntensity: 0.9,
       wireframe: true,
+      transparent: true,
+      opacity: 0.18,
     });
-    const ringGeo2 = new THREE.TorusGeometry(1.9, 0.03, 16, 48);
+    const ringGeo2 = new THREE.TorusGeometry(2.6, 0.015, 16, 48);
     const ring2 = new THREE.Mesh(ringGeo2, ringMat2);
-    ring2.rotation.y = Math.PI / 3;
+    ring2.rotation.y = Math.PI / 3.2;
     heartRoot.add(ring2);
 
-    // 100 Floating Bioparticles drifting through space
-    const pCount = 100;
+    // 160 Floating Hemodynamic Emerald Micro-particles
+    const pCount = 160;
     const pGeo = new THREE.BufferGeometry();
     const pPos = new Float32Array(pCount * 3);
     for (let i = 0; i < pCount * 3; i += 3) {
-      pPos[i] = (Math.random() - 0.5) * 18;
-      pPos[i + 1] = (Math.random() - 0.5) * 12;
+      pPos[i] = (Math.random() - 0.5) * 20;
+      pPos[i + 1] = (Math.random() - 0.5) * 14;
       pPos[i + 2] = (Math.random() - 0.5) * 8;
     }
     pGeo.setAttribute('position', new THREE.BufferAttribute(pPos, 3));
     const pMat = new THREE.PointsMaterial({
-      color: 0xF43F5E,
-      size: 0.12,
+      color: 0x10B981,
+      size: 0.08,
       transparent: true,
-      opacity: 0.7,
+      opacity: 0.65,
       blending: THREE.AdditiveBlending,
     });
     const particles = new THREE.Points(pGeo, pMat);

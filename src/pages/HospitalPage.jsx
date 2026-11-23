@@ -71,24 +71,62 @@ export default function HospitalPage() {
         <div className="absolute -top-32 right-0 w-[750px] h-[750px] bg-gradient-to-bl from-[#059669]/25 via-teal-300/18 to-transparent rounded-full blur-[160px] animate-orb-1" />
         <div className="absolute top-1/2 -left-40 w-[650px] h-[650px] bg-gradient-to-tr from-[#064E3B]/20 via-[#047857]/15 to-transparent rounded-full blur-[150px] animate-orb-2" />
         <div className="absolute -bottom-20 right-1/4 w-[500px] h-[500px] bg-amber-400/15 rounded-full blur-[130px]" />
+        <div className="absolute top-1/3 right-1/4 w-[450px] h-[450px] bg-[#10B981]/15 rounded-full blur-[120px] animate-pulse" />
 
         {/* Moving Architectural Grid Lines */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#064E3B22_1px,transparent_1px),linear-gradient(to_bottom,#064E3B22_1px,transparent_1px)] bg-[size:5rem_5rem] animate-arch-grid [mask-image:radial-gradient(ellipse_85%_70%_at_50%_25%,#000_65%,transparent_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#064E3B18_1px,transparent_1px),linear-gradient(to_bottom,#064E3B18_1px,transparent_1px)] bg-[size:5rem_5rem] animate-arch-grid [mask-image:radial-gradient(ellipse_85%_70%_at_50%_25%,#000_65%,transparent_100%)]" />
 
         {/* Dot Matrix */}
         <div className="absolute inset-0 bg-[radial-gradient(#04785725_1.5px,transparent_1.5px)] bg-[size:36px_36px] [mask-image:radial-gradient(ellipse_70%_60%_at_50%_20%,#000_75%,transparent_100%)]" />
 
-        {/* Rotating Topographic Elevation Rings (top-right) */}
-        <div className="absolute top-20 right-10 w-96 h-96 rounded-full border-2 border-[#022C22]/30 hidden lg:block animate-gentle-cw" />
+        {/* Continuous ECG Cardiac Sinus Rhythm Waveform across Page Background */}
+        <svg className="absolute inset-x-0 top-1/4 w-full h-36 opacity-35 pointer-events-none" viewBox="0 0 1440 140" fill="none" preserveAspectRatio="none">
+          <path
+            d="M 0,70 L 140,70 L 160,70 L 170,45 L 180,95 L 195,15 L 210,120 L 225,60 L 240,70 L 400,70 L 540,70 L 560,70 L 570,45 L 580,95 L 595,15 L 610,120 L 625,60 L 640,70 L 800,70 L 940,70 L 960,70 L 970,45 L 980,95 L 995,15 L 1010,120 L 1025,60 L 1040,70 L 1200,70 L 1340,70 L 1360,70 L 1370,45 L 1380,95 L 1395,15 L 1410,120 L 1440,70"
+            stroke="#059669"
+            strokeWidth="2.5"
+            strokeDasharray="1600"
+            className="animate-ecg-dash"
+          />
+          <circle cx="195" cy="15" r="4" fill="#10B981" className="animate-ping" />
+          <circle cx="595" cy="15" r="4" fill="#10B981" className="animate-ping" />
+          <circle cx="995" cy="15" r="4" fill="#10B981" className="animate-ping" />
+        </svg>
+
+        {/* Rotating Topographic Elevation Rings (top-right) with Degree Markers */}
+        <div className="absolute top-20 right-10 w-96 h-96 rounded-full border-2 border-[#022C22]/30 hidden lg:block animate-gentle-cw">
+          <div className="absolute inset-4 rounded-full border border-dashed border-[#064E3B]/40 animate-radar-sweep" />
+          <div className="absolute inset-16 rounded-full border border-[#059669]/40 flex items-center justify-center">
+            <div className="w-full h-px bg-[#059669]/30" />
+            <div className="h-full w-px bg-[#059669]/30 absolute" />
+            <div className="w-4 h-4 rounded-full bg-[#10B981]/50 animate-ping absolute" />
+          </div>
+        </div>
         <div className="absolute top-28 right-16 w-64 h-64 rounded-full border-2 border-dashed border-[#064E3B]/40 hidden lg:block animate-gentle-ccw" />
-        <div className="absolute top-40 right-24 w-32 h-32 rounded-full border border-[#059669]/45 hidden lg:block" />
 
         {/* Rotating Topographic Rings (bottom-left) */}
-        <div className="absolute bottom-20 left-10 w-72 h-72 rounded-full border-2 border-[#022C22]/25 hidden lg:block animate-gentle-ccw" />
-        <div className="absolute bottom-28 left-16 w-48 h-48 rounded-full border-2 border-dashed border-amber-600/35 hidden lg:block animate-gentle-cw" />
+        <div className="absolute bottom-40 left-10 w-80 h-80 rounded-full border-2 border-[#022C22]/25 hidden lg:block animate-gentle-ccw">
+          <div className="absolute inset-8 rounded-full border border-dashed border-[#10B981]/40 animate-radar-sweep" />
+          <div className="absolute inset-20 rounded-full border border-[#047857]/30 flex items-center justify-center">
+            <div className="w-full h-px bg-[#047857]/30" />
+            <div className="h-full w-px bg-[#047857]/30 absolute" />
+          </div>
+        </div>
 
         {/* Dynamic Sweeping Architectural Laser Beam */}
-        <div className="absolute left-0 right-0 h-[2.5px] bg-gradient-to-r from-transparent via-[#047857] to-transparent shadow-[0_0_20px_#059669] opacity-50 animate-laser-sweep pointer-events-none" />
+        <div className="absolute left-0 right-0 h-[2.5px] bg-gradient-to-r from-transparent via-[#047857] to-transparent shadow-[0_0_20px_#059669] opacity-60 animate-laser-sweep pointer-events-none" />
+
+        {/* High-Precision CAD Crosshairs (+) across Background */}
+        <div className="absolute top-36 left-16 text-[#047857]/35 font-mono text-xs select-none hidden sm:block">+ 26.7606°N [GORAKHPUR]</div>
+        <div className="absolute top-36 right-20 text-[#047857]/35 font-mono text-xs select-none hidden sm:block">+ 83.3732°E [BETIAHATA]</div>
+        <div className="absolute top-1/2 left-8 text-[#047857]/30 font-mono text-xs select-none hidden md:block">+ C-ARM CATH LAB</div>
+        <div className="absolute top-1/2 right-12 text-[#047857]/30 font-mono text-xs select-none hidden md:block">+ STERILE OT SUITE</div>
+
+        {/* Floating Telemetry Stamp */}
+        <div className="absolute top-24 left-10 font-mono text-[11px] text-[#047857]/60 hidden lg:flex items-center gap-2 bg-white/80 px-3.5 py-1.5 rounded-full border border-[#A7F3D0] shadow-xs">
+          <span className="w-2 h-2 rounded-full bg-[#10B981] animate-ping" />
+          <span>NABH TERTIARY CLINICAL CAMPUS • CATH-LAB 24/7 ONLINE</span>
+        </div>
 
         {/* Animated SVG architectural lines */}
         <svg className="absolute inset-0 w-full h-full opacity-45" viewBox="0 0 1440 900" fill="none" preserveAspectRatio="none">
@@ -100,7 +138,7 @@ export default function HospitalPage() {
           />
           <path
             d="M1440,800 L1240,800 L1240,600 L1040,600 L1040,400 L840,400 L840,200 L640,200"
-            stroke="#D97706" strokeWidth="2" fill="none"
+            stroke="#10B981" strokeWidth="2" fill="none"
             strokeDasharray="6 8"
             className="animate-contact-dash"
             style={{ animationDelay: '1.5s' }}
@@ -171,46 +209,58 @@ export default function HospitalPage() {
         <PulseCentreSection />
 
         {/* 3. Full-Width Clinical Equipment & Facility Gallery */}
-        <div className="my-20">
-          <motion.div {...fadeUp(0)} className="mb-10 text-center max-w-2xl mx-auto space-y-2">
-            <span className="text-xs font-mono font-medium uppercase tracking-wider text-[#047857] bg-[#F0FDF4] px-3 py-1 rounded-full">
-              Clinical Environments
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-semibold text-[#064E3B] tracking-tight">
-              Advanced Clinical Suites
-            </h2>
-            <p className="text-xs sm:text-sm text-slate-600 font-medium">
-              Explore the high-precision equipment and sterile environments supporting every patient intervention.
-            </p>
-          </motion.div>
+        <div className="my-20 p-6 sm:p-10 rounded-[3rem] bg-gradient-to-b from-[#F0FDF4]/60 via-white/80 to-[#F0FDF4]/40 border-2 border-[#A7F3D0]/70 shadow-xl relative overflow-hidden">
+          {/* Internal architectural blueprint grid & depth glows */}
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#05966915_1px,transparent_1px),linear-gradient(to_bottom,#05966915_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] pointer-events-none" />
+          <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#10B981]/12 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-[#047857]/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#10B981] to-transparent shadow-[0_0_12px_#10B981] opacity-50 animate-laser-sweep pointer-events-none" />
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {facilityGallery.map((item, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-40px' }}
-                transition={{ duration: 0.8, delay: idx * 0.15, ease: [0.16, 1, 0.3, 1] }}
-                whileHover={{ y: -8, transition: { duration: 0.3 } }}
-                className="group relative rounded-[2rem] bg-white p-4 border border-[#A7F3D0]/60 shadow-md hover:shadow-2xl hover:border-[#A7F3D0] transition-all duration-500 space-y-4 text-left"
-              >
-                <SectionCinematicVideo
-                  type={item.type}
-                  videoUrl={item.videoUrl}
-                  styleVariant="floating-3d"
-                  posterImage={item.image}
-                  title={item.title}
-                  subtitle={item.category}
-                  specs={item.desc}
-                  aspectRatio="aspect-[16/10]"
-                />
-                <div className="px-1 flex items-center justify-between">
-                  <h3 className="text-base font-bold text-[#064E3B] tracking-tight">{item.title}</h3>
-                  <span className="text-[10px] font-mono font-bold text-[#047857] bg-[#F0FDF4] px-2.5 py-1 rounded-md border border-[#A7F3D0]/60">{item.category}</span>
-                </div>
-              </motion.div>
-            ))}
+          {/* Section Blueprint Crosshairs */}
+          <div className="absolute top-4 left-6 text-[#047857]/35 font-mono text-[10px] select-none hidden sm:block">+ SUITE-01 C-ARM FLUOROSCOPY</div>
+          <div className="absolute top-4 right-6 text-[#047857]/35 font-mono text-[10px] select-none hidden sm:block">+ SUITE-02 LAMINAR OT</div>
+
+          <div className="relative z-10">
+            <motion.div {...fadeUp(0)} className="mb-10 text-center max-w-2xl mx-auto space-y-2">
+              <span className="text-xs font-mono font-medium uppercase tracking-wider text-[#047857] bg-[#F0FDF4] px-3 py-1 rounded-full border border-[#A7F3D0]">
+                Clinical Environments
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-semibold text-[#064E3B] tracking-tight">
+                Advanced Clinical Suites
+              </h2>
+              <p className="text-xs sm:text-sm text-slate-700 font-medium">
+                Explore the high-precision equipment and sterile environments supporting every patient intervention.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {facilityGallery.map((item, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-40px' }}
+                  transition={{ duration: 0.8, delay: idx * 0.15, ease: [0.16, 1, 0.3, 1] }}
+                  whileHover={{ y: -8, transition: { duration: 0.3 } }}
+                  className="group relative rounded-[2rem] bg-white p-4 border border-[#A7F3D0]/80 shadow-md hover:shadow-2xl hover:border-[#10B981] transition-all duration-500 space-y-4 text-left"
+                >
+                  <SectionCinematicVideo
+                    type={item.type}
+                    videoUrl={item.videoUrl}
+                    styleVariant="floating-3d"
+                    posterImage={item.image}
+                    title={item.title}
+                    subtitle={item.category}
+                    specs={item.desc}
+                    aspectRatio="aspect-[16/10]"
+                  />
+                  <div className="px-1 flex items-center justify-between">
+                    <h3 className="text-base font-bold text-[#064E3B] tracking-tight">{item.title}</h3>
+                    <span className="text-[10px] font-mono font-bold text-[#047857] bg-[#F0FDF4] px-2.5 py-1 rounded-md border border-[#A7F3D0]/60">{item.category}</span>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
 

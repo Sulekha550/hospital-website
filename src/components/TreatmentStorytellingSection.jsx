@@ -137,19 +137,19 @@ export default function TreatmentStorytellingSection() {
 
         {/* Section Header */}
         <div className="mb-10 text-center max-w-3xl mx-auto space-y-2">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-orange-600 to-rose-600 text-white text-xs font-mono font-bold shadow-md">
-            <Target className="w-4 h-4 text-amber-200" />
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-[#064E3B] via-[#047857] to-[#047857] text-[#A7F3D0] text-xs font-mono font-bold shadow-md shadow-[#064E3B]/20 border border-[#A7F3D0]/40">
+            <Target className="w-4 h-4 text-amber-300" />
             <span className="uppercase tracking-[0.2em]">Step-by-Step Clinical Journeys</span>
           </div>
 
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-950 tracking-tight">
-            Clinical <span className="font-serif italic font-normal text-rose-700">Procedural Roadmap</span>
+          <h2 className="text-3xl sm:text-5xl font-extrabold text-[#064E3B] tracking-tight">
+            Clinical <span className="font-serif italic font-normal text-[#059669]">Procedural Roadmap</span>
           </h2>
 
           <div className="flex flex-wrap items-center justify-center gap-2 pt-1 font-mono text-[11px] font-bold">
-            <span className="bg-orange-100 text-orange-900 px-3 py-0.5 rounded-full border border-orange-200">Pre-Op Evaluation</span>
-            <span className="bg-rose-100 text-rose-900 px-3 py-0.5 rounded-full border border-rose-200">Radial Micro-Access</span>
-            <span className="bg-amber-100 text-amber-900 px-3 py-0.5 rounded-full border border-amber-200">Stent Deployment</span>
+            <span className="bg-[#F0FDF4] text-[#047857] px-3 py-0.5 rounded-full border border-[#A7F3D0]">Pre-Op Evaluation</span>
+            <span className="bg-[#F0FDF4] text-[#064E3B] px-3 py-0.5 rounded-full border border-[#34D399]">Radial Micro-Access</span>
+            <span className="bg-emerald-50 text-emerald-800 px-3 py-0.5 rounded-full border border-emerald-200">Stent Deployment</span>
             <span className="bg-[#F0FDF4] text-[#064E3B] px-3 py-0.5 rounded-full border border-[#A7F3D0]">24-Hr Discharge</span>
           </div>
         </div>
@@ -164,8 +164,8 @@ export default function TreatmentStorytellingSection() {
                 onClick={() => setActiveProcedure(key)}
                 className={`px-6 py-3 rounded-full text-xs font-semibold tracking-wide transition-all duration-300 ${
                   isActive
-                    ? 'bg-gradient-to-r from-orange-600 to-rose-600 text-white shadow-lg scale-105'
-                    : 'bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 shadow-xs'
+                    ? 'bg-gradient-to-r from-[#064E3B] via-[#047857] to-[#059669] text-white shadow-lg shadow-[#064E3B]/25 scale-105 border border-[#A7F3D0]/50'
+                    : 'bg-white hover:bg-[#F0FDF4] text-slate-700 border border-[#A7F3D0]/70 shadow-xs'
                 }`}
               >
                 {data.title}
@@ -175,7 +175,7 @@ export default function TreatmentStorytellingSection() {
         </div>
 
         {/* Master Procedural Journey Card with Smooth Step Elevation */}
-        <div className="rounded-[2.5rem] bg-white/95 backdrop-blur-xl border-2 border-orange-200 shadow-layered p-6 sm:p-10 space-y-8 text-left transition-all duration-400 hover:shadow-2xl">
+        <div className="rounded-[2.5rem] bg-white/95 backdrop-blur-xl border-2 border-[#A7F3D0] shadow-layered p-6 sm:p-10 space-y-8 text-left transition-all duration-400 hover:shadow-2xl">
 
           {/* Header Banner */}
           <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4 pb-6 border-b border-slate-100">

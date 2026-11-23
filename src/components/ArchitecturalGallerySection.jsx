@@ -54,19 +54,47 @@ export default function ArchitecturalGallerySection() {
         {/* Luminous Emerald & Warm Amber Depth Glows */}
         <div className="absolute top-1/4 right-1/4 w-[750px] h-[750px] bg-[#047857]/25 rounded-full blur-[130px] animate-float-1" />
         <div className="absolute bottom-10 left-10 w-[650px] h-[650px] bg-[#059669]/20 rounded-full blur-[120px] animate-float-2" />
+        <div className="absolute top-1/2 left-1/3 w-[500px] h-[500px] bg-emerald-400/10 rounded-full blur-[140px] animate-pulse" />
 
         {/* Visible Architectural Blueprint Grid */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#05966925_1.5px,transparent_1.5px),linear-gradient(to_bottom,#05966925_1.5px,transparent_1.5px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_70%_at_50%_40%,#000_75%,transparent_100%)]" />
 
-        {/* 1. Active Sweeping Architectural Laser Scanner Beam */}
-        <div className="absolute inset-x-0 h-[3px] bg-gradient-to-r from-transparent via-[#059669] to-transparent shadow-[0_0_20px_#059669] animate-laser-v" />
+        {/* Sub-Millimeter Precision Coordinate Dot Grid */}
+        <div className="absolute inset-0 bg-[radial-gradient(#10B98135_1.5px,transparent_1.5px)] bg-[size:32px_32px] opacity-40 [mask-image:radial-gradient(ellipse_75%_65%_at_50%_50%,#000_70%,transparent_100%)]" />
 
-        {/* 2. Rotating Architectural CAD Masterplan Compass Rings */}
+        {/* Dynamic Sweeping Architectural Laser Scanner Beams (Dual Axis) */}
+        <div className="absolute inset-x-0 h-[3px] bg-gradient-to-r from-transparent via-[#10B981] to-transparent shadow-[0_0_20px_#10B981] animate-laser-v opacity-80" />
+        <div className="absolute inset-y-0 w-[2px] bg-gradient-to-b from-transparent via-[#059669] to-transparent shadow-[0_0_15px_#059669] animate-laser-sweep opacity-40" />
+
+        {/* Continuous ECG Cardiac Sinus Rhythm Waveform across background */}
+        <svg className="absolute inset-x-0 top-1/2 -translate-y-1/2 w-full h-44 opacity-30 pointer-events-none" viewBox="0 0 1440 160" fill="none" preserveAspectRatio="none">
+          <path
+            d="M 0,80 L 120,80 L 140,80 L 150,50 L 160,110 L 175,20 L 190,135 L 205,70 L 220,80 L 360,80 L 480,80 L 500,80 L 510,50 L 520,110 L 535,20 L 550,135 L 565,70 L 580,80 L 720,80 L 840,80 L 860,80 L 870,50 L 880,110 L 895,20 L 910,135 L 925,70 L 940,80 L 1080,80 L 1200,80 L 1220,80 L 1230,50 L 1240,110 L 1255,20 L 1270,135 L 1285,70 L 1300,80 L 1440,80"
+            stroke="#10B981"
+            strokeWidth="2.5"
+            strokeDasharray="1600"
+            className="animate-ecg-dash"
+          />
+          <circle cx="535" cy="20" r="5" fill="#34D399" className="animate-ping" />
+          <circle cx="895" cy="20" r="5" fill="#34D399" className="animate-ping" />
+          <circle cx="1255" cy="20" r="5" fill="#34D399" className="animate-ping" />
+        </svg>
+
+        {/* 1. Rotating Architectural CAD Masterplan Compass Rings (Top-Right) */}
         <div className="absolute -top-20 -right-20 w-[600px] h-[600px] pointer-events-none hidden md:block">
           {/* Outer Compass Degree Ring (Clockwise) */}
           <div className="absolute inset-0 rounded-full border-2 border-dashed border-[#059669]/40 animate-radar-sweep" />
           {/* Middle Compass Ring (Counter-Clockwise) */}
           <div className="absolute inset-16 rounded-full border-2 border-[#059669]/50 border-t-emerald-300 animate-rotate-reverse" />
+          {/* Degree Markers */}
+          <div className="absolute inset-4 flex items-center justify-between text-[9px] font-mono text-[#10B981]/50 px-2">
+            <span>270°</span>
+            <span>090°</span>
+          </div>
+          <div className="absolute inset-4 flex flex-col items-center justify-between text-[9px] font-mono text-[#10B981]/50 py-2">
+            <span>000°</span>
+            <span>180°</span>
+          </div>
           {/* Inner Target Crosshairs */}
           <div className="absolute inset-32 rounded-full border border-[#059669]/35 flex items-center justify-center">
             <div className="w-full h-px bg-[#059669]/50" />
@@ -75,17 +103,35 @@ export default function ArchitecturalGallerySection() {
           </div>
         </div>
 
-        {/* 3. Pulsing Architectural GPS Telemetry Nodes */}
-        <div className="absolute top-24 left-16 flex items-center gap-2 font-mono text-[11px] text-[#059669]/40 hidden sm:flex">
-          <span className="w-2 h-2 rounded-full bg-[#059669] animate-ping" />
+        {/* 2. Counter-Rotating CAD Radar Rings (Bottom-Left) */}
+        <div className="absolute -bottom-24 -left-24 w-[500px] h-[500px] pointer-events-none hidden lg:block opacity-60">
+          <div className="absolute inset-0 rounded-full border-2 border-[#047857]/30 animate-rotate-reverse" />
+          <div className="absolute inset-12 rounded-full border-2 border-dashed border-[#10B981]/40 animate-radar-sweep" />
+          <div className="absolute inset-28 rounded-full border border-emerald-400/30 flex items-center justify-center">
+            <div className="w-full h-px bg-[#10B981]/40" />
+            <div className="h-full w-px bg-[#10B981]/40 absolute" />
+            <div className="w-3 h-3 rounded-full bg-[#10B981] animate-ping absolute" />
+          </div>
+        </div>
+
+        {/* 3. High-Precision Blueprint Crosshairs (+) at key architectural coordinates */}
+        <div className="absolute top-20 left-12 text-[#10B981]/40 font-mono text-xs select-none hidden sm:block">+ 26.7606°N</div>
+        <div className="absolute top-20 right-28 text-[#10B981]/40 font-mono text-xs select-none hidden sm:block">+ 83.3732°E</div>
+        <div className="absolute bottom-24 left-1/4 text-[#10B981]/30 font-mono text-xs select-none hidden md:block">+ CATH-LAB 01</div>
+        <div className="absolute bottom-24 right-1/4 text-[#10B981]/30 font-mono text-xs select-none hidden md:block">+ LAMINAR OT</div>
+
+        {/* 4. Pulsing Architectural GPS Telemetry Nodes */}
+        <div className="absolute top-24 left-16 flex items-center gap-2 font-mono text-[11px] text-[#A7F3D0]/60 hidden sm:flex bg-[#022C22]/60 px-3 py-1 rounded-full border border-[#059669]/30 backdrop-blur-xs">
+          <span className="w-2 h-2 rounded-full bg-[#10B981] animate-ping" />
           <span>NABH TERTIARY CLINICAL CAMPUS · 26.7606° N, 83.3732° E</span>
         </div>
 
         {/* Technical Blueprint Watermark Stamp */}
-        <div className="absolute top-12 right-12 text-right font-mono text-[11px] text-[#059669]/25 tracking-widest hidden md:block">
-          <div>PULSE CAMPUS MASTERPLAN</div>
+        <div className="absolute top-12 right-12 text-right font-mono text-[11px] text-[#10B981]/40 tracking-widest hidden md:block bg-[#022C22]/50 p-3 rounded-xl border border-[#059669]/30 backdrop-blur-xs">
+          <div className="font-bold text-[#A7F3D0]">PULSE CAMPUS MASTERPLAN</div>
           <div>NABH GRADE-A SPECIFICATION</div>
           <div>COORD: 26.7606° N, 83.3732° E</div>
+          <div className="text-[9px] text-[#34D399]">HEPA-14 POSITIVE PRESSURE: ACTIVE</div>
         </div>
       </div>
 
