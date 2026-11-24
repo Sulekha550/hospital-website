@@ -25,8 +25,8 @@ export default function DepartmentRealmsSection() {
       tagline: 'Wrist-First Transradial Stenting & Pacemakers',
       leadDoctor: 'Dr. Prakash Chand Shahi',
       leadDegree: 'DM Cardiology (PGIMER), MD (KGMU)',
-      accentColor: '#F43F5E',
-      accentBg: 'bg-rose-50 text-rose-700 border-rose-200',
+      accentColor: '#059669',
+      accentBg: 'bg-emerald-50 text-[#064E3B] border-emerald-200',
       description: 'PULSE is Eastern UP’s apex destination for complex coronary bifurcation stenting, emergency primary angioplasties, and permanent physiological pacing.',
       procedures: [
         'Transradial Coronary Angioplasty & Stenting',
@@ -61,8 +61,8 @@ export default function DepartmentRealmsSection() {
       tagline: 'Robotic Total Knee Replacement & Sports Arthroscopy',
       leadDoctor: 'Dr. Vikramaditya Rathore',
       leadDegree: 'MS Ortho, MCh Ortho (UK)',
-      accentColor: '#0284C7',
-      accentBg: 'bg-[#FEF2F2] text-[#B91C1C] border-[#FECDD3]',
+      accentColor: '#D97706',
+      accentBg: 'bg-amber-50 text-amber-900 border-amber-200',
       description: 'Class-100 laminar airflow operating suites utilizing computer-navigated sub-millimeter robotic precision for fast-track 24-hour joint rehabilitation.',
       procedures: [
         'Robotic Total Knee Arthroplasty',
@@ -80,7 +80,7 @@ export default function DepartmentRealmsSection() {
       leadDoctor: 'Diagnostic Imaging Faculty',
       leadDegree: 'Sub-Millimeter Non-Invasive Diagnostics',
       accentColor: '#0284C7',
-      accentBg: 'bg-sky-50 text-sky-700 border-sky-200',
+      accentBg: 'bg-cyan-50 text-cyan-800 border-cyan-200',
       description: 'Non-invasive 3D cardiac angiograms reconstructed in a single heartbeat without arterial puncture, alongside automated 24/7 clinical pathology.',
       procedures: [
         '128-Slice CT Coronary Angiography',
@@ -152,7 +152,7 @@ export default function DepartmentRealmsSection() {
                 <span className="text-lg font-extrabold text-[#173C59] block">{current.stats.primary}</span>
                 <span className="text-[10px] uppercase font-bold text-slate-400">{current.stats.label}</span>
               </div>
-              <span className="px-2 py-0.5 rounded bg-[#FEF2F2] text-[#B91C1C] text-[10px] font-bold">
+              <span className="px-2 py-0.5 rounded bg-[#F0FDF4] text-[#047857] text-[10px] font-bold">
                 Active Protocol
               </span>
             </div>

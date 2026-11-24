@@ -12,7 +12,7 @@ export default function ExperienceTimeline({ onBookClick }) {
       title: "Extensive Cardiology & Catheterization Practice",
       institution: "Pulse Heart Centre & Tertiary Academic Hospitals",
       description: doctor.experienceText,
-      accent: "from-[#173C59] via-[#2788B8] to-sky-400",
+      accent: "from-[#173C59] via-[#2788B8] to-emerald-400",
       highlight: true
     },
     {
@@ -30,7 +30,7 @@ export default function ExperienceTimeline({ onBookClick }) {
       title: "MD — General Medicine",
       institution: "King George's Medical University (KGMU), Lucknow",
       description: "Master of Medicine focusing on complex systemic disorders, cardiovascular pharmacotherapy, and intensive medical hemodynamics.",
-      accent: "from-[#2788B8] to-sky-500",
+      accent: "from-[#2788B8] to-emerald-500",
       highlight: false
     },
     {
@@ -66,7 +66,7 @@ export default function ExperienceTimeline({ onBookClick }) {
 
         {/* Minimalist Chronological Timeline */}
         <div className="relative">
-          <div className="hidden md:block absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-1 bg-gradient-to-b from-[#173C59] via-[#2788B8] to-sky-300 rounded-full" />
+          <div className="hidden md:block absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-1 bg-gradient-to-b from-[#173C59] via-[#2788B8] to-emerald-300 rounded-full" />
 
           <div className="space-y-12 md:space-y-16">
             {milestones.map((item, index) => {
@@ -111,7 +111,7 @@ export default function ExperienceTimeline({ onBookClick }) {
                   </div>
 
                   {/* Central Node */}
-                  <div className="my-4 md:my-0 relative z-20 flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-tr from-[#173C59] via-[#2788B8] to-sky-300 p-0.5 shadow-lg">
+                  <div className="my-4 md:my-0 relative z-20 flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-tr from-[#173C59] via-[#2788B8] to-emerald-300 p-0.5 shadow-lg">
                     <div className="w-full h-full rounded-full bg-white flex items-center justify-center">
                       <span className="w-3.5 h-3.5 rounded-full bg-[#173C59] animate-pulse" />
                     </div>

@@ -63,7 +63,7 @@ export default function LuxuryAmbience3D() {
     // 1. Fluid Sculptural Glass Ribbons (Smooth Bezier Toruses)
     const glassMat = new THREE.MeshPhysicalMaterial({
       color: 0xF0F9FF,
-      emissive: 0x0284C7,
+      emissive: 0x059669,
       emissiveIntensity: 0.08,
       roughness: 0.1,
       metalness: 0.05,
@@ -102,7 +102,7 @@ export default function LuxuryAmbience3D() {
     particleGeo.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
     const particleMat = new THREE.PointsMaterial({
       size: 0.05,
-      color: 0x0284C7,
+      color: 0x059669,
       transparent: true,
       opacity: 0.55,
       blending: THREE.AdditiveBlending,

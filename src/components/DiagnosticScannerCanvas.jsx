@@ -32,7 +32,7 @@ export default function DiagnosticScannerCanvas({ className = "" }) {
     const amb = new THREE.AmbientLight(0xE0F2FE, 1.8);
     scene.add(amb);
 
-    const cyanLight = new THREE.DirectionalLight(0x0284C7, 3.5);
+    const cyanLight = new THREE.DirectionalLight(0x059669, 3.5);
     cyanLight.position.set(4, 6, 5);
     scene.add(cyanLight);
 
@@ -47,7 +47,7 @@ export default function DiagnosticScannerCanvas({ className = "" }) {
 
     for (let i = 0; i < sliceCount; i++) {
       const discMat = new THREE.MeshPhysicalMaterial({
-        color: 0x0284C7,
+        color: 0x059669,
         transmission: 0.8,
         opacity: 0.65,
         transparent: true,

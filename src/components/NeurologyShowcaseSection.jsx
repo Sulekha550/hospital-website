@@ -127,7 +127,7 @@ export default function NeurologyShowcaseSection() {
                 <span className="text-[10px] text-slate-300 uppercase block font-semibold">Micro-Neurosurgery</span>
               </div>
               <div className="p-2.5 rounded-xl bg-white/10 backdrop-blur-md border border-white/15 text-left">
-                <span className="text-sm font-mono font-bold text-[#0284C7] block">12-Bed</span>
+                <span className="text-sm font-mono font-bold text-[#059669] block">12-Bed</span>
                 <span className="text-[10px] text-slate-300 uppercase block font-semibold">Neuro-ICU Care</span>
               </div>
             </div>
@@ -214,7 +214,7 @@ export default function NeurologyShowcaseSection() {
             <div className="p-5 rounded-3xl bg-white/10 backdrop-blur-xl border border-white/15 shadow-xl space-y-3">
               <div className="flex items-center justify-between">
                 <span className="text-[10px] font-bold uppercase tracking-wider text-[#AFA0E9]">Stroke Protocol</span>
-                <span className="px-2 py-0.5 rounded bg-[#0EA5E9]/20 text-[#FECDD3] text-[10px] font-bold">BE-FAST Ready</span>
+                <span className="px-2 py-0.5 rounded bg-[#10B981]/20 text-[#A7F3D0] text-[10px] font-bold">BE-FAST Ready</span>
               </div>
               <div className="text-3xl font-extrabold text-[#AFA0E9]">&lt; 30 Minutes</div>
               <div className="text-xs font-bold text-white">Stroke Door-To-Needle Thrombolysis</div>

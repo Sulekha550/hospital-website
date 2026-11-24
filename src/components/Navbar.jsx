@@ -57,10 +57,10 @@ export default function Navbar() {
               />
             </div>
             <div className="flex flex-col text-left">
-              <span className="font-extrabold text-xl tracking-[0.2em] text-[#991B1B] group-hover:text-[#B91C1C] transition-colors uppercase leading-none">
+              <span className="font-extrabold text-xl tracking-[0.2em] text-[#0A1128] group-hover:text-[#BE123C] transition-colors uppercase leading-none">
                 PULSE
               </span>
-              <span className="text-[10px] tracking-[0.26em] uppercase font-bold text-[#0284C7] font-mono mt-0.5">
+              <span className="text-[10px] tracking-[0.26em] uppercase font-bold text-[#BE123C] font-mono mt-0.5">
                 Heart Centre
               </span>
             </div>
@@ -69,9 +69,9 @@ export default function Navbar() {
           {/* Lead Doctor Identification Pill (With Stethoscope Crest) */}
           <Link
             to="/about"
-            className="hidden xl:flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-rose-50/80 border border-rose-200 text-[11px] font-mono text-[#991B1B] font-bold hover:bg-rose-100/80 transition-colors shadow-2xs"
+            className="hidden xl:flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-50 border border-slate-200 text-[11px] font-mono text-[#0A1128] font-bold hover:border-rose-300 hover:text-[#BE123C] transition-colors shadow-2xs"
           >
-            <div className="w-5 h-5 rounded-full bg-gradient-to-br from-[#991B1B] to-[#B91C1C] flex items-center justify-center text-white">
+            <div className="w-5 h-5 rounded-full bg-gradient-to-br from-[#0A1128] to-[#BE123C] flex items-center justify-center text-white">
               <Stethoscope className="w-3 h-3" />
             </div>
             <span>Dr. Prakash Chand Shahi • DM (PGIMER)</span>
@@ -83,10 +83,10 @@ export default function Navbar() {
               <NavLink
                 key={item.label}
                 to={item.path}
-                className={({ isActive }) => `px-4 py-1.5 rounded-full text-xs font-bold tracking-wider transition-all duration-300 ${
+                className={({ isActive }) => `relative px-4 py-1.5 rounded-full text-xs font-bold tracking-wider transition-all duration-300 ${
                   isActive
-                    ? 'bg-gradient-to-r from-[#991B1B] via-[#B91C1C] to-[#DC2626] text-white shadow-md shadow-rose-900/20 scale-102'
-                    : 'text-slate-700 hover:text-[#991B1B] hover:bg-white/80'
+                    ? 'bg-gradient-to-r from-[#0A1128] via-[#1E293B] to-[#BE123C] text-white shadow-md shadow-navy/30 scale-102 border border-rose-300/30'
+                    : 'text-slate-700 hover:text-[#BE123C] hover:bg-white/80'
                 }`}
               >
                 {item.label}
@@ -101,19 +101,20 @@ export default function Navbar() {
               title={soundEnabled ? "Mute cardiac audio" : "Enable cardiac bio-rhythm audio"}
               className={`p-2.5 rounded-full border transition-all duration-300 hover:scale-105 active:scale-95 ${
                 soundEnabled 
-                  ? 'bg-rose-50 border-rose-300 text-[#991B1B] shadow-sm' 
-                  : 'bg-white border-slate-200 text-slate-700 hover:text-[#991B1B] hover:bg-slate-50'
+                  ? 'bg-rose-50 border-rose-300 text-[#BE123C] shadow-sm' 
+                  : 'bg-white border-slate-200 text-slate-700 hover:text-[#BE123C] hover:bg-slate-50'
               }`}
             >
-              {soundEnabled ? <Volume2 className="w-4 h-4 text-[#991B1B]" /> : <VolumeX className="w-4 h-4" />}
+              {soundEnabled ? <Volume2 className="w-4 h-4 text-[#BE123C]" /> : <VolumeX className="w-4 h-4" />}
             </button>
 
             <Link
               to="/book-appointment"
-              className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-gradient-to-r from-[#991B1B] via-[#B91C1C] to-[#DC2626] hover:from-[#7F1D1D] hover:via-[#991B1B] hover:to-[#B91C1C] text-white font-bold text-xs uppercase tracking-wider shadow-md shadow-rose-900/25 hover:shadow-xl transition-all duration-300 hover:scale-105 hover:-translate-y-0.5 border border-rose-300/30"
+              className="luxury-btn-primary !px-5 !py-2 !text-xs group"
             >
-              <Calendar className="w-3.5 h-3.5 text-amber-300" />
+              <Calendar className="w-3.5 h-3.5 text-rose-200 group-hover:scale-110 transition-transform" />
               <span>Book Appointment</span>
+              <ArrowRight className="w-3.5 h-3.5 text-rose-300 group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
 
@@ -124,11 +125,11 @@ export default function Navbar() {
               title={soundEnabled ? "Mute cardiac audio" : "Enable cardiac bio-rhythm audio"}
               className={`p-2 rounded-xl border transition-all ${
                 soundEnabled 
-                  ? 'bg-rose-50 border-rose-300 text-[#991B1B]' 
+                  ? 'bg-rose-50 border-rose-300 text-[#BE123C]' 
                   : 'bg-white border-slate-200 text-slate-700'
               }`}
             >
-              {soundEnabled ? <Volume2 className="w-4 h-4 text-[#991B1B]" /> : <VolumeX className="w-4 h-4" />}
+              {soundEnabled ? <Volume2 className="w-4 h-4 text-[#BE123C]" /> : <VolumeX className="w-4 h-4" />}
             </button>
 
             <button
@@ -136,7 +137,7 @@ export default function Navbar() {
               className="p-2 rounded-xl bg-slate-100 text-slate-900 hover:bg-slate-200"
               aria-label="Toggle mobile menu"
             >
-              {mobileMenuOpen ? <X className="w-5 h-5 text-[#991B1B]" /> : <Menu className="w-5 h-5 text-[#991B1B]" />}
+              {mobileMenuOpen ? <X className="w-5 h-5 text-[#BE123C]" /> : <Menu className="w-5 h-5 text-[#0A1128]" />}
             </button>
           </div>
 
@@ -144,15 +145,15 @@ export default function Navbar() {
 
         {/* Mobile Dropdown Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden mt-3 p-4 rounded-3xl bg-white/98 backdrop-blur-2xl border-2 border-rose-200 shadow-2xl space-y-2.5 animate-in fade-in slide-in-from-top-2 duration-200">
+          <div className="md:hidden mt-3 p-4 rounded-3xl bg-white/98 backdrop-blur-2xl border-2 border-slate-200 shadow-2xl space-y-2.5 animate-in fade-in slide-in-from-top-2 duration-200">
             {/* Mobile Lead Doctor Banner */}
             <div className="flex items-center gap-2.5 p-2 rounded-2xl bg-rose-50 border border-rose-200 mb-2">
-              <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-[#991B1B] to-[#B91C1C] flex items-center justify-center text-white shrink-0">
+              <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-[#0A1128] to-[#BE123C] flex items-center justify-center text-white shrink-0">
                 <Stethoscope className="w-4 h-4" />
               </div>
               <div className="text-left">
-                <span className="text-xs font-bold text-[#991B1B] block leading-tight">Dr. Prakash Chand Shahi</span>
-                <span className="text-[10px] text-[#0284C7] font-mono font-semibold block">DM Cardiology (PGIMER)</span>
+                <span className="text-xs font-bold text-[#0A1128] block leading-tight">Dr. Prakash Chand Shahi</span>
+                <span className="text-[10px] text-[#BE123C] font-mono font-semibold block">DM Cardiology (PGIMER)</span>
               </div>
             </div>
 
@@ -163,8 +164,8 @@ export default function Navbar() {
                 onClick={() => setMobileMenuOpen(false)}
                 className={({ isActive }) => `block px-4 py-2.5 rounded-2xl text-xs font-bold uppercase tracking-wider transition-all text-left ${
                   isActive
-                    ? 'bg-[#991B1B] text-white shadow-md'
-                    : 'text-slate-800 hover:bg-rose-50 hover:text-[#991B1B]'
+                    ? 'bg-gradient-to-r from-[#0A1128] to-[#BE123C] text-white shadow-md'
+                    : 'text-slate-800 hover:bg-rose-50 hover:text-[#BE123C]'
                 }`}
               >
                 {item.label}
@@ -175,18 +176,18 @@ export default function Navbar() {
               <Link
                 to="/book-appointment"
                 onClick={() => setMobileMenuOpen(false)}
-                className="w-full py-3 rounded-full bg-gradient-to-r from-[#991B1B] via-[#B91C1C] to-[#DC2626] text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-md shadow-rose-900/20"
+                className="w-full py-3 rounded-full bg-gradient-to-r from-[#0A1128] via-[#1E293B] to-[#BE123C] text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-md shadow-navy/20"
               >
-                <Calendar className="w-4 h-4 text-amber-300" />
+                <Calendar className="w-4 h-4 text-rose-200" />
                 <span>Book Priority Appointment</span>
               </Link>
 
               <a
                 href="tel:+919876543210"
                 onClick={() => setMobileMenuOpen(false)}
-                className="w-full py-2.5 rounded-full bg-sky-50 hover:bg-sky-100/80 text-[#0284C7] font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 border border-sky-200"
+                className="w-full py-2.5 rounded-full bg-slate-50 hover:bg-rose-50 text-[#0A1128] hover:text-[#BE123C] font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 border border-slate-200"
               >
-                <span className="w-2 h-2 rounded-full bg-[#0284C7] animate-ping" />
+                <span className="w-2 h-2 rounded-full bg-[#BE123C] animate-ping" />
                 <span>24/7 Helpline: +91 98765 43210</span>
               </a>
             </div>

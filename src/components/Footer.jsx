@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Activity, MapPin, Clock, ArrowUp, Calendar, Heart, Facebook, Instagram, ShieldCheck, Stethoscope } from 'lucide-react';
 import { PULSE_DATA } from '../data/pulseData';
+import SectionBackgroundMotion from './SectionBackgroundMotion';
 
 export default function Footer() {
   const { clinic, doctor, socials } = PULSE_DATA;
@@ -11,60 +12,10 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative bg-gradient-to-b from-[#450A0A] via-[#011C15] to-[#00100C] text-white overflow-hidden border-t-2 border-[#FECDD3]/40 select-none">
+    <footer className="relative bg-gradient-to-b from-[#2A161B] via-[#1E0F13] to-[#140A0D] text-white overflow-hidden border-t-2 border-rose-400/40 select-none">
       
-      {/* =========================================================================
-          UNIQUE FOOTER BACKGROUND: EMERALD, PINE & MINT GREEN AURA
-         ========================================================================= */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
-        {/* Ambient Video Background Layer */}
-        <div className="absolute inset-0 z-0 overflow-hidden opacity-20 mix-blend-screen">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="metadata"
-            className="w-full h-full object-cover filter contrast-125 saturate-150"
-          >
-            <source src="/videos/hero-architecture.mp4" type="video/mp4" />
-          </video>
-          <div className="absolute inset-0 bg-gradient-to-b from-[#450A0A]/90 via-[#011C15]/85 to-[#00100C]" />
-        </div>
-
-        {/* Luminous Mint & Teal Depth Orbs */}
-        <div className="absolute -top-24 left-1/4 w-[650px] h-[650px] bg-[#FECDD3]/15 rounded-full blur-[140px] animate-float-1" />
-        <div className="absolute -bottom-20 right-10 w-[600px] h-[600px] bg-[#38BDF8]/15 rounded-full blur-[130px] animate-float-2" />
-        <div className="absolute top-1/2 -right-20 w-[450px] h-[450px] bg-[#991B1B]/25 rounded-full blur-[120px]" />
-
-        {/* Constellation Grid Pattern */}
-        <div className="absolute inset-0 bg-[radial-gradient(#FECDD325_1.5px,transparent_1.5px)] bg-[size:32px_32px] opacity-40" />
-
-        {/* Rotating Tech Compass Ring in Bottom-Right Corner */}
-        <div className="absolute -bottom-24 -right-24 w-[420px] h-[420px] rounded-full border border-[#FECDD3]/20 pointer-events-none hidden lg:block">
-          <div className="absolute inset-6 rounded-full border border-dashed border-[#38BDF8]/30 animate-radar-sweep" />
-          <div className="absolute inset-16 rounded-full border border-[#FECDD3]/20 animate-rotate-reverse" />
-        </div>
-
-        {/* Flowing Golden ECG Cardiac Line Across Bottom */}
-        <div className="absolute bottom-0 left-0 right-0 z-0 opacity-60">
-          <svg className="w-full h-20" viewBox="0 0 1440 80" fill="none" preserveAspectRatio="none">
-            <path
-              d="M0,40 L300,40 L320,40 L330,15 L340,65 L350,5 L360,55 L370,40 L600,40 L620,40 L630,15 L640,65 L650,5 L660,55 L670,40 L1000,40 L1020,40 L1030,15 L1040,65 L1050,5 L1060,55 L1070,40 L1440,40"
-              stroke="#FECDD3"
-              strokeWidth="2.5"
-              strokeDasharray="300"
-              className="animate-flow-dash"
-            />
-            <circle cx="350" cy="5" r="5" fill="#38BDF8" className="animate-ping" />
-            <circle cx="650" cy="5" r="5" fill="#FECDD3" className="animate-ping" />
-            <circle cx="1050" cy="5" r="5" fill="#38BDF8" className="animate-ping" />
-          </svg>
-        </div>
-
-        {/* Sweeping Laser Beam in Footer */}
-        <div className="absolute left-0 right-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-[#FECDD3] to-transparent shadow-[0_0_15px_#0284C7] opacity-60 animate-laser-h pointer-events-none" />
-      </div>
+      {/* Rich but subtle coral and blush combination with elegant finishing */}
+      <SectionBackgroundMotion variant="footer" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-8 pt-16 pb-12 relative z-10">
         
@@ -94,15 +45,15 @@ export default function Footer() {
               Advanced cardiac care and catheterization guided by experience, precision and compassion. Directed by Dr. Prakash Chand Shahi.
             </p>
 
-            <div className="pt-2 flex items-center gap-3 text-xs text-left p-2.5 rounded-2xl bg-white/5 border border-[#FECDD3]/30 w-fit">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#991B1B] to-[#B91C1C] border border-[#FECDD3] flex items-center justify-center text-[#FECDD3] shrink-0">
+            <div className="pt-2 flex items-center gap-3 text-xs text-left p-2.5 rounded-2xl bg-white/5 border border-[#A7F3D0]/30 w-fit">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#064E3B] to-[#047857] border border-[#A7F3D0] flex items-center justify-center text-[#A7F3D0] shrink-0">
                 <Stethoscope className="w-5 h-5 stroke-[1.8]" />
               </div>
               <div>
                 <span className="font-bold text-white block text-sm">
                   {doctor.name}
                 </span>
-                <span className="text-[#FECDD3] block font-mono text-[10px]">
+                <span className="text-[#A7F3D0] block font-mono text-[10px]">
                   DM Cardiology (PGIMER) • MD (KGMU) • 22+ Yrs
                 </span>
               </div>
@@ -175,7 +126,7 @@ export default function Footer() {
                 <span>{clinic.name}, {clinic.address}</span>
               </div>
               <div className="flex items-start gap-2.5">
-                <Clock className="w-4 h-4 text-sky-400 shrink-0 mt-0.5" />
+                <Clock className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
                 <span>{clinic.hours} ({clinic.sunday})</span>
               </div>
               <div className="flex items-center gap-2.5">

@@ -261,7 +261,7 @@ export default function SculpturalCardiac3D({ className = "" }) {
 
       {/* Floating Clinical Telemetry HUD */}
       <div className="absolute top-2 left-2 px-3 py-1.5 rounded-full bg-white/80 backdrop-blur-md border border-purple-200/80 shadow-sm flex items-center gap-2 text-[11px] font-mono text-slate-800 pointer-events-none">
-        <span className="w-2 h-2 rounded-full bg-rose-500 animate-ping" />
+        <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
         <span>72 BPM • Sinus Rhythm</span>
       </div>
 

@@ -27,12 +27,12 @@ export default function DiagnosticScannerFullCanvas() {
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     container.appendChild(renderer.domElement);
 
-    const amb = new THREE.AmbientLight(0xFEF2F2, 2.0);
+    const amb = new THREE.AmbientLight(0xF0FDF4, 2.0);
     scene.add(amb);
 
-    const brandLight = new THREE.DirectionalLight(0x0284C7, 3.8);
-    brandLight.position.set(5, 7, 7);
-    scene.add(brandLight);
+    const emeraldLight = new THREE.DirectionalLight(0x059669, 3.8);
+    emeraldLight.position.set(5, 7, 7);
+    scene.add(emeraldLight);
 
     const scanRoot = new THREE.Group();
     // Offset right for visual balance
@@ -40,14 +40,14 @@ export default function DiagnosticScannerFullCanvas() {
     scanRoot.rotation.x = 0.35;
     scene.add(scanRoot);
 
-    // 10 Layered Translucent Tomographic Discs in Red & Cyan
+    // 10 Layered Translucent Tomographic Discs in Mint & Emerald
     const sliceCount = 10;
     const slices = [];
     const discGeo = new THREE.CylinderGeometry(2.0, 2.0, 0.05, 48);
 
     for (let i = 0; i < sliceCount; i++) {
       const discMat = new THREE.MeshPhysicalMaterial({
-        color: i % 2 === 0 ? 0x0284C7 : 0x991B1B,
+        color: i % 2 === 0 ? 0x059669 : 0x064E3B,
         transmission: 0.82,
         opacity: 0.65,
         transparent: true,

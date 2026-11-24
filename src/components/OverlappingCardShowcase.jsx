@@ -27,9 +27,9 @@ export default function OverlappingCardShowcase() {
       link: '/about',
       badge: 'PGIMER Chandigarh · 22+ Yrs',
       icon: UserCheck,
-      accent: 'from-[#991B1B] to-[#B91C1C]',
+      accent: 'from-[#064E3B] to-[#047857]',
       glow: 'shadow-[0_25px_50px_-10px_rgba(6, 78, 59, 0.22)]',
-      dotColor: 'bg-[#0284C7]',
+      dotColor: 'bg-[#059669]',
     },
     {
       id: 'treatments',
@@ -42,9 +42,9 @@ export default function OverlappingCardShowcase() {
       link: '/treatments',
       badge: '99.4% Flow Restoration',
       icon: Stethoscope,
-      accent: 'from-[#991B1B] to-[#0284C7]',
+      accent: 'from-[#064E3B] to-[#059669]',
       glow: 'shadow-[0_25px_50px_-10px_rgba(197,160,89,0.22)]',
-      dotColor: 'bg-[#FECDD3]',
+      dotColor: 'bg-[#A7F3D0]',
     },
     {
       id: 'hospital',
@@ -57,9 +57,9 @@ export default function OverlappingCardShowcase() {
       link: '/hospital',
       badge: 'Betiahata, Gorakhpur · Mon–Sat',
       icon: Building2,
-      accent: 'from-[#450A0A] to-[#991B1B]',
+      accent: 'from-[#022C22] to-[#064E3B]',
       glow: 'shadow-[0_25px_50px_-10px_rgba(74,2,19,0.25)]',
-      dotColor: 'bg-[#38BDF8]',
+      dotColor: 'bg-[#34D399]',
     },
     {
       id: 'appointment',
@@ -72,9 +72,9 @@ export default function OverlappingCardShowcase() {
       link: '/contact',
       badge: 'Instant Online Token',
       icon: Calendar,
-      accent: 'from-purple-600 to-rose-600',
+      accent: 'from-[#064E3B] to-[#047857]',
       glow: 'shadow-[0_25px_50px_-10px_rgba(225,29,72,0.2)]',
-      dotColor: 'bg-rose-400',
+      dotColor: 'bg-emerald-400',
     },
   ];
 

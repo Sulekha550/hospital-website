@@ -4,17 +4,21 @@
 
 @layer base {
   html {
-    background-color: #FAFBFD;
+    background-color: #FAF9F6;
     scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   body {
-    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    color: #1E293B;
+    font-family: 'Outfit', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    color: #0F172A;
     background-color: transparent;
     overflow-x: hidden;
     font-weight: 400;
-    line-height: 1.6;
+    line-height: 1.76;
+    letter-spacing: -0.012em;
   }
 
   #root {
@@ -22,7 +26,7 @@
     min-height: 100vh;
   }
 
-  /* Refined, elegant luxury headings (balanced weights 550–600) */
+  /* Haute Horlogerie & Premium International Medical Headings */
   h1,
   h2,
   h3,
@@ -30,15 +34,220 @@
   h5,
   h6 {
     font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
-    letter-spacing: -0.015em;
-    font-weight: 600;
-    color: #0F172A;
+    letter-spacing: -0.035em;
+    font-weight: 800;
+    color: #0A1128;
+    line-height: 1.15;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
 
-  .font-serif {
-    font-family: 'Cormorant Garamond', Georgia, serif;
+  h1 {
+    letter-spacing: -0.04em;
+  }
+
+  /* Editorial Italic Serif Highlights */
+  .font-serif, em, i {
+    font-family: 'Cormorant Garamond', 'Cinzel', Georgia, serif;
     letter-spacing: -0.01em;
   }
+
+  /* High-Contrast Luxury Paragraphs */
+  p {
+    color: #334155;
+    line-height: 1.8;
+  }
+
+  /* High-Precision Clinical Monospace & Badges */
+  .font-mono {
+    font-family: 'Space Mono', 'JetBrains Mono', ui-monospace, monospace;
+    letter-spacing: 0.14em;
+  }
+}
+
+/* =========================================================================
+   DEEP MIDNIGHT NAVY, CRIMSON RUBY & WARM PLATINUM DESIGN SYSTEM
+   ========================================================================= */
+
+.luxury-heading-xl {
+  font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 1.15;
+  color: #0A1128;
+}
+
+.luxury-serif-accent {
+  font-family: 'Cormorant Garamond', 'Cinzel', Georgia, serif;
+  font-style: italic;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  background: linear-gradient(135deg, #E11D48 0%, #BE123C 50%, #881337 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.luxury-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.375rem 1rem;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(225, 29, 72, 0.3);
+  box-shadow: 0 4px 14px -2px rgba(190, 18, 60, 0.1);
+  font-family: 'Space Mono', 'JetBrains Mono', monospace;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #BE123C;
+}
+
+.luxury-glass-card {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(24px);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  box-shadow: 0 20px 45px -12px rgba(10, 17, 40, 0.08), 0 2px 10px rgba(190, 18, 60, 0.04);
+  border-radius: 2rem;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.luxury-glass-card:hover {
+  box-shadow: 0 28px 65px -12px rgba(10, 17, 40, 0.16), 0 4px 16px rgba(190, 18, 60, 0.08);
+  border-color: rgba(225, 29, 72, 0.35);
+  transform: translateY(-3px);
+}
+
+.luxury-pavilion {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 250, 252, 0.94) 50%, rgba(255, 255, 255, 0.97) 100%);
+  backdrop-filter: blur(28px);
+  border: 2px solid rgba(226, 232, 240, 0.95);
+  box-shadow: 0 35px 80px -15px rgba(10, 17, 40, 0.12), 0 8px 24px rgba(190, 18, 60, 0.04);
+  border-radius: 2.75rem;
+}
+
+.luxury-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  padding: 0.875rem 2.25rem;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, #0A1128 0%, #1E293B 50%, #0F172A 100%);
+  color: #FFFFFF;
+  font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border: 1px solid rgba(225, 29, 72, 0.4);
+  box-shadow: 0 12px 28px -4px rgba(10, 17, 40, 0.35), 0 0 16px rgba(225, 29, 72, 0.2);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.luxury-btn-primary::after,
+.luxury-btn-ruby::after,
+.luxury-btn-secondary::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -75%;
+  width: 50%;
+  height: 200%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.45) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(25deg);
+  pointer-events: none;
+  transition: transform 0.65s ease-out;
+}
+
+.luxury-btn-primary:hover::after,
+.luxury-btn-ruby:hover::after,
+.luxury-btn-secondary:hover::after {
+  transform: translateX(350%) rotate(25deg);
+}
+
+.luxury-btn-primary:hover {
+  background: linear-gradient(135deg, #BE123C 0%, #9F1239 50%, #0A1128 100%);
+  box-shadow: 0 18px 38px -6px rgba(190, 18, 60, 0.45);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-3px) scale(1.02);
+}
+
+.luxury-btn-primary:active {
+  transform: translateY(-1px) scale(0.98);
+}
+
+.luxury-btn-ruby {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  padding: 0.875rem 2.25rem;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, #E11D48 0%, #BE123C 50%, #9F1239 100%);
+  color: #FFFFFF;
+  font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 12px 28px -4px rgba(225, 29, 72, 0.4);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.luxury-btn-ruby:hover {
+  background: linear-gradient(135deg, #BE123C 0%, #881337 50%, #0A1128 100%);
+  box-shadow: 0 18px 38px -6px rgba(136, 19, 55, 0.5);
+  transform: translateY(-3px) scale(1.02);
+}
+
+.luxury-btn-ruby:active {
+  transform: translateY(-1px) scale(0.98);
+}
+
+.luxury-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  padding: 0.875rem 2.25rem;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(14px);
+  color: #0A1128;
+  font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border: 2px solid rgba(203, 213, 225, 0.9);
+  box-shadow: 0 4px 16px rgba(10, 17, 40, 0.04);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.luxury-btn-secondary:hover {
+  background: #F8FAFC;
+  border-color: #BE123C;
+  color: #BE123C;
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 24px rgba(190, 18, 60, 0.18);
+}
+
+.luxury-btn-secondary:active {
+  transform: translateY(-1px) scale(0.98);
 }
 
 /* --- High-End Overlapping Card Shadows & Depth --- */
@@ -56,14 +265,30 @@
     0 0 0 1.5px rgba(255, 255, 255, 1) inset;
 }
 
-/* Silky Smooth 600ms Hover Transformation */
+/* Silky Smooth Hover Transformation with Glow */
 .card-hover-elevate {
-  transition: transform 600ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 600ms cubic-bezier(0.16, 1, 0.3, 1), z-index 0ms;
+  transition: transform 400ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 400ms cubic-bezier(0.16, 1, 0.3, 1), border-color 300ms ease;
+  position: relative;
 }
 
 .card-hover-elevate:hover {
-  transform: translateY(-10px) scale(1.02);
-  z-index: 40 !important;
+  transform: translateY(-10px) scale(1.018);
+  box-shadow: 0 28px 65px -12px rgba(10, 17, 40, 0.16), 0 0 28px rgba(225, 29, 72, 0.16);
+  border-color: rgba(225, 29, 72, 0.4) !important;
+  z-index: 35 !important;
+}
+
+/* Image Zoom on Card Hover */
+.img-hover-zoom {
+  overflow: hidden;
+}
+
+.img-hover-zoom img {
+  transition: transform 700ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.img-hover-zoom:hover img {
+  transform: scale(1.08);
 }
 
 /* Translucent Frosted Glass with Specular Rims */
@@ -154,15 +379,52 @@
 }
 
 .animate-float-1 {
-  animation: floatSlow1 16s ease-in-out infinite;
+  animation: floatSlow1 9s ease-in-out infinite;
 }
 
 .animate-float-2 {
-  animation: floatSlow2 20s ease-in-out infinite;
+  animation: floatSlow2 11s ease-in-out infinite;
 }
 
 .animate-float-3 {
-  animation: floatSlow3 18s ease-in-out infinite;
+  animation: floatSlow3 10s ease-in-out infinite;
+}
+
+@keyframes rotate3DContinuous {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+  50% {
+    transform: rotateX(180deg) rotateY(180deg) rotateZ(90deg);
+  }
+  100% {
+    transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+  }
+}
+
+.animate-rotate-3d {
+  animation: rotate3DContinuous 18s linear infinite;
+}
+
+@keyframes laserSweepFast {
+  0% {
+    top: -5%;
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.9;
+  }
+  80% {
+    opacity: 0.9;
+  }
+  100% {
+    top: 105%;
+    opacity: 0;
+  }
+}
+
+.animate-laser-fast {
+  animation: laserSweepFast 6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
 /* --- Advanced Motion & Interaction Keyframes --- */
@@ -275,6 +537,7 @@
   from {
     transform: rotate(360deg);
   }
+
   to {
     transform: rotate(0deg);
   }
@@ -286,9 +549,12 @@
 }
 
 @keyframes waveOscillate {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0px) scaleY(1);
   }
+
   50% {
     transform: translateY(-25px) scaleY(1.08);
   }
@@ -304,10 +570,12 @@
     top: 5%;
     opacity: 0.2;
   }
+
   50% {
     top: 90%;
     opacity: 0.85;
   }
+
   100% {
     top: 5%;
     opacity: 0.2;
@@ -327,9 +595,11 @@
     left: -20%;
     opacity: 0;
   }
+
   50% {
     opacity: 0.9;
   }
+
   100% {
     left: 120%;
     opacity: 0;
@@ -344,6 +614,7 @@
   0% {
     stroke-dashoffset: 1000;
   }
+
   100% {
     stroke-dashoffset: 0;
   }
@@ -358,22 +629,28 @@
 }
 
 @keyframes cardiacBeat {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: scale(1);
     opacity: 0.3;
   }
+
   14% {
     transform: scale(1.08);
     opacity: 0.75;
   }
+
   28% {
     transform: scale(1.03);
     opacity: 0.45;
   }
+
   42% {
     transform: scale(1.15);
     opacity: 0.9;
   }
+
   70% {
     transform: scale(1);
     opacity: 0.3;
@@ -390,6 +667,7 @@
     transform: scale(0.6);
     opacity: 0.8;
   }
+
   100% {
     transform: scale(1.6);
     opacity: 0;
@@ -409,9 +687,12 @@
 }
 
 @keyframes goniometerJointSweep {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: rotate(0deg);
   }
+
   50% {
     transform: rotate(135deg);
   }
@@ -427,9 +708,11 @@
   0% {
     transform: scale(1.0) translate(0%, 0%);
   }
+
   50% {
     transform: scale(1.09) translate(-1.5%, -1%);
   }
+
   100% {
     transform: scale(1.0) translate(0%, 0%);
   }
@@ -444,6 +727,7 @@
   0% {
     transform: translateY(-100%);
   }
+
   100% {
     transform: translateY(1000%);
   }
@@ -454,10 +738,13 @@
 }
 
 @keyframes audioBarBounce {
-  0%, 100% {
+
+  0%,
+  100% {
     height: 4px;
     opacity: 0.6;
   }
+
   50% {
     height: 18px;
     opacity: 1;
@@ -500,7 +787,7 @@
 .btn-shimmer:hover {
   background-position: right center;
   transform: translateY(-2px);
-  box-shadow: 0 15px 30px -5px rgba(185, 28, 28, 0.35);
+  box-shadow: 0 15px 30px -5px rgba(5, 150, 105, 0.35);
 }
 
 
@@ -509,85 +796,450 @@
    ============================================================ */
 
 @keyframes pulseLocationRing {
-  0%   { transform: scale(0.6); opacity: 0.9; }
-  100% { transform: scale(2.8); opacity: 0; }
+  0% {
+    transform: scale(0.6);
+    opacity: 0.9;
+  }
+
+  100% {
+    transform: scale(2.8);
+    opacity: 0;
+  }
 }
 
 @keyframes medicalCrossFloat {
-  0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.12; }
-  50%       { transform: translateY(-18px) rotate(45deg); opacity: 0.28; }
+
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+    opacity: 0.12;
+  }
+
+  50% {
+    transform: translateY(-18px) rotate(45deg);
+    opacity: 0.28;
+  }
 }
 
 @keyframes architecturalGridMove {
-  0%   { background-position: 0 0; }
-  100% { background-position: 60px 60px; }
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 60px;
+  }
 }
 
 @keyframes ambientOrb1 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33%       { transform: translate(28px, -18px) scale(1.08); }
-  66%       { transform: translate(-18px, 14px) scale(0.95); }
+
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  33% {
+    transform: translate(28px, -18px) scale(1.08);
+  }
+
+  66% {
+    transform: translate(-18px, 14px) scale(0.95);
+  }
 }
 
 @keyframes ambientOrb2 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  40%       { transform: translate(-22px, 18px) scale(1.1); }
-  70%       { transform: translate(14px, -10px) scale(0.92); }
+
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  40% {
+    transform: translate(-22px, 18px) scale(1.1);
+  }
+
+  70% {
+    transform: translate(14px, -10px) scale(0.92);
+  }
 }
 
 @keyframes shimmerLight {
-  0%   { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
 }
 
 @keyframes glowPulse {
-  0%, 100% { box-shadow: 0 0 20px rgba(185, 28, 28, 0.15); }
-  50%       { box-shadow: 0 0 44px rgba(185, 28, 28, 0.38); }
+
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(5, 150, 105, 0.15);
+  }
+
+  50% {
+    box-shadow: 0 0 44px rgba(5, 150, 105, 0.38);
+  }
 }
 
 @keyframes contactMapPulse {
-  0%   { r: 8;  opacity: 0.9; }
-  100% { r: 40; opacity: 0; }
+  0% {
+    r: 8;
+    opacity: 0.9;
+  }
+
+  100% {
+    r: 40;
+    opacity: 0;
+  }
 }
 
 @keyframes floatingMedTag {
-  0%, 100% { transform: translateY(0px) rotate(-2deg); }
-  50%       { transform: translateY(-12px) rotate(2deg); }
+
+  0%,
+  100% {
+    transform: translateY(0px) rotate(-2deg);
+  }
+
+  50% {
+    transform: translateY(-12px) rotate(2deg);
+  }
 }
 
 @keyframes gentleRotateCW {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes gentleRotateCCW {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(-360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(-360deg);
+  }
 }
 
 @keyframes waveExpandY {
-  0%   { transform: scaleY(0.6); opacity: 0.6; }
-  50%  { transform: scaleY(1.1); opacity: 1; }
-  100% { transform: scaleY(0.6); opacity: 0.6; }
+  0% {
+    transform: scaleY(0.6);
+    opacity: 0.6;
+  }
+
+  50% {
+    transform: scaleY(1.1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scaleY(0.6);
+    opacity: 0.6;
+  }
 }
 
 @keyframes contactDotDash {
-  0%   { stroke-dashoffset: 400; }
-  100% { stroke-dashoffset: 0; }
+  0% {
+    stroke-dashoffset: 400;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
 }
 
-.animate-pulse-location-ring-1 { animation: pulseLocationRing 3s ease-out infinite; }
-.animate-pulse-location-ring-2 { animation: pulseLocationRing 3s ease-out 1s infinite; }
-.animate-pulse-location-ring-3 { animation: pulseLocationRing 3s ease-out 2s infinite; }
-.animate-medical-cross-1 { animation: medicalCrossFloat 6s ease-in-out infinite; }
-.animate-medical-cross-2 { animation: medicalCrossFloat 8s ease-in-out 2s infinite; }
-.animate-arch-grid { animation: architecturalGridMove 10s linear infinite; }
-.animate-orb-1 { animation: ambientOrb1 14s ease-in-out infinite; }
-.animate-orb-2 { animation: ambientOrb2 18s ease-in-out infinite; }
-.animate-glow-pulse { animation: glowPulse 2.5s ease-in-out infinite; }
-.animate-float-med-tag-1 { animation: floatingMedTag 5s ease-in-out infinite; }
-.animate-float-med-tag-2 { animation: floatingMedTag 7s ease-in-out 1.5s infinite; }
-.animate-gentle-cw  { animation: gentleRotateCW  30s linear infinite; }
-.animate-gentle-ccw { animation: gentleRotateCCW 25s linear infinite; }
-.animate-wave-expand { animation: waveExpandY 3s ease-in-out infinite; }
-.animate-contact-dash { animation: contactDotDash 4s linear infinite; }
+.animate-pulse-location-ring-1 {
+  animation: pulseLocationRing 3s ease-out infinite;
+}
+
+.animate-pulse-location-ring-2 {
+  animation: pulseLocationRing 3s ease-out 1s infinite;
+}
+
+.animate-pulse-location-ring-3 {
+  animation: pulseLocationRing 3s ease-out 2s infinite;
+}
+
+.animate-medical-cross-1 {
+  animation: medicalCrossFloat 6s ease-in-out infinite;
+}
+
+.animate-medical-cross-2 {
+  animation: medicalCrossFloat 8s ease-in-out 2s infinite;
+}
+
+.animate-arch-grid {
+  animation: architecturalGridMove 10s linear infinite;
+}
+
+.animate-orb-1 {
+  animation: ambientOrb1 14s ease-in-out infinite;
+}
+
+.animate-orb-2 {
+  animation: ambientOrb2 18s ease-in-out infinite;
+}
+
+.animate-glow-pulse {
+  animation: glowPulse 2.5s ease-in-out infinite;
+}
+
+.animate-float-med-tag-1 {
+  animation: floatingMedTag 5s ease-in-out infinite;
+}
+
+.animate-float-med-tag-2 {
+  animation: floatingMedTag 7s ease-in-out 1.5s infinite;
+}
+
+.animate-gentle-cw {
+  animation: gentleRotateCW 30s linear infinite;
+}
+
+.animate-gentle-ccw {
+  animation: gentleRotateCCW 25s linear infinite;
+}
+
+.animate-wave-expand {
+  animation: waveExpandY 3s ease-in-out infinite;
+}
+
+.animate-contact-dash {
+  animation: contactDotDash 4s linear infinite;
+}
+
+/* Dynamic kinetic background movements requested by user */
+@keyframes flowDash {
+  0% {
+    stroke-dashoffset: 1200;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-flow-dash {
+  stroke-dasharray: 600;
+  animation: flowDash 7s linear infinite;
+}
+
+@keyframes arterialDrift {
+
+  0%,
+  100% {
+    transform: translateY(0px) scale(1);
+  }
+
+  50% {
+    transform: translateY(-30px) scale(1.05);
+  }
+}
+
+.animate-arterial-drift {
+  animation: arterialDrift 10s ease-in-out infinite;
+}
+
+@keyframes floatingGlassMorph {
+
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+  }
+
+  33% {
+    transform: translateY(-22px) rotate(6deg) scale(1.04);
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+
+  66% {
+    transform: translateY(-10px) rotate(-4deg) scale(0.96);
+    border-radius: 50% 60% 40% 60% / 40% 60% 50% 60%;
+  }
+}
+
+.animate-glass-morph {
+  animation: floatingGlassMorph 12s ease-in-out infinite;
+}
+
+@keyframes laserSweepDiag {
+  0% {
+    transform: translate(-100%, -100%) rotate(35deg);
+    opacity: 0;
+  }
+
+  25% {
+    opacity: 0.7;
+  }
+
+  50% {
+    opacity: 0.9;
+  }
+
+  75% {
+    opacity: 0.7;
+  }
+
+  100% {
+    transform: translate(250%, 250%) rotate(35deg);
+    opacity: 0;
+  }
+}
+
+.animate-laser-diag {
+  animation: laserSweepDiag 10s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* ============================================================
+   BESPOKE MEDICAL BACKGROUND MOTION EXTENSIONS
+   Unique visual choreography for every section across every page
+   ============================================================ */
+
+@keyframes guillocheWave {
+  0% {
+    transform: translateX(0) scaleY(1);
+  }
+
+  50% {
+    transform: translateX(-40px) scaleY(1.08);
+  }
+
+  100% {
+    transform: translateX(0) scaleY(1);
+  }
+}
+
+.animate-guilloche {
+  animation: guillocheWave 14s ease-in-out infinite;
+}
+
+@keyframes sonarPing {
+  0% {
+    transform: scale(0.7);
+    opacity: 0.8;
+  }
+
+  50% {
+    opacity: 0.4;
+  }
+
+  100% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}
+
+.animate-sonar-ping {
+  animation: sonarPing 4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+.animate-sonar-ping-delayed {
+  animation: sonarPing 4s cubic-bezier(0, 0.2, 0.8, 1) 2s infinite;
+}
+
+@keyframes reticleRotateSlow {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-reticle-slow {
+  animation: reticleRotateSlow 45s linear infinite;
+}
+
+.animate-reticle-reverse-slow {
+  animation: reticleRotateSlow 55s linear infinite reverse;
+}
+
+@keyframes flutedShimmer {
+
+  0%,
+  100% {
+    opacity: 0.15;
+    transform: translateY(0);
+  }
+
+  50% {
+    opacity: 0.45;
+    transform: translateY(-8px);
+  }
+}
+
+.animate-fluted-shimmer {
+  animation: flutedShimmer 8s ease-in-out infinite;
+}
+
+@keyframes chronoSpinePulse {
+  0% {
+    stroke-dashoffset: 800;
+    opacity: 0.4;
+  }
+
+  50% {
+    opacity: 0.9;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0.4;
+  }
+}
+
+.animate-chrono-spine {
+  stroke-dasharray: 400;
+  animation: chronoSpinePulse 9s ease-in-out infinite;
+}
+
+@keyframes vascularBreathe {
+
+  0%,
+  100% {
+    opacity: 0.25;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.55;
+    transform: scale(1.03);
+  }
+}
+
+.animate-vascular-breathe {
+  animation: vascularBreathe 7s ease-in-out infinite;
+}
+
+@keyframes auroraBreathe {
+
+  0%,
+  100% {
+    transform: scale(1) translate(0, 0);
+    opacity: 0.35;
+  }
+
+  33% {
+    transform: scale(1.12) translate(20px, -15px);
+    opacity: 0.55;
+  }
+
+  66% {
+    transform: scale(0.95) translate(-15px, 20px);
+    opacity: 0.4;
+  }
+}
+
+.animate-aurora-breathe {
+  animation: auroraBreathe 16s ease-in-out infinite;
+}

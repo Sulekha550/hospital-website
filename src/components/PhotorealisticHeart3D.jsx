@@ -106,7 +106,7 @@ export default function PhotorealisticHeart3D({
     // Pulmonary Artery & Vena Cava (Electric Royal Sapphire Blue)
     const veinMat = new THREE.MeshPhysicalMaterial({
       color: 0x0369A1,            // Vivid Cobalt Blue
-      emissive: 0x0284C7,         // Glowing Electric Cyan
+      emissive: 0x059669,         // Glowing Electric Cyan
       emissiveIntensity: 0.5,
       roughness: 0.22,
       metalness: 0.2,
@@ -425,7 +425,7 @@ export default function PhotorealisticHeart3D({
 
       {/* Floating Vibrant Telemetry Pill */}
       <div className="absolute bottom-3 left-1/2 -translate-x-1/2 pointer-events-none flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900/90 backdrop-blur-md border border-cyan-400/40 shadow-lg text-xs font-bold text-white">
-        <span className="w-2.5 h-2.5 rounded-full bg-rose-500 animate-ping" />
+        <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping" />
         <span className="text-cyan-300 font-mono">72 BPM</span>
         <span className="text-slate-400">•</span>
         <span className="text-slate-200">Drag to Inspect in 360°</span>
@@ -433,7 +433,7 @@ export default function PhotorealisticHeart3D({
 
       {/* Anatomy Markers */}
       <div className="absolute top-3 left-3 pointer-events-none flex flex-col gap-1.5 text-[10px] font-mono font-medium">
-        <span className="px-2 py-0.5 rounded bg-rose-600/80 text-white shadow-sm">
+        <span className="px-2 py-0.5 rounded bg-emerald-600/80 text-white shadow-sm">
           Aorta & LAD Arteries
         </span>
         <span className="px-2 py-0.5 rounded bg-cyan-600/80 text-white shadow-sm">

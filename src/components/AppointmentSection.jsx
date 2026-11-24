@@ -77,7 +77,7 @@ export default function AppointmentSection() {
       confetti({
         particleCount: 50,
         spread: 60,
-        colors: ['#8B5CF6', '#A78BFA', '#38BDF8'],
+        colors: ['#8B5CF6', '#A78BFA', '#34D399'],
         origin: { y: 0.7 }
       });
     } catch (err) {}
@@ -106,7 +106,7 @@ export default function AppointmentSection() {
             <span className="text-xs font-semibold text-white bg-gradient-to-r from-purple-700 via-indigo-600 to-purple-800 px-3.5 py-1 rounded-full shadow-sm">
               Appointment Concierge
             </span>
-            <div className="w-10 h-0.5 bg-gradient-to-r from-purple-500 to-sky-400" />
+            <div className="w-10 h-0.5 bg-gradient-to-r from-purple-500 to-emerald-400" />
             <span className="text-xs font-medium tracking-wider text-purple-900 uppercase">
               Schedule Your Consultation
             </span>
@@ -163,7 +163,7 @@ export default function AppointmentSection() {
                   <div>
                     <span className="font-semibold text-slate-900 block">Consultation Hours</span>
                     <span>{clinic.hours}</span>
-                    <span className="text-rose-600 block mt-0.5 font-bold">{clinic.sunday}</span>
+                    <span className="text-emerald-600 block mt-0.5 font-bold">{clinic.sunday}</span>
                   </div>
                 </div>
               </div>
@@ -196,13 +196,13 @@ export default function AppointmentSection() {
                       onChange={(e) => setFormData({ ...formData, patientName: e.target.value })}
                       className={`w-full pl-11 pr-4 py-3.5 rounded-xl border text-sm text-slate-900 focus:outline-none transition-all ${
                         errors.patientName 
-                          ? 'border-rose-400 bg-rose-50/20' 
+                          ? 'border-emerald-400 bg-emerald-50/20' 
                           : 'border-slate-200 focus:border-purple-500 bg-white/90'
                       }`}
                     />
                   </div>
                   {errors.patientName && (
-                    <p className="text-xs text-rose-500 mt-1 flex items-center gap-1 font-light">
+                    <p className="text-xs text-[#064E3B] mt-1 flex items-center gap-1 font-light">
                       <AlertCircle className="w-3.5 h-3.5" />
                       <span>{errors.patientName}</span>
                     </p>
@@ -223,13 +223,13 @@ export default function AppointmentSection() {
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       className={`w-full pl-11 pr-4 py-3.5 rounded-xl border text-sm text-slate-900 focus:outline-none transition-all ${
                         errors.phone 
-                          ? 'border-rose-400 bg-rose-50/20' 
+                          ? 'border-emerald-400 bg-emerald-50/20' 
                           : 'border-slate-200 focus:border-purple-500 bg-white/90'
                       }`}
                     />
                   </div>
                   {errors.phone && (
-                    <p className="text-xs text-rose-500 mt-1 flex items-center gap-1 font-light">
+                    <p className="text-xs text-[#064E3B] mt-1 flex items-center gap-1 font-light">
                       <AlertCircle className="w-3.5 h-3.5" />
                       <span>{errors.phone}</span>
                     </p>
@@ -251,13 +251,13 @@ export default function AppointmentSection() {
                         onChange={(e) => setFormData({ ...formData, preferredDate: e.target.value })}
                         className={`w-full pl-11 pr-4 py-3.5 rounded-xl border text-sm text-slate-900 focus:outline-none transition-all ${
                           errors.preferredDate 
-                            ? 'border-rose-400 bg-rose-50/20' 
+                            ? 'border-emerald-400 bg-emerald-50/20' 
                             : 'border-slate-200 focus:border-purple-500 bg-white/90'
                         }`}
                       />
                     </div>
                     {errors.preferredDate && (
-                      <p className="text-xs text-rose-500 mt-1 flex items-center gap-1 font-light">
+                      <p className="text-xs text-[#064E3B] mt-1 flex items-center gap-1 font-light">
                         <AlertCircle className="w-3.5 h-3.5" />
                         <span>{errors.preferredDate}</span>
                       </p>

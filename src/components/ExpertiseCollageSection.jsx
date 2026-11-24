@@ -38,7 +38,7 @@ export default function ExpertiseCollageSection() {
       aspect: 'aspect-[4/3]',
       stats: '< 0.5 mm Accuracy',
       subtext: 'Quantitative stenosis analysis',
-      badgeColor: 'text-sky-800 bg-sky-50 border-sky-200',
+      badgeColor: 'text-emerald-800 bg-emerald-50 border-emerald-200',
     },
     {
       id: 'facility',
@@ -62,7 +62,7 @@ export default function ExpertiseCollageSection() {
       aspect: 'aspect-[4/3]',
       stats: '10–15 Yr Battery Longevity',
       subtext: 'Physiological dual-chamber pacing',
-      badgeColor: 'text-rose-800 bg-rose-50 border-rose-200',
+      badgeColor: 'text-[#064E3B] bg-emerald-50 border-emerald-200',
     },
     {
       id: 'consult',
@@ -74,7 +74,7 @@ export default function ExpertiseCollageSection() {
       aspect: 'aspect-[4/3]',
       stats: 'Over 22 Years Devotion',
       subtext: 'Betiahata, Gorakhpur',
-      badgeColor: 'text-[#991B1B] bg-[#FEF2F2] border-[#FECDD3]',
+      badgeColor: 'text-[#064E3B] bg-[#F0FDF4] border-[#A7F3D0]',
     },
   ];
 
@@ -88,7 +88,7 @@ export default function ExpertiseCollageSection() {
 
       {/* Atmospheric Ambient Lighting */}
       <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-purple-200/20 rounded-full blur-[140px] pointer-events-none -z-5" />
-      <div className="absolute bottom-1/4 right-1/4 w-[480px] h-[480px] bg-sky-100/30 rounded-full blur-[130px] pointer-events-none -z-5" />
+      <div className="absolute bottom-1/4 right-1/4 w-[480px] h-[480px] bg-emerald-100/30 rounded-full blur-[130px] pointer-events-none -z-5" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
@@ -152,7 +152,7 @@ export default function ExpertiseCollageSection() {
               <div 
                 onMouseEnter={() => setActiveCard(1)}
                 className={`sm:col-span-4 sm:translate-y-8 group relative rounded-[2rem] overflow-hidden p-3 bg-white/80 backdrop-blur-xl border border-white/90 shadow-lg transition-all duration-500 cursor-pointer ${
-                  activeCard === 1 ? 'scale-[1.03] ring-2 ring-sky-400 z-30' : 'hover:scale-[1.02] z-10'
+                  activeCard === 1 ? 'scale-[1.03] ring-2 ring-emerald-400 z-30' : 'hover:scale-[1.02] z-10'
                 }`}
               >
                 <div className="relative aspect-[3/4] rounded-[1.5rem] overflow-hidden">
@@ -163,12 +163,12 @@ export default function ExpertiseCollageSection() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-slate-900/10 to-transparent" />
                   
-                  <div className="absolute top-2.5 left-2.5 px-2.5 py-0.5 rounded-full bg-white/95 backdrop-blur-md text-[9px] font-mono text-sky-900 font-bold border border-sky-200 shadow-md">
+                  <div className="absolute top-2.5 left-2.5 px-2.5 py-0.5 rounded-full bg-white/95 backdrop-blur-md text-[9px] font-mono text-emerald-900 font-bold border border-emerald-200 shadow-md">
                     DIAGNOSTIC
                   </div>
 
                   <div className="absolute bottom-3 left-2.5 right-2.5 text-left">
-                    <span className="text-[9px] font-mono text-sky-300 font-bold block">
+                    <span className="text-[9px] font-mono text-emerald-300 font-bold block">
                       {collageItems[1].stats}
                     </span>
                     <h5 className="text-xs font-medium text-white leading-tight">
@@ -182,7 +182,7 @@ export default function ExpertiseCollageSection() {
               <div 
                 onMouseEnter={() => setActiveCard(3)}
                 className={`sm:col-span-5 sm:-translate-y-4 group relative rounded-[2rem] overflow-hidden p-3 bg-white/80 backdrop-blur-xl border border-white/90 shadow-lg transition-all duration-500 cursor-pointer ${
-                  activeCard === 3 ? 'scale-[1.03] ring-2 ring-rose-400 z-30' : 'hover:scale-[1.02] z-20'
+                  activeCard === 3 ? 'scale-[1.03] ring-2 ring-emerald-400 z-30' : 'hover:scale-[1.02] z-20'
                 }`}
               >
                 <div className="relative aspect-[4/3] rounded-[1.5rem] overflow-hidden">
@@ -193,12 +193,12 @@ export default function ExpertiseCollageSection() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-slate-900/10 to-transparent" />
                   
-                  <div className="absolute top-2.5 left-2.5 px-2.5 py-0.5 rounded-full bg-white/95 backdrop-blur-md text-[9px] font-mono text-rose-900 font-bold border border-rose-200 shadow-md">
+                  <div className="absolute top-2.5 left-2.5 px-2.5 py-0.5 rounded-full bg-white/95 backdrop-blur-md text-[9px] font-mono text-[#064E3B] font-bold border border-emerald-200 shadow-md">
                     PACEMAKERS
                   </div>
 
                   <div className="absolute bottom-2.5 left-2.5 right-2.5 text-left">
-                    <span className="text-[9px] font-mono text-rose-300 font-bold block">
+                    <span className="text-[9px] font-mono text-emerald-300 font-bold block">
                       {collageItems[3].stats}
                     </span>
                     <h5 className="text-xs font-medium text-white leading-tight">
@@ -269,7 +269,7 @@ export default function ExpertiseCollageSection() {
               </p>
 
               {/* Metric Callout Pill */}
-              <div className="p-4 rounded-2xl bg-gradient-to-r from-purple-50/80 to-sky-50/50 border border-purple-100 flex items-center justify-between">
+              <div className="p-4 rounded-2xl bg-gradient-to-r from-purple-50/80 to-emerald-50/50 border border-purple-100 flex items-center justify-between">
                 <div>
                   <span className="text-[10px] font-mono uppercase tracking-wider text-slate-500 block">
                     Key Clinical Benchmark

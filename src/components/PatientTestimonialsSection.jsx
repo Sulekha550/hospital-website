@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Star, ShieldCheck, Heart, Sparkles, CheckCircle2, Quote, UserCheck } from 'lucide-react';
 import { PULSE_DATA } from '../data/pulseData';
-import SectionCinematicVideo from './SectionCinematicVideo';
+import SectionBackgroundMotion from './SectionBackgroundMotion';
 import ThreeDImageCard from './ThreeDImageCard';
+import Interactive3DTilt from './Interactive3DTilt';
+import ScrollReveal from './ScrollReveal';
 
 export default function PatientTestimonialsSection() {
   const [activeStory, setActiveStory] = useState(0);
@@ -53,97 +55,34 @@ export default function PatientTestimonialsSection() {
   const current = stories[activeStory];
 
   return (
-    <section className="relative py-24 lg:py-32 overflow-hidden select-none bg-gradient-to-b from-[#FAFBFD] via-[#FEF2F2]/25 to-[#FAFBFD]">
-      
-      {/* =========================================================================
-          UNIQUE SECTION BACKGROUND: TESTIMONIAL VIDEO & SOUNDWAVE HARMONICS
-         ========================================================================= */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
-        {/* Ambient Video Background Layer */}
-        <div className="absolute inset-0 z-0 opacity-20 mix-blend-multiply overflow-hidden">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="metadata"
-            className="w-full h-full object-cover scale-105"
-          >
-            <source src="/videos/testimonials-stories.mp4" type="video/mp4" />
-          </video>
-          <div className="absolute inset-0 bg-gradient-to-b from-[#FAFBFD]/80 via-transparent to-[#FAFBFD]/90" />
-        </div>
-
-        {/* Luminous Glow Spheres */}
-        <div className="absolute top-1/4 -left-20 w-[600px] h-[600px] bg-gradient-to-tr from-[#0284C7]/20 via-teal-300/15 to-transparent rounded-full blur-[140px]" />
-        <div className="absolute bottom-10 -right-20 w-[600px] h-[600px] bg-gradient-to-bl from-amber-400/15 via-rose-300/10 to-transparent rounded-full blur-[140px]" />
-
-        {/* Dynamic Heartbeat Soundwave Harmonics */}
-        <svg className="absolute inset-0 w-full h-full opacity-25" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="soundwaveGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#B91C1C" stopOpacity="0.2" />
-              <stop offset="50%" stopColor="#0284C7" stopOpacity="0.8" />
-              <stop offset="100%" stopColor="#F59E0B" stopOpacity="0.3" />
-            </linearGradient>
-          </defs>
-          <path
-            d="M 0,260 Q 300,180 600,260 T 1200,260 T 1800,260"
-            fill="none"
-            stroke="url(#soundwaveGrad)"
-            strokeWidth="2"
-            strokeDasharray="6 6"
-            className="animate-flow-dash"
-          />
-          <path
-            d="M 0,480 Q 400,560 800,480 T 1600,480"
-            fill="none"
-            stroke="#B91C1C"
-            strokeWidth="1.5"
-            strokeDasharray="4 8"
-          />
-        </svg>
-
-        {/* Sweeping Laser Beam in Testimonials Section */}
-        <div className="absolute inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-[#0EA5E9] to-transparent shadow-[0_0_15px_#0284C7] opacity-40 animate-laser-v pointer-events-none" />
-
-        {/* Rotating CAD Precision Ring */}
-        <div className="absolute -bottom-16 -left-16 w-80 h-80 rounded-full border border-[#0284C7]/20 hidden lg:block">
-          <div className="absolute inset-4 rounded-full border border-dashed border-[#0EA5E9]/30 animate-gentle-cw" />
-        </div>
-
-        {/* Floating Medical Crosses */}
-        <div className="absolute top-16 right-16 text-[#0284C7]/30 font-mono text-base font-bold animate-medical-cross-1 select-none">+</div>
-        <div className="absolute bottom-20 left-12 text-[#0284C7]/25 font-mono text-base font-bold animate-medical-cross-2 select-none">+</div>
-
-        {/* Big Watermark */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[16vw] font-black text-[#991B1B]/[0.02] tracking-tighter uppercase select-none">
-          RECOVERY
-        </div>
-      </div>
+    <section className="relative py-24 lg:py-32 overflow-hidden select-none bg-gradient-to-b from-[#FAF9F6] via-[#F8FAFC] to-[#F1F5F9] border-b border-slate-200">
+      {/* Bespoke Concentric Healing Resonance Waves & Luminescent Constellation */}
+      <SectionBackgroundMotion variant="home-testimonials" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header with Doctor Stewardship Stamp */}
-        <div className="text-center max-w-2xl mx-auto mb-14 space-y-3">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FEF2F2]/80 border border-[#FECDD3] text-[#991B1B] text-xs font-mono font-bold shadow-xs">
-            <Heart className="w-3.5 h-3.5 text-rose-600 fill-rose-600 animate-pulse" />
-            <span className="uppercase tracking-widest">Verified Clinical Outcomes</span>
-          </div>
+        <ScrollReveal variant="fade-down">
+          <div className="text-center max-w-2xl mx-auto mb-14 space-y-3">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/95 backdrop-blur-md border border-rose-200 text-[#BE123C] text-xs font-mono font-bold shadow-xs">
+              <Heart className="w-3.5 h-3.5 text-[#BE123C] fill-[#BE123C] animate-pulse" />
+              <span className="uppercase tracking-widest">Verified Clinical Outcomes</span>
+            </div>
 
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-[#991B1B] tracking-tight">
-            Patient Stories &amp; <span className="font-serif italic font-normal text-[#B91C1C]">Recovery Journeys</span>
-          </h2>
+            <h2 className="text-3xl sm:text-5xl font-extrabold text-[#0A1128] tracking-tight">
+              Patient Stories &amp; <span className="font-serif italic font-normal text-[#BE123C]">Recovery Journeys</span>
+            </h2>
 
-          <div className="flex items-center justify-center gap-2 pt-1">
-            <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-[#FECDD3] shadow-xs">
-              <div className="w-6 h-6 rounded-full bg-gradient-to-br from-[#991B1B] to-[#B91C1C] flex items-center justify-center text-[#FECDD3] border border-[#FECDD3]">
-                <ShieldCheck className="w-3.5 h-3.5" />
+            <div className="flex items-center justify-center gap-2 pt-1">
+              <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200 shadow-xs hover:border-rose-300 transition-colors">
+                <div className="w-6 h-6 rounded-full bg-gradient-to-br from-[#0A1128] via-[#1E293B] to-[#BE123C] flex items-center justify-center text-white border border-rose-200">
+                  <ShieldCheck className="w-3.5 h-3.5" />
+                </div>
+                <span className="text-[11px] font-bold text-[#0A1128]">Under Clinical Direction of Dr. Prakash Chand Shahi</span>
               </div>
-              <span className="text-[11px] font-bold text-[#991B1B]">Under Clinical Direction of Dr. Prakash Chand Shahi</span>
             </div>
           </div>
-        </div>
+        </ScrollReveal>
 
         {/* 90% Visual Showcase: Grand Interactive Story Card */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center max-w-6xl mx-auto">
@@ -162,56 +101,65 @@ export default function PatientTestimonialsSection() {
             />
           </div>
 
-          {/* Right: Minimal Punchy Testimonial Quote & Switchers */}
+          {/* Right: Minimal Punchy Testimonial Quote & Switchers with 3D Tilt */}
           <div className="lg:col-span-5 space-y-6">
-            <motion.div
-              key={current.id + '-quote'}
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="p-8 rounded-[2rem] bg-white border-2 border-[#FECDD3]/90 shadow-xl space-y-4 text-left relative"
-            >
-              <Quote className="w-10 h-10 text-[#FECDD3] absolute top-6 right-6 -z-0" />
-              
-              <div className="flex items-center gap-1 text-amber-400 relative z-10">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-amber-400" />
-                ))}
-                <span className="text-xs font-bold text-slate-700 ml-2">5.0 Verified Care</span>
-              </div>
-
-              <p className="text-base sm:text-lg font-medium text-slate-800 leading-snug relative z-10 italic">
-                "{current.quote}"
-              </p>
-
-              <div className="pt-2 border-t border-slate-100 flex items-center justify-between relative z-10">
-                <div>
-                  <span className="text-xs font-bold text-[#991B1B] block">{current.procedure}</span>
-                  <span className="text-[11px] font-mono text-[#B91C1C] font-semibold">{current.recovery}</span>
+            <Interactive3DTilt maxTilt={8} glowColor="rgba(190, 18, 60, 0.22)">
+              <motion.div
+                key={current.id + '-quote'}
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="p-8 rounded-[2rem] bg-white/95 backdrop-blur-xl border-2 border-slate-200 shadow-xl space-y-4 text-left relative card-hover-elevate"
+              >
+                <Quote className="w-10 h-10 text-rose-200/60 absolute top-6 right-6 -z-0" />
+                
+                <div className="flex items-center gap-1 text-amber-400 relative z-10">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 fill-amber-400" />
+                  ))}
+                  <span className="text-xs font-bold text-slate-700 ml-2">5.0 Verified Care</span>
                 </div>
-                <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FEF2F2] text-[#991B1B] text-[10px] font-bold">
-                  <UserCheck className="w-3.5 h-3.5" />
-                  <span>Clinical Case File</span>
-                </div>
-              </div>
-            </motion.div>
 
-            {/* Quick Selectors */}
+                <p className="text-base sm:text-lg font-medium text-slate-800 leading-snug relative z-10 italic">
+                  "{current.quote}"
+                </p>
+
+                <div className="pt-2 border-t border-slate-100 flex items-center justify-between relative z-10">
+                  <div>
+                    <span className="text-xs font-bold text-[#0A1128] block">{current.procedure}</span>
+                    <span className="text-[11px] font-mono text-[#BE123C] font-semibold">{current.recovery}</span>
+                  </div>
+                  <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-rose-50 text-[#BE123C] text-[10px] font-bold border border-rose-200">
+                    <UserCheck className="w-3.5 h-3.5" />
+                    <span>Clinical Case File</span>
+                  </div>
+                </div>
+              </motion.div>
+            </Interactive3DTilt>
+
+            {/* Quick Case Switcher Tabs */}
             <div className="flex gap-3">
-              {stories.map((s, idx) => (
-                <button
-                  key={s.id}
-                  onClick={() => setActiveStory(idx)}
-                  className={`flex-1 p-3 rounded-2xl border-2 transition-all text-left ${
-                    activeStory === idx
-                      ? 'bg-white border-[#0284C7] shadow-md ring-2 ring-rose-200'
-                      : 'bg-white/70 border-slate-200 hover:border-[#FECDD3]'
-                  }`}
-                >
-                  <span className="text-[10px] font-mono font-bold text-[#991B1B] block">CASE 0{idx + 1}</span>
-                  <span className="text-xs font-bold text-slate-900 truncate block">{s.name.split(' ')[0]}</span>
-                </button>
-              ))}
+              {stories.map((s, idx) => {
+                const isActive = activeStory === idx;
+                return (
+                  <button
+                    key={s.id}
+                    onClick={() => setActiveStory(idx)}
+                    className={`flex-1 p-3 rounded-2xl border-2 transition-all duration-300 text-left cursor-pointer hover:scale-105 active:scale-95 ${
+                      isActive
+                        ? 'bg-white border-[#BE123C] shadow-lg ring-2 ring-rose-200 scale-102'
+                        : 'bg-white/80 border-slate-200 hover:border-rose-300 shadow-xs'
+                    }`}
+                  >
+                    <span className={`text-[10px] font-mono font-bold block ${isActive ? 'text-[#BE123C]' : 'text-slate-500'}`}>
+                      CASE 0{idx + 1}
+                    </span>
+                    <span className="text-xs font-bold text-[#0A1128] truncate block mt-0.5">
+                      {s.name.split(' ')[0]}
+                    </span>
+                  </button>
+                );
+              })}
             </div>
           </div>
 

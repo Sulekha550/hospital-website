@@ -18,11 +18,14 @@ export default function App() {
     <Router>
       <ScrollToTop />
       
-      {/* Pure Architectural Canvas with High-Contrast Typography */}
-      <div className="min-h-screen flex flex-col selection:bg-[#B91C1C] selection:text-white relative bg-[#FAFBFD] text-[#0F1E19] overflow-x-hidden antialiased">
+      {/* Pure Architectural Canvas with High-Contrast Typography & Dynamic Ambient Background */}
+      <div className="min-h-screen flex flex-col selection:bg-[#BE123C] selection:text-white relative bg-transparent text-[#0F172A] overflow-x-hidden antialiased">
         
         {/* Global Ambient Interactive Motion Background */}
         <VibrantBackgroundDesign />
+
+        {/* Global Living 3D WebGL Particle & Wave Atmosphere */}
+        <LuxuryAtmosphere3D />
 
         {/* Floating Minimal Glass Navbar */}
         <Navbar />
@@ -35,6 +38,8 @@ export default function App() {
             <Route path="/treatments" element={<TreatmentsPage />} />
             <Route path="/hospital" element={<HospitalPage />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="/book-appointment" element={<ContactPage />} />
+            <Route path="/appointment" element={<ContactPage />} />
             {/* Catch-all redirect to Home */}
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>

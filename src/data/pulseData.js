@@ -112,7 +112,7 @@ export const PULSE_DATA = {
       leadDoctor: "Dr. Prakash Chand Shahi",
       leadDegree: "DM Cardiology (PGIMER), MD (KGMU)",
       accentColor: "#2788B8", // Medical Blue
-      accentBg: "bg-sky-50 text-[#2788B8] border-sky-200",
+      accentBg: "bg-emerald-50 text-[#2788B8] border-emerald-200",
       pillColor: "border-[#2788B8] text-[#2788B8]",
       tagline: "Comprehensive catheter-guided cardiac intervention and rhythm restoration.",
       description: "PULSE Cardiology & Vascular Centre is eastern UP's apex centre for radial-access coronary interventions, complex bifurcation stenting, and permanent cardiac pacemakers.",
@@ -172,7 +172,7 @@ export const PULSE_DATA = {
       leadDoctor: "Dr. Vikramaditya Rathore",
       leadDegree: "MS Ortho, MCh Ortho (UK)",
       accentColor: "#65BCA6", // Mint
-      accentBg: "bg-[#FEF2F2] text-[#0D9488] border-[#FECDD3]",
+      accentBg: "bg-[#F0FDF4] text-[#0D9488] border-[#A7F3D0]",
       pillColor: "border-[#65BCA6] text-[#0D9488]",
       tagline: "Robotic sub-millimeter joint reconstruction and sports arthroscopy.",
       description: "Pioneering computer-navigated total knee and hip arthroplasty, complex trauma reconstruction, and minimally invasive sports ligament repair for rapid mobility.",
@@ -201,9 +201,9 @@ export const PULSE_DATA = {
       organ: "Cells & Tumors",
       leadDoctor: "Dr. Rajeshwar Sen",
       leadDegree: "MCh Surgical Oncology (Tata Memorial Centre)",
-      accentColor: "#F2A28D", // Coral
-      accentBg: "bg-rose-50 text-[#E11D48] border-rose-200",
-      pillColor: "border-[#F2A28D] text-[#E11D48]",
+      accentColor: "#059669",
+      accentBg: "bg-emerald-50 text-[#064E3B] border-emerald-200",
+      pillColor: "border-emerald-300 text-[#064E3B]",
       tagline: "Multidisciplinary tumour board, targeted chemotherapy, and organ-preserving oncology.",
       description: "Dedicated to comprehensive cancer care through organ-preserving surgical resections, targeted immunotherapy, clinical medical oncology, and supportive survivorship.",
       image: "/images/angiogram-scan.jpg",
@@ -262,7 +262,7 @@ export const PULSE_DATA = {
       leadDoctor: "Dr. Alok Verma",
       leadDegree: "MCh Urology (SGPGI Lucknow)",
       accentColor: "#2788B8", // Medical Blue
-      accentBg: "bg-sky-50 text-[#2788B8] border-sky-200",
+      accentBg: "bg-emerald-50 text-[#2788B8] border-emerald-200",
       pillColor: "border-[#2788B8] text-[#2788B8]",
       tagline: "Laser stone fragmentation, prostate holmium enucleation, and uro-oncology.",
       description: "Pioneering incision-less laser lithotripsy (RIRS), Holmium laser enucleation of prostate (HoLEP), laparoscopic uro-oncology, and renal transplantation support.",
@@ -292,8 +292,8 @@ export const PULSE_DATA = {
       leadDoctor: "Dr. Tarun Chopra",
       leadDegree: "MD Pulmonary Medicine (VMMC New Delhi)",
       accentColor: "#A9D8E9", // Ice Blue
-      accentBg: "bg-cyan-50 text-[#0284C7] border-cyan-200",
-      pillColor: "border-[#A9D8E9] text-[#0284C7]",
+      accentBg: "bg-cyan-50 text-[#059669] border-cyan-200",
+      pillColor: "border-[#A9D8E9] text-[#059669]",
       tagline: "Advanced interventional bronchoscopy, sleep medicine, and acute respiratory ICU.",
       description: "Dedicated respiratory department handling severe COPD, interstitial lung diseases (ILD), asthma, complex pleural effusions, and advanced sleep apnea diagnostics.",
       image: "/images/cath-lab.jpg",
@@ -321,9 +321,9 @@ export const PULSE_DATA = {
       organ: "Reproductive & Fetal",
       leadDoctor: "Dr. Meera Nambiar",
       leadDegree: "MD, MRCOG (London, UK)",
-      accentColor: "#F2A28D", // Coral
-      accentBg: "bg-rose-50 text-[#E11D48] border-rose-200",
-      pillColor: "border-[#F2A28D] text-[#E11D48]",
+      accentColor: "#059669",
+      accentBg: "bg-emerald-50 text-[#064E3B] border-emerald-200",
+      pillColor: "border-emerald-300 text-[#064E3B]",
       tagline: "High-risk pregnancy management, painless childbirth, and laparoscopic gynaecology.",
       description: "Comprehensive women's healthcare providing advanced fetal medicine 3D/4D ultrasound, natural birth suites, laparoscopic uterine-sparing surgeries, and menopausal health.",
       image: "/images/hospital-ward-suites.jpg",
@@ -352,7 +352,7 @@ export const PULSE_DATA = {
       leadDoctor: "Dr. Rohini Deshmukh",
       leadDegree: "MD Paediatrics, Fellowship Neonatology (CMC Vellore)",
       accentColor: "#65BCA6", // Mint
-      accentBg: "bg-[#FEF2F2] text-[#0D9488] border-[#FECDD3]",
+      accentBg: "bg-[#F0FDF4] text-[#0D9488] border-[#A7F3D0]",
       pillColor: "border-[#65BCA6] text-[#0D9488]",
       tagline: "Level-3 NICU care, child development, and comprehensive pediatric emergencies.",
       description: "Specialized pediatric and neonatal care for premature neonates, congenital anomalies, pediatric infectious illnesses, asthma, and developmental milestones monitoring.",

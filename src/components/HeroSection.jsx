@@ -59,10 +59,10 @@ export default function HeroSection() {
         <div className="absolute top-10 left-1/4 w-[750px] h-[750px] bg-gradient-to-tr from-purple-600/25 via-violet-500/20 to-indigo-600/20 rounded-full blur-[160px] animate-morph animate-float-1" />
 
         {/* Electric Cyan & Azure Floating Orb */}
-        <div className="absolute top-1/3 right-10 w-[700px] h-[700px] bg-gradient-to-bl from-cyan-400/25 via-sky-400/20 to-blue-600/20 rounded-full blur-[160px] animate-float-2" />
+        <div className="absolute top-1/3 right-10 w-[700px] h-[700px] bg-gradient-to-bl from-cyan-400/25 via-emerald-400/20 to-blue-600/20 rounded-full blur-[160px] animate-float-2" />
 
         {/* Coral Rose Pulsing Ambient Accent */}
-        <div className="absolute -bottom-20 left-10 w-[600px] h-[600px] bg-gradient-to-r from-rose-500/20 via-pink-400/15 to-purple-500/15 rounded-full blur-[170px] animate-float-3" />
+        <div className="absolute -bottom-20 left-10 w-[600px] h-[600px] bg-gradient-to-r from-emerald-500/15 via-pink-400/15 to-purple-500/15 rounded-full blur-[170px] animate-float-3" />
 
         {/* Animated Continuous Cardiac ECG Pulse Line */}
         <svg className="absolute inset-0 w-full h-full opacity-40" xmlns="http://www.w3.org/2000/svg">
@@ -82,7 +82,7 @@ export default function HeroSection() {
         {/* Top Status & Location Bar */}
         <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
           <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/95 backdrop-blur-md border border-slate-200/90 shadow-xs hover:shadow-md transition-all">
-            <span className="w-2.5 h-2.5 rounded-full bg-[#0EA5E9 animate-ping" />
+            <span className="w-2.5 h-2.5 rounded-full bg-[#10B981 animate-ping" />
             <span className="text-xs font-mono font-bold uppercase tracking-wider text-slate-900">
               Pulse Heart Centre • Betiahata, Gorakhpur
             </span>
@@ -170,7 +170,7 @@ export default function HeroSection() {
 
               <div className="flex items-center justify-between pb-3 border-b border-slate-100">
                 <div className="flex items-center gap-2">
-                  <span className="w-2.5 h-2.5 rounded-full bg-rose-600 animate-pulse" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-600 animate-pulse" />
                   <span className="text-xs font-mono font-bold uppercase tracking-wider text-slate-900">
                     Live 3D Cardiac Anatomy
                   </span>
@@ -230,7 +230,7 @@ export default function HeroSection() {
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent" />
-                  <span className="absolute bottom-2 left-2 text-[10px] font-mono font-semibold text-sky-900 bg-white/95 border border-sky-200 px-2 py-0.5 rounded-md shadow-xs">
+                  <span className="absolute bottom-2 left-2 text-[10px] font-mono font-semibold text-emerald-900 bg-white/95 border border-emerald-200 px-2 py-0.5 rounded-md shadow-xs">
                     FLUOROSCOPY
                   </span>
                 </div>

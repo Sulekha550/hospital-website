@@ -54,40 +54,40 @@ export default function InteractiveCardiacExplorer({ onBookClick }) {
   const activeData = explorerHotspots.find((h) => h.id === activeId) || explorerHotspots[0] || DEFAULT_HOTSPOTS[0];
 
   return (
-    <section className="relative py-16 lg:py-24 overflow-hidden select-none bg-gradient-to-b from-[#FAFBFD] via-[#FEF2F2]/30 to-[#FAFBFD] rounded-[3rem] my-8 border-2 border-[#FECDD3]/80 shadow-lg">
+    <section className="relative py-16 lg:py-24 overflow-hidden select-none bg-gradient-to-b from-[#FAFBF9] via-[#F0FDF4]/30 to-[#FAFBF9] rounded-[3rem] my-8 border-2 border-[#A7F3D0]/80 shadow-lg">
       {/* Animated Lightbox Illuminator Background Grid & Dynamic Scan Sweep */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
         <svg className="absolute inset-0 w-full h-full opacity-25" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <pattern id="lightboxGrid" width="40" height="40" patternUnits="userSpaceOnUse">
-              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#B91C1C" strokeWidth="0.8" strokeDasharray="2 4" />
-              <circle cx="40" cy="40" r="1.5" fill="#0284C7" opacity="0.6" />
+              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#047857" strokeWidth="0.8" strokeDasharray="2 4" />
+              <circle cx="40" cy="40" r="1.5" fill="#059669" opacity="0.6" />
             </pattern>
           </defs>
           <rect width="100%" height="100%" fill="url(#lightboxGrid)" />
         </svg>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-tr from-[#0284C7]/20 via-teal-300/15 to-transparent rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-tr from-[#059669]/20 via-teal-300/15 to-transparent rounded-full blur-[120px] pointer-events-none" />
         {/* Rotating CAD Coordinate Rings */}
-        <div className="absolute top-6 left-6 w-64 h-64 rounded-full border-2 border-[#B91C1C]/25 hidden md:block animate-gentle-cw" />
-        <div className="absolute bottom-6 right-6 w-80 h-80 rounded-full border-2 border-dashed border-[#0EA5E9]/30 hidden md:block animate-gentle-ccw" />
-        <div className="absolute left-0 right-0 h-[2.5px] bg-gradient-to-r from-transparent via-[#0EA5E9] to-transparent shadow-[0_0_15px_#0284C7] opacity-50 animate-laser-sweep pointer-events-none" />
-        <div className="absolute top-8 left-8 text-[#0284C7]/35 font-mono text-base font-bold select-none">+</div>
-        <div className="absolute bottom-8 right-8 text-[#0284C7]/35 font-mono text-base font-bold select-none">+</div>
+        <div className="absolute top-6 left-6 w-64 h-64 rounded-full border-2 border-[#047857]/25 hidden md:block animate-gentle-cw" />
+        <div className="absolute bottom-6 right-6 w-80 h-80 rounded-full border-2 border-dashed border-[#10B981]/30 hidden md:block animate-gentle-ccw" />
+        <div className="absolute left-0 right-0 h-[2.5px] bg-gradient-to-r from-transparent via-[#10B981] to-transparent shadow-[0_0_15px_#059669] opacity-50 animate-laser-sweep pointer-events-none" />
+        <div className="absolute top-8 left-8 text-[#059669]/35 font-mono text-base font-bold select-none">+</div>
+        <div className="absolute bottom-8 right-8 text-[#059669]/35 font-mono text-base font-bold select-none">+</div>
       </div>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="mb-8 text-center max-w-3xl mx-auto space-y-2">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FEF2F2] border border-[#FECDD3] shadow-xs">
-            <Sparkles className="w-3.5 h-3.5 text-[#B91C1C]" />
-            <span className="text-xs font-bold text-[#991B1B] uppercase tracking-wider">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#F0FDF4] border border-[#A7F3D0] shadow-xs">
+            <Sparkles className="w-3.5 h-3.5 text-[#047857]" />
+            <span className="text-xs font-bold text-[#064E3B] uppercase tracking-wider">
               Diagnostic Lightbox & Clinical Anatomy
             </span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#991B1B] tracking-tight leading-tight">
-            Target Anatomy & <span className="font-serif italic font-normal text-[#B91C1C]">Hemodynamics</span>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#064E3B] tracking-tight leading-tight">
+            Target Anatomy & <span className="font-serif italic font-normal text-[#047857]">Hemodynamics</span>
           </h2>
 
           <p className="text-xs sm:text-sm text-slate-600 font-medium max-w-xl mx-auto leading-relaxed">
@@ -96,7 +96,7 @@ export default function InteractiveCardiacExplorer({ onBookClick }) {
         </div>
 
         {/* Master Diagnostic Lightbox Container */}
-        <div className="rounded-[2.5rem] bg-white border-2 border-[#FECDD3]/60 shadow-xl overflow-hidden p-5 sm:p-8 backdrop-blur-2xl">
+        <div className="rounded-[2.5rem] bg-white border-2 border-[#A7F3D0]/60 shadow-xl overflow-hidden p-5 sm:p-8 backdrop-blur-2xl">
           
           {/* Top Control Bar: Mode Toggle + Target Domains */}
           <div className="flex flex-wrap items-center justify-between gap-4 pb-5 border-b border-slate-100">
@@ -107,8 +107,8 @@ export default function InteractiveCardiacExplorer({ onBookClick }) {
                 onClick={() => setViewMode('anatomy')}
                 className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all ${
                   viewMode === 'anatomy'
-                    ? 'bg-[#991B1B] text-white shadow-sm'
-                    : 'text-slate-700 hover:text-[#991B1B]'
+                    ? 'bg-[#064E3B] text-white shadow-sm'
+                    : 'text-slate-700 hover:text-[#064E3B]'
                 }`}
               >
                 Photorealistic Anatomy
@@ -117,8 +117,8 @@ export default function InteractiveCardiacExplorer({ onBookClick }) {
                 onClick={() => setViewMode('angiogram')}
                 className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all ${
                   viewMode === 'angiogram'
-                    ? 'bg-[#991B1B] text-white shadow-sm'
-                    : 'text-slate-700 hover:text-[#991B1B]'
+                    ? 'bg-[#064E3B] text-white shadow-sm'
+                    : 'text-slate-700 hover:text-[#064E3B]'
                 }`}
               >
                 Fluoroscopy Angiogram
@@ -135,8 +135,8 @@ export default function InteractiveCardiacExplorer({ onBookClick }) {
                     onClick={() => setActiveId(item.id)}
                     className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all ${
                       isSelected
-                        ? 'bg-gradient-to-r from-[#991B1B] via-[#B91C1C] to-[#B91C1C] text-white shadow-md shadow-[#991B1B]/25'
-                        : 'bg-white hover:bg-[#FEF2F2] text-slate-700 border border-slate-200'
+                        ? 'bg-gradient-to-r from-[#064E3B] via-[#047857] to-[#047857] text-white shadow-md shadow-[#064E3B]/25'
+                        : 'bg-white hover:bg-[#F0FDF4] text-slate-700 border border-slate-200'
                     }`}
                   >
                     {item.label}
@@ -162,7 +162,7 @@ export default function InteractiveCardiacExplorer({ onBookClick }) {
             {/* Top Diagnostic Badges */}
             <div className="absolute top-4 left-4 flex items-center gap-2 pointer-events-none">
               <div className="px-3.5 py-1.5 rounded-full bg-slate-900/80 backdrop-blur-md border border-white/20 text-white text-[11px] font-medium flex items-center gap-2 shadow-md">
-                <span className="w-2 h-2 rounded-full bg-[#0284C7] animate-ping" />
+                <span className="w-2 h-2 rounded-full bg-[#059669] animate-ping" />
                 <span>{viewMode === 'anatomy' ? 'Anatomical Model: True Biological Texture' : 'Fluoroscopy Mode: Contrast Perfusion'}</span>
               </div>
             </div>
@@ -184,9 +184,9 @@ export default function InteractiveCardiacExplorer({ onBookClick }) {
                   onClick={() => setActiveId(spot.id)}
                 >
                   <div className="relative flex items-center justify-center">
-                    <span className={`absolute w-8 h-8 rounded-full ${isSpotActive ? 'bg-[#0284C7]/40 animate-ping' : 'bg-[#0284C7]/20'}`} />
+                    <span className={`absolute w-8 h-8 rounded-full ${isSpotActive ? 'bg-[#059669]/40 animate-ping' : 'bg-[#059669]/20'}`} />
                     <div className={`w-5 h-5 rounded-full flex items-center justify-center border-2 border-white shadow-lg transition-transform ${
-                      isSpotActive ? 'bg-[#0EA5E9 scale-125' : 'bg-slate-900 group-hover/pin:scale-110'
+                      isSpotActive ? 'bg-[#10B981 scale-125' : 'bg-slate-900 group-hover/pin:scale-110'
                     }`}>
                       <span className="w-1.5 h-1.5 rounded-full bg-white" />
                     </div>
@@ -196,7 +196,7 @@ export default function InteractiveCardiacExplorer({ onBookClick }) {
                   <div className={`absolute left-1/2 -translate-x-1/2 bottom-full mb-2 w-56 p-3.5 rounded-2xl bg-slate-950/95 backdrop-blur-md border border-white/20 text-white shadow-2xl transition-all pointer-events-none ${
                     isSpotActive ? 'opacity-100 visible -translate-y-0' : 'opacity-0 invisible group-hover/pin:opacity-100 group-hover/pin:visible'
                   }`}>
-                    <span className="text-[10px] font-mono text-[#0284C7] block uppercase font-bold">
+                    <span className="text-[10px] font-mono text-[#059669] block uppercase font-bold">
                       {spot.domain}
                     </span>
                     <span className="text-xs font-bold text-white block mt-0.5">
@@ -213,7 +213,7 @@ export default function InteractiveCardiacExplorer({ onBookClick }) {
             {/* Bottom Overlay Info Card */}
             <div className="absolute bottom-4 left-4 right-4 p-4 rounded-2xl bg-slate-950/90 backdrop-blur-md border border-white/15 text-white flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-xl">
               <div className="space-y-0.5">
-                <span className="text-[10px] font-mono uppercase tracking-wider text-[#0284C7] font-bold block">
+                <span className="text-[10px] font-mono uppercase tracking-wider text-[#059669] font-bold block">
                   SELECTED CLINICAL TARGET
                 </span>
                 <span className="text-sm sm:text-base font-bold text-white block">
@@ -231,7 +231,7 @@ export default function InteractiveCardiacExplorer({ onBookClick }) {
                 </div>
                 <button
                   onClick={onBookClick}
-                  className="px-5 py-2.5 rounded-full bg-[#0EA5E9 hover:bg-[#0284C7] text-slate-950 text-xs font-bold shadow transition-all"
+                  className="px-5 py-2.5 rounded-full bg-[#10B981 hover:bg-[#059669] text-slate-950 text-xs font-bold shadow transition-all"
                 >
                   Consult on {activeData.label}
                 </button>
@@ -242,12 +242,12 @@ export default function InteractiveCardiacExplorer({ onBookClick }) {
 
           {/* Bottom Diagnostic Metadata Bar */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2 text-xs">
-            <div className="p-3.5 rounded-2xl bg-[#FEF2F2]/70 border border-[#FECDD3]/60">
-              <span className="font-bold text-[#991B1B] block">Radial Access Coronary Stenting</span>
+            <div className="p-3.5 rounded-2xl bg-[#F0FDF4]/70 border border-[#A7F3D0]/60">
+              <span className="font-bold text-[#064E3B] block">Radial Access Coronary Stenting</span>
               <span className="text-slate-600 text-[11px] block mt-0.5 font-medium">Catheter deployment via wrist artery for rapid patient recovery.</span>
             </div>
             <div className="p-3.5 rounded-2xl bg-slate-50 border border-slate-200">
-              <span className="font-bold text-[#991B1B] block">Fluoroscopic Quantitative Mapping</span>
+              <span className="font-bold text-[#064E3B] block">Fluoroscopic Quantitative Mapping</span>
               <span className="text-slate-600 text-[11px] block mt-0.5 font-medium">Real-time contrast injection reveals precise stenosis percentage.</span>
             </div>
             <div className="p-3.5 rounded-2xl bg-amber-50/70 border border-amber-100">

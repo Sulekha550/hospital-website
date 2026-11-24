@@ -125,7 +125,7 @@ export default function ECGMonitor({ bpm = 72, className = "" }) {
   return (
     <div className={`relative overflow-hidden rounded-2xl border border-violet-100 bg-[#FAF7FD] shadow-inner p-1 ${className}`}>
       <div className="absolute top-2 left-3 z-10 flex items-center gap-2">
-        <span className="w-2 h-2 rounded-full bg-rose-500 animate-ping"></span>
+        <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
         <span className="font-mono text-[11px] font-semibold tracking-wider text-violet-800">
           LEAD II • {bpm} BPM • SINUS RHYTHM
         </span>

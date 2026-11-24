@@ -46,9 +46,9 @@ export default function HeroArchitectural3DCanvas() {
     cyanRim.position.set(-9, -2, -4);
     scene.add(cyanRim);
 
-    const coralFill = new THREE.PointLight(0xF43F5E, 2.8, 25);
-    coralFill.position.set(4, -3, 4);
-    scene.add(coralFill);
+    const goldFill = new THREE.PointLight(0xF59E0B, 2.8, 25);
+    goldFill.position.set(4, -3, 4);
+    scene.add(goldFill);
 
     const masterGroup = new THREE.Group();
     scene.add(masterGroup);
@@ -95,7 +95,7 @@ export default function HeroArchitectural3DCanvas() {
     masterGroup.add(coreGroup);
 
     const crystalMat = new THREE.MeshPhysicalMaterial({
-      color: 0x0284C7,
+      color: 0x059669,
       emissive: 0x0EA5E9,
       emissiveIntensity: 0.35,
       roughness: 0.1,
@@ -141,7 +141,7 @@ export default function HeroArchitectural3DCanvas() {
     const waveGeo = new THREE.TubeGeometry(waveCurve, 40, 0.05, 12, false);
     const waveMat = new THREE.MeshStandardMaterial({
       color: 0x38BDF8,
-      emissive: 0x0284C7,
+      emissive: 0x059669,
       emissiveIntensity: 2.2,
     });
     const waveMesh = new THREE.Mesh(waveGeo, waveMat);
@@ -158,7 +158,7 @@ export default function HeroArchitectural3DCanvas() {
     }
     pGeo.setAttribute('position', new THREE.BufferAttribute(pPos, 3));
     const pMat = new THREE.PointsMaterial({
-      color: 0x0284C7,
+      color: 0x059669,
       size: 0.12,
       transparent: true,
       opacity: 0.75,

@@ -455,7 +455,7 @@ export default function ThreeHeartCanvas({
       
       {/* 3D Interaction Badge */}
       <div className="absolute bottom-3 left-4 pointer-events-none flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/70 backdrop-blur-md border border-white/80 shadow-sm text-xs font-medium text-slate-600">
-        <span className="w-2 h-2 rounded-full bg-sky-500 animate-ping"></span>
+        <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
         <span>Interactive 3D Anatomical Geometry • 72 BPM Rhythm</span>
       </div>
     </div>

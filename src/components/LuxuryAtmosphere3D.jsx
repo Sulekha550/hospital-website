@@ -3,12 +3,12 @@ import * as THREE from 'three';
 
 /**
  * LuxuryAtmosphere3D
- * Visibly Alive Living Background Atmosphere
+ * Visibly Alive Living Background Atmosphere in Deep Midnight Navy, Crimson Ruby & Warm Platinum
  * Features:
- * - Floating, glowing luminous bio-particles / light motes drifting upward continuously
- * - Multi-colored soft glowing circular sprites (lavender, cyan, amber)
- * - Interactive mouse parallax that causes particles to sway and drift naturally
- * - 100% lightweight and GPU-optimized (zero lag)
+ * - Floating, glowing luminous bio-particles / ruby & platinum light motes drifting upward continuously
+ * - Undulating 3D telemetry ribbon mesh that breathes with cardiac systolic/diastolic rhythm
+ * - Smooth interactive mouse parallax that causes particles and geometry to sway with user interaction
+ * - 100% lightweight and GPU-optimized 60fps
  */
 export default function LuxuryAtmosphere3D() {
   const mountRef = useRef(null);
@@ -34,30 +34,46 @@ export default function LuxuryAtmosphere3D() {
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
     container.appendChild(renderer.domElement);
 
-    // Group for Smooth Ambient Particles
-    const particleGroup = new THREE.Group();
-    scene.add(particleGroup);
+    // Group for Smooth Ambient Movement
+    const sceneGroup = new THREE.Group();
+    scene.add(sceneGroup);
 
     // Helper to generate soft radial glowing particle texture
-    const createGlowTexture = () => {
+    const createRubyGlowTexture = () => {
       const canvas = document.createElement('canvas');
       canvas.width = 64;
       canvas.height = 64;
       const ctx = canvas.getContext('2d');
       const gradient = ctx.createRadialGradient(32, 32, 0, 32, 32, 32);
       gradient.addColorStop(0, 'rgba(255, 255, 255, 1)');
-      gradient.addColorStop(0.25, 'rgba(167, 139, 250, 0.85)');
-      gradient.addColorStop(0.6, 'rgba(56, 189, 248, 0.4)');
+      gradient.addColorStop(0.3, 'rgba(225, 29, 72, 0.9)'); // vibrant crimson ruby
+      gradient.addColorStop(0.65, 'rgba(190, 18, 60, 0.4)');
+      gradient.addColorStop(1, 'rgba(10, 17, 40, 0)');
+      ctx.fillStyle = gradient;
+      ctx.fillRect(0, 0, 64, 64);
+      return new THREE.CanvasTexture(canvas);
+    };
+
+    const createPlatinumGlowTexture = () => {
+      const canvas = document.createElement('canvas');
+      canvas.width = 64;
+      canvas.height = 64;
+      const ctx = canvas.getContext('2d');
+      const gradient = ctx.createRadialGradient(32, 32, 0, 32, 32, 32);
+      gradient.addColorStop(0, 'rgba(255, 255, 255, 1)');
+      gradient.addColorStop(0.35, 'rgba(203, 213, 225, 0.85)'); // warm platinum
+      gradient.addColorStop(0.7, 'rgba(148, 163, 184, 0.35)');
       gradient.addColorStop(1, 'rgba(255, 255, 255, 0)');
       ctx.fillStyle = gradient;
       ctx.fillRect(0, 0, 64, 64);
       return new THREE.CanvasTexture(canvas);
     };
 
-    const particleTexture = createGlowTexture();
+    const rubyTexture = createRubyGlowTexture();
+    const platinumTexture = createPlatinumGlowTexture();
 
-    // 120 Floating Luminous Light Motes
-    const count = 120;
+    // 140 Floating Luminous Light Motes (Ruby & Platinum)
+    const count = 140;
     const positions = new Float32Array(count * 3);
     const speeds = new Float32Array(count);
     const sways = new Float32Array(count);
@@ -66,7 +82,7 @@ export default function LuxuryAtmosphere3D() {
       positions[i * 3] = (Math.random() - 0.5) * 32;
       positions[i * 3 + 1] = (Math.random() - 0.5) * 24;
       positions[i * 3 + 2] = (Math.random() - 0.5) * 12;
-      speeds[i] = Math.random() * 0.012 + 0.006;
+      speeds[i] = Math.random() * 0.012 + 0.005;
       sways[i] = Math.random() * Math.PI * 2;
     }
 
@@ -74,16 +90,52 @@ export default function LuxuryAtmosphere3D() {
     geo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
 
     const mat = new THREE.PointsMaterial({
-      size: 0.38,
-      map: particleTexture,
+      size: 0.42,
+      map: rubyTexture,
       transparent: true,
-      opacity: 0.65,
+      opacity: 0.7,
       blending: THREE.AdditiveBlending,
       depthWrite: false,
     });
 
     const particles = new THREE.Points(geo, mat);
-    particleGroup.add(particles);
+    sceneGroup.add(particles);
+
+    // 2. Undulating 3D Wireframe Cardiac Plane in Background
+    const planeGeo = new THREE.PlaneGeometry(36, 18, 36, 18);
+    const planeMat = new THREE.MeshBasicMaterial({
+      color: 0xBE123C,
+      wireframe: true,
+      transparent: true,
+      opacity: 0.045,
+    });
+    const waveMesh = new THREE.Mesh(planeGeo, planeMat);
+    waveMesh.position.set(0, -2, -4);
+    waveMesh.rotation.x = -Math.PI / 3;
+    sceneGroup.add(waveMesh);
+
+    // 3. Floating 3D Geometric Cardiac Octahedron Rings
+    const ringGeo = new THREE.RingGeometry(2.4, 2.45, 64);
+    const ringMat = new THREE.MeshBasicMaterial({
+      color: 0x0A1128,
+      transparent: true,
+      opacity: 0.08,
+      side: THREE.DoubleSide
+    });
+    const ringMesh1 = new THREE.Mesh(ringGeo, ringMat);
+    ringMesh1.position.set(7, 3, -2);
+    sceneGroup.add(ringMesh1);
+
+    const ringMesh2 = ringMesh1.clone();
+    ringMesh2.material = new THREE.MeshBasicMaterial({
+      color: 0xE11D48,
+      transparent: true,
+      opacity: 0.09,
+      side: THREE.DoubleSide
+    });
+    ringMesh2.position.set(-7, -2, -3);
+    ringMesh2.scale.set(1.4, 1.4, 1.4);
+    sceneGroup.add(ringMesh2);
 
     // Parallax Interpolation
     let targetX = 0;
@@ -102,14 +154,30 @@ export default function LuxuryAtmosphere3D() {
 
     const animate = () => {
       animationId = requestAnimationFrame(animate);
-      clock += 0.01;
+      clock += 0.012;
 
       // Mouse Parallax Lerp
-      currentX += (targetX - currentX) * 0.03;
-      currentY += (targetY - currentY) * 0.03;
+      currentX += (targetX - currentX) * 0.04;
+      currentY += (targetY - currentY) * 0.04;
 
-      particleGroup.rotation.y = currentX * 0.12;
-      particleGroup.rotation.x = currentY * 0.08;
+      sceneGroup.rotation.y = currentX * 0.14;
+      sceneGroup.rotation.x = currentY * 0.09;
+
+      // Animate 3D Undulating Wave Vertices
+      const pos = planeGeo.attributes.position;
+      for (let i = 0; i < pos.count; i++) {
+        const u = pos.getX(i);
+        const v = pos.getY(i);
+        const z = Math.sin(clock * 1.5 + u * 0.4) * Math.cos(clock * 1.2 + v * 0.3) * 0.7;
+        pos.setZ(i, z);
+      }
+      pos.needsUpdate = true;
+
+      // Rotate geometric rings
+      ringMesh1.rotation.z = clock * 0.2;
+      ringMesh1.rotation.x = clock * 0.15;
+      ringMesh2.rotation.z = -clock * 0.18;
+      ringMesh2.rotation.y = clock * 0.12;
 
       // Continual Upward Drift & Horizontal Sway for Every Particle
       const posAttr = geo.attributes.position;
@@ -119,7 +187,7 @@ export default function LuxuryAtmosphere3D() {
         // Upward floating movement
         array[i * 3 + 1] += speeds[i];
         // Gentle sinusoidal horizontal sway
-        array[i * 3] += Math.sin(clock + sways[i]) * 0.003;
+        array[i * 3] += Math.sin(clock + sways[i]) * 0.005;
 
         // Reset if drifted beyond top boundary
         if (array[i * 3 + 1] > 12) {
@@ -148,12 +216,17 @@ export default function LuxuryAtmosphere3D() {
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('resize', handleResize);
       cancelAnimationFrame(animationId);
-      if (container.contains(renderer.domElement)) {
+      if (container && container.contains(renderer.domElement)) {
         container.removeChild(renderer.domElement);
       }
       geo.dispose();
       mat.dispose();
-      particleTexture.dispose();
+      planeGeo.dispose();
+      planeMat.dispose();
+      ringGeo.dispose();
+      ringMat.dispose();
+      rubyTexture.dispose();
+      platinumTexture.dispose();
       renderer.dispose();
     };
   }, []);
@@ -161,7 +234,7 @@ export default function LuxuryAtmosphere3D() {
   return (
     <div 
       ref={mountRef} 
-      className="fixed inset-0 pointer-events-none -z-5 overflow-hidden select-none"
+      className="fixed inset-0 pointer-events-none z-1 overflow-hidden select-none"
       aria-hidden="true"
     />
   );

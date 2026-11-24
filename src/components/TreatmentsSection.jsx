@@ -19,11 +19,11 @@ export default function TreatmentsSection({ onBookClick }) {
   const activeTreatment = treatments.find((t) => t.id === selectedId) || treatments[0];
 
   return (
-    <section id="treatments" className="relative py-16 lg:py-24 overflow-hidden bg-gradient-to-b from-[#FFF1F2]/70 via-[#FAF5FF]/80 to-[#FEF2F2]/50">
+    <section id="treatments" className="relative py-16 lg:py-24 overflow-hidden bg-gradient-to-b from-[#FFF1F2]/70 via-[#FAF5FF]/80 to-[#F0FDF4]/50">
 
       {/* Ambient Floating Atmospheric Glows */}
-      <div className="absolute top-1/4 -left-20 w-[600px] h-[600px] bg-gradient-to-tr from-rose-500/35 via-pink-400/30 to-purple-400/25 rounded-full blur-[85px] pointer-events-none -z-10 animate-float-1" />
-      <div className="absolute bottom-10 -right-20 w-[550px] h-[550px] bg-gradient-to-bl from-purple-500/35 via-sky-400/30 to-teal-400/25 rounded-full blur-[85px] pointer-events-none -z-10 animate-float-3" />
+      <div className="absolute top-1/4 -left-20 w-[600px] h-[600px] bg-gradient-to-tr from-emerald-500/25 via-pink-400/30 to-purple-400/25 rounded-full blur-[85px] pointer-events-none -z-10 animate-float-1" />
+      <div className="absolute bottom-10 -right-20 w-[550px] h-[550px] bg-gradient-to-bl from-purple-500/35 via-emerald-400/30 to-teal-400/25 rounded-full blur-[85px] pointer-events-none -z-10 animate-float-3" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-8 relative z-10">
 
@@ -33,7 +33,7 @@ export default function TreatmentsSection({ onBookClick }) {
             <span className="text-xs font-semibold text-white bg-gradient-to-r from-purple-700 via-indigo-600 to-purple-800 px-3.5 py-1 rounded-full shadow-sm">
               Procedural Excellence
             </span>
-            <div className="w-8 h-0.5 bg-gradient-to-r from-purple-500 to-sky-400" />
+            <div className="w-8 h-0.5 bg-gradient-to-r from-purple-500 to-emerald-400" />
             <span className="text-xs font-medium tracking-wider text-purple-900 uppercase">
               Interventional & Diagnostic Catheterization
             </span>
@@ -91,7 +91,7 @@ export default function TreatmentsSection({ onBookClick }) {
                 </p>
 
                 {isSelected && (
-                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-purple-500 via-sky-400 to-amber-300" />
+                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-purple-500 via-emerald-400 to-amber-300" />
                 )}
               </button>
             );
@@ -102,7 +102,7 @@ export default function TreatmentsSection({ onBookClick }) {
         <div className="rounded-[2.5rem] bg-gradient-to-br from-slate-950 via-[#130A24] to-slate-950 text-white p-6 sm:p-10 lg:p-12 shadow-2xl border-2 border-purple-500/30 relative overflow-hidden space-y-8">
 
           <div className="absolute -top-24 -left-24 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-sky-500/20 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-emerald-500/20 rounded-full blur-3xl pointer-events-none" />
 
           {/* 1. Header Strip */}
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-white/10 pb-6 relative z-10">
@@ -233,7 +233,7 @@ export default function TreatmentsSection({ onBookClick }) {
 
             {/* Box 2: Procedural Highlights */}
             <div className="p-6 rounded-2xl bg-white/5 border border-white/10 space-y-3">
-              <span className="text-xs font-mono uppercase tracking-wider text-sky-300 font-bold block">
+              <span className="text-xs font-mono uppercase tracking-wider text-emerald-300 font-bold block">
                 Procedural Highlights
               </span>
               <ul className="space-y-2">

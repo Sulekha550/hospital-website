@@ -1,15 +1,18 @@
-
 import React, { useState } from 'react';
-import { Radio, Zap, ShieldCheck } from 'lucide-react';
-import SectionCinematicVideo from './SectionCinematicVideo';
+import { Radio, Zap, ShieldCheck, CheckCircle2 } from 'lucide-react';
 import DiagnosticScannerFullCanvas from './DiagnosticScannerFullCanvas';
+import SectionBackgroundMotion from './SectionBackgroundMotion';
+import SectionCinematicVideo from './SectionCinematicVideo';
+import Interactive3DTilt from './Interactive3DTilt';
+import ScrollReveal from './ScrollReveal';
 
 /**
  * MedicalTechnologyShowcase
- * Visual & Motion Identity: Luminous High-Tech Fluoroscopy Suite (Clean, Pearl & Cyan)
- * Removed dark/black boxes in favor of pearlescent glass & cyan glowing borders
+ * Visual & Motion Identity: Luminous High-Tech Fluoroscopy Suite (Deep Midnight Navy & Crimson Ruby)
+ * Features 3D Tilt interaction on 4K equipment console, animated technical specifications,
+ * and live C-Arm fluoroscopy telemetry.
  */
-export default function MedicalTechnologyShowcase() {
+export default function MedicalTechnologyShowcase({ variant = 'home-technology' }) {
   const [activeTech, setActiveTech] = useState(0);
 
   const techArsenal = [
@@ -82,186 +85,154 @@ export default function MedicalTechnologyShowcase() {
   const current = techArsenal[activeTech];
 
   return (
-    <section className="relative py-28 lg:py-36 overflow-hidden select-none bg-gradient-to-b from-[#FFFDF9] via-[#FEF2F2] to-[#FEF2F2]">
+    <section className="relative py-28 lg:py-36 overflow-hidden select-none bg-gradient-to-b from-[#FAF9F6] via-[#F8FAFC] to-[#F1F5F9] border-b border-slate-200">
 
-      {/* =========================================================================
-          ANIMATED SECTION BACKGROUND: 3D WEBGL SCANNER, MOTION VIDEO & TECHNICAL HUD
-         ========================================================================= */}
-      <div className="absolute inset-0 pointer-events-none -z-10 overflow-hidden" aria-hidden="true">
-        
-        {/* 1. Ambient 4K Clinical Cath-Lab Motion Video Layer */}
-        <div className="absolute inset-0 z-0 overflow-hidden opacity-25 mix-blend-multiply pointer-events-none">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="metadata"
-            className="w-full h-full object-cover scale-105 filter contrast-125 saturate-125"
-          >
-            <source src="/videos/facilities-walkthrough.mp4" type="video/mp4" />
-          </video>
-          <div className="absolute inset-0 bg-gradient-to-b from-[#FFFDF9]/80 via-transparent to-[#FEF2F2]/85" />
-        </div>
+      {/* Bespoke Siemens Cleanroom Fluoroscopy & Cyan/Teal Laser Calibration Sweeps */}
+      <SectionBackgroundMotion variant={variant} />
 
-        {/* 2. Interactive 3D WebGL Tomographic Scanner Canvas (Three.js) */}
-        <div className="absolute inset-0 z-1 opacity-70 pointer-events-none">
-          <DiagnosticScannerFullCanvas />
-        </div>
-
-        {/* 3. Velvet Emerald, Mint & Amber Atmospheric Glow Spheres */}
-        <div className="absolute top-1/4 -right-20 w-[700px] h-[700px] rounded-full bg-gradient-to-tr from-[#991B1B]/25 via-[#0284C7]/25 to-transparent blur-[140px] animate-pulse-glow" />
-        <div className="absolute bottom-10 -left-20 w-[650px] h-[650px] rounded-full bg-gradient-to-bl from-[#38BDF8]/35 via-[#FEF2F2]/40 to-transparent blur-[140px] animate-float-2" />
-        <div className="absolute top-10 left-1/3 w-[500px] h-[500px] rounded-full bg-[#0EA5E9]/15 blur-[120px]" />
-
-        {/* 4. Active Sweeping Fluoroscopy Laser Beam */}
-        <div className="absolute inset-x-0 h-[2.5px] bg-gradient-to-r from-transparent via-[#0EA5E9] to-transparent shadow-[0_0_20px_#0284C7] opacity-50 animate-laser-sweep pointer-events-none" />
-
-        {/* 5. Counter-Rotating CAD Angle Gauges (Siemens C-Arm Calibration Geometry) */}
-        <div className="absolute top-16 left-6 w-80 h-80 rounded-full border-2 border-[#B91C1C]/30 hidden lg:block animate-gentle-cw" />
-        <div className="absolute top-24 left-14 w-64 h-64 rounded-full border-2 border-dashed border-[#0EA5E9]/40 hidden lg:block animate-gentle-ccw" />
-        <div className="absolute bottom-16 right-10 w-96 h-96 rounded-full border-2 border-[#B91C1C]/25 hidden lg:block animate-gentle-ccw" />
-        <div className="absolute bottom-24 right-20 w-72 h-72 rounded-full border-2 border-dashed border-rose-600/35 hidden lg:block animate-gentle-cw" />
-
-        {/* 6. Technical Precision Blueprint Grid */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#991B1B18_1px,transparent_1px),linear-gradient(to_bottom,#991B1B18_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_85%_70%_at_50%_35%,#000_75%,transparent_100%)] pointer-events-none" />
-
-        {/* 7. Floating Medical Crosshairs (+) at Quadrants */}
-        <div className="absolute top-16 left-12 text-[#0284C7]/40 font-mono text-base font-bold animate-medical-cross-1 select-none">+</div>
-        <div className="absolute top-36 right-16 text-[#0284C7]/40 font-mono text-base font-bold animate-medical-cross-2 select-none">+</div>
-        <div className="absolute bottom-20 left-20 text-[#0284C7]/35 font-mono text-base font-bold animate-medical-cross-2 select-none">+</div>
-        <div className="absolute bottom-32 right-32 text-[#0284C7]/35 font-mono text-base font-bold animate-medical-cross-1 select-none">+</div>
-
-        {/* 8. Live Fluoroscopy C-Arm HUD Telemetry Box */}
-        <div className="absolute top-28 right-10 font-mono text-[10px] text-[#991B1B]/50 tracking-widest hidden xl:block uppercase space-y-1 bg-white/80 backdrop-blur-md p-3.5 rounded-2xl border border-[#FECDD3] shadow-sm">
-          <div className="flex items-center gap-2 font-bold text-[#991B1B]">
-            <span className="w-2 h-2 rounded-full bg-[#0EA5E9] animate-ping" />
-            <span>SIEMENS ARTIS ZEE • C-ARM</span>
-          </div>
-          <div>PROJECTION: LAO 45° • CRANIAL 20°</div>
-          <div>ACQUISITION: 30 FPS • 0.3mm MATRIX</div>
-          <div className="text-[#B91C1C] font-semibold">DOSESENSE: -40% RADIATION</div>
-        </div>
-
-        {/* 9. Monumental Watermark Typography */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-serif italic font-bold text-[18vw] text-[#991B1B]/[0.025] whitespace-nowrap pointer-events-none tracking-widest">
-          FLUOROSCOPY
-        </div>
-
+      {/* Interactive 3D WebGL Tomographic Scanner Canvas (Three.js) */}
+      <div className="absolute inset-0 z-0 opacity-70 pointer-events-none">
+        <DiagnosticScannerFullCanvas />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Section Header */}
-        <div className="mb-10 text-center max-w-3xl mx-auto space-y-2">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FEF2F2] border border-[#38BDF8] text-[#991B1B] text-xs font-mono font-medium shadow-xs">
-            <Radio className="w-4 h-4 text-[#B91C1C] animate-pulse" />
-            <span className="uppercase tracking-[0.2em]">Cath Lab &amp; Diagnostic Systems</span>
+        <ScrollReveal variant="fade-down">
+          <div className="mb-10 text-center max-w-3xl mx-auto space-y-2">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/95 backdrop-blur-md border border-rose-200 text-[#0A1128] text-xs font-mono font-medium shadow-xs">
+              <Radio className="w-4 h-4 text-[#BE123C] animate-pulse" />
+              <span className="uppercase tracking-[0.2em]">Cath Lab &amp; Diagnostic Systems</span>
+            </div>
+
+            <h2 className="text-3xl sm:text-5xl font-extrabold text-[#0A1128] tracking-tight">
+              Interventional Technology <span className="font-serif italic font-normal text-[#BE123C]">Suite</span>
+            </h2>
+
+            <div className="flex flex-wrap items-center justify-center gap-2 pt-1 font-mono text-[11px] font-bold">
+              <span className="bg-rose-50 text-rose-950 px-3 py-1 rounded-full border border-rose-200 shadow-xs">&lt; 0.3 mm Matrix</span>
+              <span className="bg-slate-100 text-[#0A1128] px-3 py-1 rounded-full border border-slate-200 shadow-xs">DoseSense -40%</span>
+              <span className="bg-rose-50 text-[#BE123C] px-3 py-1 rounded-full border border-rose-200 shadow-xs">99.4% Flow Restored</span>
+            </div>
           </div>
+        </ScrollReveal>
 
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-[#991B1B] tracking-tight">
-            Interventional Technology <span className="font-serif italic font-normal text-[#0284C7]">Suite</span>
-          </h2>
+        {/* Main Content Grid: Balanced Side-by-Side Architecture */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start my-8">
 
-          <div className="flex flex-wrap items-center justify-center gap-2 pt-1 font-mono text-[11px] font-bold">
-            <span className="bg-[#FEF2F2] text-[#991B1B] px-3 py-1 rounded-full border border-[#FECDD3]">&lt; 0.3 mm Matrix</span>
-            <span className="bg-[#FEF2F2] text-[#B91C1C] px-3 py-1 rounded-full border border-[#38BDF8]">DoseSense -40%</span>
-            <span className="bg-white text-slate-900 px-3 py-1 rounded-full border border-[#FECDD3]">99.4% Flow Restored</span>
-          </div>
-        </div>
+          {/* Left Column (7 cols): Completely Unobstructed 4K Cinematic Equipment Showcase with 3D Tilt */}
+          <div className="lg:col-span-7 space-y-4">
+            <Interactive3DTilt maxTilt={8} glowColor="rgba(190, 18, 60, 0.22)">
+              <div className="group relative rounded-[2.5rem] overflow-hidden bg-white/95 p-3 sm:p-4 border-2 border-slate-200 shadow-xl hover:shadow-2xl hover:border-rose-300 transition-all duration-500">
+                <div className="relative rounded-[2rem] overflow-hidden">
+                  <SectionCinematicVideo
+                    type={current.type || "facilities-walkthrough"}
+                    videoUrl={current.videoUrl}
+                    styleVariant="floating-3d"
+                    posterImage={current.image}
+                    title={current.title}
+                    subtitle={current.category}
+                    specs={current.clinicalValue}
+                    aspectRatio="aspect-[16/10]"
+                  />
+                </div>
 
-        {/* Modal Switcher Bar */}
-        <div className="flex flex-wrap items-center justify-center gap-2.5 mb-12">
-          {techArsenal.map((tech, idx) => {
-            const isActive = activeTech === idx;
-            return (
-              <button
-                key={tech.id}
-                onClick={() => setActiveTech(idx)}
-                className={`px-5 py-2.5 rounded-full text-xs font-semibold tracking-wide transition-all duration-300 ${
-                  isActive
-                    ? 'bg-gradient-to-r from-[#991B1B] via-[#B91C1C] to-[#B91C1C] text-[#FECDD3] shadow-lg shadow-[#991B1B]/25 scale-105 border border-[#FECDD3]/50'
-                    : 'bg-white hover:bg-[#FEF2F2] text-slate-700 border border-[#FECDD3]/60 shadow-xs'
-                }`}
-              >
-                {tech.title}
-              </button>
-            );
-          })}
-        </div>
+                {/* Bottom Equipment Status Ticker */}
+                <div className="mt-3 px-3 py-2.5 rounded-xl bg-slate-50 border border-slate-200 flex flex-wrap items-center justify-between gap-2 text-xs">
+                  <div className="flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-[#BE123C] animate-pulse" />
+                    <span className="font-mono font-bold text-[#0A1128]">{current.title}</span>
+                  </div>
+                  <div className="font-mono text-[11px] text-[#BE123C] font-bold">
+                    {current.category} • NABH STANDARDS
+                  </div>
+                </div>
+              </div>
+            </Interactive3DTilt>
 
-        {/* =========================================================================
-            ARTISTIC OVERLAPPING TECHNOLOGY SHOWCASE:
-            - Large Cinematic Equipment Photography (Anchor, z-20)
-            - Overlapping Technical Specifications HUD (Top-Right, z-30)
-            - Overlapping Clinical Value Plaque (Bottom-Left, z-35)
-           ========================================================================= */}
-        <div className="relative min-h-[580px] lg:min-h-[640px] w-full my-6">
-
-          {/* Main Cinematic Equipment Card (Center Anchor, z-20) */}
-          <div className="lg:w-[78%] mx-auto z-20 transition-all duration-600 ease-out hover:z-50 hover:-translate-y-2">
-            <div className="group relative rounded-[2.5rem] overflow-hidden bg-white p-4 sm:p-5 border-2 border-[#FECDD3] shadow-[0_20px_50px_rgba(6, 78, 59, 0.08)] transition-all duration-500">
-              <div className="relative rounded-[2rem] overflow-hidden">
-                <SectionCinematicVideo
-                  type={current.type || "facilities-walkthrough"}
-                  videoUrl={current.videoUrl}
-                  styleVariant="floating-3d"
-                  posterImage={current.image}
-                  title={current.title}
-                  subtitle={current.category}
-                  specs={current.clinicalValue}
-                  aspectRatio="aspect-[16/10] sm:aspect-[16/9]"
-                />
+            {/* Clinical Value Callout */}
+            <div className="p-4 rounded-2xl bg-white/90 border border-slate-200 shadow-xs text-left flex items-start gap-3 card-hover-elevate">
+              <div className="w-8 h-8 rounded-xl bg-rose-50 flex items-center justify-center text-[#BE123C] shrink-0 mt-0.5">
+                <ShieldCheck className="w-4 h-4 text-[#BE123C]" />
+              </div>
+              <div>
+                <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#BE123C] block">
+                  Clinical Value &amp; Safety Standard
+                </span>
+                <p className="text-xs text-slate-800 font-medium mt-0.5 leading-relaxed">
+                  {current.clinicalValue}
+                </p>
               </div>
             </div>
           </div>
 
-          {/* Overlapping HUD Card: Technical Specifications (Top-Right, z-30, rotated +2deg) */}
-          <div className="mt-8 lg:mt-0 lg:absolute lg:top-6 lg:right-2 lg:w-[38%] z-30 transition-all duration-600 ease-out hover:z-50 hover:-translate-y-3 lg:rotate-2 hover:rotate-0">
-            <div className="p-6 rounded-[2rem] bg-white/95 backdrop-blur-2xl border-2 border-[#FECDD3] shadow-[0_20px_50px_rgba(6, 78, 59, 0.1)] space-y-4 text-left transition-all duration-300 hover:shadow-[#991B1B]/15">
+          {/* Right Column (5 cols): Interactive Technology Selector & Technical Specifications */}
+          <div className="lg:col-span-5 space-y-5 text-left">
 
-              <div className="flex items-center justify-between pb-3 border-b border-slate-100">
-                <span className="text-xs font-mono uppercase tracking-wider text-[#991B1B] font-semibold flex items-center gap-1.5">
-                  <Zap className="w-4 h-4 text-[#B91C1C]" />
+            {/* Technology Selection Tabs */}
+            <div className="space-y-2">
+              <span className="text-xs font-mono uppercase tracking-wider text-[#0A1128] font-bold block">
+                Select Interventional Suite
+              </span>
+              <div className="grid grid-cols-1 gap-2">
+                {techArsenal.map((tech, idx) => {
+                  const isActive = activeTech === idx;
+
+                  return (
+                    <button
+                      key={tech.id}
+                      onClick={() => setActiveTech(idx)}
+                      className={`w-full p-3.5 rounded-2xl text-left transition-all duration-300 flex items-center justify-between border cursor-pointer ${
+                        isActive
+                          ? 'bg-gradient-to-r from-[#0A1128] via-[#1E293B] to-[#BE123C] text-white shadow-lg scale-[1.01] border-rose-300/40'
+                          : 'bg-white hover:bg-slate-50 text-slate-800 border-slate-200 shadow-2xs hover:border-slate-300'
+                      }`}
+                    >
+                      <div className="space-y-0.5">
+                        <span className={`text-xs font-bold block ${isActive ? 'text-white' : 'text-[#0A1128]'}`}>
+                          {tech.title}
+                        </span>
+                        <span className={`text-[10px] font-mono block ${isActive ? 'text-slate-200' : 'text-slate-500'}`}>
+                          {tech.category}
+                        </span>
+                      </div>
+                      <span className={`text-[10px] font-mono px-2 py-0.5 rounded-full ${
+                        isActive ? 'bg-white/20 text-white font-bold' : 'bg-slate-100 text-slate-600'
+                      }`}>
+                        0{idx + 1}
+                      </span>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Dedicated Technical Specifications HUD Table with Interactive Card Hover */}
+            <div className="p-5 rounded-2xl bg-white/95 backdrop-blur-md border-2 border-slate-200 shadow-md space-y-3.5">
+              <div className="flex items-center justify-between pb-2.5 border-b border-slate-100">
+                <span className="text-xs font-mono uppercase tracking-wider text-[#0A1128] font-bold flex items-center gap-1.5">
+                  <Zap className="w-4 h-4 text-[#BE123C]" />
                   <span>Technical Specifications</span>
                 </span>
-                <span className="px-2.5 py-0.5 rounded-full bg-[#FEF2F2] text-[10px] font-mono font-medium text-[#991B1B] border border-[#FECDD3]">
-                  VERIFIED HUD
+                <span className="px-2.5 py-0.5 rounded-full bg-rose-50 text-[10px] font-mono font-bold text-[#BE123C] border border-rose-200">
+                  VERIFIED
                 </span>
               </div>
 
-              <div className="space-y-2.5">
+              <div className="grid grid-cols-2 gap-2">
                 {current.specs.map((s, i) => (
-                  <div key={i} className="flex items-center justify-between p-3 rounded-xl bg-slate-50 border border-slate-100 hover:bg-[#FEF2F2]/60 transition-colors">
-                    <span className="text-xs font-medium text-slate-600">
+                  <div key={i} className="p-2.5 rounded-xl bg-slate-50 border border-slate-100 hover:bg-rose-50/50 hover:border-rose-200 transition-all text-left">
+                    <span className="text-[10px] font-medium text-slate-500 block uppercase">
                       {s.label}
                     </span>
-                    <span className="text-xs font-mono font-semibold text-[#991B1B]">
+                    <span className="text-xs font-mono font-bold text-[#0A1128] block mt-0.5">
                       {s.value}
                     </span>
                   </div>
                 ))}
               </div>
-
             </div>
-          </div>
 
-          {/* Overlapping Card: Clinical Efficacy & Safety */}
-          <div className="mt-8 lg:mt-0 lg:absolute lg:bottom-4 lg:left-2 lg:w-[42%] z-35 transition-all duration-600 ease-out hover:z-50 hover:-translate-y-3 lg:-rotate-1 hover:rotate-0">
-            <div className="p-5 rounded-[2rem] bg-gradient-to-br from-white via-[#FEF2F2]/60 to-[#FEF2F2]/60 text-slate-900 shadow-[0_20px_50px_rgba(6, 78, 59, 0.08)] border-2 border-[#38BDF8] space-y-2 text-left">
-              <div className="flex items-center justify-between text-[#B91C1C]">
-                <div className="flex items-center gap-1.5">
-                  <ShieldCheck className="w-4 h-4" />
-                  <span className="text-xs font-mono font-bold uppercase tracking-wider">
-                    Clinical Safety Standards
-                  </span>
-                </div>
-                <span className="text-[10px] font-mono text-[#991B1B] font-bold bg-[#FEF2F2] border border-[#FECDD3] px-2 py-0.5 rounded-full">NABH • ACC</span>
-              </div>
-              <p className="text-xs text-slate-800 font-bold">
-                {current.clinicalValue}
-              </p>
-            </div>
           </div>
 
         </div>
