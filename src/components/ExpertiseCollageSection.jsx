@@ -74,7 +74,7 @@ export default function ExpertiseCollageSection() {
       aspect: 'aspect-[4/3]',
       stats: 'Over 22 Years Devotion',
       subtext: 'Betiahata, Gorakhpur',
-      badgeColor: 'text-[#064E3B] bg-[#F0FDF4] border-[#A7F3D0]',
+      badgeColor: 'text-[#991B1B] bg-[#FEF2F2] border-[#FECDD3]',
     },
   ];
 

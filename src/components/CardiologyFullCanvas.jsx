@@ -31,21 +31,21 @@ export default function CardiologyFullCanvas() {
     renderer.toneMappingExposure = 1.35;
     container.appendChild(renderer.domElement);
 
-    // Precision Medical Emerald Ambient Lighting
-    const amb = new THREE.AmbientLight(0xF0FDF4, 2.5);
+    // Precision Medical Brand Ambient Lighting (Logo Red + Cyan)
+    const amb = new THREE.AmbientLight(0xFEF2F2, 2.5);
     scene.add(amb);
 
     const keyLight = new THREE.DirectionalLight(0xFFFFFF, 3.2);
     keyLight.position.set(7, 9, 8);
     scene.add(keyLight);
 
-    const emeraldRim = new THREE.DirectionalLight(0x10B981, 4.0);
-    emeraldRim.position.set(-8, -2, -4);
-    scene.add(emeraldRim);
+    const redRim = new THREE.DirectionalLight(0xB91C1C, 4.0);
+    redRim.position.set(-8, -2, -4);
+    scene.add(redRim);
 
-    const mintGlow = new THREE.PointLight(0x34D399, 3.0, 20);
-    mintGlow.position.set(3, -2, 4);
-    scene.add(mintGlow);
+    const cyanGlow = new THREE.PointLight(0x0284C7, 3.0, 20);
+    cyanGlow.position.set(3, -2, 4);
+    scene.add(cyanGlow);
 
     const heartRoot = new THREE.Group();
     heartRoot.position.set(2.5, 0, 0);
@@ -53,8 +53,8 @@ export default function CardiologyFullCanvas() {
 
     // Subtle Holographic Vascular Rings (Clean, non-intrusive)
     const ringMat1 = new THREE.MeshPhysicalMaterial({
-      color: 0x059669,
-      emissive: 0x047857,
+      color: 0x0284C7,
+      emissive: 0x0284C7,
       emissiveIntensity: 0.8,
       transparent: true,
       opacity: 0.25,
@@ -66,8 +66,8 @@ export default function CardiologyFullCanvas() {
     heartRoot.add(ring1);
 
     const ringMat2 = new THREE.MeshStandardMaterial({
-      color: 0x10B981,
-      emissive: 0x059669,
+      color: 0xB91C1C,
+      emissive: 0x991B1B,
       emissiveIntensity: 0.9,
       wireframe: true,
       transparent: true,

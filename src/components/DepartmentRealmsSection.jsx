@@ -61,8 +61,8 @@ export default function DepartmentRealmsSection() {
       tagline: 'Robotic Total Knee Replacement & Sports Arthroscopy',
       leadDoctor: 'Dr. Vikramaditya Rathore',
       leadDegree: 'MS Ortho, MCh Ortho (UK)',
-      accentColor: '#059669',
-      accentBg: 'bg-[#F0FDF4] text-[#047857] border-[#A7F3D0]',
+      accentColor: '#0284C7',
+      accentBg: 'bg-[#FEF2F2] text-[#B91C1C] border-[#FECDD3]',
       description: 'Class-100 laminar airflow operating suites utilizing computer-navigated sub-millimeter robotic precision for fast-track 24-hour joint rehabilitation.',
       procedures: [
         'Robotic Total Knee Arthroplasty',
@@ -152,7 +152,7 @@ export default function DepartmentRealmsSection() {
                 <span className="text-lg font-extrabold text-[#173C59] block">{current.stats.primary}</span>
                 <span className="text-[10px] uppercase font-bold text-slate-400">{current.stats.label}</span>
               </div>
-              <span className="px-2 py-0.5 rounded bg-[#F0FDF4] text-[#047857] text-[10px] font-bold">
+              <span className="px-2 py-0.5 rounded bg-[#FEF2F2] text-[#B91C1C] text-[10px] font-bold">
                 Active Protocol
               </span>
             </div>

@@ -147,7 +147,7 @@ export default function CardiologyShowcaseSection() {
   ];
 
   return (
-    <section id="cardiology" className="relative min-h-[92vh] flex items-center py-20 lg:py-28 px-4 sm:px-6 lg:px-12 overflow-hidden bg-gradient-to-b from-[#FFFDF9] via-[#F0FDF4]/50 to-[#FAFBF9] border-b border-[#A7F3D0]/70 select-none">
+    <section id="cardiology" className="relative min-h-[92vh] flex items-center py-20 lg:py-28 px-4 sm:px-6 lg:px-12 overflow-hidden bg-gradient-to-b from-[#FFFDF9] via-[#FEF2F2]/50 to-[#FAFBFD] border-b border-[#FECDD3]/70 select-none">
       
       {/* 1. 3D WebGL Background Environment (Subtle emerald rings & bioparticles) */}
       <CardiologyFullCanvas />
@@ -169,57 +169,57 @@ export default function CardiologyShowcaseSection() {
           >
             <source src="/videos/facilities-walkthrough.mp4" type="video/mp4" />
           </video>
-          <div className="absolute inset-0 bg-gradient-to-b from-[#FFFDF9]/85 via-transparent to-[#FAFBF9]/90" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#FFFDF9]/85 via-transparent to-[#FAFBFD]/90" />
         </div>
 
         {/* Luminous Emerald, Mint & Soft Amber Glow Spheres */}
-        <div className="absolute top-1/4 left-1/4 w-[700px] h-[700px] bg-gradient-to-tr from-[#059669]/20 via-[#10B981]/15 to-transparent rounded-full blur-[140px] animate-orb-1" />
-        <div className="absolute bottom-10 right-1/4 w-[650px] h-[650px] bg-gradient-to-bl from-[#047857]/20 via-[#A7F3D0]/25 to-transparent rounded-full blur-[130px] animate-orb-2" />
-        <div className="absolute top-1/2 right-10 w-[450px] h-[450px] bg-emerald-300/15 rounded-full blur-[120px] animate-pulse" />
+        <div className="absolute top-1/4 left-1/4 w-[700px] h-[700px] bg-gradient-to-tr from-[#0284C7]/20 via-[#0EA5E9]/15 to-transparent rounded-full blur-[140px] animate-orb-1" />
+        <div className="absolute bottom-10 right-1/4 w-[650px] h-[650px] bg-gradient-to-bl from-[#B91C1C]/20 via-[#FECDD3]/25 to-transparent rounded-full blur-[130px] animate-orb-2" />
+        <div className="absolute top-1/2 right-10 w-[450px] h-[450px] bg-rose-300/15 rounded-full blur-[120px] animate-pulse" />
 
         {/* Architectural CAD Blueprint Grid */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#064E3B14_1.5px,transparent_1.5px),linear-gradient(to_bottom,#064E3B14_1.5px,transparent_1.5px)] bg-[size:4.5rem_4.5rem] [mask-image:radial-gradient(ellipse_80%_70%_at_50%_35%,#000_70%,transparent_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#991B1B14_1.5px,transparent_1.5px),linear-gradient(to_bottom,#991B1B14_1.5px,transparent_1.5px)] bg-[size:4.5rem_4.5rem] [mask-image:radial-gradient(ellipse_80%_70%_at_50%_35%,#000_70%,transparent_100%)]" />
 
         {/* Sub-Millimeter Dot Coordinate Array */}
-        <div className="absolute inset-0 bg-[radial-gradient(#05966922_1.5px,transparent_1.5px)] bg-[size:32px_32px] [mask-image:radial-gradient(ellipse_75%_65%_at_50%_40%,#000_75%,transparent_100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(#0284C722_1.5px,transparent_1.5px)] bg-[size:32px_32px] [mask-image:radial-gradient(ellipse_75%_65%_at_50%_40%,#000_75%,transparent_100%)]" />
 
         {/* Continuous Flowing ECG Cardiac Sinus Rhythm Wave */}
         <svg className="absolute inset-x-0 bottom-8 w-full h-32 opacity-35 pointer-events-none" viewBox="0 0 1440 120" fill="none" preserveAspectRatio="none">
           <path
             d="M 0,60 L 120,60 L 140,60 L 150,35 L 160,85 L 175,10 L 190,110 L 205,50 L 220,60 L 360,60 L 480,60 L 500,60 L 510,35 L 520,85 L 535,10 L 550,110 L 565,50 L 580,60 L 720,60 L 840,60 L 860,60 L 870,35 L 880,85 L 895,10 L 910,110 L 925,50 L 940,60 L 1080,60 L 1200,60 L 1220,60 L 1230,35 L 1240,85 L 1255,10 L 1270,110 L 1285,50 L 1300,60 L 1440,60"
-            stroke="#059669"
+            stroke="#0284C7"
             strokeWidth="2.5"
             strokeDasharray="1600"
             className="animate-ecg-dash"
           />
-          <circle cx="535" cy="10" r="4.5" fill="#10B981" className="animate-ping" />
-          <circle cx="895" cy="10" r="4.5" fill="#10B981" className="animate-ping" />
-          <circle cx="1255" cy="10" r="4.5" fill="#10B981" className="animate-ping" />
+          <circle cx="535" cy="10" r="4.5" fill="#0EA5E9" className="animate-ping" />
+          <circle cx="895" cy="10" r="4.5" fill="#0EA5E9" className="animate-ping" />
+          <circle cx="1255" cy="10" r="4.5" fill="#0EA5E9" className="animate-ping" />
         </svg>
 
         {/* Rotating Doppler Radar Compass Arc (Top Right) */}
         <div className="absolute top-16 -right-20 w-[550px] h-[550px] pointer-events-none hidden md:block opacity-40">
-          <div className="absolute inset-0 rounded-full border-2 border-dashed border-[#059669]/40 animate-radar-sweep" />
-          <div className="absolute inset-16 rounded-full border border-[#047857]/30 border-t-[#10B981] animate-rotate-reverse" />
-          <div className="absolute inset-32 rounded-full border border-dashed border-[#059669]/25 flex items-center justify-center">
-            <div className="w-full h-px bg-[#059669]/30" />
-            <div className="h-full w-px bg-[#059669]/30 absolute" />
-            <div className="w-4 h-4 rounded-full bg-[#10B981] animate-ping absolute" />
+          <div className="absolute inset-0 rounded-full border-2 border-dashed border-[#0284C7]/40 animate-radar-sweep" />
+          <div className="absolute inset-16 rounded-full border border-[#B91C1C]/30 border-t-[#0EA5E9] animate-rotate-reverse" />
+          <div className="absolute inset-32 rounded-full border border-dashed border-[#0284C7]/25 flex items-center justify-center">
+            <div className="w-full h-px bg-[#0284C7]/30" />
+            <div className="h-full w-px bg-[#0284C7]/30 absolute" />
+            <div className="w-4 h-4 rounded-full bg-[#0EA5E9] animate-ping absolute" />
           </div>
         </div>
 
         {/* Active Sweeping Fluoroscopy Laser Scan */}
-        <div className="absolute inset-x-0 h-[2.5px] bg-gradient-to-r from-transparent via-[#10B981] to-transparent shadow-[0_0_16px_#10B981] opacity-50 animate-laser-sweep pointer-events-none" />
+        <div className="absolute inset-x-0 h-[2.5px] bg-gradient-to-r from-transparent via-[#0EA5E9] to-transparent shadow-[0_0_16px_#0EA5E9] opacity-50 animate-laser-sweep pointer-events-none" />
 
         {/* CAD Crosshairs (+) & GPS Telemetry */}
-        <div className="absolute top-20 left-12 text-[#047857]/35 font-mono text-xs select-none hidden sm:block">+ 26.7606°N [BETIAHATA]</div>
-        <div className="absolute top-20 right-28 text-[#047857]/35 font-mono text-xs select-none hidden sm:block">+ CATH LAB FLURO 01</div>
+        <div className="absolute top-20 left-12 text-[#B91C1C]/35 font-mono text-xs select-none hidden sm:block">+ 26.7606°N [BETIAHATA]</div>
+        <div className="absolute top-20 right-28 text-[#B91C1C]/35 font-mono text-xs select-none hidden sm:block">+ CATH LAB FLURO 01</div>
 
         {/* Clinical Hemodynamics Watermark Stamp */}
-        <div className="absolute top-14 right-10 font-mono text-[10px] text-[#064E3B]/40 tracking-wider hidden lg:block bg-white/70 px-3.5 py-2 rounded-xl border border-[#A7F3D0] backdrop-blur-xs text-right">
-          <div className="font-bold text-[#064E3B]">LV-EF: 62% • TIMI-3 CORONARY FLOW</div>
-          <div className="text-[#047857]">TRANSRADIAL CATHETER SUITE 01</div>
-          <div className="text-[#059669] text-[9px]">SIEMENS ARTIS ZEE • FLAT-PANEL C-ARM</div>
+        <div className="absolute top-14 right-10 font-mono text-[10px] text-[#991B1B]/40 tracking-wider hidden lg:block bg-white/70 px-3.5 py-2 rounded-xl border border-[#FECDD3] backdrop-blur-xs text-right">
+          <div className="font-bold text-[#991B1B]">LV-EF: 62% • TIMI-3 CORONARY FLOW</div>
+          <div className="text-[#B91C1C]">TRANSRADIAL CATHETER SUITE 01</div>
+          <div className="text-[#0284C7] text-[9px]">SIEMENS ARTIS ZEE • FLAT-PANEL C-ARM</div>
         </div>
       </div>
 
@@ -237,27 +237,27 @@ export default function CardiologyShowcaseSection() {
             
             {/* 1. Header Badges */}
             <div className="space-y-3">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#F0FDF4] text-[#064E3B] border border-[#A7F3D0] text-xs font-bold uppercase tracking-[0.22em] shadow-xs">
-                <HeartPulse className="w-4 h-4 text-[#059669] animate-pulse" />
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FEF2F2] text-[#991B1B] border border-[#FECDD3] text-xs font-bold uppercase tracking-[0.22em] shadow-xs">
+                <HeartPulse className="w-4 h-4 text-[#0284C7] animate-pulse" />
                 <span>Cardiovascular Sciences &amp; Hemodynamics</span>
               </div>
 
-              <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#064E3B] tracking-[-0.03em] leading-[1.05]">
+              <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#991B1B] tracking-[-0.03em] leading-[1.05]">
                 Preserving Every <br />
-                <span className="font-serif italic font-normal text-[#059669]">Heartbeat with Precision.</span>
+                <span className="font-serif italic font-normal text-[#0284C7]">Heartbeat with Precision.</span>
               </h2>
 
               {/* Lead Cardiologist Pill Badge */}
-              <div className="flex items-center gap-3 p-2.5 rounded-2xl bg-white/95 border border-[#A7F3D0] shadow-sm max-w-md">
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#064E3B] to-[#047857] border border-[#A7F3D0] flex items-center justify-center text-[#A7F3D0] shrink-0">
+              <div className="flex items-center gap-3 p-2.5 rounded-2xl bg-white/95 border border-[#FECDD3] shadow-sm max-w-md">
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#991B1B] to-[#B91C1C] border border-[#FECDD3] flex items-center justify-center text-[#FECDD3] shrink-0">
                   <Stethoscope className="w-5 h-5 stroke-[1.8]" />
                 </div>
                 <div className="text-left">
                   <div className="flex items-center gap-1.5">
-                    <span className="text-xs font-extrabold text-[#064E3B]">Dr. Prakash Chand Shahi</span>
-                    <span className="text-[9px] font-mono font-bold px-2 py-0.5 rounded-full bg-[#F0FDF4] text-[#064E3B] border border-[#34D399]">LEAD CLINICIAN</span>
+                    <span className="text-xs font-extrabold text-[#991B1B]">Dr. Prakash Chand Shahi</span>
+                    <span className="text-[9px] font-mono font-bold px-2 py-0.5 rounded-full bg-[#FEF2F2] text-[#991B1B] border border-[#38BDF8]">LEAD CLINICIAN</span>
                   </div>
-                  <span className="text-[10px] text-[#047857] font-mono font-bold block">
+                  <span className="text-[10px] text-[#B91C1C] font-mono font-bold block">
                     DM Cardiology (PGIMER) • MD (KGMU Lucknow)
                   </span>
                 </div>
@@ -276,13 +276,13 @@ export default function CardiologyShowcaseSection() {
                     onClick={() => setActiveChannel(proc.id)}
                     className={`group relative text-left p-3 rounded-2xl transition-all duration-300 border-2 overflow-hidden ${
                       isActive
-                        ? 'bg-gradient-to-br from-white via-[#F0FDF4] to-white border-[#059669] shadow-lg -translate-y-1 ring-2 ring-[#10B981]/25'
-                        : 'bg-white/90 hover:bg-white border-[#A7F3D0]/70 hover:border-[#059669]/60 shadow-xs hover:shadow-md hover:-translate-y-0.5'
+                        ? 'bg-gradient-to-br from-white via-[#FEF2F2] to-white border-[#0284C7] shadow-lg -translate-y-1 ring-2 ring-[#0EA5E9]/25'
+                        : 'bg-white/90 hover:bg-white border-[#FECDD3]/70 hover:border-[#0284C7]/60 shadow-xs hover:shadow-md hover:-translate-y-0.5'
                     }`}
                   >
                     {/* Top Row: 3D Thumbnail & Active Ping */}
                     <div className="flex items-center justify-between gap-2 mb-2.5">
-                      <div className="relative w-12 h-12 rounded-xl overflow-hidden border-2 border-[#A7F3D0] shrink-0 shadow-xs">
+                      <div className="relative w-12 h-12 rounded-xl overflow-hidden border-2 border-[#FECDD3] shrink-0 shadow-xs">
                         <img
                           src={proc.image}
                           alt={proc.title}
@@ -297,8 +297,8 @@ export default function CardiologyShowcaseSection() {
                       <div className="text-right">
                         <span className={`text-[10px] font-mono font-bold px-2 py-0.5 rounded-full border block ${
                           isActive
-                            ? 'bg-[#064E3B] text-white border-[#064E3B]'
-                            : 'bg-[#F0FDF4] text-[#047857] border-[#A7F3D0]'
+                            ? 'bg-[#991B1B] text-white border-[#991B1B]'
+                            : 'bg-[#FEF2F2] text-[#B91C1C] border-[#FECDD3]'
                         }`}>
                           {proc.metric}
                         </span>
@@ -311,7 +311,7 @@ export default function CardiologyShowcaseSection() {
                     {/* Procedure Title */}
                     <div className="space-y-0.5">
                       <h3 className={`text-xs font-bold leading-tight ${
-                        isActive ? 'text-[#064E3B]' : 'text-slate-800 group-hover:text-[#064E3B]'
+                        isActive ? 'text-[#991B1B]' : 'text-slate-800 group-hover:text-[#991B1B]'
                       }`}>
                         {proc.title}
                       </h3>
@@ -319,7 +319,7 @@ export default function CardiologyShowcaseSection() {
 
                     {/* Active Bottom Glow Line */}
                     {isActive && (
-                      <div className="absolute bottom-0 inset-x-0 h-1 bg-gradient-to-r from-[#064E3B] via-[#10B981] to-[#047857]" />
+                      <div className="absolute bottom-0 inset-x-0 h-1 bg-gradient-to-r from-[#991B1B] via-[#0EA5E9] to-[#B91C1C]" />
                     )}
                   </button>
                 );
@@ -330,7 +330,7 @@ export default function CardiologyShowcaseSection() {
             <div className="flex flex-wrap items-center gap-3 pt-2">
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-gradient-to-r from-[#064E3B] via-[#047857] to-[#059669] hover:from-[#022C22] hover:to-[#064E3B] text-white font-bold text-xs uppercase tracking-wider shadow-md shadow-[#064E3B]/20 transition-all hover:scale-102"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-gradient-to-r from-[#991B1B] via-[#B91C1C] to-[#DC2626] hover:from-[#7F1D1D] hover:to-[#991B1B] text-white font-bold text-xs uppercase tracking-wider shadow-md shadow-[#991B1B]/20 transition-all hover:scale-102"
               >
                 <span>Book Priority OPD Pass</span>
                 <ArrowRight className="w-4 h-4 text-amber-300" />
@@ -338,10 +338,10 @@ export default function CardiologyShowcaseSection() {
 
               <Link
                 to="/treatments"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-white hover:bg-[#F0FDF4] text-[#064E3B] font-bold text-xs uppercase tracking-wider border-2 border-[#A7F3D0] shadow-xs transition-all"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-white hover:bg-[#FEF2F2] text-[#991B1B] font-bold text-xs uppercase tracking-wider border-2 border-[#FECDD3] shadow-xs transition-all"
               >
                 <span>Explore Treatments Dossier</span>
-                <ChevronRight className="w-4 h-4 text-[#059669]" />
+                <ChevronRight className="w-4 h-4 text-[#0284C7]" />
               </Link>
             </div>
 
@@ -353,7 +353,7 @@ export default function CardiologyShowcaseSection() {
           <div className="lg:col-span-6 space-y-4">
             
             {/* The Main High-End 3D Visual Console */}
-            <div className="relative rounded-[2.5rem] bg-slate-950 border-2 border-[#A7F3D0] shadow-2xl overflow-hidden group">
+            <div className="relative rounded-[2.5rem] bg-slate-950 border-2 border-[#FECDD3] shadow-2xl overflow-hidden group">
               
               {/* Media Container with 4K Cine Video & Smooth Loop */}
               <div className="relative aspect-[16/11] w-full overflow-hidden">
@@ -376,7 +376,7 @@ export default function CardiologyShowcaseSection() {
                 {/* Top HUD Status Bar */}
                 <div className="absolute top-4 left-4 right-4 flex items-center justify-between z-20 text-white font-mono text-[11px]">
                   <div className="flex items-center gap-2">
-                    <span className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/70 backdrop-blur-md border border-white/20 text-[#A7F3D0] font-bold">
+                    <span className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/70 backdrop-blur-md border border-white/20 text-[#FECDD3] font-bold">
                       <Radio className="w-3 h-3 text-red-500 animate-ping" />
                       <span>LIVE CATH-LAB FLURO</span>
                     </span>
@@ -388,7 +388,7 @@ export default function CardiologyShowcaseSection() {
                   <div className="flex items-center gap-2">
                     <button
                       onClick={() => setIsVideoModalOpen(true)}
-                      className="px-3 py-1 rounded-full bg-[#10B981] hover:bg-[#059669] text-slate-950 font-sans text-xs font-bold flex items-center gap-1.5 shadow-md transition-all cursor-pointer"
+                      className="px-3 py-1 rounded-full bg-[#0EA5E9] hover:bg-[#0284C7] text-slate-950 font-sans text-xs font-bold flex items-center gap-1.5 shadow-md transition-all cursor-pointer"
                     >
                       <Play className="w-3 h-3 fill-current" />
                       <span>Watch Reel</span>
@@ -398,17 +398,17 @@ export default function CardiologyShowcaseSection() {
 
                 {/* Center Precision Aim Crosshairs */}
                 <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-10 opacity-30">
-                  <div className="w-24 h-24 border border-[#10B981] rounded-full flex items-center justify-center">
-                    <div className="w-full h-px bg-[#10B981]" />
-                    <div className="h-full w-px bg-[#10B981] absolute" />
-                    <div className="w-3 h-3 rounded-full bg-[#10B981] animate-ping absolute" />
+                  <div className="w-24 h-24 border border-[#0EA5E9] rounded-full flex items-center justify-center">
+                    <div className="w-full h-px bg-[#0EA5E9]" />
+                    <div className="h-full w-px bg-[#0EA5E9] absolute" />
+                    <div className="w-3 h-3 rounded-full bg-[#0EA5E9] animate-ping absolute" />
                   </div>
                 </div>
 
                 {/* Bottom Overlay Title & Live Telemetry Metrics */}
                 <div className="absolute bottom-0 inset-x-0 p-5 sm:p-6 z-20 text-white space-y-2">
                   <div className="flex items-center justify-between gap-3">
-                    <span className="text-[10px] font-mono font-bold tracking-widest text-[#10B981] uppercase bg-[#022C22]/80 px-2.5 py-0.5 rounded border border-[#059669]/40">
+                    <span className="text-[10px] font-mono font-bold tracking-widest text-[#0EA5E9] uppercase bg-[#450A0A]/80 px-2.5 py-0.5 rounded border border-[#0284C7]/40">
                       {current.category}
                     </span>
                     <span className="text-xs font-mono font-bold text-amber-300">
@@ -428,7 +428,7 @@ export default function CardiologyShowcaseSection() {
                   <div className="pt-2 grid grid-cols-2 sm:grid-cols-4 gap-2 text-[10px] font-mono border-t border-white/15">
                     <div className="bg-black/40 p-1.5 rounded-lg border border-white/10">
                       <span className="text-slate-400 block text-[9px]">SINUS RHYTHM</span>
-                      <span className="text-[#34D399] font-bold">{current.telemetry.rhythm}</span>
+                      <span className="text-[#38BDF8] font-bold">{current.telemetry.rhythm}</span>
                     </div>
                     <div className="bg-black/40 p-1.5 rounded-lg border border-white/10">
                       <span className="text-slate-400 block text-[9px]">VESSEL GAIN</span>
@@ -436,7 +436,7 @@ export default function CardiologyShowcaseSection() {
                     </div>
                     <div className="bg-black/40 p-1.5 rounded-lg border border-white/10">
                       <span className="text-slate-400 block text-[9px]">PERFUSION</span>
-                      <span className="text-[#A7F3D0] font-bold">{current.telemetry.flowGrade}</span>
+                      <span className="text-[#FECDD3] font-bold">{current.telemetry.flowGrade}</span>
                     </div>
                     <div className="bg-black/40 p-1.5 rounded-lg border border-white/10">
                       <span className="text-slate-400 block text-[9px]">RADIATION</span>
@@ -459,8 +459,8 @@ export default function CardiologyShowcaseSection() {
                     onClick={() => setActiveChannel(chan.id)}
                     className={`flex-1 py-2 px-2.5 rounded-xl text-[11px] font-bold tracking-wide transition-all duration-300 text-center truncate ${
                       isActive
-                        ? 'bg-[#064E3B] text-white shadow-md border border-[#10B981]'
-                        : 'bg-white hover:bg-[#F0FDF4] text-slate-700 border border-[#A7F3D0]/70'
+                        ? 'bg-[#991B1B] text-white shadow-md border border-[#0EA5E9]'
+                        : 'bg-white hover:bg-[#FEF2F2] text-slate-700 border border-[#FECDD3]/70'
                     }`}
                   >
                     {chan.id === 'stenting' && '🫀 Stenting'}
@@ -473,24 +473,24 @@ export default function CardiologyShowcaseSection() {
             </div>
 
             {/* Verified Clinical Facts Ribbon Under Visual Console */}
-            <div className="pt-2 grid grid-cols-2 sm:grid-cols-4 gap-3 bg-white/90 p-3 rounded-2xl border border-[#A7F3D0] shadow-xs">
+            <div className="pt-2 grid grid-cols-2 sm:grid-cols-4 gap-3 bg-white/90 p-3 rounded-2xl border border-[#FECDD3] shadow-xs">
               <div className="text-left px-2 border-r border-slate-200">
-                <span className="text-xl font-extrabold text-[#064E3B] block leading-none">15,000+</span>
+                <span className="text-xl font-extrabold text-[#991B1B] block leading-none">15,000+</span>
                 <span className="text-[10px] text-slate-600 font-bold uppercase tracking-wider block pt-1">Procedures</span>
                 <span className="text-[9px] text-slate-500 block">Radial angioplasty</span>
               </div>
               <div className="text-left px-2 sm:border-r border-slate-200">
-                <span className="text-xl font-extrabold text-[#047857] block leading-none">&lt; 45 Min</span>
+                <span className="text-xl font-extrabold text-[#B91C1C] block leading-none">&lt; 45 Min</span>
                 <span className="text-[10px] text-slate-600 font-bold uppercase tracking-wider block pt-1">Door-To-Balloon</span>
                 <span className="text-[9px] text-slate-500 block">24/7 STEMI standby</span>
               </div>
               <div className="text-left px-2 border-r border-slate-200">
-                <span className="text-xl font-extrabold text-[#059669] block leading-none">99.4%</span>
+                <span className="text-xl font-extrabold text-[#0284C7] block leading-none">99.4%</span>
                 <span className="text-[10px] text-slate-600 font-bold uppercase tracking-wider block pt-1">Patency</span>
                 <span className="text-[9px] text-slate-500 block">Restored blood flow</span>
               </div>
               <div className="text-left px-2">
-                <span className="text-xl font-extrabold text-[#064E3B] block leading-none">22+ Yrs</span>
+                <span className="text-xl font-extrabold text-[#991B1B] block leading-none">22+ Yrs</span>
                 <span className="text-[10px] text-slate-600 font-bold uppercase tracking-wider block pt-1">Experience</span>
                 <span className="text-[9px] text-slate-500 block">Dr. Prakash Chand Shahi</span>
               </div>

@@ -82,7 +82,7 @@ export default function HeroSection() {
         {/* Top Status & Location Bar */}
         <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
           <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/95 backdrop-blur-md border border-slate-200/90 shadow-xs hover:shadow-md transition-all">
-            <span className="w-2.5 h-2.5 rounded-full bg-[#10B981 animate-ping" />
+            <span className="w-2.5 h-2.5 rounded-full bg-[#0EA5E9 animate-ping" />
             <span className="text-xs font-mono font-bold uppercase tracking-wider text-slate-900">
               Pulse Heart Centre • Betiahata, Gorakhpur
             </span>

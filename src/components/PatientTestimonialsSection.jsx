@@ -53,7 +53,7 @@ export default function PatientTestimonialsSection() {
   const current = stories[activeStory];
 
   return (
-    <section className="relative py-24 lg:py-32 overflow-hidden select-none bg-gradient-to-b from-[#FAFBF9] via-[#F0FDF4]/25 to-[#FAFBF9]">
+    <section className="relative py-24 lg:py-32 overflow-hidden select-none bg-gradient-to-b from-[#FAFBFD] via-[#FEF2F2]/25 to-[#FAFBFD]">
       
       {/* =========================================================================
           UNIQUE SECTION BACKGROUND: TESTIMONIAL VIDEO & SOUNDWAVE HARMONICS
@@ -71,19 +71,19 @@ export default function PatientTestimonialsSection() {
           >
             <source src="/videos/testimonials-stories.mp4" type="video/mp4" />
           </video>
-          <div className="absolute inset-0 bg-gradient-to-b from-[#FAFBF9]/80 via-transparent to-[#FAFBF9]/90" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#FAFBFD]/80 via-transparent to-[#FAFBFD]/90" />
         </div>
 
         {/* Luminous Glow Spheres */}
-        <div className="absolute top-1/4 -left-20 w-[600px] h-[600px] bg-gradient-to-tr from-[#059669]/20 via-teal-300/15 to-transparent rounded-full blur-[140px]" />
+        <div className="absolute top-1/4 -left-20 w-[600px] h-[600px] bg-gradient-to-tr from-[#0284C7]/20 via-teal-300/15 to-transparent rounded-full blur-[140px]" />
         <div className="absolute bottom-10 -right-20 w-[600px] h-[600px] bg-gradient-to-bl from-amber-400/15 via-rose-300/10 to-transparent rounded-full blur-[140px]" />
 
         {/* Dynamic Heartbeat Soundwave Harmonics */}
         <svg className="absolute inset-0 w-full h-full opacity-25" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <linearGradient id="soundwaveGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#047857" stopOpacity="0.2" />
-              <stop offset="50%" stopColor="#059669" stopOpacity="0.8" />
+              <stop offset="0%" stopColor="#B91C1C" stopOpacity="0.2" />
+              <stop offset="50%" stopColor="#0284C7" stopOpacity="0.8" />
               <stop offset="100%" stopColor="#F59E0B" stopOpacity="0.3" />
             </linearGradient>
           </defs>
@@ -98,26 +98,26 @@ export default function PatientTestimonialsSection() {
           <path
             d="M 0,480 Q 400,560 800,480 T 1600,480"
             fill="none"
-            stroke="#047857"
+            stroke="#B91C1C"
             strokeWidth="1.5"
             strokeDasharray="4 8"
           />
         </svg>
 
         {/* Sweeping Laser Beam in Testimonials Section */}
-        <div className="absolute inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-[#10B981] to-transparent shadow-[0_0_15px_#059669] opacity-40 animate-laser-v pointer-events-none" />
+        <div className="absolute inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-[#0EA5E9] to-transparent shadow-[0_0_15px_#0284C7] opacity-40 animate-laser-v pointer-events-none" />
 
         {/* Rotating CAD Precision Ring */}
-        <div className="absolute -bottom-16 -left-16 w-80 h-80 rounded-full border border-[#059669]/20 hidden lg:block">
-          <div className="absolute inset-4 rounded-full border border-dashed border-[#10B981]/30 animate-gentle-cw" />
+        <div className="absolute -bottom-16 -left-16 w-80 h-80 rounded-full border border-[#0284C7]/20 hidden lg:block">
+          <div className="absolute inset-4 rounded-full border border-dashed border-[#0EA5E9]/30 animate-gentle-cw" />
         </div>
 
         {/* Floating Medical Crosses */}
-        <div className="absolute top-16 right-16 text-[#059669]/30 font-mono text-base font-bold animate-medical-cross-1 select-none">+</div>
-        <div className="absolute bottom-20 left-12 text-[#059669]/25 font-mono text-base font-bold animate-medical-cross-2 select-none">+</div>
+        <div className="absolute top-16 right-16 text-[#0284C7]/30 font-mono text-base font-bold animate-medical-cross-1 select-none">+</div>
+        <div className="absolute bottom-20 left-12 text-[#0284C7]/25 font-mono text-base font-bold animate-medical-cross-2 select-none">+</div>
 
         {/* Big Watermark */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[16vw] font-black text-[#064E3B]/[0.02] tracking-tighter uppercase select-none">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[16vw] font-black text-[#991B1B]/[0.02] tracking-tighter uppercase select-none">
           RECOVERY
         </div>
       </div>
@@ -126,21 +126,21 @@ export default function PatientTestimonialsSection() {
         
         {/* Header with Doctor Stewardship Stamp */}
         <div className="text-center max-w-2xl mx-auto mb-14 space-y-3">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#F0FDF4]/80 border border-[#A7F3D0] text-[#064E3B] text-xs font-mono font-bold shadow-xs">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FEF2F2]/80 border border-[#FECDD3] text-[#991B1B] text-xs font-mono font-bold shadow-xs">
             <Heart className="w-3.5 h-3.5 text-rose-600 fill-rose-600 animate-pulse" />
             <span className="uppercase tracking-widest">Verified Clinical Outcomes</span>
           </div>
 
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-[#064E3B] tracking-tight">
-            Patient Stories &amp; <span className="font-serif italic font-normal text-[#047857]">Recovery Journeys</span>
+          <h2 className="text-3xl sm:text-5xl font-extrabold text-[#991B1B] tracking-tight">
+            Patient Stories &amp; <span className="font-serif italic font-normal text-[#B91C1C]">Recovery Journeys</span>
           </h2>
 
           <div className="flex items-center justify-center gap-2 pt-1">
-            <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-[#A7F3D0] shadow-xs">
-              <div className="w-6 h-6 rounded-full bg-gradient-to-br from-[#064E3B] to-[#047857] flex items-center justify-center text-[#A7F3D0] border border-[#A7F3D0]">
+            <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-[#FECDD3] shadow-xs">
+              <div className="w-6 h-6 rounded-full bg-gradient-to-br from-[#991B1B] to-[#B91C1C] flex items-center justify-center text-[#FECDD3] border border-[#FECDD3]">
                 <ShieldCheck className="w-3.5 h-3.5" />
               </div>
-              <span className="text-[11px] font-bold text-[#064E3B]">Under Clinical Direction of Dr. Prakash Chand Shahi</span>
+              <span className="text-[11px] font-bold text-[#991B1B]">Under Clinical Direction of Dr. Prakash Chand Shahi</span>
             </div>
           </div>
         </div>
@@ -169,9 +169,9 @@ export default function PatientTestimonialsSection() {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="p-8 rounded-[2rem] bg-white border-2 border-[#A7F3D0]/90 shadow-xl space-y-4 text-left relative"
+              className="p-8 rounded-[2rem] bg-white border-2 border-[#FECDD3]/90 shadow-xl space-y-4 text-left relative"
             >
-              <Quote className="w-10 h-10 text-[#A7F3D0] absolute top-6 right-6 -z-0" />
+              <Quote className="w-10 h-10 text-[#FECDD3] absolute top-6 right-6 -z-0" />
               
               <div className="flex items-center gap-1 text-amber-400 relative z-10">
                 {[...Array(5)].map((_, i) => (
@@ -186,10 +186,10 @@ export default function PatientTestimonialsSection() {
 
               <div className="pt-2 border-t border-slate-100 flex items-center justify-between relative z-10">
                 <div>
-                  <span className="text-xs font-bold text-[#064E3B] block">{current.procedure}</span>
-                  <span className="text-[11px] font-mono text-[#047857] font-semibold">{current.recovery}</span>
+                  <span className="text-xs font-bold text-[#991B1B] block">{current.procedure}</span>
+                  <span className="text-[11px] font-mono text-[#B91C1C] font-semibold">{current.recovery}</span>
                 </div>
-                <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#F0FDF4] text-[#064E3B] text-[10px] font-bold">
+                <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FEF2F2] text-[#991B1B] text-[10px] font-bold">
                   <UserCheck className="w-3.5 h-3.5" />
                   <span>Clinical Case File</span>
                 </div>
@@ -204,11 +204,11 @@ export default function PatientTestimonialsSection() {
                   onClick={() => setActiveStory(idx)}
                   className={`flex-1 p-3 rounded-2xl border-2 transition-all text-left ${
                     activeStory === idx
-                      ? 'bg-white border-[#059669] shadow-md ring-2 ring-emerald-200'
-                      : 'bg-white/70 border-slate-200 hover:border-[#A7F3D0]'
+                      ? 'bg-white border-[#0284C7] shadow-md ring-2 ring-rose-200'
+                      : 'bg-white/70 border-slate-200 hover:border-[#FECDD3]'
                   }`}
                 >
-                  <span className="text-[10px] font-mono font-bold text-[#064E3B] block">CASE 0{idx + 1}</span>
+                  <span className="text-[10px] font-mono font-bold text-[#991B1B] block">CASE 0{idx + 1}</span>
                   <span className="text-xs font-bold text-slate-900 truncate block">{s.name.split(' ')[0]}</span>
                 </button>
               ))}

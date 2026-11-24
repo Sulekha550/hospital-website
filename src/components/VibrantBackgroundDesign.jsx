@@ -42,7 +42,7 @@ export default function VibrantBackgroundDesign() {
       
       {/* 1. INTERACTIVE MOUSE-FOLLOWING EMERALD GLOW AURA */}
       <div 
-        className="absolute w-[450px] h-[450px] rounded-full bg-gradient-to-tr from-[#059669]/15 via-[#10B981]/12 to-emerald-200/8 blur-[110px] transition-transform duration-75 ease-out"
+        className="absolute w-[450px] h-[450px] rounded-full bg-gradient-to-tr from-[#0284C7]/15 via-[#0EA5E9]/12 to-rose-200/8 blur-[110px] transition-transform duration-75 ease-out"
         style={{
           transform: `translate3d(${cursorPos.x - 225}px, ${cursorPos.y - 225}px, 0)`,
           willChange: 'transform',
@@ -50,11 +50,11 @@ export default function VibrantBackgroundDesign() {
       />
 
       {/* 2. SOFT MEDICAL AMBIENT ORBS (Emerald, Mint, Pine, Amber) */}
-      <div className="absolute -top-32 -left-28 w-[750px] h-[750px] rounded-full bg-gradient-to-tr from-[#064E3B]/16 via-[#059669]/14 to-transparent blur-[140px] animate-float-1" />
-      <div className="absolute -top-20 -right-28 w-[700px] h-[700px] rounded-full bg-gradient-to-bl from-[#10B981]/15 via-[#34D399]/12 to-transparent blur-[130px] animate-float-2" />
-      <div className="absolute top-1/3 -left-36 w-[680px] h-[680px] rounded-full bg-gradient-to-r from-[#047857]/14 via-teal-400/10 to-transparent blur-[140px] animate-float-3" />
-      <div className="absolute top-1/2 -right-28 w-[650px] h-[650px] rounded-full bg-gradient-to-l from-amber-400/12 via-[#059669]/12 to-transparent blur-[130px] animate-float-1" />
-      <div className="absolute bottom-16 left-1/4 w-[700px] h-[700px] rounded-full bg-gradient-to-t from-[#059669]/15 via-emerald-400/12 to-transparent blur-[140px] animate-float-2" />
+      <div className="absolute -top-32 -left-28 w-[750px] h-[750px] rounded-full bg-gradient-to-tr from-[#991B1B]/16 via-[#0284C7]/14 to-transparent blur-[140px] animate-float-1" />
+      <div className="absolute -top-20 -right-28 w-[700px] h-[700px] rounded-full bg-gradient-to-bl from-[#0EA5E9]/15 via-[#38BDF8]/12 to-transparent blur-[130px] animate-float-2" />
+      <div className="absolute top-1/3 -left-36 w-[680px] h-[680px] rounded-full bg-gradient-to-r from-[#B91C1C]/14 via-teal-400/10 to-transparent blur-[140px] animate-float-3" />
+      <div className="absolute top-1/2 -right-28 w-[650px] h-[650px] rounded-full bg-gradient-to-l from-amber-400/12 via-[#0284C7]/12 to-transparent blur-[130px] animate-float-1" />
+      <div className="absolute bottom-16 left-1/4 w-[700px] h-[700px] rounded-full bg-gradient-to-t from-[#0284C7]/15 via-rose-400/12 to-transparent blur-[140px] animate-float-2" />
 
       {/* Subtle Velvet Overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-white/20 via-transparent to-white/30" />
@@ -63,14 +63,14 @@ export default function VibrantBackgroundDesign() {
       <svg className="absolute inset-0 w-full h-full opacity-40" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <linearGradient id="bgEmeraldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#064E3B" stopOpacity="0.3" />
-            <stop offset="50%" stopColor="#059669" stopOpacity="0.4" />
-            <stop offset="100%" stopColor="#10B981" stopOpacity="0.25" />
+            <stop offset="0%" stopColor="#991B1B" stopOpacity="0.3" />
+            <stop offset="50%" stopColor="#0284C7" stopOpacity="0.4" />
+            <stop offset="100%" stopColor="#0EA5E9" stopOpacity="0.25" />
           </linearGradient>
 
           <pattern id="bgMedGrid" width="60" height="60" patternUnits="userSpaceOnUse">
-            <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#059669" strokeWidth="0.5" strokeOpacity="0.08" />
-            <circle cx="60" cy="0" r="1.2" fill="#059669" fillOpacity="0.2" />
+            <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#0284C7" strokeWidth="0.5" strokeOpacity="0.08" />
+            <circle cx="60" cy="0" r="1.2" fill="#0284C7" fillOpacity="0.2" />
           </pattern>
         </defs>
 
@@ -90,7 +90,7 @@ export default function VibrantBackgroundDesign() {
         <path
           d="M -100,560 C 400,720 800,380 1300,580 C 1650,700 1950,480 2300,560"
           fill="none"
-          stroke="#047857"
+          stroke="#B91C1C"
           strokeWidth="1.2"
           strokeDasharray="4 8"
           strokeOpacity="0.25"

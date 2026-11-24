@@ -66,7 +66,7 @@ export default function ThreeDImageCard({
     >
       {/* 3D Dynamic Ambient Glow Underneath */}
       <div 
-        className="absolute -inset-3 bg-gradient-to-tr from-[#059669]/25 via-[#10B981]/20 to-teal-400/15 rounded-[2.5rem] blur-2xl opacity-60 group-hover:opacity-100 transition-all duration-500 -z-10"
+        className="absolute -inset-3 bg-gradient-to-tr from-[#0284C7]/25 via-[#0EA5E9]/20 to-teal-400/15 rounded-[2.5rem] blur-2xl opacity-60 group-hover:opacity-100 transition-all duration-500 -z-10"
         style={{
           transform: isHovered 
             ? `translate3d(${tilt.y * 1.5}px, ${-tilt.x * 1.5}px, 0)` 
@@ -76,7 +76,7 @@ export default function ThreeDImageCard({
 
       {/* Main 3D Tilted Container */}
       <div
-        className={`relative ${aspectRatio} w-full rounded-[2rem] overflow-hidden border-2 border-[#A7F3D0] bg-white transition-all duration-300 ease-out shadow-[0_20px_50px_-15px_rgba(5,150,105,0.2)]`}
+        className={`relative ${aspectRatio} w-full rounded-[2rem] overflow-hidden border-2 border-[#FECDD3] bg-white transition-all duration-300 ease-out shadow-[0_20px_50px_-15px_rgba(5,150,105,0.2)]`}
         style={{
           transformStyle: 'preserve-3d',
           transform: isHovered
@@ -108,7 +108,7 @@ export default function ThreeDImageCard({
 
         {/* Optional Sweeping Laser Beam */}
         {laserBeam && (
-          <div className="absolute inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-[#10B981] to-transparent opacity-60 animate-laser-sweep pointer-events-none z-10" />
+          <div className="absolute inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-[#0EA5E9] to-transparent opacity-60 animate-laser-sweep pointer-events-none z-10" />
         )}
 
         {/* Top 3D Floating Telemetry Pill */}
@@ -117,8 +117,8 @@ export default function ThreeDImageCard({
             className="absolute top-3.5 left-3.5 z-20 transition-transform duration-300 pointer-events-none"
             style={{ transform: isHovered ? 'translateZ(35px)' : 'translateZ(0px)' }}
           >
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/95 backdrop-blur-md border border-[#A7F3D0] text-[10px] font-mono font-bold text-[#064E3B] shadow-md">
-              <span className="w-2 h-2 rounded-full bg-[#10B981] animate-pulse" />
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/95 backdrop-blur-md border border-[#FECDD3] text-[10px] font-mono font-bold text-[#991B1B] shadow-md">
+              <span className="w-2 h-2 rounded-full bg-[#0EA5E9] animate-pulse" />
               {badge}
             </span>
           </div>
@@ -127,17 +127,17 @@ export default function ThreeDImageCard({
         {/* Bottom 3D Floating Stat Badge */}
         {(stat || title) && (
           <div 
-            className="absolute bottom-3 left-3 right-3 z-20 p-3 rounded-2xl bg-white/95 backdrop-blur-xl border border-[#A7F3D0] shadow-xl transition-transform duration-300 text-left"
+            className="absolute bottom-3 left-3 right-3 z-20 p-3 rounded-2xl bg-white/95 backdrop-blur-xl border border-[#FECDD3] shadow-xl transition-transform duration-300 text-left"
             style={{ transform: isHovered ? 'translateZ(40px)' : 'translateZ(0px)' }}
           >
             {title && (
-              <h4 className="text-xs sm:text-sm font-extrabold text-[#064E3B] tracking-tight leading-snug truncate">
+              <h4 className="text-xs sm:text-sm font-extrabold text-[#991B1B] tracking-tight leading-snug truncate">
                 {title}
               </h4>
             )}
             {stat && (
               <div className="flex items-center justify-between gap-2 mt-0.5">
-                <span className="text-xs sm:text-sm font-mono font-black text-[#047857]">
+                <span className="text-xs sm:text-sm font-mono font-black text-[#B91C1C]">
                   {stat}
                 </span>
                 {statSub && (
@@ -161,10 +161,10 @@ export default function ThreeDImageCard({
         )}
 
         {/* 3D Border Corner Accents */}
-        <div className="absolute top-2 left-2 text-emerald-400 font-mono text-xs select-none pointer-events-none opacity-60">┌</div>
-        <div className="absolute top-2 right-2 text-emerald-400 font-mono text-xs select-none pointer-events-none opacity-60">┐</div>
-        <div className="absolute bottom-2 left-2 text-emerald-400 font-mono text-xs select-none pointer-events-none opacity-60">└</div>
-        <div className="absolute bottom-2 right-2 text-emerald-400 font-mono text-xs select-none pointer-events-none opacity-60">┘</div>
+        <div className="absolute top-2 left-2 text-rose-400 font-mono text-xs select-none pointer-events-none opacity-60">┌</div>
+        <div className="absolute top-2 right-2 text-rose-400 font-mono text-xs select-none pointer-events-none opacity-60">┐</div>
+        <div className="absolute bottom-2 left-2 text-rose-400 font-mono text-xs select-none pointer-events-none opacity-60">└</div>
+        <div className="absolute bottom-2 right-2 text-rose-400 font-mono text-xs select-none pointer-events-none opacity-60">┘</div>
       </div>
     </div>
   );

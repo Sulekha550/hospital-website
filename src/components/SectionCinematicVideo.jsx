@@ -177,7 +177,7 @@ export default function SectionCinematicVideo({
       switch (type) {
         case 'hero-architecture': {
           const grad = ctx.createLinearGradient(0, 0, W, H);
-          grad.addColorStop(0, '#064E3B');
+          grad.addColorStop(0, '#991B1B');
           grad.addColorStop(0.5, '#031711');
           grad.addColorStop(1, '#02100C');
           ctx.fillStyle = grad;
@@ -283,7 +283,7 @@ export default function SectionCinematicVideo({
           const cy = H * 0.5;
           const angle = (Math.sin(t * 1.2) + 1) * 0.5 * (Math.PI * 0.65);
 
-          ctx.strokeStyle = '#059669';
+          ctx.strokeStyle = '#0284C7';
           ctx.lineWidth = 4;
           ctx.beginPath();
           ctx.moveTo(cx, cy);
@@ -292,7 +292,7 @@ export default function SectionCinematicVideo({
 
           const tx = cx + Math.sin(angle) * Math.min(W, H) * 0.32;
           const ty = cy + Math.cos(angle) * Math.min(W, H) * 0.32;
-          ctx.strokeStyle = '#34D399';
+          ctx.strokeStyle = '#38BDF8';
           ctx.lineWidth = 4;
           ctx.beginPath();
           ctx.moveTo(cx, cy);
@@ -301,7 +301,7 @@ export default function SectionCinematicVideo({
 
           ctx.beginPath();
           ctx.arc(cx, cy, 8, 0, Math.PI * 2);
-          ctx.fillStyle = '#047857';
+          ctx.fillStyle = '#B91C1C';
           ctx.fill();
           break;
         }
@@ -325,7 +325,7 @@ export default function SectionCinematicVideo({
           ctx.restore();
 
           const laserY = ((Math.sin(t * 1.5) + 1) / 2) * H;
-          ctx.strokeStyle = '#34D399';
+          ctx.strokeStyle = '#38BDF8';
           ctx.lineWidth = 2;
           ctx.beginPath();
           ctx.moveTo(0, laserY);
@@ -336,7 +336,7 @@ export default function SectionCinematicVideo({
 
         default: {
           const grad = ctx.createLinearGradient(0, 0, W, H);
-          grad.addColorStop(0, '#064E3B');
+          grad.addColorStop(0, '#991B1B');
           grad.addColorStop(0.5, '#042F24');
           grad.addColorStop(1, '#021811');
           ctx.fillStyle = grad;
@@ -376,23 +376,23 @@ export default function SectionCinematicVideo({
   const getContainerStyle = () => {
     switch (styleVariant) {
       case 'floating-3d':
-        return 'relative rounded-[2.5rem] p-3 sm:p-4 bg-gradient-to-b from-white/95 via-[#F0FDF4]/40 to-white/90 border-2 border-[#A7F3D0] shadow-2xl backdrop-blur-xl group hover:shadow-emerald-900/25 transition-all duration-500 hover:-translate-y-1.5';
+        return 'relative rounded-[2.5rem] p-3 sm:p-4 bg-gradient-to-b from-white/95 via-[#FEF2F2]/40 to-white/90 border-2 border-[#FECDD3] shadow-2xl backdrop-blur-xl group hover:shadow-rose-900/25 transition-all duration-500 hover:-translate-y-1.5';
       case 'split-screen':
-        return 'relative rounded-3xl overflow-hidden border-2 border-[#A7F3D0]/60 shadow-xl bg-slate-950 group';
+        return 'relative rounded-3xl overflow-hidden border-2 border-[#FECDD3]/60 shadow-xl bg-slate-950 group';
       case 'curved-mask':
-        return 'relative rounded-[3.5rem] overflow-hidden border-4 border-[#A7F3D0]/90 shadow-2xl bg-black group';
+        return 'relative rounded-[3.5rem] overflow-hidden border-4 border-[#FECDD3]/90 shadow-2xl bg-black group';
       case 'asymmetric':
         return 'relative rounded-[2.5rem] overflow-hidden border-2 border-amber-200/80 shadow-2xl bg-black transform -rotate-1 hover:rotate-0 transition-transform duration-500 group';
       case 'video-card':
-        return 'relative rounded-2xl overflow-hidden border border-[#A7F3D0] shadow-md hover:shadow-xl transition-all duration-300 group';
+        return 'relative rounded-2xl overflow-hidden border border-[#FECDD3] shadow-md hover:shadow-xl transition-all duration-300 group';
       case 'panoramic-stage':
-        return 'relative w-full rounded-[2.5rem] overflow-hidden border-2 border-[#059669]/30 shadow-2xl bg-slate-950 group';
+        return 'relative w-full rounded-[2.5rem] overflow-hidden border-2 border-[#0284C7]/30 shadow-2xl bg-slate-950 group';
       case 'circular-pod':
-        return 'relative rounded-full aspect-square overflow-hidden border-4 border-[#059669]/60 shadow-2xl bg-slate-950 group';
+        return 'relative rounded-full aspect-square overflow-hidden border-4 border-[#0284C7]/60 shadow-2xl bg-slate-950 group';
       case 'fullscreen-bg':
         return 'absolute inset-0 w-full h-full overflow-hidden pointer-events-none -z-10';
       default:
-        return 'relative rounded-3xl overflow-hidden border border-[#A7F3D0] shadow-xl bg-slate-950 group';
+        return 'relative rounded-3xl overflow-hidden border border-[#FECDD3] shadow-xl bg-slate-950 group';
     }
   };
 
@@ -463,7 +463,7 @@ export default function SectionCinematicVideo({
 
         {/* 5. TOP HUD STRIP: Live Broadcast Status & Quick Control Buttons */}
         <div className="absolute top-3 left-3 right-3 z-20 flex items-center justify-between text-white">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-[#059669]/30 text-[10px] font-mono font-bold text-[#A7F3D0] shadow-sm pointer-events-none">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-[#0284C7]/30 text-[10px] font-mono font-bold text-[#FECDD3] shadow-sm pointer-events-none">
             <span className="w-2 h-2 rounded-full bg-rose-500 animate-ping" />
             <span className="uppercase tracking-wider">LIVE 4K BROADCAST</span>
           </div>
@@ -474,7 +474,7 @@ export default function SectionCinematicVideo({
               <button
                 type="button"
                 onClick={togglePlay}
-                className="w-7 h-7 rounded-full bg-black/60 hover:bg-[#047857]/80 backdrop-blur-md border border-white/20 text-white flex items-center justify-center transition-all cursor-pointer"
+                className="w-7 h-7 rounded-full bg-black/60 hover:bg-[#B91C1C]/80 backdrop-blur-md border border-white/20 text-white flex items-center justify-center transition-all cursor-pointer"
                 title={isPlaying ? "Pause video" : "Play video"}
                 aria-label="Toggle playback"
               >
@@ -487,11 +487,11 @@ export default function SectionCinematicVideo({
               <button
                 type="button"
                 onClick={toggleMute}
-                className="w-7 h-7 rounded-full bg-black/60 hover:bg-[#047857]/80 backdrop-blur-md border border-white/20 text-white flex items-center justify-center transition-all cursor-pointer"
+                className="w-7 h-7 rounded-full bg-black/60 hover:bg-[#B91C1C]/80 backdrop-blur-md border border-white/20 text-white flex items-center justify-center transition-all cursor-pointer"
                 title={isMuted ? "Unmute audio" : "Mute audio"}
                 aria-label="Toggle mute"
               >
-                {isMuted ? <VolumeX className="w-3.5 h-3.5 text-amber-300" /> : <Volume2 className="w-3.5 h-3.5 text-[#059669]" />}
+                {isMuted ? <VolumeX className="w-3.5 h-3.5 text-amber-300" /> : <Volume2 className="w-3.5 h-3.5 text-[#0284C7]" />}
               </button>
             )}
 
@@ -500,10 +500,10 @@ export default function SectionCinematicVideo({
             </div>
 
             <div className="flex items-end gap-0.5 px-2 py-1.5 rounded-full bg-black/50 backdrop-blur-md border border-white/10 pointer-events-none">
-              <span className="w-0.5 bg-[#059669] rounded-full animate-audio-bar-1 h-2" />
-              <span className="w-0.5 bg-[#059669] rounded-full animate-audio-bar-2 h-3.5" />
-              <span className="w-0.5 bg-[#059669] rounded-full animate-audio-bar-3 h-2.5" />
-              <span className="w-0.5 bg-[#059669] rounded-full animate-audio-bar-4 h-4" />
+              <span className="w-0.5 bg-[#0284C7] rounded-full animate-audio-bar-1 h-2" />
+              <span className="w-0.5 bg-[#0284C7] rounded-full animate-audio-bar-2 h-3.5" />
+              <span className="w-0.5 bg-[#0284C7] rounded-full animate-audio-bar-3 h-2.5" />
+              <span className="w-0.5 bg-[#0284C7] rounded-full animate-audio-bar-4 h-4" />
             </div>
           </div>
         </div>
@@ -516,7 +516,7 @@ export default function SectionCinematicVideo({
             className="absolute inset-0 z-25 flex items-center justify-center group-hover:scale-105 transition-transform cursor-pointer"
             aria-label="Expand cinematic 4K video"
           >
-            <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#047857]/90 hover:bg-[#10B981] text-white flex items-center justify-center shadow-2xl shadow-emerald-500/50 border-2 border-white/40 backdrop-blur-md transition-all group-hover:shadow-emerald-400/80">
+            <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#B91C1C]/90 hover:bg-[#0EA5E9] text-white flex items-center justify-center shadow-2xl shadow-rose-500/50 border-2 border-white/40 backdrop-blur-md transition-all group-hover:shadow-rose-400/80">
               <Play className="w-7 h-7 sm:w-8 sm:h-8 fill-white translate-x-0.5" />
             </div>
           </button>
@@ -529,11 +529,11 @@ export default function SectionCinematicVideo({
               <span className="text-xs sm:text-sm font-bold tracking-tight text-white drop-shadow-md">
                 {title}
               </span>
-              <span className="px-2 py-0.5 rounded-full bg-[#10B981]/30 border border-[#059669]/50 text-[9px] font-mono text-[#A7F3D0]">
+              <span className="px-2 py-0.5 rounded-full bg-[#0EA5E9]/30 border border-[#0284C7]/50 text-[9px] font-mono text-[#FECDD3]">
                 PULSE VERIFIED
               </span>
             </div>
-            <p className="text-[11px] text-[#A7F3D0]/80 font-medium font-mono">
+            <p className="text-[11px] text-[#FECDD3]/80 font-medium font-mono">
               {specs}
             </p>
           </div>
@@ -544,10 +544,10 @@ export default function SectionCinematicVideo({
         </div>
 
         {/* 8. CORNER CAD CROSSHAIRS */}
-        <div className="absolute top-2 left-2 text-[#059669]/40 font-mono text-[9px] pointer-events-none">⌜</div>
-        <div className="absolute top-2 right-2 text-[#059669]/40 font-mono text-[9px] pointer-events-none">⌝</div>
-        <div className="absolute bottom-2 left-2 text-[#059669]/40 font-mono text-[9px] pointer-events-none">⌞</div>
-        <div className="absolute bottom-2 right-2 text-[#059669]/40 font-mono text-[9px] pointer-events-none">⌟</div>
+        <div className="absolute top-2 left-2 text-[#0284C7]/40 font-mono text-[9px] pointer-events-none">⌜</div>
+        <div className="absolute top-2 right-2 text-[#0284C7]/40 font-mono text-[9px] pointer-events-none">⌝</div>
+        <div className="absolute bottom-2 left-2 text-[#0284C7]/40 font-mono text-[9px] pointer-events-none">⌞</div>
+        <div className="absolute bottom-2 right-2 text-[#0284C7]/40 font-mono text-[9px] pointer-events-none">⌟</div>
       </div>
     </div>
   );

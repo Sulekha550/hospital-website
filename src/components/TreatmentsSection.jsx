@@ -19,7 +19,7 @@ export default function TreatmentsSection({ onBookClick }) {
   const activeTreatment = treatments.find((t) => t.id === selectedId) || treatments[0];
 
   return (
-    <section id="treatments" className="relative py-16 lg:py-24 overflow-hidden bg-gradient-to-b from-[#FFF1F2]/70 via-[#FAF5FF]/80 to-[#F0FDF4]/50">
+    <section id="treatments" className="relative py-16 lg:py-24 overflow-hidden bg-gradient-to-b from-[#FFF1F2]/70 via-[#FAF5FF]/80 to-[#FEF2F2]/50">
 
       {/* Ambient Floating Atmospheric Glows */}
       <div className="absolute top-1/4 -left-20 w-[600px] h-[600px] bg-gradient-to-tr from-rose-500/35 via-pink-400/30 to-purple-400/25 rounded-full blur-[85px] pointer-events-none -z-10 animate-float-1" />

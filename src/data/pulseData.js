@@ -172,7 +172,7 @@ export const PULSE_DATA = {
       leadDoctor: "Dr. Vikramaditya Rathore",
       leadDegree: "MS Ortho, MCh Ortho (UK)",
       accentColor: "#65BCA6", // Mint
-      accentBg: "bg-[#F0FDF4] text-[#0D9488] border-[#A7F3D0]",
+      accentBg: "bg-[#FEF2F2] text-[#0D9488] border-[#FECDD3]",
       pillColor: "border-[#65BCA6] text-[#0D9488]",
       tagline: "Robotic sub-millimeter joint reconstruction and sports arthroscopy.",
       description: "Pioneering computer-navigated total knee and hip arthroplasty, complex trauma reconstruction, and minimally invasive sports ligament repair for rapid mobility.",
@@ -352,7 +352,7 @@ export const PULSE_DATA = {
       leadDoctor: "Dr. Rohini Deshmukh",
       leadDegree: "MD Paediatrics, Fellowship Neonatology (CMC Vellore)",
       accentColor: "#65BCA6", // Mint
-      accentBg: "bg-[#F0FDF4] text-[#0D9488] border-[#A7F3D0]",
+      accentBg: "bg-[#FEF2F2] text-[#0D9488] border-[#FECDD3]",
       pillColor: "border-[#65BCA6] text-[#0D9488]",
       tagline: "Level-3 NICU care, child development, and comprehensive pediatric emergencies.",
       description: "Specialized pediatric and neonatal care for premature neonates, congenital anomalies, pediatric infectious illnesses, asthma, and developmental milestones monitoring.",

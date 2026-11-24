@@ -76,23 +76,23 @@ export default function DoctorMonographSection() {
         </div>
 
         {/* 2. Warm Emerald Green & Teal Luminous Ambient Lights */}
-        <div className="absolute top-1/6 -left-20 w-[650px] h-[650px] rounded-full bg-gradient-to-tr from-[#A7F3D0]/45 via-[#F0FDF4]/35 to-transparent blur-[110px]" />
-        <div className="absolute top-1/2 -right-20 w-[700px] h-[700px] rounded-full bg-gradient-to-bl from-[#34D399]/30 via-[#A7F3D0]/35 to-transparent blur-[120px]" />
-        <div className="absolute bottom-10 left-1/4 w-[600px] h-[600px] rounded-full bg-gradient-to-tr from-[#F0FDF4]/50 to-transparent blur-[100px]" />
+        <div className="absolute top-1/6 -left-20 w-[650px] h-[650px] rounded-full bg-gradient-to-tr from-[#FECDD3]/45 via-[#FEF2F2]/35 to-transparent blur-[110px]" />
+        <div className="absolute top-1/2 -right-20 w-[700px] h-[700px] rounded-full bg-gradient-to-bl from-[#38BDF8]/30 via-[#FECDD3]/35 to-transparent blur-[120px]" />
+        <div className="absolute bottom-10 left-1/4 w-[600px] h-[600px] rounded-full bg-gradient-to-tr from-[#FEF2F2]/50 to-transparent blur-[100px]" />
 
         {/* 3. Medical Biometric Coordinate CAD Grid */}
         <svg className="absolute inset-0 w-full h-full opacity-35" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <pattern id="docCadGrid" width="60" height="60" patternUnits="userSpaceOnUse">
-              <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#059669" strokeWidth="0.6" strokeDasharray="3 3" opacity="0.3" />
-              <circle cx="60" cy="0" r="1.5" fill="#059669" opacity="0.4" />
+              <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#0284C7" strokeWidth="0.6" strokeDasharray="3 3" opacity="0.3" />
+              <circle cx="60" cy="0" r="1.5" fill="#0284C7" opacity="0.4" />
             </pattern>
           </defs>
           <rect width="100%" height="100%" fill="url(#docCadGrid)" />
         </svg>
 
         {/* 4. Giant Watermark Typography */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-serif italic text-[16vw] font-black text-[#064E3B]/[0.03] whitespace-nowrap pointer-events-none select-none">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-serif italic text-[16vw] font-black text-[#991B1B]/[0.03] whitespace-nowrap pointer-events-none select-none">
           CARDIOLOGIST • 2002
         </div>
 
@@ -101,14 +101,14 @@ export default function DoctorMonographSection() {
           <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
             {/* Outer Slow Rotating Degree Compass */}
             <g className="animate-radar-sweep origin-center" style={{ transformOrigin: '450px 450px', animationDuration: '40s' }}>
-              <circle cx="450" cy="450" r="340" fill="none" stroke="#059669" strokeWidth="1.5" strokeDasharray="6 12" />
-              <circle cx="450" cy="450" r="300" fill="none" stroke="#064E3B" strokeWidth="1" strokeDasharray="3 9" />
-              <line x1="450" y1="20" x2="450" y2="880" stroke="#059669" strokeWidth="1" strokeOpacity="0.4" />
-              <line x1="20" y1="450" x2="880" y2="450" stroke="#059669" strokeWidth="1" strokeOpacity="0.4" />
+              <circle cx="450" cy="450" r="340" fill="none" stroke="#0284C7" strokeWidth="1.5" strokeDasharray="6 12" />
+              <circle cx="450" cy="450" r="300" fill="none" stroke="#991B1B" strokeWidth="1" strokeDasharray="3 9" />
+              <line x1="450" y1="20" x2="450" y2="880" stroke="#0284C7" strokeWidth="1" strokeOpacity="0.4" />
+              <line x1="20" y1="450" x2="880" y2="450" stroke="#0284C7" strokeWidth="1" strokeOpacity="0.4" />
             </g>
             {/* Inner Reverse Ring */}
             <g className="animate-rotate-reverse origin-center" style={{ transformOrigin: '450px 450px', animationDuration: '50s' }}>
-              <circle cx="450" cy="450" r="410" fill="none" stroke="#047857" strokeWidth="1.2" strokeDasharray="10 20" />
+              <circle cx="450" cy="450" r="410" fill="none" stroke="#B91C1C" strokeWidth="1.2" strokeDasharray="10 20" />
             </g>
           </svg>
         </div>
@@ -118,15 +118,15 @@ export default function DoctorMonographSection() {
           <svg className="w-full h-28" viewBox="0 0 1440 100" fill="none" preserveAspectRatio="none">
             <path
               d="M0,50 L280,50 L295,20 L310,80 L325,10 L340,75 L355,50 L750,50 L765,20 L780,80 L795,10 L810,75 L825,50 L1200,50 L1215,20 L1230,80 L1245,10 L1260,75 L1275,50 L1440,50"
-              stroke="#059669"
+              stroke="#0284C7"
               strokeWidth="2.5"
               strokeDasharray="350"
               className="animate-flow-dash"
             />
             {/* Pulsing ECG Nodes */}
-            <circle cx="325" cy="10" r="5" fill="#10B981" className="animate-ping" />
-            <circle cx="795" cy="10" r="5" fill="#059669" className="animate-ping" />
-            <circle cx="1245" cy="10" r="5" fill="#10B981" className="animate-ping" />
+            <circle cx="325" cy="10" r="5" fill="#0EA5E9" className="animate-ping" />
+            <circle cx="795" cy="10" r="5" fill="#0284C7" className="animate-ping" />
+            <circle cx="1245" cy="10" r="5" fill="#0EA5E9" className="animate-ping" />
           </svg>
         </div>
 
@@ -134,7 +134,7 @@ export default function DoctorMonographSection() {
           <svg className="w-full h-24" viewBox="0 0 1440 90" fill="none" preserveAspectRatio="none">
             <path
               d="M0,45 L420,45 L430,25 L440,65 L450,15 L460,60 L470,45 L900,45 L910,25 L920,65 L930,15 L940,60 L950,45 L1440,45"
-              stroke="#047857"
+              stroke="#B91C1C"
               strokeWidth="2"
               strokeDasharray="300"
               className="animate-flow-dash-fast"
@@ -143,16 +143,16 @@ export default function DoctorMonographSection() {
         </div>
 
         {/* 7. Sweeping Laser Beam */}
-        <div className="absolute left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#059669] to-transparent shadow-[0_0_15px_#059669] opacity-40 animate-laser-sweep pointer-events-none" />
+        <div className="absolute left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#0284C7] to-transparent shadow-[0_0_15px_#0284C7] opacity-40 animate-laser-sweep pointer-events-none" />
 
         {/* 8. Floating Telemetry Tags in Background */}
-        <div className="absolute top-24 left-10 hidden xl:flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/90 border border-[#A7F3D0] shadow-sm text-[10px] font-mono font-bold text-[#064E3B]">
-          <span className="w-2 h-2 rounded-full bg-[#064E3B] animate-pulse" />
+        <div className="absolute top-24 left-10 hidden xl:flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/90 border border-[#FECDD3] shadow-sm text-[10px] font-mono font-bold text-[#991B1B]">
+          <span className="w-2 h-2 rounded-full bg-[#991B1B] animate-pulse" />
           <span>TRANSRADIAL CATH LAB ACTIVE</span>
         </div>
 
-        <div className="absolute top-36 right-10 hidden xl:flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/90 border border-[#34D399] shadow-sm text-[10px] font-mono font-bold text-[#047857]">
-          <span className="w-2 h-2 rounded-full bg-[#059669] animate-pulse" />
+        <div className="absolute top-36 right-10 hidden xl:flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/90 border border-[#38BDF8] shadow-sm text-[10px] font-mono font-bold text-[#B91C1C]">
+          <span className="w-2 h-2 rounded-full bg-[#0284C7] animate-pulse" />
           <span>LEAD II TELEMETRY: 72 BPM SINUS</span>
         </div>
       </div>
@@ -167,20 +167,20 @@ export default function DoctorMonographSection() {
           transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
           className="mb-12 text-center max-w-3xl mx-auto space-y-3"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#064E3B] text-[#A7F3D0] text-xs font-mono font-bold shadow-md">
-            <Sparkles className="w-4 h-4 text-[#059669]" />
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#991B1B] text-[#FECDD3] text-xs font-mono font-bold shadow-md">
+            <Sparkles className="w-4 h-4 text-[#0284C7]" />
             <span className="uppercase tracking-[0.2em]">Apex Interventional Cardiologist • Eastern UP</span>
           </div>
 
-          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#064E3B] tracking-[-0.03em] leading-[1.08]">
+          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#991B1B] tracking-[-0.03em] leading-[1.08]">
             Dr. Prakash Chand Shahi <br />
-            <span className="font-serif italic font-normal text-[#059669]">Senior Interventional Cardiologist</span>
+            <span className="font-serif italic font-normal text-[#0284C7]">Senior Interventional Cardiologist</span>
           </h2>
 
           <div className="flex flex-wrap items-center justify-center gap-2 pt-1 font-mono text-xs font-bold">
-            <span className="bg-[#F0FDF4] text-[#064E3B] px-3 py-1 rounded-full border border-[#A7F3D0]">DM Cardiology (PGIMER)</span>
-            <span className="bg-[#F0FDF4] text-[#047857] px-3 py-1 rounded-full border border-[#34D399]">MD Medicine (KGMU)</span>
-            <span className="bg-white text-slate-900 px-3 py-1 rounded-full border border-[#A7F3D0]">22+ Years Experience</span>
+            <span className="bg-[#FEF2F2] text-[#991B1B] px-3 py-1 rounded-full border border-[#FECDD3]">DM Cardiology (PGIMER)</span>
+            <span className="bg-[#FEF2F2] text-[#B91C1C] px-3 py-1 rounded-full border border-[#38BDF8]">MD Medicine (KGMU)</span>
+            <span className="bg-white text-slate-900 px-3 py-1 rounded-full border border-[#FECDD3]">22+ Years Experience</span>
           </div>
         </motion.div>
 
@@ -247,63 +247,63 @@ export default function DoctorMonographSection() {
 
             {/* Authoritative Badge Header */}
             <div className="space-y-2">
-              <span className="inline-block text-xs font-mono font-bold uppercase tracking-wider text-[#064E3B] bg-[#F0FDF4] px-3.5 py-1.5 rounded-full border border-[#34D399]">
+              <span className="inline-block text-xs font-mono font-bold uppercase tracking-wider text-[#991B1B] bg-[#FEF2F2] px-3.5 py-1.5 rounded-full border border-[#38BDF8]">
                 Unbroken Clinical Commitment • Since 2002
               </span>
 
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-[#064E3B] tracking-tight leading-snug">
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-[#991B1B] tracking-tight leading-snug">
                 Precision Hemodynamics Guided by Evidence &amp; Ethics
               </h3>
             </div>
 
             {/* 6 Visual Achievement Cards */}
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-              <div className="p-3.5 rounded-2xl bg-white border border-[#A7F3D0] shadow-xs hover:border-[#064E3B] transition-colors">
-                <span className="text-2xl sm:text-3xl font-extrabold text-[#064E3B] block">22+</span>
+              <div className="p-3.5 rounded-2xl bg-white border border-[#FECDD3] shadow-xs hover:border-[#991B1B] transition-colors">
+                <span className="text-2xl sm:text-3xl font-extrabold text-[#991B1B] block">22+</span>
                 <span className="text-xs font-bold text-slate-900 block">Years Experience</span>
                 <span className="text-[10px] text-slate-700">Dedicated leadership</span>
               </div>
 
-              <div className="p-3.5 rounded-2xl bg-white border border-[#A7F3D0] shadow-xs hover:border-[#064E3B] transition-colors">
-                <span className="text-2xl sm:text-3xl font-extrabold text-[#059669] block">15,000+</span>
+              <div className="p-3.5 rounded-2xl bg-white border border-[#FECDD3] shadow-xs hover:border-[#991B1B] transition-colors">
+                <span className="text-2xl sm:text-3xl font-extrabold text-[#0284C7] block">15,000+</span>
                 <span className="text-xs font-bold text-slate-900 block">Cath Procedures</span>
                 <span className="text-[10px] text-slate-700">Angiography &amp; Stents</span>
               </div>
 
-              <div className="p-3.5 rounded-2xl bg-white border border-[#34D399] shadow-xs hover:border-[#064E3B] transition-colors">
-                <span className="text-2xl sm:text-3xl font-extrabold text-[#047857] block">99.4%</span>
+              <div className="p-3.5 rounded-2xl bg-white border border-[#38BDF8] shadow-xs hover:border-[#991B1B] transition-colors">
+                <span className="text-2xl sm:text-3xl font-extrabold text-[#B91C1C] block">99.4%</span>
                 <span className="text-xs font-bold text-slate-900 block">Radial Patency</span>
                 <span className="text-[10px] text-slate-700">Painless wrist access</span>
               </div>
 
-              <div className="p-3.5 rounded-2xl bg-white border border-[#A7F3D0] shadow-xs hover:border-[#064E3B] transition-colors">
-                <span className="text-xl sm:text-2xl font-extrabold text-[#064E3B] block">PGIMER</span>
+              <div className="p-3.5 rounded-2xl bg-white border border-[#FECDD3] shadow-xs hover:border-[#991B1B] transition-colors">
+                <span className="text-xl sm:text-2xl font-extrabold text-[#991B1B] block">PGIMER</span>
                 <span className="text-xs font-bold text-slate-900 block">DM Cardiology</span>
                 <span className="text-[10px] text-slate-700">Apex National Institute</span>
               </div>
 
-              <div className="p-3.5 rounded-2xl bg-white border border-[#A7F3D0] shadow-xs hover:border-[#064E3B] transition-colors">
-                <span className="text-xl sm:text-2xl font-extrabold text-[#059669] block">KGMU</span>
+              <div className="p-3.5 rounded-2xl bg-white border border-[#FECDD3] shadow-xs hover:border-[#991B1B] transition-colors">
+                <span className="text-xl sm:text-2xl font-extrabold text-[#0284C7] block">KGMU</span>
                 <span className="text-xs font-bold text-slate-900 block">MD Medicine</span>
                 <span className="text-[10px] text-slate-700">Premier University</span>
               </div>
 
-              <div className="p-3.5 rounded-2xl bg-white border border-[#34D399] shadow-xs hover:border-[#064E3B] transition-colors">
-                <span className="text-2xl sm:text-3xl font-extrabold text-[#047857] block">1,200+</span>
+              <div className="p-3.5 rounded-2xl bg-white border border-[#38BDF8] shadow-xs hover:border-[#991B1B] transition-colors">
+                <span className="text-2xl sm:text-3xl font-extrabold text-[#B91C1C] block">1,200+</span>
                 <span className="text-xs font-bold text-slate-900 block">Pacemakers</span>
                 <span className="text-[10px] text-slate-700">Physiological pacing</span>
               </div>
             </div>
 
             {/* Interactive Clinical Philosophy Switcher with Minimal Punchy Content */}
-            <div className="p-5 rounded-[2rem] bg-white border-2 border-[#A7F3D0] shadow-md space-y-3 transition-all duration-300 hover:shadow-xl">
+            <div className="p-5 rounded-[2rem] bg-white border-2 border-[#FECDD3] shadow-md space-y-3 transition-all duration-300 hover:shadow-xl">
 
               <div className="flex items-center justify-between pb-2 border-b border-slate-100">
-                <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#064E3B] flex items-center gap-2">
-                  <Heart className="w-4 h-4 text-[#047857] animate-pulse" />
+                <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#991B1B] flex items-center gap-2">
+                  <Heart className="w-4 h-4 text-[#B91C1C] animate-pulse" />
                   <span>3 Pillars of Clinical Excellence</span>
                 </span>
-                <span className="text-[11px] font-mono font-bold text-[#059669]">
+                <span className="text-[11px] font-mono font-bold text-[#0284C7]">
                   Select Dimension
                 </span>
               </div>
@@ -316,8 +316,8 @@ export default function DoctorMonographSection() {
                     onClick={() => setActivePillar(idx)}
                     className={`py-2 px-3 rounded-xl text-xs font-semibold transition-all duration-300 text-center ${
                       activePillar === idx
-                        ? 'bg-gradient-to-r from-[#064E3B] via-[#047857] to-[#047857] text-[#A7F3D0] shadow-md scale-102 border border-[#A7F3D0]/40'
-                        : 'bg-slate-50 hover:bg-[#F0FDF4] text-slate-700 border border-slate-200'
+                        ? 'bg-gradient-to-r from-[#991B1B] via-[#B91C1C] to-[#B91C1C] text-[#FECDD3] shadow-md scale-102 border border-[#FECDD3]/40'
+                        : 'bg-slate-50 hover:bg-[#FEF2F2] text-slate-700 border border-slate-200'
                     }`}
                   >
                     <span className="font-mono text-[10px] block opacity-70">PILLAR {p.num}</span>
@@ -327,12 +327,12 @@ export default function DoctorMonographSection() {
               </div>
 
               {/* Active Dimension Details with Minimal Punchy Text */}
-              <div className="p-3.5 rounded-xl bg-[#F0FDF4] border border-[#A7F3D0] space-y-1.5 transition-all duration-400">
+              <div className="p-3.5 rounded-xl bg-[#FEF2F2] border border-[#FECDD3] space-y-1.5 transition-all duration-400">
                 <div className="flex items-center justify-between">
-                  <h4 className="text-sm font-extrabold text-[#064E3B]">
+                  <h4 className="text-sm font-extrabold text-[#991B1B]">
                     {pillars[activePillar].title}
                   </h4>
-                  <span className="text-[10px] font-mono font-bold text-[#064E3B] bg-[#F0FDF4] border border-[#34D399] px-2 py-0.5 rounded-full">
+                  <span className="text-[10px] font-mono font-bold text-[#991B1B] bg-[#FEF2F2] border border-[#38BDF8] px-2 py-0.5 rounded-full">
                     {pillars[activePillar].stat}
                   </span>
                 </div>
@@ -347,15 +347,15 @@ export default function DoctorMonographSection() {
             <div className="pt-2 flex flex-wrap items-center gap-4">
               <Link
                 to="/book-appointment"
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-gradient-to-r from-[#064E3B] via-[#047857] to-[#047857] hover:from-[#022C22] hover:to-[#064E3B] text-[#A7F3D0] text-xs font-bold uppercase tracking-wider shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5 border border-[#A7F3D0]/40"
+                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-gradient-to-r from-[#991B1B] via-[#B91C1C] to-[#B91C1C] hover:from-[#7F1D1D] hover:to-[#991B1B] text-[#FECDD3] text-xs font-bold uppercase tracking-wider shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5 border border-[#FECDD3]/40"
               >
                 <span>Consult Dr. Prakash Chand Shahi</span>
-                <ArrowRight className="w-4 h-4 text-[#34D399]" />
+                <ArrowRight className="w-4 h-4 text-[#38BDF8]" />
               </Link>
 
               <Link
                 to="/treatments"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-white hover:bg-[#F0FDF4] text-[#064E3B] text-xs font-bold uppercase tracking-wider border border-[#A7F3D0] shadow-sm transition-all"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-white hover:bg-[#FEF2F2] text-[#991B1B] text-xs font-bold uppercase tracking-wider border border-[#FECDD3] shadow-sm transition-all"
               >
                 <span>Explore Stenting &amp; Cath Lab</span>
               </Link>

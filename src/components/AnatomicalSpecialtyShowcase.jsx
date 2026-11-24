@@ -129,7 +129,7 @@ export default function AnatomicalSpecialtyShowcase() {
               <button
                 onClick={() => setLumenState('stented')}
                 className={`px-5 py-2 rounded-full text-xs font-bold transition-all duration-300 ${lumenState === 'stented'
-                  ? 'bg-[#047857] text-white shadow-md scale-105'
+                  ? 'bg-[#B91C1C] text-white shadow-md scale-105'
                   : 'text-slate-600 hover:text-slate-900'
                   }`}
               >
@@ -188,8 +188,8 @@ export default function AnatomicalSpecialtyShowcase() {
                   {lumenState === 'stenosis' ? 'Requires Catheter Revascularization' : 'Post-Stent Dual Antiplatelet Therapy'}
                 </span>
               </div>
-              <div className="flex items-center gap-2 pt-2 text-[11px] font-mono font-bold text-[#059669]">
-                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+              <div className="flex items-center gap-2 pt-2 text-[11px] font-mono font-bold text-[#0284C7]">
+                <span className="w-2 h-2 rounded-full bg-rose-500 animate-pulse" />
                 <span>{lumenState === 'stenosis' ? 'Critical Ischemic Narrowing • Radial Intervention Indicated' : 'DES Cobalt-Chromium Patency • Optimal Perfusion Restored'}</span>
               </div>
             </div>
@@ -223,10 +223,10 @@ export default function AnatomicalSpecialtyShowcase() {
         <div className="mt-12 text-center">
           <Link
             to="/treatments"
-            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-gradient-to-r from-[#064E3B] via-[#047857] to-[#059669] hover:from-[#022C22] hover:to-[#064E3B] text-white text-xs font-bold uppercase tracking-wider shadow-lg shadow-[#064E3B]/25 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 hover:scale-102 border border-emerald-400/30"
+            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-gradient-to-r from-[#991B1B] via-[#B91C1C] to-[#DC2626] hover:from-[#7F1D1D] hover:to-[#991B1B] text-white text-xs font-bold uppercase tracking-wider shadow-lg shadow-[#991B1B]/25 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 hover:scale-102 border border-rose-400/30"
           >
             <span>Explore All Interventions</span>
-            <ArrowRight className="w-4 h-4 text-emerald-300" />
+            <ArrowRight className="w-4 h-4 text-rose-300" />
           </Link>
         </div>
 

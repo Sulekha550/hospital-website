@@ -82,14 +82,14 @@ export default function CredentialsEditorialSection() {
 
         {/* Section Header */}
         <div className="mb-16 text-center max-w-3xl mx-auto space-y-3">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-[#064E3B] via-[#047857] to-[#047857] text-[#A7F3D0] text-xs font-mono font-bold shadow-md shadow-[#064E3B]/20 animate-float-bob border border-[#A7F3D0]/40">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-[#991B1B] via-[#B91C1C] to-[#B91C1C] text-[#FECDD3] text-xs font-mono font-bold shadow-md shadow-[#991B1B]/20 animate-float-bob border border-[#FECDD3]/40">
             <Award className="w-4 h-4 text-amber-300" />
             <span className="uppercase tracking-[0.2em]">Institutional Pedigree &amp; Credentials</span>
           </div>
 
-          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#064E3B] tracking-tight leading-[1.08]">
+          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#991B1B] tracking-tight leading-[1.08]">
             Super-Specialty Qualifications from <br />
-            <span className="font-serif italic font-normal text-[#059669]">India's Apex Medical Institutes</span>
+            <span className="font-serif italic font-normal text-[#0284C7]">India's Apex Medical Institutes</span>
           </h2>
 
           <p className="text-base sm:text-lg text-slate-700 font-medium max-w-2xl mx-auto leading-relaxed">
@@ -117,7 +117,7 @@ export default function CredentialsEditorialSection() {
                   <p className="text-sm font-bold text-slate-900">
                     {deg.institution}
                   </p>
-                  <p className="text-xs font-mono text-emerald-800 font-semibold">
+                  <p className="text-xs font-mono text-rose-800 font-semibold">
                     {deg.location}
                   </p>
                 </div>
@@ -127,26 +127,26 @@ export default function CredentialsEditorialSection() {
                 <span className="text-[11px] font-mono font-bold text-slate-600">
                   {deg.year}
                 </span>
-                <ShieldCheck className="w-5 h-5 text-[#047857]" />
+                <ShieldCheck className="w-5 h-5 text-[#B91C1C]" />
               </div>
             </div>
           ))}
         </div>
 
         {/* Ethical Practice Charter & Patient Commitment Banner */}
-        <div className="p-6 sm:p-8 rounded-[2rem] bg-gradient-to-r from-emerald-50/70 via-white to-teal-50/70 text-slate-900 shadow-md border-2 border-emerald-200 text-left transition-all duration-400 hover:shadow-xl">
+        <div className="p-6 sm:p-8 rounded-[2rem] bg-gradient-to-r from-rose-50/70 via-white to-teal-50/70 text-slate-900 shadow-md border-2 border-rose-200 text-left transition-all duration-400 hover:shadow-xl">
           <div className="flex items-center gap-2 mb-4">
-            <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
-            <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#064E3B]">
+            <span className="w-2.5 h-2.5 rounded-full bg-rose-500 animate-pulse" />
+            <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#991B1B]">
               Clinical Standards • Pulse Heart Centre
             </span>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {standards.map((std, i) => (
-              <div key={i} className="p-3.5 rounded-xl bg-white/90 border border-emerald-100 shadow-xs group hover:border-emerald-300 transition-colors">
-                <h4 className="text-xs sm:text-sm font-bold text-slate-900 flex items-center gap-2 group-hover:text-[#064E3B] transition-colors">
-                  <CheckCircle2 className="w-4 h-4 text-[#047857] shrink-0" />
+              <div key={i} className="p-3.5 rounded-xl bg-white/90 border border-rose-100 shadow-xs group hover:border-rose-300 transition-colors">
+                <h4 className="text-xs sm:text-sm font-bold text-slate-900 flex items-center gap-2 group-hover:text-[#991B1B] transition-colors">
+                  <CheckCircle2 className="w-4 h-4 text-[#B91C1C] shrink-0" />
                   <span>{std.title}</span>
                 </h4>
               </div>

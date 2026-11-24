@@ -55,7 +55,7 @@ export default function DoctorPlaceholder({
     >
       {/* 3D Ambient Mint & Teal Aura */}
       <div
-        className="absolute -inset-4 bg-gradient-to-tr from-[#A7F3D0]/60 via-[#34D399]/40 to-[#059669]/20 rounded-[3rem] blur-2xl -z-10 transition-all duration-500 group-hover:opacity-100 opacity-80"
+        className="absolute -inset-4 bg-gradient-to-tr from-[#FECDD3]/60 via-[#38BDF8]/40 to-[#0284C7]/20 rounded-[3rem] blur-2xl -z-10 transition-all duration-500 group-hover:opacity-100 opacity-80"
         style={{
           transform: isHovered
             ? `translate3d(${tilt.y * 1.5}px, ${-tilt.x * 1.5}px, 0)`
@@ -65,7 +65,7 @@ export default function DoctorPlaceholder({
 
       {/* Main Architectural Sculptural Glass Niche with 3D Tilt */}
       <div
-        className="relative rounded-[2.5rem] p-3 sm:p-4 bg-white backdrop-blur-2xl border-2 border-[#A7F3D0] shadow-[0_30px_70px_-15px_rgba(6,78,59,0.15)] transition-all duration-300 ease-out"
+        className="relative rounded-[2.5rem] p-3 sm:p-4 bg-white backdrop-blur-2xl border-2 border-[#FECDD3] shadow-[0_30px_70px_-15px_rgba(6,78,59,0.15)] transition-all duration-300 ease-out"
         style={{
           transformStyle: 'preserve-3d',
           transform: isHovered
@@ -75,7 +75,7 @@ export default function DoctorPlaceholder({
       >
 
         {/* Inner Sculptural Arched Canvas - Pure Clean Medical Mint & White Background */}
-        <div className={`relative ${aspectRatio} w-full rounded-[2rem] overflow-hidden border-2 border-[#A7F3D0] bg-gradient-to-b from-white via-[#F0FDF4] to-[#FAFBF9] flex flex-col items-center justify-center text-center transition-all duration-500`}>
+        <div className={`relative ${aspectRatio} w-full rounded-[2rem] overflow-hidden border-2 border-[#FECDD3] bg-gradient-to-b from-white via-[#FEF2F2] to-[#FAFBFD] flex flex-col items-center justify-center text-center transition-all duration-500`}>
 
           {/* Permanent Authentic Doctor Photograph i.png */}
           <div className="absolute inset-0 w-full h-full flex items-center justify-center bg-white">
@@ -86,7 +86,7 @@ export default function DoctorPlaceholder({
               className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-[1.03]"
             />
             {/* Subtle soft tint - No Dark or Blackish Vignette */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#047857]/15 via-transparent to-transparent pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#B91C1C]/15 via-transparent to-transparent pointer-events-none" />
           </div>
 
           {/* Dynamic Specular 3D Holographic Glare */}
@@ -100,27 +100,27 @@ export default function DoctorPlaceholder({
 
           {/* Top Architectural Telemetry Pill */}
           <div className="absolute top-3 left-3 right-3 flex items-center justify-between z-20 pointer-events-none">
-            <div className="px-3 py-1 rounded-full bg-white/90 backdrop-blur-md border border-emerald-200/80 shadow-xs flex items-center gap-1.5 text-[10px] font-bold text-[#064E3B]">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+            <div className="px-3 py-1 rounded-full bg-white/90 backdrop-blur-md border border-rose-200/80 shadow-xs flex items-center gap-1.5 text-[10px] font-bold text-[#991B1B]">
+              <span className="w-2 h-2 rounded-full bg-rose-500 animate-pulse" />
               <span>Sinus Rhythm • 72 BPM</span>
             </div>
 
-            <div className="px-3 py-1 rounded-full bg-[#064E3B]/90 backdrop-blur-md text-[#A7F3D0] shadow-xs text-[11px] font-serif italic font-normal border border-[#A7F3D0]/40">
+            <div className="px-3 py-1 rounded-full bg-[#991B1B]/90 backdrop-blur-md text-[#FECDD3] shadow-xs text-[11px] font-serif italic font-normal border border-[#FECDD3]/40">
               22+ Yrs Mastery
             </div>
           </div>
 
           {/* Bottom Academic Pedigree Plaque - SLIM & ELEGANT so doctor's body is fully visible */}
-          <div className="absolute bottom-3 inset-x-3 p-2.5 rounded-xl bg-white/95 backdrop-blur-md border border-[#A7F3D0] shadow-md text-left z-20 flex items-center justify-between gap-2">
+          <div className="absolute bottom-3 inset-x-3 p-2.5 rounded-xl bg-white/95 backdrop-blur-md border border-[#FECDD3] shadow-md text-left z-20 flex items-center justify-between gap-2">
             <div>
-              <span className="text-[9px] font-mono uppercase tracking-[0.2em] text-[#064E3B] font-bold block">
+              <span className="text-[9px] font-mono uppercase tracking-[0.2em] text-[#991B1B] font-bold block">
                 Lead Interventional Cardiologist
               </span>
-              <span className="text-xs font-extrabold text-[#064E3B] block">
+              <span className="text-xs font-extrabold text-[#991B1B] block">
                 Dr. Prakash Chand Shahi • DM (PGIMER)
               </span>
             </div>
-            <ShieldCheck className="w-4 h-4 text-[#059669] shrink-0" />
+            <ShieldCheck className="w-4 h-4 text-[#0284C7] shrink-0" />
           </div>
 
         </div>
