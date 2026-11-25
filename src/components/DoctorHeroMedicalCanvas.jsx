@@ -11,6 +11,7 @@ export default function DoctorHeroMedicalCanvas({ className = '' }) {
     <div
       className={`absolute inset-0 pointer-events-none z-0 overflow-hidden select-none ${className}`}
       aria-hidden="true"
+      data-hero-motion="true"
     >
       {/* 1. Warm Platinum Alabaster Base */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#FAF9F6] via-[#F8FAFC] to-[#F1F5F9]" />

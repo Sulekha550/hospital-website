@@ -44,7 +44,7 @@ export default function CinematicHeroSection() {
                 Built Around Trust.
               </p>
               <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-lg">
-                <strong className="text-[#0A1128] font-bold">Dr. Prakash Chand Shahi</strong> (DM Cardiology, PGIMER • MD, KGMU) — painless wrist-first angioplasty &amp; 24/7 emergency cardiac care.
+                <strong className="text-[#0A1128] font-bold">Dr. Prakash Chand Shahi</strong> (Heart Specialist • PGIMER &amp; KGMU) — painless wrist-route heart treatment, angioplasty &amp; 24/7 emergency care.
               </p>
             </div>
 
@@ -64,9 +64,9 @@ export default function CinematicHeroSection() {
             {/* 3 Visual Proof Thumbnails */}
             <div className="pt-4 border-t border-slate-200/80 grid grid-cols-3 gap-2 sm:gap-3 max-w-lg">
               {[
-                { img: '/images/hero-architecture-entrance.jpg', stat: '22+ Yrs', label: 'Legacy' },
-                { img: '/images/cath-lab.jpg', stat: '15,000+', label: 'Cath Lab' },
-                { img: '/images/radial-catheter-sheath.jpg', stat: '99.4%', label: 'Radial' },
+                { img: '/images/hero-architecture-entrance.jpg', stat: '22+ Yrs', label: 'Experience' },
+                { img: '/images/cath-lab.jpg', stat: '15,000+', label: 'Procedures' },
+                { img: '/images/radial-catheter-sheath.jpg', stat: '99.4%', label: 'Success Rate' },
               ].map((item, idx) => (
                 <div
                   key={idx}
@@ -86,21 +86,21 @@ export default function CinematicHeroSection() {
             </div>
           </div>
 
-          {/* Block 3 (Mobile Middle Above "Built Around Trust" / Desktop Right): Deep Midnight Navy Stage Panel */}
+          {/* Block 3 (Mobile Middle Above "Built Around Trust" / Desktop Right): Light Platinum Architectural Stage Panel */}
           <div className="order-2 lg:order-none lg:col-span-6 lg:col-start-7 lg:row-start-1 lg:row-span-2">
-            <div className="relative rounded-2xl sm:rounded-[2rem] bg-[#0A1128] p-4 sm:p-6 shadow-[0_30px_70px_-15px_rgba(10,17,40,0.3)] border border-slate-800 overflow-hidden">
+            <div className="relative rounded-2xl sm:rounded-[2rem] bg-gradient-to-br from-white via-[#FAF9F6] to-[#F1F5F9] p-4 sm:p-6 shadow-xl border border-slate-200/90 overflow-hidden">
               {/* Crimson Accent Bar on Left Edge */}
-              <div className="absolute left-0 top-8 bottom-8 w-1.5 bg-gradient-to-b from-[#E11D48] via-[#BE123C] to-transparent rounded-r-full" />
+              <div className="absolute left-0 top-8 bottom-8 w-1.5 bg-gradient-to-b from-[#E11D48] via-[#BE123C] to-rose-200 rounded-r-full" />
 
-              {/* Subtle Radial Glow Inside Navy Stage */}
+              {/* Subtle Radial Glow Inside Light Stage */}
               <div
                 className="absolute -top-20 -right-20 w-72 h-72 rounded-full pointer-events-none"
-                style={{ background: 'radial-gradient(circle, rgba(225,29,72,0.28) 0%, transparent 70%)' }}
+                style={{ background: 'radial-gradient(circle, rgba(225,29,72,0.09) 0%, transparent 70%)' }}
               />
 
               <div className="relative z-10 grid grid-cols-1 sm:grid-cols-12 gap-5 items-center">
                 {/* Clean Uncropped Portrait of Dr. Prakash Chand Shahi */}
-                <div className="sm:col-span-7 rounded-2xl overflow-hidden bg-slate-900 border border-white/10 shadow-lg">
+                <div className="sm:col-span-7 rounded-2xl overflow-hidden bg-slate-100 border border-slate-200 shadow-md">
                   <div className="aspect-[4/4] sm:aspect-[4/5] sm:max-h-[54vh] w-full overflow-hidden">
                     <img
                       src="/images/doctor-portrait.jpg"
@@ -110,39 +110,39 @@ export default function CinematicHeroSection() {
                   </div>
                 </div>
 
-                {/* Right Side Credential & Live Care Stack Inside Dark Stage */}
-                <div className="sm:col-span-5 space-y-4 text-left text-white">
-                  <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-rose-500/20 border border-rose-400/30 text-[10px] font-mono font-bold text-rose-200">
-                    <HeartPulse className="w-3.5 h-3.5 text-rose-400" />
+                {/* Right Side Credential & Live Care Stack */}
+                <div className="sm:col-span-5 space-y-4 text-left text-[#0A1128]">
+                  <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-rose-50 border border-rose-200 text-[10px] font-mono font-bold text-[#BE123C]">
+                    <HeartPulse className="w-3.5 h-3.5 text-[#BE123C]" />
                     <span>CHIEF CARDIOLOGIST</span>
                   </div>
 
                   <div>
-                    <h2 className="text-xl font-extrabold text-white leading-snug">
+                    <h2 className="text-xl font-extrabold text-[#0A1128] leading-snug">
                       Dr. Prakash Chand Shahi
                     </h2>
-                    <p className="text-xs text-rose-300 font-semibold mt-1">
+                    <p className="text-xs text-[#BE123C] font-semibold mt-1">
                       DM Cardiology (PGIMER)
                     </p>
-                    <p className="text-xs text-slate-300 mt-0.5">
+                    <p className="text-xs text-slate-600 mt-0.5">
                       MD Medicine (KGMU Lucknow)
                     </p>
                   </div>
 
-                  <div className="space-y-2.5 pt-3 border-t border-white/10 text-xs">
-                    <div className="p-2.5 rounded-xl bg-white/[0.06] border border-white/10">
-                      <span className="text-[10px] font-mono text-slate-400 block">APPROACH</span>
-                      <span className="font-bold text-white">Wrist-First Radial Stenting</span>
+                  <div className="space-y-2.5 pt-3 border-t border-slate-200 text-xs">
+                    <div className="p-2.5 rounded-xl bg-white border border-slate-200/90 shadow-2xs">
+                      <span className="text-[10px] font-mono text-slate-500 block">METHOD</span>
+                      <span className="font-bold text-[#0A1128]">Painless Wrist-Route Care</span>
                     </div>
-                    <div className="p-2.5 rounded-xl bg-white/[0.06] border border-white/10">
-                      <span className="text-[10px] font-mono text-slate-400 block">EMERGENCY</span>
-                      <span className="font-bold text-rose-300">&lt; 45 Min Door-to-Balloon</span>
+                    <div className="p-2.5 rounded-xl bg-white border border-slate-200/90 shadow-2xs">
+                      <span className="text-[10px] font-mono text-slate-500 block">24/7 EMERGENCY</span>
+                      <span className="font-bold text-[#BE123C]">Fast Heart Care (&lt; 45 Min)</span>
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-2 text-[11px] text-slate-300 pt-1">
-                    <ShieldCheck className="w-4 h-4 text-rose-400 shrink-0" />
-                    <span>NABH Sterile Cath Suite</span>
+                  <div className="flex items-center gap-2 text-[11px] text-slate-700 font-medium pt-1">
+                    <ShieldCheck className="w-4 h-4 text-[#BE123C] shrink-0" />
+                    <span>Safe &amp; Clean Heart Cath Lab</span>
                   </div>
                 </div>
               </div>

@@ -1304,14 +1304,23 @@ main section {
 [aria-hidden="true"] .animate-sonar-ping,
 [aria-hidden="true"] .animate-sonar-ping-delayed,
 [aria-hidden="true"] .animate-chrono-spine,
-[aria-hidden="true"] .animate-gentle-cw,
+[aria-hidden="true"]:not([data-hero-motion="true"]) .animate-gentle-cw,
 [aria-hidden="true"] .animate-gentle-ccw,
-[aria-hidden="true"] .animate-float-1,
-[aria-hidden="true"] .animate-float-2,
+[aria-hidden="true"] .animate-wave-flow,
+[aria-hidden="true"]:not([data-hero-motion="true"]) .animate-float-1,
+[aria-hidden="true"]:not([data-hero-motion="true"]) .animate-float-2,
 [aria-hidden="true"] .animate-float-3,
 [aria-hidden="true"] .animate-flow-dash,
 [aria-hidden="true"] .animate-flow-dash-fast {
   animation: none !important;
+}
+
+.shadow-xl {
+  box-shadow: 0 10px 24px -8px rgba(10, 17, 40, 0.12) !important;
+}
+
+.shadow-lg {
+  box-shadow: 0 8px 18px -6px rgba(10, 17, 40, 0.10) !important;
 }
 
 @media (prefers-reduced-motion: reduce) {

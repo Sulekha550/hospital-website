@@ -143,7 +143,7 @@ export default function DoctorMonographSection() {
                 Dr. Prakash Chand Shahi
               </h2>
               <p className="text-lg sm:text-xl font-serif italic text-[#BE123C]">
-                Precision Hemodynamics Guided by Evidence &amp; Ethics
+                Honest Heart Care Guided by Experience &amp; Trust
               </p>
             </div>
 
@@ -170,7 +170,7 @@ export default function DoctorMonographSection() {
                 <span>Clinical Principle &amp; Patient Trust</span>
               </div>
               <p className="text-xs sm:text-sm text-slate-800 font-medium italic leading-relaxed">
-                "Every coronary angiogram represents a human life, not a procedure quota. We recommend stenting strictly when evidence-based clinical guidelines prove it saves heart muscle, and personally review every fluoroscopy recording with the patient's family."
+                "Every heart checkup represents a human life. We recommend a stent only when it is truly needed to protect your heart, and we personally explain every test report and CD clearly to your family."
               </p>
             </div>
 

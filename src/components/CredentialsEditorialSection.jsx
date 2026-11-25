@@ -15,13 +15,13 @@ export default function CredentialsEditorialSection() {
 
   const credentials = [
     {
-      badge: 'SUPER-SPECIALTY',
+      badge: 'HEART SPECIALIST',
       degree: 'DM — Cardiology',
       institute: 'PGIMER, Chandigarh',
-      tag: 'Institute of National Importance',
+      tag: 'Top National Medical Institute',
       image: '/images/doctor-echo-checkup.jpg',
       pos: 'object-center',
-      summary: 'Fellowship in transradial coronary angiography, complex bifurcation stenting & cardiac pacing.',
+      summary: 'Advanced training in painless wrist-route heart angiography, stenting, and pacemaker care.',
     },
     {
       badge: 'POST-GRADUATE',
@@ -30,24 +30,24 @@ export default function CredentialsEditorialSection() {
       tag: 'Lucknow • Est. 1905',
       image: '/images/doctor-icu-rounds.jpg',
       pos: 'object-center',
-      summary: 'Intensive residency in acute coronary syndromes, critical hemodynamics & intensive care.',
+      summary: 'Strong medical foundation in treating blood pressure, chest pain, heart failure, and emergency care.',
     },
     {
-      badge: 'CLINICAL LEADERSHIP',
+      badge: 'TRUSTED CARE',
       degree: '22+ Years Practice',
       institute: 'Pulse Heart Centre, Betiahata',
-      tag: '15,000+ Cath Procedures',
+      tag: '15,000+ Heart Procedures',
       image: '/images/hospital-facility.jpg',
       pos: 'object-center',
-      summary: 'Leading Gorakhpur’s wrist-first interventional cardiology & 24/7 STEMI emergency care.',
+      summary: 'Providing Gorakhpur with gentle wrist-first heart care and 24/7 emergency heart attack support.',
     },
   ];
 
   const standards = [
-    'Transradial-First Wrist Access',
-    'Strict ACC / AHA Guideline Ethics',
-    'Transparent Angiogram CD Review',
-    'Lifetime Continuity at Betiahata',
+    'Painless Wrist-First Heart Care',
+    'Honest Advice — Only Needed Treatment',
+    'Clear Report & CD Review with Family',
+    'Long-Term Follow-Up at Betiahata',
   ];
 
   return (

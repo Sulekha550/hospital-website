@@ -21,10 +21,18 @@ export default function SectionBackgroundMotion({
   variant = 'hero',
   className = '',
 }) {
+  const isHeroVariant =
+    variant === 'hero' ||
+    variant === 'home-hero' ||
+    variant === 'treatments-hero' ||
+    variant === 'hospital-hero' ||
+    variant === 'contact-hero';
+
   return (
     <div
       className={`absolute inset-0 pointer-events-none z-0 overflow-hidden select-none ${className}`}
       aria-hidden="true"
+      data-hero-motion={isHeroVariant ? 'true' : undefined}
     >
       {/* =========================================================================
           PAGE 1: HOME SECTIONS
