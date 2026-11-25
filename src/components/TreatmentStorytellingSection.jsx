@@ -212,7 +212,7 @@ export default function TreatmentStorytellingSection() {
                   ? '/images/advanced-mri-scanner.jpg'
                   : activeProcedure === 'pacemaker-implantation'
                   ? '/images/heart-anatomy.jpg'
-                  : '/images/doctor-cathlab-procedure.jpg'
+                  : '/images/peripheral-angioplasty-unique.jpg'
               }
               title={`${currentStory.title} • Live Procedural Cine`}
               subtitle={currentStory.badge}

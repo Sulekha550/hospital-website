@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, Suspense, lazy } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import {
@@ -11,8 +11,9 @@ import DoctorPlaceholder from '../components/DoctorPlaceholder';
 import ThreeDImageCard from '../components/ThreeDImageCard';
 import SectionBackgroundMotion from '../components/SectionBackgroundMotion';
 import DoctorHeroMedicalCanvas from '../components/DoctorHeroMedicalCanvas';
-import CylinderCarouselMilestones from '../components/CylinderCarouselMilestones';
-import PixelatedImageTrailDemo from '../components/PixelatedImageTrailDemo';
+
+const CylinderCarouselMilestones = lazy(() => import('../components/CylinderCarouselMilestones'));
+const PixelatedImageTrailDemo = lazy(() => import('../components/PixelatedImageTrailDemo'));
 
 export default function AboutPage() {
   const [timelineMode, setTimelineMode] = useState('cylinder'); // 'cylinder' | 'expanded'
@@ -303,7 +304,9 @@ export default function AboutPage() {
 
         {/* Interactive Pixelated Surgical & Facility Visual Trail */}
         <div className="max-w-5xl mx-auto mt-10 relative z-10">
-          <PixelatedImageTrailDemo />
+          <Suspense fallback={null}>
+            <PixelatedImageTrailDemo />
+          </Suspense>
         </div>
       </section>
 
@@ -433,7 +436,9 @@ export default function AboutPage() {
             {/* VIEW MODE 1: 3D CYLINDER CAROUSEL (DEFAULT) */}
             {timelineMode === 'cylinder' && (
               <div className="my-4">
-                <CylinderCarouselMilestones items={milestones} />
+                <Suspense fallback={null}>
+                  <CylinderCarouselMilestones items={milestones} />
+                </Suspense>
               </div>
             )}
 

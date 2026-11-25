@@ -72,7 +72,7 @@ export default function TreatmentsPage() {
                 videoUrl={false}
                 showControls={false}
                 styleVariant="panoramic-stage"
-                posterImage="/images/doctor-cathlab-procedure.jpg"
+                posterImage="/images/cardiac-stent-procedure.jpg"
                 title="Cineangiography Stenosis Mapping &amp; Stent Placement"
                 subtitle="Siemens Artis Zee Fluoroscopy • 60 FPS"
                 specs="Sub-Millimeter Stenosis Resolution • 0.014-Inch Micro-Guidewire"

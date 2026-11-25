@@ -59,7 +59,7 @@ export default function CinematicHeroSection() {
             <div className="pt-4 border-t border-slate-200/80 grid grid-cols-3 gap-2 sm:gap-3 max-w-lg">
               {[
                 { img: '/images/hero-architecture-entrance.jpg', stat: '22+ Yrs', label: 'Legacy' },
-                { img: '/images/cardiac-stent-procedure.jpg', stat: '15,000+', label: 'Cath Lab' },
+                { img: '/images/cath-lab.jpg', stat: '15,000+', label: 'Cath Lab' },
                 { img: '/images/radial-catheter-sheath.jpg', stat: '99.4%', label: 'Radial' },
               ].map((item, idx) => (
                 <div
