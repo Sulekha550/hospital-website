@@ -75,17 +75,15 @@ export default function AppointmentExperienceSection({ variant = 'home-appointme
   };
 
   return (
-    <section id="appointment-experience" className="relative py-24 lg:py-32 overflow-hidden select-none bg-gradient-to-b from-[#FFF7F4] via-[#FAF5FF]/60 to-[#FFF3EE] text-slate-900 border-t border-rose-200/60">
-
-      {/* Bespoke Digital Clinical Priority Pass & Holographic Security Guilloche */}
+    <section id="appointment-experience" className="relative py-20 lg:py-28 overflow-hidden select-none bg-[#FAF9F6] text-slate-900 border-t border-slate-200">
       <SectionBackgroundMotion variant={variant} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Section Header */}
         <div className="mb-12 text-center max-w-3xl mx-auto space-y-3">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/85 backdrop-blur-md border border-orange-200 text-xs font-mono font-bold text-[#9A3412] shadow-xs">
-            <Calendar className="w-4 h-4 text-[#EA580C]" />
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-rose-200 text-xs font-mono font-bold text-[#BE123C] shadow-xs">
+            <Calendar className="w-4 h-4 text-[#BE123C]" />
             <span className="uppercase tracking-[0.2em]">Priority Consultation &amp; Direct Triage</span>
           </div>
 
@@ -258,99 +256,93 @@ export default function AppointmentExperienceSection({ variant = 'home-appointme
           {/* Right Column (5 cols): Live Digital Consultation Pass Preview (Boarding Pass Design) */}
           <div className="lg:col-span-5 space-y-6">
 
-            {/* Live Triage & Priority Booking Video HUD */}
+            {/* Live Triage & Priority Booking Video */}
             <SectionCinematicVideo
               type="appointment-suite"
               videoUrl="/videos/appointment-suite.mp4"
               styleVariant="video-card"
-              posterImage="/images/hospital-facility.jpg"
-              title="Priority OPD Gateway"
-              subtitle="Real-Time Triage & Slot Availability"
-              specs="Gorakhpur Campus • Betiahata Wing"
+              posterImage="/images/doctor-patient-consult.jpg"
+              title="Priority OPD Consultation"
+              subtitle="Direct Appointment with Dr. Shahi"
+              specs="Pulse Heart Centre • Betiahata, Gorakhpur"
               aspectRatio="aspect-[16/8]"
             />
 
-            {/* Real-Time Boarding Pass Slip - Luminous Pearl & Warm Coral */}
-            <div className="relative rounded-[2.5rem] bg-gradient-to-br from-white via-[#FFF7ED]/40 to-white text-slate-900 shadow-layered border-2 border-orange-200 p-6 sm:p-8 text-left space-y-6 overflow-hidden transition-all duration-400 hover:shadow-2xl">
-
-              {/* Luminous Ambient Blobs */}
-              <div className="absolute top-0 right-0 w-60 h-60 bg-orange-200/40 rounded-full blur-3xl pointer-events-none" />
-              <div className="absolute bottom-0 left-0 w-60 h-60 bg-rose-500/10 rounded-full blur-3xl pointer-events-none" />
+            {/* Real-Time Consultation Pass */}
+            <div className="relative rounded-2xl bg-white text-slate-900 shadow-lg border border-slate-200 p-6 sm:p-8 text-left space-y-6 overflow-hidden">
 
               {/* Pass Header */}
-              <div className="flex items-center justify-between pb-4 border-b border-orange-200/70 relative z-10">
+              <div className="flex items-center justify-between pb-4 border-b border-slate-100">
                 <div className="flex items-center gap-2.5">
-                  <img src="/images/p.webp" alt="Pulse Logo" className="w-6 h-6 object-contain rounded-md bg-white p-0.5 border border-orange-200" />
+                  <img src="/images/p.webp" alt="Pulse Logo" className="w-6 h-6 object-contain rounded-md bg-white p-0.5 border border-slate-200" />
                   <div>
-                    <span className="font-semibold text-sm tracking-widest uppercase block leading-none text-[#C2410C]">
+                    <span className="font-bold text-sm tracking-widest uppercase block leading-none text-[#0A1128]">
                       PULSE
                     </span>
-                    <span className="text-[8px] font-mono text-[#EA580C] tracking-wider uppercase block mt-0.5 font-bold">
+                    <span className="text-[9px] font-mono text-[#BE123C] tracking-wider uppercase block mt-0.5 font-bold">
                       Consultation Pass
                     </span>
                   </div>
                 </div>
 
-                <span className="px-2.5 py-0.5 rounded-full bg-[#FFF7ED] text-[#C2410C] border border-orange-200 text-[9px] font-mono font-medium flex items-center gap-1 shadow-xs">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#EA580C] animate-ping" />
-                  <span>LIVE PREVIEW</span>
+                <span className="px-2.5 py-1 rounded-full bg-rose-50 text-[#BE123C] border border-rose-200 text-[10px] font-mono font-bold">
+                  OPD TOKEN
                 </span>
               </div>
 
-              {/* Physician & Clinic Identity with Stethoscope Emblem */}
-              <div className="flex items-center gap-3.5 relative z-10 p-2.5 rounded-2xl bg-white border border-orange-200">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#BE123C] via-[#EA580C] to-[#FB923C] border-2 border-orange-200 flex items-center justify-center text-white shrink-0 shadow-sm">
-                  <Stethoscope className="w-6 h-6 stroke-[1.8]" />
-                </div>
+              {/* Physician & Clinic Identity */}
+              <div className="flex items-center gap-3.5 p-3 rounded-xl bg-slate-50 border border-slate-200">
+                <img
+                  src="/images/doctor-portrait.jpg"
+                  alt={doctor.name}
+                  className="w-12 h-12 rounded-xl object-cover object-[50%_20%] border border-slate-300 shrink-0"
+                />
                 <div className="space-y-0.5 text-left">
-                  <div className="flex items-center gap-1.5">
-                    <span className="text-[10px] font-mono uppercase tracking-wider text-[#C2410C] font-bold">
-                      ATTENDING CARDIOLOGIST
-                    </span>
-                    <ShieldCheck className="w-3.5 h-3.5 text-[#EA580C]" />
-                  </div>
-                  <h4 className="text-sm font-extrabold text-slate-950 tracking-tight leading-tight">
+                  <span className="text-[10px] font-mono uppercase tracking-wider text-[#BE123C] font-bold block">
+                    ATTENDING CARDIOLOGIST
+                  </span>
+                  <h4 className="text-sm font-extrabold text-[#0A1128] tracking-tight leading-tight">
                     {doctor.name}
                   </h4>
-                  <p className="text-[10px] font-mono text-[#EA580C] font-bold">
+                  <p className="text-[10px] font-mono text-slate-600 font-semibold">
                     DM Cardiology (PGIMER) • MD (KGMU Lucknow)
                   </p>
                 </div>
               </div>
 
               {/* Patient Dynamic Ticket Card */}
-              <div className="p-4 rounded-2xl bg-[#FFF7ED]/80 border border-orange-200 space-y-3 relative z-10">
+              <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-3">
                 <div className="flex justify-between items-center text-xs">
                   <span className="text-slate-600 font-medium">Patient:</span>
-                  <span className="font-semibold text-slate-950 font-mono">
+                  <span className="font-semibold text-[#0A1128] font-mono">
                     {patientName || 'Patient Name'}
                   </span>
                 </div>
                 <div className="flex justify-between items-center text-xs">
                   <span className="text-slate-600 font-medium">Date &amp; Slot:</span>
-                  <span className="font-bold text-[#C2410C] font-mono">
+                  <span className="font-bold text-[#BE123C] font-mono">
                     {preferredDate} • {preferredSlot}
                   </span>
                 </div>
                 <div className="flex justify-between items-center text-xs">
                   <span className="text-slate-600 font-medium">Category:</span>
-                  <span className="font-bold text-[#EA580C] font-mono uppercase text-[10px]">
+                  <span className="font-bold text-[#0A1128] font-mono uppercase text-[10px]">
                     {triageCategory.replace('-', ' ')}
                   </span>
                 </div>
                 <div className="flex justify-between items-center text-xs">
                   <span className="text-slate-600 font-medium">Location:</span>
-                  <span className="font-bold text-slate-900 font-mono text-[10px]">
+                  <span className="font-bold text-slate-800 font-mono text-[10px]">
                     Pulse Heart Centre, Betiahata
                   </span>
                 </div>
               </div>
 
-              {/* Barcode & Verification */}
-              <div className="pt-2 border-t border-orange-200/70 flex items-center justify-between text-[11px] font-mono relative z-10">
+              {/* Verification */}
+              <div className="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] font-mono">
                 <span className="text-slate-500">PASS-ID: PHC-2026-9812</span>
-                <span className="text-[#EA580C] font-bold flex items-center gap-1">
-                  <ShieldCheck className="w-3.5 h-3.5 text-[#EA580C]" />
+                <span className="text-[#BE123C] font-bold flex items-center gap-1">
+                  <ShieldCheck className="w-3.5 h-3.5" />
                   <span>OPD PRIORITY PASS</span>
                 </span>
               </div>
@@ -358,9 +350,9 @@ export default function AppointmentExperienceSection({ variant = 'home-appointme
             </div>
 
             {/* Direct Helpline Banner */}
-            <div className="p-5 rounded-2xl bg-white border border-orange-200 shadow-sm flex items-center justify-between">
+            <div className="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-center justify-between">
               <div className="space-y-0.5 text-left">
-                <span className="text-xs font-bold text-slate-900 block">
+                <span className="text-xs font-bold text-[#0A1128] block">
                   Need Immediate Guidance?
                 </span>
                 <span className="text-[11px] text-slate-500 font-medium block">
@@ -369,7 +361,7 @@ export default function AppointmentExperienceSection({ variant = 'home-appointme
               </div>
               <a
                 href="tel:+919876543210"
-                className="px-4 py-2 rounded-xl bg-orange-50 text-[#C2410C] text-xs font-bold hover:bg-orange-100 transition-colors border border-orange-200"
+                className="px-4 py-2 rounded-xl bg-rose-50 text-[#BE123C] text-xs font-bold hover:bg-rose-100 transition-colors border border-rose-200"
               >
                 Call OPD
               </a>

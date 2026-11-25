@@ -1,7 +1,6 @@
 import React from 'react';
 import CinematicHeroSection from '../components/CinematicHeroSection';
 import DoctorMonographSection from '../components/DoctorMonographSection';
-import CardiologyShowcaseSection from '../components/CardiologyShowcaseSection';
 import AnatomicalSpecialtyShowcase from '../components/AnatomicalSpecialtyShowcase';
 import MedicalTechnologyShowcase from '../components/MedicalTechnologyShowcase';
 import TreatmentStorytellingSection from '../components/TreatmentStorytellingSection';
@@ -13,7 +12,6 @@ import AppointmentExperienceSection from '../components/AppointmentExperienceSec
 /**
  * HomePage: Flagship Pulse Heart Centre Experience
  * Dedicated 100% to Cardiology, Interventional Excellence & Dr. Prakash Chand Shahi
- * Uniform Medical Emerald, Forest Pine & Luminous Pearl Aesthetic
  */
 export default function HomePage() {
   return (
@@ -25,10 +23,7 @@ export default function HomePage() {
       {/* 2. FOUNDING CLINICIAN MONOGRAPH — Dr. Prakash Chand Shahi (DM PGIMER, MD KGMU) */}
       <DoctorMonographSection />
 
-      {/* 3. CARDIOLOGY SUITE — Interventional Cardiology & Hemodynamic Revascularization */}
-      <CardiologyShowcaseSection />
-
-      {/* 4. CLINICAL SPECIALTIES — Angioplasty, Coronary Angiogram, Pacemaker Implantation */}
+      {/* 3. CLINICAL SPECIALTIES — Angioplasty, Coronary Angiogram, Pacemaker Implantation */}
       <AnatomicalSpecialtyShowcase />
 
       {/* 5. MEDICAL TECHNOLOGY ARSENAL — Siemens Artis Zee Cath Lab, 3D Color Doppler, Cardiac ICU */}

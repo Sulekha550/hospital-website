@@ -25,7 +25,7 @@ export default function CardiologyShowcaseSection() {
       title: 'Transradial Coronary Angioplasty & Stenting',
       category: 'INTERVENTIONAL CATH-LAB',
       badge: 'WRIST-FIRST ACCESS',
-      image: '/images/stent-catheter-fluoroscopy.jpg',
+      image: '/images/doctor-cathlab-procedure.jpg',
       videoUrl: '/videos/cardiac-catheterization.mp4',
       primaryMetric: '99.4% Flow Restored',
       statLabel: 'Vessel Patency Restored',
@@ -47,7 +47,7 @@ export default function CardiologyShowcaseSection() {
       title: 'Definitive Digital Cineangiogram (CAG)',
       category: 'DIAGNOSTIC CATHETERIZATION',
       badge: 'HIGH-SPEED CINE',
-      image: '/images/angiogram-scan.jpg',
+      image: '/images/doctor-angiogram-explain.jpg',
       videoUrl: '/videos/cardiac-catheterization.mp4',
       primaryMetric: '< 15 Min Outpatient',
       statLabel: 'Rapid Diagnostic Precision',
@@ -69,7 +69,7 @@ export default function CardiologyShowcaseSection() {
       title: 'Permanent Pacemaker Implantation (PPI)',
       category: 'CARDIAC ELECTROPHYSIOLOGY',
       badge: 'PHYSIOLOGICAL PACING',
-      image: '/images/pacemaker-tech.jpg',
+      image: '/images/doctor-echo-checkup.jpg',
       videoUrl: '/videos/facilities-walkthrough.mp4',
       primaryMetric: '14-Year Battery Life',
       statLabel: 'Micro-Lithium Generator',
@@ -91,7 +91,7 @@ export default function CardiologyShowcaseSection() {
       title: 'Siemens Artis Zee Cath Lab Pavilion',
       category: 'ADVANCED INFRASTRUCTURE',
       badge: 'BETIAHATA CAMPUS',
-      image: '/images/cath-lab.jpg',
+      image: '/images/doctor-icu-rounds.jpg',
       videoUrl: '/videos/facilities-walkthrough.mp4',
       primaryMetric: '< 45 Min Door-to-Balloon',
       statLabel: '24/7 STEMI Emergency Care',
@@ -176,13 +176,10 @@ export default function CardiologyShowcaseSection() {
   ];
 
   return (
-    <section id="cardiology" className="relative min-h-[92vh] flex items-center py-20 lg:py-28 px-4 sm:px-6 lg:px-12 overflow-hidden bg-gradient-to-b from-[#FFF1F4] via-[#FFF5EE] to-[#FFF3EB] border-b border-rose-100/60 select-none">
+    <section id="cardiology" className="relative min-h-[92vh] flex items-center py-20 lg:py-28 px-4 sm:px-6 lg:px-12 overflow-hidden bg-[#FAF9F6] border-b border-slate-200 select-none">
 
-      {/* 1. 3D WebGL Background Environment */}
-      <CardiologyFullCanvas />
-
-      {/* Bespoke Cardiology Background */}
-      <SectionBackgroundMotion variant="cardiology" />
+      {/* Clean Cardiology Background */}
+      <SectionBackgroundMotion variant="home-cardiology" />
 
       {/* =========================================================================
           MAIN CONTENT GRID: 6 COLS (EDITORIAL & 3D CARDS) + 6 COLS (3D HUD STAGE)
@@ -208,17 +205,20 @@ export default function CardiologyShowcaseSection() {
                 <span className="font-serif italic font-normal text-[#BE123C]">Heartbeat with Precision.</span>
               </h2>
 
-              {/* Lead Cardiologist Pill Badge */}
-              <div className="flex items-center gap-3 p-2.5 rounded-2xl bg-white/95 border border-rose-200 shadow-sm max-w-md">
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#BE123C] to-[#FB923C] border border-rose-200 flex items-center justify-center text-white shrink-0">
-                  <Stethoscope className="w-5 h-5 stroke-[1.8]" />
-                </div>
+              {/* Lead Cardiologist Squircle Portrait Badge */}
+              <div className="flex items-center gap-3 p-2.5 rounded-2xl bg-white border border-slate-200 shadow-sm max-w-md">
+                <img
+                  src="/images/doctor-portrait.jpg"
+                  alt="Dr. Prakash Chand Shahi"
+                  loading="lazy"
+                  className="w-12 h-12 rounded-xl object-cover object-[50%_20%] border border-rose-200 shrink-0"
+                />
                 <div className="text-left">
                   <div className="flex items-center gap-1.5">
-                    <span className="text-xs font-extrabold text-slate-900">Dr. Prakash Chand Shahi</span>
+                    <span className="text-xs font-extrabold text-[#0A1128]">Dr. Prakash Chand Shahi</span>
                     <span className="text-[9px] font-mono font-bold px-2 py-0.5 rounded-full bg-rose-50 text-[#BE123C] border border-rose-200">LEAD CLINICIAN</span>
                   </div>
-                  <span className="text-[10px] text-[#C2410C] font-mono font-bold block">
+                  <span className="text-[10px] text-[#BE123C] font-mono font-bold block mt-0.5">
                     DM Cardiology (PGIMER) • MD (KGMU Lucknow)
                   </span>
                 </div>

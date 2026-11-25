@@ -1,48 +1,52 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import ScrollToTop from './components/ScrollToTop';
 import VibrantBackgroundDesign from './components/VibrantBackgroundDesign';
-import LuxuryAtmosphere3D from './components/LuxuryAtmosphere3D';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 
-// Dedicated Separate Pages
-import HomePage from './pages/HomePage';
-import AboutPage from './pages/AboutPage';
-import TreatmentsPage from './pages/TreatmentsPage';
-import HospitalPage from './pages/HospitalPage';
-import ContactPage from './pages/ContactPage';
+// Route-level code splitting for instant initial load
+const HomePage = lazy(() => import('./pages/HomePage'));
+const AboutPage = lazy(() => import('./pages/AboutPage'));
+const TreatmentsPage = lazy(() => import('./pages/TreatmentsPage'));
+const HospitalPage = lazy(() => import('./pages/HospitalPage'));
+const ContactPage = lazy(() => import('./pages/ContactPage'));
 
 export default function App() {
   return (
     <Router>
       <ScrollToTop />
-      
-      {/* Pure Architectural Canvas with High-Contrast Typography & Dynamic Ambient Background */}
-      <div className="min-h-screen flex flex-col selection:bg-[#BE123C] selection:text-white relative bg-transparent text-[#0F172A] overflow-x-hidden antialiased">
-        
-        {/* Global Ambient Interactive Motion Background */}
-        <VibrantBackgroundDesign />
 
-        {/* Global Living 3D WebGL Particle & Wave Atmosphere */}
-        <LuxuryAtmosphere3D />
+      {/* Clean, Realistic Hospital Canvas with Warm Platinum & Silk Wash */}
+      <div className="min-h-screen flex flex-col selection:bg-[#BE123C] selection:text-white relative bg-transparent text-[#0F172A] overflow-x-hidden antialiased">
+
+        {/* Global Ambient Silk Background */}
+        <VibrantBackgroundDesign />
 
         {/* Floating Minimal Glass Navbar */}
         <Navbar />
 
         {/* Route Page Container */}
         <main className="flex-grow relative z-10">
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/treatments" element={<TreatmentsPage />} />
-            <Route path="/hospital" element={<HospitalPage />} />
-            <Route path="/contact" element={<ContactPage />} />
-            <Route path="/book-appointment" element={<ContactPage />} />
-            <Route path="/appointment" element={<ContactPage />} />
-            {/* Catch-all redirect to Home */}
-            <Route path="*" element={<Navigate to="/" replace />} />
-          </Routes>
+          <Suspense
+            fallback={
+              <div className="min-h-[80vh] flex items-center justify-center">
+                <div className="w-10 h-10 rounded-full border-3 border-rose-200 border-t-[#BE123C] animate-spin" />
+              </div>
+            }
+          >
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/about" element={<AboutPage />} />
+              <Route path="/treatments" element={<TreatmentsPage />} />
+              <Route path="/hospital" element={<HospitalPage />} />
+              <Route path="/contact" element={<ContactPage />} />
+              <Route path="/book-appointment" element={<ContactPage />} />
+              <Route path="/appointment" element={<ContactPage />} />
+              {/* Catch-all redirect to Home */}
+              <Route path="*" element={<Navigate to="/" replace />} />
+            </Routes>
+          </Suspense>
         </main>
 
         {/* High-End Atelier Footer */}

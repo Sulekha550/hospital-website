@@ -46,7 +46,8 @@ export default function DoctorMonographSection() {
       num: '01',
       title: 'Transradial-First Access',
       subtitle: 'Minimally Invasive Wrist Catheterization',
-      desc: 'Over 98% of angiograms and angioplasties are performed through the radial artery in the wrist, completely eliminating groin puncture pain, hematoma risks, and allowing safe same-day walking.',
+      image: '/images/doctor-cathlab-procedure.jpg',
+      desc: 'Over 98% of angiograms and angioplasties are performed through the radial artery in the wrist, eliminating groin puncture pain and allowing same-day walking.',
       badge: '99.4% Flow Restored',
       metric: '2-Hr Ambulation'
     },
@@ -55,7 +56,8 @@ export default function DoctorMonographSection() {
       num: '02',
       title: 'Evidence-Based Ethics',
       subtitle: 'Strict ESC / ACC Clinical Guidelines',
-      desc: 'Coronary stenting is recommended strictly when clinically necessary to save myocardium. Every angiogram is carefully assessed with Fractional Flow Reserve (FFR) and QCA to protect patients from overtreatment.',
+      image: '/images/doctor-patient-consult.jpg',
+      desc: 'Coronary stenting is recommended strictly when clinically necessary to save myocardium. Every angiogram is assessed with FFR and QCA to protect patients from overtreatment.',
       badge: 'Zero Unnecessary Stents',
       metric: '100% Guideline Adherence'
     },
@@ -64,7 +66,8 @@ export default function DoctorMonographSection() {
       num: '03',
       title: 'Unhurried Bedside Dialogue',
       subtitle: 'Direct Angiogram Review With Patients',
-      desc: 'Dr. Shahi personally reviews the fluoroscopy and cineangiography recordings with patients and their families, explaining every branch, lesion, and treatment decision in clear, transparent language.',
+      image: '/images/doctor-angiogram-explain.jpg',
+      desc: 'Dr. Shahi personally reviews the fluoroscopy recordings with patients and their families, explaining every branch, lesion, and treatment decision clearly.',
       badge: 'Transparent Patient Care',
       metric: '22+ Yrs Trust'
     }
@@ -81,46 +84,38 @@ export default function DoctorMonographSection() {
         {/* Master Balanced 2-Column Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
 
-          {/* Left Column (5 Cols): Majestic Doctor Portrait & Verified Credential Card */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-60px' }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-5 relative"
-          >
-            {/* The 3D Interactive Doctor Portrait */}
-            <Interactive3DTilt maxTilt={10} glowColor="rgba(190, 18, 60, 0.28)">
-              <DoctorPlaceholder
-                aspectRatio="aspect-[4/5]"
-                showUploadTrigger={false}
-              />
-            </Interactive3DTilt>
+          {/* Left Column (5 Cols): Offset Architectural Square Portrait Frame (Unique to Monograph) */}
+          <div className="lg:col-span-5 relative max-w-md mx-auto w-full">
+            {/* Offset Midnight Navy Architectural Shadow Card */}
+            <div className="absolute -bottom-4 -right-4 inset-0 rounded-3xl bg-[#0A1128] -z-10" />
 
-            {/* Clean Executive Verification Strip Below Portrait */}
-            <div className="mt-4 p-4 rounded-2xl bg-white/95 backdrop-blur-md border border-slate-200/90 shadow-md flex items-center justify-between gap-4 card-hover-elevate">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#0A1128] via-[#1E293B] to-[#BE123C] flex items-center justify-center text-white shadow-xs shrink-0">
-                  <Stethoscope className="w-5 h-5 text-rose-100" />
-                </div>
-                <div>
-                  <h4 className="text-xs font-bold text-[#0A1128] leading-tight">
+            <div className="relative rounded-3xl overflow-hidden bg-white p-2.5 border border-slate-200 shadow-xl">
+              <div className="aspect-square w-full rounded-2xl overflow-hidden bg-slate-100">
+                <img
+                  src="/images/doctor-portrait.jpg"
+                  alt="Dr. Prakash Chand Shahi"
+                  loading="lazy"
+                  className="w-full h-full object-cover object-[50%_20%]"
+                />
+              </div>
+
+              {/* Clean Executive Verification Strip Inside Frame */}
+              <div className="mt-2.5 p-3.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between gap-3">
+                <div className="text-left">
+                  <h4 className="text-xs font-extrabold text-[#0A1128] leading-tight">
                     Director of Cath Lab &amp; Interventions
                   </h4>
-                  <p className="text-[11px] text-[#BE123C] font-semibold">
+                  <p className="text-[11px] text-[#BE123C] font-semibold mt-0.5">
                     PULSE Heart Centre • Betiahata, Gorakhpur
                   </p>
                 </div>
-              </div>
-
-              <div className="text-right shrink-0">
-                <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-rose-50 text-[#BE123C] text-[10px] font-mono font-bold border border-rose-200">
-                  <ShieldCheck className="w-3.5 h-3.5 text-[#BE123C]" />
-                  <span>NABH Standards</span>
+                <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-rose-50 text-[#BE123C] text-[10px] font-mono font-bold border border-rose-200 shrink-0">
+                  <ShieldCheck className="w-3.5 h-3.5" />
+                  <span>22+ Yrs</span>
                 </span>
               </div>
             </div>
-          </motion.div>
+          </div>
 
           {/* Right Column (7 Cols): Editorial Clinical Pedigree & Philosophy */}
           <motion.div
@@ -213,25 +208,37 @@ export default function DoctorMonographSection() {
                 })}
               </div>
 
-              {/* Pillar Content Card */}
-              <div className="p-4 rounded-xl border border-slate-200 bg-slate-50/70 space-y-2 transition-all duration-300">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <h4 className="text-sm font-extrabold text-[#0A1128]">
-                      {pillars[activePillar].title}
-                    </h4>
-                    <span className="text-[11px] font-medium text-[#BE123C]">
-                      {pillars[activePillar].subtitle}
-                    </span>
+              {/* Pillar Content Card with Visual Doctor Interaction Photo */}
+              <div className="p-4 rounded-xl border border-slate-200 bg-slate-50/70 space-y-3 transition-all duration-300">
+                <div className="flex flex-col sm:flex-row gap-4 items-center">
+                  <div className="w-full sm:w-36 aspect-[16/10] sm:aspect-square rounded-xl overflow-hidden border border-slate-200 shrink-0 bg-slate-900">
+                    <img
+                      src={pillars[activePillar].image}
+                      alt={pillars[activePillar].title}
+                      loading="lazy"
+                      className="w-full h-full object-cover"
+                    />
                   </div>
-                  <span className="px-2.5 py-1 rounded-full border border-rose-200 bg-rose-50 text-[#BE123C] text-[10px] font-mono font-bold shrink-0">
-                    {pillars[activePillar].metric}
-                  </span>
-                </div>
+                  <div className="flex-1 space-y-1.5 text-left">
+                    <div className="flex items-center justify-between gap-2">
+                      <div>
+                        <h4 className="text-sm font-extrabold text-[#0A1128]">
+                          {pillars[activePillar].title}
+                        </h4>
+                        <span className="text-[11px] font-medium text-[#BE123C]">
+                          {pillars[activePillar].subtitle}
+                        </span>
+                      </div>
+                      <span className="px-2.5 py-1 rounded-full border border-rose-200 bg-rose-50 text-[#BE123C] text-[10px] font-mono font-bold shrink-0">
+                        {pillars[activePillar].metric}
+                      </span>
+                    </div>
 
-                <p className="text-xs text-slate-600 leading-relaxed pt-1">
-                  {pillars[activePillar].desc}
-                </p>
+                    <p className="text-xs text-slate-600 leading-relaxed pt-1">
+                      {pillars[activePillar].desc}
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
 

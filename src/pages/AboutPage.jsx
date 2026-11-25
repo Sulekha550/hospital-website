@@ -120,16 +120,22 @@ export default function AboutPage() {
           {/* Main 2-Column Bespoke Showcase Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
 
-            {/* Left Column (5 cols): 3D Framed Doctor Portrait with Interactive Floating Pedigree Badges */}
-            <div className="lg:col-span-5 relative max-w-md mx-auto w-full">
-              <DoctorPlaceholder
-                aspectRatio="aspect-[4/5]"
-              />
+            {/* Left Column (5 cols): Bespoke Circular Medallion Portrait (Unique to About Page) */}
+            <div className="lg:col-span-5 relative flex flex-col items-center justify-center py-4">
+              <div className="relative w-72 h-72 sm:w-96 sm:h-96 rounded-full p-3 bg-white border-2 border-slate-200 shadow-[0_28px_65px_-15px_rgba(10,17,40,0.18)]">
+                <div className="w-full h-full rounded-full overflow-hidden border-4 border-[#BE123C]/20 bg-slate-100">
+                  <img
+                    src="/images/doctor-portrait.jpg"
+                    alt="Dr. Prakash Chand Shahi"
+                    className="w-full h-full object-cover object-[50%_20%]"
+                  />
+                </div>
+              </div>
 
               {/* Floating Top Right Pedigree Seal */}
-              <div className="absolute -top-4 -right-4 px-4 py-2.5 rounded-2xl bg-white/95 backdrop-blur-md border-2 border-slate-200 shadow-xl text-left hidden sm:flex items-center gap-2.5 z-20">
+              <div className="absolute top-2 right-2 sm:right-6 px-4 py-2.5 rounded-2xl bg-white border border-slate-200 shadow-lg text-left hidden sm:flex items-center gap-2.5 z-20">
                 <div className="w-8 h-8 rounded-xl bg-rose-50 border border-rose-200/80 flex items-center justify-center text-[#BE123C]">
-                  <HeartPulse className="w-4 h-4 text-[#BE123C] animate-pulse" />
+                  <HeartPulse className="w-4 h-4 text-[#BE123C]" />
                 </div>
                 <div>
                   <span className="text-[9px] font-bold uppercase tracking-wider text-[#BE123C] block">
@@ -142,9 +148,9 @@ export default function AboutPage() {
               </div>
 
               {/* Floating Bottom Left Clinical Trust Seal */}
-              <div className="absolute -bottom-4 -left-4 px-4 py-2 rounded-2xl bg-white/95 backdrop-blur-md border border-slate-200 shadow-lg text-left hidden sm:flex items-center gap-2 z-20">
-                <ShieldCheck className="w-4 h-4 text-[#BE123C]" />
-                <span className="text-xs font-bold text-slate-800">
+              <div className="absolute bottom-2 left-2 sm:left-6 px-4 py-2 rounded-2xl bg-[#0A1128] text-white border border-white/10 shadow-lg text-left hidden sm:flex items-center gap-2 z-20">
+                <ShieldCheck className="w-4 h-4 text-rose-400" />
+                <span className="text-xs font-bold">
                   15,000+ Interventions Done
                 </span>
               </div>
@@ -334,15 +340,15 @@ export default function AboutPage() {
 
               <div className="space-y-3">
                 <ThreeDImageCard
-                  src="/images/cath-lab.jpg"
-                  image="/images/cath-lab.jpg"
+                  src="/images/doctor-cathlab-procedure.jpg"
+                  image="/images/doctor-cathlab-procedure.jpg"
                   alt="Cath Lab Mission"
                   badge="PILLAR 01"
                   title="Medical Mission"
                   stat="Zero Compromise"
                   substat="Tertiary Interventions"
                   aspectRatio="aspect-[16/10]"
-                  laserBeam={true}
+                  laserBeam={false}
                 />
                 <div className="flex flex-wrap gap-1.5 justify-center">
                   <span className="text-[10px] font-semibold bg-white border border-slate-200 text-[#0A1128] px-2.5 py-1 rounded-md">Precision Angioplasty</span>
@@ -352,15 +358,15 @@ export default function AboutPage() {
 
               <div className="space-y-3">
                 <ThreeDImageCard
-                  src="/images/doctor-bedside-consult.jpg"
-                  image="/images/doctor-bedside-consult.jpg"
+                  src="/images/doctor-patient-consult.jpg"
+                  image="/images/doctor-patient-consult.jpg"
                   alt="Bedside Consult"
                   badge="PILLAR 02"
                   title="Clinical Philosophy"
                   stat="Unhurried Bedside"
                   substat="Ethical Guidance"
                   aspectRatio="aspect-[16/10]"
-                  laserBeam={true}
+                  laserBeam={false}
                 />
                 <div className="flex flex-wrap gap-1.5 justify-center">
                   <span className="text-[10px] font-semibold bg-white border border-slate-200 text-[#0A1128] px-2.5 py-1 rounded-md">Direct Dialogue</span>
@@ -370,15 +376,15 @@ export default function AboutPage() {
 
               <div className="space-y-3">
                 <ThreeDImageCard
-                  src="/images/operation-theatre-laminar.jpg"
-                  image="/images/operation-theatre-laminar.jpg"
+                  src="/images/doctor-icu-rounds.jpg"
+                  image="/images/doctor-icu-rounds.jpg"
                   alt="Sterility Protocols"
                   badge="PILLAR 03"
                   title="Evidence Protocols"
                   stat="NABH Sterility"
                   substat="ACC / AHA Standards"
                   aspectRatio="aspect-[16/10]"
-                  laserBeam={true}
+                  laserBeam={false}
                 />
                 <div className="flex flex-wrap gap-1.5 justify-center">
                   <span className="text-[10px] font-semibold bg-white border border-slate-200 text-[#0A1128] px-2.5 py-1 rounded-md">Laminar Airflow</span>

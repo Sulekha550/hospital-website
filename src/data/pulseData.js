@@ -869,39 +869,39 @@ export const PULSE_DATA = {
       title: "Grand Architectural Atrium & Reception",
       category: "Patient Welcome & Triage",
       description: "Designed with generous natural light, acoustic dampening, and streamlined digital registration kiosks for zero-wait patient admission.",
-      image: "/images/hero-architecture-entrance.jpg",
+      image: "/images/hospital-facility.jpg",
       featured: true
     },
     {
       id: "tour-2",
       title: "Siemens Artis Zee Flat-Panel Digital Cath Lab",
       category: "Vascular Interventions",
-      description: "State-of-the-art sterile catheterization theater with real-time hemodynamic monitoring and stent enhancement systems.",
-      image: "/images/cath-lab.jpg",
+      description: "State-of-the-art sterile catheterization theater with Dr. Prakash Chand Shahi performing radial angioplasty and real-time hemodynamic monitoring.",
+      image: "/images/doctor-cathlab-procedure.jpg",
       featured: false
     },
     {
       id: "tour-3",
       title: "Executive Outpatient Consultation Suites",
       category: "Clinical Consultations",
-      description: "Unhurried, private doctor consultation chambers engineered for confidentiality, digital diagnostics display, and patient comfort.",
-      image: "/images/hospital-ward-suites.jpg",
+      description: "Unhurried, private doctor consultation chambers where Dr. Shahi personally explains ECG & angiogram findings with families.",
+      image: "/images/doctor-patient-consult.jpg",
       featured: false
     },
     {
       id: "tour-4",
-      title: "Class-100 Laminar Flow Modular OT Complex",
+      title: "Class-100 Laminar Flow Modular OT & Pacing Suite",
       category: "Surgical Care",
-      description: "Ultra-clean surgical theatres for joint replacements, brain surgeries, and onco-resections with zero particulate contamination.",
-      image: "/images/operation-theatre-laminar.jpg",
+      description: "Ultra-clean cardiac & pacing theatres with positive-pressure HEPA filtration and continuous hemodynamic telemetry.",
+      image: "/images/pacemaker-tech.jpg",
       featured: false
     },
     {
       id: "tour-5",
-      title: "3.0 Tesla Silent MRI & Diagnostic Imaging Center",
-      category: "Advanced Imaging",
-      description: "High-density imaging wing featuring 3T MRI, 128-Slice Cardiac CT, and digital ultrasound suites for rapid clinical diagnosis.",
-      image: "/images/advanced-mri-scanner.jpg",
+      title: "Post-Procedure Cardiac Recovery & ICU Rounds",
+      category: "Bedside Recovery",
+      description: "Daily bedside follow-up rounds by Dr. Shahi ensuring rapid ambulation and safe recovery after stenting.",
+      image: "/images/doctor-icu-rounds.jpg",
       featured: false
     }
   ],

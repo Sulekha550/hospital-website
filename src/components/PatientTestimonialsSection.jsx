@@ -20,7 +20,7 @@ export default function PatientTestimonialsSection() {
       recovery: 'Discharged in 24 Hrs',
       doctor: 'Dr. Prakash Chand Shahi',
       quote: 'Flawless wrist-first angioplasty with two stents. Walking the next morning with zero groin pain.',
-      image: '/images/patient-recovery-story.jpg',
+      image: '/images/doctor-patient-consult.jpg',
       stat: '99.4% Flow Restored',
       badge: 'Cardiac Recovery'
     },
@@ -33,7 +33,7 @@ export default function PatientTestimonialsSection() {
       recovery: 'Active Lifestyle Restored',
       doctor: 'Dr. Prakash Chand Shahi',
       quote: 'Pulse rate was dropping below 35 BPM. Dr. Shahi implanted the pacemaker smoothly; feeling energetic now.',
-      image: '/images/patient-care-recovery.jpg',
+      image: '/images/doctor-icu-rounds.jpg',
       stat: '100% Sinus Synchrony',
       badge: 'Pacemaker Recovery'
     },
@@ -46,7 +46,7 @@ export default function PatientTestimonialsSection() {
       recovery: 'Discharged in 48 Hrs',
       doctor: 'Dr. Prakash Chand Shahi',
       quote: 'Reached PULSE Cath-Lab in emergency. Immediate stent opened 100% blocked LAD artery within minutes.',
-      image: '/images/doctor-bedside-consult.jpg',
+      image: '/images/doctor-angiogram-explain.jpg',
       stat: '< 38 Min Door-to-Balloon',
       badge: 'Emergency Angioplasty'
     }
@@ -74,10 +74,13 @@ export default function PatientTestimonialsSection() {
             </h2>
 
             <div className="flex items-center justify-center gap-2 pt-1">
-              <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200 shadow-xs hover:border-rose-300 transition-colors">
-                <div className="w-6 h-6 rounded-full bg-gradient-to-br from-[#0A1128] via-[#1E293B] to-[#BE123C] flex items-center justify-center text-white border border-rose-200">
-                  <ShieldCheck className="w-3.5 h-3.5" />
-                </div>
+              <div className="flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white border border-slate-200 shadow-xs">
+                <img
+                  src="/images/doctor-portrait.jpg"
+                  alt="Dr. Prakash Chand Shahi"
+                  loading="lazy"
+                  className="w-7 h-7 rounded-full object-cover object-[50%_20%] border border-rose-300 shrink-0"
+                />
                 <span className="text-[11px] font-bold text-[#0A1128]">Under Clinical Direction of Dr. Prakash Chand Shahi</span>
               </div>
             </div>

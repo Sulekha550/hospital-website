@@ -1,181 +1,150 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import {
-  Calendar, ArrowRight, ShieldCheck, Activity, Award,
-  Clock, Phone, HeartPulse, Sparkles, CheckCircle2, Stethoscope
-} from 'lucide-react';
-import { PULSE_DATA } from '../data/pulseData';
-import DoctorPlaceholder from './DoctorPlaceholder';
+import { Calendar, ArrowRight, Phone, MapPin, Clock, ShieldCheck, HeartPulse } from 'lucide-react';
 import SectionBackgroundMotion from './SectionBackgroundMotion';
-import HeroArchitectural3DCanvas from './HeroArchitectural3DCanvas';
-import Interactive3DTilt from './Interactive3DTilt';
-import ScrollReveal from './ScrollReveal';
 
 /**
  * CinematicHeroSection
- * Clean, authoritative, world-class medical hero:
- * - Serene medical atmosphere with delicate ECG sinus vector accent
- * - Crisp visual hierarchy: Monumental typography + direct clinical action
- * - High-credibility clinician introduction (PGIMER Chandigarh & KGMU Lucknow)
- * - Interactive 3D Cursor Tilt & Framer Motion Scroll Reveals
+ * New Architectural Split-Stage Hero (100vh):
+ * - Left: Clean editorial typography, direct actions & compact visual facility strip
+ * - Right: Deep Midnight Navy architectural showcase panel framing Dr. Prakash Chand Shahi's portrait cleanly
  */
 export default function CinematicHeroSection() {
-  const { doctor, clinic } = PULSE_DATA;
-
   return (
-    <section className="relative min-h-[90vh] lg:min-h-screen flex flex-col justify-between pt-28 pb-12 px-4 sm:px-6 lg:px-12 overflow-hidden select-none bg-gradient-to-b from-[#FAF9F6] via-[#F8FAFC] to-[#F1F5F9]">
+    <section className="relative min-h-screen lg:h-screen flex items-center pt-24 pb-8 lg:pt-20 lg:pb-6 px-4 sm:px-6 lg:px-10 border-b border-slate-200/80 overflow-hidden select-none">
 
-      {/* 3D WebGL Medical Architecture & Bioluminescent Particle Ribbon */}
-      <div className="absolute inset-0 z-0 opacity-55 pointer-events-none">
-        <HeroArchitectural3DCanvas />
-      </div>
-
-      {/* Bespoke Architectural Medical Citadel & 3D WebGL Helix Ribbon */}
+      {/* Animated Medical & Silk Background */}
       <SectionBackgroundMotion variant="home-hero" />
 
-      <div className="max-w-7xl mx-auto w-full flex-1 flex flex-col justify-center relative z-10 py-6 sm:py-10">
+      <div className="max-w-7xl mx-auto w-full relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
 
-        {/* Top Operating Status Strip */}
-        <ScrollReveal variant="fade-down" delay={0.1}>
-          <div className="flex items-center justify-end mb-6 sm:mb-8">
-            <div className="flex flex-wrap items-center gap-2 sm:gap-4 text-xs font-semibold text-slate-700 bg-white/95 backdrop-blur-md px-4 py-2 rounded-full border border-slate-200/80 shadow-xs hover:shadow-md transition-all">
-              <span className="flex items-center gap-1.5 text-slate-700">
-                <Clock className="w-3.5 h-3.5 text-[#BE123C]" />
-                <span>OPD Consultation: 08:30 AM – 08:30 PM</span>
-              </span>
-              <span className="text-slate-300 hidden sm:inline">•</span>
-              <a href="tel:+919876543210" className="flex items-center gap-1.5 text-[#BE123C] font-bold hover:underline">
-                <span className="w-2 h-2 rounded-full bg-[#E11D48] animate-ping" />
-                <span>Emergency 24/7: +91 98765 43210</span>
+          {/* Left Column (6 cols): Editorial Lead & Compact Visual Cards */}
+          <div className="lg:col-span-6 space-y-6 text-left">
+
+            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white border border-slate-200 shadow-xs text-xs font-semibold text-[#0A1128]">
+              <MapPin className="w-3.5 h-3.5 text-[#BE123C]" />
+              <span>Pulse Heart Centre • Betiahata, Gorakhpur</span>
+              <span className="text-slate-300">|</span>
+              <Clock className="w-3.5 h-3.5 text-[#BE123C]" />
+              <span>10 AM – 8 PM</span>
+            </div>
+
+            <div className="space-y-3">
+              <h1 className="text-4xl sm:text-5xl lg:text-[3.4rem] font-extrabold text-[#0A1128] tracking-[-0.03em] leading-[1.07]">
+                Precision Heart Care. <br />
+                <span className="font-serif italic font-normal text-[#BE123C]">
+                  Built Around Trust.
+                </span>
+              </h1>
+              <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-lg">
+                <strong className="text-[#0A1128] font-bold">Dr. Prakash Chand Shahi</strong> (DM Cardiology, PGIMER • MD, KGMU) — painless wrist-first angioplasty &amp; 24/7 emergency cardiac care.
+              </p>
+            </div>
+
+            {/* Primary CTAs */}
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+              <Link to="/contact" className="luxury-btn-primary group">
+                <Calendar className="w-4 h-4 text-rose-200" />
+                <span>Book Consultation</span>
+                <ArrowRight className="w-4 h-4 text-white group-hover:translate-x-1 transition-transform" />
+              </Link>
+              <a href="tel:+919876543210" className="luxury-btn-secondary">
+                <Phone className="w-4 h-4 text-[#BE123C]" />
+                <span>24/7 Emergency: +91 98765 43210</span>
               </a>
             </div>
-          </div>
-        </ScrollReveal>
 
-        {/* Master Hero Split Composition */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-
-          {/* Left Column (7 cols): Editorial Typography & Direct Clinical Actions */}
-          <div className="lg:col-span-7 space-y-6 text-left">
-
-            <ScrollReveal variant="fade-down" delay={0.15}>
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/95 backdrop-blur-md text-[#BE123C] border border-rose-300/80 text-xs font-bold uppercase tracking-[0.22em] shadow-xs hover:border-rose-400 hover:shadow-md transition-all">
-                <Sparkles className="w-3.5 h-3.5 text-[#E11D48]" />
-                <span>Pulse Heart Centre • Betiahata, Gorakhpur</span>
-              </div>
-            </ScrollReveal>
-
-            <ScrollReveal variant="fade-up" delay={0.2}>
-              <div className="space-y-3">
-                <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-[#0A1128] tracking-[-0.035em] leading-[1.06]">
-                  Restoring Rhythms. <br />
-                  <span className="font-serif italic font-normal text-transparent bg-clip-text bg-gradient-to-r from-[#0A1128] via-[#BE123C] to-[#E11D48]">
-                    Preserving Every Heartbeat.
-                  </span>
-                </h1>
-              </div>
-            </ScrollReveal>
-
-            {/* Mobile-Only Doctor Portrait with 3D Tilt */}
-            <div className="block lg:hidden my-4 max-w-sm mx-auto relative">
-              <Interactive3DTilt maxTilt={8}>
-                <DoctorPlaceholder aspectRatio="aspect-[4/5]" />
-              </Interactive3DTilt>
+            {/* 3 Visual Proof Thumbnails */}
+            <div className="pt-4 border-t border-slate-200/80 grid grid-cols-3 gap-3 max-w-lg">
+              {[
+                { img: '/images/hospital-facility.jpg', stat: '22+ Yrs', label: 'Legacy' },
+                { img: '/images/cath-lab.jpg', stat: '15,000+', label: 'Cath Lab' },
+                { img: '/images/angiogram-scan.jpg', stat: '99.4%', label: 'Radial' },
+              ].map((item, idx) => (
+                <div
+                  key={idx}
+                  className="flex items-center gap-2.5 p-2 rounded-xl bg-white/95 border border-slate-200 shadow-xs"
+                >
+                  <img
+                    src={item.img}
+                    alt={item.label}
+                    className="w-10 h-10 rounded-lg object-cover shrink-0"
+                  />
+                  <div className="min-w-0">
+                    <span className="text-sm font-extrabold text-[#0A1128] block leading-none">{item.stat}</span>
+                    <span className="text-[10px] font-semibold text-[#BE123C] block mt-0.5 truncate">{item.label}</span>
+                  </div>
+                </div>
+              ))}
             </div>
+          </div>
 
-            <ScrollReveal variant="fade-up" delay={0.3}>
-              <p className="text-base sm:text-lg text-slate-700 font-normal leading-relaxed max-w-2xl">
-                Led by <strong className="text-[#0A1128] font-bold">Dr. Prakash Chand Shahi</strong> — DM Cardiology (PGIMER Chandigarh) and MD Medicine (KGMU Lucknow). Dedicated to evidence-based cardiac care, transradial-first painless stenting, and 24/7 acute STEMI emergency intervention.
-              </p>
-            </ScrollReveal>
+          {/* Right Column (6 cols): Deep Midnight Navy Architectural Stage Panel */}
+          <div className="lg:col-span-6">
+            <div className="relative rounded-[2rem] bg-[#0A1128] p-5 sm:p-6 shadow-[0_30px_70px_-15px_rgba(10,17,40,0.3)] border border-slate-800 overflow-hidden">
+              {/* Crimson Accent Bar on Left Edge */}
+              <div className="absolute left-0 top-8 bottom-8 w-1.5 bg-gradient-to-b from-[#E11D48] via-[#BE123C] to-transparent rounded-r-full" />
 
-            {/* Clean Key Clinical Pillars (Hover responsive) */}
-            <ScrollReveal variant="fade-up" delay={0.35}>
-              <div className="flex flex-wrap items-center gap-2.5 pt-1 text-xs font-semibold">
-                <span className="inline-flex items-center gap-1.5 bg-white/90 backdrop-blur-sm text-slate-900 px-3.5 py-1.5 rounded-full border border-slate-200 shadow-2xs hover:scale-105 hover:border-rose-300 transition-all cursor-default">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-[#BE123C]" />
-                  <span>Transradial-First (Wrist Access)</span>
-                </span>
-                <span className="inline-flex items-center gap-1.5 bg-white/90 backdrop-blur-sm text-slate-900 px-3.5 py-1.5 rounded-full border border-slate-200 shadow-2xs hover:scale-105 hover:border-slate-400 transition-all cursor-default">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-[#0A1128]" />
-                  <span>Siemens Artis Zee Flat-Panel</span>
-                </span>
-                <span className="inline-flex items-center gap-1.5 bg-white/90 backdrop-blur-sm text-slate-900 px-3.5 py-1.5 rounded-full border border-slate-200 shadow-2xs hover:scale-105 hover:border-rose-300 transition-all cursor-default">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-[#BE123C]" />
-                  <span>24/7 Primary Angioplasty</span>
-                </span>
+              {/* Subtle Radial Glow Inside Navy Stage */}
+              <div
+                className="absolute -top-20 -right-20 w-72 h-72 rounded-full pointer-events-none"
+                style={{ background: 'radial-gradient(circle, rgba(225,29,72,0.28) 0%, transparent 70%)' }}
+              />
+
+              <div className="relative z-10 grid grid-cols-1 sm:grid-cols-12 gap-5 items-center">
+                {/* Clean Uncropped Portrait of Dr. Prakash Chand Shahi */}
+                <div className="sm:col-span-7 rounded-2xl overflow-hidden bg-slate-900 border border-white/10 shadow-lg">
+                  <div className="aspect-[4/5] max-h-[54vh] w-full overflow-hidden">
+                    <img
+                      src="/images/doctor-portrait.jpg"
+                      alt="Dr. Prakash Chand Shahi"
+                      className="w-full h-full object-cover object-[50%_20%]"
+                    />
+                  </div>
+                </div>
+
+                {/* Right Side Credential & Live Care Stack Inside Dark Stage */}
+                <div className="sm:col-span-5 space-y-4 text-left text-white">
+                  <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-rose-500/20 border border-rose-400/30 text-[10px] font-mono font-bold text-rose-200">
+                    <HeartPulse className="w-3.5 h-3.5 text-rose-400" />
+                    <span>CHIEF CARDIOLOGIST</span>
+                  </div>
+
+                  <div>
+                    <h2 className="text-xl font-extrabold text-white leading-snug">
+                      Dr. Prakash Chand Shahi
+                    </h2>
+                    <p className="text-xs text-rose-300 font-semibold mt-1">
+                      DM Cardiology (PGIMER)
+                    </p>
+                    <p className="text-xs text-slate-300 mt-0.5">
+                      MD Medicine (KGMU Lucknow)
+                    </p>
+                  </div>
+
+                  <div className="space-y-2.5 pt-3 border-t border-white/10 text-xs">
+                    <div className="p-2.5 rounded-xl bg-white/[0.06] border border-white/10">
+                      <span className="text-[10px] font-mono text-slate-400 block">APPROACH</span>
+                      <span className="font-bold text-white">Wrist-First Radial Stenting</span>
+                    </div>
+                    <div className="p-2.5 rounded-xl bg-white/[0.06] border border-white/10">
+                      <span className="text-[10px] font-mono text-slate-400 block">EMERGENCY</span>
+                      <span className="font-bold text-rose-300">&lt; 45 Min Door-to-Balloon</span>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-2 text-[11px] text-slate-300 pt-1">
+                    <ShieldCheck className="w-4 h-4 text-rose-400 shrink-0" />
+                    <span>NABH Sterile Cath Suite</span>
+                  </div>
+                </div>
               </div>
-            </ScrollReveal>
-
-            {/* Direct Action Row with Kinetic Sheen */}
-            <ScrollReveal variant="fade-up" delay={0.4}>
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
-                <Link
-                  to="/contact"
-                  className="luxury-btn-primary group"
-                >
-                  <Calendar className="w-4 h-4 text-rose-200 group-hover:scale-110 transition-transform" />
-                  <span>Book Priority Consultation</span>
-                  <ArrowRight className="w-4 h-4 text-white group-hover:translate-x-1.5 transition-transform" />
-                </Link>
-
-                <a
-                  href="tel:+919876543210"
-                  className="luxury-btn-secondary group"
-                >
-                  <Phone className="w-4 h-4 text-[#BE123C] group-hover:scale-110 transition-transform" />
-                  <span>24/7 Emergency Line</span>
-                </a>
-              </div>
-            </ScrollReveal>
-
-          </div>
-
-          {/* Right Column (5 cols): Elegant Doctor Spotlight with Interactive 3D Cursor Tilt (Desktop Only) */}
-          <div className="hidden lg:block lg:col-span-5 relative">
-            <Interactive3DTilt maxTilt={10} glowColor="rgba(190, 18, 60, 0.28)">
-              <DoctorPlaceholder aspectRatio="aspect-[4/5]" />
-            </Interactive3DTilt>
-          </div>
-
-        </div>
-
-      </div>
-
-      {/* =========================================================================
-          BOTTOM METRICS STRIP: CLEAN, CRISP 4-COLUMN MEDICAL RIBBON WITH HOVER LIFT
-         ========================================================================= */}
-      <div className="max-w-7xl mx-auto w-full pt-8 border-t border-slate-200 relative z-10">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-
-          <div className="p-4 rounded-2xl bg-white/85 backdrop-blur-md border border-slate-200/90 shadow-sm card-hover-elevate text-left">
-            <span className="text-2xl sm:text-4xl font-extrabold text-[#BE123C] tracking-tight block">22+</span>
-            <span className="text-xs text-[#0A1128] font-bold uppercase tracking-wider block mt-0.5">Years Experience</span>
-            <span className="text-[11px] text-slate-500">Unbroken leadership in Eastern UP</span>
-          </div>
-
-          <div className="p-4 rounded-2xl bg-white/85 backdrop-blur-md border border-slate-200/90 shadow-sm card-hover-elevate text-left">
-            <span className="text-2xl sm:text-4xl font-extrabold text-[#0A1128] tracking-tight block">15,000+</span>
-            <span className="text-xs text-[#0A1128] font-bold uppercase tracking-wider block mt-0.5">Cath Procedures</span>
-            <span className="text-[11px] text-slate-500">Angiography, angioplasty &amp; stenting</span>
-          </div>
-
-          <div className="p-4 rounded-2xl bg-white/85 backdrop-blur-md border border-slate-200/90 shadow-sm card-hover-elevate text-left">
-            <span className="text-2xl sm:text-4xl font-extrabold text-[#BE123C] tracking-tight block">99.4%</span>
-            <span className="text-xs text-[#0A1128] font-bold uppercase tracking-wider block mt-0.5">Radial Success</span>
-            <span className="text-[11px] text-slate-500">Pain-free wrist access &amp; rapid walking</span>
-          </div>
-
-          <div className="p-4 rounded-2xl bg-white/85 backdrop-blur-md border border-slate-200/90 shadow-sm card-hover-elevate text-left">
-            <span className="text-2xl sm:text-4xl font-extrabold text-[#0A1128] tracking-tight block">&lt; 45 Min</span>
-            <span className="text-xs text-[#0A1128] font-bold uppercase tracking-wider block mt-0.5">STEMI Door-To-Balloon</span>
-            <span className="text-[11px] text-slate-500">24/7 emergency Code Blue response</span>
+            </div>
           </div>
 
         </div>
       </div>
-
     </section>
   );
 }

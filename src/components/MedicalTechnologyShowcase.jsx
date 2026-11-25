@@ -21,7 +21,7 @@ export default function MedicalTechnologyShowcase({ variant = 'home-technology' 
       title: 'Digital Flat-Panel Cath Suite',
       category: 'C-ARM FLUOROSCOPY',
       description: 'Sub-millimeter roadmap clarity with DoseSense -40% radiation minimization.',
-      image: '/images/cath-lab.jpg',
+      image: '/images/doctor-cathlab-procedure.jpg',
       videoUrl: '/videos/facilities-walkthrough.mp4',
       type: 'facilities-walkthrough',
       specs: [
@@ -37,7 +37,7 @@ export default function MedicalTechnologyShowcase({ variant = 'home-technology' 
       title: 'Cineangiographic Stenosis Mapping',
       category: 'DIAGNOSTIC LESION QCA',
       description: 'Dynamic non-ionic contrast cine evaluating stenosis dimensions.',
-      image: '/images/stent-catheter-fluoroscopy.jpg',
+      image: '/images/doctor-angiogram-explain.jpg',
       videoUrl: '/videos/cardiac-catheterization.mp4',
       type: 'cardiac-catheterization',
       specs: [
@@ -53,7 +53,7 @@ export default function MedicalTechnologyShowcase({ variant = 'home-technology' 
       title: 'Cobalt-Chromium DES Stents',
       category: 'ENDOVASCULAR BIO-IMPLANTS',
       description: 'Ultra-thin strut lattices coated with 90-day antiproliferative polymer.',
-      image: '/images/radial-catheter-sheath.jpg',
+      image: '/images/doctor-echo-checkup.jpg',
       videoUrl: '/videos/cardiology-heart.mp4',
       type: 'cardiology-heart',
       specs: [
@@ -87,13 +87,8 @@ export default function MedicalTechnologyShowcase({ variant = 'home-technology' 
   return (
     <section className="relative py-28 lg:py-36 overflow-hidden select-none bg-gradient-to-b from-[#FAF9F6] via-[#F8FAFC] to-[#F1F5F9] border-b border-slate-200">
 
-      {/* Bespoke Siemens Cleanroom Fluoroscopy & Cyan/Teal Laser Calibration Sweeps */}
+      {/* Bespoke Cleanroom Background */}
       <SectionBackgroundMotion variant={variant} />
-
-      {/* Interactive 3D WebGL Tomographic Scanner Canvas (Three.js) */}
-      <div className="absolute inset-0 z-0 opacity-70 pointer-events-none">
-        <DiagnosticScannerFullCanvas />
-      </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
@@ -137,14 +132,22 @@ export default function MedicalTechnologyShowcase({ variant = 'home-technology' 
                   />
                 </div>
 
-                {/* Bottom Equipment Status Ticker */}
+                {/* Bottom Equipment Status Ticker with Lead Operator PiP Portrait */}
                 <div className="mt-3 px-3 py-2.5 rounded-xl bg-slate-50 border border-slate-200 flex flex-wrap items-center justify-between gap-2 text-xs">
-                  <div className="flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-[#BE123C] animate-pulse" />
-                    <span className="font-mono font-bold text-[#0A1128]">{current.title}</span>
+                  <div className="flex items-center gap-2.5">
+                    <img
+                      src="/images/doctor-portrait.jpg"
+                      alt="Dr. Prakash Chand Shahi"
+                      loading="lazy"
+                      className="w-8 h-8 rounded-lg object-cover object-[50%_20%] border border-slate-300 shrink-0"
+                    />
+                    <div className="text-left">
+                      <span className="font-mono font-bold text-[#0A1128] block leading-tight">{current.title}</span>
+                      <span className="text-[10px] text-slate-500 block">Directed by Dr. Prakash Chand Shahi</span>
+                    </div>
                   </div>
                   <div className="font-mono text-[11px] text-[#BE123C] font-bold">
-                    {current.category} • NABH STANDARDS
+                    {current.category}
                   </div>
                 </div>
               </div>
@@ -188,13 +191,21 @@ export default function MedicalTechnologyShowcase({ variant = 'home-technology' 
                           : 'bg-white hover:bg-slate-50 text-slate-800 border-slate-200 shadow-2xs hover:border-slate-300'
                       }`}
                     >
-                      <div className="space-y-0.5">
-                        <span className={`text-xs font-bold block ${isActive ? 'text-white' : 'text-[#0A1128]'}`}>
-                          {tech.title}
-                        </span>
-                        <span className={`text-[10px] font-mono block ${isActive ? 'text-slate-200' : 'text-slate-500'}`}>
-                          {tech.category}
-                        </span>
+                      <div className="flex items-center gap-3">
+                        <img
+                          src={tech.image}
+                          alt={tech.title}
+                          loading="lazy"
+                          className="w-12 h-12 rounded-xl object-cover border border-white/20 shrink-0"
+                        />
+                        <div className="space-y-0.5 text-left">
+                          <span className={`text-xs font-bold block ${isActive ? 'text-white' : 'text-[#0A1128]'}`}>
+                            {tech.title}
+                          </span>
+                          <span className={`text-[10px] font-mono block ${isActive ? 'text-slate-200' : 'text-slate-500'}`}>
+                            {tech.category}
+                          </span>
+                        </div>
                       </div>
                       <span className={`text-[10px] font-mono px-2 py-0.5 rounded-full ${
                         isActive ? 'bg-white/20 text-white font-bold' : 'bg-slate-100 text-slate-600'

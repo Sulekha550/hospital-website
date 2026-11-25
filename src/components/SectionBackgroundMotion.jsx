@@ -33,89 +33,93 @@ export default function SectionBackgroundMotion({
       {/* 1.1 HOME HERO: Deep Midnight Navy & Crimson Ruby Architectural Citadel */}
       {(variant === 'hero' || variant === 'home-hero' || variant === 'default') && (
         <>
-          <div className="absolute inset-0 bg-gradient-to-b from-[#FAF9F6] via-[#F8FAFC] to-[#F1F5F9]" />
-          
-          {/* Deep Midnight Navy & Crimson Ruby Specular Orbs */}
-          <div className="absolute -top-32 right-1/4 w-[700px] h-[700px] bg-gradient-to-bl from-[#0A1128]/16 via-[#1E293B]/10 to-transparent rounded-full blur-[140px] animate-float-1" />
-          <div className="absolute top-1/3 -left-28 w-[640px] h-[640px] bg-gradient-to-tr from-[#E11D48]/18 via-[#BE123C]/12 to-transparent rounded-full blur-[140px] animate-float-2" />
-          <div className="absolute -bottom-24 right-10 w-[600px] h-[600px] bg-gradient-to-t from-[#0A1128]/14 via-[#BE123C]/10 to-transparent rounded-full blur-[130px] animate-float-3" />
-          <div className="absolute top-1/4 left-1/3 w-[480px] h-[480px] bg-[#E2E8F0]/35 rounded-full blur-[140px] pointer-events-none animate-pulse-glow" />
+          {/* Rich Warm Ivory -> Soft Blush -> Platinum Silk Base */}
+          <div className="absolute inset-0 bg-gradient-to-br from-[#FAF9F6] via-[#FFF1F3] to-[#EAEFF8]" />
 
-          {/* Diagonal Laser Sheen */}
-          <div className="absolute -inset-x-full inset-y-0 w-[200%] h-full bg-gradient-to-r from-transparent via-white/30 to-transparent pointer-events-none animate-laser-diag" />
+          {/* Visibly Moving Ambient Silk Auras (GPU-free radial gradients) */}
+          <div
+            className="absolute -top-28 -left-24 w-[700px] h-[700px] rounded-full animate-float-1 will-change-transform"
+            style={{ background: 'radial-gradient(circle, rgba(10,17,40,0.15) 0%, rgba(30,41,59,0.06) 45%, transparent 72%)' }}
+          />
+          <div
+            className="absolute -top-16 right-0 w-[680px] h-[680px] rounded-full animate-float-2 will-change-transform"
+            style={{ background: 'radial-gradient(circle, rgba(225,29,72,0.18) 0%, rgba(190,18,60,0.07) 45%, transparent 72%)' }}
+          />
+          <div
+            className="absolute -bottom-24 left-1/3 w-[680px] h-[680px] rounded-full animate-aurora-breathe will-change-transform"
+            style={{ background: 'radial-gradient(circle, rgba(190,18,60,0.14) 0%, rgba(10,17,40,0.07) 45%, transparent 72%)' }}
+          />
 
-          {/* Architectural Blueprint Grid */}
-          <div className="absolute inset-0 bg-[radial-gradient(#0A112818_1.25px,transparent_1.25px)] bg-[size:32px_32px] opacity-40 [mask-image:radial-gradient(ellipse_85%_75%_at_50%_35%,#000_80%,transparent_100%)]" />
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#0A112810_1px,transparent_1px),linear-gradient(to_bottom,#0A112810_1px,transparent_1px)] bg-[size:5rem_5rem] [mask-image:radial-gradient(ellipse_80%_70%_at_50%_35%,#000_75%,transparent_100%)]" />
+          {/* Subtle Medical ECG Graph Grid */}
+          <div
+            className="absolute inset-0 opacity-50 pointer-events-none [mask-image:radial-gradient(ellipse_90%_80%_at_50%_45%,#000_65%,transparent_100%)]"
+            style={{
+              backgroundImage:
+                'linear-gradient(to right, rgba(10,17,40,0.045) 1px, transparent 1px), linear-gradient(to bottom, rgba(10,17,40,0.045) 1px, transparent 1px)',
+              backgroundSize: '40px 40px',
+            }}
+          />
 
-          {/* Precision Alignment Crosshairs */}
-          <div className="absolute top-28 left-12 text-[#0A1128]/60 font-mono text-[11px] tracking-widest select-none hidden sm:block">+ 26.7606° N · BETIAHATA CLINICAL CAMPUS</div>
-          <div className="absolute top-28 right-12 text-[#BE123C]/70 font-mono text-[11px] tracking-widest select-none hidden sm:block">+ 83.3732° E · 24/7 PRIMARY ANGIOPLASTY</div>
-          <div className="absolute bottom-32 left-12 text-[#0A1128]/50 font-mono text-[11px] tracking-wider select-none hidden md:block">+ DR. PRAKASH CHAND SHAHI · DM PGIMER</div>
-          <div className="absolute bottom-32 right-12 text-[#BE123C]/60 font-mono text-[11px] tracking-wider select-none hidden md:block">+ CATH-LAB DIGITAL FLUOROSCOPY</div>
-
-          {/* Dynamic Hemodynamic Arterial Waves */}
-          <div className="absolute inset-0 w-full h-full animate-arterial-drift">
-            <svg className="w-full h-full opacity-45" viewBox="0 0 1440 900" fill="none" preserveAspectRatio="none">
+          {/* Flowing Layered Silk Ribbons & Arterial Curves */}
+          <div className="absolute inset-0 pointer-events-none animate-wave-flow will-change-transform">
+            <svg
+              className="w-full h-full"
+              viewBox="0 0 1440 900"
+              fill="none"
+              preserveAspectRatio="none"
+            >
               <defs>
-                <linearGradient id="heroRubyNavyArterial" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#BE123C" stopOpacity="0.22" />
-                  <stop offset="45%" stopColor="#E11D48" stopOpacity="0.25" />
-                  <stop offset="80%" stopColor="#0A1128" stopOpacity="0.16" />
-                  <stop offset="100%" stopColor="#38BDF8" stopOpacity="0.08" />
+                <linearGradient id="heroMotionFill1" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#0A1128" stopOpacity="0.06" />
+                  <stop offset="50%" stopColor="#BE123C" stopOpacity="0.11" />
+                  <stop offset="100%" stopColor="#E11D48" stopOpacity="0.04" />
                 </linearGradient>
               </defs>
               <path
-                d="M-100,320 C280,180 520,440 920,300 C1220,190 1400,360 1550,250 L1550,900 L-100,900 Z"
-                fill="url(#heroRubyNavyArterial)"
+                d="M-60,610 C320,460 700,720 1120,510 C1300,420 1420,480 1500,440 L1500,900 L-60,900 Z"
+                fill="url(#heroMotionFill1)"
               />
-            </svg>
-          </div>
-
-          {/* Floating 3D Glass Morphing Elements */}
-          <div className="absolute top-36 right-20 w-44 h-44 rounded-3xl bg-gradient-to-br from-white/80 via-white/30 to-transparent backdrop-blur-md border border-white/90 shadow-[0_20px_40px_rgba(10,17,40,0.08)] hidden xl:block animate-glass-morph">
-            <div className="absolute inset-3 rounded-2xl border border-rose-200/60 bg-gradient-to-tr from-rose-50/40 to-transparent" />
-          </div>
-          <div className="absolute bottom-44 left-16 w-36 h-36 rounded-full bg-gradient-to-tr from-white/70 via-white/25 to-transparent backdrop-blur-md border border-white/80 shadow-[0_15px_35px_rgba(190,18,60,0.08)] hidden xl:block animate-float-bob">
-            <div className="absolute inset-2.5 rounded-full border border-slate-200/60" />
-          </div>
-
-          {/* Biometric Telemetry Dial */}
-          <div className="absolute top-1/2 -right-20 -translate-y-1/2 w-[580px] h-[580px] rounded-full border border-slate-300/50 hidden lg:block">
-            <div className="absolute inset-6 rounded-full border-2 border-dashed border-rose-400/40 animate-radar-sweep" />
-            <div className="absolute inset-20 rounded-full border border-slate-400/35 flex items-center justify-center">
-              <div className="absolute inset-x-0 h-px bg-rose-400/45" />
-              <div className="absolute inset-y-0 w-px bg-rose-400/45" />
-              <div className="w-4 h-4 rounded-full bg-[#E11D48] animate-ping" />
-            </div>
-            <div className="absolute inset-36 rounded-full border-2 border-slate-300/45 border-t-[#BE123C] animate-rotate-reverse" />
-          </div>
-
-          {/* Active Flowing Cardiac ECG Sinus Wave */}
-          <div className="absolute bottom-12 left-0 right-0 z-0 opacity-95 pointer-events-none">
-            <svg className="w-full h-28" viewBox="0 0 1440 100" fill="none" preserveAspectRatio="none">
-              <defs>
-                <linearGradient id="heroEcgRubyNavyFlow" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="#0A1128" stopOpacity="0.6" />
-                  <stop offset="35%" stopColor="#E11D48" stopOpacity="0.95" />
-                  <stop offset="65%" stopColor="#BE123C" stopOpacity="1" />
-                  <stop offset="100%" stopColor="#0A1128" stopOpacity="0.7" />
-                </linearGradient>
-              </defs>
               <path
-                d="M0,50 L260,50 L280,50 L290,25 L305,80 L320,8 L335,70 L345,50 L400,50 L640,50 L660,50 L670,20 L685,82 L700,6 L715,72 L725,50 L780,50 L1020,50 L1040,50 L1050,25 L1065,80 L1080,8 L1095,70 L1105,50 L1440,50"
-                stroke="url(#heroEcgRubyNavyFlow)"
-                strokeWidth="3.2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeDasharray="600"
+                d="M-60,590 C320,440 700,700 1120,490 C1300,400 1420,460 1500,420"
+                stroke="#BE123C"
+                strokeOpacity="0.32"
+                strokeWidth="2"
+                strokeDasharray="12 10"
                 className="animate-flow-dash"
               />
-              <circle cx="320" cy="8" r="6" fill="#E11D48" className="animate-ping" />
-              <circle cx="700" cy="6" r="6" fill="#BE123C" className="animate-ping" />
-              <circle cx="1080" cy="8" r="6" fill="#E11D48" className="animate-ping" />
+              <path
+                d="M-60,660 C360,530 740,760 1160,570 C1340,490 1440,540 1500,510"
+                stroke="#0A1128"
+                strokeOpacity="0.18"
+                strokeWidth="1.6"
+                strokeDasharray="8 12"
+                className="animate-flow-dash-fast"
+              />
             </svg>
           </div>
+
+          {/* Floating Medical Cross (+) Accents in Outer Margins */}
+          <div className="absolute top-32 left-8 text-[#BE123C]/55 font-mono text-xl font-bold animate-medical-cross-1 select-none pointer-events-none hidden sm:block">+</div>
+          <div className="absolute bottom-36 left-12 text-[#0A1128]/45 font-mono text-lg font-bold animate-medical-cross-2 select-none pointer-events-none hidden md:block">+</div>
+          <div className="absolute top-36 right-10 text-[#BE123C]/50 font-mono text-xl font-bold animate-medical-cross-2 select-none pointer-events-none hidden sm:block">+</div>
+
+          {/* Animated ECG Heartbeat Rhythm Line Along Bottom */}
+          <svg
+            className="absolute inset-x-0 bottom-1 w-full h-24 opacity-65 pointer-events-none"
+            viewBox="0 0 1440 100"
+            fill="none"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M0,65 L320,65 L335,65 L345,40 L358,90 L372,18 L385,78 L395,65 L780,65 L795,65 L805,40 L818,90 L832,18 L845,78 L855,65 L1440,65"
+              stroke="#BE123C"
+              strokeWidth="2.2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeDasharray="600"
+              className="animate-flow-dash"
+            />
+          </svg>
         </>
       )}
 
@@ -125,8 +129,8 @@ export default function SectionBackgroundMotion({
           <div className="absolute inset-0 bg-gradient-to-b from-[#FAF9F6] via-[#F8FAFC] to-[#F1F5F9]" />
           
           {/* Luminous Deep Midnight Navy & Crimson Ruby Specular Orbs */}
-          <div className="absolute top-12 left-1/4 w-[620px] h-[620px] bg-gradient-to-br from-[#0A1128]/15 via-[#1E293B]/10 to-transparent rounded-full blur-[140px] animate-float-1" />
-          <div className="absolute bottom-10 right-1/4 w-[580px] h-[580px] bg-gradient-to-tl from-[#E11D48]/18 via-[#BE123C]/12 to-transparent rounded-full blur-[140px] animate-float-2" />
+          <div className="absolute top-12 left-1/4 w-[620px] h-[620px] bg-gradient-to-br from-[#0A1128]/15 via-[#1E293B]/10 to-transparent rounded-full [mask-image:radial-gradient(closest-side,black_15%,transparent_100%)] will-change-transform animate-float-1" />
+          <div className="absolute bottom-10 right-1/4 w-[580px] h-[580px] bg-gradient-to-tl from-[#E11D48]/18 via-[#BE123C]/12 to-transparent rounded-full [mask-image:radial-gradient(closest-side,black_15%,transparent_100%)] will-change-transform animate-float-2" />
 
           {/* Acoustic Stethoscope Sonar Radar Concentric Waves (Radiating from Left Column) */}
           <div className="absolute top-1/2 left-8 -translate-y-1/2 w-[650px] h-[650px] rounded-full border border-slate-300/40 hidden lg:block pointer-events-none">
@@ -166,8 +170,8 @@ export default function SectionBackgroundMotion({
           <div className="absolute inset-0 bg-gradient-to-b from-[#FAF9F6] via-[#FFF1F2]/60 to-[#F8FAFC]" />
           
           {/* Arterial Crimson & Deep Midnight Navy Atmospheric Glows */}
-          <div className="absolute -top-24 right-10 w-[660px] h-[660px] bg-gradient-to-bl from-[#E11D48]/20 via-[#BE123C]/14 to-transparent rounded-full blur-[140px] animate-float-1" />
-          <div className="absolute bottom-0 left-12 w-[620px] h-[620px] bg-gradient-to-tr from-[#0A1128]/16 via-[#1E293B]/10 to-transparent rounded-full blur-[130px] animate-float-2" />
+          <div className="absolute -top-24 right-10 w-[660px] h-[660px] bg-gradient-to-bl from-[#E11D48]/20 via-[#BE123C]/14 to-transparent rounded-full [mask-image:radial-gradient(closest-side,black_15%,transparent_100%)] will-change-transform animate-float-1" />
+          <div className="absolute bottom-0 left-12 w-[620px] h-[620px] bg-gradient-to-tr from-[#0A1128]/16 via-[#1E293B]/10 to-transparent rounded-full [mask-image:radial-gradient(closest-side,black_15%,transparent_100%)] will-change-transform animate-float-2" />
 
           {/* Micro-Vascular Capillary Tree Network SVG */}
           <div className="absolute inset-0 w-full h-full opacity-35 pointer-events-none animate-vascular-breathe">
@@ -205,67 +209,32 @@ export default function SectionBackgroundMotion({
         </>
       )}
 
-      {/* 1.4 HOME CLINICAL SPECIALTIES: Luxury Hemodynamic Flow & Precision Optical Glass Fields */}
+      {/* 1.4 HOME CLINICAL SPECIALTIES: Subtle Arterial Flow Curves & ECG Graph Paper */}
       {(variant === 'home-specialties' || variant === 'specialties-showcase') && (
         <>
           <div className="absolute inset-0 bg-gradient-to-b from-[#FAF9F6] via-[#F8FAFC] to-[#F1F5F9]" />
-          
-          {/* Luminous Atmospheric Ambient Glow Spheres (Deep Navy & Crimson Ruby) */}
-          <div className="absolute top-0 right-1/4 w-[700px] h-[700px] bg-gradient-to-bl from-[#0A1128]/16 via-[#1E293B]/10 to-transparent rounded-full blur-[140px] animate-float-1" />
-          <div className="absolute bottom-10 left-10 w-[640px] h-[640px] bg-gradient-to-tr from-[#E11D48]/18 via-[#BE123C]/12 to-transparent rounded-full blur-[130px] animate-float-2" />
-          <div className="absolute top-1/2 left-1/3 w-[500px] h-[500px] bg-gradient-to-br from-[#CBD5E1]/25 via-transparent to-transparent rounded-full blur-[120px] animate-pulse-glow" />
-
-          {/* Hairline Medical Blueprint Grid */}
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#0A11280A_1px,transparent_1px),linear-gradient(to_bottom,#0A11280A_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_75%_65%_at_50%_45%,#000_70%,transparent_100%)] pointer-events-none" />
-
-          {/* Fluid Hemodynamic Arterial Streamlines */}
-          <div className="absolute inset-0 opacity-55 pointer-events-none">
-            <svg className="w-full h-full" viewBox="0 0 1440 900" fill="none" preserveAspectRatio="none">
-              <defs>
-                <linearGradient id="specialtyFluidGradientRuby" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="#0A1128" stopOpacity="0.1" />
-                  <stop offset="40%" stopColor="#BE123C" stopOpacity="0.45" />
-                  <stop offset="70%" stopColor="#E11D48" stopOpacity="0.55" />
-                  <stop offset="100%" stopColor="#0A1128" stopOpacity="0.15" />
-                </linearGradient>
-                <linearGradient id="specialtyFluidGradientNavy" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="#BE123C" stopOpacity="0.05" />
-                  <stop offset="50%" stopColor="#0A1128" stopOpacity="0.35" />
-                  <stop offset="100%" stopColor="#BE123C" stopOpacity="0.08" />
-                </linearGradient>
-              </defs>
-              <path
-                d="M -100,520 C 300,420 580,680 920,490 C 1200,340 1350,560 1550,470"
-                stroke="url(#specialtyFluidGradientRuby)"
-                strokeWidth="2.5"
-                strokeDasharray="16 12"
-                className="animate-flow-dash"
-              />
-              <path
-                d="M -100,600 C 280,500 620,740 960,560 C 1240,420 1380,620 1550,530"
-                stroke="url(#specialtyFluidGradientNavy)"
-                strokeWidth="1.8"
-                strokeDasharray="10 8"
-                className="animate-flow-dash"
-              />
-            </svg>
-          </div>
-
-          {/* Architectural Clinical Compass & Calipers */}
-          <div className="absolute top-20 right-14 font-mono text-[10px] text-[#0A1128]/70 tracking-widest hidden sm:block">
-            + CORONARY STENT PATENCY 99.4% · TRANSRADIAL ACCESS
-          </div>
-          <div className="absolute bottom-20 left-12 font-mono text-[10px] text-[#BE123C]/70 tracking-widest hidden md:block">
-            + SUB-MILLIMETER DIGITAL FLUOROSCOPY ARCHITECTURE
-          </div>
-
-          {/* Floating Optical Glass Specular Rings */}
-          <div className="absolute top-24 left-16 w-36 h-36 rounded-full bg-gradient-to-br from-white/80 via-white/30 to-transparent backdrop-blur-md border border-white/90 shadow-[0_20px_45px_rgba(10,17,40,0.06)] hidden xl:block animate-float-bob">
-            <div className="absolute inset-3 rounded-full border border-slate-200/50" />
-          </div>
-          <div className="absolute bottom-28 right-16 w-44 h-44 rounded-3xl bg-gradient-to-tl from-white/75 via-white/25 to-transparent backdrop-blur-md border border-white/90 shadow-[0_25px_50px_rgba(190,18,60,0.06)] hidden xl:block animate-glass-morph">
-            <div className="absolute inset-3 rounded-2xl border border-rose-200/50" />
-          </div>
+          <div
+            className="absolute top-0 right-1/4 w-[680px] h-[680px] rounded-full opacity-60 pointer-events-none"
+            style={{ background: 'radial-gradient(circle, rgba(10,17,40,0.08) 0%, transparent 70%)' }}
+          />
+          <div
+            className="absolute bottom-0 left-1/4 w-[620px] h-[620px] rounded-full opacity-60 pointer-events-none"
+            style={{ background: 'radial-gradient(circle, rgba(190,18,60,0.08) 0%, transparent 70%)' }}
+          />
+          {/* Subtle Medical Graph Paper */}
+          <div
+            className="absolute inset-0 opacity-40 pointer-events-none"
+            style={{
+              backgroundImage:
+                'linear-gradient(to right, rgba(10,17,40,0.035) 1px, transparent 1px), linear-gradient(to bottom, rgba(10,17,40,0.035) 1px, transparent 1px)',
+              backgroundSize: '44px 44px',
+            }}
+          />
+          {/* Smooth Arterial Curves */}
+          <svg className="absolute inset-0 w-full h-full opacity-25 pointer-events-none" viewBox="0 0 1440 800" fill="none" preserveAspectRatio="none">
+            <path d="M-80,540 C360,420 720,660 1180,460 C1340,390 1460,440 1520,410" stroke="#BE123C" strokeWidth="1.8" strokeDasharray="10 10" className="animate-flow-dash" />
+            <path d="M-80,620 C380,510 740,720 1200,540 C1360,480 1460,520 1520,500" stroke="#0A1128" strokeWidth="1.4" strokeDasharray="8 12" className="animate-flow-dash-fast" />
+          </svg>
         </>
       )}
 
@@ -275,8 +244,8 @@ export default function SectionBackgroundMotion({
           <div className="absolute inset-0 bg-gradient-to-b from-[#F8FAFC] via-[#F1F5F9]/80 to-[#FAF9F6]" />
           
           {/* Midnight Navy & Crimson Ruby Depth Glows */}
-          <div className="absolute top-1/4 right-1/4 w-[700px] h-[700px] bg-gradient-to-bl from-[#0A1128]/16 via-[#1E293B]/10 to-transparent rounded-full blur-[140px] animate-float-1" />
-          <div className="absolute bottom-10 left-10 w-[620px] h-[620px] bg-gradient-to-tr from-[#E11D48]/18 via-[#BE123C]/12 to-transparent rounded-full blur-[130px] animate-float-2" />
+          <div className="absolute top-1/4 right-1/4 w-[700px] h-[700px] bg-gradient-to-bl from-[#0A1128]/16 via-[#1E293B]/10 to-transparent rounded-full [mask-image:radial-gradient(closest-side,black_15%,transparent_100%)] will-change-transform animate-float-1" />
+          <div className="absolute bottom-10 left-10 w-[620px] h-[620px] bg-gradient-to-tr from-[#E11D48]/18 via-[#BE123C]/12 to-transparent rounded-full [mask-image:radial-gradient(closest-side,black_15%,transparent_100%)] will-change-transform animate-float-2" />
 
           {/* Sub-Millimeter Cleanroom Isometric Grid */}
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#0A11280C_1px,transparent_1px),linear-gradient(to_bottom,#0A11280C_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] [mask-image:radial-gradient(ellipse_80%_70%_at_50%_40%,#000_75%,transparent_100%)] pointer-events-none" />
@@ -311,8 +280,8 @@ export default function SectionBackgroundMotion({
           <div className="absolute inset-0 bg-gradient-to-b from-[#FAF9F6] via-[#F8FAFC] to-[#F1F5F9]" />
           
           {/* Deep Navy & Crimson Ruby Specular Glows */}
-          <div className="absolute -top-24 right-10 w-[660px] h-[660px] bg-gradient-to-bl from-[#0A1128]/16 via-[#1E293B]/10 to-transparent rounded-full blur-[130px] animate-float-1" />
-          <div className="absolute bottom-0 left-10 w-[620px] h-[620px] bg-gradient-to-tr from-[#E11D48]/18 via-[#BE123C]/12 to-transparent rounded-full blur-[130px] animate-float-2" />
+          <div className="absolute -top-24 right-10 w-[660px] h-[660px] bg-gradient-to-bl from-[#0A1128]/16 via-[#1E293B]/10 to-transparent rounded-full [mask-image:radial-gradient(closest-side,black_15%,transparent_100%)] will-change-transform animate-float-1" />
+          <div className="absolute bottom-0 left-10 w-[620px] h-[620px] bg-gradient-to-tr from-[#E11D48]/18 via-[#BE123C]/12 to-transparent rounded-full [mask-image:radial-gradient(closest-side,black_15%,transparent_100%)] will-change-transform animate-float-2" />
 
           {/* Circadian Recovery Trajectory Flowing Curve */}
           <svg className="absolute inset-0 w-full h-full opacity-45" viewBox="0 0 1440 900" fill="none">
@@ -351,8 +320,8 @@ export default function SectionBackgroundMotion({
           <div className="absolute inset-0 bg-gradient-to-b from-[#FAF9F6] via-[#F8FAFC] to-[#F1F5F9]" />
           
           {/* Midnight Navy & Crimson Ruby Spotlights */}
-          <div className="absolute -top-24 right-1/4 w-[680px] h-[680px] bg-gradient-to-bl from-[#0A1128]/16 via-[#1E293B]/10 to-transparent rounded-full blur-[140px] animate-float-1" />
-          <div className="absolute -bottom-24 left-1/4 w-[620px] h-[620px] bg-gradient-to-tr from-[#E11D48]/18 via-[#BE123C]/12 to-transparent rounded-full blur-[130px] animate-float-2" />
+          <div className="absolute -top-24 right-1/4 w-[680px] h-[680px] bg-gradient-to-bl from-[#0A1128]/16 via-[#1E293B]/10 to-transparent rounded-full [mask-image:radial-gradient(closest-side,black_15%,transparent_100%)] will-change-transform animate-float-1" />
+          <div className="absolute -bottom-24 left-1/4 w-[620px] h-[620px] bg-gradient-to-tr from-[#E11D48]/18 via-[#BE123C]/12 to-transparent rounded-full [mask-image:radial-gradient(closest-side,black_15%,transparent_100%)] will-change-transform animate-float-2" />
 
           {/* Concentric Caliper Circles with Slow Dual Rotation */}
           <div className="absolute top-1/2 right-12 -translate-y-1/2 w-[540px] h-[540px] rounded-full border border-slate-300/40 hidden lg:block">
@@ -366,42 +335,46 @@ export default function SectionBackgroundMotion({
         </>
       )}
 
-      {/* 1.8 HOME ARCHITECTURAL GALLERY: Deep Midnight Navy & Warm Platinum Masterplan */}
+      {/* 1.8 HOME ARCHITECTURAL GALLERY: Hospital Floorplan Elevation Grid */}
       {(variant === 'home-gallery' || variant === 'architectural-gallery') && (
         <>
           <div className="absolute inset-0 bg-gradient-to-b from-[#FAF9F6] via-[#F8FAFC] to-[#F1F5F9]" />
-          
-          <div className="absolute top-1/4 right-1/4 w-[750px] h-[750px] bg-[#0A1128]/14 rounded-full blur-[140px] animate-float-1" />
-          <div className="absolute bottom-10 left-10 w-[650px] h-[650px] bg-[#E11D48]/16 rounded-full blur-[130px] animate-float-2" />
-
-          {/* Sweeping Architectural Canopy Curves */}
-          <svg className="absolute inset-0 w-full h-full opacity-35" viewBox="0 0 1440 900" fill="none">
-            <path d="M 0,200 Q 720,440 1440,200" stroke="#0A1128" strokeWidth="2" strokeDasharray="6 8" />
-            <path d="M 0,400 Q 720,640 1440,400" stroke="#BE123C" strokeWidth="1.5" strokeDasharray="8 12" />
-            <path d="M 0,600 Q 720,840 1440,600" stroke="#0A1128" strokeWidth="1" />
+          <div
+            className="absolute top-1/4 right-1/4 w-[680px] h-[680px] rounded-full opacity-55 pointer-events-none"
+            style={{ background: 'radial-gradient(circle, rgba(10,17,40,0.08) 0%, transparent 70%)' }}
+          />
+          <div
+            className="absolute bottom-0 left-10 w-[620px] h-[620px] rounded-full opacity-55 pointer-events-none"
+            style={{ background: 'radial-gradient(circle, rgba(190,18,60,0.08) 0%, transparent 70%)' }}
+          />
+          {/* Subtle Architectural Hospital Blueprint Grid */}
+          <div
+            className="absolute inset-0 opacity-40 pointer-events-none"
+            style={{
+              backgroundImage:
+                'linear-gradient(to right, rgba(10,17,40,0.035) 1px, transparent 1px), linear-gradient(to bottom, rgba(10,17,40,0.035) 1px, transparent 1px)',
+              backgroundSize: '56px 56px',
+            }}
+          />
+          <svg className="absolute inset-0 w-full h-full opacity-20 pointer-events-none" viewBox="0 0 1440 800" fill="none" preserveAspectRatio="none">
+            <path d="M0,180 Q720,340 1440,180" stroke="#0A1128" strokeWidth="1.5" strokeDasharray="8 10" />
+            <path d="M0,640 Q720,500 1440,640" stroke="#BE123C" strokeWidth="1.5" strokeDasharray="8 10" />
           </svg>
-
-          {/* Spatial Elevation Tags */}
-          <div className="absolute top-24 left-16 flex items-center gap-2 font-mono text-[11px] text-[#0A1128] hidden sm:flex bg-white/95 px-3.5 py-1.5 rounded-full border border-slate-200 shadow-xs">
-            <span className="w-2 h-2 rounded-full bg-[#E11D48] animate-ping" />
-            <span>TERTIARY CLINICAL CAMPUS · 26.7606° N, 83.3732° E</span>
-          </div>
         </>
       )}
 
-      {/* 1.9 HOME PATIENT TESTIMONIALS: Crimson Ruby Resonance & Luminescent Constellation */}
+      {/* 1.9 HOME PATIENT TESTIMONIALS: Soft Rose-Silk Wash & Heartbeat Baseline */}
       {(variant === 'home-testimonials' || variant === 'patient-testimonials') && (
         <>
-          <div className="absolute inset-0 bg-gradient-to-b from-[#FAF9F6] via-[#FFF1F2]/60 to-[#F8FAFC]" />
-          
-          <div className="absolute top-1/3 left-1/4 w-[660px] h-[660px] bg-[#E11D48]/18 rounded-full blur-[140px] animate-float-1" />
-          <div className="absolute bottom-10 right-1/4 w-[620px] h-[620px] bg-[#0A1128]/14 rounded-full blur-[130px] animate-float-2" />
-
-          {/* Concentric Healing Resonance Wave Ripples */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[720px] h-[720px] rounded-full border border-slate-300/40 hidden md:block">
-            <div className="absolute inset-16 rounded-full border border-dashed border-rose-400/40 animate-radar-sweep" />
-            <div className="absolute inset-36 rounded-full border border-slate-400/25 animate-pulse-glow" />
-          </div>
+          <div className="absolute inset-0 bg-gradient-to-b from-[#FAF9F6] via-[#FFF5F6]/70 to-[#F8FAFC]" />
+          <div
+            className="absolute top-1/3 left-1/4 w-[640px] h-[640px] rounded-full opacity-60 pointer-events-none"
+            style={{ background: 'radial-gradient(circle, rgba(190,18,60,0.09) 0%, transparent 70%)' }}
+          />
+          <div
+            className="absolute bottom-0 right-1/4 w-[600px] h-[600px] rounded-full opacity-55 pointer-events-none"
+            style={{ background: 'radial-gradient(circle, rgba(10,17,40,0.08) 0%, transparent 70%)' }}
+          />
 
           {/* Soft Heartbeat Waveform across bottom */}
           <div className="absolute bottom-4 left-0 right-0 z-0 opacity-40 pointer-events-none">
@@ -423,8 +396,8 @@ export default function SectionBackgroundMotion({
         <>
           <div className="absolute inset-0 bg-gradient-to-b from-[#FAF9F6] via-[#F8FAFC] to-[#F1F5F9]" />
           
-          <div className="absolute -top-24 left-1/3 w-[680px] h-[680px] bg-gradient-to-br from-[#0A1128]/16 via-[#1E293B]/10 to-transparent rounded-full blur-[140px] animate-float-1" />
-          <div className="absolute bottom-0 right-10 w-[620px] h-[620px] bg-gradient-to-tl from-[#E11D48]/18 via-[#BE123C]/12 to-transparent rounded-full blur-[130px] animate-float-2" />
+          <div className="absolute -top-24 left-1/3 w-[680px] h-[680px] bg-gradient-to-br from-[#0A1128]/16 via-[#1E293B]/10 to-transparent rounded-full [mask-image:radial-gradient(closest-side,black_15%,transparent_100%)] will-change-transform animate-float-1" />
+          <div className="absolute bottom-0 right-10 w-[620px] h-[620px] bg-gradient-to-tl from-[#E11D48]/18 via-[#BE123C]/12 to-transparent rounded-full [mask-image:radial-gradient(closest-side,black_15%,transparent_100%)] will-change-transform animate-float-2" />
 
           {/* Laser Edge Sweep in Crimson Ruby */}
           <div className="absolute left-0 right-0 top-0 h-[2.5px] bg-gradient-to-r from-transparent via-[#E11D48] to-transparent shadow-[0_0_16px_#BE123C] opacity-60" />
@@ -442,9 +415,9 @@ export default function SectionBackgroundMotion({
       {(variant === 'about-hero' || variant === 'about') && (
         <>
           <div className="absolute inset-0 bg-gradient-to-b from-[#FFF7F4] via-[#FAF4EE] to-[#FFF1F4]" />
-          <div className="absolute top-10 left-10 w-[550px] h-[550px] bg-gradient-to-br from-[#FED7AA]/35 via-[#FCE7F3]/25 to-transparent rounded-full blur-[130px] animate-float-1" />
-          <div className="absolute bottom-10 right-1/4 w-[580px] h-[580px] bg-gradient-to-tl from-[#FDA4AF]/25 via-[#FFEDD5]/30 to-transparent rounded-full blur-[140px] animate-float-2" />
-          <div className="absolute top-1/2 right-10 w-[480px] h-[480px] bg-gradient-to-tr from-[#FB923C]/18 via-[#FDA4AF]/20 to-transparent rounded-full blur-[120px] animate-float-3" />
+          <div className="absolute top-10 left-10 w-[550px] h-[550px] bg-gradient-to-br from-[#FED7AA]/35 via-[#FCE7F3]/25 to-transparent rounded-full [mask-image:radial-gradient(closest-side,black_15%,transparent_100%)] will-change-transform animate-float-1" />
+          <div className="absolute bottom-10 right-1/4 w-[580px] h-[580px] bg-gradient-to-tl from-[#FDA4AF]/25 via-[#FFEDD5]/30 to-transparent rounded-full [mask-image:radial-gradient(closest-side,black_15%,transparent_100%)] will-change-transform animate-float-2" />
+          <div className="absolute top-1/2 right-10 w-[480px] h-[480px] bg-gradient-to-tr from-[#FB923C]/18 via-[#FDA4AF]/20 to-transparent rounded-full [mask-image:radial-gradient(closest-side,black_15%,transparent_100%)] will-change-transform animate-float-3" />
 
           {/* Blueprint Architectural Grid */}
           <div className="absolute inset-0 bg-[radial-gradient(#E8C5B8_1.2px,transparent_1.2px)] bg-[size:32px_32px] opacity-40 [mask-image:radial-gradient(ellipse_85%_75%_at_50%_35%,#000_80%,transparent_100%)]" />
@@ -515,7 +488,7 @@ export default function SectionBackgroundMotion({
           <div className="absolute inset-0 bg-gradient-to-b from-[#FAF5EE] via-[#FFFDF9] to-[#FDF6ED]" />
           
           {/* Cinema-Grade Ambient Horizon Flare */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[450px] bg-gradient-to-r from-[#FED7AA]/30 via-[#FDA4AF]/25 to-[#EDE9FE]/20 rounded-full blur-[140px] pointer-events-none animate-aurora-breathe" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[450px] bg-gradient-to-r from-[#FED7AA]/30 via-[#FDA4AF]/25 to-[#EDE9FE]/20 rounded-full [mask-image:radial-gradient(closest-side,black_15%,transparent_100%)] will-change-transform pointer-events-none animate-aurora-breathe" />
 
           {/* Amphitheater Contour Arcs */}
           <svg className="absolute inset-0 w-full h-full opacity-35" viewBox="0 0 1440 800" fill="none">
@@ -554,7 +527,7 @@ export default function SectionBackgroundMotion({
           <div className="absolute top-1/2 right-10 text-[#EA580C]/30 font-mono text-xs font-bold">+</div>
 
           {/* Soft Amber Atmospheric Center Glow */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[#FED7AA]/22 rounded-full blur-[140px]" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[#FED7AA]/22 rounded-full [mask-image:radial-gradient(closest-side,black_15%,transparent_100%)] will-change-transform" />
         </>
       )}
 
@@ -564,9 +537,9 @@ export default function SectionBackgroundMotion({
           <div className="absolute inset-0 bg-gradient-to-b from-[#FAF9F6] via-[#F8FAFC] to-[#F1F5F9]" />
 
           {/* Floating Luminous Orbs */}
-          <div className="absolute top-10 right-1/4 w-[620px] h-[620px] bg-gradient-to-bl from-[#0A1128]/16 via-[#1E293B]/10 to-transparent rounded-full blur-[140px] animate-float-1" />
-          <div className="absolute bottom-10 left-10 w-[600px] h-[600px] bg-gradient-to-tr from-[#E11D48]/18 via-[#BE123C]/12 to-transparent rounded-full blur-[130px] animate-float-2" />
-          <div className="absolute top-1/2 left-1/3 w-[460px] h-[460px] bg-[#CBD5E1]/25 rounded-full blur-[120px] animate-float-3" />
+          <div className="absolute top-10 right-1/4 w-[620px] h-[620px] bg-gradient-to-bl from-[#0A1128]/16 via-[#1E293B]/10 to-transparent rounded-full [mask-image:radial-gradient(closest-side,black_15%,transparent_100%)] will-change-transform animate-float-1" />
+          <div className="absolute bottom-10 left-10 w-[600px] h-[600px] bg-gradient-to-tr from-[#E11D48]/18 via-[#BE123C]/12 to-transparent rounded-full [mask-image:radial-gradient(closest-side,black_15%,transparent_100%)] will-change-transform animate-float-2" />
+          <div className="absolute top-1/2 left-1/3 w-[460px] h-[460px] bg-[#CBD5E1]/25 rounded-full [mask-image:radial-gradient(closest-side,black_15%,transparent_100%)] will-change-transform animate-float-3" />
 
           {/* Millimeter Medical Grid */}
           <div className="absolute inset-0 bg-[radial-gradient(#0A112814_1.5px,transparent_1.5px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_95%_85%_at_50%_40%,#000_80%,transparent_100%)] opacity-70" />
@@ -706,7 +679,7 @@ export default function SectionBackgroundMotion({
           <div className="absolute bottom-1/3 right-14 text-[#BE123C] font-mono text-xl font-black animate-medical-cross-1 select-none opacity-70">+</div>
 
           {/* Deep Navy & Ruby Center Glow */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] bg-gradient-to-r from-[#0A1128]/14 to-[#BE123C]/16 rounded-full blur-[130px]" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] bg-gradient-to-r from-[#0A1128]/14 to-[#BE123C]/16 rounded-full [mask-image:radial-gradient(closest-side,black_15%,transparent_100%)] will-change-transform" />
         </>
       )}
 
@@ -718,137 +691,195 @@ export default function SectionBackgroundMotion({
       {/* 3.1 TREATMENTS HERO: Interventional Catheterization Theater & Fluoroscopic Rayfield */}
       {variant === 'treatments-hero' && (
         <>
-          <div className="absolute inset-0 bg-gradient-to-b from-[#FFF3EB] via-[#FFF8F3] to-[#FFF5EE]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#FAF9F6] via-[#F8FAFC] to-[#F1F5F9]" />
           
+          {/* Luminous Floating Atmospheric Orbs */}
+          <div className="absolute -top-20 right-1/4 w-[680px] h-[680px] bg-gradient-to-bl from-[#0A1128]/20 via-[#1E293B]/14 to-transparent rounded-full [mask-image:radial-gradient(closest-side,black_15%,transparent_100%)] will-change-transform animate-float-1" />
+          <div className="absolute bottom-10 left-10 w-[620px] h-[620px] bg-gradient-to-tr from-[#E11D48]/24 via-[#BE123C]/16 to-transparent rounded-full [mask-image:radial-gradient(closest-side,black_15%,transparent_100%)] will-change-transform animate-float-2" />
+
           {/* Fluoroscopic Cone-Beam Rayfield (C-Arm Ray Projection) */}
-          <div className="absolute inset-0 w-full h-full opacity-30 pointer-events-none">
+          <div className="absolute inset-0 w-full h-full opacity-40 pointer-events-none">
             <svg className="w-full h-full" viewBox="0 0 1440 900" fill="none">
               <defs>
-                <linearGradient id="fluoroscopyCone" x1="50%" y1="0%" x2="50%" y2="100%">
-                  <stop offset="0%" stopColor="#EA580C" stopOpacity="0.4" />
-                  <stop offset="100%" stopColor="#FED7AA" stopOpacity="0.05" />
+                <linearGradient id="fluoroscopyConeRuby" x1="50%" y1="0%" x2="50%" y2="100%">
+                  <stop offset="0%" stopColor="#BE123C" stopOpacity="0.45" />
+                  <stop offset="100%" stopColor="#0A1128" stopOpacity="0.05" />
                 </linearGradient>
               </defs>
-              <path d="M 720,0 L 200,900 L 1240,900 Z" fill="url(#fluoroscopyCone)" />
+              <path d="M 720,0 L 200,900 L 1240,900 Z" fill="url(#fluoroscopyConeRuby)" />
               {/* Radial Guidewire Tracks */}
-              <path d="M 720,0 L 500,900 M 720,0 L 940,900" stroke="#FB923C" strokeWidth="1.2" strokeDasharray="10 10" className="animate-flow-dash" />
+              <path d="M 720,0 L 500,900 M 720,0 L 940,900" stroke="#BE123C" strokeWidth="1.5" strokeDasharray="10 10" className="animate-flow-dash" />
             </svg>
           </div>
 
-          {/* Sweeping Laser Line in Warm Coral */}
-          <div className="absolute left-0 right-0 h-[2.5px] top-1/3 bg-gradient-to-r from-transparent via-[#E11D48] to-transparent shadow-[0_0_16px_#FB923C] opacity-50 animate-laser-sweep" />
+          {/* Sweeping Laser Line in Crimson Ruby */}
+          <div className="absolute left-0 right-0 h-[2.5px] top-1/3 bg-gradient-to-r from-transparent via-[#E11D48] to-transparent shadow-[0_0_20px_#BE123C] opacity-80 animate-laser-fast" />
 
-          {/* Luminous Warm Amber Glows */}
-          <div className="absolute top-10 right-10 w-[600px] h-[600px] bg-[#FED7AA]/30 rounded-full blur-[130px] animate-float-1" />
-          <div className="absolute bottom-10 left-10 w-[550px] h-[550px] bg-[#FDA4AF]/25 rounded-full blur-[120px] animate-float-2" />
+          {/* Precision Blueprint Grid */}
+          <div className="absolute inset-0 bg-[radial-gradient(#0A112814_1.5px,transparent_1.5px)] bg-[size:28px_28px] opacity-70" />
         </>
       )}
 
-      {/* 3.2 TREATMENTS SPECIALTIES: Vascular Lumen Micro-Lattice & Cellular Hexagonal Matrix */}
+      {/* 3.2 TREATMENTS SPECIALTIES: 3D Hemodynamic Arterial Field & Gyroscopic Stent Axis (SCREENSHOT 1 OVERHAUL) */}
       {variant === 'treatments-specialties' && (
         <>
-          <div className="absolute inset-0 bg-gradient-to-b from-[#FDFBF7] via-[#F0FDF8]/60 to-[#FFF8F2]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#FAF9F6] via-[#F8FAFC] to-[#F1F5F9]" />
           
-          {/* Subtle Cellular Teal & Peach Orbs */}
-          <div className="absolute top-10 left-1/4 w-[600px] h-[600px] bg-[#99F6E4]/25 rounded-full blur-[140px] animate-float-1" />
-          <div className="absolute bottom-10 right-1/4 w-[550px] h-[550px] bg-[#FED7AA]/30 rounded-full blur-[130px] animate-float-2" />
+          {/* Deep Navy & Crimson Ruby Luminous Motion Orbs */}
+          <div className="absolute top-10 left-1/4 w-[680px] h-[680px] bg-gradient-to-bl from-[#0A1128]/22 via-[#1E293B]/14 to-transparent rounded-full [mask-image:radial-gradient(closest-side,black_15%,transparent_100%)] will-change-transform animate-float-1" />
+          <div className="absolute bottom-10 right-1/4 w-[620px] h-[620px] bg-gradient-to-tr from-[#E11D48]/26 via-[#BE123C]/18 to-transparent rounded-full [mask-image:radial-gradient(closest-side,black_15%,transparent_100%)] will-change-transform animate-float-2" />
+          <div className="absolute top-1/2 right-10 w-[450px] h-[450px] bg-gradient-to-br from-[#CBD5E1]/30 via-transparent to-transparent rounded-full [mask-image:radial-gradient(closest-side,black_15%,transparent_100%)] will-change-transform animate-pulse-glow" />
 
-          {/* Cellular Micro-Hexagon Mesh in Subtle Teal */}
-          <svg className="absolute inset-0 w-full h-full opacity-[0.16]" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <pattern id="treatmentCellHex" width="40" height="70" patternUnits="userSpaceOnUse">
-                <path d="M20,0 L40,12 L40,36 L20,48 L0,36 L0,12 Z" fill="none" stroke="#0D9488" strokeWidth="1" />
-              </pattern>
-            </defs>
-            <rect width="100%" height="100%" fill="url(#treatmentCellHex)" />
-          </svg>
+          {/* 3D Rotating Gyroscopic Stent Axis Ring (Continuous Visual Drama) */}
+          <div className="absolute top-1/2 left-10 -translate-y-1/2 w-[480px] h-[480px] rounded-full border-2 border-slate-300/40 pointer-events-none hidden lg:block">
+            <div className="absolute inset-8 rounded-full border-2 border-dashed border-rose-400/40 animate-radar-sweep" />
+            <div className="absolute inset-20 rounded-full border border-slate-400/30 animate-rotate-reverse">
+              <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-0.5 bg-rose-400/40" />
+              <div className="absolute inset-y-0 left-1/2 -translate-x-1/2 w-0.5 bg-rose-400/40" />
+            </div>
+            <div className="absolute inset-32 rounded-full border-2 border-slate-300/45 animate-pulse-glow" />
+            <div className="absolute inset-40 rounded-full bg-white/80 border border-slate-200 shadow-lg flex items-center justify-center">
+              <div className="w-5 h-5 rounded-full bg-[#BE123C] animate-ping" />
+            </div>
+          </div>
 
-          {/* Arterial Lumen Guide Vectors */}
-          <div className="absolute top-16 right-16 font-mono text-[10px] text-teal-800/60 hidden sm:block">+ ARTERIAL-LUMEN-ANALYZER</div>
+          {/* Sweeping High-Speed Fluoroscopy Laser Sweep (Continuous Motion) */}
+          <div className="absolute inset-x-0 h-[3px] bg-gradient-to-r from-transparent via-[#E11D48] to-transparent shadow-[0_0_24px_#BE123C] opacity-85 animate-laser-fast pointer-events-none" />
+
+          {/* Fluid Hemodynamic Arterial Streamlines */}
+          <div className="absolute inset-0 opacity-60 pointer-events-none">
+            <svg className="w-full h-full" viewBox="0 0 1440 900" fill="none" preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="treatSpecialtyGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="#0A1128" stopOpacity="0.1" />
+                  <stop offset="40%" stopColor="#BE123C" stopOpacity="0.55" />
+                  <stop offset="70%" stopColor="#E11D48" stopOpacity="0.65" />
+                  <stop offset="100%" stopColor="#0A1128" stopOpacity="0.15" />
+                </linearGradient>
+              </defs>
+              <path
+                d="M -100,280 C 350,150 680,480 1150,220 C 1300,140 1480,260 1560,200"
+                stroke="url(#treatSpecialtyGrad)"
+                strokeWidth="2.8"
+                strokeDasharray="14 10"
+                className="animate-flow-dash"
+              />
+              <path
+                d="M -100,420 C 320,560 760,250 1200,480 C 1350,560 1480,400 1560,450"
+                stroke="url(#treatSpecialtyGrad)"
+                strokeWidth="2"
+                strokeDasharray="10 12"
+                className="animate-flow-dash-fast"
+              />
+              <circle cx="680" cy="480" r="4" fill="#BE123C" className="animate-ping" />
+              <circle cx="1150" cy="220" r="5" fill="#E11D48" className="animate-ping" />
+            </svg>
+          </div>
+
+          {/* Hairline Medical Blueprint Grid */}
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#0A11280A_1px,transparent_1px),linear-gradient(to_bottom,#0A11280A_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_70%_at_50%_45%,#000_70%,transparent_100%)] pointer-events-none" />
+
+          {/* Floating Clinical Telemetry HUD Markers */}
+          <div className="absolute top-12 left-10 hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/95 backdrop-blur-md border border-slate-200 shadow-md text-slate-800 font-mono text-[11px] font-bold">
+            <span className="w-2 h-2 rounded-full bg-[#E11D48] animate-ping" />
+            <span>RADIAL-FIRST INTERVENTION • TIMI-3 FLOW</span>
+          </div>
+          <div className="absolute bottom-16 right-12 hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/95 backdrop-blur-md border border-slate-200 shadow-md text-slate-800 font-mono text-[11px] font-bold">
+            <span className="w-2 h-2 rounded-full bg-[#0A1128] animate-pulse" />
+            <span>SUB-MILLIMETER BALLOON APPOSITION: 99.4%</span>
+          </div>
         </>
       )}
 
       {/* 3.3 TREATMENTS STORYTELLING: Radial-First Procedural Ribbon & Stepwise Care Odyssey */}
       {variant === 'treatments-storytelling' && (
         <>
-          <div className="absolute inset-0 bg-gradient-to-b from-[#F8F6FD] via-[#FFF9F5] to-[#F5F2F9]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#FAF9F6] via-[#F8FAFC] to-[#F1F5F9]" />
           
-          {/* Lavender & Peach Ambient Ribbon Currents */}
-          <div className="absolute top-1/4 right-10 w-[620px] h-[620px] bg-[#DDD6FE]/30 rounded-full blur-[140px] animate-float-1" />
-          <div className="absolute bottom-10 left-10 w-[580px] h-[580px] bg-[#FED7AA]/28 rounded-full blur-[130px] animate-float-2" />
+          {/* Luminous Ambient Orbs */}
+          <div className="absolute top-1/4 right-10 w-[660px] h-[660px] bg-gradient-to-bl from-[#0A1128]/18 via-[#1E293B]/12 to-transparent rounded-full [mask-image:radial-gradient(closest-side,black_15%,transparent_100%)] will-change-transform animate-float-1" />
+          <div className="absolute bottom-10 left-10 w-[620px] h-[620px] bg-gradient-to-tr from-[#E11D48]/22 via-[#BE123C]/16 to-transparent rounded-full [mask-image:radial-gradient(closest-side,black_15%,transparent_100%)] will-change-transform animate-float-2" />
 
           {/* Stepwise Care Odyssey Bezier Waves */}
-          <svg className="absolute inset-0 w-full h-full opacity-35" viewBox="0 0 1440 800" fill="none">
+          <svg className="absolute inset-0 w-full h-full opacity-60 pointer-events-none" viewBox="0 0 1440 800" fill="none">
             <path
               d="M 0,300 C 360,180 720,440 1080,260 C 1260,180 1380,320 1440,280"
-              stroke="#8B5CF6"
+              stroke="#0A1128"
               strokeWidth="2.5"
-              strokeDasharray="12 12"
+              strokeDasharray="14 10"
               className="animate-flow-dash"
             />
             <path
               d="M 0,380 C 380,260 740,500 1100,340 C 1280,260 1400,380 1440,340"
-              stroke="#FB923C"
+              stroke="#BE123C"
               strokeWidth="2"
-              strokeDasharray="10 10"
-              className="animate-flow-dash"
+              strokeDasharray="10 12"
+              className="animate-flow-dash-fast"
             />
+            <circle cx="720" cy="440" r="5" fill="#E11D48" className="animate-ping" />
+            <circle cx="1080" cy="260" r="5" fill="#0A1128" className="animate-ping" />
           </svg>
+
+          {/* Sweeping Laser Line */}
+          <div className="absolute inset-x-0 h-[2.5px] bg-gradient-to-r from-transparent via-[#BE123C] to-transparent opacity-75 animate-laser-fast pointer-events-none" />
         </>
       )}
 
       {/* 3.4 TREATMENTS TECHNOLOGY: Siemens Artis Zee Technical Schematic & C-Arm Collimator Reticle */}
       {variant === 'treatments-technology' && (
         <>
-          <div className="absolute inset-0 bg-gradient-to-b from-[#F4FBF9] via-[#F0FDF8] to-[#F8FAFC]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#FAF9F6] via-[#F8FAFC] to-[#F1F5F9]" />
           
+          {/* Luminous Float Orbs */}
+          <div className="absolute top-10 right-10 w-[650px] h-[650px] bg-gradient-to-bl from-[#0A1128]/20 via-[#1E293B]/12 to-transparent rounded-full [mask-image:radial-gradient(closest-side,black_15%,transparent_100%)] will-change-transform animate-float-1" />
+          <div className="absolute bottom-10 left-10 w-[600px] h-[600px] bg-gradient-to-tr from-[#E11D48]/24 via-[#BE123C]/16 to-transparent rounded-full [mask-image:radial-gradient(closest-side,black_15%,transparent_100%)] will-change-transform animate-float-2" />
+
           {/* Technical Schematic Blueprint Grid */}
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#05966914_1px,transparent_1px),linear-gradient(to_bottom,#05966914_1px,transparent_1px)] bg-[size:4rem_4rem]" />
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#0A11280D_1px,transparent_1px),linear-gradient(to_bottom,#0A11280D_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
 
           {/* Rotating Collimator Reticle */}
-          <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[520px] h-[520px] rounded-full border border-emerald-300/35 hidden lg:block pointer-events-none">
-            <div className="absolute inset-8 rounded-full border-2 border-dashed border-teal-400/40 animate-reticle-slow" />
-            <div className="absolute inset-24 rounded-full border border-emerald-400/30 animate-reticle-reverse-slow" />
+          <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[520px] h-[520px] rounded-full border border-slate-300/40 hidden lg:block pointer-events-none">
+            <div className="absolute inset-8 rounded-full border-2 border-dashed border-rose-400/40 animate-radar-sweep" />
+            <div className="absolute inset-24 rounded-full border border-slate-400/30 animate-rotate-reverse" />
           </div>
 
-          <div className="absolute top-20 left-12 font-mono text-[10px] text-emerald-900/60 hidden sm:block">+ SCHEMATIC: C-ARM FLAT PANEL FLUOROSCOPY</div>
-          <div className="absolute bottom-20 right-12 font-mono text-[10px] text-emerald-900/60 hidden sm:block">+ SPATIAL RESOLUTION: &lt; 0.3MM</div>
+          <div className="absolute top-20 left-12 font-mono text-[10px] text-slate-800/80 font-bold hidden sm:block">+ SCHEMATIC: C-ARM FLAT PANEL FLUOROSCOPY</div>
+          <div className="absolute bottom-20 right-12 font-mono text-[10px] text-slate-800/80 font-bold hidden sm:block">+ SPATIAL RESOLUTION: &lt; 0.3MM</div>
         </>
       )}
 
       {/* 3.5 TREATMENTS EXPLORER: Backlit Radiographic Lightbox & Perfusion Grid Matrix */}
       {variant === 'treatments-explorer' && (
         <>
-          <div className="absolute inset-0 bg-gradient-to-b from-[#FAF9F6] via-[#F5F3EF] to-[#FDFBF8]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#FAF9F6] via-[#F8FAFC] to-[#F1F5F9]" />
           
           {/* High-Contrast Lightbox Specular Glow */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-gradient-to-r from-white/90 via-[#FED7AA]/25 to-white/90 rounded-full blur-[110px]" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-gradient-to-r from-[#0A1128]/10 via-[#BE123C]/15 to-[#0A1128]/10 rounded-full [mask-image:radial-gradient(closest-side,black_15%,transparent_100%)] will-change-transform" />
 
           {/* Radiographic Perfusion Dot Matrix */}
-          <div className="absolute inset-0 bg-[radial-gradient(#C2A266_1.2px,transparent_1.2px)] bg-[size:24px_24px] opacity-35" />
+          <div className="absolute inset-0 bg-[radial-gradient(#0A112814_1.2px,transparent_1.2px)] bg-[size:24px_24px] opacity-60" />
 
           {/* Lightbox Bevel Frame Markers */}
-          <div className="absolute top-6 left-8 font-mono text-[9px] text-slate-400">+ VIEWBOX CH-01</div>
-          <div className="absolute top-6 right-8 font-mono text-[9px] text-slate-400">+ PERFUSION MAP</div>
+          <div className="absolute top-6 left-8 font-mono text-[10px] text-slate-600 font-bold">+ VIEWBOX CH-01 • ARTERIAL PERFUSION</div>
+          <div className="absolute top-6 right-8 font-mono text-[10px] text-slate-600 font-bold">+ SUB-MILLIMETER CALCIUM MAP</div>
         </>
       )}
 
-      {/* 3.6 TREATMENTS CTA: Atelier Second Opinion Chamber & Compassionate Medical Seal */}
+      {/* 3.6 TREATMENTS CTA: Priority Cardiology Access Chamber & Compassionate Medical Seal */}
       {variant === 'treatments-cta' && (
         <>
-          <div className="absolute inset-0 bg-gradient-to-b from-[#FFF7F4] via-[#FAF4EE] to-[#FFF2F6]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#FAF9F6] via-[#F8FAFC] to-[#F1F5F9]" />
           
-          {/* Compassionate Medical Seal Double Rings */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full border border-emerald-300/35 pointer-events-none">
-            <div className="absolute inset-10 rounded-full border-2 border-dashed border-emerald-400/35 animate-radar-sweep" />
-            <div className="absolute inset-28 rounded-full border border-rose-300/30 animate-pulse-glow" />
+          {/* Double Rings */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full border border-slate-300/40 pointer-events-none">
+            <div className="absolute inset-10 rounded-full border-2 border-dashed border-rose-400/35 animate-radar-sweep" />
+            <div className="absolute inset-28 rounded-full border border-slate-300/40 animate-pulse-glow" />
           </div>
 
-          {/* Soft Emerald and Warm Peach Center Glow */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[520px] h-[520px] bg-gradient-to-tr from-[#A7F3D0]/30 to-[#FED7AA]/35 rounded-full blur-[130px]" />
+          {/* Deep Navy & Crimson Ruby Center Glow */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[520px] h-[520px] bg-gradient-to-tr from-[#0A1128]/15 via-[#BE123C]/20 to-[#E11D48]/15 rounded-full [mask-image:radial-gradient(closest-side,black_15%,transparent_100%)] will-change-transform" />
         </>
       )}
-
 
       {/* =========================================================================
           PAGE 4: HOSPITAL SECTIONS
@@ -857,90 +888,84 @@ export default function SectionBackgroundMotion({
       {/* 4.1 HOSPITAL HERO: Architectural Masterplan & Modern Glass Pavilion */}
       {variant === 'hospital-hero' && (
         <>
-          <div className="absolute inset-0 bg-gradient-to-b from-[#FFF5F1] via-[#FAF3ED] to-[#FFF0F4]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#FAF9F6] via-[#F8FAFC] to-[#F1F5F9]" />
 
           {/* Floating Luminous Vitality Spheres */}
-          <div className="absolute -top-20 right-1/4 w-[650px] h-[650px] bg-gradient-to-bl from-[#FDA4AF]/30 via-[#FED7AA]/35 to-transparent rounded-full blur-[110px] animate-float-1" />
-          <div className="absolute top-1/3 -left-20 w-[600px] h-[600px] bg-gradient-to-tr from-[#FFEDD5]/35 via-[#FCE7F3]/30 to-transparent rounded-full blur-[120px] animate-float-2" />
-          <div className="absolute bottom-10 right-10 w-[550px] h-[550px] bg-gradient-to-t from-[#FB923C]/20 via-[#FDA4AF]/25 to-transparent rounded-full blur-[110px] animate-float-3" />
+          <div className="absolute -top-20 right-1/4 w-[680px] h-[680px] bg-gradient-to-bl from-[#0A1128]/22 via-[#1E293B]/14 to-transparent rounded-full [mask-image:radial-gradient(closest-side,black_15%,transparent_100%)] will-change-transform animate-float-1" />
+          <div className="absolute top-1/3 -left-20 w-[620px] h-[620px] bg-gradient-to-tr from-[#E11D48]/25 via-[#BE123C]/18 to-transparent rounded-full [mask-image:radial-gradient(closest-side,black_15%,transparent_100%)] will-change-transform animate-float-2" />
+          <div className="absolute bottom-10 right-10 w-[550px] h-[550px] bg-gradient-to-t from-[#0A1128]/15 via-[#CBD5E1]/25 to-transparent rounded-full [mask-image:radial-gradient(closest-side,black_15%,transparent_100%)] will-change-transform animate-float-3" />
 
           {/* Architectural Masterplan Elevation Blueprint Grid */}
-          <div className="absolute inset-0 bg-[radial-gradient(#EA580C22_1.5px,transparent_1.5px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_95%_85%_at_50%_40%,#000_80%,transparent_100%)] opacity-80" />
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#EA580C14_1px,transparent_1px),linear-gradient(to_bottom,#EA580C14_1px,transparent_1px)] bg-[size:4.5rem_4.5rem] [mask-image:radial-gradient(ellipse_90%_80%_at_50%_40%,#000_80%,transparent_100%)] pointer-events-none" />
+          <div className="absolute inset-0 bg-[radial-gradient(#0A112818_1.5px,transparent_1.5px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_95%_85%_at_50%_40%,#000_80%,transparent_100%)] opacity-75" />
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#0A11280D_1px,transparent_1px),linear-gradient(to_bottom,#0A11280D_1px,transparent_1px)] bg-[size:4.5rem_4.5rem] [mask-image:radial-gradient(ellipse_90%_80%_at_50%_40%,#000_80%,transparent_100%)] pointer-events-none" />
 
           {/* Sweeping Fluoroscopy Laser Beam */}
-          <div className="absolute inset-x-0 h-[3px] bg-gradient-to-r from-transparent via-[#EA580C] to-transparent shadow-[0_0_24px_#FB923C] opacity-80 animate-laser-sweep pointer-events-none" />
+          <div className="absolute inset-x-0 h-[3px] bg-gradient-to-r from-transparent via-[#E11D48] to-transparent shadow-[0_0_24px_#BE123C] opacity-80 animate-laser-fast pointer-events-none" />
 
           {/* Cleanroom Laminar Airflow Streamline Graphics */}
           <svg className="absolute inset-0 w-full h-full opacity-65 pointer-events-none" viewBox="0 0 1440 800" fill="none">
-            <path d="M 0,160 Q 720,380 1440,160" stroke="#EA580C" strokeWidth="2.5" strokeDasharray="12 10" className="animate-flow-dash" />
-            <path d="M 0,360 Q 720,580 1440,360" stroke="#FB923C" strokeWidth="2.2" strokeDasharray="10 12" className="animate-flow-dash-fast" />
-            <path d="M 0,560 Q 720,280 1440,560" stroke="#FDA4AF" strokeWidth="2" strokeDasharray="8 8" />
+            <path d="M 0,160 Q 720,380 1440,160" stroke="#0A1128" strokeWidth="2.5" strokeDasharray="12 10" className="animate-flow-dash" />
+            <path d="M 0,360 Q 720,580 1440,360" stroke="#BE123C" strokeWidth="2.2" strokeDasharray="10 12" className="animate-flow-dash-fast" />
+            <path d="M 0,560 Q 720,280 1440,560" stroke="#E11D48" strokeWidth="2" strokeDasharray="8 8" />
           </svg>
 
           {/* Rotating Biometric Telemetry & Architectural Radar Rings */}
-          <div className="absolute top-1/3 -right-16 -translate-y-1/2 w-[520px] h-[520px] rounded-full border-2 border-orange-300/45 pointer-events-none hidden lg:block">
-            <div className="absolute inset-8 rounded-full border-2 border-dashed border-orange-400/50 animate-radar-sweep" />
-            <div className="absolute inset-20 rounded-full border border-rose-300/50 animate-gentle-cw">
-              <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-0.5 bg-orange-400/50" />
-              <div className="absolute inset-y-0 left-1/2 -translate-x-1/2 w-0.5 bg-orange-400/50" />
+          <div className="absolute top-1/3 -right-16 -translate-y-1/2 w-[520px] h-[520px] rounded-full border-2 border-slate-300/40 pointer-events-none hidden lg:block">
+            <div className="absolute inset-8 rounded-full border-2 border-dashed border-rose-400/40 animate-radar-sweep" />
+            <div className="absolute inset-20 rounded-full border border-slate-400/30 animate-rotate-reverse">
+              <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-0.5 bg-rose-400/40" />
+              <div className="absolute inset-y-0 left-1/2 -translate-x-1/2 w-0.5 bg-rose-400/40" />
             </div>
-            <div className="absolute inset-32 rounded-full border-2 border-orange-400/50 animate-pulse-glow" />
-            <div className="absolute inset-44 rounded-full bg-gradient-to-br from-orange-200/50 via-white/80 to-orange-100/40 border border-orange-300 shadow-md flex items-center justify-center">
-              <div className="w-5 h-5 rounded-full bg-[#EA580C] animate-ping opacity-80" />
+            <div className="absolute inset-32 rounded-full border-2 border-slate-300/45 animate-pulse-glow" />
+            <div className="absolute inset-44 rounded-full bg-white/90 border border-slate-200 shadow-md flex items-center justify-center">
+              <div className="w-5 h-5 rounded-full bg-[#BE123C] animate-ping" />
             </div>
           </div>
 
           {/* Floating Hospital Telemetry HUD Chips */}
-          <div className="absolute top-24 left-6 sm:left-12 flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/95 backdrop-blur-md border border-orange-200 shadow-md animate-float-1 z-10">
-            <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping" />
+          <div className="absolute top-24 left-6 sm:left-12 flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/95 backdrop-blur-md border border-slate-200 shadow-md animate-float-1 z-10">
+            <span className="w-2.5 h-2.5 rounded-full bg-[#E11D48] animate-ping" />
             <span className="text-xs font-mono font-bold text-slate-800">
               Class-100 Laminar Cleanroom • HEPA Filtered
             </span>
-            <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-emerald-50 text-emerald-700 font-bold border border-emerald-200">
+            <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-rose-50 text-[#BE123C] font-bold border border-rose-200">
               ACTIVE
             </span>
           </div>
 
-          <div className="absolute top-24 right-6 sm:right-12 hidden md:flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/95 backdrop-blur-md border border-orange-200 shadow-md animate-float-2 z-10">
-            <span className="w-2.5 h-2.5 rounded-full bg-[#EA580C] animate-pulse" />
+          <div className="absolute top-24 right-6 sm:right-12 hidden md:flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/95 backdrop-blur-md border border-slate-200 shadow-md animate-float-2 z-10">
+            <span className="w-2.5 h-2.5 rounded-full bg-[#0A1128] animate-pulse" />
             <span className="text-xs font-mono font-bold text-slate-800">
               Siemens Artis Zee Cath Lab • 24/7 STEMI
             </span>
-            <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-orange-50 text-[#C2410C] font-bold border border-orange-200">
+            <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-slate-100 text-[#0A1128] font-bold border border-slate-300">
               STANDBY
             </span>
           </div>
-
-          {/* Floating Medical Crosses (+) */}
-          <div className="absolute top-1/2 left-8 text-[#EA580C] font-mono text-2xl font-black animate-medical-cross-1 select-none opacity-80">+</div>
-          <div className="absolute top-1/4 right-20 text-[#FB923C] font-mono text-2xl font-black animate-medical-cross-2 select-none opacity-80">+</div>
-          <div className="absolute bottom-36 left-1/4 text-[#EA580C] font-mono text-xl font-black animate-medical-cross-2 select-none opacity-70">+</div>
-          <div className="absolute bottom-20 right-16 text-[#FB923C] font-mono text-2xl font-black animate-medical-cross-1 select-none opacity-80">+</div>
 
           {/* Continuous Moving ECG Waveform */}
           <div className="absolute bottom-2 left-0 right-0 z-0 opacity-90 pointer-events-none">
             <svg className="w-full h-24" viewBox="0 0 1440 100" fill="none" preserveAspectRatio="none">
               <defs>
-                <linearGradient id="hospHeroEcgGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="#FB923C" stopOpacity="0.4" />
-                  <stop offset="30%" stopColor="#EA580C" stopOpacity="0.95" />
-                  <stop offset="60%" stopColor="#FB923C" stopOpacity="1" />
-                  <stop offset="100%" stopColor="#FDA4AF" stopOpacity="0.5" />
+                <linearGradient id="hospHeroEcgGradRuby" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="#0A1128" stopOpacity="0.3" />
+                  <stop offset="30%" stopColor="#BE123C" stopOpacity="0.95" />
+                  <stop offset="60%" stopColor="#E11D48" stopOpacity="1" />
+                  <stop offset="100%" stopColor="#0A1128" stopOpacity="0.4" />
                 </linearGradient>
               </defs>
               <path
                 d="M0,50 L260,50 L280,50 L290,25 L305,80 L320,8 L335,70 L345,50 L400,50 L640,50 L660,50 L670,20 L685,82 L700,6 L715,72 L725,50 L780,50 L1020,50 L1040,50 L1050,25 L1065,80 L1080,8 L1095,70 L1105,50 L1440,50"
-                stroke="url(#hospHeroEcgGrad)"
+                stroke="url(#hospHeroEcgGradRuby)"
                 strokeWidth="3.2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeDasharray="600"
                 className="animate-flow-dash"
               />
-              <circle cx="320" cy="8" r="6" fill="#EA580C" className="animate-ping" />
-              <circle cx="700" cy="6" r="6" fill="#FB923C" className="animate-ping" />
-              <circle cx="1080" cy="8" r="6" fill="#EA580C" className="animate-ping" />
+              <circle cx="320" cy="8" r="6" fill="#BE123C" className="animate-ping" />
+              <circle cx="700" cy="6" r="6" fill="#E11D48" className="animate-ping" />
+              <circle cx="1080" cy="8" r="6" fill="#BE123C" className="animate-ping" />
             </svg>
           </div>
         </>
@@ -949,84 +974,49 @@ export default function SectionBackgroundMotion({
       {/* 4.2 HOSPITAL PULSE CENTRE: Betiahata Medical Quarter Blueprint & Kinetic Medical HUD */}
       {variant === 'hospital-pulse-centre' && (
         <>
-          <div className="absolute inset-0 bg-gradient-to-b from-[#FFF5F0] via-[#FAF3EC] to-[#FFF1EE]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#FAF9F6] via-[#F8FAFC] to-[#F1F5F9]" />
 
           {/* Glowing Ambient Vitality Orbs */}
-          <div className="absolute -top-24 right-1/4 w-[600px] h-[600px] bg-gradient-to-bl from-[#FDA4AF]/30 via-[#FED7AA]/35 to-transparent rounded-full blur-[110px] animate-float-1" />
-          <div className="absolute top-1/3 -left-20 w-[550px] h-[550px] bg-gradient-to-tr from-[#FFEDD5]/35 via-[#FCE7F3]/30 to-transparent rounded-full blur-[120px] animate-float-2" />
-          <div className="absolute -bottom-20 right-10 w-[520px] h-[520px] bg-gradient-to-t from-[#FB923C]/22 via-[#FDA4AF]/25 to-transparent rounded-full blur-[110px] animate-float-3" />
+          <div className="absolute -top-24 right-1/4 w-[640px] h-[640px] bg-gradient-to-bl from-[#0A1128]/20 via-[#1E293B]/12 to-transparent rounded-full [mask-image:radial-gradient(closest-side,black_15%,transparent_100%)] will-change-transform animate-float-1" />
+          <div className="absolute top-1/3 -left-20 w-[580px] h-[580px] bg-gradient-to-tr from-[#E11D48]/24 via-[#BE123C]/16 to-transparent rounded-full [mask-image:radial-gradient(closest-side,black_15%,transparent_100%)] will-change-transform animate-float-2" />
+          <div className="absolute -bottom-20 right-10 w-[520px] h-[520px] bg-gradient-to-t from-[#CBD5E1]/25 via-transparent to-transparent rounded-full [mask-image:radial-gradient(closest-side,black_15%,transparent_100%)] will-change-transform animate-float-3" />
 
           {/* Precision GIS & Hospital Masterplan Blueprint Grid */}
-          <div className="absolute inset-0 bg-[radial-gradient(#EA580C22_1.5px,transparent_1.5px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_95%_85%_at_50%_40%,#000_80%,transparent_100%)] opacity-80" />
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#EA580C14_1px,transparent_1px),linear-gradient(to_bottom,#EA580C14_1px,transparent_1px)] bg-[size:4.5rem_4.5rem] [mask-image:radial-gradient(ellipse_90%_80%_at_50%_40%,#000_80%,transparent_100%)] pointer-events-none" />
+          <div className="absolute inset-0 bg-[radial-gradient(#0A112818_1.5px,transparent_1.5px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_95%_85%_at_50%_40%,#000_80%,transparent_100%)] opacity-75" />
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#0A11280D_1px,transparent_1px),linear-gradient(to_bottom,#0A11280D_1px,transparent_1px)] bg-[size:4.5rem_4.5rem] [mask-image:radial-gradient(ellipse_90%_80%_at_50%_40%,#000_80%,transparent_100%)] pointer-events-none" />
 
           {/* Sweeping Fluoroscopy Laser Beam */}
-          <div className="absolute inset-x-0 h-[3px] bg-gradient-to-r from-transparent via-[#EA580C] to-transparent shadow-[0_0_24px_#FB923C] opacity-75 animate-laser-sweep pointer-events-none" />
+          <div className="absolute inset-x-0 h-[3px] bg-gradient-to-r from-transparent via-[#E11D48] to-transparent shadow-[0_0_24px_#BE123C] opacity-80 animate-laser-fast pointer-events-none" />
 
           {/* Asymmetric Architectural Horizon Arc & Hemodynamic Waves */}
           <svg className="absolute inset-0 w-full h-full opacity-65 pointer-events-none" viewBox="0 0 1440 800" fill="none">
-            <path d="M-100,500 Q 600,200 1550,550" stroke="#FB923C" strokeWidth="2.8" strokeDasharray="16 14" className="animate-flow-dash" />
-            <path d="M-100,320 Q 720,520 1550,300" stroke="#EA580C" strokeWidth="2.2" strokeDasharray="12 12" className="animate-flow-dash-fast" />
+            <path d="M-100,500 Q 600,200 1550,550" stroke="#0A1128" strokeWidth="2.8" strokeDasharray="16 14" className="animate-flow-dash" />
+            <path d="M-100,320 Q 720,520 1550,300" stroke="#BE123C" strokeWidth="2.2" strokeDasharray="12 12" className="animate-flow-dash-fast" />
           </svg>
 
           {/* Rotating Acoustic Diagnostic Radar Rings */}
-          <div className="absolute top-1/2 -right-16 -translate-y-1/2 w-[520px] h-[520px] rounded-full border-2 border-orange-300/40 pointer-events-none hidden lg:block">
-            <div className="absolute inset-8 rounded-full border-2 border-dashed border-orange-400/45 animate-radar-sweep" />
-            <div className="absolute inset-20 rounded-full border border-rose-300/45 animate-gentle-cw">
-              <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-0.5 bg-orange-400/50" />
-              <div className="absolute inset-y-0 left-1/2 -translate-x-1/2 w-0.5 bg-orange-400/50" />
-            </div>
-            <div className="absolute inset-32 rounded-full border-2 border-orange-400/45 animate-pulse-glow" />
-            <div className="absolute inset-44 rounded-full bg-gradient-to-br from-orange-200/50 via-white/80 to-orange-100/40 border border-orange-300 shadow-md flex items-center justify-center">
-              <div className="w-5 h-5 rounded-full bg-[#EA580C] animate-ping opacity-80" />
+          <div className="absolute top-1/2 -right-16 -translate-y-1/2 w-[520px] h-[520px] rounded-full border-2 border-slate-300/40 pointer-events-none hidden lg:block">
+            <div className="absolute inset-8 rounded-full border-2 border-dashed border-rose-400/40 animate-radar-sweep" />
+            <div className="absolute inset-20 rounded-full border border-slate-400/30 animate-rotate-reverse" />
+            <div className="absolute inset-32 rounded-full border-2 border-slate-300/45 animate-pulse-glow" />
+            <div className="absolute inset-44 rounded-full bg-white/90 border border-slate-200 shadow-md flex items-center justify-center">
+              <div className="w-5 h-5 rounded-full bg-[#BE123C] animate-ping" />
             </div>
           </div>
 
           {/* Floating Hospital Telemetry HUD Chips */}
-          <div className="absolute top-12 left-8 flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/95 backdrop-blur-md border border-orange-200 shadow-md animate-float-1 z-10">
-            <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping" />
+          <div className="absolute top-12 left-8 flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/95 backdrop-blur-md border border-slate-200 shadow-md animate-float-1 z-10">
+            <span className="w-2.5 h-2.5 rounded-full bg-[#E11D48] animate-ping" />
             <span className="text-xs font-mono font-bold text-slate-800">
               Betiahata Medical Campus • 26.7606° N, 83.3732° E
             </span>
           </div>
 
-          <div className="absolute bottom-16 right-10 hidden md:flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/95 backdrop-blur-md border border-orange-200 shadow-md animate-float-3 z-10">
-            <span className="w-2.5 h-2.5 rounded-full bg-[#EA580C] animate-pulse" />
+          <div className="absolute bottom-16 right-10 hidden md:flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/95 backdrop-blur-md border border-slate-200 shadow-md animate-float-3 z-10">
+            <span className="w-2.5 h-2.5 rounded-full bg-[#0A1128] animate-pulse" />
             <span className="text-xs font-mono font-bold text-slate-800">
               15,000+ Interventions • &lt;45 Min STEMI Response
             </span>
-          </div>
-
-          {/* Floating Medical Crosses (+) */}
-          <div className="absolute top-1/3 left-10 text-[#EA580C] font-mono text-2xl font-black animate-medical-cross-1 select-none opacity-80">+</div>
-          <div className="absolute top-20 right-28 text-[#FB923C] font-mono text-2xl font-black animate-medical-cross-2 select-none opacity-80">+</div>
-          <div className="absolute bottom-28 left-1/3 text-[#EA580C] font-mono text-xl font-black animate-medical-cross-2 select-none opacity-70">+</div>
-          <div className="absolute bottom-16 right-24 text-[#FB923C] font-mono text-2xl font-black animate-medical-cross-1 select-none opacity-80">+</div>
-
-          {/* Continuous Moving ECG Sinus Wave along bottom */}
-          <div className="absolute bottom-2 left-0 right-0 z-0 opacity-90 pointer-events-none">
-            <svg className="w-full h-24" viewBox="0 0 1440 100" fill="none" preserveAspectRatio="none">
-              <defs>
-                <linearGradient id="hospCentreEcgGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="#FB923C" stopOpacity="0.4" />
-                  <stop offset="30%" stopColor="#EA580C" stopOpacity="0.95" />
-                  <stop offset="60%" stopColor="#FB923C" stopOpacity="1" />
-                  <stop offset="100%" stopColor="#FDA4AF" stopOpacity="0.5" />
-                </linearGradient>
-              </defs>
-              <path
-                d="M0,50 L260,50 L280,50 L290,25 L305,80 L320,8 L335,70 L345,50 L400,50 L640,50 L660,50 L670,20 L685,82 L700,6 L715,72 L725,50 L780,50 L1020,50 L1040,50 L1050,25 L1065,80 L1080,8 L1095,70 L1105,50 L1440,50"
-                stroke="url(#hospCentreEcgGrad)"
-                strokeWidth="3.2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeDasharray="600"
-                className="animate-flow-dash"
-              />
-              <circle cx="320" cy="8" r="6" fill="#EA580C" className="animate-ping" />
-              <circle cx="700" cy="6" r="6" fill="#FB923C" className="animate-ping" />
-              <circle cx="1080" cy="8" r="6" fill="#EA580C" className="animate-ping" />
-            </svg>
           </div>
         </>
       )}
@@ -1034,60 +1024,55 @@ export default function SectionBackgroundMotion({
       {/* 4.3 HOSPITAL ADVANCED SUITES: Tri-Suite Cleanroom Isolation & Laminar Airflow Streams */}
       {variant === 'hospital-suites' && (
         <>
-          <div className="absolute inset-0 bg-gradient-to-b from-[#FFF5F1]/80 via-[#FFF8F5]/90 to-[#FFF0F4]/70" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#FAF9F6] via-[#F8FAFC] to-[#F1F5F9]" />
 
           {/* Laminar Airflow Blueprint Grid & Cleanroom Laser Sweep */}
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#EA580C14_1px,transparent_1px),linear-gradient(to_bottom,#EA580C14_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] pointer-events-none" />
-          <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#FB923C]/20 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-[#FDA4AF]/22 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute left-0 right-0 h-[2.5px] bg-gradient-to-r from-transparent via-[#EA580C] to-transparent shadow-[0_0_16px_#FB923C] opacity-75 animate-laser-sweep pointer-events-none" />
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#0A11280D_1px,transparent_1px),linear-gradient(to_bottom,#0A11280D_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] pointer-events-none" />
+          <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#0A1128]/15 rounded-full [mask-image:radial-gradient(closest-side,black_15%,transparent_100%)] pointer-events-none" />
+          <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-[#BE123C]/20 rounded-full [mask-image:radial-gradient(closest-side,black_15%,transparent_100%)] pointer-events-none" />
+          <div className="absolute left-0 right-0 h-[2.5px] bg-gradient-to-r from-transparent via-[#E11D48] to-transparent shadow-[0_0_16px_#BE123C] opacity-80 animate-laser-fast pointer-events-none" />
 
           {/* Suite Blueprint Crosshairs */}
-          <div className="absolute top-4 left-6 text-[#EA580C] font-mono text-[11px] font-bold select-none hidden sm:block bg-orange-50/80 px-2 py-0.5 rounded border border-orange-200">+ SUITE-01 C-ARM FLUOROSCOPY</div>
-          <div className="absolute top-4 right-6 text-[#EA580C] font-mono text-[11px] font-bold select-none hidden sm:block bg-orange-50/80 px-2 py-0.5 rounded border border-orange-200">+ SUITE-02 LAMINAR OT</div>
-
-          {/* Floating Medical Crosses (+) */}
-          <div className="absolute top-1/2 left-6 text-[#EA580C] font-mono text-xl font-black animate-medical-cross-1 select-none opacity-70">+</div>
-          <div className="absolute bottom-10 right-10 text-[#FB923C] font-mono text-xl font-black animate-medical-cross-2 select-none opacity-70">+</div>
+          <div className="absolute top-4 left-6 text-slate-800 font-mono text-[11px] font-bold select-none hidden sm:block bg-white/90 px-3 py-1 rounded-md border border-slate-200 shadow-xs">+ SUITE-01 C-ARM FLUOROSCOPY</div>
+          <div className="absolute top-4 right-6 text-slate-800 font-mono text-[11px] font-bold select-none hidden sm:block bg-white/90 px-3 py-1 rounded-md border border-slate-200 shadow-xs">+ SUITE-02 LAMINAR OT</div>
         </>
       )}
 
       {/* 4.4 HOSPITAL PATIENT EXPERIENCE: Serene Hospitality & Calming Organic Waves */}
       {variant === 'hospital-experience' && (
         <>
-          <div className="absolute inset-0 bg-gradient-to-b from-[#FFF6F0] via-[#FFF2EB] to-[#FFF5F7]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#FAF9F6] via-[#F8FAFC] to-[#F1F5F9]" />
 
           {/* Calming Breathing Organic Undulations */}
           <div className="absolute inset-0 w-full h-full animate-wave-flow">
-            <svg className="w-full h-full opacity-55" viewBox="0 0 1440 800" fill="none">
-              <path d="M 0,400 Q 720,200 1440,400" stroke="#FB923C" strokeWidth="2.5" strokeDasharray="12 10" className="animate-flow-dash" />
-              <path d="M 0,500 Q 720,300 1440,500" stroke="#FDA4AF" strokeWidth="2" strokeDasharray="8 8" />
+            <svg className="w-full h-full opacity-60" viewBox="0 0 1440 800" fill="none">
+              <path d="M 0,400 Q 720,200 1440,400" stroke="#0A1128" strokeWidth="2.5" strokeDasharray="12 10" className="animate-flow-dash" />
+              <path d="M 0,500 Q 720,300 1440,500" stroke="#BE123C" strokeWidth="2" strokeDasharray="8 8" />
             </svg>
           </div>
 
-          {/* Soft Peach and Rose Glows */}
-          <div className="absolute -top-20 right-10 w-[600px] h-[600px] bg-[#FED7AA]/30 rounded-full blur-[130px] animate-float-1" />
-          <div className="absolute bottom-0 left-10 w-[550px] h-[550px] bg-[#FDA4AF]/28 rounded-full blur-[130px] animate-float-2" />
+          {/* Soft Glows */}
+          <div className="absolute -top-20 right-10 w-[620px] h-[620px] bg-[#0A1128]/14 rounded-full [mask-image:radial-gradient(closest-side,black_15%,transparent_100%)] will-change-transform animate-float-1" />
+          <div className="absolute bottom-0 left-10 w-[580px] h-[580px] bg-[#BE123C]/18 rounded-full [mask-image:radial-gradient(closest-side,black_15%,transparent_100%)] will-change-transform animate-float-2" />
         </>
       )}
 
       {/* 4.5 HOSPITAL CTA: Betiahata Gateway & Radiant Geographic Beacon */}
       {variant === 'hospital-cta' && (
         <>
-          <div className="absolute inset-0 bg-gradient-to-b from-[#FFF9F5] via-[#FFF3EC] to-[#FFF8F3]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#FAF9F6] via-[#F8FAFC] to-[#F1F5F9]" />
 
-          {/* Concentric Distance Rings (10 Min / 5 Min) */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[580px] h-[580px] rounded-full border-2 border-orange-300/45 pointer-events-none">
-            <div className="absolute inset-10 rounded-full border-2 border-dashed border-orange-400/50 animate-radar-sweep" />
-            <div className="absolute inset-28 rounded-full border border-amber-300/40 flex items-center justify-center animate-rotate-reverse">
-              <span className="text-[10px] font-mono font-bold text-orange-900 bg-white/95 px-3.5 py-1.5 rounded-full border border-orange-200 shadow-sm">
-                GORAKHPUR TRANSIT HUB
+          {/* Concentric Distance Rings */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[580px] h-[580px] rounded-full border-2 border-slate-300/40 pointer-events-none">
+            <div className="absolute inset-10 rounded-full border-2 border-dashed border-rose-400/40 animate-radar-sweep" />
+            <div className="absolute inset-28 rounded-full border border-slate-300/40 flex items-center justify-center animate-rotate-reverse">
+              <span className="text-[10px] font-mono font-bold text-slate-800 bg-white/95 px-3.5 py-1.5 rounded-full border border-slate-200 shadow-sm">
+                BETIAHATA MEDICAL DISTRICT
               </span>
             </div>
           </div>
         </>
       )}
-
 
       {/* =========================================================================
           PAGE 5: CONTACT SECTIONS
@@ -1096,95 +1081,94 @@ export default function SectionBackgroundMotion({
       {/* 5.1 CONTACT HERO: Welcoming Medical Concierge & Biometric Radar Compass */}
       {(variant === 'contact-hero' || variant === 'contact') && (
         <>
-          <div className="absolute inset-0 bg-gradient-to-b from-[#FFF7F2] via-[#FFEDE6] to-[#FFF4ED]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#FAF9F6] via-[#F8FAFC] to-[#F1F5F9]" />
           
-          {/* Warm Amber & Coral Glow Orbs */}
-          <div className="absolute -top-24 left-1/3 w-[650px] h-[650px] bg-gradient-to-br from-[#FB923C]/24 via-[#FED7AA]/32 to-transparent rounded-full blur-[130px] animate-float-1" />
-          <div className="absolute bottom-0 right-10 w-[600px] h-[600px] bg-gradient-to-tl from-[#FDA4AF]/24 via-[#FFEDD5]/28 to-transparent rounded-full blur-[130px] animate-float-2" />
+          {/* Luminous Glow Orbs */}
+          <div className="absolute -top-24 left-1/3 w-[680px] h-[680px] bg-gradient-to-br from-[#0A1128]/20 via-[#1E293B]/14 to-transparent rounded-full [mask-image:radial-gradient(closest-side,black_15%,transparent_100%)] will-change-transform animate-float-1" />
+          <div className="absolute bottom-0 right-10 w-[620px] h-[620px] bg-gradient-to-tl from-[#E11D48]/24 via-[#BE123C]/16 to-transparent rounded-full [mask-image:radial-gradient(closest-side,black_15%,transparent_100%)] will-change-transform animate-float-2" />
 
           {/* Navigation Compass Rose & Betiahata GPS Coordinates */}
-          <div className="absolute top-1/2 right-12 -translate-y-1/2 w-[520px] h-[520px] rounded-full border border-orange-300/35 hidden lg:block">
+          <div className="absolute top-1/2 right-12 -translate-y-1/2 w-[520px] h-[520px] rounded-full border border-slate-300/40 hidden lg:block pointer-events-none">
             <div className="absolute inset-8 rounded-full border border-dashed border-rose-400/40 animate-radar-sweep" />
-            <div className="absolute inset-20 rounded-full border border-orange-300/35 flex items-center justify-center animate-rotate-reverse">
-              <span className="text-[10px] font-mono text-orange-900/80 font-bold bg-white/95 px-3 py-1 rounded-full border border-orange-200 shadow-xs">
+            <div className="absolute inset-20 rounded-full border border-slate-300/40 flex items-center justify-center animate-rotate-reverse">
+              <span className="text-[10px] font-mono text-slate-800 font-bold bg-white/95 px-3 py-1 rounded-full border border-slate-200 shadow-xs">
                 BETIAHATA, GORAKHPUR • 26.7606° N, 83.3732° E
               </span>
             </div>
-            <div className="absolute inset-36 rounded-full border border-amber-300/30 animate-pulse-glow" />
+            <div className="absolute inset-36 rounded-full border border-rose-300/30 animate-pulse-glow" />
           </div>
 
-          {/* Precision Grid in Peach Tone */}
-          <div className="absolute inset-0 bg-[radial-gradient(#E8BAA6_1.25px,transparent_1.25px)] bg-[size:32px_32px] opacity-45 [mask-image:radial-gradient(ellipse_80%_70%_at_50%_45%,#000_75%,transparent_100%)]" />
+          {/* Precision Blueprint Grid */}
+          <div className="absolute inset-0 bg-[radial-gradient(#0A112814_1.25px,transparent_1.25px)] bg-[size:32px_32px] opacity-60 [mask-image:radial-gradient(ellipse_80%_70%_at_50%_45%,#000_75%,transparent_100%)]" />
         </>
       )}
 
       {/* 5.2 CONTACT VIDEO: Wayfinding Horizon & Transit Access Routes */}
       {variant === 'contact-video' && (
         <>
-          <div className="absolute inset-0 bg-gradient-to-b from-[#FAF6F0] via-[#FDFBF7] to-[#F8F3EC]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#FAF9F6] via-[#F8FAFC] to-[#F1F5F9]" />
           
           {/* Wayfinding Transit Route Vectors */}
-          <svg className="absolute inset-0 w-full h-full opacity-35" viewBox="0 0 1440 600" fill="none">
-            <path d="M 100,300 C 400,200 800,400 1340,250" stroke="#FB923C" strokeWidth="2.5" strokeDasharray="12 12" className="animate-flow-dash" />
-            <circle cx="100" cy="300" r="5" fill="#FB923C" />
-            <circle cx="1340" cy="250" r="5" fill="#E11D48" />
+          <svg className="absolute inset-0 w-full h-full opacity-50" viewBox="0 0 1440 600" fill="none">
+            <path d="M 100,300 C 400,200 800,400 1340,250" stroke="#0A1128" strokeWidth="2.5" strokeDasharray="12 12" className="animate-flow-dash" />
+            <circle cx="100" cy="300" r="5" fill="#0A1128" />
+            <circle cx="1340" cy="250" r="5" fill="#E11D48" className="animate-ping" />
           </svg>
 
-          {/* Soft Amber Light Falloff */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-[#FED7AA]/24 rounded-full blur-[130px]" />
+          {/* Soft Light Falloff */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-[#BE123C]/12 rounded-full [mask-image:radial-gradient(closest-side,black_15%,transparent_100%)] will-change-transform" />
         </>
       )}
 
       {/* 5.3 CONTACT PROTOCOL GUIDE: Editorial Wayfinding & Patient Checklist Dossier */}
       {variant === 'contact-protocol' && (
         <>
-          <div className="absolute inset-0 bg-gradient-to-b from-[#FFF9F6] via-[#FAF5EF] to-[#FFF5F2]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#FAF9F6] via-[#F8FAFC] to-[#F1F5F9]" />
           
-          {/* Delicate Wave Divider Vector in Rose-Gold */}
+          {/* Delicate Wave Divider Vector */}
           <svg className="absolute inset-x-0 top-0 w-full h-16 opacity-45" viewBox="0 0 1440 60" fill="none" preserveAspectRatio="none">
-            <path d="M0,0 C360,40 1080,40 1440,0 L1440,60 L0,60 Z" fill="#FFF9F6" />
+            <path d="M0,0 C360,40 1080,40 1440,0 L1440,60 L0,60 Z" fill="#FAF9F6" />
           </svg>
 
           {/* Tactile Micro-Grid */}
-          <div className="absolute inset-0 bg-[radial-gradient(#E8BAA6_1.2px,transparent_1.2px)] bg-[size:28px_28px] opacity-35" />
+          <div className="absolute inset-0 bg-[radial-gradient(#0A112814_1.2px,transparent_1.2px)] bg-[size:28px_28px] opacity-40" />
 
           {/* Emergency Triage Compass Tag */}
-          <div className="absolute top-8 right-12 font-mono text-[10px] text-rose-900/50 hidden sm:block">+ EMERGENCY-TRIAGE-PROTOCOL</div>
+          <div className="absolute top-8 right-12 font-mono text-[10px] text-slate-700 font-bold hidden sm:block">+ EMERGENCY-TRIAGE-PROTOCOL</div>
         </>
       )}
 
-
       {/* =========================================================================
-          GLOBAL FOOTER: Luxury Burgundy-Coral Depth & Golden-Rose ECG
+          GLOBAL FOOTER: Luxury Deep Midnight Navy & Crimson Ruby Telemetry
          ========================================================================= */}
       {variant === 'footer' && (
         <>
-          <div className="absolute inset-0 bg-gradient-to-b from-[#2A161B] via-[#1E0F13] to-[#140A0D]" />
-          <div className="absolute -top-24 left-1/4 w-[680px] h-[680px] bg-[#F43F5E]/16 rounded-full blur-[140px] animate-float-1" />
-          <div className="absolute -bottom-20 right-10 w-[620px] h-[620px] bg-[#FB923C]/14 rounded-full blur-[130px] animate-float-2" />
-          <div className="absolute top-1/2 left-2/3 w-[450px] h-[450px] bg-[#FDA4AF]/12 rounded-full blur-[130px] animate-pulse-glow" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0A1128] via-[#070D1F] to-[#040813]" />
+          <div className="absolute -top-24 left-1/4 w-[680px] h-[680px] bg-[#E11D48]/18 rounded-full [mask-image:radial-gradient(closest-side,black_15%,transparent_100%)] will-change-transform animate-float-1" />
+          <div className="absolute -bottom-20 right-10 w-[620px] h-[620px] bg-[#BE123C]/16 rounded-full [mask-image:radial-gradient(closest-side,black_15%,transparent_100%)] will-change-transform animate-float-2" />
+          <div className="absolute top-1/2 left-2/3 w-[450px] h-[450px] bg-[#1E293B]/30 rounded-full [mask-image:radial-gradient(closest-side,black_15%,transparent_100%)] will-change-transform animate-pulse-glow" />
 
-          {/* Constellation Grid Pattern in Rose Gold */}
-          <div className="absolute inset-0 bg-[radial-gradient(#FDA4AF25_1.5px,transparent_1.5px)] bg-[size:32px_32px] opacity-30" />
+          {/* Constellation Grid Pattern in Silk Platinum */}
+          <div className="absolute inset-0 bg-[radial-gradient(#CBD5E125_1.5px,transparent_1.5px)] bg-[size:32px_32px] opacity-35" />
 
-          {/* Flowing Golden-Rose ECG Cardiac Line */}
-          <div className="absolute bottom-0 left-0 right-0 z-0 opacity-75">
+          {/* Flowing Crimson Ruby ECG Cardiac Line */}
+          <div className="absolute bottom-0 left-0 right-0 z-0 opacity-80">
             <svg className="w-full h-20" viewBox="0 0 1440 80" fill="none" preserveAspectRatio="none">
               <path
                 d="M0,40 L300,40 L320,40 L330,15 L340,65 L350,5 L360,55 L370,40 L600,40 L620,40 L630,15 L640,65 L650,5 L660,55 L670,40 L1000,40 L1020,40 L1030,15 L1040,65 L1050,5 L1060,55 L1070,40 L1440,40"
-                stroke="#FDA4AF"
+                stroke="#E11D48"
                 strokeWidth="2.5"
                 strokeDasharray="600"
                 className="animate-flow-dash"
               />
-              <circle cx="350" cy="5" r="5" fill="#FB923C" className="animate-ping" />
-              <circle cx="650" cy="5" r="5" fill="#FDA4AF" className="animate-ping" />
-              <circle cx="1050" cy="5" r="5" fill="#FB923C" className="animate-ping" />
+              <circle cx="350" cy="5" r="5" fill="#BE123C" className="animate-ping" />
+              <circle cx="650" cy="5" r="5" fill="#E11D48" className="animate-ping" />
+              <circle cx="1050" cy="5" r="5" fill="#BE123C" className="animate-ping" />
             </svg>
           </div>
 
-          {/* Finishing Rose-Gold Laser Line across top */}
-          <div className="absolute left-0 right-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-[#FDA4AF] to-transparent shadow-[0_0_15px_#F43F5E] opacity-70" />
+          {/* Finishing Crimson Ruby Laser Line across top */}
+          <div className="absolute left-0 right-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-[#E11D48] to-transparent shadow-[0_0_15px_#E11D48] opacity-80" />
         </>
       )}
     </div>

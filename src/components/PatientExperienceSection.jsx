@@ -54,36 +54,54 @@ export default function PatientExperienceSection({ onBookClick }) {
           </div>
         </ScrollReveal>
 
-        {/* 4-Stage Pathway Cards with 3D Tilt & Stagger Entrance */}
+        {/* 4-Stage Visual Pathway Cards with Doctor & Procedure Photography */}
         <ScrollStagger className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-14" staggerDelay={0.12}>
           {patientJourney.map((step, index) => {
-            const accents = [
-              { border: 'border-slate-200', text: 'text-[#0A1128]', pill: 'bg-slate-100 text-[#0A1128]' },
-              { border: 'border-rose-200', text: 'text-[#BE123C]', pill: 'bg-rose-50 text-[#BE123C]' },
-              { border: 'border-slate-200', text: 'text-[#0A1128]', pill: 'bg-slate-100 text-[#0A1128]' },
-              { border: 'border-rose-200', text: 'text-[#BE123C]', pill: 'bg-rose-50 text-[#BE123C]' },
+            const stepMedia = [
+              { img: '/images/doctor-patient-consult.jpg', pos: 'object-center', border: 'border-slate-200', text: 'text-[#0A1128]', pill: 'bg-slate-100 text-[#0A1128]' },
+              { img: '/images/doctor-echo-checkup.jpg', pos: 'object-center', border: 'border-rose-200', text: 'text-[#BE123C]', pill: 'bg-rose-50 text-[#BE123C]' },
+              { img: '/images/doctor-cathlab-procedure.jpg', pos: 'object-center', border: 'border-slate-200', text: 'text-[#0A1128]', pill: 'bg-slate-100 text-[#0A1128]' },
+              { img: '/images/doctor-icu-rounds.jpg', pos: 'object-center', border: 'border-rose-200', text: 'text-[#BE123C]', pill: 'bg-rose-50 text-[#BE123C]' },
             ];
-            const a = accents[index % accents.length];
+            const a = stepMedia[index % stepMedia.length];
             return (
               <StaggerItem key={step.step}>
-                <Interactive3DTilt maxTilt={9} glowColor="rgba(190, 18, 60, 0.2)">
+                <Interactive3DTilt maxTilt={9} glowColor="rgba(190, 18, 60, 0.22)">
                   <div
-                    className={`p-7 rounded-[2rem] bg-white/95 backdrop-blur-xl border-2 ${a.border} shadow-sm flex flex-col justify-between h-full hover:border-rose-300 transition-all duration-300 card-hover-elevate`}
+                    className={`group rounded-[2rem] bg-white border-2 ${a.border} shadow-md flex flex-col justify-between h-full hover:border-rose-300 transition-all duration-300 overflow-hidden`}
                   >
-                    <div>
-                      <span className={`font-serif font-bold text-4xl ${a.text} block mb-3`}>
+                    {/* Visual Image Header */}
+                    <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-900">
+                      <img
+                        src={a.img}
+                        alt={step.title}
+                        loading="lazy"
+                        className={`w-full h-full object-cover ${a.pos} group-hover:scale-108 transition-transform duration-700`}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#0A1128]/80 via-transparent to-transparent" />
+                      <span className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-[#0A1128]/80 border border-white/20 text-[10px] font-mono font-bold text-white">
+                        PHASE {step.step}
+                      </span>
+                      <span className="absolute bottom-2.5 right-3 font-serif font-bold text-2xl text-white/95 drop-shadow-md">
                         {step.step}
                       </span>
-                      <h3 className="font-extrabold text-base text-[#0A1128] leading-snug mb-2">
-                        {step.title}
-                      </h3>
-                      <p className="text-xs text-slate-600 font-normal leading-relaxed">
-                        {step.description}
-                      </p>
                     </div>
 
-                    <div className={`mt-6 pt-3 border-t border-slate-100 text-[10px] font-mono tracking-widest uppercase font-bold ${a.pill} px-2.5 py-1 rounded-full w-fit`}>
-                      Phase {step.step}
+                    <div className="p-6 flex-1 flex flex-col justify-between text-left">
+                      <div>
+                        <h3 className="font-extrabold text-base text-[#0A1128] leading-snug mb-2 group-hover:text-[#BE123C] transition-colors">
+                          {step.title}
+                        </h3>
+                        <p className="text-xs text-slate-600 font-normal leading-relaxed">
+                          {step.description}
+                        </p>
+                      </div>
+
+                      <div className={`mt-5 pt-3 border-t border-slate-100 flex items-center justify-between`}>
+                        <span className={`text-[10px] font-mono tracking-widest uppercase font-bold ${a.pill} px-2.5 py-1 rounded-full`}>
+                          Dr. Shahi Protocol
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </Interactive3DTilt>

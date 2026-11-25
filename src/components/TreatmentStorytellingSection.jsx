@@ -15,7 +15,7 @@ import SectionBackgroundMotion from './SectionBackgroundMotion';
  * - Interactive step cards that elevate (-8px) and illuminate on hover
  * - Smooth transition when switching between procedures
  */
-export default function TreatmentStorytellingSection({ variant = 'home-storytelling' }) {
+export default function TreatmentStorytellingSection() {
   const [activeProcedure, setActiveProcedure] = useState('peripheral-angioplasty');
 
   const storyboards = {
@@ -126,29 +126,29 @@ export default function TreatmentStorytellingSection({ variant = 'home-storytell
   const currentStory = storyboards[activeProcedure];
 
   return (
-    <section className="relative py-28 lg:py-36 overflow-hidden select-none bg-gradient-to-b from-[#FFF4ED] via-[#FFF8F3] to-[#FDF5EC] border-b border-orange-100/60">
+    <section className="relative py-28 lg:py-36 overflow-hidden select-none bg-gradient-to-b from-[#FFF6F0] via-[#FFF2EB] to-[#FFF5F7] border-b border-rose-100/60">
 
-      {/* Bespoke Asymmetric Circadian Recovery Trajectory & Layered Paper-Glass */}
-      <SectionBackgroundMotion variant={variant} />
+      {/* Soft coral-peach gradient with translucent floating shapes */}
+      <SectionBackgroundMotion variant="patient-care" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Section Header */}
         <div className="mb-10 text-center max-w-3xl mx-auto space-y-2">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-[#BE123C] via-[#E11D48] to-[#FB923C] text-white text-xs font-mono font-bold shadow-md shadow-rose-600/20 border border-white/20">
-            <Target className="w-4 h-4 text-amber-200" />
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-[#0A1128] via-[#1E293B] to-[#BE123C] text-white text-xs font-mono font-bold shadow-md shadow-navy/20 border border-rose-300/30">
+            <Target className="w-4 h-4 text-rose-300" />
             <span className="uppercase tracking-[0.2em]">Step-by-Step Clinical Journeys</span>
           </div>
 
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-950 tracking-tight">
+          <h2 className="text-3xl sm:text-5xl font-extrabold text-[#0A1128] tracking-tight">
             Clinical <span className="font-serif italic font-normal text-[#BE123C]">Procedural Roadmap</span>
           </h2>
 
           <div className="flex flex-wrap items-center justify-center gap-2 pt-1 font-mono text-[11px] font-bold">
-            <span className="bg-rose-50 text-rose-900 px-3 py-0.5 rounded-full border border-rose-200">Pre-Op Evaluation</span>
-            <span className="bg-orange-50 text-orange-950 px-3 py-0.5 rounded-full border border-orange-200">Radial Micro-Access</span>
-            <span className="bg-amber-50 text-amber-950 px-3 py-0.5 rounded-full border border-amber-200">Stent Deployment</span>
-            <span className="bg-rose-50 text-rose-900 px-3 py-0.5 rounded-full border border-rose-200">24-Hr Discharge</span>
+            <span className="bg-rose-50 text-[#BE123C] px-3 py-0.5 rounded-full border border-rose-200">Pre-Op Evaluation</span>
+            <span className="bg-slate-100 text-[#0A1128] px-3 py-0.5 rounded-full border border-slate-200">Radial Micro-Access</span>
+            <span className="bg-rose-50 text-[#BE123C] px-3 py-0.5 rounded-full border border-rose-200">Stent Deployment</span>
+            <span className="bg-slate-100 text-[#0A1128] px-3 py-0.5 rounded-full border border-slate-200">24-Hr Discharge</span>
           </div>
         </div>
 
@@ -160,11 +160,10 @@ export default function TreatmentStorytellingSection({ variant = 'home-storytell
               <button
                 key={key}
                 onClick={() => setActiveProcedure(key)}
-                className={`px-6 py-3 rounded-full text-xs font-semibold tracking-wide transition-all duration-300 ${
-                  isActive
-                    ? 'bg-gradient-to-r from-[#BE123C] to-[#FB923C] text-white shadow-md shadow-rose-600/25 scale-105'
-                    : 'bg-white/80 hover:bg-white text-slate-700 border border-rose-100 shadow-xs'
-                }`}
+                className={`px-6 py-3 rounded-full text-xs font-semibold tracking-wide transition-all duration-300 ${isActive
+                  ? 'bg-gradient-to-r from-[#0A1128] via-[#1E293B] to-[#BE123C] text-white shadow-md shadow-navy/25 scale-105 border border-rose-300/30'
+                  : 'bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 shadow-xs'
+                  }`}
               >
                 {data.title}
               </button>
@@ -173,15 +172,15 @@ export default function TreatmentStorytellingSection({ variant = 'home-storytell
         </div>
 
         {/* Master Procedural Journey Card with Smooth Step Elevation */}
-        <div className="rounded-[2.5rem] bg-white/95 backdrop-blur-xl border-2 border-[#A7F3D0] shadow-layered p-6 sm:p-10 space-y-8 text-left transition-all duration-400 hover:shadow-2xl">
+        <div className="rounded-[2.5rem] bg-white border-2 border-slate-200 shadow-layered p-6 sm:p-10 space-y-8 text-left transition-all duration-400 hover:shadow-2xl">
 
           {/* Header Banner */}
           <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4 pb-6 border-b border-slate-100">
             <div>
-              <span className="text-xs font-mono font-bold text-orange-700 uppercase tracking-wider block mb-1">
+              <span className="text-xs font-mono font-bold text-[#BE123C] uppercase tracking-wider block mb-1">
                 {currentStory.badge}
               </span>
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-950 tracking-tight">
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-[#0A1128] tracking-tight">
                 {currentStory.title}
               </h3>
               <p className="text-xs sm:text-sm text-slate-600 font-medium mt-1">
@@ -190,12 +189,12 @@ export default function TreatmentStorytellingSection({ variant = 'home-storytell
             </div>
 
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
-              <div className="px-4 py-2 rounded-xl bg-orange-50 border border-orange-200 text-xs font-mono font-bold text-orange-900">
-                <Clock className="w-3.5 h-3.5 inline mr-1 text-orange-600" />
+              <div className="px-4 py-2 rounded-xl bg-slate-100 border border-slate-200 text-xs font-mono font-bold text-[#0A1128]">
+                <Clock className="w-3.5 h-3.5 inline mr-1 text-[#BE123C]" />
                 {currentStory.recovery}
               </div>
-              <div className="px-4 py-2 rounded-xl bg-[#F0FDF4] border border-[#A7F3D0] text-xs font-mono font-bold text-[#064E3B]">
-                <CheckCircle2 className="w-3.5 h-3.5 inline mr-1 text-[#047857]" />
+              <div className="px-4 py-2 rounded-xl bg-rose-50 border border-rose-200 text-xs font-mono font-bold text-[#BE123C]">
+                <CheckCircle2 className="w-3.5 h-3.5 inline mr-1 text-[#BE123C]" />
                 {currentStory.stats}
               </div>
             </div>
@@ -215,50 +214,79 @@ export default function TreatmentStorytellingSection({ variant = 'home-storytell
             />
           </div>
 
-          {/* Stepped Procedural Grid (4 Steps) - Minimal Text & High Visual Impact */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            {currentStory.steps.map((step) => (
-              <div
-                key={step.num}
-                className="group relative p-5 rounded-2xl bg-white border-2 border-emerald-100 hover:border-emerald-300 shadow-xs transition-all duration-400 hover:-translate-y-2 hover:shadow-lg space-y-2 cursor-default text-left"
-              >
-                <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-[#064E3B] to-[#059669] text-white flex items-center justify-center font-mono text-xs font-bold shadow-sm group-hover:scale-105 transition-transform">
-                  {step.num}
+          {/* Stepped Visual Procedural Grid (4 Image-Explained Steps) */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+            {currentStory.steps.map((step, sIdx) => {
+              const stepImages = [
+                { src: '/images/doctor-patient-consult.jpg', pos: 'object-center' },
+                { src: '/images/doctor-angiogram-explain.jpg', pos: 'object-center' },
+                { src: '/images/doctor-cathlab-procedure.jpg', pos: 'object-center' },
+                { src: '/images/doctor-icu-rounds.jpg', pos: 'object-center' },
+              ];
+              const media = stepImages[sIdx % stepImages.length];
+              return (
+                <div
+                  key={step.num}
+                  className="group relative rounded-2xl bg-white border-2 border-slate-200 hover:border-rose-300 shadow-sm transition-all duration-400 hover:-translate-y-2 hover:shadow-xl overflow-hidden text-left flex flex-col"
+                >
+                  <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-900">
+                    <img
+                      src={media.src}
+                      alt={step.phase}
+                      loading="lazy"
+                      className={`w-full h-full object-cover ${media.pos} group-hover:scale-110 transition-transform duration-700`}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0A1128]/85 via-transparent to-transparent" />
+                    <div className="absolute top-2.5 left-2.5 w-8 h-8 rounded-lg bg-gradient-to-br from-[#0A1128] to-[#BE123C] text-white flex items-center justify-center font-mono text-xs font-bold shadow-md border border-white/20">
+                      {step.num}
+                    </div>
+                  </div>
+                  <div className="p-4 space-y-1.5 flex-1">
+                    <h4 className="text-xs sm:text-sm font-extrabold text-[#0A1128] tracking-tight group-hover:text-[#BE123C] transition-colors">
+                      {step.phase}
+                    </h4>
+                    <p className="text-[11px] text-slate-600 font-medium leading-normal">
+                      {step.detail}
+                    </p>
+                  </div>
                 </div>
-                <h4 className="text-xs sm:text-sm font-extrabold text-slate-900 tracking-tight group-hover:text-[#064E3B] transition-colors">
-                  {step.phase}
-                </h4>
-                <p className="text-[11px] text-slate-600 font-medium leading-normal">
-                  {step.detail}
-                </p>
-              </div>
-            ))}
+              );
+            })}
           </div>
 
-          {/* Indications & Candidacy Banner */}
-          <div className="p-6 sm:p-7 rounded-2xl bg-gradient-to-r from-emerald-50 via-white to-teal-50 border-2 border-emerald-200 text-slate-900 shadow-md flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-            <div className="space-y-1 text-left">
-              <span className="text-[10px] font-mono text-[#064E3B] font-bold uppercase tracking-wider block">
-                Primary Clinical Indications
-              </span>
-              <div className="flex flex-wrap gap-2 pt-1">
-                {currentStory.indications.map((ind, i) => (
-                  <span
-                    key={i}
-                    className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white text-[11px] font-bold text-slate-800 border border-emerald-200 shadow-xs"
-                  >
-                    <CheckCircle2 className="w-3.5 h-3.5 text-[#047857]" />
-                    <span>{ind}</span>
-                  </span>
-                ))}
+          {/* Indications & Doctor Consultation Banner */}
+          <div className="p-6 sm:p-7 rounded-2xl bg-gradient-to-r from-slate-50 via-white to-rose-50/60 border-2 border-slate-200 text-slate-900 shadow-md flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+            <div className="flex items-center gap-4">
+              <img
+                src="/images/doctor-portrait.jpg"
+                alt="Dr. Prakash Chand Shahi"
+                loading="lazy"
+                className="w-16 h-16 rounded-2xl object-cover object-[50%_22%] border-2 border-[#BE123C]/40 shadow-md shrink-0 hidden sm:block"
+              />
+              <div className="space-y-1 text-left">
+                <span className="text-[10px] font-mono text-[#BE123C] font-bold uppercase tracking-wider block">
+                  Primary Clinical Indications • Supervised by Dr. Prakash Chand Shahi
+                </span>
+                <div className="flex flex-wrap gap-2 pt-1">
+                  {currentStory.indications.map((ind, i) => (
+                    <span
+                      key={i}
+                      className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white text-[11px] font-bold text-[#0A1128] border border-slate-200 shadow-xs"
+                    >
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[#BE123C]" />
+                      <span>{ind}</span>
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
 
             <Link
               to="/contact"
-              className="px-7 py-3 rounded-full bg-gradient-to-r from-[#064E3B] via-[#047857] to-[#059669] hover:from-[#022C22] hover:to-[#064E3B] text-white text-xs font-bold uppercase tracking-wider shrink-0 transition-all duration-300 hover:scale-105 shadow-md border border-emerald-400/30"
+              className="luxury-btn-primary shrink-0"
             >
-              Discuss with Dr. Shahi
+              <span>Discuss with Dr. Shahi</span>
+              <ArrowRight className="w-4 h-4 text-white" />
             </Link>
           </div>
 

@@ -1,152 +1,161 @@
 import React from 'react';
-import { Award, GraduationCap, ShieldCheck, Heart, Sparkles, BookOpen, CheckCircle2, Building, Calendar, FileText } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Award, CheckCircle2, ArrowRight, ShieldCheck, Building2 } from 'lucide-react';
 import { PULSE_DATA } from '../data/pulseData';
-import SectionBackgroundMotion from './SectionBackgroundMotion';
 
 /**
  * CredentialsEditorialSection
- * Visual & Motion Identity: Academic Institutional Pedigree & Ethical Charter
- * Color Palette: Metallic Silver, Deep Obsidian Black, Gold Wax Seal & Royal Indigo
- * Motion Features:
- * - Rotating heraldic crest vectors in background
- * - Staggered dimensional academic plaques that elevate on hover with border glow
- * - Official NMC medical registration badge
+ * High-Contrast Deep Midnight Navy Editorial Band:
+ * - Breaks up light-section monotony with rich #0A1128 architectural contrast
+ * - 3 bold credential pillars (PGIMER Chandigarh, KGMU Lucknow, MBBS & 22+ Yrs)
+ * - Wide Doctor Stewardship & Ethical Charter strip at the bottom with real portrait
  */
 export default function CredentialsEditorialSection() {
-  const { doctor, clinic } = PULSE_DATA;
+  const { doctor } = PULSE_DATA;
 
-  const degrees = [
+  const credentials = [
     {
-      degree: 'Doctorate of Medicine (DM) — Cardiology',
-      institution: 'Postgraduate Institute of Medical Education and Research (PGIMER)',
-      location: 'Chandigarh, India',
-      status: 'Institute of National Importance (INI)',
-      year: 'Super-Specialty Doctorate',
-      details: 'Intensive tertiary fellowship in invasive coronary angiography, transradial balloon angioplasty, complex bifurcation stenting, and transvenous cardiac rhythm pacing.',
-      borderAccent: 'border-amber-400/50 bg-gradient-to-b from-white via-amber-50/20 to-white hover:border-amber-400',
-      badge: 'APEX INSTITUTIONAL FELLOWSHIP',
-      badgeColor: 'bg-amber-100 text-amber-900 border-amber-300',
+      badge: 'SUPER-SPECIALTY',
+      degree: 'DM — Cardiology',
+      institute: 'PGIMER, Chandigarh',
+      tag: 'Institute of National Importance',
+      image: '/images/doctor-portrait.jpg',
+      pos: 'object-[50%_20%]',
+      summary: 'Fellowship in transradial coronary angiography, complex bifurcation stenting & cardiac pacing.',
     },
     {
-      degree: 'Doctor of Medicine (MD) — General Medicine',
-      institution: "King George's Medical University (KGMU)",
-      location: 'Lucknow, Uttar Pradesh',
-      status: 'Historic Medical Institution Est. 1905',
-      year: 'Post-Graduate Residency',
-      details: 'Three years of rigorous clinical immersion managing critical coronary syndromes, acute hemodynamics, medical intensive care, and systemic vascular disease.',
-      borderAccent: 'border-indigo-400/50 bg-gradient-to-b from-white via-indigo-50/20 to-white hover:border-indigo-400',
-      badge: 'POST-GRADUATE RESIDENCY',
-      badgeColor: 'bg-indigo-100 text-indigo-900 border-indigo-300',
+      badge: 'POST-GRADUATE',
+      degree: 'MD — General Medicine',
+      institute: "King George's Medical University (KGMU)",
+      tag: 'Lucknow • Est. 1905',
+      image: '/images/angiogram-scan.jpg',
+      pos: 'object-center',
+      summary: 'Intensive residency in acute coronary syndromes, critical hemodynamics & intensive care.',
     },
     {
-      degree: 'Bachelor of Medicine & Surgery (MBBS)',
-      institution: 'Premier Medical College & University',
-      location: 'India',
-      status: 'Comprehensive Foundational Rotations',
-      year: 'Undergraduate Medical Degree',
-      details: 'Foundational clinical rotations across medicine, surgery, pharmacology, pathology, and emergency resuscitation.',
-      borderAccent: 'border-slate-300 bg-white hover:border-slate-400',
-      badge: 'CLINICAL CORE',
-      badgeColor: 'bg-slate-100 text-slate-800 border-slate-300',
+      badge: 'CLINICAL LEADERSHIP',
+      degree: '22+ Years Practice',
+      institute: 'Pulse Heart Centre, Betiahata',
+      tag: '15,000+ Cath Procedures',
+      image: '/images/cath-lab.jpg',
+      pos: 'object-center',
+      summary: 'Leading Gorakhpur’s wrist-first interventional cardiology & 24/7 STEMI emergency care.',
     },
   ];
 
   const standards = [
-    {
-      title: 'Transradial-First Interventional Strategy',
-      text: 'Routine wrist-first approach for catheterization, reducing vascular complications and promoting 2-hour post-procedure ambulation.',
-    },
-    {
-      title: 'Strict Guideline Concordance',
-      text: 'Procedures recommended only when substantiated by objective ischemia on ECG, echocardiography, or cineangiography.',
-    },
-    {
-      title: 'Full Diagnostic Transparency',
-      text: 'Unbiased second opinions with frame-by-frame review of angiogram CDs alongside patient families.',
-    },
-    {
-      title: 'Lifetime Follow-Up Continuity',
-      text: 'Structured outpatient monitoring for lipid optimization, blood pressure control, and stent patency at Betiahata.',
-    },
+    'Transradial-First Wrist Access',
+    'Strict ACC / AHA Guideline Ethics',
+    'Transparent Angiogram CD Review',
+    'Lifetime Continuity at Betiahata',
   ];
 
   return (
-    <section className="relative py-28 lg:py-36 overflow-hidden select-none bg-gradient-to-b from-[#FBF9FE] via-[#F5F2F9] to-[#FAF7F2] border-b border-purple-100/60">
-
-      {/* Bespoke Atelier Architectural Archive & Apex Institute Heraldry Seal */}
-      <SectionBackgroundMotion variant="home-credentials" />
+    <section className="relative py-20 lg:py-28 overflow-hidden select-none bg-[#0A1128] text-white">
+      {/* Subtle Architectural Radial Depth */}
+      <div
+        className="absolute -top-40 right-0 w-[680px] h-[680px] rounded-full pointer-events-none"
+        style={{ background: 'radial-gradient(circle, rgba(190,18,60,0.20) 0%, transparent 70%)' }}
+      />
+      <div
+        className="absolute -bottom-40 left-0 w-[620px] h-[620px] rounded-full pointer-events-none"
+        style={{ background: 'radial-gradient(circle, rgba(30,41,59,0.55) 0%, transparent 70%)' }}
+      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
-        {/* Section Header */}
-        <div className="mb-16 text-center max-w-3xl mx-auto space-y-3">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-[#BE123C] via-[#E11D48] to-[#FB923C] text-white text-xs font-mono font-bold shadow-md shadow-rose-600/20 animate-float-bob border border-white/20">
-            <Award className="w-4 h-4 text-amber-200" />
-            <span className="uppercase tracking-[0.2em]">Institutional Pedigree &amp; Credentials</span>
+        {/* Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 text-left">
+          <div className="max-w-2xl space-y-2">
+            <div className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-[0.2em] text-rose-400">
+              <Award className="w-4 h-4" />
+              <span>Academic Pedigree</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+              Trained at India’s Apex Medical Institutes
+            </h2>
           </div>
 
-          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-950 tracking-tight leading-[1.08]">
-            Super-Specialty Qualifications from <br />
-            <span className="font-serif italic font-normal text-[#BE123C]">India's Apex Medical Institutes</span>
-          </h2>
-
-          <p className="text-base sm:text-lg text-slate-700 font-medium max-w-2xl mx-auto leading-relaxed">
-            Medical excellence forged at premier national teaching hospitals, dedicated to serving patients in Gorakhpur with international clinical standards.
-          </p>
+          <Link
+            to="/about"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/10 hover:bg-[#BE123C] text-white text-xs font-bold uppercase tracking-wider border border-white/15 transition-colors w-fit shrink-0"
+          >
+            <span>Full Clinical Dossier</span>
+            <ArrowRight className="w-3.5 h-3.5" />
+          </Link>
         </div>
 
-        {/* Master Degree Plaques Grid with 3D Hover Elevation */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch mb-14">
-          {degrees.map((deg, idx) => (
+        {/* 3 Visual Credential Pillars */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10 text-left">
+          {credentials.map((item, idx) => (
             <div
               key={idx}
-              className={`p-6 sm:p-7 rounded-[2rem] border-2 shadow-md transition-all duration-500 hover:-translate-y-2 hover:scale-102 hover:shadow-2xl flex flex-col justify-between text-left cursor-default ${deg.borderAccent}`}
+              className="group rounded-2xl bg-white/[0.04] hover:bg-white/[0.07] border border-white/10 hover:border-rose-400/40 transition-all duration-300 flex flex-col justify-between overflow-hidden"
             >
-              <div className="space-y-3">
-                <span className={`inline-block px-3 py-1 rounded-full text-[10px] font-mono font-bold border ${deg.badgeColor}`}>
-                  {deg.badge}
+              {/* Visual Header Image */}
+              <div className="relative aspect-[16/9] w-full overflow-hidden bg-slate-900">
+                <img
+                  src={item.image}
+                  alt={item.degree}
+                  loading="lazy"
+                  className={`w-full h-full object-cover ${item.pos} group-hover:scale-105 transition-transform duration-500`}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0A1128] via-transparent to-transparent" />
+                <span className="absolute top-3 left-3 text-[10px] font-mono font-bold uppercase tracking-widest text-white bg-[#0A1128]/85 border border-white/15 px-3 py-1 rounded-full">
+                  {item.badge}
                 </span>
-
-                <h3 className="text-xl sm:text-2xl font-extrabold text-slate-950 tracking-tight leading-snug">
-                  {deg.degree}
-                </h3>
-
-                <div className="space-y-0.5">
-                  <p className="text-sm font-bold text-slate-900">
-                    {deg.institution}
-                  </p>
-                  <p className="text-xs font-mono text-[#BE123C] font-semibold">
-                    {deg.location}
-                  </p>
-                </div>
               </div>
 
-              <div className="pt-4 mt-3 border-t border-slate-100 flex items-center justify-between">
-                <span className="text-[11px] font-mono font-bold text-slate-600">
-                  {deg.year}
-                </span>
-                <ShieldCheck className="w-5 h-5 text-[#E11D48]" />
+              <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
+                <div className="space-y-1.5">
+                  <h3 className="text-xl font-extrabold text-white tracking-tight">
+                    {item.degree}
+                  </h3>
+                  <p className="text-sm font-semibold text-rose-200 flex items-center gap-1.5">
+                    <Building2 className="w-4 h-4 text-rose-400 shrink-0" />
+                    <span>{item.institute}</span>
+                  </p>
+                  <p className="text-xs text-slate-300 leading-relaxed pt-1">
+                    {item.summary}
+                  </p>
+                </div>
+
+                <div className="pt-3 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-slate-400">
+                  <span>{item.tag}</span>
+                  <ShieldCheck className="w-4 h-4 text-rose-400" />
+                </div>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Ethical Practice Charter & Patient Commitment Banner */}
-        <div className="p-6 sm:p-8 rounded-[2rem] bg-gradient-to-r from-rose-50/70 via-white to-orange-50/70 text-slate-900 shadow-md border-2 border-rose-200 text-left transition-all duration-400 hover:shadow-xl">
-          <div className="flex items-center gap-2 mb-4">
-            <span className="w-2.5 h-2.5 rounded-full bg-[#E11D48] animate-pulse" />
-            <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#BE123C]">
-              Clinical Standards • Pulse Heart Centre
-            </span>
+        {/* Bottom Wide Doctor Stewardship Strip */}
+        <div className="p-6 sm:p-8 rounded-2xl bg-white text-[#0A1128] shadow-xl grid grid-cols-1 lg:grid-cols-12 gap-6 items-center text-left">
+          <div className="lg:col-span-5 flex items-center gap-4">
+            <img
+              src="/images/doctor-portrait.jpg"
+              alt={doctor.name}
+              loading="lazy"
+              className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl object-cover object-[50%_20%] border border-slate-200 shadow-sm shrink-0"
+            />
+            <div>
+              <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#BE123C] block">
+                Ethical Clinical Stewardship
+              </span>
+              <h4 className="text-lg font-extrabold text-[#0A1128] mt-0.5">
+                {doctor.name}
+              </h4>
+              <p className="text-xs text-slate-600 mt-0.5">
+                Director &amp; Chief Interventional Cardiologist, Pulse Heart Centre
+              </p>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-3 lg:border-l lg:border-slate-200 lg:pl-8">
             {standards.map((std, i) => (
-              <div key={i} className="p-3.5 rounded-xl bg-white/90 border border-rose-100 shadow-xs group hover:border-rose-300 transition-colors">
-                <h4 className="text-xs sm:text-sm font-bold text-slate-900 flex items-center gap-2 group-hover:text-[#BE123C] transition-colors">
-                  <CheckCircle2 className="w-4 h-4 text-[#E11D48] shrink-0" />
-                  <span>{std.title}</span>
-                </h4>
+              <div key={i} className="flex items-center gap-2.5 text-xs sm:text-sm font-bold text-[#0A1128]">
+                <CheckCircle2 className="w-4 h-4 text-[#BE123C] shrink-0" />
+                <span>{std}</span>
               </div>
             ))}
           </div>

@@ -8,10 +8,12 @@ import MedicalTechnologyShowcase from '../components/MedicalTechnologyShowcase';
 import InteractiveCardiacExplorer from '../components/InteractiveCardiacExplorer';
 import SectionCinematicVideo from '../components/SectionCinematicVideo';
 import SectionBackgroundMotion from '../components/SectionBackgroundMotion';
+import Interactive3DTilt from '../components/Interactive3DTilt';
+import ScrollReveal from '../components/ScrollReveal';
 
 export default function TreatmentsPage() {
   return (
-    <div className="relative pt-24 pb-24 select-none bg-[#FDFBF7] overflow-hidden">
+    <div className="relative pt-24 pb-24 select-none bg-gradient-to-b from-[#FAF9F6] via-[#F8FAFC] to-[#F1F5F9] overflow-hidden">
 
       {/* =========================================================================
           1. MASTER EDITORIAL HEADER & FLUOROSCOPY VIDEO STAGE
@@ -21,61 +23,67 @@ export default function TreatmentsPage() {
         <SectionBackgroundMotion variant="treatments-hero" />
 
         <div className="max-w-7xl mx-auto space-y-4 relative z-10">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-[#BE123C] via-[#E11D48] to-[#FB923C] text-white text-xs font-mono font-medium shadow-md shadow-rose-600/20">
-            <Activity className="w-4 h-4 text-amber-200 animate-pulse" />
-            <span className="uppercase tracking-[0.2em]">Interventional Treatments &amp; Procedures</span>
-          </div>
+          <ScrollReveal animation="fade-down">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-[#0A1128] via-[#1E293B] to-[#BE123C] text-white text-xs font-mono font-medium shadow-md shadow-navy/20 border border-rose-300/30">
+              <Activity className="w-4 h-4 text-rose-300 animate-pulse" />
+              <span className="uppercase tracking-[0.2em]">Interventional Treatments &amp; Procedures</span>
+            </div>
+          </ScrollReveal>
 
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-slate-950 tracking-tight leading-[1.05]">
-            Interventional &amp; Diagnostic <br />
-            <span className="font-serif italic font-normal text-[#BE123C]">Cardiovascular Therapies</span>
-          </h1>
+          <ScrollReveal animation="fade-up" delay={0.1}>
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-[#0A1128] tracking-tight leading-[1.05]">
+              Interventional &amp; Diagnostic <br />
+              <span className="font-serif italic font-normal text-[#BE123C]">Cardiovascular Therapies</span>
+            </h1>
+          </ScrollReveal>
 
-          {/* Lead Operator Spotlight Badge (With Stethoscope Crest) */}
-          <div className="pt-1 flex items-center justify-center gap-3">
-            <div className="flex items-center gap-3 px-4 py-2.5 rounded-2xl bg-white border-2 border-orange-200 shadow-md">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#BE123C] to-[#FB923C] flex items-center justify-center text-white shrink-0 border border-rose-200">
-                <Stethoscope className="w-5 h-5 stroke-[1.8]" />
-              </div>
-              <div className="text-left">
-                <span className="text-xs font-extrabold text-slate-900 block">
-                  Lead Interventionalist: Dr. Prakash Chand Shahi
-                </span>
-                <span className="text-[10px] font-mono text-[#C2410C] font-bold block">
-                  DM Cardiology (PGIMER) • MD (KGMU Lucknow) • 15,000+ Procedures
-                </span>
+          {/* Lead Operator Portrait Spotlight Badge (Unique to Treatments Page) */}
+          <ScrollReveal animation="fade-up" delay={0.15}>
+            <div className="pt-1 flex items-center justify-center gap-3">
+              <div className="flex items-center gap-3.5 px-4 py-2.5 rounded-2xl bg-white border border-slate-200 shadow-md">
+                <img
+                  src="/images/doctor-portrait.jpg"
+                  alt="Dr. Prakash Chand Shahi"
+                  className="w-12 h-12 rounded-xl object-cover object-[50%_20%] border border-rose-200 shrink-0"
+                />
+                <div className="text-left">
+                  <span className="text-xs font-extrabold text-[#0A1128] block">
+                    Lead Interventionalist: Dr. Prakash Chand Shahi
+                  </span>
+                  <span className="text-[10px] font-mono text-[#BE123C] font-bold block">
+                    DM Cardiology (PGIMER) • MD (KGMU Lucknow) • 15,000+ Procedures
+                  </span>
+                </div>
               </div>
             </div>
-          </div>
+          </ScrollReveal>
 
-          <p className="text-sm sm:text-base font-semibold text-slate-800 max-w-2xl mx-auto leading-relaxed">
-            Peripheral Angioplasty, Radial Stenting, Coronary Angiogram &amp; Pacemaker Implantation with Siemens Flat-Panel Clarity.
-          </p>
+          <ScrollReveal animation="fade-up" delay={0.2}>
+            <p className="text-sm sm:text-base font-normal text-slate-600 max-w-2xl mx-auto leading-relaxed">
+              Peripheral Angioplasty, Radial Stenting, Coronary Angiogram &amp; Pacemaker Implantation with Siemens Flat-Panel Clarity.
+            </p>
+          </ScrollReveal>
 
           {/* Interactive Vascular Intervention Video Console */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.9, delay: 0.15 }}
-            className="pt-6 max-w-5xl mx-auto"
-          >
-            <SectionCinematicVideo
-              type="cardiac-catheterization"
-              videoUrl="/videos/cardiac-catheterization.mp4"
-              styleVariant="panoramic-stage"
-              posterImage="/images/angiogram-scan.jpg"
-              title="Cineangiography Stenosis Mapping &amp; Stent Placement"
-              subtitle="Siemens Artis Zee Fluoroscopy • 60 FPS"
-              specs="Sub-Millimeter Stenosis Resolution • 0.014-Inch Micro-Guidewire"
-              aspectRatio="aspect-[16/8] sm:aspect-[21/9]"
-            />
-          </motion.div>
+          <ScrollReveal animation="scale-up" delay={0.25} className="pt-6 max-w-5xl mx-auto">
+            <Interactive3DTilt maxTilt={5} scale={1.01}>
+              <SectionCinematicVideo
+                type="cardiac-catheterization"
+                videoUrl="/videos/cardiac-catheterization.mp4"
+                styleVariant="panoramic-stage"
+                posterImage="/images/angiogram-scan.jpg"
+                title="Cineangiography Stenosis Mapping &amp; Stent Placement"
+                subtitle="Siemens Artis Zee Fluoroscopy • 60 FPS"
+                specs="Sub-Millimeter Stenosis Resolution • 0.014-Inch Micro-Guidewire"
+                aspectRatio="aspect-[16/8] sm:aspect-[21/9]"
+              />
+            </Interactive3DTilt>
+          </ScrollReveal>
         </div>
       </section>
 
       {/* =========================================================================
-          2. ANATOMICAL SPECIALTY SHOWCASE (TREATMENTS BESPOKE CELLULAR VARIANT)
+          2. ANATOMICAL SPECIALTY SHOWCASE (TREATMENTS BESPOKE 3D HEMODYNAMIC VARIANT)
          ========================================================================= */}
       <AnatomicalSpecialtyShowcase variant="treatments-specialties" />
 
@@ -96,7 +104,7 @@ export default function TreatmentsPage() {
       {/* =========================================================================
           5. INTERACTIVE DIAGNOSTIC LIGHTBOX (BACKLIT MATRIX VARIANT)
          ========================================================================= */}
-      <section className="relative py-20 px-4 sm:px-6 lg:px-8 my-8 overflow-hidden rounded-[3rem] border border-amber-200/50 shadow-md">
+      <section className="relative py-20 px-4 sm:px-6 lg:px-8 my-8 overflow-hidden rounded-[3rem] border-2 border-slate-200/90 shadow-2xl backdrop-blur-xl">
         {/* Bespoke Backlit Radiographic Lightbox & Perfusion Grid Matrix */}
         <SectionBackgroundMotion variant="treatments-explorer" />
 
@@ -113,26 +121,31 @@ export default function TreatmentsPage() {
         <SectionBackgroundMotion variant="treatments-cta" />
 
         <div className="max-w-4xl mx-auto relative z-10">
-          <div className="p-8 sm:p-12 rounded-[2.5rem] bg-gradient-to-br from-white via-rose-50/30 to-white text-slate-900 shadow-xl border-2 border-rose-200 space-y-5">
-            <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#BE123C] font-bold block">
-              Ethical Second Opinions • Gorakhpur
-            </span>
-            <h3 className="text-3xl sm:text-4xl font-extrabold text-slate-900">
-              Bring Your Angiogram CD for a <span className="font-serif italic font-normal text-[#BE123C]">Physician Review</span>
-            </h3>
-            <p className="text-sm sm:text-base text-slate-600 max-w-xl mx-auto font-medium leading-relaxed">
-              Receive unbiased, evidence-based guidance on whether balloon dilation, drug-eluting stenting, or conservative medical optimization is best for your heart.
-            </p>
-            <div className="pt-2 flex items-center justify-center gap-4">
-              <Link
-                to="/contact"
-                className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-gradient-to-r from-[#BE123C] via-[#E11D48] to-[#FB923C] hover:from-[#9F1239] hover:to-[#BE123C] text-white text-xs font-semibold uppercase tracking-wider shadow-md shadow-rose-600/20 transition-all hover:scale-105"
-              >
-                <Calendar className="w-4 h-4 text-amber-200" />
-                <span>Schedule Second Opinion Session</span>
-              </Link>
-            </div>
-          </div>
+          <ScrollReveal animation="fade-up">
+            <Interactive3DTilt maxTilt={4} scale={1.01}>
+              <div className="p-8 sm:p-14 rounded-[2.5rem] bg-gradient-to-br from-white via-slate-50 to-white text-slate-900 shadow-2xl border-2 border-slate-200/90 space-y-6 backdrop-blur-xl">
+                <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#BE123C] font-bold block">
+                  Ethical Second Opinions • Betiahata, Gorakhpur
+                </span>
+                <h3 className="text-3xl sm:text-5xl font-extrabold text-[#0A1128] tracking-tight">
+                  Bring Your Angiogram CD for a <span className="font-serif italic font-normal text-[#BE123C]">Physician Review</span>
+                </h3>
+                <p className="text-sm sm:text-base text-slate-600 max-w-xl mx-auto font-normal leading-relaxed">
+                  Receive unbiased, evidence-based guidance on whether balloon dilation, drug-eluting stenting, or conservative medical optimization is best for your heart.
+                </p>
+                <div className="pt-2 flex items-center justify-center gap-4">
+                  <Link
+                    to="/contact"
+                    className="luxury-btn-primary"
+                  >
+                    <Calendar className="w-4 h-4 text-white" />
+                    <span>Schedule Second Opinion Session</span>
+                    <ArrowRight className="w-4 h-4 text-white" />
+                  </Link>
+                </div>
+              </div>
+            </Interactive3DTilt>
+          </ScrollReveal>
         </div>
       </section>
 

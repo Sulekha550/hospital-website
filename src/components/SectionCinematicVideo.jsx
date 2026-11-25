@@ -81,32 +81,75 @@ export default function SectionCinematicVideo({
 
   const [isPlaying, setIsPlaying] = useState(true);
   const [isMuted, setIsMuted] = useState(true);
-  const [timecode, setTimecode] = useState('00:04:18:22');
   const [videoError, setVideoError] = useState(false);
-  const [tilt, setTilt] = useState({ rx: 0, ry: 0, glareX: 50, glareY: 50, isHover: false });
+  const [isInView, setIsInView] = useState(false);
+  const containerRef = useRef(null);
+  const glareRef = useRef(null);
+  const timecodeRef = useRef(null);
   const canvasRef = useRef(null);
   const videoRef = useRef(null);
+  const tiltRafRef = useRef(null);
+
+  // Viewport IntersectionObserver: pauses offscreen videos, canvases, and timers
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsInView(entry.isIntersecting);
+      },
+      { rootMargin: '150px 0px', threshold: 0.01 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  // Auto-pause/play HTML5 video based on viewport visibility
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video || videoError) return;
+    if (isInView && isPlaying) {
+      video.play().catch(() => {});
+    } else {
+      video.pause();
+    }
+  }, [isInView, isPlaying, videoError]);
 
   const handleMouseMove = (e) => {
-    if (styleVariant !== 'floating-3d') return;
-    const rect = e.currentTarget.getBoundingClientRect();
+    if (styleVariant !== 'floating-3d' || !containerRef.current) return;
+    const rect = containerRef.current.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
     const cx = rect.width / 2;
     const cy = rect.height / 2;
-    const rx = ((y - cy) / cy) * -8;
-    const ry = ((x - cx) / cx) * 8;
-    setTilt({
-      rx: Number(rx.toFixed(2)),
-      ry: Number(ry.toFixed(2)),
-      glareX: Math.round((x / rect.width) * 100),
-      glareY: Math.round((y / rect.height) * 100),
-      isHover: true
+    const rx = (((y - cy) / cy) * -7).toFixed(2);
+    const ry = (((x - cx) / cx) * 7).toFixed(2);
+    const gx = Math.round((x / rect.width) * 100);
+    const gy = Math.round((y / rect.height) * 100);
+
+    if (tiltRafRef.current) cancelAnimationFrame(tiltRafRef.current);
+    tiltRafRef.current = requestAnimationFrame(() => {
+      if (containerRef.current) {
+        containerRef.current.style.transition = 'transform 0.12s ease-out';
+        containerRef.current.style.transform = `perspective(1200px) rotateX(${rx}deg) rotateY(${ry}deg) scale3d(1.02, 1.02, 1.02)`;
+      }
+      if (glareRef.current) {
+        glareRef.current.style.opacity = '1';
+        glareRef.current.style.background = `radial-gradient(circle 360px at ${gx}% ${gy}%, rgba(255,255,255,0.22), transparent 70%)`;
+      }
     });
   };
 
   const handleMouseLeave = () => {
-    setTilt({ rx: 0, ry: 0, glareX: 50, glareY: 50, isHover: false });
+    if (tiltRafRef.current) cancelAnimationFrame(tiltRafRef.current);
+    if (styleVariant !== 'floating-3d') return;
+    if (containerRef.current) {
+      containerRef.current.style.transition = 'transform 0.5s cubic-bezier(0.16, 1, 0.3, 1)';
+      containerRef.current.style.transform = 'perspective(1200px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+    }
+    if (glareRef.current) {
+      glareRef.current.style.opacity = '0';
+    }
   };
 
   // Reset video error on URL or type change
@@ -114,18 +157,22 @@ export default function SectionCinematicVideo({
     setVideoError(false);
   }, [resolvedVideoUrl, type]);
 
-  // Live timecode counter
+  // Zero-re-render timecode counter (runs only when visible in viewport)
   useEffect(() => {
-    const interval = setInterval(() => {
+    if (!isInView) return;
+    const updateTimecode = () => {
+      if (!timecodeRef.current) return;
       const now = new Date();
       const h = String(now.getHours()).padStart(2, '0');
       const m = String(now.getMinutes()).padStart(2, '0');
       const s = String(now.getSeconds()).padStart(2, '0');
       const f = String(Math.floor((now.getMilliseconds() / 1000) * 30)).padStart(2, '0');
-      setTimecode(`${h}:${m}:${s}:${f}`);
-    }, 100);
+      timecodeRef.current.textContent = `${h}:${m}:${s}:${f}`;
+    };
+    updateTimecode();
+    const interval = setInterval(updateTimecode, 500);
     return () => clearInterval(interval);
-  }, []);
+  }, [isInView]);
 
   const togglePlay = (e) => {
     e.stopPropagation();
@@ -147,31 +194,35 @@ export default function SectionCinematicVideo({
     setIsMuted(nextMuted);
   };
 
-  // High-performance procedural medical video simulation canvas
+  // Procedural medical video simulation canvas (throttled & paused when offscreen)
   useEffect(() => {
+    if (!isInView) return;
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
     let frameId;
     let t = 0;
+    let lastDraw = 0;
+    const CANVAS_INTERVAL = 1000 / 30; // Smooth 30fps simulation overlay saves 50% CPU/GPU
 
     const resize = () => {
       canvas.width = canvas.offsetWidth;
       canvas.height = canvas.offsetHeight;
     };
     resize();
-    window.addEventListener('resize', resize);
+    window.addEventListener('resize', resize, { passive: true });
 
-    const draw = () => {
+    const draw = (now) => {
+      frameId = requestAnimationFrame(draw);
+      if (document.hidden || (now && now - lastDraw < CANVAS_INTERVAL)) return;
+      if (now) lastDraw = now;
+
       const W = canvas.width;
       const H = canvas.height;
-      if (W === 0 || H === 0) {
-        frameId = requestAnimationFrame(draw);
-        return;
-      }
+      if (W === 0 || H === 0) return;
 
       ctx.clearRect(0, 0, W, H);
-      t += 0.02;
+      t += 0.035;
 
       // TOPIC SPECIFIC PROCEDURAL VIDEO RENDERING
       switch (type) {
@@ -357,54 +408,52 @@ export default function SectionCinematicVideo({
 
       // GLOBAL SCANLINES
       ctx.fillStyle = 'rgba(0, 0, 0, 0.10)';
-      for (let y = 0; y < H; y += 4) {
+      for (let y = 0; y < H; y += 6) {
         ctx.fillRect(0, y, W, 1);
       }
-
-      frameId = requestAnimationFrame(draw);
     };
 
-    draw();
+    frameId = requestAnimationFrame(draw);
 
     return () => {
       cancelAnimationFrame(frameId);
       window.removeEventListener('resize', resize);
     };
-  }, [type]);
+  }, [type, isInView]);
 
   // STYLES VARIANT WRAPPERS
   const getContainerStyle = () => {
     switch (styleVariant) {
       case 'floating-3d':
-        return 'relative rounded-[2.5rem] p-3 sm:p-4 bg-gradient-to-b from-white/95 via-[#F0FDF4]/40 to-white/90 border-2 border-[#A7F3D0] shadow-2xl backdrop-blur-xl group hover:shadow-[#064E3B]/25 transition-all duration-500 hover:-translate-y-1.5';
+        return 'relative rounded-[2.5rem] p-3 sm:p-4 bg-gradient-to-b from-white/95 via-slate-50/70 to-white/95 border-2 border-slate-200/90 shadow-2xl group hover:shadow-rose-900/20 transition-shadow duration-500';
       case 'split-screen':
-        return 'relative rounded-3xl overflow-hidden border-2 border-[#A7F3D0]/60 shadow-xl bg-slate-950 group';
+        return 'relative rounded-3xl overflow-hidden border-2 border-slate-200 shadow-xl bg-slate-950 group';
       case 'curved-mask':
-        return 'relative rounded-[3.5rem] overflow-hidden border-4 border-[#A7F3D0]/90 shadow-2xl bg-black group';
+        return 'relative rounded-[3.5rem] overflow-hidden border-4 border-slate-200/90 shadow-2xl bg-black group';
       case 'asymmetric':
-        return 'relative rounded-[2.5rem] overflow-hidden border-2 border-amber-200/80 shadow-2xl bg-black transform -rotate-1 hover:rotate-0 transition-transform duration-500 group';
+        return 'relative rounded-[2.5rem] overflow-hidden border-2 border-rose-200/80 shadow-2xl bg-black transform -rotate-1 hover:rotate-0 transition-transform duration-500 group';
       case 'video-card':
-        return 'relative rounded-2xl overflow-hidden border border-[#A7F3D0] shadow-md hover:shadow-xl transition-all duration-300 group';
+        return 'relative rounded-2xl overflow-hidden border border-slate-200 shadow-md hover:shadow-xl transition-all duration-300 group';
       case 'panoramic-stage':
-        return 'relative w-full rounded-[2.5rem] overflow-hidden border-2 border-[#059669]/30 shadow-2xl bg-slate-950 group';
+        return 'relative w-full rounded-[2.5rem] overflow-hidden border-2 border-slate-200/90 shadow-2xl bg-slate-950 group';
       case 'circular-pod':
-        return 'relative rounded-full aspect-square overflow-hidden border-4 border-[#059669]/60 shadow-2xl bg-slate-950 group';
+        return 'relative rounded-full aspect-square overflow-hidden border-4 border-rose-500/60 shadow-2xl bg-slate-950 group';
       case 'fullscreen-bg':
         return 'absolute inset-0 w-full h-full overflow-hidden pointer-events-none -z-10';
       default:
-        return 'relative rounded-3xl overflow-hidden border border-[#A7F3D0] shadow-xl bg-slate-950 group';
+        return 'relative rounded-3xl overflow-hidden border border-slate-200 shadow-xl bg-slate-950 group';
     }
   };
 
   return (
     <div
+      ref={containerRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       style={
         styleVariant === 'floating-3d'
           ? {
-              transform: `perspective(1200px) rotateX(${tilt.rx}deg) rotateY(${tilt.ry}deg) ${tilt.isHover ? 'scale3d(1.02, 1.02, 1.02)' : 'scale3d(1, 1, 1)'}`,
-              transition: tilt.isHover ? 'transform 0.12s ease-out' : 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)',
+              transform: 'perspective(1200px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)',
               transformStyle: 'preserve-3d',
             }
           : undefined
@@ -412,32 +461,30 @@ export default function SectionCinematicVideo({
       className={`${getContainerStyle()} ${className}`}
     >
       {/* Dynamic Specular Glare Reflection on 3D Tilt */}
-      {styleVariant === 'floating-3d' && tilt.isHover && (
+      {styleVariant === 'floating-3d' && (
         <div
-          className="absolute inset-0 pointer-events-none rounded-[2.5rem] z-30 transition-opacity duration-300"
-          style={{
-            background: `radial-gradient(circle 380px at ${tilt.glareX}% ${tilt.glareY}%, rgba(255,255,255,0.22), transparent 70%)`,
-          }}
+          ref={glareRef}
+          className="absolute inset-0 pointer-events-none rounded-[2.5rem] z-30 transition-opacity duration-300 opacity-0"
         />
       )}
 
       {/* Video Viewport Container */}
       <div className={`relative w-full ${aspectRatio} overflow-hidden ${styleVariant === 'circular-pod' ? 'rounded-full' : 'rounded-[2rem]'} bg-slate-950 flex items-center justify-center`}>
 
-        {/* 1. Underlying Poster Image with Ken-Burns Motion */}
+        {/* 1. Underlying Poster Image */}
         {resolvedPoster && (
           <img
             src={resolvedPoster}
             alt={title}
-            className="absolute inset-0 w-full h-full object-cover animate-ken-burns filter brightness-90 contrast-105"
+            loading="lazy"
+            className="absolute inset-0 w-full h-full object-cover filter brightness-90 contrast-105"
           />
         )}
 
-        {/* 2. Real HTML5 Video element (muted autoplay loop) */}
+        {/* 2. Real HTML5 Video element (muted loop, auto-paused offscreen) */}
         {!videoError && resolvedVideoUrl && (
           <video
             ref={videoRef}
-            autoPlay
             loop
             muted={isMuted}
             playsInline
@@ -452,102 +499,71 @@ export default function SectionCinematicVideo({
           </video>
         )}
 
-        {/* 3. Live 60FPS Medical Simulation Canvas (Always active for rich visuals) */}
+        {/* 3. Procedural Medical Simulation Canvas (runs at 30fps only when in viewport) */}
         <canvas
           ref={canvasRef}
-          className="absolute inset-0 w-full h-full z-10 opacity-70 pointer-events-none mix-blend-screen"
+          className="absolute inset-0 w-full h-full z-10 opacity-65 pointer-events-none mix-blend-screen"
         />
 
         {/* 4. Cinematic Dark Vignette & Color Grading Overlay */}
-        <div className="absolute inset-0 z-15 bg-gradient-to-t from-[#021811]/90 via-transparent to-black/30 pointer-events-none" />
+        <div className="absolute inset-0 z-15 bg-gradient-to-t from-[#0A1128]/90 via-transparent to-black/30 pointer-events-none" />
 
-        {/* 5. TOP HUD STRIP: Live Broadcast Status & Quick Control Buttons */}
-        <div className="absolute top-3 left-3 right-3 z-20 flex items-center justify-between text-white">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-[#059669]/30 text-[10px] font-mono font-bold text-[#A7F3D0] shadow-sm pointer-events-none">
-            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
-            <span className="uppercase tracking-wider">LIVE 4K BROADCAST</span>
-          </div>
+        {/* 5. TOP CONTROLS: Clean Playback Controls Only (Zero fake broadcast HUDs) */}
+        <div className="absolute top-3 right-3 z-20 flex items-center gap-2 text-white">
+          {showControls && (
+            <button
+              type="button"
+              onClick={togglePlay}
+              className="w-8 h-8 rounded-full bg-[#0A1128]/75 hover:bg-[#BE123C] border border-white/20 text-white flex items-center justify-center transition-colors cursor-pointer"
+              title={isPlaying ? "Pause video" : "Play video"}
+              aria-label="Toggle playback"
+            >
+              {isPlaying ? <Pause className="w-3.5 h-3.5" /> : <Play className="w-3.5 h-3.5 fill-white translate-x-0.5" />}
+            </button>
+          )}
 
-          <div className="flex items-center gap-2">
-            {/* Play/Pause Button */}
-            {showControls && (
-              <button
-                type="button"
-                onClick={togglePlay}
-                className="w-7 h-7 rounded-full bg-black/60 hover:bg-[#047857]/80 backdrop-blur-md border border-white/20 text-white flex items-center justify-center transition-all cursor-pointer"
-                title={isPlaying ? "Pause video" : "Play video"}
-                aria-label="Toggle playback"
-              >
-                {isPlaying ? <Pause className="w-3.5 h-3.5" /> : <Play className="w-3.5 h-3.5 fill-white translate-x-0.5" />}
-              </button>
-            )}
-
-            {/* Mute/Unmute Button */}
-            {showControls && (
-              <button
-                type="button"
-                onClick={toggleMute}
-                className="w-7 h-7 rounded-full bg-black/60 hover:bg-[#047857]/80 backdrop-blur-md border border-white/20 text-white flex items-center justify-center transition-all cursor-pointer"
-                title={isMuted ? "Unmute audio" : "Mute audio"}
-                aria-label="Toggle mute"
-              >
-                {isMuted ? <VolumeX className="w-3.5 h-3.5 text-amber-300" /> : <Volume2 className="w-3.5 h-3.5 text-[#059669]" />}
-              </button>
-            )}
-
-            <div className="font-mono text-[10px] font-bold text-white/80 bg-black/50 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/10 hidden sm:block pointer-events-none">
-              {timecode}
-            </div>
-
-            <div className="flex items-end gap-0.5 px-2 py-1.5 rounded-full bg-black/50 backdrop-blur-md border border-white/10 pointer-events-none">
-              <span className="w-0.5 bg-[#059669] rounded-full animate-audio-bar-1 h-2" />
-              <span className="w-0.5 bg-[#059669] rounded-full animate-audio-bar-2 h-3.5" />
-              <span className="w-0.5 bg-[#059669] rounded-full animate-audio-bar-3 h-2.5" />
-              <span className="w-0.5 bg-[#059669] rounded-full animate-audio-bar-4 h-4" />
-            </div>
-          </div>
+          {showControls && (
+            <button
+              type="button"
+              onClick={toggleMute}
+              className="w-8 h-8 rounded-full bg-[#0A1128]/75 hover:bg-[#BE123C] border border-white/20 text-white flex items-center justify-center transition-colors cursor-pointer"
+              title={isMuted ? "Unmute audio" : "Mute audio"}
+              aria-label="Toggle mute"
+            >
+              {isMuted ? <VolumeX className="w-3.5 h-3.5 text-rose-200" /> : <Volume2 className="w-3.5 h-3.5 text-white" />}
+            </button>
+          )}
         </div>
 
-        {/* 6. CENTER INTERACTIVE PLAY BUTTON (If interactive modal trigger) */}
+        {/* 6. CENTER INTERACTIVE PLAY BUTTON */}
         {onPlayClick && (
           <button
             type="button"
             onClick={onPlayClick}
             className="absolute inset-0 z-25 flex items-center justify-center group-hover:scale-105 transition-transform cursor-pointer"
-            aria-label="Expand cinematic 4K video"
+            aria-label="Expand video"
           >
-            <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#047857]/90 hover:bg-[#10B981] text-white flex items-center justify-center shadow-2xl shadow-[#047857]/50 border-2 border-white/40 backdrop-blur-md transition-all group-hover:shadow-emerald-400/80">
+            <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#BE123C]/90 hover:bg-[#E11D48] text-white flex items-center justify-center shadow-2xl border-2 border-white/40 transition-all">
               <Play className="w-7 h-7 sm:w-8 sm:h-8 fill-white translate-x-0.5" />
             </div>
           </button>
         )}
 
-        {/* 7. BOTTOM METADATA & SPECS OVERLAY */}
-        <div className="absolute bottom-3 left-3 right-3 z-20 flex flex-col sm:flex-row sm:items-end justify-between gap-2 text-white pointer-events-none">
+        {/* 7. BOTTOM CLEAN CAPTION BAR */}
+        <div className="absolute bottom-3.5 left-4 right-4 z-20 flex flex-col sm:flex-row sm:items-end justify-between gap-2 text-white pointer-events-none">
           <div className="space-y-0.5 text-left">
-            <div className="flex items-center gap-2">
-              <span className="text-xs sm:text-sm font-bold tracking-tight text-white drop-shadow-md">
-                {title}
-              </span>
-              <span className="px-2 py-0.5 rounded-full bg-[#10B981]/30 border border-[#059669]/50 text-[9px] font-mono text-[#A7F3D0]">
-                PULSE VERIFIED
-              </span>
-            </div>
-            <p className="text-[11px] text-[#A7F3D0]/80 font-medium font-mono">
+            <span className="text-xs sm:text-sm font-bold tracking-tight text-white drop-shadow-md block">
+              {title}
+            </span>
+            <p className="text-[11px] text-slate-200 font-medium">
               {specs}
             </p>
           </div>
 
-          <div className="text-[10px] font-mono text-white/70 bg-black/50 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/10 self-start sm:self-auto">
+          <div className="text-[10px] font-mono text-white/90 bg-[#0A1128]/75 px-3 py-1 rounded-full border border-white/15 self-start sm:self-auto">
             {subtitle}
           </div>
         </div>
-
-        {/* 8. CORNER CAD CROSSHAIRS */}
-        <div className="absolute top-2 left-2 text-[#059669]/40 font-mono text-[9px] pointer-events-none">⌜</div>
-        <div className="absolute top-2 right-2 text-[#059669]/40 font-mono text-[9px] pointer-events-none">⌝</div>
-        <div className="absolute bottom-2 left-2 text-[#059669]/40 font-mono text-[9px] pointer-events-none">⌞</div>
-        <div className="absolute bottom-2 right-2 text-[#059669]/40 font-mono text-[9px] pointer-events-none">⌟</div>
       </div>
     </div>
   );
