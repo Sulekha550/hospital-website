@@ -209,10 +209,10 @@ export default function TreatmentStorytellingSection() {
               styleVariant="floating-3d"
               posterImage={
                 activeProcedure === 'ct-coronary-angiography'
-                  ? '/images/ct-calcium-score.jpg'
+                  ? '/images/advanced-mri-scanner.jpg'
                   : activeProcedure === 'pacemaker-implantation'
                   ? '/images/heart-anatomy.jpg'
-                  : '/images/cardiac-stent-procedure.jpg'
+                  : '/images/doctor-cathlab-procedure.jpg'
               }
               title={`${currentStory.title} • Live Procedural Cine`}
               subtitle={currentStory.badge}
@@ -227,8 +227,8 @@ export default function TreatmentStorytellingSection() {
               const stepImages = [
                 { src: '/images/hospital-opd-lounge.jpg', pos: 'object-center' },
                 { src: '/images/echo-doppler-scan.jpg', pos: 'object-center' },
-                { src: '/images/cathlab-control-review.jpg', pos: 'object-center' },
-                { src: '/images/patient-care-recovery.jpg', pos: 'object-center' },
+                { src: '/images/doctor-echo-checkup.jpg', pos: 'object-center' },
+                { src: '/images/patient-recovery-story.jpg', pos: 'object-center' },
               ];
               const media = stepImages[sIdx % stepImages.length];
               return (

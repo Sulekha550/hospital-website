@@ -162,10 +162,11 @@ export default function PatientExperienceSection({ onBookClick }) {
                 <div className="pt-2">
                   <SectionCinematicVideo
                     type="patient-care"
-                    videoUrl="/videos/patient-care.mp4"
+                    videoUrl={false}
+                    showControls={false}
                     styleVariant="video-card"
-                    posterImage="/images/patient-care-recovery.jpg"
-                    title="Bedside Consultation & Telemetry Stream"
+                    posterImage="/images/p3.jpeg"
+                    title="Angiogram CD & Clinical Records Review"
                     subtitle="Pulse Heart Centre • Inpatient Care"
                     specs="Attending Physician: Dr. Prakash Chand Shahi"
                     aspectRatio="aspect-[16/8]"

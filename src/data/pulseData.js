@@ -206,7 +206,7 @@ export const PULSE_DATA = {
       pillColor: "border-emerald-300 text-[#064E3B]",
       tagline: "Multidisciplinary tumour board, targeted chemotherapy, and organ-preserving oncology.",
       description: "Dedicated to comprehensive cancer care through organ-preserving surgical resections, targeted immunotherapy, clinical medical oncology, and supportive survivorship.",
-      image: "/images/angiogram-scan.jpg",
+      image: "/images/coronary-artery-perfusion.jpg",
       icon: "ShieldAlert",
       keyProcedures: [
         "Organ-Preserving Breast Surgery (BCS)",
@@ -869,7 +869,7 @@ export const PULSE_DATA = {
       title: "Grand Architectural Atrium & Reception",
       category: "Patient Welcome & Triage",
       description: "Designed with generous natural light, acoustic dampening, and streamlined digital registration kiosks for zero-wait patient admission.",
-      image: "/images/appointment-reception-triage.jpg",
+      image: "/images/hospital-opd-lounge.jpg",
       featured: true
     },
     {
@@ -877,7 +877,7 @@ export const PULSE_DATA = {
       title: "Siemens Artis Zee Flat-Panel Digital Cath Lab",
       category: "Vascular Interventions",
       description: "State-of-the-art sterile catheterization theater with Dr. Prakash Chand Shahi performing radial angioplasty and real-time hemodynamic monitoring.",
-      image: "/images/stent-catheter-fluoroscopy.jpg",
+      image: "/images/doctor-cathlab-procedure.jpg",
       featured: false
     },
     {
@@ -901,7 +901,7 @@ export const PULSE_DATA = {
       title: "Post-Procedure Cardiac Recovery & ICU Rounds",
       category: "Bedside Recovery",
       description: "Daily bedside follow-up rounds by Dr. Shahi ensuring rapid ambulation and safe recovery after stenting.",
-      image: "/images/patient-care-recovery.jpg",
+      image: "/images/doctor-recovery-discharge.jpg",
       featured: false
     }
   ],

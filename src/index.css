@@ -5,6 +5,8 @@
 @layer base {
   html {
     background-color: #FAF9F6;
+    overflow-x: hidden;
+    max-width: 100%;
     text-rendering: optimizeSpeed;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -15,9 +17,15 @@
     color: #0F172A;
     background-color: transparent;
     overflow-x: hidden;
+    max-width: 100%;
     font-weight: 400;
     line-height: 1.76;
     letter-spacing: -0.012em;
+  }
+
+  button,
+  a {
+    touch-action: manipulation;
   }
 
   #root {
@@ -1260,6 +1268,16 @@
 
 .will-change-transform {
   will-change: auto !important;
+}
+
+/* Prevent full-screen alpha mask buffers & layout bleed on decorative layers */
+[aria-hidden="true"] * {
+  -webkit-mask-image: none !important;
+  mask-image: none !important;
+}
+
+main section {
+  contain: layout style;
 }
 
 /* Stop 170+ infinite background animations from burning CPU/GPU frames during scroll */

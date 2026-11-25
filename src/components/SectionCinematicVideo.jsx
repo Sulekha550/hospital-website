@@ -46,19 +46,19 @@ const POSTER_SOURCE_MAP = {
   'hero-architecture': '/images/hero-architecture-entrance.jpg',
   'about-hospital': '/images/hospital-ward-suites.jpg',
   'cardiology-heart': '/images/cardiology-3d-heart-beat.jpg',
-  'cardiology-cath': '/images/stent-catheter-fluoroscopy.jpg',
+  'cardiology-cath': '/images/cardiac-stent-procedure.jpg',
   'neurology-brain': '/images/neurology-brain-synapse.jpg',
   'neurology-synapse': '/images/brain-mri-diffusion.jpg',
   'orthopedics-joint': '/images/orthopedics-biomechanical-joint.jpg',
-  'doctors-procedure': '/images/doctor-bedside-consult.jpg',
+  'doctors-procedure': '/images/doctor-patient-consult.jpg',
   'doctors': '/images/operation-theatre-laminar.jpg',
   'advanced-tech': '/images/advanced-mri-scanner.jpg',
   'facilities': '/images/operation-theatre-laminar.jpg',
   'facilities-walkthrough': '/images/cath-lab.jpg',
-  'patient-care': '/images/patient-care-recovery.jpg',
+  'patient-care': '/images/doctor-recovery-discharge.jpg',
   'testimonials': '/images/patient-recovery-story.jpg',
   'testimonials-stories': '/images/patient-recovery-story.jpg',
-  'appointment-suite': '/images/appointment-reception-triage.jpg',
+  'appointment-suite': '/images/hospital-opd-lounge.jpg',
   'contact-location': '/images/pulse-betiahata-campus.jpg',
   'cardiac-catheterization': '/images/doctor-cathlab-procedure.jpg',
 };
@@ -128,14 +128,7 @@ export default function SectionCinematicVideo({
 
   const togglePlay = (e) => {
     e.stopPropagation();
-    if (!videoRef.current) return;
-    if (isPlaying) {
-      videoRef.current.pause();
-      setIsPlaying(false);
-    } else {
-      videoRef.current.play().catch(() => { });
-      setIsPlaying(true);
-    }
+    setIsPlaying((prev) => !prev);
   };
 
   const toggleMute = (e) => {
@@ -206,10 +199,11 @@ export default function SectionCinematicVideo({
           />
         )}
 
-        {/* 2. Real HTML5 Video element (muted loop, auto-paused offscreen) */}
-        {!videoError && resolvedVideoUrl && (
+        {/* 2. Real HTML5 Video element (mounted only when user plays, preventing frame-0 overlay & decode lag) */}
+        {!videoError && resolvedVideoUrl && isPlaying && (
           <video
             ref={videoRef}
+            autoPlay
             loop
             muted={isMuted}
             playsInline

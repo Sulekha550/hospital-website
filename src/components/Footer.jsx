@@ -45,7 +45,7 @@ export default function Footer() {
               Advanced cardiac care and catheterization guided by experience, precision and compassion. Directed by Dr. Prakash Chand Shahi.
             </p>
 
-            <div className="pt-2 flex items-center gap-3 text-xs text-left p-2.5 rounded-2xl bg-white/5 border border-rose-300/30 w-fit">
+            <div className="pt-2 flex items-center gap-3 text-xs text-left p-2.5 rounded-2xl bg-white/5 border border-rose-300/30 w-fit max-w-full">
               <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#0A1128] to-[#BE123C] border border-rose-300/50 flex items-center justify-center text-white shrink-0">
                 <Stethoscope className="w-5 h-5 stroke-[1.8]" />
               </div>

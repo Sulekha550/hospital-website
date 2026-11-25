@@ -37,7 +37,7 @@ export default function MedicalTechnologyShowcase({ variant = 'home-technology' 
       title: 'Cineangiographic Stenosis Mapping',
       category: 'DIAGNOSTIC LESION QCA',
       description: 'Dynamic non-ionic contrast cine evaluating stenosis dimensions.',
-      image: '/images/cathlab-control-review.jpg',
+      image: '/images/ct-calcium-score.jpg',
       videoUrl: '/videos/cardiac-catheterization.mp4',
       type: 'cardiac-catheterization',
       specs: [
@@ -69,7 +69,7 @@ export default function MedicalTechnologyShowcase({ variant = 'home-technology' 
       title: 'Micro-Lithium Rhythm Generator',
       category: 'ELECTROPHYSIOLOGY',
       description: 'Hermetically sealed titanium pulse generator with rate-responsive pacing.',
-      image: '/images/pacemaker-tech.jpg',
+      image: '/images/operation-theatre-laminar.jpg',
       videoUrl: '/videos/cardiology-heart.mp4',
       type: 'cardiology-heart',
       specs: [
@@ -122,7 +122,8 @@ export default function MedicalTechnologyShowcase({ variant = 'home-technology' 
                 <div className="relative rounded-[2rem] overflow-hidden">
                   <SectionCinematicVideo
                     type={current.type || "facilities-walkthrough"}
-                    videoUrl={current.videoUrl}
+                    videoUrl={false}
+                    showControls={false}
                     styleVariant="floating-3d"
                     posterImage={current.image}
                     title={current.title}

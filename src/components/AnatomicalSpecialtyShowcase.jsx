@@ -20,7 +20,7 @@ export default function AnatomicalSpecialtyShowcase({ variant = 'home-specialtie
       title: 'Peripheral Angioplasty & Stenting',
       category: 'Interventional Cath Lab',
       desc: 'Restoring arterial blood flow using painless transradial (wrist-first) balloon dilation and drug-eluting stents.',
-      image: '/images/radial-catheter-sheath.jpg',
+      image: '/images/cathlab-control-review.jpg',
       stat: '99.4% Flow Restored',
       recovery: 'Walk in 2 Hours',
       points: [

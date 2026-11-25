@@ -56,24 +56,24 @@ export default function CinematicHeroSection() {
             </div>
 
             {/* 3 Visual Proof Thumbnails */}
-            <div className="pt-4 border-t border-slate-200/80 grid grid-cols-3 gap-3 max-w-lg">
+            <div className="pt-4 border-t border-slate-200/80 grid grid-cols-3 gap-2 sm:gap-3 max-w-lg">
               {[
                 { img: '/images/hero-architecture-entrance.jpg', stat: '22+ Yrs', label: 'Legacy' },
-                { img: '/images/stent-catheter-fluoroscopy.jpg', stat: '15,000+', label: 'Cath Lab' },
+                { img: '/images/cardiac-stent-procedure.jpg', stat: '15,000+', label: 'Cath Lab' },
                 { img: '/images/radial-catheter-sheath.jpg', stat: '99.4%', label: 'Radial' },
               ].map((item, idx) => (
                 <div
                   key={idx}
-                  className="flex items-center gap-2.5 p-2 rounded-xl bg-white/95 border border-slate-200 shadow-xs"
+                  className="flex flex-col sm:flex-row items-center text-center sm:text-left gap-1.5 sm:gap-2.5 p-2 rounded-xl bg-white/95 border border-slate-200 shadow-xs"
                 >
                   <img
                     src={item.img}
                     alt={item.label}
-                    className="w-10 h-10 rounded-lg object-cover shrink-0"
+                    className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg object-cover shrink-0"
                   />
                   <div className="min-w-0">
-                    <span className="text-sm font-extrabold text-[#0A1128] block leading-none">{item.stat}</span>
-                    <span className="text-[10px] font-semibold text-[#BE123C] block mt-0.5 truncate">{item.label}</span>
+                    <span className="text-xs sm:text-sm font-extrabold text-[#0A1128] block leading-none">{item.stat}</span>
+                    <span className="text-[9px] sm:text-[10px] font-semibold text-[#BE123C] block mt-0.5 truncate">{item.label}</span>
                   </div>
                 </div>
               ))}
@@ -82,7 +82,7 @@ export default function CinematicHeroSection() {
 
           {/* Right Column (6 cols): Deep Midnight Navy Architectural Stage Panel */}
           <div className="lg:col-span-6">
-            <div className="relative rounded-[2rem] bg-[#0A1128] p-5 sm:p-6 shadow-[0_30px_70px_-15px_rgba(10,17,40,0.3)] border border-slate-800 overflow-hidden">
+            <div className="relative rounded-2xl sm:rounded-[2rem] bg-[#0A1128] p-4 sm:p-6 shadow-[0_30px_70px_-15px_rgba(10,17,40,0.3)] border border-slate-800 overflow-hidden">
               {/* Crimson Accent Bar on Left Edge */}
               <div className="absolute left-0 top-8 bottom-8 w-1.5 bg-gradient-to-b from-[#E11D48] via-[#BE123C] to-transparent rounded-r-full" />
 
@@ -95,7 +95,7 @@ export default function CinematicHeroSection() {
               <div className="relative z-10 grid grid-cols-1 sm:grid-cols-12 gap-5 items-center">
                 {/* Clean Uncropped Portrait of Dr. Prakash Chand Shahi */}
                 <div className="sm:col-span-7 rounded-2xl overflow-hidden bg-slate-900 border border-white/10 shadow-lg">
-                  <div className="aspect-[4/5] max-h-[54vh] w-full overflow-hidden">
+                  <div className="aspect-[4/4] sm:aspect-[4/5] sm:max-h-[54vh] w-full overflow-hidden">
                     <img
                       src="/images/doctor-portrait.jpg"
                       alt="Dr. Prakash Chand Shahi"

@@ -1,13 +1,14 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import CinematicHeroSection from '../components/CinematicHeroSection';
 import DoctorMonographSection from '../components/DoctorMonographSection';
 import AnatomicalSpecialtyShowcase from '../components/AnatomicalSpecialtyShowcase';
-import MedicalTechnologyShowcase from '../components/MedicalTechnologyShowcase';
-import TreatmentStorytellingSection from '../components/TreatmentStorytellingSection';
-import CredentialsEditorialSection from '../components/CredentialsEditorialSection';
-import ArchitecturalGallerySection from '../components/ArchitecturalGallerySection';
-import PatientTestimonialsSection from '../components/PatientTestimonialsSection';
-import AppointmentExperienceSection from '../components/AppointmentExperienceSection';
+
+const MedicalTechnologyShowcase = lazy(() => import('../components/MedicalTechnologyShowcase'));
+const TreatmentStorytellingSection = lazy(() => import('../components/TreatmentStorytellingSection'));
+const CredentialsEditorialSection = lazy(() => import('../components/CredentialsEditorialSection'));
+const ArchitecturalGallerySection = lazy(() => import('../components/ArchitecturalGallerySection'));
+const PatientTestimonialsSection = lazy(() => import('../components/PatientTestimonialsSection'));
+const AppointmentExperienceSection = lazy(() => import('../components/AppointmentExperienceSection'));
 
 /**
  * HomePage: Flagship Pulse Heart Centre Experience
@@ -26,23 +27,15 @@ export default function HomePage() {
       {/* 3. CLINICAL SPECIALTIES — Angioplasty, Coronary Angiogram, Pacemaker Implantation */}
       <AnatomicalSpecialtyShowcase />
 
-      {/* 5. MEDICAL TECHNOLOGY ARSENAL — Siemens Artis Zee Cath Lab, 3D Color Doppler, Cardiac ICU */}
-      <MedicalTechnologyShowcase />
-
-      {/* 6. TREATMENT PATHWAYS — Transradial-First Procedures & Faster Recovery */}
-      <TreatmentStorytellingSection />
-
-      {/* 7. CREDENTIALS & ACADEMIC PEDIGREE — Apex Medical Institutes */}
-      <CredentialsEditorialSection />
-
-      {/* 8. HOSPITAL CAMPUS TOUR — World-Class Facilities, Betiahata, Gorakhpur */}
-      <ArchitecturalGallerySection />
-
-      {/* 9. PATIENT RECOVERY STORIES — Verified Clinical Outcomes */}
-      <PatientTestimonialsSection />
-
-      {/* 10. PRIORITY CONSULTATION SUITE — OPD Appointment Pass */}
-      <AppointmentExperienceSection />
+      {/* Below-the-fold sections lazy-loaded for instant initial render & smooth scroll */}
+      <Suspense fallback={null}>
+        <MedicalTechnologyShowcase />
+        <TreatmentStorytellingSection />
+        <CredentialsEditorialSection />
+        <ArchitecturalGallerySection />
+        <PatientTestimonialsSection />
+        <AppointmentExperienceSection />
+      </Suspense>
 
     </div>
   );

@@ -33,7 +33,7 @@ export default function PatientTestimonialsSection() {
       recovery: 'Active Lifestyle Restored',
       doctor: 'Dr. Prakash Chand Shahi',
       quote: 'Pulse rate was dropping below 35 BPM. Dr. Shahi implanted the pacemaker smoothly; feeling energetic now.',
-      image: '/images/patient-recovery-story.jpg',
+      image: '/images/hospital-ward-suites.jpg',
       stat: '100% Sinus Synchrony',
       badge: 'Pacemaker Recovery'
     },
@@ -46,7 +46,7 @@ export default function PatientTestimonialsSection() {
       recovery: 'Discharged in 48 Hrs',
       doctor: 'Dr. Prakash Chand Shahi',
       quote: 'Reached PULSE Cath-Lab in emergency. Immediate stent opened 100% blocked LAD artery within minutes.',
-      image: '/images/hospital-ward-suites.jpg',
+      image: '/images/doctor-icu-rounds.jpg',
       stat: '< 38 Min Door-to-Balloon',
       badge: 'Emergency Angioplasty'
     }

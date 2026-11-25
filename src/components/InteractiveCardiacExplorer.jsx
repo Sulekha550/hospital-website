@@ -151,7 +151,7 @@ export default function InteractiveCardiacExplorer({ onBookClick }) {
             
             {/* Real Photographic Medical Image */}
             <img
-              src={viewMode === 'anatomy' ? '/images/cardiology-3d-heart-beat.jpg' : '/images/doctor-angiogram-explain.jpg'}
+              src={viewMode === 'anatomy' ? '/images/heart-anatomy.jpg' : '/images/doctor-angiogram-explain.jpg'}
               alt={viewMode === 'anatomy' ? 'Anatomical Coronary Perfusion Stage' : 'Real Diagnostic Coronary Angiogram Review'}
               className="w-full h-full object-cover object-center transition-all duration-700 filter brightness-95 group-hover:scale-102"
             />

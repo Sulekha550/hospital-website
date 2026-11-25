@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { NavLink, Link, useNavigate } from 'react-router-dom';
-import { Activity, Menu, X, Calendar, Volume2, VolumeX, ArrowRight, Stethoscope } from 'lucide-react';
-import { pulseAudio } from '../utils/soundEffects';
+import { NavLink, Link, useLocation } from 'react-router-dom';
+import { Menu, X, Calendar, ArrowRight, Stethoscope } from 'lucide-react';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [soundEnabled, setSoundEnabled] = useState(false);
-  const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    setMobileMenuOpen(false);
+  }, [location.pathname]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,16 +20,6 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const toggleSound = () => {
-    const nextState = !soundEnabled;
-    setSoundEnabled(nextState);
-    pulseAudio.isEnabled = nextState;
-    if (nextState) {
-      pulseAudio.playBeep();
-      pulseAudio.playHeartbeat();
-    }
-  };
-
   const navLinks = [
     { label: 'Home', path: '/' },
     { label: 'About', path: '/about' },
@@ -37,20 +29,20 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-3.5 px-4 sm:px-8 select-none">
+    <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-2.5 sm:py-3.5 px-3 sm:px-8 select-none">
       <div className="max-w-7xl mx-auto">
-        <nav className={`flex items-center justify-between px-5 sm:px-7 py-2.5 rounded-full transition-all duration-300 ${scrolled
-          ? 'bg-white/95 backdrop-blur-2xl border border-white/90 shadow-[0_15px_35px_rgba(6,78,59,0.08)]'
-          : 'bg-white/80 backdrop-blur-xl border border-white/90 shadow-sm'
+        <nav className={`flex items-center justify-between gap-2 px-3.5 sm:px-7 py-2 sm:py-2.5 rounded-full transition-all duration-300 ${scrolled
+          ? 'bg-white border border-slate-200 shadow-lg'
+          : 'bg-white/95 border border-slate-200/80 shadow-sm'
           }`}>
 
           {/* Brand Logo: PULSE Heart Centre */}
           <Link
             to="/"
-            className="group flex items-center gap-3"
+            className="group flex items-center gap-2 sm:gap-3 min-w-0 shrink-0"
             onClick={() => setMobileMenuOpen(false)}
           >
-            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl overflow-hidden bg-white/95 p-1 border border-slate-200 shadow-sm flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform duration-300">
+            <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl overflow-hidden bg-white p-1 border border-slate-200 shadow-sm flex items-center justify-center shrink-0">
               <img
                 src="/images/p.webp"
                 alt="Pulse Heart Centre Logo"
@@ -58,10 +50,10 @@ export default function Navbar() {
               />
             </div>
             <div className="flex flex-col text-left">
-              <span className="font-extrabold text-xl tracking-[0.2em] text-[#0A1128] group-hover:text-[#BE123C] transition-colors uppercase leading-none">
+              <span className="font-extrabold text-base sm:text-xl tracking-[0.14em] sm:tracking-[0.2em] text-[#0A1128] group-hover:text-[#BE123C] transition-colors uppercase leading-none">
                 PULSE
               </span>
-              <span className="text-[10px] tracking-[0.26em] uppercase font-bold text-[#BE123C] font-mono mt-0.5">
+              <span className="text-[9px] sm:text-[10px] tracking-[0.16em] sm:tracking-[0.26em] uppercase font-bold text-[#BE123C] font-mono mt-0.5">
                 Heart Centre
               </span>
             </div>
@@ -95,20 +87,8 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* Actions: Sound Toggle + Prominent Book Appointment CTA */}
-          <div className="hidden sm:flex items-center gap-3">
-            <button
-              onClick={toggleSound}
-              title={soundEnabled ? "Mute cardiac audio" : "Enable cardiac bio-rhythm audio"}
-              className={`p-2.5 rounded-full border transition-all duration-300 hover:scale-105 active:scale-95 ${
-                soundEnabled 
-                  ? 'bg-rose-50 border-rose-300 text-[#BE123C] shadow-sm' 
-                  : 'bg-white border-slate-200 text-slate-700 hover:text-[#BE123C] hover:bg-slate-50'
-              }`}
-            >
-              {soundEnabled ? <Volume2 className="w-4 h-4 text-[#BE123C]" /> : <VolumeX className="w-4 h-4" />}
-            </button>
-
+          {/* Actions: Prominent Book Appointment CTA */}
+          <div className="hidden md:flex items-center gap-3 shrink-0">
             <Link
               to="/book-appointment"
               className="luxury-btn-primary !px-5 !py-2 !text-xs group"
@@ -119,26 +99,16 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* Mobile Menu Button + Sound Toggle */}
-          <div className="flex md:hidden items-center gap-2">
+          {/* Mobile Menu Button */}
+          <div className="flex md:hidden items-center shrink-0">
             <button
-              onClick={toggleSound}
-              title={soundEnabled ? "Mute cardiac audio" : "Enable cardiac bio-rhythm audio"}
-              className={`p-2 rounded-xl border transition-all ${
-                soundEnabled 
-                  ? 'bg-rose-50 border-rose-300 text-[#BE123C]' 
-                  : 'bg-white border-slate-200 text-slate-700'
-              }`}
-            >
-              {soundEnabled ? <Volume2 className="w-4 h-4 text-[#BE123C]" /> : <VolumeX className="w-4 h-4" />}
-            </button>
-
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-xl bg-slate-100 text-slate-900 hover:bg-slate-200"
+              type="button"
+              onClick={() => setMobileMenuOpen((prev) => !prev)}
+              aria-expanded={mobileMenuOpen}
               aria-label="Toggle mobile menu"
+              className="p-2.5 rounded-full bg-[#0A1128] text-white hover:bg-[#BE123C] active:scale-95 transition-colors cursor-pointer"
             >
-              {mobileMenuOpen ? <X className="w-5 h-5 text-[#BE123C]" /> : <Menu className="w-5 h-5 text-[#0A1128]" />}
+              {mobileMenuOpen ? <X className="w-5 h-5 text-white" /> : <Menu className="w-5 h-5 text-white" />}
             </button>
           </div>
 
@@ -146,7 +116,7 @@ export default function Navbar() {
 
         {/* Mobile Dropdown Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden mt-3 p-4 rounded-3xl bg-white/98 backdrop-blur-2xl border-2 border-slate-200 shadow-2xl space-y-2.5 animate-in fade-in slide-in-from-top-2 duration-200">
+          <div className="md:hidden mt-2.5 p-4 rounded-3xl bg-white border-2 border-slate-200 shadow-2xl space-y-2.5 max-h-[calc(100vh-5.5rem)] overflow-y-auto">
             {/* Mobile Lead Doctor Banner */}
             <div className="flex items-center gap-2.5 p-2 rounded-2xl bg-rose-50 border border-rose-200 mb-2">
               <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-[#0A1128] to-[#BE123C] flex items-center justify-center text-white shrink-0">

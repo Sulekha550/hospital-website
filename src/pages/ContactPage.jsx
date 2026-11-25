@@ -292,8 +292,8 @@ export default function ContactPage() {
 
                 {infoCards.map((card, idx) => {
                   const cardImgs = [
-                    { src: '/images/hospital-facility.jpg', pos: 'object-center' },
-                    { src: '/images/appointment-reception-triage.jpg', pos: 'object-center' },
+                    { src: '/images/hospital-ward-suites.jpg', pos: 'object-center' },
+                    { src: '/images/hospital-opd-lounge.jpg', pos: 'object-center' },
                     { src: '/images/operation-theatre-laminar.jpg', pos: 'object-center' },
                   ];
                   const media = cardImgs[idx % cardImgs.length];

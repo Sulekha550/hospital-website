@@ -1,7 +1,6 @@
 import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import ScrollToTop from './components/ScrollToTop';
-import VibrantBackgroundDesign from './components/VibrantBackgroundDesign';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 
@@ -18,10 +17,7 @@ export default function App() {
       <ScrollToTop />
 
       {/* Clean, Realistic Hospital Canvas with Warm Platinum & Silk Wash */}
-      <div className="min-h-screen flex flex-col selection:bg-[#BE123C] selection:text-white relative bg-transparent text-[#0F172A] overflow-x-hidden antialiased">
-
-        {/* Global Ambient Silk Background */}
-        <VibrantBackgroundDesign />
+      <div className="min-h-screen flex flex-col selection:bg-[#BE123C] selection:text-white relative bg-[#FAF9F6] text-[#0F172A] overflow-x-hidden antialiased">
 
         {/* Floating Minimal Glass Navbar */}
         <Navbar />
