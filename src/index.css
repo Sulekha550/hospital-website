@@ -622,7 +622,7 @@
 
 @keyframes flowDashInfinite {
   0% {
-    stroke-dashoffset: 1000;
+    stroke-dashoffset: 240;
   }
 
   100% {
@@ -631,11 +631,11 @@
 }
 
 .animate-flow-dash {
-  animation: flowDashInfinite 12s linear infinite;
+  animation: flowDashInfinite 4.5s linear infinite;
 }
 
 .animate-flow-dash-fast {
-  animation: flowDashInfinite 5s linear infinite;
+  animation: flowDashInfinite 3s linear infinite;
 }
 
 @keyframes cardiacBeat {
@@ -1038,8 +1038,7 @@
 }
 
 .animate-flow-dash {
-  stroke-dasharray: 600;
-  animation: flowDash 7s linear infinite;
+  animation: flowDashInfinite 4.5s linear infinite;
 }
 
 @keyframes arterialDrift {

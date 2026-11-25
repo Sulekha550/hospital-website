@@ -90,17 +90,17 @@ export default function SectionBackgroundMotion({
               <path
                 d="M-60,590 C320,440 700,700 1120,490 C1300,400 1420,460 1500,420"
                 stroke="#BE123C"
-                strokeOpacity="0.32"
-                strokeWidth="2"
-                strokeDasharray="12 10"
+                strokeOpacity="0.45"
+                strokeWidth="2.4"
+                strokeDasharray="16 10"
                 className="animate-flow-dash"
               />
               <path
                 d="M-60,660 C360,530 740,760 1160,570 C1340,490 1440,540 1500,510"
                 stroke="#0A1128"
-                strokeOpacity="0.18"
-                strokeWidth="1.6"
-                strokeDasharray="8 12"
+                strokeOpacity="0.28"
+                strokeWidth="1.8"
+                strokeDasharray="12 10"
                 className="animate-flow-dash-fast"
               />
             </svg>
@@ -128,9 +128,11 @@ export default function SectionBackgroundMotion({
               <path
                 d="M0,65 L320,65 L335,65 L345,40 L358,90 L372,18 L385,78 L395,65 L780,65 L795,65 L805,40 L818,90 L832,18 L845,78 L855,65 L1440,65"
                 stroke="#BE123C"
-                strokeWidth="2.2"
+                strokeWidth="2.4"
                 strokeLinecap="round"
                 strokeLinejoin="round"
+                strokeDasharray="18 8"
+                className="animate-flow-dash-fast"
               />
             </svg>
             <div
