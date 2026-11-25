@@ -20,99 +20,99 @@ export default function TreatmentStorytellingSection() {
 
   const storyboards = {
     'peripheral-angioplasty': {
-      title: 'Peripheral Angioplasty & Stenting',
-      badge: 'Vascular Revascularization',
-      tagline: 'Restoring arterial perfusion to lower extremities & renal vessels.',
-      recovery: 'Discharged within 24–48 Hours',
-      stats: '99.4% Patency Rate',
+      title: 'Heart & Artery Stenting',
+      badge: 'Painless Wrist Procedure',
+      tagline: 'Opening blocked arteries gently to restore smooth blood flow.',
+      recovery: 'Go home in 24–48 Hours',
+      stats: '99.4% Success Rate',
       steps: [
         {
           num: '01',
-          phase: 'Radial Wrist Micro-Access',
-          detail: 'Microscopic 6-French wrist puncture with zero bleeding.',
+          phase: 'Small Wrist Entry',
+          detail: 'Tiny, painless wrist opening with minimal discomfort.',
         },
         {
           num: '02',
-          phase: 'Guidewire Lesion Crossing',
-          detail: '0.014" steerable micro-wire navigates stenotic segment.',
+          phase: 'Reaching the Blockage',
+          detail: 'Thin flexible tube safely reaches the blocked spot.',
         },
         {
           num: '03',
-          phase: 'Balloon Pre-Dilation',
-          detail: 'Controlled balloon inflation fractures calcified plaque.',
+          phase: 'Gentle Balloon Opening',
+          detail: 'Soft balloon widens the narrowed artery smoothly.',
         },
         {
           num: '04',
-          phase: 'Stent Scaffold Deployment',
-          detail: 'Cobalt-chromium drug-eluting stent permanently placed.',
+          phase: 'Placing the Safe Stent',
+          detail: 'Coated stent keeps blood flowing freely long-term.',
         },
       ],
       indications: [
-        'Resting leg pain & claudication',
-        'Non-healing peripheral ulcers',
-        'Renal artery refractory stenosis',
+        'Leg pain while walking',
+        'Slow-healing foot wounds',
+        'Blocked leg or kidney arteries',
       ],
     },
     'coronary-angiogram': {
-      title: 'Coronary Angiogram (CAG)',
-      badge: 'Diagnostic Catheterization',
-      tagline: 'Gold-standard cineangiography mapping exact luminal stenosis.',
-      recovery: 'Same-Day Outpatient (2 Hrs Post-Op)',
-      stats: '< 0.5 mm Accuracy',
+      title: 'Heart Blockage Check (Angiogram)',
+      badge: '15-Minute Heart Test',
+      tagline: 'A quick, clear test to check if any heart arteries are blocked.',
+      recovery: 'Same-Day Discharge (2 Hrs)',
+      stats: '15-Min Painless Test',
       steps: [
         {
           num: '01',
           phase: 'Painless Wrist Numbing',
-          detail: 'Local anesthetic numbs right radial artery entry.',
+          detail: 'Gentle numbing medicine on the wrist — no pain.',
         },
         {
           num: '02',
-          phase: 'Catheter Engagement',
-          detail: 'Diagnostic catheter engages coronary ostia precisely.',
+          phase: 'Gentle Tube Entry',
+          detail: 'Ultra-thin tube checks the heart arteries safely.',
         },
         {
           num: '03',
-          phase: 'Iso-Osmolar Contrast',
-          detail: 'Biocompatible contrast dye visualizes blood vessels.',
+          phase: 'Clear Artery Scan',
+          detail: 'Safe dye shows exact blood flow on the live screen.',
         },
         {
           num: '04',
-          phase: 'Digital Cine Mapping',
-          detail: 'Multi-angle cine records lesion length and calcification.',
+          phase: 'Full Report Check',
+          detail: 'Dr. Shahi explains your full report and CD clearly.',
         },
       ],
       indications: [
-        'Exertional angina / chest discomfort',
-        'Positive TMT / Stress Echo test',
-        'Post-infarct vessel evaluation',
+        'Chest pain or tightness',
+        'Abnormal ECG or TMT test',
+        'Follow-up heart checkup',
       ],
     },
     'pacemaker-implantation': {
       title: 'Permanent Pacemaker',
-      badge: 'Cardiac Electrophysiology',
-      tagline: 'Rate-responsive pacing generators restoring physiological rhythm.',
-      recovery: 'Overnight Observation • Rapid Discharge',
+      badge: 'Heartbeat Support',
+      tagline: 'Small, safe device that keeps a slow heartbeat steady.',
+      recovery: 'Overnight Stay • Quick Recovery',
       stats: '10–14 Year Battery Life',
       steps: [
         {
           num: '01',
-          phase: 'Subclavian Access',
-          detail: 'Transvenous access established beneath collarbone.',
+          phase: 'Small Collarbone Entry',
+          detail: 'Tiny opening made gently under local numbing.',
         },
         {
           num: '02',
-          phase: 'Lead Positioning',
-          detail: 'Active-fixation leads anchored under fluoroscopy.',
+          phase: 'Safe Wire Placement',
+          detail: 'Soft pacemaker wires guided safely to the heart.',
         },
         {
           num: '03',
-          phase: 'Threshold Calibration',
-          detail: 'Sensing amplitudes calibrated for minimal energy drain.',
+          phase: 'Heartbeat Testing',
+          detail: 'Device checked to ensure steady, natural rhythm.',
         },
         {
           num: '04',
-          phase: 'Pocket Placement',
-          detail: 'Titanium pulse generator secured subcutaneously.',
+          phase: 'Device Placement',
+          detail: 'Small battery unit placed comfortably under skin.',
         },
       ],
       indications: [
@@ -137,18 +137,18 @@ export default function TreatmentStorytellingSection() {
         <div className="mb-10 text-center max-w-3xl mx-auto space-y-2">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-[#0A1128] via-[#1E293B] to-[#BE123C] text-white text-xs font-mono font-bold shadow-md shadow-navy/20 border border-rose-300/30">
             <Target className="w-4 h-4 text-rose-300" />
-            <span className="uppercase tracking-[0.2em]">Step-by-Step Clinical Journeys</span>
+            <span className="uppercase tracking-[0.2em]">Step-by-Step Treatment Guide</span>
           </div>
 
           <h2 className="text-3xl sm:text-5xl font-extrabold text-[#0A1128] tracking-tight">
-            Clinical <span className="font-serif italic font-normal text-[#BE123C]">Procedural Roadmap</span>
+            How Your <span className="font-serif italic font-normal text-[#BE123C]">Treatment Works</span>
           </h2>
 
           <div className="flex flex-wrap items-center justify-center gap-2 pt-1 font-mono text-[11px] font-bold">
-            <span className="bg-rose-50 text-[#BE123C] px-3 py-0.5 rounded-full border border-rose-200">Pre-Op Evaluation</span>
-            <span className="bg-slate-100 text-[#0A1128] px-3 py-0.5 rounded-full border border-slate-200">Radial Micro-Access</span>
-            <span className="bg-rose-50 text-[#BE123C] px-3 py-0.5 rounded-full border border-rose-200">Stent Deployment</span>
-            <span className="bg-slate-100 text-[#0A1128] px-3 py-0.5 rounded-full border border-slate-200">24-Hr Discharge</span>
+            <span className="bg-rose-50 text-[#BE123C] px-3 py-0.5 rounded-full border border-rose-200">Simple Checkup</span>
+            <span className="bg-slate-100 text-[#0A1128] px-3 py-0.5 rounded-full border border-slate-200">Wrist Route</span>
+            <span className="bg-rose-50 text-[#BE123C] px-3 py-0.5 rounded-full border border-rose-200">Safe Stent</span>
+            <span className="bg-slate-100 text-[#0A1128] px-3 py-0.5 rounded-full border border-slate-200">Fast Recovery</span>
           </div>
         </div>
 

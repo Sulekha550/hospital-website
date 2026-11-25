@@ -20,12 +20,12 @@ export default function AboutPage() {
   const milestones = [
     {
       year: "2002",
-      phase: "PHASE 01",
-      badge: "Clinical Genesis",
+      phase: "STEP 01",
+      badge: "Starting Point",
       institution: "Betiahata, Gorakhpur",
-      title: "Foundation of Clinical Devotion",
-      desc: "Initiation of specialized cardiovascular care in Betiahata, Gorakhpur with unhurried bedside ethics and patient-first clinical empathy.",
-      tags: ["Betiahata Origin", "Bedside Ethics", "Day 1 Commitment"],
+      title: "Starting Heart Care in Betiahata",
+      desc: "Started dedicated heart care in Betiahata, Gorakhpur, with a promise to listen patiently and put every patient first.",
+      tags: ["Betiahata, Gorakhpur", "Patient-First Care", "Day 1 Promise"],
       icon: HeartPulse,
       accent: "from-[#0A1128] to-[#1E293B]",
       borderAccent: "border-slate-300",
@@ -33,12 +33,12 @@ export default function AboutPage() {
     },
     {
       year: "2007",
-      phase: "PHASE 02",
-      badge: "Apex Residency",
+      phase: "STEP 02",
+      badge: "Medical Degree",
       institution: "KGMU Lucknow",
-      title: "Apex Medical Training at KGMU",
-      desc: "Rigorous MD General Medicine residency at King George's Medical University, Lucknow, solidifying diagnostic depth for complex multisystem cardiac patients.",
-      tags: ["King George's Med Univ", "Diagnostic Mastery", "Gold Standard"],
+      title: "MD Medicine at KGMU Lucknow",
+      desc: "Completed MD General Medicine at King George's Medical University, Lucknow, building strong experience in treating complex heart and BP cases.",
+      tags: ["KGMU Lucknow", "Strong Diagnosis", "Trusted Care"],
       icon: Award,
       accent: "from-[#1E293B] to-[#334155]",
       borderAccent: "border-slate-300",
@@ -46,12 +46,12 @@ export default function AboutPage() {
     },
     {
       year: "2013",
-      phase: "PHASE 03",
-      badge: "Super-Specialty",
+      phase: "STEP 03",
+      badge: "Heart Specialist",
       institution: "PGIMER Chandigarh",
-      title: "Super-Specialty DM in Interventional Cardiology",
-      desc: "Completion of apex DM Cardiology at PGIMER Chandigarh, introducing high-volume transradial intervention and complex coronary bifurcation angioplasty to eastern UP.",
-      tags: ["PGIMER Chandigarh", "Radial Access Pioneer", "Eastern UP First"],
+      title: "DM Cardiology at PGIMER Chandigarh",
+      desc: "Completed super-specialty DM Cardiology at PGIMER Chandigarh, bringing painless wrist-route angiography and stenting to eastern UP.",
+      tags: ["PGIMER Chandigarh", "Wrist-Route Care", "Eastern UP"],
       icon: Sparkles,
       accent: "from-[#BE123C] to-[#E11D48]",
       borderAccent: "border-rose-300",
@@ -59,12 +59,12 @@ export default function AboutPage() {
     },
     {
       year: "2018",
-      phase: "PHASE 04",
-      badge: "Cath Lab Suite",
-      institution: "Siemens Artis Zee Flat-Panel",
-      title: "Flat-Panel Digital Cath Lab Commissioned",
-      desc: "Installation of the advanced Siemens Artis Zee digital catheterization suite, performing emergency primary angioplasties 24/7 with sub-millimeter stent visualization.",
-      tags: ["Siemens Artis Zee", "Sub-Millimeter Stents", "24/7 STEMI Triage"],
+      phase: "STEP 04",
+      badge: "Modern Cath Lab",
+      institution: "Siemens Artis Zee Cath Lab",
+      title: "Digital Heart Cath Lab Opened",
+      desc: "Set up the modern Siemens Artis Zee Cath Lab in Betiahata to provide 24/7 emergency heart attack care with clear live imaging.",
+      tags: ["Siemens Cath Lab", "Clear Heart Stents", "24/7 Emergency"],
       icon: ShieldCheck,
       accent: "from-[#0A1128] to-[#BE123C]",
       borderAccent: "border-rose-300",
@@ -72,12 +72,12 @@ export default function AboutPage() {
     },
     {
       year: "2023",
-      phase: "PHASE 05",
-      badge: "Next-Gen Era",
-      institution: "IVUS • OCT • HD-ICU",
-      title: "Next-Gen Cardiac Care Expansion",
-      desc: "Advanced 24/7 Cardiac Emergency, Intra-Vascular Ultrasound (IVUS), Optical Coherence Tomography (OCT), and High-Dependency Cardiac ICU for precision coronary interventions.",
-      tags: ["IVUS & OCT Guided", "High-Dependency ICU", "15,000+ Procedures"],
+      phase: "STEP 05",
+      badge: "24/7 Heart ICU",
+      institution: "Emergency • Heart ICU",
+      title: "Expanded Emergency & Heart ICU",
+      desc: "Expanded 24/7 emergency heart care, modern artery imaging, and a dedicated Heart ICU — crossing 15,000+ successful procedures.",
+      tags: ["Modern Imaging", "Dedicated Heart ICU", "15,000+ Procedures"],
       icon: Activity,
       accent: "from-[#881337] to-[#BE123C]",
       borderAccent: "border-rose-300",
@@ -111,7 +111,7 @@ export default function AboutPage() {
                   Dr. Prakash Chand Shahi
                 </h1>
                 <p className="font-serif italic font-normal text-[#BE123C] text-xl sm:text-3xl leading-snug">
-                  22+ Years of Pioneering Cardiovascular Devotion.
+                  22+ Years of Trusted Heart Care &amp; Dedication.
                 </p>
               </div>
 
@@ -397,14 +397,14 @@ export default function AboutPage() {
                 <span>Two Decades of Clinical Leadership</span>
               </div>
               <h2 className="text-3xl sm:text-5xl font-extrabold text-[#0A1128] tracking-tight leading-tight">
-                Pioneering Milestones in <br />
-                <span className="font-serif italic font-normal text-[#BE123C]">Cardiovascular Devotion</span>
+                22-Year Journey of <br />
+                <span className="font-serif italic font-normal text-[#BE123C]">Trusted Heart Care</span>
               </h2>
               <p className="text-sm text-slate-600 max-w-xl mx-auto font-normal leading-relaxed">
-                From foundation in Betiahata to apex training at KGMU &amp; PGIMER, delivering eastern UP's most advanced transradial catheterization center.
+                From starting in Betiahata to advanced medical training at KGMU &amp; PGIMER, bringing safe and modern heart treatment to Gorakhpur.
               </p>
 
-              {/* View Switcher Pill: 3D Cylinder Carousel vs Vertical Spine */}
+              {/* View Switcher Pill */}
               <div className="pt-3 flex items-center justify-center">
                 <div className="inline-flex p-1.5 rounded-2xl bg-white/95 backdrop-blur-md border-2 border-slate-200/90 shadow-sm">
                   <button
@@ -416,7 +416,7 @@ export default function AboutPage() {
                     }`}
                   >
                     <RefreshCw className="w-3.5 h-3.5" />
-                    <span>3D Cylinder Carousel</span>
+                    <span>Card Slider View</span>
                   </button>
                   <button
                     onClick={() => setTimelineMode('expanded')}
@@ -427,7 +427,7 @@ export default function AboutPage() {
                     }`}
                   >
                     <Layers className="w-3.5 h-3.5" />
-                    <span>Vertical Spine View</span>
+                    <span>Full Timeline View</span>
                   </button>
                 </div>
               </div>

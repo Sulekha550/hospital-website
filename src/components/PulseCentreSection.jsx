@@ -33,11 +33,11 @@ export default function PulseCentreSection({ onBookClick }) {
                 </div>
 
                 <h3 className="text-3xl sm:text-5xl font-semibold text-slate-950 leading-tight tracking-tight">
-                  Modern Outpatient &amp; Ambulatory Cardiac Pavilion
+                  Modern Heart Clinic &amp; OPD Care
                 </h3>
 
                 <p className="text-sm sm:text-base text-slate-700 font-medium leading-relaxed">
-                  Directed by <strong className="text-[#BE123C] font-bold">Dr. Prakash Chand Shahi</strong> (DM Cardiology PGIMER, MD KGMU). Equipped for diagnostic ECGs, 2D Echocardiography, angiogram CD reviews, and personalized post-stent clinical maintenance.
+                  Directed by <strong className="text-[#BE123C] font-bold">Dr. Prakash Chand Shahi</strong> (Heart Specialist — PGIMER &amp; KGMU). Equipped for ECG heart tests, 2D Echo scans, report &amp; CD checkups, and regular care after stenting.
                 </p>
 
                 <div className="pt-2 flex flex-wrap items-center gap-3">
@@ -67,8 +67,8 @@ export default function PulseCentreSection({ onBookClick }) {
                   styleVariant="video-card"
                   posterImage="/images/hospital-facility.jpg"
                   title="Pulse Heart Centre Campus"
-                  subtitle="Betiahata Medical Corridor"
-                  specs="Outpatient Cardiology • Ambulatory Wing"
+                  subtitle="Betiahata, Gorakhpur"
+                  specs="OPD Clinic • Heart Care Wing"
                   aspectRatio="aspect-[16/11]"
                 />
               </div>
@@ -87,13 +87,13 @@ export default function PulseCentreSection({ onBookClick }) {
                     <MapPin className="w-5 h-5" />
                   </div>
                   <span className="text-xs font-mono uppercase tracking-wider text-[#C2410C] font-bold">
-                    Betiahata Medical Corridor
+                    Clinic Location
                   </span>
                 </div>
                 <div className="h-28 rounded-2xl overflow-hidden mb-3 border border-orange-200/80 relative">
-                  <img src="/images/pulse-betiahata-campus.jpg" alt="Betiahata Campus" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <img src="/images/hospital-opd-lounge.jpg" alt="Pulse Heart Centre Betiahata" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-2.5">
-                    <span className="text-[11px] font-bold text-white">Central Betiahata Access</span>
+                    <span className="text-[11px] font-bold text-white">Easy to Reach in Betiahata</span>
                   </div>
                 </div>
                 <p className="text-xs text-slate-700 font-medium leading-relaxed">
@@ -114,7 +114,7 @@ export default function PulseCentreSection({ onBookClick }) {
                     <Clock className="w-5 h-5" />
                   </div>
                   <span className="text-xs font-mono uppercase tracking-wider text-[#C2410C] font-bold">
-                    OPD Consultation Hours
+                    OPD Timings
                   </span>
                 </div>
                 <div className="flex items-center gap-2.5 p-2 rounded-xl bg-white/90 border border-orange-200 mb-3">
@@ -138,11 +138,11 @@ export default function PulseCentreSection({ onBookClick }) {
                 </div>
               </div>
               <div className="mt-4 pt-3 border-t border-orange-200/60 text-xs text-slate-900 font-bold">
-                Daily Scheduled Walk-ins &amp; Triage
+                Walk-In &amp; Scheduled Visits
               </div>
             </div>
 
-            {/* Box 3: Diagnostic Modalities Available */}
+            {/* Box 3: Heart Tests Available */}
             <div className="p-7 rounded-[2rem] bg-white/85 backdrop-blur-xl border-2 border-orange-200/90 shadow-layered hover:shadow-layered-hover hover:border-orange-400 hover:bg-white/95 transition-all duration-500 hover:-translate-y-1.5 flex flex-col justify-between text-left group">
               <div>
                 <div className="flex items-center gap-2 mb-3">
@@ -150,23 +150,23 @@ export default function PulseCentreSection({ onBookClick }) {
                     <ShieldCheck className="w-5 h-5" />
                   </div>
                   <span className="text-xs font-mono uppercase tracking-wider text-[#C2410C] font-bold">
-                    Outpatient Diagnostics
+                    Heart Tests Available
                   </span>
                 </div>
                 <div className="h-28 rounded-2xl overflow-hidden mb-3 border border-orange-200/80 relative">
                   <img src="/images/echo-doppler-scan.jpg" alt="Echo Doppler Scan" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-2.5">
-                    <span className="text-[11px] font-bold text-white">2D Echo &amp; Angio CD Review</span>
+                    <span className="text-[11px] font-bold text-white">2D Echo &amp; Report Check</span>
                   </div>
                 </div>
                 <div className="flex flex-wrap gap-1">
-                  <span className="text-[10px] font-bold bg-orange-50 text-[#C2410C] px-2 py-0.5 rounded border border-orange-200">12-Lead ECG</span>
-                  <span className="text-[10px] font-bold bg-orange-50 text-[#C2410C] px-2 py-0.5 rounded border border-orange-200">2D Echo Doppler</span>
-                  <span className="text-[10px] font-bold bg-orange-50 text-[#C2410C] px-2 py-0.5 rounded border border-orange-200">Angiogram CD</span>
+                  <span className="text-[10px] font-bold bg-orange-50 text-[#C2410C] px-2 py-0.5 rounded border border-orange-200">ECG Heart Test</span>
+                  <span className="text-[10px] font-bold bg-orange-50 text-[#C2410C] px-2 py-0.5 rounded border border-orange-200">2D Echo Scan</span>
+                  <span className="text-[10px] font-bold bg-orange-50 text-[#C2410C] px-2 py-0.5 rounded border border-orange-200">Report &amp; CD Check</span>
                 </div>
               </div>
               <div className="mt-4 pt-3 border-t border-orange-200/60 text-xs text-slate-900 font-bold">
-                Accredited Diagnostic Standards
+                Fast &amp; Accurate Heart Tests
               </div>
             </div>
 

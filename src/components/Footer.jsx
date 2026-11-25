@@ -42,7 +42,7 @@ export default function Footer() {
             </div>
 
             <p className="text-slate-400 text-xs sm:text-sm font-light leading-relaxed max-w-sm text-left">
-              Advanced cardiac care and catheterization guided by experience, precision and compassion. Directed by Dr. Prakash Chand Shahi.
+              Safe and caring heart treatment led by Dr. Prakash Chand Shahi in Gorakhpur.
             </p>
 
             <div className="pt-2 flex items-center gap-3 text-xs text-left p-2.5 rounded-2xl bg-white/5 border border-rose-300/30 w-fit max-w-full">
@@ -97,19 +97,19 @@ export default function Footer() {
             </span>
             <ul className="space-y-2.5 text-xs font-light text-slate-300">
               <li>
-                <Link to="/" className="hover:text-rose-300 transition-colors">Home Atelier</Link>
+                <Link to="/" className="hover:text-rose-300 transition-colors">Home</Link>
               </li>
               <li>
                 <Link to="/about" className="hover:text-rose-300 transition-colors">About Dr. P. C. Shahi</Link>
               </li>
               <li>
-                <Link to="/treatments" className="hover:text-rose-300 transition-colors">Treatments & Procedures</Link>
+                <Link to="/treatments" className="hover:text-rose-300 transition-colors">Heart Treatments</Link>
               </li>
               <li>
                 <Link to="/hospital" className="hover:text-rose-300 transition-colors">Pulse Heart Centre, Betiahata</Link>
               </li>
               <li>
-                <Link to="/contact" className="hover:text-rose-300 transition-colors">Book Private Consultation</Link>
+                <Link to="/contact" className="hover:text-rose-300 transition-colors">Book Appointment</Link>
               </li>
             </ul>
           </div>
@@ -140,7 +140,7 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400 font-light">
-          <p>© {new Date().getFullYear()} Pulse Heart Centre. Professional Clinical Cardiology Practice.</p>
+          <p>© {new Date().getFullYear()} Pulse Heart Centre, Gorakhpur. Trusted Heart Care.</p>
 
           <div className="flex items-center gap-4">
             <a

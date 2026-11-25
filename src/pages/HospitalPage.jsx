@@ -62,8 +62,8 @@ export default function HospitalPage() {
 
           <ScrollReveal animation="fade-up" delay={0.1}>
             <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-[#0A1128] tracking-tight leading-[1.05]">
-              Clinical Facilities &amp; <br />
-              <span className="font-serif italic font-normal text-[#BE123C]">Outpatient Architecture</span>
+              Modern Hospital &amp; <br />
+              <span className="font-serif italic font-normal text-[#BE123C]">Heart Care Facilities</span>
             </h1>
           </ScrollReveal>
 
@@ -90,7 +90,7 @@ export default function HospitalPage() {
 
           <ScrollReveal animation="fade-up" delay={0.2}>
             <p className="text-sm sm:text-base text-slate-700 font-normal max-w-2xl mx-auto leading-relaxed">
-              Modern outpatient clinical pavilion, Siemens Cath-Lab, and consultation suites directed personally by Dr. Shahi.
+              Clean consultation rooms, modern Cath Lab, and 24/7 Heart ICU directed personally by Dr. Shahi.
             </p>
           </ScrollReveal>
 
@@ -102,9 +102,9 @@ export default function HospitalPage() {
                 videoUrl="/videos/facilities-walkthrough.mp4"
                 styleVariant="panoramic-stage"
                 posterImage="/images/operation-theatre-laminar.jpg"
-                title="Siemens Artis Zee Fluoroscopy Suite"
-                subtitle="Flat-Panel C-Arm Virtual Tour • 60 FPS"
-                specs="Class-100 Laminar Cleanroom • Sub-Millimeter Spatial Resolution"
+                title="Pulse Heart Centre Cath Lab"
+                subtitle="Safe &amp; Clean Heart Suite"
+                specs="Sterile Cleanroom • Clear Live Heart Imaging"
                 aspectRatio="aspect-[16/8] sm:aspect-[21/9]"
               />
             </Interactive3DTilt>

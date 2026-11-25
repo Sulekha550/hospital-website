@@ -21,19 +21,19 @@ export default function ContactPage() {
       icon: Navigation,
       color: 'bg-rose-50 text-[#BE123C] border-rose-200',
       title: 'How to Reach Us',
-      text: 'Located in the central Betiahata medical hub, 10 minutes from Gorakhpur Railway Station and Golghar commercial centre.',
+      text: 'In central Betiahata, Gorakhpur — just 10 minutes from Gorakhpur Railway Station and Golghar.',
     },
     {
       icon: Clock,
       color: 'bg-slate-100 text-[#0A1128] border-slate-200',
-      title: 'Arrival & Token Protocol',
-      text: 'Please arrive 15 minutes prior to your scheduled slot. Bring prior ECGs, echocardiography reports, and angiogram CDs.',
+      title: 'When You Arrive',
+      text: 'Please arrive 15 minutes before your appointment time. Bring your old ECG, Echo reports, and heart CDs if available.',
     },
     {
       icon: Phone,
       color: 'bg-rose-50 text-[#E11D48] border-rose-200',
-      title: 'Emergency Cardiac Triage',
-      text: 'Patients presenting with acute crushing chest pain, diaphoresis, or sudden syncope are granted immediate priority triage.',
+      title: '24/7 Heart Emergency',
+      text: 'Patients with sudden chest pain, heavy sweating, or fainting are seen immediately without any waiting.',
     },
   ];
 
@@ -75,7 +75,7 @@ export default function ContactPage() {
               <ScrollReveal animation="fade-down">
                 <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-rose-50 text-[#BE123C] border border-rose-200 text-xs font-bold uppercase tracking-[0.22em] shadow-xs">
                   <Sparkles className="w-3.5 h-3.5 text-[#BE123C]" />
-                  <span>Direct Outpatient Gateway • Betiahata, Gorakhpur</span>
+                  <span>Book Appointment • Betiahata, Gorakhpur</span>
                 </div>
               </ScrollReveal>
 
@@ -124,9 +124,9 @@ export default function ContactPage() {
                 {/* Minimal Summary Status Chips */}
                 <ScrollReveal animation="fade-up" delay={0.2}>
                   <div className="flex flex-wrap items-center gap-2 pt-1 font-mono text-xs font-bold">
-                    <span className="bg-slate-100 text-[#0A1128] px-3.5 py-1.5 rounded-full border border-slate-200">Betiahata Medical Corridor</span>
-                    <span className="bg-white text-slate-900 px-3.5 py-1.5 rounded-full border border-slate-200 shadow-xs">Same-Day Angio CD Review</span>
-                    <span className="bg-rose-50 text-[#BE123C] px-3.5 py-1.5 rounded-full border border-rose-200">Emergency 24/7 Triage</span>
+                    <span className="bg-slate-100 text-[#0A1128] px-3.5 py-1.5 rounded-full border border-slate-200">Betiahata, Gorakhpur</span>
+                    <span className="bg-white text-slate-900 px-3.5 py-1.5 rounded-full border border-slate-200 shadow-xs">Same-Day Report &amp; CD Check</span>
+                    <span className="bg-rose-50 text-[#BE123C] px-3.5 py-1.5 rounded-full border border-rose-200">24/7 Heart Emergency</span>
                   </div>
                 </ScrollReveal>
 

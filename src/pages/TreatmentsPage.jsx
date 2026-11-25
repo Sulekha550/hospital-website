@@ -26,14 +26,14 @@ export default function TreatmentsPage() {
           <ScrollReveal animation="fade-down">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-[#0A1128] via-[#1E293B] to-[#BE123C] text-white text-xs font-mono font-medium shadow-md shadow-navy/20 border border-rose-300/30">
               <Activity className="w-4 h-4 text-rose-300 animate-pulse" />
-              <span className="uppercase tracking-[0.2em]">Interventional Treatments &amp; Procedures</span>
+              <span className="uppercase tracking-[0.2em]">Heart &amp; Artery Treatments</span>
             </div>
           </ScrollReveal>
 
           <ScrollReveal animation="fade-up" delay={0.1}>
             <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-[#0A1128] tracking-tight leading-[1.05]">
-              Interventional &amp; Diagnostic <br />
-              <span className="font-serif italic font-normal text-[#BE123C]">Cardiovascular Therapies</span>
+              Simple, Safe &amp; Modern <br />
+              <span className="font-serif italic font-normal text-[#BE123C]">Heart Treatments</span>
             </h1>
           </ScrollReveal>
 
@@ -60,7 +60,7 @@ export default function TreatmentsPage() {
 
           <ScrollReveal animation="fade-up" delay={0.2}>
             <p className="text-sm sm:text-base font-normal text-slate-600 max-w-2xl mx-auto leading-relaxed">
-              Peripheral Angioplasty, Radial Stenting, Coronary Angiogram &amp; Pacemaker Implantation with Siemens Flat-Panel Clarity.
+              Painless wrist-route angioplasty, heart blockage check (angiogram), and pacemaker care with clear live imaging.
             </p>
           </ScrollReveal>
 
@@ -73,9 +73,9 @@ export default function TreatmentsPage() {
                 showControls={false}
                 styleVariant="panoramic-stage"
                 posterImage="/images/cardiac-stent-procedure.jpg"
-                title="Cineangiography Stenosis Mapping &amp; Stent Placement"
-                subtitle="Siemens Artis Zee Fluoroscopy • 60 FPS"
-                specs="Sub-Millimeter Stenosis Resolution • 0.014-Inch Micro-Guidewire"
+                title="Heart Blockage Check &amp; Stent Care"
+                subtitle="Clear Live Heart Imaging"
+                specs="Gentle Wrist-Route Procedure • Quick Recovery"
                 aspectRatio="aspect-[16/8] sm:aspect-[21/9]"
               />
             </Interactive3DTilt>
@@ -126,13 +126,13 @@ export default function TreatmentsPage() {
             <Interactive3DTilt maxTilt={4} scale={1.01}>
               <div className="p-8 sm:p-14 rounded-[2.5rem] bg-gradient-to-br from-white via-slate-50 to-white text-slate-900 shadow-2xl border-2 border-slate-200/90 space-y-6 backdrop-blur-xl">
                 <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#BE123C] font-bold block">
-                  Ethical Second Opinions • Betiahata, Gorakhpur
+                  Honest Second Opinion • Betiahata, Gorakhpur
                 </span>
                 <h3 className="text-3xl sm:text-5xl font-extrabold text-[#0A1128] tracking-tight">
-                  Bring Your Angiogram CD for a <span className="font-serif italic font-normal text-[#BE123C]">Physician Review</span>
+                  Bring Your Heart Report or CD for a <span className="font-serif italic font-normal text-[#BE123C]">Doctor Review</span>
                 </h3>
                 <p className="text-sm sm:text-base text-slate-600 max-w-xl mx-auto font-normal leading-relaxed">
-                  Receive unbiased, evidence-based guidance on whether balloon dilation, drug-eluting stenting, or conservative medical optimization is best for your heart.
+                  Get clear, honest advice from Dr. Shahi on whether simple medicines or a stent is best for your heart.
                 </p>
                 <div className="pt-2 flex items-center justify-center gap-4">
                   <Link

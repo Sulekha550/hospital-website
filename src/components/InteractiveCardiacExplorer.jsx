@@ -5,48 +5,41 @@ import { PULSE_DATA } from '../data/pulseData';
 const DEFAULT_HOTSPOTS = [
   {
     id: 'coronary',
-    label: 'LAD Coronary Artery',
+    label: 'Main Heart Artery',
     x: '52%',
     y: '38%',
-    domain: 'Coronary Angioplasty & Stenting Target',
-    detail: 'Left Anterior Descending branch supplying the anterior left ventricular wall.',
-    chamber: 'Anterior Myocardium',
-    clinicalInsight: 'Primary target vessel for transradial balloon dilation and drug-eluting stenting.',
+    domain: 'Stent & Blockage Care',
+    detail: 'Main artery supplying fresh blood to the front of your heart.',
+    chamber: 'Front Heart Wall',
+    clinicalInsight: 'Opened gently through the wrist using a safe, medicine-coated stent.',
   },
   {
     id: 'interventional',
-    label: 'Aortic Root & Catheter Access',
+    label: 'Wrist Route Access',
     x: '46%',
     y: '22%',
-    domain: 'Radial Catheterization Gateway',
-    detail: 'Ascending aorta conduit for balloon dilation and drug-eluting stent deployment.',
-    chamber: 'Ascending Aorta',
-    clinicalInsight: 'Coronary ostium engagement pathway for sub-millimeter stent delivery.',
+    domain: 'Painless Wrist Path',
+    detail: 'Safe pathway used to guide a tiny tube to the heart without any leg cut.',
+    chamber: 'Main Heart Gateway',
+    clinicalInsight: 'Lets patients sit up and walk comfortably soon after the procedure.',
   },
   {
     id: 'pacemaker',
-    label: 'Sinoatrial (SA) Conduction Node',
+    label: 'Heartbeat Control Spot',
     x: '38%',
     y: '48%',
-    domain: 'Pacemaker Rhythm Node',
-    detail: 'Primary physiological cardiac pacemaker governing sinus node depolarization.',
-    chamber: 'Right Atrial Junction',
-    clinicalInsight: 'Target conduction area for physiological dual-chamber pacemaker lead positioning.',
+    domain: 'Pacemaker Support',
+    detail: 'Natural rhythm center that keeps your heart beating steadily.',
+    chamber: 'Upper Heart Chamber',
+    clinicalInsight: 'Supported by a small pacemaker if your heartbeat becomes too slow.',
   },
 ];
 
 /**
- * InteractiveCardiacExplorer: Clinical Anatomy & Diagnostic Lightbox
- * Elite Healthcare Editorial Experience:
- * - Real high-definition cardiac anatomical organ photography
- * - Real diagnostic fluoroscopy & coronary angiogram imaging
- * - Interactive anatomical hotspot pins with clinical descriptions
- * - Emerald, pine, mint gold and pearl white clinical telemetry
+ * InteractiveCardiacExplorer: Simple Interactive Heart Guide
  */
 export default function InteractiveCardiacExplorer({ onBookClick }) {
-  const explorerHotspots = (PULSE_DATA && Array.isArray(PULSE_DATA.cardiacExplorerHotspots) && PULSE_DATA.cardiacExplorerHotspots.length > 0)
-    ? PULSE_DATA.cardiacExplorerHotspots
-    : DEFAULT_HOTSPOTS;
+  const explorerHotspots = DEFAULT_HOTSPOTS;
 
   const [activeId, setActiveId] = useState(explorerHotspots[0]?.id || 'coronary');
   const [viewMode, setViewMode] = useState('anatomy'); // 'anatomy' or 'angiogram'
@@ -82,16 +75,16 @@ export default function InteractiveCardiacExplorer({ onBookClick }) {
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#F0FDF4] border border-[#A7F3D0] shadow-xs">
             <Sparkles className="w-3.5 h-3.5 text-[#047857]" />
             <span className="text-xs font-bold text-[#064E3B] uppercase tracking-wider">
-              Diagnostic Lightbox & Clinical Anatomy
+              Interactive Heart Guide
             </span>
           </div>
 
           <h2 className="text-3xl sm:text-4xl font-extrabold text-[#064E3B] tracking-tight leading-tight">
-            Target Anatomy & <span className="font-serif italic font-normal text-[#047857]">Hemodynamics</span>
+            How Your Heart <span className="font-serif italic font-normal text-[#047857]">Works &amp; Heals</span>
           </h2>
 
           <p className="text-xs sm:text-sm text-slate-600 font-medium max-w-xl mx-auto leading-relaxed">
-            Real photographic cardiac anatomy and diagnostic fluoroscopic angiograms highlighting key coronary pathways, perfusion zones, and conduction nodes.
+            Click any part of the heart below to see how Dr. Shahi checks blockages, opens arteries, and keeps your heartbeat steady.
           </p>
         </div>
 
@@ -111,7 +104,7 @@ export default function InteractiveCardiacExplorer({ onBookClick }) {
                     : 'text-slate-700 hover:text-[#064E3B]'
                 }`}
               >
-                Photorealistic Anatomy
+                Heart View
               </button>
               <button
                 onClick={() => setViewMode('angiogram')}
@@ -121,7 +114,7 @@ export default function InteractiveCardiacExplorer({ onBookClick }) {
                     : 'text-slate-700 hover:text-[#064E3B]'
                 }`}
               >
-                Fluoroscopy Angiogram
+                Angiogram View
               </button>
             </div>
 
@@ -163,13 +156,13 @@ export default function InteractiveCardiacExplorer({ onBookClick }) {
             <div className="absolute top-4 left-4 flex items-center gap-2 pointer-events-none">
               <div className="px-3.5 py-1.5 rounded-full bg-slate-900/80 backdrop-blur-md border border-white/20 text-white text-[11px] font-medium flex items-center gap-2 shadow-md">
                 <span className="w-2 h-2 rounded-full bg-[#059669] animate-ping" />
-                <span>{viewMode === 'anatomy' ? 'Anatomical Model: True Biological Texture' : 'Fluoroscopy Mode: Contrast Perfusion'}</span>
+                <span>{viewMode === 'anatomy' ? 'Heart View: Clear Artery Guide' : 'Angiogram View: Live Blood Flow Check'}</span>
               </div>
             </div>
 
             <div className="absolute top-4 right-4 pointer-events-none">
               <div className="px-3.5 py-1.5 rounded-full bg-slate-900/80 backdrop-blur-md border border-white/20 text-amber-300 text-[11px] font-mono shadow-md font-bold">
-                72 BPM · Lead II Telemetry
+                72 BPM · Healthy Heartbeat
               </div>
             </div>
 
@@ -214,7 +207,7 @@ export default function InteractiveCardiacExplorer({ onBookClick }) {
             <div className="absolute bottom-4 left-4 right-4 p-4 rounded-2xl bg-slate-950/90 backdrop-blur-md border border-white/15 text-white flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-xl">
               <div className="space-y-0.5">
                 <span className="text-[10px] font-mono uppercase tracking-wider text-[#059669] font-bold block">
-                  SELECTED CLINICAL TARGET
+                  SELECTED HEART PART
                 </span>
                 <span className="text-sm sm:text-base font-bold text-white block">
                   {activeData.label} · {activeData.chamber}
@@ -226,7 +219,7 @@ export default function InteractiveCardiacExplorer({ onBookClick }) {
 
               <div className="flex items-center gap-3 shrink-0">
                 <div className="hidden sm:block text-right">
-                  <span className="text-[10px] text-slate-400 block">Flow Restoration</span>
+                  <span className="text-[10px] text-slate-400 block">Treatment Result</span>
                   <span className="text-sm font-bold text-amber-300 font-mono">99.4% Success</span>
                 </div>
                 <button
@@ -240,19 +233,19 @@ export default function InteractiveCardiacExplorer({ onBookClick }) {
 
           </div>
 
-          {/* Bottom Diagnostic Metadata Bar */}
+          {/* Bottom Simple Highlights */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2 text-xs">
             <div className="p-3.5 rounded-2xl bg-[#F0FDF4]/70 border border-[#A7F3D0]/60">
-              <span className="font-bold text-[#064E3B] block">Radial Access Coronary Stenting</span>
-              <span className="text-slate-600 text-[11px] block mt-0.5 font-medium">Catheter deployment via wrist artery for rapid patient recovery.</span>
+              <span className="font-bold text-[#064E3B] block">Wrist-Route Heart Stenting</span>
+              <span className="text-slate-600 text-[11px] block mt-0.5 font-medium">Gentle wrist procedure so patients recover fast and walk sooner.</span>
             </div>
             <div className="p-3.5 rounded-2xl bg-slate-50 border border-slate-200">
-              <span className="font-bold text-[#064E3B] block">Fluoroscopic Quantitative Mapping</span>
-              <span className="text-slate-600 text-[11px] block mt-0.5 font-medium">Real-time contrast injection reveals precise stenosis percentage.</span>
+              <span className="font-bold text-[#064E3B] block">Clear Blockage Check</span>
+              <span className="text-slate-600 text-[11px] block mt-0.5 font-medium">Live scan shows the exact location and percentage of any blockage.</span>
             </div>
             <div className="p-3.5 rounded-2xl bg-amber-50/70 border border-amber-100">
-              <span className="font-bold text-amber-900 block">Permanent Physiological Pacing</span>
-              <span className="text-slate-600 text-[11px] block mt-0.5 font-medium">Endocardial electrode placement for bradycardia management.</span>
+              <span className="font-bold text-amber-900 block">Safe Pacemaker Care</span>
+              <span className="text-slate-600 text-[11px] block mt-0.5 font-medium">Small heart device that keeps a slow or weak pulse steady.</span>
             </div>
           </div>
 
