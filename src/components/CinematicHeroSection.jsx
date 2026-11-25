@@ -19,10 +19,10 @@ export default function CinematicHeroSection() {
       <div className="max-w-7xl mx-auto w-full relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
 
-          {/* Left Column (6 cols): Editorial Lead & Compact Visual Cards */}
-          <div className="lg:col-span-6 space-y-6 text-left">
+          {/* Left Column (6 cols): Editorial Lead & Compact Visual Cards (below image on mobile, left on desktop) */}
+          <div className="lg:col-span-6 order-2 lg:order-1 space-y-6 text-left">
 
-            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white border border-slate-200 shadow-xs text-xs font-semibold text-[#0A1128]">
+            <div className="inline-flex flex-wrap items-center gap-x-2.5 gap-y-1 px-3.5 py-1.5 rounded-2xl sm:rounded-full bg-white border border-slate-200 shadow-xs text-[11px] sm:text-xs font-semibold text-[#0A1128]">
               <MapPin className="w-3.5 h-3.5 text-[#BE123C]" />
               <span>Pulse Heart Centre • Betiahata, Gorakhpur</span>
               <span className="text-slate-300">|</span>
@@ -80,8 +80,8 @@ export default function CinematicHeroSection() {
             </div>
           </div>
 
-          {/* Right Column (6 cols): Deep Midnight Navy Architectural Stage Panel */}
-          <div className="lg:col-span-6">
+          {/* Right Column (6 cols): Deep Midnight Navy Architectural Stage Panel (above text on mobile, right on desktop) */}
+          <div className="lg:col-span-6 order-1 lg:order-2">
             <div className="relative rounded-2xl sm:rounded-[2rem] bg-[#0A1128] p-4 sm:p-6 shadow-[0_30px_70px_-15px_rgba(10,17,40,0.3)] border border-slate-800 overflow-hidden">
               {/* Crimson Accent Bar on Left Edge */}
               <div className="absolute left-0 top-8 bottom-8 w-1.5 bg-gradient-to-b from-[#E11D48] via-[#BE123C] to-transparent rounded-r-full" />
