@@ -19,8 +19,8 @@ export default function CredentialsEditorialSection() {
       degree: 'DM — Cardiology',
       institute: 'PGIMER, Chandigarh',
       tag: 'Institute of National Importance',
-      image: '/images/doctor-portrait.jpg',
-      pos: 'object-[50%_20%]',
+      image: '/images/doctor-echo-checkup.jpg',
+      pos: 'object-center',
       summary: 'Fellowship in transradial coronary angiography, complex bifurcation stenting & cardiac pacing.',
     },
     {
@@ -28,7 +28,7 @@ export default function CredentialsEditorialSection() {
       degree: 'MD — General Medicine',
       institute: "King George's Medical University (KGMU)",
       tag: 'Lucknow • Est. 1905',
-      image: '/images/angiogram-scan.jpg',
+      image: '/images/doctor-icu-rounds.jpg',
       pos: 'object-center',
       summary: 'Intensive residency in acute coronary syndromes, critical hemodynamics & intensive care.',
     },
@@ -37,7 +37,7 @@ export default function CredentialsEditorialSection() {
       degree: '22+ Years Practice',
       institute: 'Pulse Heart Centre, Betiahata',
       tag: '15,000+ Cath Procedures',
-      image: '/images/cath-lab.jpg',
+      image: '/images/hospital-facility.jpg',
       pos: 'object-center',
       summary: 'Leading Gorakhpur’s wrist-first interventional cardiology & 24/7 STEMI emergency care.',
     },
@@ -133,10 +133,10 @@ export default function CredentialsEditorialSection() {
         <div className="p-6 sm:p-8 rounded-2xl bg-white text-[#0A1128] shadow-xl grid grid-cols-1 lg:grid-cols-12 gap-6 items-center text-left">
           <div className="lg:col-span-5 flex items-center gap-4">
             <img
-              src="/images/doctor-portrait.jpg"
+              src="/images/p2.jpeg"
               alt={doctor.name}
               loading="lazy"
-              className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl object-cover object-[50%_20%] border border-slate-200 shadow-sm shrink-0"
+              className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl object-cover object-top border border-slate-200 shadow-sm shrink-0"
             />
             <div>
               <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#BE123C] block">

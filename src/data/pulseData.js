@@ -489,7 +489,7 @@ export const PULSE_DATA = {
       languages: "English, Hindi",
       consultationHours: "Mon – Sat: 10:00 AM – 02:00 PM & 05:00 PM – 08:00 PM",
       opdRoom: "Suite 101, Executive Cardiology Wing",
-      image: "/images/i.png",
+      image: "/images/doctor-portrait.jpg",
       bio: "Trained at India's foremost apex institutes—PGIMER Chandigarh and King George's Medical University Lucknow—Dr. Prakash Chand Shahi is a pioneer of transradial coronary angioplasty in eastern Uttar Pradesh. Having performed over 12,000 cardiac catheterizations with a 99.4% radial success rate, he is revered for his clinical precision, evidence-based ethics, and unhurried bedside care.",
       achievements: [
         "Pioneered transradial coronary catheterization in Gorakhpur",
@@ -674,7 +674,7 @@ export const PULSE_DATA = {
         "Traumatic Brain Injury & Complex Skull Base Surgeries",
         "Comprehensive Neuro-Intensive Care Unit (Neuro-ICU)"
       ],
-      image: "/images/angiogram-scan.jpg",
+      image: "/images/brain-mri-diffusion.jpg",
       accent: "#AFA0E9"
     },
     {
@@ -689,7 +689,7 @@ export const PULSE_DATA = {
         "Minimally Invasive Spine Fixation & Deformity Correction",
         "Fast-Track Post-Operative Rehabilitation Center"
       ],
-      image: "/images/hospital-facility.jpg",
+      image: "/images/robotic-knee-navigation.jpg",
       accent: "#65BCA6"
     },
     {
@@ -753,7 +753,7 @@ export const PULSE_DATA = {
         "Advanced Diffusion & Perfusion Stroke Mapping"
       ],
       description: "Delivers exceptional anatomical clarity for brain tumors, stroke diffusion within minutes, spinal nerve root impingement, and cartilage wear.",
-      image: "/images/angiogram-scan.jpg",
+      image: "/images/advanced-mri-scanner.jpg",
       status: "Available Daily"
     },
     {
@@ -768,7 +768,7 @@ export const PULSE_DATA = {
         "Ultra-Low Pediatric & Geriatric Dose Modulation"
       ],
       description: "Reconstructs crystal-clear 3D visualizations of coronary blockages, thoracic aorta, and pulmonary vessels in outpatient settings without hospital admission.",
-      image: "/images/hospital-facility.jpg",
+      image: "/images/ct-calcium-score.jpg",
       status: "Available Daily"
     },
     {
@@ -783,7 +783,7 @@ export const PULSE_DATA = {
         "Centralized Medical Gas and Vacuum Monitoring System"
       ],
       description: "Ensures the highest international standards of sterility for joint replacements, complex neurosurgeries, and extensive oncological operations.",
-      image: "/images/pacemaker-tech.jpg",
+      image: "/images/operation-theatre-laminar.jpg",
       status: "5 Suites Operational"
     }
   ],
@@ -869,7 +869,7 @@ export const PULSE_DATA = {
       title: "Grand Architectural Atrium & Reception",
       category: "Patient Welcome & Triage",
       description: "Designed with generous natural light, acoustic dampening, and streamlined digital registration kiosks for zero-wait patient admission.",
-      image: "/images/hospital-facility.jpg",
+      image: "/images/appointment-reception-triage.jpg",
       featured: true
     },
     {
@@ -877,7 +877,7 @@ export const PULSE_DATA = {
       title: "Siemens Artis Zee Flat-Panel Digital Cath Lab",
       category: "Vascular Interventions",
       description: "State-of-the-art sterile catheterization theater with Dr. Prakash Chand Shahi performing radial angioplasty and real-time hemodynamic monitoring.",
-      image: "/images/doctor-cathlab-procedure.jpg",
+      image: "/images/stent-catheter-fluoroscopy.jpg",
       featured: false
     },
     {
@@ -893,7 +893,7 @@ export const PULSE_DATA = {
       title: "Class-100 Laminar Flow Modular OT & Pacing Suite",
       category: "Surgical Care",
       description: "Ultra-clean cardiac & pacing theatres with positive-pressure HEPA filtration and continuous hemodynamic telemetry.",
-      image: "/images/pacemaker-tech.jpg",
+      image: "/images/operation-theatre-laminar.jpg",
       featured: false
     },
     {
@@ -901,7 +901,7 @@ export const PULSE_DATA = {
       title: "Post-Procedure Cardiac Recovery & ICU Rounds",
       category: "Bedside Recovery",
       description: "Daily bedside follow-up rounds by Dr. Shahi ensuring rapid ambulation and safe recovery after stenting.",
-      image: "/images/doctor-icu-rounds.jpg",
+      image: "/images/patient-care-recovery.jpg",
       featured: false
     }
   ],

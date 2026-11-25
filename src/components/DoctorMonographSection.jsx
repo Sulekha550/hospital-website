@@ -92,10 +92,10 @@ export default function DoctorMonographSection() {
             <div className="relative rounded-3xl overflow-hidden bg-white p-2.5 border border-slate-200 shadow-xl">
               <div className="aspect-square w-full rounded-2xl overflow-hidden bg-slate-100">
                 <img
-                  src="/images/doctor-portrait.jpg"
-                  alt="Dr. Prakash Chand Shahi"
+                  src="/images/p3.jpeg"
+                  alt="Dr. Prakash Chand Shahi reviewing coronary angiogram"
                   loading="lazy"
-                  className="w-full h-full object-cover object-[50%_20%]"
+                  className="w-full h-full object-cover object-[65%_20%]"
                 />
               </div>
 

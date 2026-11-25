@@ -11,79 +11,14 @@ export default function ScrollReveal({
   className = '',
   variant = 'fade-up',
   delay = 0,
-  duration = 0.7,
-  yOffset = 32,
-  xOffset = 32,
+  duration = 0.25,
+  yOffset = 10,
+  xOffset = 10,
 }) {
-  const getVariants = () => {
-    switch (variant) {
-      case 'fade-up':
-        return {
-          hidden: { opacity: 0, y: yOffset },
-          visible: {
-            opacity: 1,
-            y: 0,
-            transition: { duration, delay, ease: [0.16, 1, 0.3, 1] }
-          }
-        };
-      case 'fade-down':
-        return {
-          hidden: { opacity: 0, y: -yOffset },
-          visible: {
-            opacity: 1,
-            y: 0,
-            transition: { duration, delay, ease: [0.16, 1, 0.3, 1] }
-          }
-        };
-      case 'slide-left':
-        return {
-          hidden: { opacity: 0, x: -xOffset },
-          visible: {
-            opacity: 1,
-            x: 0,
-            transition: { duration, delay, ease: [0.16, 1, 0.3, 1] }
-          }
-        };
-      case 'slide-right':
-        return {
-          hidden: { opacity: 0, x: xOffset },
-          visible: {
-            opacity: 1,
-            x: 0,
-            transition: { duration, delay, ease: [0.16, 1, 0.3, 1] }
-          }
-        };
-      case 'scale-up':
-        return {
-          hidden: { opacity: 0, scale: 0.92 },
-          visible: {
-            opacity: 1,
-            scale: 1,
-            transition: { duration, delay, ease: [0.16, 1, 0.3, 1] }
-          }
-        };
-      case 'fade-in':
-      default:
-        return {
-          hidden: { opacity: 0 },
-          visible: {
-            opacity: 1,
-            transition: { duration, delay, ease: [0.16, 1, 0.3, 1] }
-          }
-        };
-    }
-  };
-
   return (
-    <motion.div
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.15 }}
-      variants={getVariants()}
-      className={className}
-    >
+    <div className={className}>
       {children}
-    </motion.div>
+    </div>
   );
 }
 

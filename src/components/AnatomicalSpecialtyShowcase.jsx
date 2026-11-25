@@ -20,7 +20,7 @@ export default function AnatomicalSpecialtyShowcase({ variant = 'home-specialtie
       title: 'Peripheral Angioplasty & Stenting',
       category: 'Interventional Cath Lab',
       desc: 'Restoring arterial blood flow using painless transradial (wrist-first) balloon dilation and drug-eluting stents.',
-      image: '/images/cath-lab.jpg',
+      image: '/images/radial-catheter-sheath.jpg',
       stat: '99.4% Flow Restored',
       recovery: 'Walk in 2 Hours',
       points: [
@@ -35,7 +35,7 @@ export default function AnatomicalSpecialtyShowcase({ variant = 'home-specialtie
       title: 'Coronary Angiogram (CAG)',
       category: 'Diagnostic Imaging',
       desc: 'High-resolution cineangiography mapping coronary blockages with sub-millimeter precision in under 15 minutes.',
-      image: '/images/angiogram-scan.jpg',
+      image: '/images/coronary-artery-perfusion.jpg',
       stat: '< 0.5 mm Accuracy',
       recovery: 'Same-Day Discharge',
       points: [
@@ -65,7 +65,7 @@ export default function AnatomicalSpecialtyShowcase({ variant = 'home-specialtie
       title: '24/7 STEMI & Cardiac Care',
       category: 'Emergency Heart Centre',
       desc: 'Round-the-clock primary angioplasty and high-dependency cardiac care at Pulse Heart Centre, Betiahata.',
-      image: '/images/hospital-facility.jpg',
+      image: '/images/cardiac-icu-telemetry.jpg',
       stat: '< 45 Min Door-to-Balloon',
       recovery: '24/7 Emergency Team',
       points: [

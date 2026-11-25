@@ -21,7 +21,7 @@ export default function MedicalTechnologyShowcase({ variant = 'home-technology' 
       title: 'Digital Flat-Panel Cath Suite',
       category: 'C-ARM FLUOROSCOPY',
       description: 'Sub-millimeter roadmap clarity with DoseSense -40% radiation minimization.',
-      image: '/images/doctor-cathlab-procedure.jpg',
+      image: '/images/cath-lab.jpg',
       videoUrl: '/videos/facilities-walkthrough.mp4',
       type: 'facilities-walkthrough',
       specs: [
@@ -37,7 +37,7 @@ export default function MedicalTechnologyShowcase({ variant = 'home-technology' 
       title: 'Cineangiographic Stenosis Mapping',
       category: 'DIAGNOSTIC LESION QCA',
       description: 'Dynamic non-ionic contrast cine evaluating stenosis dimensions.',
-      image: '/images/doctor-angiogram-explain.jpg',
+      image: '/images/cathlab-control-review.jpg',
       videoUrl: '/videos/cardiac-catheterization.mp4',
       type: 'cardiac-catheterization',
       specs: [
@@ -53,7 +53,7 @@ export default function MedicalTechnologyShowcase({ variant = 'home-technology' 
       title: 'Cobalt-Chromium DES Stents',
       category: 'ENDOVASCULAR BIO-IMPLANTS',
       description: 'Ultra-thin strut lattices coated with 90-day antiproliferative polymer.',
-      image: '/images/doctor-echo-checkup.jpg',
+      image: '/images/echo-machine-suite.jpg',
       videoUrl: '/videos/cardiology-heart.mp4',
       type: 'cardiology-heart',
       specs: [

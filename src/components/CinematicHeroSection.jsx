@@ -58,9 +58,9 @@ export default function CinematicHeroSection() {
             {/* 3 Visual Proof Thumbnails */}
             <div className="pt-4 border-t border-slate-200/80 grid grid-cols-3 gap-3 max-w-lg">
               {[
-                { img: '/images/hospital-facility.jpg', stat: '22+ Yrs', label: 'Legacy' },
-                { img: '/images/cath-lab.jpg', stat: '15,000+', label: 'Cath Lab' },
-                { img: '/images/angiogram-scan.jpg', stat: '99.4%', label: 'Radial' },
+                { img: '/images/hero-architecture-entrance.jpg', stat: '22+ Yrs', label: 'Legacy' },
+                { img: '/images/stent-catheter-fluoroscopy.jpg', stat: '15,000+', label: 'Cath Lab' },
+                { img: '/images/radial-catheter-sheath.jpg', stat: '99.4%', label: 'Radial' },
               ].map((item, idx) => (
                 <div
                   key={idx}

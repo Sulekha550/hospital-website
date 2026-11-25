@@ -88,185 +88,169 @@ export default function AboutPage() {
     <div className="relative pt-24 pb-24 select-none bg-[#FAF9F6] overflow-hidden">
 
       {/* =========================================================================
-          HERO SECTION: BESPOKE BIOGRAPHICAL & CLINICAL LEADERSHIP DOSSIER
+          HERO SECTION: EXECUTIVE BIOGRAPHICAL & CLINICAL LEADERSHIP DOSSIER
          ========================================================================= */}
-      <section className="relative min-h-[90vh] lg:min-h-screen flex flex-col justify-between pt-16 pb-12 px-4 sm:px-6 lg:px-12 overflow-hidden select-none">
+      <section className="relative min-h-[calc(100vh-5rem)] flex flex-col justify-between pt-8 sm:pt-10 pb-10 px-4 sm:px-6 lg:px-12 overflow-hidden select-none">
 
-        {/* Bespoke High-Visibility Clinical Doctor Hero Background: Coronary Arteries, Acoustic Stethoscope Sonar, Real-time ECG & Telemetry */}
+        {/* Clean, Non-Intrusive Medical Backdrop */}
         <DoctorHeroMedicalCanvas />
 
-        {/* Hero Content Canvas */}
-        <div className="max-w-7xl mx-auto w-full flex-1 flex flex-col justify-center relative z-10 py-4 sm:py-6">
+        <div className="max-w-7xl mx-auto w-full flex-1 flex items-center relative z-10 py-4">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center w-full">
 
-          {/* Top Editorial Monograph Banner: Distinction from Home */}
-          <div className="text-center max-w-4xl mx-auto mb-8 sm:mb-12 space-y-3">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-rose-50/90 text-[#BE123C] border border-rose-200/90 text-xs font-bold uppercase tracking-[0.24em] shadow-xs backdrop-blur-md">
-              <Sparkles className="w-3.5 h-3.5 text-[#BE123C]" />
-              <span>Institutional Founder &amp; Chief Interventional Cardiologist</span>
-            </div>
-
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#0A1128] tracking-tight leading-[1.08]">
-              Dr. Prakash Chand Shahi <br />
-              <span className="font-serif italic font-normal text-[#BE123C] text-2xl sm:text-4xl lg:text-5xl">
-                22+ Years Pioneering Cardiovascular Devotion
-              </span>
-            </h1>
-
-            <p className="text-sm sm:text-base text-slate-600 max-w-2xl mx-auto font-normal leading-relaxed pt-1">
-              Directing Pulse Heart Centre, Betiahata, with apex clinical training from PGIMER Chandigarh and KGMU Lucknow. Dedicated to unhurried bedside ethics, wrist-first radial access, and zero-compromise emergency STEMI angioplasty.
-            </p>
-          </div>
-
-          {/* Main 2-Column Bespoke Showcase Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-
-            {/* Left Column (5 cols): Bespoke Circular Medallion Portrait (Unique to About Page) */}
-            <div className="lg:col-span-5 relative flex flex-col items-center justify-center py-4">
-              <div className="relative w-72 h-72 sm:w-96 sm:h-96 rounded-full p-3 bg-white border-2 border-slate-200 shadow-[0_28px_65px_-15px_rgba(10,17,40,0.18)]">
-                <div className="w-full h-full rounded-full overflow-hidden border-4 border-[#BE123C]/20 bg-slate-100">
-                  <img
-                    src="/images/doctor-portrait.jpg"
-                    alt="Dr. Prakash Chand Shahi"
-                    className="w-full h-full object-cover object-[50%_20%]"
-                  />
-                </div>
-              </div>
-
-              {/* Floating Top Right Pedigree Seal */}
-              <div className="absolute top-2 right-2 sm:right-6 px-4 py-2.5 rounded-2xl bg-white border border-slate-200 shadow-lg text-left hidden sm:flex items-center gap-2.5 z-20">
-                <div className="w-8 h-8 rounded-xl bg-rose-50 border border-rose-200/80 flex items-center justify-center text-[#BE123C]">
-                  <HeartPulse className="w-4 h-4 text-[#BE123C]" />
-                </div>
-                <div>
-                  <span className="text-[9px] font-bold uppercase tracking-wider text-[#BE123C] block">
-                    APEX SUPER-SPECIALTY
-                  </span>
-                  <span className="text-xs font-extrabold text-[#0A1128] block">
-                    DM (PGIMER) • MD (KGMU)
-                  </span>
-                </div>
-              </div>
-
-              {/* Floating Bottom Left Clinical Trust Seal */}
-              <div className="absolute bottom-2 left-2 sm:left-6 px-4 py-2 rounded-2xl bg-[#0A1128] text-white border border-white/10 shadow-lg text-left hidden sm:flex items-center gap-2 z-20">
-                <ShieldCheck className="w-4 h-4 text-rose-400" />
-                <span className="text-xs font-bold">
-                  15,000+ Interventions Done
-                </span>
-              </div>
-            </div>
-
-            {/* Right Column (7 cols): Academic Dossier & Key Clinical Pillars (Bespoke to About) */}
+            {/* Left Column (7 cols): Clinical Leadership Monograph */}
             <div className="lg:col-span-7 space-y-5 text-left">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-rose-200 text-[#BE123C] text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] shadow-xs">
+                <Sparkles className="w-3.5 h-3.5 text-[#BE123C]" />
+                <span>Institutional Founder &amp; Chief Cardiologist</span>
+              </div>
 
-              {/* 3 Academic & Clinical Credential Cards */}
-              <div className="space-y-3">
-                <div className="p-4 rounded-2xl bg-white/80 backdrop-blur-xl border border-slate-200/90 shadow-sm hover:border-rose-300 hover:bg-white/90 transition-all group">
-                  <div className="flex items-start gap-3.5">
-                    <div className="w-10 h-10 rounded-xl bg-rose-50 border border-rose-200 flex items-center justify-center text-[#BE123C] shrink-0 group-hover:scale-105 transition-transform">
-                      <Award className="w-5 h-5 text-[#BE123C]" />
+              <div className="space-y-2">
+                <h1 className="text-3xl sm:text-5xl lg:text-[3.4rem] font-extrabold text-[#0A1128] tracking-tight leading-[1.06]">
+                  Dr. Prakash Chand Shahi
+                </h1>
+                <p className="font-serif italic font-normal text-[#BE123C] text-xl sm:text-3xl leading-snug">
+                  22+ Years of Pioneering Cardiovascular Devotion.
+                </p>
+              </div>
+
+              <p className="text-sm sm:text-base text-slate-600 max-w-2xl font-normal leading-relaxed">
+                Directing Pulse Heart Centre, Betiahata, with apex training from <span className="font-semibold text-[#0A1128]">PGIMER Chandigarh</span> and <span className="font-semibold text-[#0A1128]">KGMU Lucknow</span>. Dedicated to unhurried bedside ethics, wrist-first radial angioplasty, and 24/7 emergency STEMI care.
+              </p>
+
+              {/* 3-Column Academic & Clinical Pedigree Strip */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-1">
+                <div className="p-3.5 rounded-2xl bg-white border border-slate-200 shadow-xs hover:border-rose-300 transition-colors">
+                  <div className="flex items-center gap-2 mb-1.5">
+                    <div className="w-7 h-7 rounded-lg bg-rose-50 border border-rose-200 flex items-center justify-center text-[#BE123C] shrink-0">
+                      <Award className="w-3.5 h-3.5" />
                     </div>
-                    <div>
-                      <div className="flex items-center gap-2">
-                        <span className="text-sm font-extrabold text-slate-900">DM Cardiology — PGIMER Chandigarh</span>
-                        <span className="text-[10px] px-2 py-0.5 rounded-full bg-rose-50 text-[#BE123C] font-mono font-bold border border-rose-200">
-                          Apex Super-Specialty
-                        </span>
-                      </div>
-                      <p className="text-xs text-slate-600 mt-1 leading-relaxed">
-                        Rigorous clinical residency at India's premier postgraduate institute, mastering transradial catheterization, complex coronary bifurcation lesions, and permanent pacemaker therapies.
-                      </p>
-                    </div>
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#BE123C]">Super-Specialty</span>
                   </div>
+                  <p className="text-sm font-extrabold text-[#0A1128]">DM Cardiology</p>
+                  <p className="text-[11px] text-slate-500 mt-0.5">PGIMER Chandigarh</p>
                 </div>
 
-                <div className="p-4 rounded-2xl bg-white/80 backdrop-blur-xl border border-slate-200/90 shadow-sm hover:border-rose-300 hover:bg-white/90 transition-all group">
-                  <div className="flex items-start gap-3.5">
-                    <div className="w-10 h-10 rounded-xl bg-slate-100 border border-slate-200 flex items-center justify-center text-[#0A1128] shrink-0 group-hover:scale-105 transition-transform">
-                      <Building2 className="w-5 h-5 text-[#0A1128]" />
+                <div className="p-3.5 rounded-2xl bg-white border border-slate-200 shadow-xs hover:border-slate-300 transition-colors">
+                  <div className="flex items-center gap-2 mb-1.5">
+                    <div className="w-7 h-7 rounded-lg bg-slate-100 border border-slate-200 flex items-center justify-center text-[#0A1128] shrink-0">
+                      <Building2 className="w-3.5 h-3.5" />
                     </div>
-                    <div>
-                      <div className="flex items-center gap-2">
-                        <span className="text-sm font-extrabold text-slate-900">MD Internal Medicine — KGMU Lucknow</span>
-                        <span className="text-[10px] px-2 py-0.5 rounded-full bg-slate-100 text-[#0A1128] font-mono font-bold border border-slate-200">
-                          Gold Standard
-                        </span>
-                      </div>
-                      <p className="text-xs text-slate-600 mt-1 leading-relaxed">
-                        Diagnostic depth forged at King George's Medical University, providing comprehensive evaluation for multi-morbidity cardiac patients, hypertension, and heart failure syndromes.
-                      </p>
-                    </div>
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-slate-600">Gold Standard</span>
                   </div>
+                  <p className="text-sm font-extrabold text-[#0A1128]">MD Medicine</p>
+                  <p className="text-[11px] text-slate-500 mt-0.5">KGMU Lucknow</p>
                 </div>
 
-                <div className="p-4 rounded-2xl bg-white/80 backdrop-blur-xl border border-slate-200/90 shadow-sm hover:border-rose-300 hover:bg-white/90 transition-all group">
-                  <div className="flex items-start gap-3.5">
-                    <div className="w-10 h-10 rounded-xl bg-rose-50 border border-rose-200 flex items-center justify-center text-[#BE123C] shrink-0 group-hover:scale-105 transition-transform">
-                      <Stethoscope className="w-5 h-5 text-[#BE123C]" />
+                <div className="p-3.5 rounded-2xl bg-white border border-slate-200 shadow-xs hover:border-rose-300 transition-colors">
+                  <div className="flex items-center gap-2 mb-1.5">
+                    <div className="w-7 h-7 rounded-lg bg-rose-50 border border-rose-200 flex items-center justify-center text-[#BE123C] shrink-0">
+                      <Stethoscope className="w-3.5 h-3.5" />
                     </div>
-                    <div>
-                      <div className="flex items-center gap-2">
-                        <span className="text-sm font-extrabold text-slate-900">Siemens Artis Zee Flat-Panel Digital Cath Lab</span>
-                        <span className="text-[10px] px-2 py-0.5 rounded-full bg-rose-50 text-[#BE123C] font-mono font-bold border border-rose-200">
-                          Betiahata, GKP
-                        </span>
-                      </div>
-                      <p className="text-xs text-slate-600 mt-1 leading-relaxed">
-                        Directing Gorakhpur's leading high-volume catheterization facility with sub-millimeter fluoroscopic stent visualization and 24/7 dedicated primary angioplasty triage.
-                      </p>
-                    </div>
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#BE123C]">Betiahata, GKP</span>
                   </div>
+                  <p className="text-sm font-extrabold text-[#0A1128]">Artis Zee Cath Lab</p>
+                  <p className="text-[11px] text-slate-500 mt-0.5">24/7 Primary Angioplasty</p>
                 </div>
               </div>
 
-              {/* 4 Impact Micro-Metrics Cards */}
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 pt-1">
-                <div className="p-3 rounded-xl bg-white/85 backdrop-blur-md border border-slate-200/90 shadow-xs text-left">
+              {/* 4 Impact Micro-Metrics */}
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+                <div className="p-3 rounded-xl bg-white border border-slate-200/90 shadow-xs">
                   <span className="text-lg sm:text-xl font-extrabold text-[#0A1128] block">22+ Yrs</span>
-                  <span className="text-[10px] font-bold text-slate-700 uppercase tracking-tight block">Clinical Devotion</span>
-                  <span className="text-[9px] text-slate-500">Betiahata, Gorakhpur</span>
+                  <span className="text-[10px] font-bold text-slate-600 uppercase tracking-tight block">Clinical Legacy</span>
                 </div>
-                <div className="p-3 rounded-xl bg-white/85 backdrop-blur-md border border-slate-200/90 shadow-xs text-left">
+                <div className="p-3 rounded-xl bg-white border border-slate-200/90 shadow-xs">
                   <span className="text-lg sm:text-xl font-extrabold text-[#BE123C] block">15,000+</span>
-                  <span className="text-[10px] font-bold text-slate-700 uppercase tracking-tight block">Cath Procedures</span>
-                  <span className="text-[9px] text-slate-500">Wrist-First Angioplasty</span>
+                  <span className="text-[10px] font-bold text-slate-600 uppercase tracking-tight block">Cath Procedures</span>
                 </div>
-                <div className="p-3 rounded-xl bg-white/85 backdrop-blur-md border border-slate-200/90 shadow-xs text-left">
+                <div className="p-3 rounded-xl bg-white border border-slate-200/90 shadow-xs">
                   <span className="text-lg sm:text-xl font-extrabold text-[#0A1128] block">&lt; 45 Min</span>
-                  <span className="text-[10px] font-bold text-slate-700 uppercase tracking-tight block">Door-To-Balloon</span>
-                  <span className="text-[9px] text-slate-500">24/7 STEMI Response</span>
+                  <span className="text-[10px] font-bold text-slate-600 uppercase tracking-tight block">Door-To-Balloon</span>
                 </div>
-                <div className="p-3 rounded-xl bg-white/85 backdrop-blur-md border border-slate-200/90 shadow-xs text-left">
+                <div className="p-3 rounded-xl bg-white border border-slate-200/90 shadow-xs">
                   <span className="text-lg sm:text-xl font-extrabold text-[#BE123C] block">99.4%</span>
-                  <span className="text-[10px] font-bold text-slate-700 uppercase tracking-tight block">Radial Patency</span>
-                  <span className="text-[9px] text-slate-500">Zero Groin Pain</span>
+                  <span className="text-[10px] font-bold text-slate-600 uppercase tracking-tight block">Radial Patency</span>
                 </div>
               </div>
 
               {/* Direct Action Row */}
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-1">
                 <Link
                   to="/book-appointment"
-                  className="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-full bg-gradient-to-r from-[#0A1128] via-[#1E293B] to-[#BE123C] hover:from-[#BE123C] hover:to-[#0A1128] text-white font-bold text-xs uppercase tracking-wider shadow-xl shadow-navy/25 hover:shadow-2xl transition-all duration-300 hover:-translate-y-0.5 group border border-rose-300/40 text-center"
+                  className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full bg-[#0A1128] hover:bg-[#BE123C] text-white font-bold text-xs uppercase tracking-wider shadow-lg transition-all duration-300 hover:-translate-y-0.5 group text-center"
                 >
-                  <Calendar className="w-4 h-4 text-rose-200 group-hover:scale-110 transition-transform" />
+                  <Calendar className="w-4 h-4 text-rose-300 group-hover:scale-110 transition-transform" />
                   <span>Book Priority OPD Pass</span>
                   <ArrowRight className="w-4 h-4 text-white group-hover:translate-x-1 transition-transform" />
                 </Link>
 
                 <a
                   href="tel:+919876543210"
-                  className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-white hover:bg-slate-50 text-[#0A1128] font-bold text-xs uppercase tracking-wider border-2 border-slate-300 hover:border-[#BE123C] hover:text-[#BE123C] shadow-sm hover:shadow-md transition-all duration-300 text-center"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-white hover:bg-slate-50 text-[#0A1128] font-bold text-xs uppercase tracking-wider border border-slate-300 hover:border-[#BE123C] hover:text-[#BE123C] shadow-xs transition-all duration-300 text-center"
                 >
                   <Phone className="w-4 h-4 text-[#BE123C]" />
-                  <span>24/7 Cardiac Emergency Helpline</span>
+                  <span>24/7 Cardiac Helpline</span>
                 </a>
               </div>
+            </div>
 
+            {/* Right Column (5 cols): Editorial Portrait + Real Clinical Action Collage */}
+            <div className="lg:col-span-5 flex flex-col gap-3">
+              {/* Main Uncropped Portrait Frame */}
+              <div className="relative rounded-3xl overflow-hidden bg-[#0A1128] p-2.5 shadow-[0_24px_55px_-15px_rgba(10,17,40,0.28)] border border-slate-800">
+                <div className="relative aspect-[4/4] sm:aspect-[5/4] rounded-2xl overflow-hidden bg-slate-900">
+                  <img
+                    src="/images/doctor-portrait.jpg"
+                    alt="Dr. Prakash Chand Shahi — Chief Interventional Cardiologist"
+                    className="w-full h-full object-cover object-[50%_20%]"
+                  />
+                  <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#0A1128] via-[#0A1128]/70 to-transparent" />
+                  <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between gap-2">
+                    <div>
+                      <p className="text-white font-extrabold text-sm leading-tight">Dr. Prakash Chand Shahi</p>
+                      <p className="text-rose-300 text-[11px] font-semibold">DM (PGIMER) • MD (KGMU)</p>
+                    </div>
+                    <span className="px-2.5 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[10px] font-bold uppercase tracking-wider text-white">
+                      Lead Clinician
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* 2-Card Real Clinical Interaction Strip */}
+              <div className="grid grid-cols-2 gap-3">
+                <div className="relative rounded-2xl overflow-hidden border border-slate-200 bg-white shadow-sm group">
+                  <div className="aspect-[16/10] overflow-hidden">
+                    <img
+                      src="/images/doctor-patient-consult.jpg"
+                      alt="Direct OPD consultation with Dr. Shahi"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                  <div className="px-3 py-2 flex items-center justify-between">
+                    <span className="text-[11px] font-bold text-[#0A1128]">Direct OPD Care</span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                  </div>
+                </div>
+
+                <div className="relative rounded-2xl overflow-hidden border border-slate-200 bg-white shadow-sm group">
+                  <div className="aspect-[16/10] overflow-hidden">
+                    <img
+                      src="/images/doctor-cathlab-procedure.jpg"
+                      alt="Dr. Shahi performing transradial cath lab procedure"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                  <div className="px-3 py-2 flex items-center justify-between">
+                    <span className="text-[11px] font-bold text-[#0A1128]">Radial Cath Lab</span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#BE123C]" />
+                  </div>
+                </div>
+              </div>
             </div>
 
           </div>
-
         </div>
 
         {/* Bottom Institutional Core Ethics Ribbon: Unique to About Page */}
@@ -340,8 +324,8 @@ export default function AboutPage() {
 
               <div className="space-y-3">
                 <ThreeDImageCard
-                  src="/images/doctor-cathlab-procedure.jpg"
-                  image="/images/doctor-cathlab-procedure.jpg"
+                  src="/images/doctor-angiogram-explain.jpg"
+                  image="/images/doctor-angiogram-explain.jpg"
                   alt="Cath Lab Mission"
                   badge="PILLAR 01"
                   title="Medical Mission"
@@ -358,8 +342,8 @@ export default function AboutPage() {
 
               <div className="space-y-3">
                 <ThreeDImageCard
-                  src="/images/doctor-patient-consult.jpg"
-                  image="/images/doctor-patient-consult.jpg"
+                  src="/images/doctor-recovery-discharge.jpg"
+                  image="/images/doctor-recovery-discharge.jpg"
                   alt="Bedside Consult"
                   badge="PILLAR 02"
                   title="Clinical Philosophy"
@@ -376,8 +360,8 @@ export default function AboutPage() {
 
               <div className="space-y-3">
                 <ThreeDImageCard
-                  src="/images/doctor-icu-rounds.jpg"
-                  image="/images/doctor-icu-rounds.jpg"
+                  src="/images/operation-theatre-laminar.jpg"
+                  image="/images/operation-theatre-laminar.jpg"
                   alt="Sterility Protocols"
                   badge="PILLAR 03"
                   title="Evidence Protocols"

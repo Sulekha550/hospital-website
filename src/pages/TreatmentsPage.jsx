@@ -42,9 +42,9 @@ export default function TreatmentsPage() {
             <div className="pt-1 flex items-center justify-center gap-3">
               <div className="flex items-center gap-3.5 px-4 py-2.5 rounded-2xl bg-white border border-slate-200 shadow-md">
                 <img
-                  src="/images/doctor-portrait.jpg"
+                  src="/images/p3.jpeg"
                   alt="Dr. Prakash Chand Shahi"
-                  className="w-12 h-12 rounded-xl object-cover object-[50%_20%] border border-rose-200 shrink-0"
+                  className="w-12 h-12 rounded-xl object-cover object-[70%_18%] border border-rose-200 shrink-0"
                 />
                 <div className="text-left">
                   <span className="text-xs font-extrabold text-[#0A1128] block">
@@ -69,9 +69,10 @@ export default function TreatmentsPage() {
             <Interactive3DTilt maxTilt={5} scale={1.01}>
               <SectionCinematicVideo
                 type="cardiac-catheterization"
-                videoUrl="/videos/cardiac-catheterization.mp4"
+                videoUrl={false}
+                showControls={false}
                 styleVariant="panoramic-stage"
-                posterImage="/images/angiogram-scan.jpg"
+                posterImage="/images/doctor-cathlab-procedure.jpg"
                 title="Cineangiography Stenosis Mapping &amp; Stent Placement"
                 subtitle="Siemens Artis Zee Fluoroscopy • 60 FPS"
                 specs="Sub-Millimeter Stenosis Resolution • 0.014-Inch Micro-Guidewire"

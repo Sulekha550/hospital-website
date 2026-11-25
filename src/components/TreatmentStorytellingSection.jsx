@@ -204,9 +204,16 @@ export default function TreatmentStorytellingSection() {
           <div className="py-2">
             <SectionCinematicVideo
               type={activeProcedure === 'ct-coronary-angiography' ? 'advanced-tech' : activeProcedure === 'pacemaker-implantation' ? 'cardiology-heart' : 'cardiac-catheterization'}
-              videoUrl={activeProcedure === 'ct-coronary-angiography' ? '/videos/advanced-tech.mp4' : activeProcedure === 'pacemaker-implantation' ? '/videos/cardiology-heart.mp4' : '/videos/cardiac-catheterization.mp4'}
+              videoUrl={false}
+              showControls={false}
               styleVariant="floating-3d"
-              posterImage={activeProcedure === 'pacemaker-implantation' ? '/images/pacemaker-tech.jpg' : '/images/angiogram-scan.jpg'}
+              posterImage={
+                activeProcedure === 'ct-coronary-angiography'
+                  ? '/images/ct-calcium-score.jpg'
+                  : activeProcedure === 'pacemaker-implantation'
+                  ? '/images/heart-anatomy.jpg'
+                  : '/images/cardiac-stent-procedure.jpg'
+              }
               title={`${currentStory.title} • Live Procedural Cine`}
               subtitle={currentStory.badge}
               specs={currentStory.stats}
@@ -218,10 +225,10 @@ export default function TreatmentStorytellingSection() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
             {currentStory.steps.map((step, sIdx) => {
               const stepImages = [
-                { src: '/images/doctor-patient-consult.jpg', pos: 'object-center' },
-                { src: '/images/doctor-angiogram-explain.jpg', pos: 'object-center' },
-                { src: '/images/doctor-cathlab-procedure.jpg', pos: 'object-center' },
-                { src: '/images/doctor-icu-rounds.jpg', pos: 'object-center' },
+                { src: '/images/hospital-opd-lounge.jpg', pos: 'object-center' },
+                { src: '/images/echo-doppler-scan.jpg', pos: 'object-center' },
+                { src: '/images/cathlab-control-review.jpg', pos: 'object-center' },
+                { src: '/images/patient-care-recovery.jpg', pos: 'object-center' },
               ];
               const media = stepImages[sIdx % stepImages.length];
               return (

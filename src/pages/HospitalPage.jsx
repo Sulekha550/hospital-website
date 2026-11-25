@@ -72,9 +72,9 @@ export default function HospitalPage() {
             <div className="pt-1 flex items-center justify-center gap-3">
               <div className="flex items-center gap-3.5 px-4 py-2.5 rounded-2xl bg-[#0A1128] text-white border border-slate-700 shadow-lg">
                 <img
-                  src="/images/doctor-portrait.jpg"
+                  src="/images/p2.jpeg"
                   alt="Dr. Prakash Chand Shahi"
-                  className="w-12 h-12 rounded-full object-cover object-[50%_20%] border-2 border-rose-400 shrink-0"
+                  className="w-12 h-12 rounded-full object-cover object-top border-2 border-rose-400 shrink-0"
                 />
                 <div className="text-left">
                   <span className="text-xs font-extrabold text-white block">

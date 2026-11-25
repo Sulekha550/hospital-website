@@ -20,7 +20,7 @@ export default function PatientTestimonialsSection() {
       recovery: 'Discharged in 24 Hrs',
       doctor: 'Dr. Prakash Chand Shahi',
       quote: 'Flawless wrist-first angioplasty with two stents. Walking the next morning with zero groin pain.',
-      image: '/images/doctor-patient-consult.jpg',
+      image: '/images/doctor-recovery-discharge.jpg',
       stat: '99.4% Flow Restored',
       badge: 'Cardiac Recovery'
     },
@@ -33,7 +33,7 @@ export default function PatientTestimonialsSection() {
       recovery: 'Active Lifestyle Restored',
       doctor: 'Dr. Prakash Chand Shahi',
       quote: 'Pulse rate was dropping below 35 BPM. Dr. Shahi implanted the pacemaker smoothly; feeling energetic now.',
-      image: '/images/doctor-icu-rounds.jpg',
+      image: '/images/patient-recovery-story.jpg',
       stat: '100% Sinus Synchrony',
       badge: 'Pacemaker Recovery'
     },
@@ -46,7 +46,7 @@ export default function PatientTestimonialsSection() {
       recovery: 'Discharged in 48 Hrs',
       doctor: 'Dr. Prakash Chand Shahi',
       quote: 'Reached PULSE Cath-Lab in emergency. Immediate stent opened 100% blocked LAD artery within minutes.',
-      image: '/images/doctor-angiogram-explain.jpg',
+      image: '/images/hospital-ward-suites.jpg',
       stat: '< 38 Min Door-to-Balloon',
       badge: 'Emergency Angioplasty'
     }
