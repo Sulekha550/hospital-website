@@ -17,11 +17,10 @@ export default function CinematicHeroSection() {
       <SectionBackgroundMotion variant="home-hero" />
 
       <div className="max-w-7xl mx-auto w-full relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-y-5 lg:gap-y-4 lg:gap-x-10 items-center">
 
-          {/* Left Column (6 cols): Editorial Lead & Compact Visual Cards (below image on mobile, left on desktop) */}
-          <div className="lg:col-span-6 order-2 lg:order-1 space-y-6 text-left">
-
+          {/* Block 1 (Mobile Top / Desktop Left-Top): Location Pill + "Precision Heart Care." */}
+          <div className="order-1 lg:order-none lg:col-span-6 lg:col-start-1 lg:row-start-1 lg:self-end space-y-4 text-left">
             <div className="inline-flex flex-wrap items-center gap-x-2.5 gap-y-1 px-3.5 py-1.5 rounded-2xl sm:rounded-full bg-white border border-slate-200 shadow-xs text-[11px] sm:text-xs font-semibold text-[#0A1128]">
               <MapPin className="w-3.5 h-3.5 text-[#BE123C]" />
               <span>Pulse Heart Centre • Betiahata, Gorakhpur</span>
@@ -30,13 +29,20 @@ export default function CinematicHeroSection() {
               <span>10 AM – 8 PM</span>
             </div>
 
-            <div className="space-y-3">
-              <h1 className="text-4xl sm:text-5xl lg:text-[3.4rem] font-extrabold text-[#0A1128] tracking-[-0.03em] leading-[1.07]">
-                Precision Heart Care. <br />
-                <span className="font-serif italic font-normal text-[#BE123C]">
-                  Built Around Trust.
-                </span>
-              </h1>
+            <h1 className="text-4xl sm:text-5xl lg:text-[3.4rem] font-extrabold text-[#0A1128] tracking-[-0.03em] leading-[1.07]">
+              Precision Heart Care.
+              <span className="hidden lg:block font-serif italic font-normal text-[#BE123C] mt-1">
+                Built Around Trust.
+              </span>
+            </h1>
+          </div>
+
+          {/* Block 2 (Mobile Middle / Desktop Left-Bottom): "Built Around Trust." + Bio + CTAs + Proof Cards */}
+          <div className="order-3 lg:order-none lg:col-span-6 lg:col-start-1 lg:row-start-2 lg:self-start space-y-5 text-left">
+            <div className="space-y-2.5">
+              <p className="lg:hidden text-4xl sm:text-5xl font-serif italic font-normal text-[#BE123C] tracking-[-0.02em] leading-[1.08]">
+                Built Around Trust.
+              </p>
               <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-lg">
                 <strong className="text-[#0A1128] font-bold">Dr. Prakash Chand Shahi</strong> (DM Cardiology, PGIMER • MD, KGMU) — painless wrist-first angioplasty &amp; 24/7 emergency cardiac care.
               </p>
@@ -80,8 +86,8 @@ export default function CinematicHeroSection() {
             </div>
           </div>
 
-          {/* Right Column (6 cols): Deep Midnight Navy Architectural Stage Panel (above text on mobile, right on desktop) */}
-          <div className="lg:col-span-6 order-1 lg:order-2">
+          {/* Block 3 (Mobile Middle Above "Built Around Trust" / Desktop Right): Deep Midnight Navy Stage Panel */}
+          <div className="order-2 lg:order-none lg:col-span-6 lg:col-start-7 lg:row-start-1 lg:row-span-2">
             <div className="relative rounded-2xl sm:rounded-[2rem] bg-[#0A1128] p-4 sm:p-6 shadow-[0_30px_70px_-15px_rgba(10,17,40,0.3)] border border-slate-800 overflow-hidden">
               {/* Crimson Accent Bar on Left Edge */}
               <div className="absolute left-0 top-8 bottom-8 w-1.5 bg-gradient-to-b from-[#E11D48] via-[#BE123C] to-transparent rounded-r-full" />
