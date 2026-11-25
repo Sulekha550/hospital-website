@@ -68,8 +68,8 @@ export default function SectionBackgroundMotion({
             }}
           />
 
-          {/* Flowing Layered Silk Ribbons & Arterial Curves */}
-          <div className="absolute inset-0 pointer-events-none animate-wave-flow will-change-transform">
+          {/* Flowing Layered Silk Ribbons & Arterial Curves (GPU-Smooth Wave Drift) */}
+          <div className="absolute -inset-x-8 inset-y-0 pointer-events-none animate-hero-ribbon-drift">
             <svg
               className="w-full h-full"
               viewBox="0 0 1440 900"
@@ -106,28 +106,40 @@ export default function SectionBackgroundMotion({
             </svg>
           </div>
 
-          {/* Floating Medical Cross (+) Accents in Outer Margins */}
-          <div className="absolute top-32 left-8 text-[#BE123C]/55 font-mono text-xl font-bold animate-medical-cross-1 select-none pointer-events-none hidden sm:block">+</div>
-          <div className="absolute bottom-36 left-12 text-[#0A1128]/45 font-mono text-lg font-bold animate-medical-cross-2 select-none pointer-events-none hidden md:block">+</div>
-          <div className="absolute top-36 right-10 text-[#BE123C]/50 font-mono text-xl font-bold animate-medical-cross-2 select-none pointer-events-none hidden sm:block">+</div>
+          {/* Subtle Rotating Medical Orbital Rings Behind Right Portrait */}
+          <div className="hidden lg:block absolute top-1/2 right-[8%] -translate-y-1/2 w-[520px] h-[520px] rounded-full border border-rose-200/60 pointer-events-none">
+            <div className="absolute inset-6 rounded-full border-2 border-dashed border-[#BE123C]/30 animate-gentle-cw" />
+            <div className="absolute inset-16 rounded-full border border-dashed border-[#0A1128]/20 animate-hero-ring-ccw" />
+          </div>
 
-          {/* Animated ECG Heartbeat Rhythm Line Along Bottom */}
-          <svg
-            className="absolute inset-x-0 bottom-1 w-full h-24 opacity-65 pointer-events-none"
-            viewBox="0 0 1440 100"
-            fill="none"
-            preserveAspectRatio="none"
-          >
-            <path
-              d="M0,65 L320,65 L335,65 L345,40 L358,90 L372,18 L385,78 L395,65 L780,65 L795,65 L805,40 L818,90 L832,18 L845,78 L855,65 L1440,65"
-              stroke="#BE123C"
-              strokeWidth="2.2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeDasharray="600"
-              className="animate-flow-dash"
-            />
-          </svg>
+          {/* Floating Medical Cross (+) Accents in Outer Margins */}
+          <div className="absolute top-32 left-8 text-[#BE123C]/55 font-mono text-xl font-bold animate-float-1 select-none pointer-events-none hidden sm:block">+</div>
+          <div className="absolute bottom-36 left-12 text-[#0A1128]/45 font-mono text-lg font-bold animate-float-2 select-none pointer-events-none hidden md:block">+</div>
+          <div className="absolute top-36 right-10 text-[#BE123C]/50 font-mono text-xl font-bold animate-float-2 select-none pointer-events-none hidden sm:block">+</div>
+
+          {/* Bottom ECG Heartbeat Rhythm Line + GPU-Smooth Sweeping Pulse Light */}
+          <div className="absolute inset-x-0 bottom-1 h-24 pointer-events-none overflow-hidden">
+            <svg
+              className="w-full h-full opacity-65"
+              viewBox="0 0 1440 100"
+              fill="none"
+              preserveAspectRatio="none"
+            >
+              <path
+                d="M0,65 L320,65 L335,65 L345,40 L358,90 L372,18 L385,78 L395,65 L780,65 L795,65 L805,40 L818,90 L832,18 L845,78 L855,65 L1440,65"
+                stroke="#BE123C"
+                strokeWidth="2.2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+            <div
+              className="absolute inset-y-0 left-0 w-52 animate-hero-ecg-sweep pointer-events-none flex items-center justify-center"
+              style={{ background: 'radial-gradient(ellipse at center, rgba(225,29,72,0.34) 0%, transparent 70%)' }}
+            >
+              <span className="w-2.5 h-2.5 rounded-full bg-[#E11D48] shadow-[0_0_12px_#E11D48] translate-y-4" />
+            </div>
+          </div>
         </>
       )}
 

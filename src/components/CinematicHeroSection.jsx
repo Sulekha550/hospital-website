@@ -20,11 +20,12 @@ export default function CinematicHeroSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-y-5 lg:gap-y-4 lg:gap-x-10 items-center">
 
           {/* Block 1 (Mobile Top / Desktop Left-Top): Location Pill + "Precision Heart Care." */}
-          <div className="order-1 lg:order-none lg:col-span-6 lg:col-start-1 lg:row-start-1 lg:self-end space-y-4 text-left">
+          <div className="order-1 lg:order-none lg:col-span-6 lg:col-start-1 lg:row-start-1 lg:self-end space-y-4 text-left animate-hero-enter">
             <div className="inline-flex flex-wrap items-center gap-x-2.5 gap-y-1 px-3.5 py-1.5 rounded-2xl sm:rounded-full bg-white border border-slate-200 shadow-xs text-[11px] sm:text-xs font-semibold text-[#0A1128]">
               <MapPin className="w-3.5 h-3.5 text-[#BE123C]" />
               <span>Pulse Heart Centre • Betiahata, Gorakhpur</span>
               <span className="text-slate-300">|</span>
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
               <Clock className="w-3.5 h-3.5 text-[#BE123C]" />
               <span>10 AM – 8 PM</span>
             </div>
@@ -87,8 +88,8 @@ export default function CinematicHeroSection() {
           </div>
 
           {/* Block 3 (Mobile Middle Above "Built Around Trust" / Desktop Right): Light Platinum Architectural Stage Panel */}
-          <div className="order-2 lg:order-none lg:col-span-6 lg:col-start-7 lg:row-start-1 lg:row-span-2">
-            <div className="relative rounded-2xl sm:rounded-[2rem] bg-gradient-to-br from-white via-[#FAF9F6] to-[#F1F5F9] p-4 sm:p-6 shadow-xl border border-slate-200/90 overflow-hidden">
+          <div className="order-2 lg:order-none lg:col-span-6 lg:col-start-7 lg:row-start-1 lg:row-span-2 animate-hero-enter">
+            <div className="relative rounded-2xl sm:rounded-[2rem] bg-gradient-to-br from-white via-[#FAF9F6] to-[#F1F5F9] p-4 sm:p-6 shadow-xl border border-slate-200/90 overflow-hidden animate-hero-card-float">
               {/* Crimson Accent Bar on Left Edge */}
               <div className="absolute left-0 top-8 bottom-8 w-1.5 bg-gradient-to-b from-[#E11D48] via-[#BE123C] to-rose-200 rounded-r-full" />
 
@@ -113,7 +114,7 @@ export default function CinematicHeroSection() {
                 {/* Right Side Credential & Live Care Stack */}
                 <div className="sm:col-span-5 space-y-4 text-left text-[#0A1128]">
                   <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-rose-50 border border-rose-200 text-[10px] font-mono font-bold text-[#BE123C]">
-                    <HeartPulse className="w-3.5 h-3.5 text-[#BE123C]" />
+                    <HeartPulse className="w-3.5 h-3.5 text-[#BE123C] animate-pulse" />
                     <span>CHIEF CARDIOLOGIST</span>
                   </div>
 
@@ -148,7 +149,6 @@ export default function CinematicHeroSection() {
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </section>
