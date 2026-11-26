@@ -37,7 +37,7 @@ export default function PulseCentreSection({ onBookClick }) {
                 </h3>
 
                 <p className="text-sm sm:text-base text-slate-700 font-medium leading-relaxed">
-                  Directed by <strong className="text-[#BE123C] font-bold">Dr. Prakash Chand Shahi</strong> (Heart Specialist — PGIMER &amp; KGMU). Equipped for ECG heart tests, 2D Echo scans, report &amp; CD checkups, and regular care after stenting.
+                  Led by <strong className="text-[#BE123C] font-bold">Dr. Prakash Chand Shahi</strong> (Heart Specialist). Here you can easily get your ECG, Echo heart scan, report checkup, and regular follow-up care.
                 </p>
 
                 <div className="pt-2 flex flex-wrap items-center gap-3">
@@ -154,7 +154,7 @@ export default function PulseCentreSection({ onBookClick }) {
                   </span>
                 </div>
                 <div className="h-28 rounded-2xl overflow-hidden mb-3 border border-orange-200/80 relative">
-                  <img src="/images/echo-doppler-scan.jpg" alt="Echo Doppler Scan" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <img src="/images/echo-machine-suite.jpg" alt="2D Echo Machine Suite" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-2.5">
                     <span className="text-[11px] font-bold text-white">2D Echo &amp; Report Check</span>
                   </div>

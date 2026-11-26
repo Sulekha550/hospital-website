@@ -16,10 +16,10 @@ export default function PatientTestimonialsSection() {
       name: 'Ramakant Tripathi',
       age: '62 Yrs • Gorakhpur',
       condition: '3 Blocked Heart Arteries',
-      procedure: 'Wrist-Route Stenting',
+      procedure: 'Heart Stenting (Wrist)',
       recovery: 'Discharged in 24 Hrs',
       doctor: 'Dr. Prakash Chand Shahi',
-      quote: 'Smooth wrist-route angioplasty with two stents. I was walking the next morning with no leg pain at all.',
+      quote: 'Smooth stent treatment through the wrist with two stents. I was walking the next morning with no leg pain at all.',
       image: '/images/doctor-recovery-discharge.jpg',
       stat: '99.4% Blood Flow Restored',
       badge: 'Heart Recovery'
@@ -42,13 +42,13 @@ export default function PatientTestimonialsSection() {
       name: 'Mohd. Tariq Siddiqui',
       age: '52 Yrs • Basti',
       condition: 'Emergency Heart Attack',
-      procedure: 'Urgent Wrist Angioplasty',
+      procedure: 'Urgent Heart Stenting',
       recovery: 'Discharged in 48 Hrs',
       doctor: 'Dr. Prakash Chand Shahi',
       quote: 'Reached PULSE in emergency. Dr. Shahi opened the 100% blocked heart artery quickly and saved my life.',
-      image: '/images/doctor-icu-rounds.jpg',
+      image: '/images/patient-recovery-story.jpg',
       stat: 'Fast < 38 Min Care',
-      badge: 'Emergency Angioplasty'
+      badge: 'Emergency Heart Care'
     }
   ];
 

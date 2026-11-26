@@ -13,7 +13,6 @@ import SectionBackgroundMotion from '../components/SectionBackgroundMotion';
 import DoctorHeroMedicalCanvas from '../components/DoctorHeroMedicalCanvas';
 
 const CylinderCarouselMilestones = lazy(() => import('../components/CylinderCarouselMilestones'));
-const PixelatedImageTrailDemo = lazy(() => import('../components/PixelatedImageTrailDemo'));
 
 export default function AboutPage() {
   const [timelineMode, setTimelineMode] = useState('cylinder'); // 'cylinder' | 'expanded'
@@ -50,8 +49,8 @@ export default function AboutPage() {
       badge: "Heart Specialist",
       institution: "PGIMER Chandigarh",
       title: "DM Cardiology at PGIMER Chandigarh",
-      desc: "Completed super-specialty DM Cardiology at PGIMER Chandigarh, bringing painless wrist-route angiography and stenting to eastern UP.",
-      tags: ["PGIMER Chandigarh", "Wrist-Route Care", "Eastern UP"],
+      desc: "Completed super-specialty DM Cardiology at PGIMER Chandigarh, bringing painless heart checkups and stenting through the wrist to eastern UP.",
+      tags: ["PGIMER Chandigarh", "Safe Wrist Care", "Eastern UP"],
       icon: Sparkles,
       accent: "from-[#BE123C] to-[#E11D48]",
       borderAccent: "border-rose-300",
@@ -116,7 +115,7 @@ export default function AboutPage() {
               </div>
 
               <p className="text-sm sm:text-base text-slate-600 max-w-2xl font-normal leading-relaxed">
-                Directing Pulse Heart Centre, Betiahata, with apex training from <span className="font-semibold text-[#0A1128]">PGIMER Chandigarh</span> and <span className="font-semibold text-[#0A1128]">KGMU Lucknow</span>. Dedicated to unhurried bedside ethics, wrist-first radial angioplasty, and 24/7 emergency STEMI care.
+                Consultant Cardiologist at Pulse Heart Centre, Betiahata, trained at <span className="font-semibold text-[#0A1128]">PGIMER Chandigarh</span> (DM), <span className="font-semibold text-[#0A1128]">KGMU Lucknow</span> (MD), and <span className="font-semibold text-[#0A1128]">GSVM Kanpur</span> (MBBS) — <span className="font-semibold text-[#0A1128]">UP Medical Council Reg. No. 47395</span>. Dedicated to honest advice, gentle heart stenting through the wrist, and 24/7 heart emergency care.
               </p>
 
               {/* 3-Column Academic & Clinical Pedigree Strip */}
@@ -151,7 +150,7 @@ export default function AboutPage() {
                     <span className="text-[10px] font-bold uppercase tracking-wider text-[#BE123C]">Betiahata, GKP</span>
                   </div>
                   <p className="text-sm font-extrabold text-[#0A1128]">Artis Zee Cath Lab</p>
-                  <p className="text-[11px] text-slate-500 mt-0.5">24/7 Primary Angioplasty</p>
+                  <p className="text-[11px] text-slate-500 mt-0.5">24/7 Heart Attack Care</p>
                 </div>
               </div>
 
@@ -191,7 +190,7 @@ export default function AboutPage() {
                   className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-white hover:bg-slate-50 text-[#0A1128] font-bold text-xs uppercase tracking-wider border border-slate-300 hover:border-[#BE123C] hover:text-[#BE123C] shadow-xs transition-all duration-300 text-center"
                 >
                   <Phone className="w-4 h-4 text-[#BE123C]" />
-                  <span>24/7 Cardiac Helpline</span>
+                  <span>24/7 Emergency Helpline</span>
                 </a>
               </div>
             </div>
@@ -258,20 +257,20 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto w-full pt-6 border-t border-slate-200 relative z-10">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 text-left">
             <div className="p-3.5 rounded-2xl bg-white/90 border border-slate-200/90 shadow-sm hover:shadow-md transition-shadow">
-              <span className="text-xs font-extrabold text-[#0A1128] block">Unhurried Bedside Ethics</span>
-              <span className="text-[11px] text-slate-600 block mt-0.5">Comprehensive, empathetic clinical listening for every cardiac patient.</span>
+              <span className="text-xs font-extrabold text-[#0A1128] block">Honest Patient Care</span>
+              <span className="text-[11px] text-slate-600 block mt-0.5">We listen carefully and give clear, caring advice to every heart patient.</span>
             </div>
             <div className="p-3.5 rounded-2xl bg-white/90 border border-slate-200/90 shadow-sm hover:shadow-md transition-shadow">
-              <span className="text-xs font-extrabold text-[#BE123C] block">Wrist-First Transradial Access</span>
-              <span className="text-[11px] text-slate-600 block mt-0.5">Walk out within 2 hours of procedure with zero groin immobilization.</span>
+              <span className="text-xs font-extrabold text-[#BE123C] block">Gentle Wrist Care</span>
+              <span className="text-[11px] text-slate-600 block mt-0.5">Walk comfortably within 2 hours after your procedure with no leg pain.</span>
             </div>
             <div className="p-3.5 rounded-2xl bg-white/90 border border-slate-200/90 shadow-sm hover:shadow-md transition-shadow">
-              <span className="text-xs font-extrabold text-[#0A1128] block">Ethical Angiogram CD Review</span>
-              <span className="text-[11px] text-slate-600 block mt-0.5">Transparent second opinions with zero unnecessary stenting.</span>
+              <span className="text-xs font-extrabold text-[#0A1128] block">Honest Report &amp; CD Review</span>
+              <span className="text-[11px] text-slate-600 block mt-0.5">Clear second opinions with no unnecessary stents or procedures.</span>
             </div>
             <div className="p-3.5 rounded-2xl bg-white/90 border border-slate-200/90 shadow-sm hover:shadow-md transition-shadow">
-              <span className="text-xs font-extrabold text-[#BE123C] block">24/7 STEMI Code Blue Response</span>
-              <span className="text-[11px] text-slate-600 block mt-0.5">Siemens Artis Zee digital cath lab ready day &amp; night.</span>
+              <span className="text-xs font-extrabold text-[#BE123C] block">24/7 Heart Attack Care</span>
+              <span className="text-[11px] text-slate-600 block mt-0.5">Modern heart procedure room ready day and night for emergencies.</span>
             </div>
           </div>
         </div>
@@ -301,13 +300,6 @@ export default function AboutPage() {
             aspectRatio="aspect-[16/8] sm:aspect-[21/9]"
           />
         </motion.div>
-
-        {/* Interactive Pixelated Surgical & Facility Visual Trail */}
-        <div className="max-w-5xl mx-auto mt-10 relative z-10">
-          <Suspense fallback={null}>
-            <PixelatedImageTrailDemo />
-          </Suspense>
-        </div>
       </section>
 
       <div className="relative z-10">
@@ -317,9 +309,9 @@ export default function AboutPage() {
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center max-w-xl mx-auto mb-10 space-y-2">
-              <span className="text-[11px] font-bold uppercase tracking-widest text-[#BE123C] bg-rose-50 border border-rose-200 px-3.5 py-1 rounded-full">Ethical Framework</span>
+              <span className="text-[11px] font-bold uppercase tracking-widest text-[#BE123C] bg-rose-50 border border-rose-200 px-3.5 py-1 rounded-full">Our Promise</span>
               <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0A1128]">
-                Core Pillars of <span className="font-serif italic font-normal text-[#BE123C]">Clinical Practice</span>
+                How We Care for <span className="font-serif italic font-normal text-[#BE123C]">Your Heart</span>
               </h2>
             </div>
 
@@ -329,17 +321,17 @@ export default function AboutPage() {
                 <ThreeDImageCard
                   src="/images/doctor-angiogram-explain.jpg"
                   image="/images/doctor-angiogram-explain.jpg"
-                  alt="Cath Lab Mission"
-                  badge="PILLAR 01"
-                  title="Medical Mission"
-                  stat="Zero Compromise"
-                  substat="Tertiary Interventions"
+                  alt="Safe Heart Treatment"
+                  badge="STEP 01"
+                  title="Safe Heart Treatment"
+                  stat="Always Putting You First"
+                  substat="Gentle Wrist Care"
                   aspectRatio="aspect-[16/10]"
                   laserBeam={false}
                 />
                 <div className="flex flex-wrap gap-1.5 justify-center">
-                  <span className="text-[10px] font-semibold bg-white border border-slate-200 text-[#0A1128] px-2.5 py-1 rounded-md">Precision Angioplasty</span>
-                  <span className="text-[10px] font-semibold bg-rose-50 text-[#BE123C] px-2.5 py-1 rounded-md">CD Review</span>
+                  <span className="text-[10px] font-semibold bg-white border border-slate-200 text-[#0A1128] px-2.5 py-1 rounded-md">Painless Heart Stenting</span>
+                  <span className="text-[10px] font-semibold bg-rose-50 text-[#BE123C] px-2.5 py-1 rounded-md">Report &amp; CD Check</span>
                 </div>
               </div>
 
@@ -347,17 +339,17 @@ export default function AboutPage() {
                 <ThreeDImageCard
                   src="/images/doctor-recovery-discharge.jpg"
                   image="/images/doctor-recovery-discharge.jpg"
-                  alt="Bedside Consult"
-                  badge="PILLAR 02"
-                  title="Clinical Philosophy"
-                  stat="Unhurried Bedside"
-                  substat="Ethical Guidance"
+                  alt="Honest Family Talk"
+                  badge="STEP 02"
+                  title="Honest Family Talk"
+                  stat="Calm & Clear Advice"
+                  substat="No Unnecessary Stents"
                   aspectRatio="aspect-[16/10]"
                   laserBeam={false}
                 />
                 <div className="flex flex-wrap gap-1.5 justify-center">
-                  <span className="text-[10px] font-semibold bg-white border border-slate-200 text-[#0A1128] px-2.5 py-1 rounded-md">Direct Dialogue</span>
-                  <span className="text-[10px] font-semibold bg-rose-50 text-[#BE123C] px-2.5 py-1 rounded-md">Clear Explanations</span>
+                  <span className="text-[10px] font-semibold bg-white border border-slate-200 text-[#0A1128] px-2.5 py-1 rounded-md">Talk Directly with Doctor</span>
+                  <span className="text-[10px] font-semibold bg-rose-50 text-[#BE123C] px-2.5 py-1 rounded-md">Easy Explanations</span>
                 </div>
               </div>
 
@@ -365,17 +357,17 @@ export default function AboutPage() {
                 <ThreeDImageCard
                   src="/images/operation-theatre-laminar.jpg"
                   image="/images/operation-theatre-laminar.jpg"
-                  alt="Sterility Protocols"
-                  badge="PILLAR 03"
-                  title="Evidence Protocols"
-                  stat="NABH Sterility"
-                  substat="ACC / AHA Standards"
+                  alt="Clean & Safe Rooms"
+                  badge="STEP 03"
+                  title="Clean & Safe Rooms"
+                  stat="Hospital-Grade Hygiene"
+                  substat="Trusted Heart Rules"
                   aspectRatio="aspect-[16/10]"
                   laserBeam={false}
                 />
                 <div className="flex flex-wrap gap-1.5 justify-center">
-                  <span className="text-[10px] font-semibold bg-white border border-slate-200 text-[#0A1128] px-2.5 py-1 rounded-md">Laminar Airflow</span>
-                  <span className="text-[10px] font-semibold bg-rose-50 text-[#BE123C] px-2.5 py-1 rounded-md">Low Fluoroscopy</span>
+                  <span className="text-[10px] font-semibold bg-white border border-slate-200 text-[#0A1128] px-2.5 py-1 rounded-md">Clean Fresh Air</span>
+                  <span className="text-[10px] font-semibold bg-rose-50 text-[#BE123C] px-2.5 py-1 rounded-md">Safe Low-Dose Scan</span>
                 </div>
               </div>
 
@@ -409,22 +401,20 @@ export default function AboutPage() {
                 <div className="inline-flex p-1.5 rounded-2xl bg-white/95 backdrop-blur-md border-2 border-slate-200/90 shadow-sm">
                   <button
                     onClick={() => setTimelineMode('cylinder')}
-                    className={`px-4 py-2 rounded-xl text-xs font-mono font-bold transition-all duration-300 flex items-center gap-2 ${
-                      timelineMode === 'cylinder'
-                        ? 'bg-gradient-to-r from-[#0A1128] via-[#1E293B] to-[#BE123C] text-white shadow-md'
-                        : 'text-slate-600 hover:text-[#BE123C]'
-                    }`}
+                    className={`px-4 py-2 rounded-xl text-xs font-mono font-bold transition-all duration-300 flex items-center gap-2 ${timelineMode === 'cylinder'
+                      ? 'bg-gradient-to-r from-[#0A1128] via-[#1E293B] to-[#BE123C] text-white shadow-md'
+                      : 'text-slate-600 hover:text-[#BE123C]'
+                      }`}
                   >
                     <RefreshCw className="w-3.5 h-3.5" />
                     <span>Card Slider View</span>
                   </button>
                   <button
                     onClick={() => setTimelineMode('expanded')}
-                    className={`px-4 py-2 rounded-xl text-xs font-mono font-bold transition-all duration-300 flex items-center gap-2 ${
-                      timelineMode === 'expanded'
-                        ? 'bg-gradient-to-r from-[#0A1128] via-[#1E293B] to-[#BE123C] text-white shadow-md'
-                        : 'text-slate-600 hover:text-[#BE123C]'
-                    }`}
+                    className={`px-4 py-2 rounded-xl text-xs font-mono font-bold transition-all duration-300 flex items-center gap-2 ${timelineMode === 'expanded'
+                      ? 'bg-gradient-to-r from-[#0A1128] via-[#1E293B] to-[#BE123C] text-white shadow-md'
+                      : 'text-slate-600 hover:text-[#BE123C]'
+                      }`}
                   >
                     <Layers className="w-3.5 h-3.5" />
                     <span>Full Timeline View</span>
@@ -590,26 +580,26 @@ export default function AboutPage() {
 
                 <div className="space-y-2">
                   <h3 className="text-2xl sm:text-4xl font-extrabold text-[#0A1128] tracking-tight leading-tight">
-                    Schedule Your <span className="font-serif italic font-normal text-[#BE123C]">Priority Consultation</span>
+                    Book Your <span className="font-serif italic font-normal text-[#BE123C]">Heart Checkup</span>
                   </h3>
                   <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
-                    Experience compassionate, unhurried cardiovascular consultation directly with Gorakhpur's leading interventional cardiologist. Dedicated bedside ethics, zero unnecessary procedures, and transparent clinical second opinions.
+                    Meet Gorakhpur's trusted heart specialist for a calm, caring consultation. Get honest advice, no unnecessary treatments, and clear second opinions.
                   </p>
                 </div>
 
                 {/* 3 Clinical Guarantees */}
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-1">
                   <div className="p-3 rounded-xl bg-slate-50 border border-slate-200">
-                    <span className="text-[10px] font-bold uppercase text-[#BE123C] block">Unhurried OPD</span>
-                    <span className="text-xs font-bold text-slate-800">1-on-1 Bedside Care</span>
+                    <span className="text-[10px] font-bold uppercase text-[#BE123C] block">Personal OPD</span>
+                    <span className="text-xs font-bold text-slate-800">1-on-1 Doctor Care</span>
                   </div>
                   <div className="p-3 rounded-xl bg-slate-50 border border-slate-200">
-                    <span className="text-[10px] font-bold uppercase text-[#BE123C] block">Transparent Angio</span>
-                    <span className="text-xs font-bold text-slate-800">CD &amp; Report Review</span>
+                    <span className="text-[10px] font-bold uppercase text-[#BE123C] block">Honest Review</span>
+                    <span className="text-xs font-bold text-slate-800">Clear Report &amp; CD Check</span>
                   </div>
                   <div className="p-3 rounded-xl bg-slate-50 border border-slate-200">
-                    <span className="text-[10px] font-bold uppercase text-[#BE123C] block">STEMI Code Blue</span>
-                    <span className="text-xs font-bold text-slate-800">24/7 Cath Lab Triage</span>
+                    <span className="text-[10px] font-bold uppercase text-[#BE123C] block">24/7 Emergency</span>
+                    <span className="text-xs font-bold text-slate-800">Fast Heart Attack Care</span>
                   </div>
                 </div>
 
@@ -636,7 +626,7 @@ export default function AboutPage() {
                     className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-gradient-to-r from-[#0A1128] via-[#1E293B] to-[#BE123C] hover:from-[#BE123C] hover:to-[#0A1128] text-white text-xs font-bold uppercase tracking-wider shadow-lg shadow-navy/25 transition-all hover:-translate-y-0.5 border border-rose-300/40 text-center"
                   >
                     <Calendar className="w-4 h-4 text-white" />
-                    <span>Request Priority OPD Pass</span>
+                    <span>Book OPD Appointment</span>
                     <ArrowRight className="w-4 h-4 text-white" />
                   </Link>
 

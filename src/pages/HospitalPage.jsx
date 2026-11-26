@@ -15,28 +15,28 @@ export default function HospitalPage() {
 
   const facilityGallery = [
     {
-      title: 'Digital Catheterization Lab',
-      category: 'INTERVENTIONAL SUITE',
+      title: 'Modern Cath Lab',
+      category: 'HEART PROCEDURE ROOM',
       image: '/images/doctor-cathlab-procedure.jpg',
       videoUrl: '/videos/facilities-walkthrough.mp4',
       type: 'facilities-walkthrough',
-      desc: 'Dr. Shahi performing sub-millimeter C-Arm fluoroscopy radial angioplasty & stenting.',
+      desc: 'Dr. Shahi opening blocked heart arteries safely through the wrist.',
     },
     {
-      title: 'Angiogram Review & Guidance',
-      category: 'PATIENT DIALOGUE',
+      title: 'Heart Scan & Guidance',
+      category: 'FAMILY CONSULTATION',
       image: '/images/doctor-angiogram-explain.jpg',
       videoUrl: '/videos/cardiac-catheterization.mp4',
       type: 'cardiac-catheterization',
-      desc: 'Direct frame-by-frame angiogram review with patients and families.',
+      desc: 'Dr. Shahi personally explains the heart scan video clearly to patients and families.',
     },
     {
-      title: 'Bedside Recovery & OPD Care',
-      category: 'OUTPATIENT PAVILION',
+      title: 'Recovery & OPD Care',
+      category: 'OUTPATIENT CLINIC',
       image: '/images/doctor-icu-rounds.jpg',
       videoUrl: '/videos/about-hospital.mp4',
       type: 'about-hospital',
-      desc: 'Centrally located in Betiahata, Gorakhpur with personal recovery rounds by Dr. Shahi.',
+      desc: 'Easy-to-reach centre in Betiahata, Gorakhpur with personal recovery checkups by Dr. Shahi.',
     },
   ];
 
@@ -128,7 +128,7 @@ export default function HospitalPage() {
                 Advanced Clinical Suites
               </h2>
               <p className="text-xs sm:text-sm text-slate-600 font-normal leading-relaxed">
-                Explore the high-precision equipment and sterile environments supporting every patient intervention.
+                Explore our clean heart care rooms and safe modern medical equipment.
               </p>
             </ScrollReveal>
 

@@ -7,13 +7,14 @@ export const PULSE_DATA = {
   emergencyPhone: "+91 98765 43210",
   opdHelpline: "+91 98765 43211",
   email: "care@pulsehospital.com",
-  opdHours: "Monday – Saturday: 08:30 AM – 08:30 PM",
+  opdHours: "Monday – Saturday: 10:00 AM – 8:00 PM",
   emergencyHours: "24/7 Continuous Emergency, Trauma & Cardiac ICU",
 
   // Lead Clinician & Director
   doctor: {
     name: "Dr. Prakash Chand Shahi",
     title: "Senior Consultant Cardiologist & Interventional Cardiologist",
+    regNo: "UP Medical Council Reg. No. 47395",
     shortName: "Dr. P. C. Shahi",
     speciality: "Cardiologist & Interventional Cardiologist",
     experienceYears: "22+",
@@ -23,7 +24,7 @@ export const PULSE_DATA = {
     qualifications: [
       {
         degree: "MBBS",
-        institution: "Premier Medical Institute",
+        institution: "GSVM Medical College, Kanpur",
         year: "Foundation",
         description: "Undergraduate medical foundation in general surgery and medicine."
       },
@@ -484,13 +485,14 @@ export const PULSE_DATA = {
       title: "Director & Chief Interventional Cardiologist",
       department: "Cardiology & Vascular Sciences",
       departmentSlug: "cardiology",
-      qualifications: "DM Cardiology (PGIMER Chandigarh), MD Medicine (KGMU Lucknow), MBBS",
+      qualifications: "DM Cardiology (PGIMER Chandigarh), MD General Medicine (KGMU Lucknow), MBBS (GSVM Kanpur)",
+      regNo: "UP Medical Council Reg. No. 47395",
       experience: "22+ Years",
       languages: "English, Hindi",
-      consultationHours: "Mon – Sat: 10:00 AM – 02:00 PM & 05:00 PM – 08:00 PM",
+      consultationHours: "Mon – Sat: 10:00 AM – 8:00 PM",
       opdRoom: "Suite 101, Executive Cardiology Wing",
       image: "/images/doctor-portrait.jpg",
-      bio: "Trained at India's foremost apex institutes—PGIMER Chandigarh and King George's Medical University Lucknow—Dr. Prakash Chand Shahi is a pioneer of transradial coronary angioplasty in eastern Uttar Pradesh. Having performed over 12,000 cardiac catheterizations with a 99.4% radial success rate, he is revered for his clinical precision, evidence-based ethics, and unhurried bedside care.",
+      bio: "Trained at India's top medical institutes — PGIMER Chandigarh, KGMU Lucknow, and GSVM Kanpur — Dr. Prakash Chand Shahi is a pioneer of painless heart care through the wrist in eastern Uttar Pradesh. With over 22 years of experience, he is trusted for honest advice, safe treatment, and caring family consultations.",
       achievements: [
         "Pioneered transradial coronary catheterization in Gorakhpur",
         "DM Cardiology from PGIMER Chandigarh (2013)",
@@ -800,7 +802,7 @@ export const PULSE_DATA = {
       step: "02",
       title: "Doctor Consultation",
       subtitle: "Thorough Clinical Evaluation",
-      description: "Meet your senior consultant for an unhurried, evidence-based dialogue. We review your past medical records, symptom chronology, and conduct careful physical examinations."
+      description: "Meet your senior heart doctor for a calm, clear discussion. We carefully check your past reports, symptoms, and overall heart health."
     },
     {
       step: "03",
@@ -884,7 +886,7 @@ export const PULSE_DATA = {
       id: "tour-3",
       title: "Executive Outpatient Consultation Suites",
       category: "Clinical Consultations",
-      description: "Unhurried, private doctor consultation chambers where Dr. Shahi personally explains ECG & angiogram findings with families.",
+      description: "Calm, private consultation rooms where Dr. Shahi personally explains ECG and heart scan reports with families.",
       image: "/images/doctor-patient-consult.jpg",
       featured: false
     },
@@ -893,7 +895,7 @@ export const PULSE_DATA = {
       title: "Class-100 Laminar Flow Modular OT & Pacing Suite",
       category: "Surgical Care",
       description: "Ultra-clean cardiac & pacing theatres with positive-pressure HEPA filtration and continuous hemodynamic telemetry.",
-      image: "/images/operation-theatre-laminar.jpg",
+      image: "/images/cardiac-icu-room.jpg",
       featured: false
     },
     {
@@ -969,7 +971,7 @@ export const PULSE_DATA = {
   faqs: [
     {
       q: "How do I schedule a consultation with Dr. Prakash Chand Shahi?",
-      a: "You can book an appointment directly through our online appointment booking system on this website, call our priority OPD desk at +91 98765 43211, or walk in during regular OPD hours (10:00 AM – 02:00 PM and 05:00 PM – 08:00 PM)."
+      a: "You can book an appointment directly through our online appointment booking system on this website, call our priority OPD desk at +91 98765 43211, or walk in during regular OPD hours (10:00 AM – 8:00 PM)."
     },
     {
       q: "Does PULSE Hospital support cashless insurance and TPA claims?",

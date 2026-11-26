@@ -21,7 +21,7 @@ export default function MedicalTechnologyShowcase({ variant = 'home-technology' 
       title: 'Modern Heart Cath Lab',
       category: 'LIVE HEART IMAGING',
       description: 'Shows crystal-clear live heart images with 40% lower X-ray exposure for safer treatment.',
-      image: '/images/cath-lab.jpg',
+      image: '/images/operation-theatre-laminar.jpg',
       videoUrl: '/videos/facilities-walkthrough.mp4',
       type: 'facilities-walkthrough',
       specs: [
@@ -37,13 +37,13 @@ export default function MedicalTechnologyShowcase({ variant = 'home-technology' 
       title: 'Clear Blockage Mapping',
       category: 'ACCURATE HEART CHECK',
       description: 'Checks heart blood flow clearly to find the exact location and size of any blockage.',
-      image: '/images/cardiac-stent-procedure.jpg',
+      image: '/images/heart-ct-scanner.jpg',
       videoUrl: '/videos/cardiac-catheterization.mp4',
       type: 'cardiac-catheterization',
       specs: [
         { label: 'Angles', value: 'Full 3D Views' },
         { label: 'Measurement', value: 'Exact Blockage %' },
-        { label: 'Entry Point', value: 'Painless Wrist Route' },
+        { label: 'Entry Point', value: 'Through the Wrist (Painless)' },
         { label: 'Recovery', value: 'Walk in 2 Hours' },
       ],
       clinicalValue: 'Helps decide honestly whether medicines alone or a stent is best.',
@@ -69,7 +69,7 @@ export default function MedicalTechnologyShowcase({ variant = 'home-technology' 
       title: 'Long-Life Heart Pacemaker',
       category: 'HEARTBEAT SUPPORT',
       description: 'Small, safe device that keeps a slow or irregular heartbeat steady day and night.',
-      image: '/images/operation-theatre-laminar.jpg',
+      image: '/images/ecg-checkup-room.jpg',
       videoUrl: '/videos/cardiology-heart.mp4',
       type: 'cardiology-heart',
       specs: [

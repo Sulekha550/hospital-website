@@ -19,9 +19,9 @@ export default function CredentialsEditorialSection() {
       degree: 'DM — Cardiology',
       institute: 'PGIMER, Chandigarh',
       tag: 'Top National Medical Institute',
-      image: '/images/doctor-echo-checkup.jpg',
+      image: '/images/ecg-checkup-room.jpg',
       pos: 'object-center',
-      summary: 'Advanced training in painless wrist-route heart angiography, stenting, and pacemaker care.',
+      summary: 'Advanced training in painless heart checkups, stenting through the wrist, and pacemaker care.',
     },
     {
       badge: 'POST-GRADUATE',
@@ -39,12 +39,12 @@ export default function CredentialsEditorialSection() {
       tag: '15,000+ Heart Procedures',
       image: '/images/hospital-facility.jpg',
       pos: 'object-center',
-      summary: 'Providing Gorakhpur with gentle wrist-first heart care and 24/7 emergency heart attack support.',
+      summary: 'Providing Gorakhpur with gentle heart care through the wrist and 24/7 emergency heart attack support.',
     },
   ];
 
   const standards = [
-    'Painless Wrist-First Heart Care',
+    'Painless Heart Care Through Wrist',
     'Honest Advice — Only Needed Treatment',
     'Clear Report & CD Review with Family',
     'Long-Term Follow-Up at Betiahata',
@@ -80,7 +80,7 @@ export default function CredentialsEditorialSection() {
             to="/about"
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/10 hover:bg-[#BE123C] text-white text-xs font-bold uppercase tracking-wider border border-white/15 transition-colors w-fit shrink-0"
           >
-            <span>Full Clinical Dossier</span>
+            <span>View Full Profile</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </Link>
         </div>

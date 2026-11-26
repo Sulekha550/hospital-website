@@ -24,7 +24,7 @@ export default function AnatomicalSpecialtyShowcase({ variant = 'home-specialtie
       stat: '99.4% Success Rate',
       recovery: 'Walk in 2 Hours',
       points: [
-        'Gentle wrist-route entry — no leg pain or long bed rest',
+        'Done gently through the wrist — no leg pain or long bed rest',
         'Safe medicine-coated stents to keep arteries open',
         'Clear live heart imaging for accurate placement',
       ],
@@ -35,7 +35,7 @@ export default function AnatomicalSpecialtyShowcase({ variant = 'home-specialtie
       title: 'Heart Blockage Check (Angiogram)',
       category: '15-Minute Heart Test',
       desc: 'A quick, painless heart test through the wrist to clearly see if any arteries are blocked.',
-      image: '/images/coronary-artery-perfusion.jpg',
+      image: '/images/cardiac-tmt-stress.jpg',
       stat: '15-Min Quick Check',
       recovery: 'Same-Day Discharge',
       points: [
@@ -65,7 +65,7 @@ export default function AnatomicalSpecialtyShowcase({ variant = 'home-specialtie
       title: '24/7 Heart Attack Emergency',
       category: 'Round-the-Clock Care',
       desc: 'Immediate emergency heart care and 24/7 cardiac ICU support at Pulse Heart Centre, Betiahata.',
-      image: '/images/cardiac-icu-telemetry.jpg',
+      image: '/images/ambulance-cardiac-care.jpg',
       stat: 'Under 45 Min Care',
       recovery: '24/7 Emergency Team',
       points: [
@@ -88,10 +88,10 @@ export default function AnatomicalSpecialtyShowcase({ variant = 'home-specialtie
         <div className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6 text-left">
           <div className="max-w-2xl space-y-2">
             <span className="text-xs font-mono font-bold uppercase tracking-[0.2em] text-[#BE123C] block">
-              Specialized Cardiac Care
+              Simple &amp; Safe Heart Care
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0A1128] tracking-tight leading-tight">
-              Core Treatments &amp; Procedures
+              Our Heart Treatments
             </h2>
           </div>
 

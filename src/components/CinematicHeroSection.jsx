@@ -19,7 +19,7 @@ export default function CinematicHeroSection() {
       <div className="max-w-7xl mx-auto w-full relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-y-5 lg:gap-y-4 lg:gap-x-10 items-center">
 
-          {/* Block 1 (Mobile Top / Desktop Left-Top): Location Pill + "Precision Heart Care." */}
+          {/* Block 1 (Mobile Top / Desktop Left-Top): Location Pill + "Safe Heart Care." */}
           <div className="order-1 lg:order-none lg:col-span-6 lg:col-start-1 lg:row-start-1 lg:self-end space-y-4 text-left animate-hero-enter">
             <div className="inline-flex flex-wrap items-center gap-x-2.5 gap-y-1 px-3.5 py-1.5 rounded-2xl sm:rounded-full bg-white border border-slate-200 shadow-xs text-[11px] sm:text-xs font-semibold text-[#0A1128]">
               <MapPin className="w-3.5 h-3.5 text-[#BE123C]" />
@@ -31,7 +31,7 @@ export default function CinematicHeroSection() {
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-[3.4rem] font-extrabold text-[#0A1128] tracking-[-0.03em] leading-[1.07]">
-              Precision Heart Care.
+              Safe Heart Care.
               <span className="hidden lg:block font-serif italic font-normal text-[#BE123C] mt-1">
                 Built Around Trust.
               </span>
@@ -45,7 +45,7 @@ export default function CinematicHeroSection() {
                 Built Around Trust.
               </p>
               <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-lg">
-                <strong className="text-[#0A1128] font-bold">Dr. Prakash Chand Shahi</strong> (Heart Specialist • PGIMER &amp; KGMU) — painless wrist-route heart treatment, angioplasty &amp; 24/7 emergency care.
+                <strong className="text-[#0A1128] font-bold">Dr. Prakash Chand Shahi</strong> (Heart Specialist • PGIMER &amp; KGMU) — painless heart treatment through the wrist, heart stenting &amp; 24/7 emergency care.
               </p>
             </div>
 
@@ -123,17 +123,20 @@ export default function CinematicHeroSection() {
                       Dr. Prakash Chand Shahi
                     </h2>
                     <p className="text-xs text-[#BE123C] font-semibold mt-1">
-                      DM Cardiology (PGIMER)
+                      DM Cardiology (PGIMER Chandigarh)
                     </p>
                     <p className="text-xs text-slate-600 mt-0.5">
-                      MD Medicine (KGMU Lucknow)
+                      MD General Medicine (KGMU) • MBBS (GSVM Kanpur)
+                    </p>
+                    <p className="text-[11px] font-medium text-slate-500 mt-1">
+                      UP Medical Council Reg. No. 47395
                     </p>
                   </div>
 
                   <div className="space-y-2.5 pt-3 border-t border-slate-200 text-xs">
                     <div className="p-2.5 rounded-xl bg-white border border-slate-200/90 shadow-2xs">
                       <span className="text-[10px] font-mono text-slate-500 block">METHOD</span>
-                      <span className="font-bold text-[#0A1128]">Painless Wrist-Route Care</span>
+                      <span className="font-bold text-[#0A1128]">Painless Wrist Care</span>
                     </div>
                     <div className="p-2.5 rounded-xl bg-white border border-slate-200/90 shadow-2xs">
                       <span className="text-[10px] font-mono text-slate-500 block">24/7 EMERGENCY</span>

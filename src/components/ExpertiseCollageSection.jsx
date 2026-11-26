@@ -69,7 +69,7 @@ export default function ExpertiseCollageSection() {
       tag: 'PHYSICIAN CONSULTATION',
       title: 'Direct Clinical Evaluation with Dr. Shahi',
       subtitle: '22+ Years of Bedside Devotion',
-      description: 'Unhurried diagnostic review, second opinions on stenting/bypass, and tailored long-term medical therapy for complete patient peace of mind.',
+      description: 'Calm, detailed report review, honest second opinions on stenting or bypass, and long-term heart medicine plans for your peace of mind.',
       image: '/images/operation-theatre-laminar.jpg',
       aspect: 'aspect-[4/3]',
       stats: 'Over 22 Years Devotion',

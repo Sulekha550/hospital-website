@@ -60,7 +60,7 @@ export default function TreatmentsPage() {
 
           <ScrollReveal animation="fade-up" delay={0.2}>
             <p className="text-sm sm:text-base font-normal text-slate-600 max-w-2xl mx-auto leading-relaxed">
-              Painless wrist-route angioplasty, heart blockage check (angiogram), and pacemaker care with clear live imaging.
+              Painless heart stenting through the wrist, heart blockage check (angiogram), and pacemaker care with clear live imaging.
             </p>
           </ScrollReveal>
 
@@ -75,7 +75,7 @@ export default function TreatmentsPage() {
                 posterImage="/images/cardiac-stent-procedure.jpg"
                 title="Heart Blockage Check &amp; Stent Care"
                 subtitle="Clear Live Heart Imaging"
-                specs="Gentle Wrist-Route Procedure • Quick Recovery"
+                specs="Gentle Wrist Procedure • Quick Recovery"
                 aspectRatio="aspect-[16/8] sm:aspect-[21/9]"
               />
             </Interactive3DTilt>

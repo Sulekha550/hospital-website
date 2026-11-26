@@ -228,9 +228,9 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
               { metric: '22+', label: 'Years of Dedication', sub: 'Unbroken leadership in eastern UP', img: '/images/hero-architecture-entrance.jpg', pos: 'object-center' },
-              { metric: '15,000+', label: 'Cath Interventions', sub: 'Angioplasty, stenting & pacemakers', img: '/images/radial-catheter-sheath.jpg', pos: 'object-center' },
-              { metric: '99.4%', label: 'Radial Patency Rate', sub: 'Wrist-first access & rapid walking', img: '/images/coronary-artery-perfusion.jpg', pos: 'object-center' },
-              { metric: '< 45 Min', label: 'STEMI Door-To-Balloon', sub: '24/7 emergency Code-Blue triage', img: '/images/cardiac-icu-telemetry.jpg', pos: 'object-center' },
+              { metric: '15,000+', label: 'Cath Interventions', sub: 'Opening blocked arteries, stents & pacemakers', img: '/images/radial-catheter-sheath.jpg', pos: 'object-center' },
+              { metric: '99.4%', label: 'Radial Patency Rate', sub: 'Wrist-first access & rapid walking', img: '/images/doctor-angiogram-explain.jpg', pos: 'object-center' },
+              { metric: '< 45 Min', label: 'STEMI Door-To-Balloon', sub: '24/7 emergency Code-Blue triage', img: '/images/doctor-icu-rounds.jpg', pos: 'object-center' },
             ].map((item, i) => (
               <div key={i} className="group relative h-36 rounded-2xl overflow-hidden bg-[#0A1128] border border-slate-200 shadow-md text-left">
                 <img src={item.img} alt={item.label} loading="lazy" className={`absolute inset-0 w-full h-full object-cover ${item.pos} opacity-75 group-hover:scale-110 transition-transform duration-700`} />
@@ -293,8 +293,8 @@ export default function ContactPage() {
                 {infoCards.map((card, idx) => {
                   const cardImgs = [
                     { src: '/images/hospital-ward-suites.jpg', pos: 'object-center' },
-                    { src: '/images/hospital-opd-lounge.jpg', pos: 'object-center' },
-                    { src: '/images/operation-theatre-laminar.jpg', pos: 'object-center' },
+                    { src: '/images/hospital-helpdesk.jpg', pos: 'object-center' },
+                    { src: '/images/ambulance-cardiac-care.jpg', pos: 'object-center' },
                   ];
                   const media = cardImgs[idx % cardImgs.length];
                   return (

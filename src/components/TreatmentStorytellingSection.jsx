@@ -146,7 +146,7 @@ export default function TreatmentStorytellingSection() {
 
           <div className="flex flex-wrap items-center justify-center gap-2 pt-1 font-mono text-[11px] font-bold">
             <span className="bg-rose-50 text-[#BE123C] px-3 py-0.5 rounded-full border border-rose-200">Simple Checkup</span>
-            <span className="bg-slate-100 text-[#0A1128] px-3 py-0.5 rounded-full border border-slate-200">Wrist Route</span>
+            <span className="bg-slate-100 text-[#0A1128] px-3 py-0.5 rounded-full border border-slate-200">Through Wrist</span>
             <span className="bg-rose-50 text-[#BE123C] px-3 py-0.5 rounded-full border border-rose-200">Safe Stent</span>
             <span className="bg-slate-100 text-[#0A1128] px-3 py-0.5 rounded-full border border-slate-200">Fast Recovery</span>
           </div>
@@ -208,11 +208,11 @@ export default function TreatmentStorytellingSection() {
               showControls={false}
               styleVariant="floating-3d"
               posterImage={
-                activeProcedure === 'ct-coronary-angiography'
-                  ? '/images/advanced-mri-scanner.jpg'
+                activeProcedure === 'coronary-angiogram'
+                  ? '/images/peripheral-angioplasty-unique.jpg'
                   : activeProcedure === 'pacemaker-implantation'
-                  ? '/images/heart-anatomy.jpg'
-                  : '/images/peripheral-angioplasty-unique.jpg'
+                  ? '/images/pacemaker-tech.jpg'
+                  : '/images/heart-stent-angioplasty.jpg'
               }
               title={`${currentStory.title} • Live Procedural Cine`}
               subtitle={currentStory.badge}
@@ -226,9 +226,9 @@ export default function TreatmentStorytellingSection() {
             {currentStory.steps.map((step, sIdx) => {
               const stepImages = [
                 { src: '/images/hospital-opd-lounge.jpg', pos: 'object-center' },
-                { src: '/images/echo-doppler-scan.jpg', pos: 'object-center' },
                 { src: '/images/doctor-echo-checkup.jpg', pos: 'object-center' },
-                { src: '/images/patient-recovery-story.jpg', pos: 'object-center' },
+                { src: '/images/cardiac-icu-room.jpg', pos: 'object-center' },
+                { src: '/images/cardiac-stent-procedure.jpg', pos: 'object-center' },
               ];
               const media = stepImages[sIdx % stepImages.length];
               return (

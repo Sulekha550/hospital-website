@@ -1,7 +1,6 @@
 import React, { Suspense, lazy } from 'react';
 import CinematicHeroSection from '../components/CinematicHeroSection';
 import DoctorMonographSection from '../components/DoctorMonographSection';
-import AnatomicalSpecialtyShowcase from '../components/AnatomicalSpecialtyShowcase';
 
 const MedicalTechnologyShowcase = lazy(() => import('../components/MedicalTechnologyShowcase'));
 const TreatmentStorytellingSection = lazy(() => import('../components/TreatmentStorytellingSection'));
@@ -23,9 +22,6 @@ export default function HomePage() {
 
       {/* 2. FOUNDING CLINICIAN MONOGRAPH — Dr. Prakash Chand Shahi (DM PGIMER, MD KGMU) */}
       <DoctorMonographSection />
-
-      {/* 3. CLINICAL SPECIALTIES — Angioplasty, Coronary Angiogram, Pacemaker Implantation */}
-      <AnatomicalSpecialtyShowcase />
 
       {/* Below-the-fold sections lazy-loaded for instant initial render & smooth scroll */}
       <Suspense fallback={null}>

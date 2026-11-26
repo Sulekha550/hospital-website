@@ -15,7 +15,7 @@ const DEFAULT_HOTSPOTS = [
   },
   {
     id: 'interventional',
-    label: 'Wrist Route Access',
+    label: 'Safe Wrist Entry',
     x: '46%',
     y: '22%',
     domain: 'Painless Wrist Path',
@@ -144,8 +144,8 @@ export default function InteractiveCardiacExplorer({ onBookClick }) {
             
             {/* Real Photographic Medical Image */}
             <img
-              src={viewMode === 'anatomy' ? '/images/heart-anatomy.jpg' : '/images/doctor-angiogram-explain.jpg'}
-              alt={viewMode === 'anatomy' ? 'Anatomical Coronary Perfusion Stage' : 'Real Diagnostic Coronary Angiogram Review'}
+              src={viewMode === 'anatomy' ? '/images/cathlab-control-review.jpg' : '/images/doctor-angiogram-explain.jpg'}
+              alt={viewMode === 'anatomy' ? 'Real Heart Artery & Stent Monitor' : 'Real Diagnostic Coronary Angiogram Review'}
               className="w-full h-full object-cover object-center transition-all duration-700 filter brightness-95 group-hover:scale-102"
             />
 
@@ -236,7 +236,7 @@ export default function InteractiveCardiacExplorer({ onBookClick }) {
           {/* Bottom Simple Highlights */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2 text-xs">
             <div className="p-3.5 rounded-2xl bg-[#F0FDF4]/70 border border-[#A7F3D0]/60">
-              <span className="font-bold text-[#064E3B] block">Wrist-Route Heart Stenting</span>
+              <span className="font-bold text-[#064E3B] block">Heart Stenting Through Wrist</span>
               <span className="text-slate-600 text-[11px] block mt-0.5 font-medium">Gentle wrist procedure so patients recover fast and walk sooner.</span>
             </div>
             <div className="p-3.5 rounded-2xl bg-slate-50 border border-slate-200">

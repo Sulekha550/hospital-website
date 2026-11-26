@@ -44,31 +44,34 @@ export default function DoctorMonographSection() {
     {
       id: 'transradial',
       num: '01',
-      title: 'Transradial-First Access',
-      subtitle: 'Minimally Invasive Wrist Catheterization',
+      tabLabel: 'Wrist Care',
+      title: 'Gentle Care Through the Wrist',
+      subtitle: 'Safe Wrist Heart Procedure',
       image: '/images/doctor-cathlab-procedure.jpg',
-      desc: 'Over 98% of angiograms and angioplasties are performed through the radial artery in the wrist, eliminating groin puncture pain and allowing same-day walking.',
-      badge: '99.4% Flow Restored',
-      metric: '2-Hr Ambulation'
+      desc: 'Over 98% of heart checks and stent procedures are done safely through the wrist instead of the leg, avoiding pain and letting you walk the same day.',
+      badge: '99.4% Smooth Flow',
+      metric: 'Walk in 2 Hours'
     },
     {
       id: 'evidence',
       num: '02',
-      title: 'Evidence-Based Ethics',
-      subtitle: 'Strict ESC / ACC Clinical Guidelines',
+      tabLabel: 'Honest Advice',
+      title: 'Honest Treatment Advice',
+      subtitle: 'Trusted Global Heart Guidelines',
       image: '/images/doctor-patient-consult.jpg',
-      desc: 'Coronary stenting is recommended strictly when clinically necessary to save myocardium. Every angiogram is assessed with FFR and QCA to protect patients from overtreatment.',
+      desc: 'Stents are advised only when truly needed to protect your heart. Every heart scan is checked carefully so you never get unnecessary treatment.',
       badge: 'Zero Unnecessary Stents',
-      metric: '100% Guideline Adherence'
+      metric: '100% Honest Care'
     },
     {
       id: 'bedside',
       num: '03',
-      title: 'Unhurried Bedside Dialogue',
-      subtitle: 'Direct Angiogram Review With Patients',
+      tabLabel: 'Clear Talk',
+      title: 'Clear Family Talk',
+      subtitle: 'Watch Your Heart Scan Together',
       image: '/images/doctor-angiogram-explain.jpg',
-      desc: 'Dr. Shahi personally reviews the fluoroscopy recordings with patients and their families, explaining every branch, lesion, and treatment decision clearly.',
-      badge: 'Transparent Patient Care',
+      desc: 'Dr. Shahi personally sits with patients and families to show the heart scan video and explain every blockage and treatment choice in simple words.',
+      badge: 'Clear & Open Care',
       metric: '22+ Yrs Trust'
     }
   ];
@@ -103,7 +106,7 @@ export default function DoctorMonographSection() {
               <div className="mt-2.5 p-3.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between gap-3">
                 <div className="text-left">
                   <h4 className="text-xs font-extrabold text-[#0A1128] leading-tight">
-                    Director of Cath Lab &amp; Interventions
+                    Senior Heart Specialist
                   </h4>
                   <p className="text-[11px] text-[#BE123C] font-semibold mt-0.5">
                     PULSE Heart Centre • Betiahata, Gorakhpur
@@ -130,10 +133,10 @@ export default function DoctorMonographSection() {
             <div className="flex flex-wrap items-center gap-2">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-[#0A1128] via-[#1E293B] to-[#BE123C] text-white text-xs font-mono font-bold shadow-xs border border-rose-300/40">
                 <Sparkles className="w-3.5 h-3.5 text-rose-200" />
-                <span className="uppercase tracking-[0.18em]">Lead Interventional Cardiologist</span>
+                <span className="uppercase tracking-[0.18em]">Senior Heart Specialist</span>
               </div>
               <span className="text-xs font-mono font-semibold text-[#0A1128] bg-slate-100 px-3 py-1 rounded-full border border-slate-200">
-                Est. 2002 • 22+ Years Leadership
+                Est. 2002 • 22+ Years Experience
               </span>
             </div>
 
@@ -159,7 +162,7 @@ export default function DoctorMonographSection() {
               </div>
               <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-rose-50 border border-rose-200 text-xs font-bold text-[#BE123C] shadow-xs">
                 <Award className="w-4 h-4 text-[#BE123C]" />
-                <span>22+ Years Clinical Practice</span>
+                <span>22+ Years Experience</span>
               </div>
             </div>
 
@@ -167,7 +170,7 @@ export default function DoctorMonographSection() {
             <div className="p-4 sm:p-5 rounded-2xl bg-white/85 backdrop-blur-md border border-slate-200 text-left space-y-2 shadow-xs card-hover-elevate">
               <div className="flex items-center gap-2 text-xs font-mono font-bold text-[#BE123C] uppercase tracking-wider">
                 <Quote className="w-4 h-4 text-[#BE123C]" />
-                <span>Clinical Principle &amp; Patient Trust</span>
+                <span>Our Promise &amp; Patient Trust</span>
               </div>
               <p className="text-xs sm:text-sm text-slate-800 font-medium italic leading-relaxed">
                 "Every heart checkup represents a human life. We recommend a stent only when it is truly needed to protect your heart, and we personally explain every test report and CD clearly to your family."
@@ -180,11 +183,11 @@ export default function DoctorMonographSection() {
                 <div className="flex items-center gap-2">
                   <Activity className="w-4 h-4 text-[#BE123C] animate-pulse" />
                   <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#0A1128]">
-                    Clinical Practice Standards
+                    How We Care For You
                   </span>
                 </div>
                 <span className="text-[11px] font-mono text-slate-500">
-                  Select Focus
+                  Tap to View
                 </span>
               </div>
 
@@ -201,8 +204,8 @@ export default function DoctorMonographSection() {
                         : 'bg-slate-50 hover:bg-slate-100 text-slate-700 border border-slate-200'
                         }`}
                     >
-                      <span className="font-mono text-[9px] block opacity-75">PILLAR {p.num}</span>
-                      <span className="truncate block mt-0.5">{p.title.split(' ')[0]} Access</span>
+                      <span className="font-mono text-[9px] block opacity-75">STEP {p.num}</span>
+                      <span className="truncate block mt-0.5">{p.tabLabel}</span>
                     </button>
                   );
                 })}
@@ -257,7 +260,7 @@ export default function DoctorMonographSection() {
                 className="luxury-btn-secondary group"
               >
                 <Compass className="w-4 h-4 text-[#BE123C] group-hover:rotate-45 transition-transform" />
-                <span>Full Clinical Dossier</span>
+                <span>About Dr. Shahi</span>
               </Link>
             </div>
 

@@ -10,12 +10,12 @@ export default function PatientExperienceSection({ onBookClick }) {
   const { patientJourney } = PULSE_DATA;
 
   const preVisitDocuments = [
-    "Previous Electrocardiograms (ECG traces)",
-    "Past Coronary Angiogram or CT Angiography CD/Reports",
-    "Current prescriptions & cardiovascular medication list",
-    "Recent blood tests (Lipid Profile, Renal Function, HbA1c)",
-    "Echocardiography (Echo) reports, if available",
-    "Discharge summaries from prior hospital admissions or stent procedures"
+    "Old ECG reports",
+    "Past heart scan (Angiogram or CT) CD and reports",
+    "Current doctor prescriptions and daily medicines",
+    "Recent blood test reports (Sugar, Cholesterol, Kidney)",
+    "Echo heart scan reports, if you have them",
+    "Old hospital discharge papers or stent records"
   ];
 
   return (
@@ -30,25 +30,25 @@ export default function PatientExperienceSection({ onBookClick }) {
           <div className="mb-12">
             <div className="flex items-center gap-3 mb-3">
               <span className="text-xs font-semibold text-white bg-gradient-to-r from-[#0A1128] via-[#1E293B] to-[#BE123C] px-3.5 py-1 rounded-full shadow-sm border border-rose-300/30">
-                Clinical Stewardship
+                Patient Care Guide
               </span>
               <div className="w-10 h-0.5 bg-gradient-to-r from-[#0A1128] to-[#BE123C]" />
               <span className="text-xs font-medium tracking-wider text-[#BE123C] uppercase font-mono">
-                The Consultation Pathway
+                Step-by-Step Visit
               </span>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-end">
               <div className="lg:col-span-8">
                 <span className="text-[#0A1128] font-semibold text-xs uppercase tracking-widest block mb-1">
-                  Transparent &amp; Evidence-Based Stewardship
+                  Simple &amp; Honest Heart Care
                 </span>
                 <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0A1128] tracking-tight leading-tight">
-                  The Consultation <span className="font-serif italic font-normal text-[#BE123C]">Pathway</span>
+                  Your Visit <span className="font-serif italic font-normal text-[#BE123C]">Step by Step</span>
                 </h2>
               </div>
               <div className="lg:col-span-4 text-slate-600 text-xs sm:text-sm font-normal leading-relaxed">
-                Transparent, evidence-based medical consultation with clear steps from record review to post-intervention follow-up.
+                Clear and honest doctor consultation from checking your old reports to your regular follow-up care.
               </div>
             </div>
           </div>
@@ -121,15 +121,15 @@ export default function PatientExperienceSection({ onBookClick }) {
               <div className="lg:col-span-5 space-y-4">
                 <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 text-xs font-mono text-rose-200 border border-rose-300/30">
                   <ClipboardList className="w-3.5 h-3.5" />
-                  <span>Pre-Consultation Checklist</span>
+                  <span>Before Your Visit</span>
                 </div>
 
                 <h3 className="font-extrabold text-2xl sm:text-3xl text-white leading-snug">
-                  Essential Records for Your Evaluation
+                  Reports to Bring for Your Checkup
                 </h3>
 
                 <p className="text-slate-300 text-xs sm:text-sm font-normal leading-relaxed">
-                  Prior ECGs, angiogram CDs, and current cardiovascular medications allow Dr. Prakash Chand Shahi to assess temporal changes in coronary patency with precision.
+                  Bringing your old ECGs, heart scan CDs, and current medicines helps Dr. Prakash Chand Shahi understand your heart health clearly and give you the right advice.
                 </p>
 
                 <div className="pt-2">
@@ -137,7 +137,7 @@ export default function PatientExperienceSection({ onBookClick }) {
                     onClick={onBookClick}
                     className="luxury-btn-ruby group"
                   >
-                    <span>Schedule Your Consultation</span>
+                    <span>Book Your Checkup</span>
                     <ArrowRight className="w-4 h-4 text-white group-hover:translate-x-1.5 transition-transform" />
                   </button>
                 </div>
@@ -166,9 +166,9 @@ export default function PatientExperienceSection({ onBookClick }) {
                     showControls={false}
                     styleVariant="video-card"
                     posterImage="/images/p3.jpeg"
-                    title="Angiogram CD & Clinical Records Review"
-                    subtitle="Pulse Heart Centre • Inpatient Care"
-                    specs="Attending Physician: Dr. Prakash Chand Shahi"
+                    title="Heart Scan CD & Report Checkup"
+                    subtitle="Pulse Heart Centre • Patient Care"
+                    specs="Doctor: Dr. Prakash Chand Shahi"
                     aspectRatio="aspect-[16/8]"
                   />
                 </div>
